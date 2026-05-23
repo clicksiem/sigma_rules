@@ -1,0 +1,17 @@
+id: bbb2dedd-a0e3-46ab-ba6c-6c82ae7a9aa7
+name: HAFNIUM Exchange Exploitation Activity
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1546
+- attack.t1053
+- attack.g0125
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%attrib%' AND CommandLine ILIKE '% +h %' AND CommandLine ILIKE '% +s %' AND CommandLine ILIKE '% +r %' AND CommandLine ILIKE '%.aspx%') OR (Image ILIKE '%\\ProgramData\\VSPerfMon\\%' OR (CommandLine ILIKE '%schtasks%' AND CommandLine ILIKE '%VSPerfMon%')) OR (Image ILIKE '%Opera\_browser.exe' AND (ParentImage ILIKE '%\\services.exe' OR ParentImage ILIKE '%\\svchost.exe')) OR Image ILIKE '%Users\\Public\\opera\\Opera\_browser.exe' OR (CommandLine ILIKE '%vssadmin list shadows%' AND CommandLine ILIKE '%Temp\\\_\_output%') OR (Image ILIKE '%\\makecab.exe' AND (CommandLine ILIKE '%inetpub\\wwwroot\\%' AND CommandLine ILIKE '%.dmp.zip%')) OR (Image ILIKE '%\\makecab.exe' AND (CommandLine ILIKE '%Microsoft\\Exchange Server\\%' OR CommandLine ILIKE '%compressionmemory%' OR CommandLine ILIKE '%.gif%')) OR (CommandLine ILIKE '% -t7z %' AND CommandLine ILIKE '%C:\\Programdata\\pst%' AND CommandLine ILIKE '%\\it.zip%') OR (CommandLine ILIKE '%\\comsvcs.dll%' AND CommandLine ILIKE '%Minidump%' AND CommandLine ILIKE '%full %' AND CommandLine ILIKE '%\\inetpub\\wwwroot%') OR (CommandLine ILIKE '%Windows\\Temp\\xx.bat%' OR CommandLine ILIKE '%Windows\\WwanSvcdcs%' OR CommandLine ILIKE '%Windows\\Temp\\cw.exe%')

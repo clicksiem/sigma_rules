@@ -1,0 +1,22 @@
+id: 7bdf2a7c-3acc-4091-9581-0a77dad1c5b5
+name: OilRig APT Registry Persistence
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis, Jonhnathan Ribeiro, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.defense-impairment
+- attack.g0049
+- attack.t1053.005
+- attack.s0111
+- attack.t1543.003
+- attack.t1112
+- attack.command-and-control
+- attack.t1071.004
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\UMe' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\UT'

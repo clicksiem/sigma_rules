@@ -1,0 +1,13 @@
+id: d7326048-328b-4d5e-98af-86e84b17c765
+name: Uncommon PowerShell Hosts
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Data ILIKE '%HostApplication=%' AND (NOT (Data ILIKE '%HostApplication=_:/Windows/System32/WindowsPowerShell/v1.0/powershell%' OR Data ILIKE '%HostApplication=_:/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell%' OR Data ILIKE '%HostApplication=_:\\Windows\\System32\\sdiagnhost.exe%' OR Data ILIKE '%HostApplication=_:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell%' OR Data ILIKE '%HostApplication=_:\\Windows\\SysWOW64\\sdiagnhost.exe%' OR Data ILIKE '%HostApplication=_:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell%' OR Data ILIKE '%HostApplication=powershell%')) AND (NOT (Data ILIKE '%Citrix\\ConfigSync\\ConfigSync.ps1%' OR Data ILIKE '%HostApplication=C:\\Hexnode\\Hexnode Agent\\Current\\HexnodeAgent.exe%'))

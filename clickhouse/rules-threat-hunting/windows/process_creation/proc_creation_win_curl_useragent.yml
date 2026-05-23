@@ -1,0 +1,13 @@
+id: 3286d37a-00fd-41c2-a624-a672dcd34e60
+name: Curl.EXE Execution With Custom UserAgent
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\curl.exe' OR Product='The curl executable') AND (CommandLine ILIKE '% -A %' OR CommandLine ILIKE '% --user-agent %')

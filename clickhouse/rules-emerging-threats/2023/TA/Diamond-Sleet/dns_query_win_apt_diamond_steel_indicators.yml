@@ -1,0 +1,12 @@
+id: fba38e0f-4607-4344-bb8f-a4b50cdeef7f
+name: Diamond Sleet APT DNS Communication Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE QueryName ILIKE '%3dkit.org%' OR QueryName ILIKE '%dersmarketim.com%' OR QueryName ILIKE '%galerielamy.com%' OR QueryName ILIKE '%olidhealth.com%'

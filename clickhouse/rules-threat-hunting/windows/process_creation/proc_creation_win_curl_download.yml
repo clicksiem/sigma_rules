@@ -1,0 +1,13 @@
+id: 9a517fca-4ba3-4629-9278-a68694697b81
+name: File Download Via Curl.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\curl.exe' OR Product='The curl executable') AND (CommandLine ILIKE '% -O%' OR CommandLine ILIKE '%--remote-name%' OR CommandLine ILIKE '%--output%')

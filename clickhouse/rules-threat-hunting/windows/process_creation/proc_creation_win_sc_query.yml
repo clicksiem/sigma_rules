@@ -1,0 +1,13 @@
+id: 57712d7a-679c-4a41-a913-87e7175ae429
+name: SC.EXE Query Execution
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1007
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\sc.exe' AND OriginalFileName='sc.exe') AND CommandLine ILIKE '% query%') AND (NOT CommandLine='sc query dokan1')

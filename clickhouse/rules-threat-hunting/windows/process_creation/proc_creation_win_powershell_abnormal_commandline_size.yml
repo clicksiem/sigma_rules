@@ -1,0 +1,13 @@
+id: d0d28567-4b9a-45e2-8bbc-fb1b66a1f7f6
+name: Unusually Long PowerShell CommandLine
+level: 3
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll')) OR Description='Windows Powershell' OR Product='PowerShell Core 6') AND match(CommandLine, '.{1000,}')

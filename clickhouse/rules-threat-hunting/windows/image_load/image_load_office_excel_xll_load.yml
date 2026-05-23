@@ -1,0 +1,13 @@
+id: c5f4b5cb-4c25-4249-ba91-aa03626e3185
+name: Microsoft Excel Add-In Loaded
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.002
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\excel.exe' AND ImageLoaded ILIKE '%.xll'

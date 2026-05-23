@@ -1,0 +1,22 @@
+id: c0580559-a6bd-4ef6-b9b7-83703d98b561
+name: OilRig APT Schedule Task Persistence - Security
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis, Jonhnathan Ribeiro, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.defense-impairment
+- attack.g0049
+- attack.t1053.005
+- attack.s0111
+- attack.t1543.003
+- attack.t1112
+- attack.command-and-control
+- attack.t1071.004
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE EventID=4698 AND (TaskName IN ('SC Scheduled Scan', 'UpdatMachine'))

@@ -1,0 +1,14 @@
+id: 3db10f25-2527-4b79-8d4b-471eb900ee29
+name: GALLIUM Artefacts - Builtin
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Burrell
+group: windows
+tags:
+- attack.credential-access
+- attack.command-and-control
+- attack.t1071
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE EventID=257 AND (QNAME IN ('asyspy256.ddns.net', 'hotkillmail9sddcc.ddns.net', 'rosaf112.ddns.net', 'cvdfhjh1231.myftp.biz', 'sz2016rose.ddns.net', 'dffwescwer4325.myftp.biz', 'cvdfhjh1231.ddns.net'))

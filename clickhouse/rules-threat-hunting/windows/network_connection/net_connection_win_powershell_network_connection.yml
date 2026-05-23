@@ -1,0 +1,13 @@
+id: 1f21ec3f-810d-4b0e-8045-322202e22b4b
+name: Network Connection Initiated By PowerShell Process
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND Initiated='true') AND (NOT (((isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')) AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%')) OR (isIPAddressInRange(DestinationIp, '20.184.0.0/13') OR isIPAddressInRange(DestinationIp, '51.103.210.0/23'))))

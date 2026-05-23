@@ -1,0 +1,13 @@
+id: 289dfa9e-e378-4a56-a9d4-7ed5ee218029
+name: Successful MSIX/AppX Package Installation
+level: 3
+size: '>0'
+active: true
+author:
+- Michael Haag, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.002
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE EventID=854

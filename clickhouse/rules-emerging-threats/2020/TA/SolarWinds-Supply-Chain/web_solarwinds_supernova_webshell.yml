@@ -1,0 +1,13 @@
+id: a2cee20b-eacc-459f-861d-c02e5d12f1db
+name: Solarwinds SUPERNOVA Webshell Access
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.persistence
+- attack.t1505.003
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (`cs-uri-query` ILIKE '%logoimagehandler.ashx%' AND `cs-uri-query` ILIKE '%clazz%') OR (`cs-uri-query` ILIKE '%logoimagehandler.ashx%' AND `sc-status`=500)

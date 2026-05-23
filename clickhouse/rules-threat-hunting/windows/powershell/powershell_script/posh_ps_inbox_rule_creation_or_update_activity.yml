@@ -1,0 +1,16 @@
+id: 04580eed-e1d6-426b-a570-f6e64a4577f7
+name: Inbox Rules Creation Or Update Activity Via ExchangePowerShell Cmdlet
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM) (InTheCyber)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.008
+- attack.exfiltration
+- attack.collection
+- attack.t1114.003
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%New-InboxRule%' OR ScriptBlockText ILIKE '%Set-InboxRule%') AND (ScriptBlockText ILIKE '%DeleteMessage%' OR ScriptBlockText ILIKE '%MarkAsRead%' OR ScriptBlockText ILIKE '%MoveToFolder%' OR ScriptBlockText ILIKE '%SubjectOrBodyContainsWords%')

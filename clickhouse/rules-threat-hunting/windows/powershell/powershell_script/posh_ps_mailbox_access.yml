@@ -1,0 +1,13 @@
+id: 4e485d01-e18a-43f6-a46b-ef20496fa9d3
+name: Windows Mail App Mailbox Access Via PowerShell Script
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.008
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%\\Comms\\Unistore\\data%'

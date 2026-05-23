@@ -1,0 +1,13 @@
+id: 349d891d-fef0-4fe4-bc53-eee623a15969
+name: Use Short Name Path in Command Line
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%~1\\%' OR CommandLine ILIKE '%~2\\%') AND (NOT ((ParentImage IN ('C:\\Windows\\System32\\Dism.exe', 'C:\\Windows\\System32\\cleanmgr.exe')) OR (ParentImage ILIKE '%\\winget.exe' OR ParentImage ILIKE '%\\AppData\\Local\\Temp\\WinGet\\%') OR (ParentImage ILIKE 'C:\\Windows\\Microsoft.NET\\Framework64\\v%' AND ParentImage ILIKE '%\\csc.exe') OR ((Image ILIKE '%\\AppData\\%' AND Image ILIKE '%\\Temp\\%') OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%'))) AND (NOT (ParentImage ILIKE 'C:\\Program Files\\GPSoftware\\Directory Opus\\dopus.exe' OR (ParentImage ILIKE '%\\aurora-agent-64.exe' OR ParentImage ILIKE '%\\aurora-agent.exe') OR ParentImage ILIKE '%\\thor\\thor64.exe' OR (CommandLine ILIKE '%C:\\Program Files\\Git\\post-install.bat%' OR CommandLine ILIKE '%C:\\Program Files\\Git\\cmd\\scalar.exe%') OR (ParentImage ILIKE '%\\WebEx\\webexhost.exe' OR CommandLine ILIKE '%\\appdata\\local\\webex\\webex64\\meetings\\wbxreport.exe%') OR ParentImage ILIKE '%\\veeam.backup.shell.exe' OR ParentImage ILIKE '%\\Everything\\Everything.exe'))

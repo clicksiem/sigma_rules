@@ -1,0 +1,14 @@
+id: 7453575c-a747-40b9-839b-125a0aae324b
+name: APT29 2018 Phishing Campaign CommandLine Indicators
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), @41thexplorer
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218.011
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%-noni -ep bypass $%' OR (CommandLine ILIKE '%cyzfc.dat,%' AND CommandLine ILIKE '%PointFunctionCall%')

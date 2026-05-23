@@ -1,0 +1,15 @@
+id: 3b8e5084-4de9-449a-a40d-0e11014f2e2d
+name: Diamond Sleet APT Scheduled Task Creation
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1053.005
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE EventID=4698 AND TaskName ILIKE '\\Windows TeamCity Settings User Interface' AND TaskContent ILIKE '%uTYNkfKxHiZrx3KJ%'

@@ -1,0 +1,13 @@
+id: 7806bb49-f653-48d3-a915-5115c1a85234
+name: Potential APT Mustang Panda Activity Against Australian Gov
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.g0129
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%copy SolidPDFCreator.dll%' AND CommandLine ILIKE '%C:\\Users\\Public\\Libraries\\PhotoTvRHD\\SolidPDFCreator.dll%') OR (CommandLine ILIKE '%reg %' AND CommandLine ILIKE '%\\Windows\\CurrentVersion\\Run%' AND CommandLine ILIKE '%SolidPDF%' AND CommandLine ILIKE '%C:\\Users\\Public\\Libraries\\PhotoTvRHD\\%')

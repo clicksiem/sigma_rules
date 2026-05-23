@@ -1,0 +1,12 @@
+id: 4ad74d01-f48c-42d0-b88c-b31efa4d2262
+name: Import New Module Via PowerShell CommandLine
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%Import-Module %' OR CommandLine ILIKE '%ipmo %')) AND (NOT ((ParentImage ILIKE '%:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal\_%' OR ParentImage ILIKE '%:\\Windows\\System32\\cmd.exe%') AND (CommandLine ILIKE '%:\\Program Files\\Microsoft Visual Studio\\%' AND CommandLine ILIKE '%Tools\\Microsoft.VisualStudio.DevShell.dll%')))

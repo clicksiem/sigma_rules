@@ -1,0 +1,13 @@
+id: 4f394635-13ef-4599-b677-3353e0f84f55
+name: Python Path Configuration File Creation - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io)
+group: macos
+tags:
+- attack.execution
+- attack.t1059.006
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE match(TargetFilename, '(?i)/lib/python3\.([5-9]|[0-9]{2})/site-packages/') AND TargetFilename ILIKE '%.pth'

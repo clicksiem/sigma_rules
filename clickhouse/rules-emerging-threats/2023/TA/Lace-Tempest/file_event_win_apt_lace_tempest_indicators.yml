@@ -1,0 +1,12 @@
+id: e94486ea-2650-4548-bf25-88cbd0bb32d7
+name: Lace Tempest File Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%:\\Program Files\\SysAidServer\\tomcat\\webapps\\usersfiles\\user.exe' OR TargetFilename ILIKE '%:\\Program Files\\SysAidServer\\tomcat\\webapps\\usersfiles.war' OR TargetFilename ILIKE '%:\\Program Files\\SysAidServer\\tomcat\\webapps\\leave') OR TargetFilename ILIKE '%:\\Program Files\\SysAidServer\\tomcat\\webapps\\user.%'

@@ -1,0 +1,14 @@
+id: 20c3f09d-c53d-4e85-8b74-6aa50e2f1b61
+name: Suspicious VBScript UN2452 Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Execute%' AND CommandLine ILIKE '%CreateObject%' AND CommandLine ILIKE '%RegRead%' AND CommandLine ILIKE '%window.close%' AND CommandLine ILIKE '%\\Microsoft\\Windows\\CurrentVersion%') AND (NOT CommandLine ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Run%')

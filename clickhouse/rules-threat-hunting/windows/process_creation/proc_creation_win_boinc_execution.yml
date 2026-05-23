@@ -1,0 +1,14 @@
+id: 0090b851-3543-42db-828c-02fee986ff0b
+name: Potential BOINC Software Execution (UC-Berkeley Signature)
+level: 1
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1553
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Description='University of California, Berkeley'

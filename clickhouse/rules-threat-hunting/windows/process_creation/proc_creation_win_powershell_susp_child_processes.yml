@@ -1,0 +1,13 @@
+id: e4b6d2a7-d8a4-4f19-acbd-943c16d90647
+name: Potentially Suspicious PowerShell Child Processes
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Tim Shelton
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\powershell\_ise.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND (Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\bitsadmin.exe' OR Image ILIKE '%\\certutil.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\forfiles.exe' OR Image ILIKE '%\\hh.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\scrcons.exe' OR Image ILIKE '%\\scriptrunner.exe' OR Image ILIKE '%\\sh.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe')) AND (NOT ((Image ILIKE '%\\certutil.exe' AND CommandLine ILIKE '%-verifystore %') OR (Image ILIKE '%\\wmic.exe' AND (CommandLine ILIKE '%qfe list%' OR CommandLine ILIKE '%diskdrive %' OR CommandLine ILIKE '%csproduct %' OR CommandLine ILIKE '%computersystem %' OR CommandLine ILIKE '% os %' OR CommandLine ILIKE '%')))) AND (NOT (ParentCommandLine ILIKE '%\\Program Files\\Amazon\\WorkspacesConfig\\Scripts\\%' AND CommandLine ILIKE '%\\Program Files\\Amazon\\WorkspacesConfig\\Scripts\\%'))

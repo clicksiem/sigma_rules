@@ -1,0 +1,14 @@
+id: 6dc5d284-69ea-42cf-9311-fb1c3932a69a
+name: Compress-Archive Cmdlet Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.collection
+- attack.t1560
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Compress-Archive%'

@@ -1,0 +1,15 @@
+id: ad856965-f44d-42a8-945e-bbf7bd03d05a
+name: Invocation Of Crypto-Classes From The "Cryptography" PowerShell Namespace
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1027.010
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND CommandLine ILIKE '%System.Security.Cryptography.%' AND (CommandLine ILIKE '%.AesCryptoServiceProvider%' OR CommandLine ILIKE '%.DESCryptoServiceProvider%' OR CommandLine ILIKE '%.DSACryptoServiceProvider%' OR CommandLine ILIKE '%.RC2CryptoServiceProvider%' OR CommandLine ILIKE '%.Rijndael%' OR CommandLine ILIKE '%.RSACryptoServiceProvider%' OR CommandLine ILIKE '%.TripleDESCryptoServiceProvider%')

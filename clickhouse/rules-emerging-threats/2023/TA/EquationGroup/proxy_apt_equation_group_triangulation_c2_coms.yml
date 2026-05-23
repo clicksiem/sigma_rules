@@ -1,0 +1,13 @@
+id: aa03c712-75c6-438b-8d42-de88f2427e09
+name: Potential Operation Triangulation C2 Beaconing Activity - Proxy
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.g0020
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE `cs-host` ILIKE '%addatamarket.net%' OR `cs-host` ILIKE '%ans7tv.net%' OR `cs-host` ILIKE '%anstv.net%' OR `cs-host` ILIKE '%backuprabbit.com%' OR `cs-host` ILIKE '%businessvideonews.com%' OR `cs-host` ILIKE '%cloudsponcer.com%' OR `cs-host` ILIKE '%datamarketplace.net%' OR `cs-host` ILIKE '%growthtransport.com%' OR `cs-host` ILIKE '%mobilegamerstats.com%' OR `cs-host` ILIKE '%snoweeanalytics.com%' OR `cs-host` ILIKE '%tagclick-cdn.com%' OR `cs-host` ILIKE '%topographyupdates.com%' OR `cs-host` ILIKE '%unlimitedteacup.com%' OR `cs-host` ILIKE '%virtuallaughing.com%' OR `cs-host` ILIKE '%web-trackers.com%'

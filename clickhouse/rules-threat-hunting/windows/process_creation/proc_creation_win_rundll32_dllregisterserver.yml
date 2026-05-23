@@ -1,0 +1,13 @@
+id: d81a9fc6-55db-4461-b962-0e78fea5b0ad
+name: Rundll32.EXE Calling DllRegisterServer Export Function Explicitly
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND CommandLine ILIKE '%DllRegisterServer%') AND (NOT (CommandLine ILIKE '%:\\Program Files (x86)%' OR CommandLine ILIKE '%:\\Program Files\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\%' OR CommandLine ILIKE '%:\\Windows\\SysWOW64\\%'))

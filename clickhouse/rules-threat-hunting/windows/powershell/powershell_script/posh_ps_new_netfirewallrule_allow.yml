@@ -1,0 +1,13 @@
+id: 8d31dd2e-b582-48ca-826e-dcaa2c1ca264
+name: New Windows Firewall Rule Added Via New-NetFirewallRule Cmdlet - ScriptBlock
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-NetFirewallRule%-Action%Allow%'

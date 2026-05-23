@@ -1,0 +1,12 @@
+id: 2e7bbd54-2f26-476e-b4a1-ba5f1a012614
+name: Peach Sandstorm APT Process Activity Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%QP''s*(58vaP!tF4%'

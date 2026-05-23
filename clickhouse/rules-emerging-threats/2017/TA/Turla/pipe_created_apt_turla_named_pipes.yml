@@ -1,0 +1,14 @@
+id: 739915e4-1e70-4778-8b8a-17db02f66db1
+name: Turla Group Named Pipes
+level: 10
+size: '>0'
+active: true
+author:
+- Markus Neis
+group: windows
+tags:
+- attack.g0010
+- attack.execution
+- attack.t1106
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE PipeName IN ('\\atctl', '\\comnap', '\\iehelper', '\\sdlrpc', '\\userpipe')

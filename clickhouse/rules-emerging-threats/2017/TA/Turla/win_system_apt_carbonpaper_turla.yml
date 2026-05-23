@@ -1,0 +1,15 @@
+id: 1df8b3da-b0ac-4d8a-b7c7-6cb7c24160e4
+name: Turla Service Install
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.g0010
+- attack.t1543.003
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND (ServiceName IN ('srservice', 'ipvpn', 'hkmsvc'))

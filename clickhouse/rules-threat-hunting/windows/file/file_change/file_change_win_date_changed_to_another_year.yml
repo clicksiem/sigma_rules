@@ -1,0 +1,13 @@
+id: 558eebe5-f2ba-4104-b339-36f7902bcc1a
+name: File Creation Date Changed to Another Year
+level: 3
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.006
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE PreviousCreationUtcTime ILIKE '202%' AND (NOT (CreationUtcTime ILIKE '202%' OR ((TargetFilename ILIKE 'C:\\Program Files\\%' OR TargetFilename ILIKE 'C:\\Program Files (x86)\\%') OR (Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%')))) AND (NOT (((Image IN ('C:\\Windows\\system32\\ProvTool.exe', 'C:\\Windows\\System32\\usocoreworker.exe', 'C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe')) OR TargetFilename ILIKE 'C:\\ProgramData\\USOPrivate\\UpdateStore\\%' OR (TargetFilename ILIKE '%.tmp' OR TargetFilename ILIKE '%.temp')) OR (Image ILIKE 'C:\\WINDOWS\\System32\\%' AND (Image ILIKE '%\\TiWorker.exe' OR Image ILIKE '%\\svchost.exe' OR Image ILIKE '%\\sihclient.exe') AND TargetFilename ILIKE '%.cab') OR Image ILIKE 'C:\\Windows\\system32\\msiexec.exe' OR (Image ILIKE 'C:\\Windows\\Temp\\%' AND Image ILIKE '%\\VCREDI~1.EXE')))

@@ -1,0 +1,12 @@
+id: 00a8e92a-776b-425f-80f2-82d8f8fab2e5
+name: Okta 2023 Breach Indicator Of Compromise
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: okta
+tags:
+- attack.credential-access
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (eventType IN ('user.lifecycle.create', 'user.lifecycle.activate')) AND `target.displayName` ILIKE '%svc\_network\_backup%'

@@ -1,0 +1,16 @@
+id: c75309a3-59f8-4a8d-9c2c-4c927ad50555
+name: Tunneling Tool Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.command-and-control
+- attack.t1041
+- attack.t1572
+- attack.t1071.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\httptunnel.exe' OR Image ILIKE '%\\plink.exe' OR Image ILIKE '%\\socat.exe' OR Image ILIKE '%\\stunnel.exe'

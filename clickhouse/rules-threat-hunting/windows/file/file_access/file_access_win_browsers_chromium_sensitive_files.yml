@@ -1,0 +1,13 @@
+id: c5f37810-a85f-4186-81e9-33f23abb4141
+name: Access To Chromium Browsers Sensitive Files By Uncommon Applications
+level: 3
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.t1003
+- attack.credential-access
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (FileName ILIKE '%\\User Data\\Default\\Cookies%' OR FileName ILIKE '%\\User Data\\Default\\History%' OR FileName ILIKE '%\\User Data\\Default\\Network\\Cookies%' OR FileName ILIKE '%\\User Data\\Default\\Web Data%') AND (NOT (Image='System' OR (Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Windows\\system32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%'))) AND (NOT (Image ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\%' AND (Image ILIKE '%\\MpCopyAccelerator.exe' OR Image ILIKE '%\\MsMpEng.exe')))

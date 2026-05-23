@@ -1,0 +1,12 @@
+id: aa5b0a40-ed88-46aa-9fdc-0337b379ca9d
+name: Lace Tempest Cobalt Strike Download
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%-nop -w hidden -c IEX ((new-object net.webclient).downloadstring(%' AND CommandLine ILIKE '%/a'')%'

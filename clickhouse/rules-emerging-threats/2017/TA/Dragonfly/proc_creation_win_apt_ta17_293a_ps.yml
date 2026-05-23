@@ -1,0 +1,15 @@
+id: 18da1007-3f26-470f-875d-f77faf1cab31
+name: Ps.exe Renamed SysInternals Tool
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.g0035
+- attack.t1036.003
+- car.2013-05-009
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%ps.exe -accepteula%' AND CommandLine ILIKE '%-s cmd /c netstat%'

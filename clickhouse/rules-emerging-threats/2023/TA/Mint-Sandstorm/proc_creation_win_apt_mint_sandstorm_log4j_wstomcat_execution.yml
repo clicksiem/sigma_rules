@@ -1,0 +1,12 @@
+id: 7c97c625-0350-4f0a-8943-f6cadc88125e
+name: Mint Sandstorm - Log4J Wstomcat Process Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), MSTIC (idea)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\ws\_tomcatservice.exe' AND (NOT Image ILIKE '%\\repadmin.exe')

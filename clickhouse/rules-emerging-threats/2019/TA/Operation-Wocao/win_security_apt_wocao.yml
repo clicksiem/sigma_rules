@@ -1,0 +1,21 @@
+id: 74ad4314-482e-4c3e-b237-3f7ed3b9ca8d
+name: Operation Wocao Activity - Security
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.discovery
+- attack.stealth
+- attack.t1012
+- attack.t1036.004
+- attack.t1027
+- attack.execution
+- attack.t1053.005
+- attack.t1059.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE EventID=4799 AND TargetUserName ILIKE 'Administr%' AND CallerProcessName ILIKE '%\\checkadmin.exe'

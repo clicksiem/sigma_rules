@@ -1,0 +1,13 @@
+id: 27a72a60-7e5e-47b1-9d17-909c9abafdcd
+name: Potentially Suspicious Compression Tool Parameters
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Samir Bousseaden
+group: windows
+tags:
+- attack.collection
+- attack.t1560.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((OriginalFileName ILIKE '7z%.exe' OR OriginalFileName ILIKE '%rar.exe' OR OriginalFileName ILIKE '%Command%Line%RAR%') AND (CommandLine ILIKE '% -p%' OR CommandLine ILIKE '% -ta%' OR CommandLine ILIKE '% -tb%' OR CommandLine ILIKE '% -sdel%' OR CommandLine ILIKE '% -dw%' OR CommandLine ILIKE '% -hp%')) AND (NOT (ParentImage ILIKE '%:\\Program Files\\%' OR ParentImage ILIKE '%:\\Program Files (x86)\\%'))

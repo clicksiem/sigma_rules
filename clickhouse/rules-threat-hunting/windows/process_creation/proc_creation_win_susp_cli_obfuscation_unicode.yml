@@ -1,0 +1,13 @@
+id: e0552b19-5a83-4222-b141-b36184bb8d79
+name: Potential CommandLine Obfuscation Using Unicode Characters
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%ˣ%' OR CommandLine ILIKE '%˪%' OR CommandLine ILIKE '%ˢ%' OR CommandLine ILIKE '%∕%' OR CommandLine ILIKE '%⁄%' OR CommandLine ILIKE '%―%' OR CommandLine ILIKE '%—%' OR CommandLine ILIKE '% %' OR CommandLine ILIKE '%¯%' OR CommandLine ILIKE '%®%' OR CommandLine ILIKE '%¶%'

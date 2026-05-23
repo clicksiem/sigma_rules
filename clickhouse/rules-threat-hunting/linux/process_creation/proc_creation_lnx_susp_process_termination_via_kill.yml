@@ -1,0 +1,13 @@
+id: 64c41342-6b27-523b-5d3f-c265f3efcdb3
+name: Terminate Linux Process Via Kill
+level: 5
+size: '>0'
+active: true
+author:
+- Tuan Le (NCSGroup)
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%/kill' OR Image ILIKE '%/killall' OR Image ILIKE '%/pkill' OR Image ILIKE '%/xkill'

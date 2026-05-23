@@ -1,0 +1,13 @@
+id: e79a9e79-eb72-4e78-a628-0e7e8f59e89c
+name: DLL Call by Ordinal Via Rundll32.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+- detection.threat-hunting
+rule: 'SELECT * FROM logs WHERE ((Image ILIKE ''%\\rundll32.exe'' OR OriginalFileName=''RUNDLL32.EXE'') AND (CommandLine ILIKE ''%,#%'' OR CommandLine ILIKE ''%, #%'' OR CommandLine ILIKE ''%.dll #%'' OR CommandLine ILIKE ''%.ocx #%'')) AND (NOT ((CommandLine ILIKE ''%EDGEHTML.dll%'' AND CommandLine ILIKE ''%#141%'') OR ((ParentImage ILIKE ''%\\Msbuild\\Current\\Bin\\%'' OR ParentImage ILIKE ''%\\VC\\Tools\\MSVC\\%'' OR ParentImage ILIKE ''%\\Tracker.exe%'') AND (CommandLine ILIKE ''%\\FileTracker32.dll,#1%'' OR CommandLine ILIKE ''%\\FileTracker32.dll",#1%'' OR CommandLine ILIKE ''%\\FileTracker64.dll,#1%'' OR CommandLine ILIKE ''%\\FileTracker64.dll",#1%''))))'

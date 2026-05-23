@@ -1,0 +1,12 @@
+id: 3a525307-d100-48ae-b3b9-0964699d7f97
+name: DMP/HDMP File Creation
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- detection.threat-hunting
+- attack.stealth
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.dmp' OR TargetFilename ILIKE '%.dump' OR TargetFilename ILIKE '%.hdmp'

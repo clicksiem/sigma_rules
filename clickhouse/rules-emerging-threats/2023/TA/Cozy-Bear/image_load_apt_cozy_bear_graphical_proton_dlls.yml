@@ -1,0 +1,16 @@
+id: e64c8ef3-9f98-40c8-b71e-96110991cb4c
+name: DLL Names Used By SVR For GraphicalProton Backdoor
+level: 5
+size: '>0'
+active: true
+author:
+- CISA
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\AclNumsInvertHost.dll' OR ImageLoaded ILIKE '%\\AddressResourcesSpec.dll' OR ImageLoaded ILIKE '%\\BlendMonitorStringBuild.dll' OR ImageLoaded ILIKE '%\\ChildPaletteConnected.dll' OR ImageLoaded ILIKE '%\\DeregisterSeekUsers.dll' OR ImageLoaded ILIKE '%\\HandleFrequencyAll.dll' OR ImageLoaded ILIKE '%\\HardSwapColor.dll' OR ImageLoaded ILIKE '%\\LengthInMemoryActivate.dll' OR ImageLoaded ILIKE '%\\ModeBitmapNumericAnimate.dll' OR ImageLoaded ILIKE '%\\ModeFolderSignMove.dll' OR ImageLoaded ILIKE '%\\ParametersNamesPopup.dll' OR ImageLoaded ILIKE '%\\PerformanceCaptionApi.dll' OR ImageLoaded ILIKE '%\\ScrollbarHandleGet.dll' OR ImageLoaded ILIKE '%\\UnregisterAncestorAppendAuto.dll' OR ImageLoaded ILIKE '%\\WowIcmpRemoveReg.dll'

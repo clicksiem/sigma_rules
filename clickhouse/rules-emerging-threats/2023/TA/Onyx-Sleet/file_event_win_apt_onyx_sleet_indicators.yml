@@ -1,0 +1,12 @@
+id: 2fef4fd9-7206-40d1-b4f5-ad6441d0cd9b
+name: Onyx Sleet APT File Creation Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\Windows\\ADFS\\bg\\inetmgr.exe'

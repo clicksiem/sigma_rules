@@ -1,0 +1,12 @@
+id: 4d16c9a6-4362-4863-9940-1dee35f1d70f
+name: DPRK Threat Actor - C2 Communication DNS Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE QueryName IN ('connection.lockscreen.kro.kr', 'updating.dothome.co.kr')

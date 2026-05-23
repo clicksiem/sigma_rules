@@ -1,0 +1,14 @@
+id: 5cdeb555-65de-4767-99fe-e26807465148
+name: Forest Blizzard APT - Custom Protocol Handler Creation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\PROTOCOLS\\Handler\\rogue\\CLSID%' AND Details='{026CC6D7-34B2-33D5-B551-CA31EB6CE345}'

@@ -1,0 +1,14 @@
+id: a0bed973-45fa-4625-adb5-6ecdf9be70ac
+name: Microsoft Office Trusted Location Updated
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%Security\\Trusted Locations\\Location%' AND TargetObject ILIKE '%\\Path') AND (NOT ((Image ILIKE '%:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\%' AND Image ILIKE '%\\OfficeClickToRun.exe') OR (Image ILIKE '%:\\Program Files\\Microsoft Office\\%' OR Image ILIKE '%:\\Program Files (x86)\\Microsoft Office\\%')))

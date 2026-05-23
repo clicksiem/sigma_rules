@@ -1,0 +1,12 @@
+id: d1a401ab-8c47-4e86-a7d8-2460b6a53e4a
+name: Remote Access Tool - ScreenConnect Remote Command Execution - Hunting
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\ScreenConnect.ClientService.exe'

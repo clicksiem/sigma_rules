@@ -1,0 +1,13 @@
+id: 76a26006-0942-430b-8249-bd51d448f8e5
+name: Unattend.XML File Access Attempt
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE FileName ILIKE '%\\Panther\\unattend.xml'

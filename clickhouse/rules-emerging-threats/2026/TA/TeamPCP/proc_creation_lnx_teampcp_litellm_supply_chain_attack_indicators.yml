@@ -1,0 +1,18 @@
+id: 36603778-030c-43c4-8cbb-cd3c1d1a80c7
+name: LiteLLM / TeamPCP Supply Chain Attack Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: linux
+tags:
+- attack.initial-access
+- attack.t1195.002
+- attack.collection
+- attack.t1560.001
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.002
+- detection.emerging-threats
+rule: 'SELECT * FROM logs WHERE (Image ILIKE ''%/python3%'' AND (CommandLine ILIKE ''%exec(base64.b64decode(''''aW1wb3J0%'' AND CommandLine ILIKE ''%kI2NF9TQ1JJUFQgPSAiYV%'')) OR (Image ILIKE ''%/tar'' AND (CommandLine ILIKE ''%tpcp.tar.gz%'' AND CommandLine ILIKE ''%payload.enc%'' AND CommandLine ILIKE ''%session.key.enc%'')) OR (Image ILIKE ''%/curl'' AND (CommandLine ILIKE ''%models.litellm.cloud%'' AND CommandLine ILIKE ''%X-Filename: tpcp.tar.gz%'')) OR (ParentImage ILIKE ''%/python3%'' AND (CommandLine ILIKE ''%systemctl%'' AND CommandLine ILIKE ''%--user%'' AND CommandLine ILIKE ''%sysmon%''))'

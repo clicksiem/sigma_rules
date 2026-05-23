@@ -1,0 +1,15 @@
+id: 3b92a1d0-8d4b-4d28-a1b4-1e29d49a6a3e
+name: Task Scheduler DLL Loaded By Application Located In Potentially Suspicious Location
+level: 3
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.privilege-escalation
+- attack.t1053.005
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\taskschd.dll' OR OriginalFileName='taskschd.dll') AND (Image ILIKE '%:\\Temp\\%' OR Image ILIKE '%:\\Users\\Public\\%' OR Image ILIKE '%:\\Windows\\Temp\\%' OR Image ILIKE '%\\AppData\\Local\\Temp\\%' OR Image ILIKE '%\\Desktop\\%' OR Image ILIKE '%\\Downloads\\%')

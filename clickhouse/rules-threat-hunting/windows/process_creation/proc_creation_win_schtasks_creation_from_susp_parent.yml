@@ -1,0 +1,15 @@
+id: 9494479d-d994-40bf-a8b1-eea890237021
+name: Scheduled Task Creation From Potential Suspicious Parent Location
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1053.005
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%:\\Temp\\%' OR ParentImage ILIKE '%\\AppData\\Local\\%' OR ParentImage ILIKE '%\\AppData\\Roaming\\%' OR ParentImage ILIKE '%\\Temporary Internet%' OR ParentImage ILIKE '%\\Users\\Public\\%' OR ParentImage ILIKE '%\\Windows\\Temp\\%') AND Image ILIKE '%\\schtasks.exe' AND CommandLine ILIKE '%/Create %') AND (NOT (CommandLine ILIKE '%update\_task.xml%' OR CommandLine ILIKE '%unattended.ini%'))

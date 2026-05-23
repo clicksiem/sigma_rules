@@ -1,0 +1,13 @@
+id: c2b478fc-09bf-40b2-8768-ab3ec8d61c9a
+name: New Self Extracting Package Created Via IExpress.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\iexpress.exe' AND (Image ILIKE '%\\makecab.exe' OR OriginalFileName='makecab.exe')) OR ((Image ILIKE '%\\iexpress.exe' OR OriginalFileName='IEXPRESS.exe') AND CommandLine ILIKE '% /n %')

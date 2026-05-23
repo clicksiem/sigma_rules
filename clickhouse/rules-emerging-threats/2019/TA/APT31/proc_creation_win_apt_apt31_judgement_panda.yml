@@ -1,0 +1,17 @@
+id: 03e2746e-2b31-42f1-ab7a-eb39365b2422
+name: APT31 Judgement Panda Activity
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.lateral-movement
+- attack.credential-access
+- attack.g0128
+- attack.t1003.001
+- attack.t1560.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%ldifde%' AND CommandLine ILIKE '%-f -n%' AND CommandLine ILIKE '%eprod.ldf%') OR ((CommandLine ILIKE '%copy \\\\%' AND CommandLine ILIKE '%c$%') AND (CommandLine ILIKE '%\\aaaa\\procdump64.exe%' OR CommandLine ILIKE '%\\aaaa\\netsess.exe%' OR CommandLine ILIKE '%\\aaaa\\7za.exe%' OR CommandLine ILIKE '%\\c$\\aaaa\\%'))

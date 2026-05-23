@@ -1,0 +1,13 @@
+id: 9bdaf1e9-fdef-443b-8081-4341b74a7e28
+name: Suspicious New Instance Of An Office COM Object
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.threat-hunting
+- attack.stealth
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\svchost.exe' AND (Image ILIKE '%\\eqnedt32.exe' OR Image ILIKE '%\\excel.exe' OR Image ILIKE '%\\msaccess.exe' OR Image ILIKE '%\\mspub.exe' OR Image ILIKE '%\\powerpnt.exe' OR Image ILIKE '%\\visio.exe' OR Image ILIKE '%\\winword.exe')

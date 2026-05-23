@@ -1,0 +1,13 @@
+id: e3652ba3-0ad8-4010-a957-b7ba369e7bac
+name: Python Path Configuration File Creation - Windows
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.006
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (match(TargetFilename, '(?i)\\(venv|python(.+)?)\\lib\\site-packages\\') AND TargetFilename ILIKE '%.pth') AND (NOT (Image ILIKE '%\\python.exe' AND (TargetFilename ILIKE '%\\pywin32.pth' OR TargetFilename ILIKE '%\\distutils-precedence.pth')))

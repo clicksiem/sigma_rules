@@ -1,0 +1,14 @@
+id: b7155193-8a81-4d8f-805d-88de864ca50c
+name: UNC2452 PowerShell Pattern
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.t1047
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Invoke-WMIMethod win32\_process -name create -argumentlist%' AND CommandLine ILIKE '%rundll32 c:\\windows%') OR (CommandLine ILIKE '%wmic /node:%' AND CommandLine ILIKE '%process call create "rundll32 c:\\windows%')

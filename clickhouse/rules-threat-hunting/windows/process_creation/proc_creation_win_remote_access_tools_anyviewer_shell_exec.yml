@@ -1,0 +1,13 @@
+id: bc533330-fc29-44c0-b245-7dc6e5939c87
+name: Remote Access Tool - Cmd.EXE Execution via AnyViewer
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\AVCore.exe' AND ParentCommandLine ILIKE '%AVCore.exe" -d%' AND Image ILIKE '%\\cmd.exe'

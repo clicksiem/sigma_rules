@@ -1,0 +1,17 @@
+id: 24007168-a26b-4049-90d0-ce138e13a5cf
+name: Lazarus APT DLL Sideloading Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Thurein Oo, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+- attack.g0032
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (Image ILIKE 'C:\\ProgramShared\\PresentationHost.exe' AND ImageLoaded ILIKE ':\\ProgramShared\\mscoree.dll') OR (Image ILIKE 'C:\\ProgramData\\Adobe\\colorcpl.exe' AND ImageLoaded ILIKE 'C:\\ProgramData\\Adobe\\colorui.dll') OR (Image ILIKE 'C:\\ProgramData\\Oracle\\Java\\fixmapi.exe' AND ImageLoaded ILIKE 'C:\\ProgramData\\Oracle\\Java\\mapistub.dll') OR (Image ILIKE 'C:\\ProgramData\\Adobe\\ARM\\tabcal.exe' AND ImageLoaded ILIKE 'C:\\ProgramData\\Adobe\\ARM\\HID.dll')

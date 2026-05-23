@@ -1,0 +1,13 @@
+id: bd70d3f8-e60e-4d25-89f0-0b5a9cff20e0
+name: Potential APT-C-12 BlueMushroom DLL Load Activity Via Regsvr32
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Tim Shelton, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%regsvr32%' AND CommandLine ILIKE '%\\AppData\\Local\\%' AND CommandLine ILIKE '%.dll%' AND CommandLine ILIKE '%,DllEntry%'

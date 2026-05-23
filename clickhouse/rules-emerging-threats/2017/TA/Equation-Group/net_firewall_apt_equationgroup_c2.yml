@@ -1,0 +1,15 @@
+id: 881834a4-6659-4773-821e-1c151789d873
+name: Equation Group C2 Communication
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.exfiltration
+- attack.command-and-control
+- attack.g0020
+- attack.t1041
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (dst_ip IN ('69.42.98.86', '89.185.234.145')) OR (src_ip IN ('69.42.98.86', '89.185.234.145'))

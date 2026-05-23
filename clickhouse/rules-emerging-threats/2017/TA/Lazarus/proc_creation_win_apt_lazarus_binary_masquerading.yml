@@ -1,0 +1,13 @@
+id: 3f7f5b0b-5b16-476c-a85f-ab477f6dd24b
+name: Lazarus System Binary Masquerading
+level: 8
+size: '>0'
+active: true
+author:
+- Trent Liffick (@tliffick), Bartlomiej Czyz (@bczyz1)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.005
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\msdtc.exe' OR Image ILIKE '%\\gpsvc.exe') AND (NOT (Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%'))

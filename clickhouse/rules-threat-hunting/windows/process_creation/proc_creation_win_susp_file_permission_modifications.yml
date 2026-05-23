@@ -1,0 +1,13 @@
+id: 37ae075c-271b-459b-8d7b-55ad5f993dd8
+name: File or Folder Permissions Modifications
+level: 5
+size: '>0'
+active: true
+author:
+- Jakob Weinzettl, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1222.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\cacls.exe' OR Image ILIKE '%\\icacls.exe' OR Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') AND (CommandLine ILIKE '%/grant%' OR CommandLine ILIKE '%/setowner%' OR CommandLine ILIKE '%/inheritance:r%')) OR (Image ILIKE '%\\attrib.exe' AND CommandLine ILIKE '%-r%') OR Image ILIKE '%\\takeown.exe') AND (NOT (CommandLine ILIKE '%ICACLS C:\\ProgramData\\dynatrace\\gateway\\config\\connectivity.history /reset' OR (CommandLine ILIKE '%ICACLS C:\\ProgramData\\dynatrace\\gateway\\config\\config.properties /grant :r %' AND CommandLine ILIKE '%S-1-5-19:F%') OR (CommandLine ILIKE '%\\AppData\\Local\\Programs\\Microsoft VS Code%' OR CommandLine ILIKE '%:\\Program Files\\Microsoft VS Code%') OR (CommandLine ILIKE '%:\\Program Files (x86)\\Avira%' OR CommandLine ILIKE '%:\\Program Files\\Avira%')))

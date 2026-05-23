@@ -1,0 +1,13 @@
+id: acf2807c-805b-4042-aab9-f86b6ba9cb2b
+name: Dynamic .NET Compilation Via Csc.EXE - Hunting
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.004
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\csc.exe' AND CommandLine ILIKE '%/noconfig /fullpaths @%'

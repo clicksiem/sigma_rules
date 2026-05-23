@@ -1,0 +1,13 @@
+id: ec7c4e9b-9bc9-47c7-a32f-b53b598da642
+name: Forest Blizzard APT - JavaScript Constrained File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\DriverStore\\FileRepository\\%' AND TargetFilename ILIKE '%\\.js'

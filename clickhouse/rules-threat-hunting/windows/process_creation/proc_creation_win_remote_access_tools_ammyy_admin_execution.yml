@@ -1,0 +1,13 @@
+id: 7da7809e-f3d5-47a3-9d5d-fc9d019caf14
+name: Remote Access Tool - Ammy Admin Agent Execution
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\rundll32.exe' AND CommandLine ILIKE '%AMMYY\\aa\_nts.dll",run%'

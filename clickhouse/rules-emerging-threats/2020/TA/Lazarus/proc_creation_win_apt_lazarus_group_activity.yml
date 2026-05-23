@@ -1,0 +1,14 @@
+id: 24c4d154-05a4-4b99-b57d-9b977472443a
+name: Lazarus Group Activity
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), wagga
+group: windows
+tags:
+- attack.g0032
+- attack.execution
+- attack.t1059
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%reg.exe save hklm\\sam \%temp\%\\~reg\_sam.save%' OR CommandLine ILIKE '%1q2w3e4r@#$@#$@#$%' OR CommandLine ILIKE '% -hp1q2w3e4 %' OR CommandLine ILIKE '%.dat data03 10000 -p %') OR (CommandLine ILIKE '%netstat -aon | find %' AND CommandLine ILIKE '%ESTA%' AND CommandLine ILIKE '% > \%temp\%\\~%') OR (CommandLine ILIKE '%.255 10 C:\\ProgramData\\IBM\\%' AND CommandLine ILIKE '%.DAT%') OR ((CommandLine ILIKE '% /c %' AND CommandLine ILIKE '% -p 0x%') AND (CommandLine ILIKE '%C:\\ProgramData\\%' OR CommandLine ILIKE '%C:\\RECYCLER\\%')) OR ((CommandLine ILIKE '%rundll32 %' AND CommandLine ILIKE '%C:\\ProgramData\\%') AND (CommandLine ILIKE '%.bin,%' OR CommandLine ILIKE '%.tmp,%' OR CommandLine ILIKE '%.dat,%' OR CommandLine ILIKE '%.io,%' OR CommandLine ILIKE '%.ini,%' OR CommandLine ILIKE '%.db,%'))

@@ -1,0 +1,16 @@
+id: 4f86b304-3e02-40e3-aa5d-e88a167c9617
+name: Scheduled Task Deletion
+level: 3
+size: '>0'
+active: true
+author:
+- David Strassegger, Tim Shelton
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.persistence
+- car.2013-08-001
+- attack.t1053.005
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE EventID=4699 AND (NOT (TaskName ILIKE '\\Microsoft\\Windows\\RemovalTools\\MRT\_ERROR\_HB' OR TaskName ILIKE '%\\Mozilla\\Firefox Default Browser Agent %'))

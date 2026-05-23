@@ -1,0 +1,14 @@
+id: 70d43542-cd2d-483c-8f30-f16b436fd7db
+name: Leviathan Registry Key Activity
+level: 10
+size: '>0'
+active: true
+author:
+- Aidan Bracher
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\ntkd%'

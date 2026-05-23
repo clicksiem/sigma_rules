@@ -1,0 +1,13 @@
+id: 90b63c33-2b97-4631-a011-ceb0f47b77c3
+name: Potential Suspicious Execution From GUID Like Folder Names
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%') AND (CommandLine ILIKE '%\\{%' AND CommandLine ILIKE '%}\\%')) AND (NOT ((Image ILIKE '%\\{%' AND Image ILIKE '%}\\%') OR isNull(Image) OR Image ILIKE 'C:\\Windows\\System32\\drvinst.exe' OR (Image IN ('C:\\Windows\\System32\\msiexec.exe', 'C:\\Windows\\SysWOW64\\msiexec.exe'))))

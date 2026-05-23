@@ -1,0 +1,15 @@
+id: 1228f8e2-7e79-4dea-b0ad-c91f1d5016c1
+name: Turla PNG Dropper Service
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.g0010
+- attack.t1543.003
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND ServiceName='WerFaultSvc'

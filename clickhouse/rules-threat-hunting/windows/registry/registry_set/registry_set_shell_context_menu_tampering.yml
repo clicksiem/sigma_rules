@@ -1,0 +1,12 @@
+id: 868df2d1-0939-4562-83a7-27408c4a1ada
+name: Shell Context Menu Command Tampering
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Classes\\%' AND TargetObject ILIKE '%\\shell\\%' AND TargetObject ILIKE '%\\command\\%'

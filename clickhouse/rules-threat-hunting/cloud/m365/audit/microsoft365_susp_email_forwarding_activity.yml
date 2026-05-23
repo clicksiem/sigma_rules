@@ -1,0 +1,17 @@
+id: c726e007-2cd0-4a55-abfb-79730fbedee5
+name: Mail Forwarding/Redirecting Activity In O365
+level: 5
+size: '>0'
+active: true
+author:
+- RedCanary Team (idea), Harjot Singh @cyb3rjy0t
+group: m365
+tags:
+- attack.collection
+- attack.stealth
+- attack.t1114.003
+- attack.t1564.008
+- attack.exfiltration
+- attack.t1020
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Operation ILIKE '%UpdateInboxRules%' AND (OperationProperties ILIKE '%Forward%' OR OperationProperties ILIKE '%Recipients%')) OR (Operation ILIKE '%Set-Mailbox%' AND (Parameters ILIKE '%ForwardingSmtpAddress%' OR Parameters ILIKE '%ForwardingAddress%')) OR ((Operation ILIKE '%New-InboxRule%' OR Operation ILIKE '%Set-InboxRule%') AND (Parameters ILIKE '%ForwardAsAttachmentTo%' OR Parameters ILIKE '%ForwardingAddress%' OR Parameters ILIKE '%ForwardingSmtpAddress%' OR Parameters ILIKE '%ForwardTo%' OR Parameters ILIKE '%RedirectTo%' OR Parameters ILIKE '%RedirectToRecipients%'))

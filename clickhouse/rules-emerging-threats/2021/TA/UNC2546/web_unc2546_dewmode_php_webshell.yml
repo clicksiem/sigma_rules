@@ -1,0 +1,13 @@
+id: fdf96c90-42d5-4406-8a9c-14a2c9a016b5
+name: DEWMODE Webshell Access
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.persistence
+- attack.t1505.003
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (`cs-uri-query` ILIKE '%_dwn=%' AND `cs-uri-query` ILIKE '%&fn=%' AND `cs-uri-query` ILIKE '%.html_%') OR (`cs-uri-query` ILIKE '%&dwn=%' AND `cs-uri-query` ILIKE '%_fn=%' AND `cs-uri-query` ILIKE '%.html_%')

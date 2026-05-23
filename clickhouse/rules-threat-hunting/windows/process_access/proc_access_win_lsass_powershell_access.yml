@@ -1,0 +1,13 @@
+id: 0f920ebe-7aea-4c54-b202-9aa0c609cfe5
+name: Potential Credential Dumping Attempt Via PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (SourceImage ILIKE '%\\powershell.exe' OR SourceImage ILIKE '%\\pwsh.exe') AND TargetImage ILIKE '%\\lsass.exe'

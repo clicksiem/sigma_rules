@@ -1,0 +1,13 @@
+id: 07db928c-8632-488e-ac7d-3db847489175
+name: Forest Blizzard APT - Process Creation Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Hashes ILIKE '%SHA256=6b311c0a977d21e772ac4e99762234da852bbf84293386fbe78622a96c0b052f%' OR Hashes ILIKE '%SHA256=c60ead92cd376b689d1b4450f2578b36ea0bf64f3963cfa5546279fa4424c2a5%') OR (Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '%Create%' AND CommandLine ILIKE '%/RU%' AND CommandLine ILIKE '%SYSTEM%' AND CommandLine ILIKE '%\\Microsoft\\Windows\\WinSrv%') AND (CommandLine ILIKE '%servtask.bat%' OR CommandLine ILIKE '%execute.bat%' OR CommandLine ILIKE '%doit.bat%')) OR (Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '%Delete%' AND CommandLine ILIKE '%/F %' AND CommandLine ILIKE '%\\Microsoft\\Windows\\WinSrv%')) OR (CommandLine ILIKE '%Get-ChildItem%' AND CommandLine ILIKE '%.save%' AND CommandLine ILIKE '%Compress-Archive -DestinationPath C:\\ProgramData\\%')

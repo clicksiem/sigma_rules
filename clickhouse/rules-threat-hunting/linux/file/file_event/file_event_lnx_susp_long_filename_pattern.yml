@@ -1,0 +1,15 @@
+id: 11629c4d-0fe6-465b-be62-b39a1c442aad
+name: Potentially Suspicious Long Filename Pattern - Linux
+level: 3
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: linux
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.004
+- attack.t1027
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE match(TargetFilename, '[^/]{100,}$') AND (NOT (TargetFilename ILIKE '/run/systemd/units/invocation:systemd-fsck@%' OR TargetFilename ILIKE '/sys/firmware/%' OR TargetFilename ILIKE '/var/log/journal/%'))

@@ -1,0 +1,14 @@
+id: 4e19528a-f081-40dd-be09-90c39352bd64
+name: Potential POWERTRASH Script Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.g0046
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%IO.Compression.DeflateStream%' AND ScriptBlockText ILIKE '%IO.MemoryStream%' AND ScriptBlockText ILIKE '%::FromBase64String%' AND ScriptBlockText ILIKE '%GetDelegateForFunctionPointer%' AND ScriptBlockText ILIKE '%.Invoke()%' AND ScriptBlockText ILIKE '%GlobalAssemblyCache%'

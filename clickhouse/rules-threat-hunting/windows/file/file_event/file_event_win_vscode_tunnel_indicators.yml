@@ -1,0 +1,12 @@
+id: 9661ec9d-4439-4a7a-abed-d9be4ca43b6d
+name: VsCode Code Tunnel Execution File Indicator
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\code\_tunnel.json'

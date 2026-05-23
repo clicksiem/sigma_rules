@@ -1,0 +1,14 @@
+id: cf5ee356-65c4-4556-8d11-6977fcdfed4b
+name: Low Reputation Effective Top-Level Domain (eTLD)
+level: 5
+size: '>0'
+active: true
+author:
+- Norbert Jaśniewicz (AlphaSOC)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.004
+- attack.initial-access
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE query ILIKE '%.duckdns.org' OR query ILIKE '%.top' OR query ILIKE '%.ddns.net' OR query ILIKE '%.gl.at.ply.gg' OR query ILIKE '%.portmap.io' OR query ILIKE '%.icu' OR query ILIKE '%.zapto.org' OR query ILIKE '%.live' OR query ILIKE '%.hopto.org' OR query ILIKE '%.portmap.host' OR query ILIKE '%.sbs' OR query ILIKE '%.sytes.net' OR query ILIKE '%.click' OR query ILIKE '%.ydns.eu' OR query ILIKE '%.site' OR query ILIKE '%.cloud' OR query ILIKE '%.no-ip.org' OR query ILIKE '%.kozow.com' OR query ILIKE '%.lat' OR query ILIKE '%.pro'

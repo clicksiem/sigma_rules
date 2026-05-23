@@ -1,0 +1,13 @@
+id: 95724fc1-a258-4674-97db-a30351981c5a
+name: Manual Execution of Script Inside of a Compressed File
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\7z%.exe' AND CommandLine ILIKE '%\\AppData\\local\\temp\\7z%\\%') OR (ParentImage ILIKE '%\\winrar.exe' AND CommandLine ILIKE '%\\AppData\\local\\temp\\rar%\\%') OR (ParentImage ILIKE '%\\explorer.exe' AND (CommandLine ILIKE '%\\AppData\\local\\temp*.rar\\%' OR CommandLine ILIKE '%\\AppData\\local\\temp*.zip\\%'))) AND ((Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe') AND (CommandLine ILIKE '%.hta' OR CommandLine ILIKE '%.js' OR CommandLine ILIKE '%.jse' OR CommandLine ILIKE '%.ps1' OR CommandLine ILIKE '%.vbe' OR CommandLine ILIKE '%.vbs' OR CommandLine ILIKE '%.wsf' OR CommandLine ILIKE '%.wsh'))

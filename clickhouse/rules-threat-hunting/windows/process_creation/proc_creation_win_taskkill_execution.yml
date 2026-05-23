@@ -1,0 +1,13 @@
+id: 86085955-ea48-42a2-9dd3-85d4c36b167d
+name: Process Terminated Via Taskkill
+level: 3
+size: '>0'
+active: true
+author:
+- frack113, MalGamy (Nextron Systems), Nasreddine Bencherchali
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\taskkill.exe' OR OriginalFileName='taskkill.exe') AND (CommandLine ILIKE '% -f %' OR CommandLine ILIKE '% /f %' OR CommandLine ILIKE '% –f %' OR CommandLine ILIKE '% —f %' OR CommandLine ILIKE '% ―f %' OR CommandLine ILIKE '% -f' OR CommandLine ILIKE '% /f' OR CommandLine ILIKE '% –f' OR CommandLine ILIKE '% —f' OR CommandLine ILIKE '% ―f') AND (CommandLine ILIKE '% -im %' OR CommandLine ILIKE '% /im %' OR CommandLine ILIKE '% –im %' OR CommandLine ILIKE '% —im %' OR CommandLine ILIKE '% ―im %' OR CommandLine ILIKE '% -pid %' OR CommandLine ILIKE '% /pid %' OR CommandLine ILIKE '% –pid %' OR CommandLine ILIKE '% —pid %' OR CommandLine ILIKE '% ―pid %')) AND (NOT ((ParentImage ILIKE '%\\AppData\\Local\\Temp\\%' OR ParentImage ILIKE '%:\\Windows\\Temp%') AND ParentImage ILIKE '%.tmp'))

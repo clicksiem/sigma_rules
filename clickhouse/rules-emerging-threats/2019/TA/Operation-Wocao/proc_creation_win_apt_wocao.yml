@@ -1,0 +1,21 @@
+id: 1cfac73c-be78-4f9a-9b08-5bde0c3953ab
+name: Operation Wocao Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.discovery
+- attack.stealth
+- attack.t1012
+- attack.t1036.004
+- attack.t1027
+- attack.execution
+- attack.t1053.005
+- attack.t1059.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%checkadmin.exe 127.0.0.1 -all%' OR CommandLine ILIKE '%netsh advfirewall firewall add rule name=powershell dir=in%' OR CommandLine ILIKE '%cmd /c powershell.exe -ep bypass -file c:\\s.ps1%' OR CommandLine ILIKE '%/tn win32times /f%' OR CommandLine ILIKE '%create win32times binPath=%' OR CommandLine ILIKE '%\\c$\\windows\\system32\\devmgr.dll%' OR CommandLine ILIKE '% -exec bypass -enc JgAg%' OR CommandLine ILIKE '%type %keepass\\KeePass.config.xml%' OR CommandLine ILIKE '%iie.exe iie.txt%' OR CommandLine ILIKE '%reg query HKEY\_CURRENT\_USER\\Software\\%\\PuTTY\\Sessions\\%'

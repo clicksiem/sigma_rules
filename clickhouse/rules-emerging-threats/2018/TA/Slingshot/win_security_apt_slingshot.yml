@@ -1,0 +1,16 @@
+id: c5a178bf-9cfb-4340-b584-e4df39b6a3e7
+name: Defrag Deactivation - Security
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Bartlomiej Czyz (@bczyz1)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053
+- attack.s0111
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE EventID=4701 AND TaskName ILIKE '\\Microsoft\\Windows\\Defrag\\ScheduledDefrag'

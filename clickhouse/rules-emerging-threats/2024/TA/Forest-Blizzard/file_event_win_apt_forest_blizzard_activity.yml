@@ -1,0 +1,13 @@
+id: b92d1d19-f5c9-4ed6-bbd5-7476709dc389
+name: Forest Blizzard APT - File Creation Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE ((TargetFilename ILIKE 'C:\\ProgramData\\Microsoft\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\Adobe\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\Comms\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\Intel\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\Kaspersky Lab\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\Bitdefender\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\ESET\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\NVIDIA\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\UbiSoft\\v%' OR TargetFilename ILIKE 'C:\\ProgramData\\Steam\\v%') AND (TargetFilename ILIKE '%\\prnms003.inf\_%' OR TargetFilename ILIKE '%\\prnms009.inf\_%')) OR (TargetFilename ILIKE 'C:\\ProgramData\\%' AND ((TargetFilename ILIKE '%.save' OR TargetFilename ILIKE '%\\doit.bat' OR TargetFilename ILIKE '%\\execute.bat' OR TargetFilename ILIKE '%\\servtask.bat') OR (TargetFilename ILIKE '%\\wayzgoose%' AND TargetFilename ILIKE '%.dll')))

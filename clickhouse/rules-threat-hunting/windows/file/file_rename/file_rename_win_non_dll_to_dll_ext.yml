@@ -1,0 +1,13 @@
+id: bbfd974c-248e-4435-8de6-1e938c79c5c1
+name: Non-DLL Extension File Renamed With DLL Extension
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.008
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.dll' AND (NOT (SourceFilename ILIKE '%.dll' OR SourceFilename ILIKE '%.tmp' OR SourceFilename='' OR isNull(SourceFilename) OR (Image ILIKE '%:\\Windows\\WinSxS\\%' AND Image ILIKE '%\\TiWorker.exe') OR (Image ILIKE '%:\\Windows\\System32\\wuauclt.exe' OR TargetFilename ILIKE '%:\\$WINDOWS.~BT\\Sources\\%') OR (Image ILIKE '%:\\Program Files (x86)\\%' OR Image ILIKE '%:\\Program Files\\%'))) AND (NOT SourceFilename ILIKE '%\\SquirrelTemp\\temp%')

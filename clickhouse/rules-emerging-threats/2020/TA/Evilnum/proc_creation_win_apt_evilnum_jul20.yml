@@ -1,0 +1,13 @@
+id: 8acf3cfa-1e8c-4099-83de-a0c4038e18f0
+name: EvilNum APT Golden Chickens Deployment Via OCX Files
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%regsvr32%' AND CommandLine ILIKE '%/s%' AND CommandLine ILIKE '%/i%' AND CommandLine ILIKE '%\\AppData\\Roaming\\%' AND CommandLine ILIKE '%.ocx%'

@@ -1,0 +1,13 @@
+id: 241d52b5-eee0-49d0-ac8a-8b9c15c7221c
+name: ClickOnce Deployment Execution - Dfsvc.EXE Child Process
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.threat-hunting
+- attack.stealth
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\dfsvc.exe' AND Image ILIKE '%\\AppData\\Local\\Apps\\2.0\\'

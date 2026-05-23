@@ -1,0 +1,13 @@
+id: 666ecfc7-229d-42b8-821e-1a8f8cb7057c
+name: System Drawing DLL Load
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.collection
+- attack.t1113
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\System.Drawing.ni.dll'

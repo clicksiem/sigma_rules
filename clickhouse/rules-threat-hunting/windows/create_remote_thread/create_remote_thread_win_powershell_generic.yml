@@ -1,0 +1,13 @@
+id: eeb2e3dc-c1f4-40dd-9bd5-149ee465ad50
+name: Remote Thread Creation Via PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (SourceImage ILIKE '%\\powershell.exe' OR SourceImage ILIKE '%\\pwsh.exe') AND (NOT SourceParentImage ILIKE '%:\\Windows\\System32\\CompatTelRunner.exe')

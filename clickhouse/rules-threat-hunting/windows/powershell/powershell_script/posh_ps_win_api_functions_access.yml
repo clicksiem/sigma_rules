@@ -1,0 +1,14 @@
+id: 19d65a1c-8540-4140-8062-8eb00db0bba5
+name: WinAPI Library Calls Via PowerShell Scripts
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.t1106
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Advapi32.dll%' OR ScriptBlockText ILIKE '%kernel32.dll%' OR ScriptBlockText ILIKE '%KernelBase.dll%' OR ScriptBlockText ILIKE '%ntdll.dll%' OR ScriptBlockText ILIKE '%secur32.dll%' OR ScriptBlockText ILIKE '%user32.dll%'

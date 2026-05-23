@@ -1,0 +1,13 @@
+id: 468a8cea-2920-4909-a593-0cbe1d96674a
+name: HH.EXE Initiated HTTP Network Connection
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\hh.exe' AND Initiated='true' AND (DestinationPort IN (80, 443))

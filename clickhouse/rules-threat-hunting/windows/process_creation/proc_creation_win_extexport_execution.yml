@@ -1,0 +1,13 @@
+id: fb0b815b-f5f6-4f50-970f-ffe21f253f7a
+name: Potential DLL Sideloading Activity Via ExtExport.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Extexport.exe' OR OriginalFileName='extexport.exe'

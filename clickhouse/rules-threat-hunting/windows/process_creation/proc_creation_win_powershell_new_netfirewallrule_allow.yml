@@ -1,0 +1,13 @@
+id: 51483085-0cba-46a8-837e-4416496d6971
+name: New Windows Firewall Rule Added Via New-NetFirewallRule Cmdlet
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\powershell\_ise.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%New-NetFirewallRule %' AND CommandLine ILIKE '% -Action %' AND CommandLine ILIKE '%allow%')

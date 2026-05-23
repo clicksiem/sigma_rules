@@ -1,0 +1,15 @@
+id: cfed2f44-16df-4bf3-833a-79405198b277
+name: Dllhost.EXE Initiated Network Connection To Non-Local IP Address
+level: 5
+size: '>0'
+active: true
+author:
+- bartblaze
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+- attack.t1559.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dllhost.exe' AND Initiated='true') AND (NOT ((isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, 'fc00::/7') OR isIPAddressInRange(DestinationIp, 'fe80::/10')) OR (isIPAddressInRange(DestinationIp, '20.184.0.0/13') OR isIPAddressInRange(DestinationIp, '20.192.0.0/10') OR isIPAddressInRange(DestinationIp, '23.72.0.0/13') OR isIPAddressInRange(DestinationIp, '51.10.0.0/15') OR isIPAddressInRange(DestinationIp, '51.103.0.0/16') OR isIPAddressInRange(DestinationIp, '51.104.0.0/15') OR isIPAddressInRange(DestinationIp, '52.224.0.0/11') OR isIPAddressInRange(DestinationIp, '150.171.0.0/19') OR isIPAddressInRange(DestinationIp, '204.79.197.0/24'))))

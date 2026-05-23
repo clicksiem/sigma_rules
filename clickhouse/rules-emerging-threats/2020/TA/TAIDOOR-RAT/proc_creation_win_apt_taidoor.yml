@@ -1,0 +1,15 @@
+id: d1aa3382-abab-446f-96ea-4de52908210b
+name: TAIDOOR RAT DLL Load
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1055.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%dll,MyStart%' OR CommandLine ILIKE '%dll MyStart%') OR (CommandLine ILIKE '% MyStart' AND CommandLine ILIKE '%rundll32.exe%')

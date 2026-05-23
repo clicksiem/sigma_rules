@@ -1,0 +1,17 @@
+id: a762e74f-4dce-477c-b023-4ed81df600f9
+name: Scheduled Task Created - FileCreation
+level: 3
+size: '>0'
+active: true
+author:
+- Center for Threat Informed Defense (CTID) Summiting the Pyramid Team
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1053.005
+- attack.s0111
+- car.2013-08-001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\Windows\\System32\\Tasks\\%' OR TargetFilename ILIKE '%:\\Windows\\SysWOW64\\Tasks\\%' OR TargetFilename ILIKE '%:\\Windows\\Tasks\\%'

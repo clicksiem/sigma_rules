@@ -1,0 +1,14 @@
+id: 277dc340-0540-42e7-8efb-5ff460045e07
+name: Service Binary in User Controlled Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%ControlSet%' AND TargetObject ILIKE '%\\Services\\%') AND TargetObject ILIKE '%\\ImagePath' AND (Details ILIKE '%:\\ProgramData\\%' OR Details ILIKE '%\\AppData\\Local\\%' OR Details ILIKE '%\\AppData\\Roaming\\%')) AND (NOT ((TargetObject ILIKE '%\\Services\\WinDefend\\%' OR TargetObject ILIKE '%\\Services\\MpKs%') AND Details ILIKE '%C:\\ProgramData\\Microsoft\\Windows Defender\\%')) AND (NOT ((TargetObject ILIKE '%\\Services\\ZoomCptService%' AND Details ILIKE '%C:\\Program Files\\Common Files\\Zoom\\Support\\CptService.exe%') OR (TargetObject ILIKE '%\\Services\\MBAMInstallerService%' AND (Details ILIKE '%C:\\Users\\%' AND Details ILIKE '%AppData\\Local\\Temp\\MBAMInstallerService.exe%'))))

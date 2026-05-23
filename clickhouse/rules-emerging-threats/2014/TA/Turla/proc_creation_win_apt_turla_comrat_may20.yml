@@ -1,0 +1,19 @@
+id: 9e2e51c5-c699-4794-ba5a-29f5da40ac0c
+name: Turla Group Commands May 2020
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.stealth
+- attack.g0010
+- attack.execution
+- attack.t1059.001
+- attack.t1053.005
+- attack.t1027
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%tracert -h 10 yahoo.com%' OR CommandLine ILIKE '%.WSqmCons))|iex;%' OR CommandLine ILIKE '%Fr`omBa`se6`4Str`ing%') OR (match(CommandLine, 'net\s+use\s+https://docs.live.net') AND CommandLine ILIKE '%@aol.co.uk%')

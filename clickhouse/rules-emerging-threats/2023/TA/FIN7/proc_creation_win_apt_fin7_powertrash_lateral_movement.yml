@@ -1,0 +1,13 @@
+id: 911389c7-5ae3-43ea-bab3-a947ebdeb85e
+name: Potential APT FIN7 Reconnaissance/POWERTRASH Related Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.g0046
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%-noni -nop -exe bypass -f \\\\%' AND CommandLine ILIKE '%ADMIN$%') OR (CommandLine ILIKE '%-ex bypass -noprof -nolog -nonint -f%' AND CommandLine ILIKE '%C:\\Windows\\Temp\\%')

@@ -1,0 +1,13 @@
+id: 8344c19f-a023-45ff-ad63-a01c5396aea0
+name: Access To Sysvol Policies Share By Uncommon Process
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.006
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (FileName ILIKE '\\%' AND (FileName ILIKE '%\\sysvol\\%' AND FileName ILIKE '%\\Policies\\%')) AND (NOT (Image ILIKE '%:\\Program Files (x86)\\%' OR Image ILIKE '%:\\Program Files\\%' OR Image ILIKE '%:\\Windows\\explorer.exe%' OR Image ILIKE '%:\\Windows\\system32\\%' OR Image ILIKE '%:\\Windows\\SysWOW64\\%'))

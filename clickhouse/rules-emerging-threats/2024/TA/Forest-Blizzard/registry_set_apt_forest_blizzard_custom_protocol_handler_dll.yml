@@ -1,0 +1,14 @@
+id: d807056b-0e00-4cec-b7f8-b8b7518e382b
+name: Forest Blizzard APT - Custom Protocol Handler DLL Registry Set
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\CLSID\\{026CC6D7-34B2-33D5-B551-CA31EB6CE345}\\Server%' AND Details ILIKE '%.dll'

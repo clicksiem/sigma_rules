@@ -1,0 +1,15 @@
+id: 9599c180-e3a8-4743-8f92-7fb96d3be648
+name: Potential Remote WMI ActiveScriptEventConsumers Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.privilege-escalation
+- detection.threat-hunting
+- attack.persistence
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE (EventID=4624 AND LogonType=3 AND ProcessName ILIKE '%scrcons.exe') AND (NOT TargetLogonId='0x3e7')

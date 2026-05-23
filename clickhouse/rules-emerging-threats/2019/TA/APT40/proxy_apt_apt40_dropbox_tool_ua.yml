@@ -1,0 +1,15 @@
+id: 5ba715b6-71b7-44fd-8245-f66893e81b3d
+name: APT40 Dropbox Tool User Agent
+level: 8
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.001
+- attack.exfiltration
+- attack.t1567.002
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE `c-useragent`='Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36' AND `cs-host`='api.dropbox.com'

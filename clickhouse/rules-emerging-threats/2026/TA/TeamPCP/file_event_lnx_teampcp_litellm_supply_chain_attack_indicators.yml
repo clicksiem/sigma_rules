@@ -1,0 +1,16 @@
+id: 81c0b7f5-81c9-435e-a291-bc32fc2b72cd
+name: TeamPCP LiteLLM Supply Chain Attack Persistence Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: linux
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.002
+- attack.initial-access
+- attack.t1195.002
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE Image ILIKE '%/python3%' AND (TargetFilename ILIKE '%/.config/sysmon/sysmon.py' OR TargetFilename ILIKE '%/.config/systemd/user/sysmon.service')

@@ -1,0 +1,15 @@
+id: 419dbf2b-8a9b-4bea-bf99-7544b050ec8d
+name: Microsoft Workflow Compiler Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nik Seetharaman, frack113
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+- attack.t1218
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Microsoft.Workflow.Compiler.exe' OR OriginalFileName='Microsoft.Workflow.Compiler.exe'

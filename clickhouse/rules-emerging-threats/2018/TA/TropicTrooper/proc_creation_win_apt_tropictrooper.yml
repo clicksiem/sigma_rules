@@ -1,0 +1,13 @@
+id: 8c7090c3-e0a0-4944-bd08-08c3a0cecf79
+name: TropicTrooper Campaign November 2018
+level: 8
+size: '>0'
+active: true
+author:
+- '@41thexplorer, Microsoft Defender ATP'
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%abCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc%'

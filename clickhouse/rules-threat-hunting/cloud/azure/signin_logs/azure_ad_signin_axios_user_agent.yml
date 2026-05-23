@@ -1,0 +1,14 @@
+id: ea1a07f0-3dac-47a2-aeb4-86f5379ba2b4
+name: Azure Sign-In With Axios User Agent
+level: 3
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM) (InTheCyber)
+group: azure
+tags:
+- attack.credential-access
+- attack.collection
+- attack.t1557
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE userAgent ILIKE '%axios%'

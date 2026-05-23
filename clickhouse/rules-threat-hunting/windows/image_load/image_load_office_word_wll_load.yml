@@ -1,0 +1,13 @@
+id: 1337afba-d17d-4d23-bd55-29b927603b30
+name: Microsoft Word Add-In Loaded
+level: 3
+size: '>0'
+active: true
+author:
+- Steffen Rogge (dr0pd34d)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.002
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\winword.exe' AND ImageLoaded ILIKE '%.wll'

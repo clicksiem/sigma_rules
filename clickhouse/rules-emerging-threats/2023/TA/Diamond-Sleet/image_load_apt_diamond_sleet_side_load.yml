@@ -1,0 +1,16 @@
+id: d1b65d98-37d7-4ff6-b139-2d87c1af3042
+name: Diamond Sleet APT DLL Sideloading Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\ProgramData\\clip.exe' AND ImageLoaded ILIKE '%:\\ProgramData\\Version.dll') OR (Image ILIKE '%:\\ProgramData\\wsmprovhost.exe' AND ImageLoaded ILIKE '%:\\ProgramData\\DSROLE.dll')

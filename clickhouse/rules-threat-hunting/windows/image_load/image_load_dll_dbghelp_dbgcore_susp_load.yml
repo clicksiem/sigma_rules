@@ -1,0 +1,13 @@
+id: 0e277796-5f23-4e49-a490-483131d4f6e1
+name: Dbghelp/Dbgcore DLL Loaded By Uncommon/Suspicious Process
+level: 5
+size: '>0'
+active: true
+author:
+- Perez Diego (@darkquassar), oscd.community, Ecco
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((ImageLoaded ILIKE '%\\dbghelp.dll' OR ImageLoaded ILIKE '%\\dbgcore.dll') AND (Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\dnx.exe' OR Image ILIKE '%\\excel.exe' OR Image ILIKE '%\\monitoringhost.exe' OR Image ILIKE '%\\msbuild.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\outlook.exe' OR Image ILIKE '%\\powerpnt.exe' OR Image ILIKE '%\\regsvcs.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\sc.exe' OR Image ILIKE '%\\scriptrunner.exe' OR Image ILIKE '%\\winword.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe')) AND (NOT ((CommandLine ILIKE 'C:\\WINDOWS\\WinSxS\\%' AND CommandLine ILIKE '%\\TiWorker.exe -Embedding') OR (Image ILIKE '%\\svchost.exe' AND (CommandLine ILIKE '%-k LocalServiceNetworkRestricted' OR CommandLine ILIKE '%-k WerSvcGroup')) OR (Image ILIKE '%\\rundll32.exe' AND (CommandLine ILIKE '%/d srrstr.dll,ExecuteScheduledSPPCreation%' OR CommandLine ILIKE '%aepdu.dll,AePduRunUpdate%' OR CommandLine ILIKE '%shell32.dll,OpenAs\_RunDL%' OR CommandLine ILIKE '%Windows.Storage.ApplicationData.dll,CleanupTemporaryState%'))))

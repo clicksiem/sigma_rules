@@ -1,0 +1,12 @@
+id: e1212b32-55ff-4dfb-a595-62b572248056
+name: Diamond Sleet APT File Creation Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\ProgramData\\4800-84DC-063A6A41C5C' OR TargetFilename ILIKE '%:\\ProgramData\\clip.exe' OR TargetFilename ILIKE '%:\\ProgramData\\DSROLE.dll' OR TargetFilename ILIKE '%:\\ProgramData\\Forest64.exe' OR TargetFilename ILIKE '%:\\ProgramData\\readme.md' OR TargetFilename ILIKE '%:\\ProgramData\\Version.dll' OR TargetFilename ILIKE '%:\\ProgramData\\wsmprovhost.exe'

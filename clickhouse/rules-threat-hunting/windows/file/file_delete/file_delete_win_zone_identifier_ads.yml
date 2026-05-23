@@ -1,0 +1,13 @@
+id: 7eac0a16-5832-4e81-865f-0268a6d19e4b
+name: ADS Zone.Identifier Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:Zone.Identifier'

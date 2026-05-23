@@ -1,0 +1,13 @@
+id: ce2c44b5-a6ac-412a-afba-9e89326fa972
+name: Regsvr32.EXE Calling of DllRegisterServer Export Function Implicitly
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\regsvr32.exe' OR OriginalFileName='REGSVR32.EXE') AND (CommandLine ILIKE '% /s %' OR CommandLine ILIKE '% /e %')) AND (NOT (((CommandLine ILIKE '%:\\Program Files (x86)%' OR CommandLine ILIKE '%:\\Program Files\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\%' OR CommandLine ILIKE '%:\\Windows\\SysWOW64\\%') OR (CurrentDirectory ILIKE '%:\\Program Files (x86)%' OR CurrentDirectory ILIKE '%:\\Program Files\\%' OR CurrentDirectory ILIKE '%:\\Windows\\System32\\%' OR CurrentDirectory ILIKE '%:\\Windows\\SysWOW64\\%')) OR (CommandLine ILIKE '% /i:%' OR CommandLine ILIKE '%/U %') OR (ParentCommandLine ILIKE '%:\\Windows\\System32\\RpcProxy\\RpcProxy.dll' AND CommandLine='regsvr32 /s rpcproxy.dll')))

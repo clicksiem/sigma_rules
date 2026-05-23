@@ -1,0 +1,14 @@
+id: 966e4016-627f-44f7-8341-f394905c361f
+name: Potential APT10 Cloud Hopper Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.g0045
+- attack.t1059.005
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cscript.exe' AND CommandLine ILIKE '%.vbs /shell %') OR (CommandLine ILIKE '%csvde -f C:\\windows\\web\\%' AND CommandLine ILIKE '%.log%')

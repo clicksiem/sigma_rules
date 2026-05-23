@@ -1,0 +1,12 @@
+id: 53c15703-b04c-42bb-9055-1937ddfb3392
+name: .Class Extension URI Ending Request
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Hunkeler (@Karneades)
+group: ''
+tags:
+- attack.initial-access
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE `c-uri` ILIKE '%.class'

@@ -1,0 +1,16 @@
+id: 958d81aa-8566-4cea-a565-59ccd4df27b0
+name: Defrag Deactivation
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Bartlomiej Czyz (@bczyz1)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+- attack.s0111
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '%/delete%' OR CommandLine ILIKE '%/change%') AND (CommandLine ILIKE '%/TN%' AND CommandLine ILIKE '%\\Microsoft\\Windows\\Defrag\\ScheduledDefrag%')

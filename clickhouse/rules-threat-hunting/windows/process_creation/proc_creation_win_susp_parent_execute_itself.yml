@@ -1,0 +1,14 @@
+id: bafd07c6-3ea5-454a-b4be-058fbb073de7
+name: Potential Executable Run Itself As Sacrificial Process
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image=ParentImage AND (NOT ((Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%') OR (OriginalFileName IN ('Cmd.Exe', 'CompatTelRunner.exe', 'Discord.exe', 'electron.exe', 'EXPLORER.EXE', 'httpd.exe', 'IE4UINIT.EXE', 'mmc.exe', 'MpCmdRun.exe', 'mscorsvw.exe', 'msiexec.exe', 'NGenTask.exe', 'OneDriveSetup.exe', 'PowerShell.EXE', 'REGSVR32.EXE', 'smss.exe', 'Spotify.exe', 'WerMgr')) OR (Product IN ('Avira', 'Evernote', 'Firefox', 'Microsoft Office', 'Ninite', 'Opera Browser Assistant Installer', 'Opera Installer', 'Sysinternals Sysmon'))))

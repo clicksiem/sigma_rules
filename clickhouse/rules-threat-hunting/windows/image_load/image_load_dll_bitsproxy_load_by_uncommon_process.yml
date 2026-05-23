@@ -1,0 +1,15 @@
+id: e700ff14-1bff-4d1d-9438-738dff5f0466
+name: BITS Client BitsProxy DLL Loaded By Uncommon Process
+level: 3
+size: '>0'
+active: true
+author:
+- UnicornOfHunt
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\BitsProxy.dll' AND (NOT (Image IN ('C:\\Windows\\System32\\aitstatic.exe', 'C:\\Windows\\System32\\bitsadmin.exe', 'C:\\Windows\\System32\\desktopimgdownldr.exe', 'C:\\Windows\\System32\\DeviceEnroller.exe', 'C:\\Windows\\System32\\MDMAppInstaller.exe', 'C:\\Windows\\System32\\ofdeploy.exe', 'C:\\Windows\\System32\\RecoveryDrive.exe', 'C:\\Windows\\System32\\Speech\_OneCore\\common\\SpeechModelDownload.exe', 'C:\\Windows\\SysWOW64\\bitsadmin.exe', 'C:\\Windows\\SysWOW64\\OneDriveSetup.exe', 'C:\\Windows\\SysWOW64\\Speech\_OneCore\\Common\\SpeechModelDownload.exe'))) AND (NOT Image ILIKE 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')

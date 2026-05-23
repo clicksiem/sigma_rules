@@ -1,0 +1,13 @@
+id: 5570c4d9-8fdd-4622-965b-403a5a101aa0
+name: Firewall Rule Modified In The Windows Firewall Exception List
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (EventID IN (2005, 2073)) AND (NOT (ApplicationPath ILIKE '%\\AppData\\local\\microsoft\\teams\\current\\teams.exe' OR ApplicationPath ILIKE '%\\AppData\\Local\\Keybase\\keybase.exe' OR ApplicationPath ILIKE '%\\AppData\\Local\\Programs\\Messenger\\Messenger.exe' OR (ApplicationPath ILIKE '%:\\Users\\%' AND ApplicationPath ILIKE '%\\AppData\\Local\\Programs\\Opera\\%' AND ApplicationPath ILIKE '%\\opera.exe%') OR (ApplicationPath ILIKE '%:\\Users\\%' AND ApplicationPath ILIKE '%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\brave.exe%')))

@@ -1,0 +1,14 @@
+id: 250ae82f-736e-4844-a68b-0b5e8cc887da
+name: Potential Shellcode Injection
+level: 5
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((GrantedAccess IN ('0x147a', '0x1f3fff')) AND CallTrace ILIKE '%UNKNOWN%') AND (NOT (SourceImage ILIKE 'C:\\Windows\\System32\\Wbem\\Wmiprvse.exe' AND TargetImage ILIKE 'C:\\Windows\\system32\\lsass.exe')) AND (NOT (((SourceImage ILIKE 'C:\\Program Files\\Dell\\%' OR SourceImage ILIKE 'C:\\Program Files (x86)\\Dell\\%') AND (TargetImage ILIKE 'C:\\Program Files\\Dell\\%' OR TargetImage ILIKE 'C:\\Program Files (x86)\\Dell\\%')) OR (SourceImage ILIKE 'C:\\Program Files (x86)\\Dell\\UpdateService\\ServiceShell.exe' AND TargetImage ILIKE 'C:\\Windows\\Explorer.EXE') OR (SourceImage ILIKE 'C:\\Program Files\\Microsoft Visual Studio\\%' AND TargetImage ILIKE 'C:\\Program Files\\Microsoft Visual Studio\\%')))

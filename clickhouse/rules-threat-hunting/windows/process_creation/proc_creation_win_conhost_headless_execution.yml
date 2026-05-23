@@ -1,0 +1,14 @@
+id: 00ca75ab-d5ce-43be-b86c-55ff39c6abfc
+name: Headless Process Launched Via Conhost.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.t1059.003
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\conhost.exe' AND ParentCommandLine ILIKE '%--headless%'

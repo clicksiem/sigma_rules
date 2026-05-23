@@ -1,0 +1,16 @@
+id: e1118a8f-82f5-44b3-bb6b-8a284e5df602
+name: Potential ACTINIUM Persistence Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Andreas Hunkeler (@Karneades)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053
+- attack.t1053.005
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%schtasks%' AND CommandLine ILIKE '%create%' AND CommandLine ILIKE '%wscript%' AND CommandLine ILIKE '% /e:vbscript%'

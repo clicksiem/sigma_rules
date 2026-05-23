@@ -1,0 +1,13 @@
+id: 812837bb-b17f-45e9-8bd0-0ec35d2e3bd6
+name: bXOR Operator Usage In PowerShell Command Line - PowerShell Classic
+level: 3
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, Harish Segar
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Data ILIKE '%HostName=ConsoleHost%' AND Data ILIKE '% -bxor %'

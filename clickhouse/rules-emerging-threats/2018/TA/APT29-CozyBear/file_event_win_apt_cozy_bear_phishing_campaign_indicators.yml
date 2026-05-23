@@ -1,0 +1,13 @@
+id: 3a3f81ca-652c-482b-adeb-b1c804727f74
+name: APT29 2018 Phishing Campaign File Indicators
+level: 10
+size: '>0'
+active: true
+author:
+- '@41thexplorer'
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%ds7002.lnk%' OR TargetFilename ILIKE '%ds7002.pdf%' OR TargetFilename ILIKE '%ds7002.zip%'

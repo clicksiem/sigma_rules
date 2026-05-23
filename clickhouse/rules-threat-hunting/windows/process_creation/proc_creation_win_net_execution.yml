@@ -1,0 +1,24 @@
+id: 183e7ea8-ac4b-4c23-9aec-b3dac4e401ac
+name: Net.EXE Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Michael Haag, Mark Woan (improvements), James Pemberton / @4A616D6573 / oscd.community (improvements)
+group: windows
+tags:
+- attack.discovery
+- attack.t1007
+- attack.t1049
+- attack.t1018
+- attack.t1135
+- attack.t1201
+- attack.t1069.001
+- attack.t1069.002
+- attack.t1087.001
+- attack.t1087.002
+- attack.lateral-movement
+- attack.t1021.002
+- attack.s0039
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND (CommandLine ILIKE '% accounts%' OR CommandLine ILIKE '% group%' OR CommandLine ILIKE '% localgroup%' OR CommandLine ILIKE '% share%' OR CommandLine ILIKE '% start%' OR CommandLine ILIKE '% stop %' OR CommandLine ILIKE '% user%' OR CommandLine ILIKE '% view%')

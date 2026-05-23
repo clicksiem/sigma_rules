@@ -1,0 +1,13 @@
+id: bcb03938-9f8b-487d-8d86-e480691e1d71
+name: Network Connection Initiated From Users\Public Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Initiated='true' AND Image ILIKE '%:\\Users\\Public\\%') AND (NOT Image ILIKE '%:\\Users\\Public\\IBM\\ClientSolutions\\Start\_Programs\\%')

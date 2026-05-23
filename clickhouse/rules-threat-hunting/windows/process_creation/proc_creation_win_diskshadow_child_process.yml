@@ -1,0 +1,14 @@
+id: 56b1dde8-b274-435f-a73a-fb75eb81262a
+name: Diskshadow Child Process Spawned
+level: 5
+size: '>0'
+active: true
+author:
+- Harjot Singh @cyb3rjy0t
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\diskshadow.exe' AND (NOT Image ILIKE '%:\\Windows\\System32\\WerFault.exe')

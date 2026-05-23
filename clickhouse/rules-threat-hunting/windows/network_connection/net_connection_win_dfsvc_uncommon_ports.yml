@@ -1,0 +1,13 @@
+id: 4c5fba4a-9ef6-4f16-823d-606246054741
+name: Dfsvc.EXE Initiated Network Connection Over Uncommon Port
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1203
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\Windows\\Microsoft.NET\\%' AND Image ILIKE '%\\dfsvc.exe' AND Initiated='true') AND (NOT (DestinationPort IN (80, 443))) AND (NOT (DestinationIsIpv6='true' AND DestinationPort=53))

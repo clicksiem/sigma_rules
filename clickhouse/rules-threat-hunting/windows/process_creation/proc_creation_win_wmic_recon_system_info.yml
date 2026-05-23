@@ -1,0 +1,13 @@
+id: d85ecdd7-b855-4e6e-af59-d9c78b5b861e
+name: System Information Discovery Via Wmic.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: windows
+tags:
+- attack.discovery
+- attack.t1082
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Description='WMI Commandline Utility' OR OriginalFileName='wmic.exe' OR Image ILIKE '%\\WMIC.exe') AND CommandLine ILIKE '%get%' AND (CommandLine ILIKE '%baseboard%' OR CommandLine ILIKE '%bios%' OR CommandLine ILIKE '%cpu%' OR CommandLine ILIKE '%diskdrive%' OR CommandLine ILIKE '%logicaldisk%' OR CommandLine ILIKE '%memphysical%' OR CommandLine ILIKE '%os%' OR CommandLine ILIKE '%path%' OR CommandLine ILIKE '%startup%' OR CommandLine ILIKE '%win32\_videocontroller%') AND (CommandLine ILIKE '%caption%' OR CommandLine ILIKE '%command%' OR CommandLine ILIKE '%driverversion%' OR CommandLine ILIKE '%maxcapacity%' OR CommandLine ILIKE '%name%' OR CommandLine ILIKE '%osarchitecture%' OR CommandLine ILIKE '%product%' OR CommandLine ILIKE '%size%' OR CommandLine ILIKE '%smbiosbiosversion%' OR CommandLine ILIKE '%version%' OR CommandLine ILIKE '%videomodedescription%')) AND (NOT ParentCommandLine ILIKE '%\\VMware\\VMware Tools\\serviceDiscovery\\scripts\\%')

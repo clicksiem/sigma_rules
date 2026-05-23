@@ -1,0 +1,13 @@
+id: f3a98ce4-6164-4dd4-867c-4d83de7eca51
+name: Powershell Token Obfuscation - Powershell
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.009
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (match(ScriptBlockText, '\w+`(\w+|-|.)`[\w+|\s]') OR match(ScriptBlockText, '"(\{\d\}){2,}"\s*-f') OR match(ScriptBlockText, '(?i)\$\{`?e`?n`?v`?:`?p`?a`?t`?h`?\}')) AND (NOT (ScriptBlockText ILIKE '%${env:path}%' OR (ScriptBlockText ILIKE '%it will return true or false instead%' OR ScriptBlockText ILIKE '%The function also prevents `Get-ItemProperty` from failing%') OR (Path ILIKE 'C:\\Program Files\\Microsoft\\Exchange Server\\%' AND Path ILIKE '%\\bin\\servicecontrol.ps1' AND ScriptBlockText ILIKE '%`r`n%')))

@@ -1,0 +1,13 @@
+id: 35efb964-e6a5-47ad-bbcd-19661854018d
+name: Execution From Webserver Root Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wwwroot\\%' OR Image ILIKE '%\\wmpub\\%' OR Image ILIKE '%\\htdocs\\%') AND (NOT ((Image ILIKE '%bin\\%' OR Image ILIKE '%\\Tools\\%' OR Image ILIKE '%\\SMSComponent\\%') AND ParentImage ILIKE '%\\services.exe'))

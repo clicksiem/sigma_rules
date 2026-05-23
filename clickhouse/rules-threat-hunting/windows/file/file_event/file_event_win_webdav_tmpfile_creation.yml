@@ -1,0 +1,15 @@
+id: 4c55738d-72d8-490e-a2db-7969654e375f
+name: WebDAV Temporary Local File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Micah Babinski
+group: windows
+tags:
+- attack.initial-access
+- attack.resource-development
+- attack.t1584
+- attack.t1566
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\AppData\\Local\\Temp\\TfsStore\\Tfs\_DAV\\%' AND (TargetFilename ILIKE '%.7z' OR TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.dat' OR TargetFilename ILIKE '%.ico' OR TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.lnk' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.rar' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.zip')

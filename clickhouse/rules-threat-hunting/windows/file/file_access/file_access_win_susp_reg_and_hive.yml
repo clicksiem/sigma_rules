@@ -1,0 +1,14 @@
+id: 337a31c6-46c4-46be-886a-260d7aa78cac
+name: Access To .Reg/.Hive Files By Uncommon Applications
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1112
+- attack.persistence
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (FileName ILIKE '%.hive' OR FileName ILIKE '%.reg') AND (NOT (Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%'))

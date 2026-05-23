@@ -1,0 +1,13 @@
+id: caf02a0a-1e1c-4552-9b48-5e070bd88d11
+name: Suspicious Creation TXT File in User Desktop
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1486
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\cmd.exe' AND (TargetFilename ILIKE '%\\Users\\%' AND TargetFilename ILIKE '%\\Desktop\\%') AND TargetFilename ILIKE '%.txt'

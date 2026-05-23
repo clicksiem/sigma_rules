@@ -1,0 +1,13 @@
+id: 4e2f5868-08d4-413d-899f-dc2f1508627b
+name: Process Discovery
+level: 3
+size: '>0'
+active: true
+author:
+- Ömer Günal, oscd.community, CheraaghiMilad
+group: linux
+tags:
+- attack.discovery
+- attack.t1057
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%/atop' OR Image ILIKE '%/htop' OR Image ILIKE '%/pgrep' OR Image ILIKE '%/ps' OR Image ILIKE '%/pstree' OR Image ILIKE '%/top'

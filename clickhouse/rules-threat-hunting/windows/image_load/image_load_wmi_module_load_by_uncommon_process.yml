@@ -1,0 +1,13 @@
+id: 671bb7e3-a020-4824-a00e-2ee5b55f385e
+name: WMI Module Loaded By Uncommon Process
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\fastprox.dll' OR ImageLoaded ILIKE '%\\wbemcomn.dll' OR ImageLoaded ILIKE '%\\wbemprox.dll' OR ImageLoaded ILIKE '%\\wbemsvc.dll' OR ImageLoaded ILIKE '%\\WmiApRpl.dll' OR ImageLoaded ILIKE '%\\wmiclnt.dll' OR ImageLoaded ILIKE '%\\WMINet\_Utils.dll' OR ImageLoaded ILIKE '%\\wmiprov.dll' OR ImageLoaded ILIKE '%\\wmiutils.dll') AND (NOT (Image ILIKE '%:\\Program Files (x86)\\%' OR Image ILIKE '%:\\Program Files\\%' OR Image ILIKE '%:\\Windows\\explorer.exe%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm64\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework64\\%' OR Image ILIKE '%:\\Windows\\System32\\%' OR Image ILIKE '%:\\Windows\\SysWOW64\\%')) AND (NOT ((Image ILIKE '%\\WindowsAzureGuestAgent.exe' OR Image ILIKE '%\\WaAppAgent.exe') OR (Image ILIKE '%\\thor.exe' OR Image ILIKE '%\\thor64.exe') OR Image ILIKE '%\\MsMpEng.exe' OR (Image ILIKE '%\\Microsoft\\Teams\\current\\Teams.exe%' OR Image ILIKE '%\\Microsoft\\Teams\\Update.exe%') OR (Image ILIKE '%:\\Windows\\Sysmon.exe' OR Image ILIKE '%:\\Windows\\Sysmon64.exe')))

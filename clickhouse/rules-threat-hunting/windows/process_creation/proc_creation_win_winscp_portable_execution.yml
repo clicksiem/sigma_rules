@@ -1,0 +1,13 @@
+id: 7674f8ef-7141-4cf0-a311-ee359264c64c
+name: Winscp Execution From Non Standard Folder
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WinSCP.exe' OR OriginalFileName='winscp.exe') AND (NOT Image ILIKE 'C:\\Program Files (x86)\\WinSCP\\%')

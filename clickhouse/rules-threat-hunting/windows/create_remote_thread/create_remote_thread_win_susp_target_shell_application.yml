@@ -1,0 +1,14 @@
+id: a9d4d3fa-8fc0-41bc-80b1-30b9fda79d6f
+name: Remote Thread Created In Shell Application
+level: 5
+size: '>0'
+active: true
+author:
+- Splunk Research Team
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%\\cmd.exe' OR TargetImage ILIKE '%\\powershell.exe' OR TargetImage ILIKE '%\\pwsh.exe') AND (NOT (SourceImage ILIKE 'C:\\Windows\\System32\\%' OR SourceImage ILIKE 'C:\\Windows\\SysWOW64\\%' OR SourceImage ILIKE 'C:\\Program Files (x86)\\%' OR SourceImage ILIKE 'C:\\Program Files\\%')) AND (NOT SourceImage ILIKE '%\\MsMpEng.exe')

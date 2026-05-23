@@ -1,0 +1,12 @@
+id: 745ea50b-9673-4ba7-9426-cb45cf4a8e6d
+name: Lace Tempest Malware Loader Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE Image ILIKE '%:\\Program Files\\SysAidServer\\tomcat\\webapps\\usersfiles\\user.exe' OR Hashes ILIKE '%SHA256=B5ACF14CDAC40BE590318DEE95425D0746E85B1B7B1CBD14DA66F21F2522BF4D%'

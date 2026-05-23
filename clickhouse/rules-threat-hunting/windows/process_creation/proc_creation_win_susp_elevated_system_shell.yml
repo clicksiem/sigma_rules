@@ -1,0 +1,14 @@
+id: 61065c72-5d7d-44ef-bf41-6a36684b545f
+name: Elevated System Shell Spawned
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.t1059
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\cmd.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'powershell\_ise.EXE', 'pwsh.dll', 'Cmd.Exe'))) AND ((User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') AND LogonId='0x3e7')

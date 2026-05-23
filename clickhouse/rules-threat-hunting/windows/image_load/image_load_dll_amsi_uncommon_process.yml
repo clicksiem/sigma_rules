@@ -1,0 +1,13 @@
+id: facd1549-e416-48e0-b8c4-41d7215eedc8
+name: Amsi.DLL Load By Uncommon Process
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\amsi.dll' AND (NOT ((Image ILIKE '%:\\Windows\\explorer.exe' OR Image ILIKE '%:\\Windows\\Sysmon64.exe') OR (Image ILIKE '%:\\Program Files (x86)\\%' OR Image ILIKE '%:\\Program Files\\%' OR Image ILIKE '%:\\Windows\\System32\\%' OR Image ILIKE '%:\\Windows\\SysWOW64\\%' OR Image ILIKE '%:\\Windows\\WinSxS\\%') OR ((Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework64\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm64\\%') AND Image ILIKE '%\\ngentask.exe') OR isNull(Image) OR Image='')) AND (NOT (Image ILIKE '%:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' AND Image ILIKE '%\\MsMpEng.exe'))

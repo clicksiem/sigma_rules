@@ -1,0 +1,13 @@
+id: 9eb271b9-24ae-4cd4-9465-19cfc1047f3e
+name: Potential Proxy Execution Via Explorer.EXE From Shell Process
+level: 3
+size: '>0'
+active: true
+author:
+- Furkan CALISKAN, @caliskanfurkan_, @oscd_initiative
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND Image ILIKE '%\\explorer.exe' AND CommandLine ILIKE '%explorer.exe%'

@@ -1,0 +1,13 @@
+id: 9cd55b6c-430a-4fa9-96f4-7cadf5229e9f
+name: EventLog Query Requests By Builtin Utilities
+level: 5
+size: '>0'
+active: true
+author:
+- Ali Alwashali, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.t1552
+- attack.credential-access
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Select%' AND CommandLine ILIKE '%Win32\_NTLogEvent%') OR ((Image ILIKE '%\\wevtutil.exe' OR OriginalFileName='wevtutil.exe') AND (CommandLine ILIKE '% qe %' OR CommandLine ILIKE '% query-events %')) OR ((Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND CommandLine ILIKE '% ntevent%') OR (CommandLine ILIKE '%Get-WinEvent %' OR CommandLine ILIKE '%get-eventlog %')

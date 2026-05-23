@@ -1,0 +1,13 @@
+id: a88d9f45-ec8a-4b0e-85ee-c9f6a65e9128
+name: Potential APT FIN7 Related PowerShell Script Created
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.g0046
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\_64refl.ps1' OR TargetFilename ILIKE 'host\_ip.ps1'

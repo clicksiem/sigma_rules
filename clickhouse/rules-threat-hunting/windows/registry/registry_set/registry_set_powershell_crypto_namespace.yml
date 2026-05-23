@@ -1,0 +1,18 @@
+id: 1c2a3268-3881-414a-80af-a5b313b14c0e
+name: Registry Set With Crypto-Classes From The "Cryptography" PowerShell Namespace
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io)
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1059.001
+- attack.t1027.010
+- attack.t1547.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Shell\\Open\\Command%' AND (Details ILIKE '%powershell%' OR Details ILIKE '%pwsh%') AND Details ILIKE '%System.Security.Cryptography.%' AND (Details ILIKE '%.AesCryptoServiceProvider%' OR Details ILIKE '%.DESCryptoServiceProvider%' OR Details ILIKE '%.DSACryptoServiceProvider%' OR Details ILIKE '%.RC2CryptoServiceProvider%' OR Details ILIKE '%.Rijndael%' OR Details ILIKE '%.RSACryptoServiceProvider%' OR Details ILIKE '%.TripleDESCryptoServiceProvider%')

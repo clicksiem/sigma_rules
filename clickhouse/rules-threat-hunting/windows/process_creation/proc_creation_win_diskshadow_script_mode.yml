@@ -1,0 +1,14 @@
+id: 0c2f8629-7129-4a8a-9897-7e0768f13ff2
+name: Diskshadow Script Mode Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Ivan Dyachkov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (OriginalFileName='diskshadow.exe' OR Image ILIKE '%\\diskshadow.exe') AND (CommandLine ILIKE '%-s %' OR CommandLine ILIKE '%/s %' OR CommandLine ILIKE '%–s %' OR CommandLine ILIKE '%—s %' OR CommandLine ILIKE '%―s %')

@@ -1,0 +1,17 @@
+id: 3121461b-5aa0-4a41-b910-66d25524edbb
+name: Winnti Malware HK University Campaign
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+- attack.g0044
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%C:\\Windows\\Temp%' OR ParentImage ILIKE '%\\hpqhvind.exe%') AND Image ILIKE 'C:\\ProgramData\\DRM%') OR (ParentImage ILIKE 'C:\\ProgramData\\DRM%' AND Image ILIKE '%\\wmplayer.exe') OR (ParentImage ILIKE '%\\Test.exe' AND Image ILIKE '%\\wmplayer.exe') OR Image ILIKE 'C:\\ProgramData\\DRM\\CLR\\CLR.exe' OR (ParentImage ILIKE 'C:\\ProgramData\\DRM\\Windows%' AND Image ILIKE '%\\SearchFilterHost.exe')

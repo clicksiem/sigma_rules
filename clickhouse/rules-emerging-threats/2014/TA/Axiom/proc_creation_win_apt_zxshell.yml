@@ -1,0 +1,17 @@
+id: f0b70adb-0075-43b0-9745-e82a1c608fcc
+name: ZxShell Malware
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community, Jonhnathan Ribeiro
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.003
+- attack.t1218.011
+- attack.s0412
+- attack.g0001
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\rundll32.exe' AND (CommandLine ILIKE '%zxFunction%' OR CommandLine ILIKE '%RemoteDiskXXXXX%')

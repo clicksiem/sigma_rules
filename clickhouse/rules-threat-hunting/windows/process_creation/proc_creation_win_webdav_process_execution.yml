@@ -1,0 +1,15 @@
+id: f8de9dd5-7a63-4cfd-9d0c-ae124878b5a9
+name: Process Execution From WebDAV Share
+level: 3
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.command-and-control
+- attack.lateral-movement
+- attack.t1105
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '\\\\%' AND Image ILIKE '%\\DavWWWRoot\\%'

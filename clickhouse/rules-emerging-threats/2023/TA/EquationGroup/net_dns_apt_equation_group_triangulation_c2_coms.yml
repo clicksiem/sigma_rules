@@ -1,0 +1,13 @@
+id: 7fc30d63-728d-48d9-ad6f-14d14f4accf7
+name: Potential Operation Triangulation C2 Beaconing Activity - DNS
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.g0020
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE query IN ('addatamarket.net', 'ans7tv.net', 'anstv.net', 'backuprabbit.com', 'businessvideonews.com', 'cloudsponcer.com', 'datamarketplace.net', 'growthtransport.com', 'mobilegamerstats.com', 'snoweeanalytics.com', 'tagclick-cdn.com', 'topographyupdates.com', 'unlimitedteacup.com', 'virtuallaughing.com', 'web-trackers.com')

@@ -1,0 +1,13 @@
+id: c1477deb-37cf-4439-9ffb-44499acb89d0
+name: FTP Connection Open Attempt Via Winscp CLI
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WinSCP.exe' OR OriginalFileName='winscp.exe') AND ((CommandLine ILIKE '%-command%' OR CommandLine ILIKE '%/command%' OR CommandLine ILIKE '%–command%' OR CommandLine ILIKE '%—command%' OR CommandLine ILIKE '%―command%') AND (CommandLine ILIKE '%open %' AND CommandLine ILIKE '%ftp://%'))

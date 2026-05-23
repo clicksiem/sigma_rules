@@ -1,0 +1,13 @@
+id: dca1b3e8-e043-4ec8-85d7-867f334b5724
+name: PFX File Creation
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.004
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.pfx' AND (NOT (((Image IN ('C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe', 'C:\\Program Files (x86)\\Microsoft OneDrive\\OneDrive.exe')) AND TargetFilename ILIKE '%\\OneDrive\\CodeSigning.pfx') OR (TargetFilename ILIKE 'C:\\Program Files (x86)\\Microsoft Visual Studio\\%' OR TargetFilename ILIKE 'C:\\Program Files\\Microsoft Visual Studio\\%') OR TargetFilename ILIKE 'C:\\Program Files\\CMake\\%'))

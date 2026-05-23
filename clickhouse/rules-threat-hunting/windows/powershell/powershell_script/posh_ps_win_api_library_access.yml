@@ -1,0 +1,14 @@
+id: 9f22ccd5-a435-453b-af96-bf99cbb594d4
+name: WinAPI Function Calls Via PowerShell Scripts
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.t1106
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%AddSecurityPackage%' OR ScriptBlockText ILIKE '%AdjustTokenPrivileges%' OR ScriptBlockText ILIKE '%CloseHandle%' OR ScriptBlockText ILIKE '%CreateProcessWithToken%' OR ScriptBlockText ILIKE '%CreateRemoteThread%' OR ScriptBlockText ILIKE '%CreateThread%' OR ScriptBlockText ILIKE '%CreateUserThread%' OR ScriptBlockText ILIKE '%DangerousGetHandle%' OR ScriptBlockText ILIKE '%DuplicateTokenEx%' OR ScriptBlockText ILIKE '%EnumerateSecurityPackages%' OR ScriptBlockText ILIKE '%FreeLibrary%' OR ScriptBlockText ILIKE '%GetDelegateForFunctionPointer%' OR ScriptBlockText ILIKE '%GetLogonSessionData%' OR ScriptBlockText ILIKE '%GetModuleHandle%' OR ScriptBlockText ILIKE '%GetProcAddress%' OR ScriptBlockText ILIKE '%GetProcessHandle%' OR ScriptBlockText ILIKE '%GetTokenInformation%' OR ScriptBlockText ILIKE '%ImpersonateLoggedOnUser%' OR ScriptBlockText ILIKE '%LoadLibrary%' OR ScriptBlockText ILIKE '%memcpy%' OR ScriptBlockText ILIKE '%MiniDumpWriteDump%' OR ScriptBlockText ILIKE '%OpenDesktop%' OR ScriptBlockText ILIKE '%OpenProcess%' OR ScriptBlockText ILIKE '%OpenProcessToken%' OR ScriptBlockText ILIKE '%OpenThreadToken%' OR ScriptBlockText ILIKE '%OpenWindowStation%' OR ScriptBlockText ILIKE '%QueueUserApc%' OR ScriptBlockText ILIKE '%ReadProcessMemory%' OR ScriptBlockText ILIKE '%RevertToSelf%' OR ScriptBlockText ILIKE '%RtlCreateUserThread%' OR ScriptBlockText ILIKE '%SetThreadToken%' OR ScriptBlockText ILIKE '%VirtualAlloc%' OR ScriptBlockText ILIKE '%VirtualFree%' OR ScriptBlockText ILIKE '%VirtualProtect%' OR ScriptBlockText ILIKE '%WaitForSingleObject%' OR ScriptBlockText ILIKE '%WriteInt32%' OR ScriptBlockText ILIKE '%WriteProcessMemory%' OR ScriptBlockText ILIKE '%ZeroFreeGlobalAllocUnicode%'

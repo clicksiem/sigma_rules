@@ -1,0 +1,14 @@
+id: a62298a3-1fe0-422f-9a68-ffbcbc5a123d
+name: MERCURY APT Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.g0069
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%-exec bypass -w 1 -enc%' AND CommandLine ILIKE '%UwB0AGEAcgB0AC0ASgBvAGIAIAAtAFMAYwByAGkAcAB0AEIAbABvAGMAawAgAHsAKABzAGEAcABzACAAKAAiAHAA%'

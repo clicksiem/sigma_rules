@@ -1,0 +1,17 @@
+id: 93ff0ceb-e0ef-4586-8cd8-a6c277d738e3
+name: Scheduled Task Created - Registry
+level: 3
+size: '>0'
+active: true
+author:
+- Center for Threat Informed Defense (CTID) Summiting the Pyramid Team
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.s0111
+- attack.t1053.005
+- car.2013-08-001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\%' OR TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\%'

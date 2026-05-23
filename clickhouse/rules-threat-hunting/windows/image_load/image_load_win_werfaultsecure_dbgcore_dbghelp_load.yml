@@ -1,0 +1,13 @@
+id: 8a2f4b1c-3d5e-4f7a-9b2c-1e4f6d8a9c2b
+name: WerFaultSecure Loading DbgCore or DbgHelp - EDR-Freeze
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\WerFaultSecure.exe' AND (ImageLoaded ILIKE '%\\dbgcore.dll' OR ImageLoaded ILIKE '%\\dbghelp.dll')

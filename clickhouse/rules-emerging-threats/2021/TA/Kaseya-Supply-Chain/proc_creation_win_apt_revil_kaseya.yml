@@ -1,0 +1,14 @@
+id: 5de632bc-7fbd-4c8a-944a-fce55c59eae5
+name: REvil Kaseya Incident Malware Patterns
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+- attack.g0115
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%C:\\Windows\\cert.exe%' OR CommandLine ILIKE '%del /q /f c:\\kworking\\agent.crt%' OR CommandLine ILIKE '%Kaseya VSA Agent Hot-fix%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\MsMpEng.exe%' OR CommandLine ILIKE '%rmdir /s /q \%SystemDrive\%\\inetpub\\logs%' OR CommandLine ILIKE '%del /s /q /f \%SystemDrive\%\\%.log%' OR CommandLine ILIKE '%c:\\kworking1\\agent.exe%' OR CommandLine ILIKE '%c:\\kworking1\\agent.crt%') OR (Image IN ('C:\\Windows\\MsMpEng.exe', 'C:\\Windows\\cert.exe', 'C:\\kworking\\agent.exe', 'C:\\kworking1\\agent.exe')) OR (CommandLine ILIKE '%del /s /q /f%' AND CommandLine ILIKE '%WebPages\\Errors\\webErrorLog.txt%')

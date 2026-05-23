@@ -1,0 +1,14 @@
+id: 71c432c4-e4da-4eab-ba49-e60ea9a81bca
+name: Potential APT FIN7 POWERHOLD Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.g0046
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%$env:APPDATA%' AND ScriptBlockText ILIKE '%function MainPayload%' AND ScriptBlockText ILIKE '%::WriteAllBytes%' AND ScriptBlockText ILIKE '%wscript.exe%'

@@ -1,0 +1,14 @@
+id: b83f5166-9237-4b5e-9cd4-7b5d52f4d8ee
+name: Potential Russian APT Credential Theft Activity
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.001
+- attack.t1003.003
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%xcopy /S /E /C /Q /H \\\\%' AND CommandLine ILIKE '%\\sysvol\\%') OR (CommandLine ILIKE '%adexplorer -snapshot "" c:\\users\\%' AND CommandLine ILIKE '%\\downloads\\%' AND CommandLine ILIKE '%.snp%')

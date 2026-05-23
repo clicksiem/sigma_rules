@@ -1,0 +1,14 @@
+id: 052ec6f6-1adc-41e6-907a-f1c813478bee
+name: CreateRemoteThread API and LoadLibrary
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.001
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE StartModule ILIKE '%\\kernel32.dll' AND StartFunction='LoadLibraryA'

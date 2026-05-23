@@ -1,0 +1,14 @@
+id: 36222790-0d43-4fe8-86e4-674b27809543
+name: Potential MuddyWater APT Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.g0069
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%vbscript:Close(Execute("CreateObject(%' AND CommandLine ILIKE '%powershell%' AND CommandLine ILIKE '%-w 1 -exec Bypass%' AND CommandLine ILIKE '%\\ProgramData\\%') OR (CommandLine ILIKE '%Win32\_OperatingSystem%' AND CommandLine ILIKE '%Win32\_NetworkAdapterConfiguration%' AND CommandLine ILIKE '%root\\SecurityCenter2%' AND CommandLine ILIKE '%[System.Net.DNS]%') OR (CommandLine ILIKE '%[Convert]::ToBase64String%' AND CommandLine ILIKE '%[System.Text.Encoding]::UTF8.GetString]%' AND CommandLine ILIKE '%GetResponse().GetResponseStream()%' AND CommandLine ILIKE '%[System.Net.HttpWebRequest]::Create(%' AND CommandLine ILIKE '%-bxor %')

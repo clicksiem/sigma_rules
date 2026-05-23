@@ -1,0 +1,13 @@
+id: 63332011-f057-496c-ad8d-d2b6afb27f96
+name: Suspicious Tasklist Discovery Command
+level: 1
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1057
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%tasklist%' OR Image ILIKE '%\\tasklist.exe' OR OriginalFileName='tasklist.exe'

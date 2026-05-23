@@ -1,0 +1,13 @@
+id: 121b25f7-b9d6-4b37-afa0-cba317ec52f3
+name: WDAC Policy File Creation In CodeIntegrity Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\Windows\\System32\\CodeIntegrity\\%' AND (TargetFilename ILIKE '%.cip' OR TargetFilename ILIKE '%.p7b') AND IntegrityLevel='High'

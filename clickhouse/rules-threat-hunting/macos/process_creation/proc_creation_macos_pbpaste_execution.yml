@@ -1,0 +1,14 @@
+id: d8af0da1-2959-40f9-a3e4-37a6aa1228b7
+name: Clipboard Data Collection Via Pbpaste
+level: 5
+size: '>0'
+active: true
+author:
+- Daniel Cortez
+group: macos
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1115
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE Image ILIKE '%/pbpaste'

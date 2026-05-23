@@ -1,0 +1,17 @@
+id: 0c7686d5-c74e-4292-b224-2a08e956ebc4
+name: Mail Forwarding/Redirecting Activity Via ExchangePowerShell Cmdlet
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Marco Pedrinazzi (@pedrinazziM) (InTheCyber)
+group: windows
+tags:
+- attack.collection
+- attack.stealth
+- attack.t1114.003
+- attack.t1564.008
+- attack.exfiltration
+- attack.t1020
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%New-InboxRule%' OR ScriptBlockText ILIKE '%Set-InboxRule%' OR ScriptBlockText ILIKE '%Set-Mailbox%') AND (ScriptBlockText ILIKE '%ForwardAsAttachmentTo%' OR ScriptBlockText ILIKE '%ForwardingAddress%' OR ScriptBlockText ILIKE '%ForwardingSmtpAddress%' OR ScriptBlockText ILIKE '%ForwardTo%' OR ScriptBlockText ILIKE '%RedirectTo%')

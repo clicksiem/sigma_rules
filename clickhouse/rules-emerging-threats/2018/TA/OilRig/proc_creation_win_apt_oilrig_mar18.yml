@@ -1,0 +1,22 @@
+id: ce6e34ca-966d-41c9-8d93-5b06c8b97a06
+name: OilRig APT Activity
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis, Jonhnathan Ribeiro, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.defense-impairment
+- attack.g0049
+- attack.t1053.005
+- attack.s0111
+- attack.t1543.003
+- attack.t1112
+- attack.command-and-control
+- attack.t1071.004
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%SC Scheduled Scan%' AND CommandLine ILIKE '%\\microsoft\\Taskbar\\autoit3.exe%') OR (Image ILIKE '%\\Windows\\Temp\\DB\\%' AND Image ILIKE '%.exe') OR (Image ILIKE 'C:\\Windows\\system32\\Service.exe' AND (CommandLine ILIKE '%i%' OR CommandLine ILIKE '%u%')) OR (ParentImage ILIKE '%\\local\\microsoft\\Taskbar\\autoit3.exe' AND (CommandLine ILIKE '%nslookup.exe%' AND CommandLine ILIKE '%-q=TXT%'))

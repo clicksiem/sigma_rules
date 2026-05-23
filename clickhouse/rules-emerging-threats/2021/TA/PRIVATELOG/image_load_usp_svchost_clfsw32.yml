@@ -1,0 +1,14 @@
+id: 33a2d1dd-f3b0-40bd-8baf-7974468927cc
+name: APT PRIVATELOG Image Load Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\svchost.exe' AND ImageLoaded ILIKE '%\\clfsw32.dll'

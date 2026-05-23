@@ -1,0 +1,14 @@
+id: ea207a23-b441-4a17-9f76-ad5be47d51d3
+name: Local Firewall Rules Enumeration Via NetFirewallRule Cmdlet
+level: 3
+size: '>0'
+active: true
+author:
+- Christopher Peacock @SecurePeacock, SCYTHE @scythe_io
+group: windows
+tags:
+- detection.threat-hunting
+- attack.discovery
+- attack.t1518.001
+- attack.t1016
+rule: SELECT * FROM logs WHERE (Payload ILIKE '%Get-NetFirewallRule%' OR Payload ILIKE '%Show-NetFirewallRule%') OR (ContextInfo ILIKE '%Get-NetFirewallRule%' OR ContextInfo ILIKE '%Show-NetFirewallRule%')

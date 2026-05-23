@@ -1,0 +1,14 @@
+id: 678dfc63-fefb-47a5-a04c-26bcf8cc9f65
+name: Uncommon GrantedAccess Flags On LSASS
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.s0002
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%\\lsass.exe' AND GrantedAccess ILIKE '%10') AND (NOT ((SourceImage IN ('C:\\Program Files\\Common Files\\McAfee\\MMSSHost\\MMSSHOST.exe', 'C:\\Program Files\\Malwarebytes\\Anti-Malware\\MBAMService.exe', 'C:\\Program Files\\Windows Defender\\MsMpEng.exe', 'C:\\PROGRAMDATA\\MALWAREBYTES\\MBAMSERVICE\\ctlrupdate\\mbupdatr.exe', 'C:\\Windows\\System32\\lsass.exe', 'C:\\Windows\\System32\\msiexec.exe', 'C:\\WINDOWS\\System32\\perfmon.exe', 'C:\\WINDOWS\\system32\\taskhostw.exe', 'C:\\WINDOWS\\system32\\taskmgr.exe', 'C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe', 'C:\\Windows\\SysWOW64\\msiexec.exe', 'C:\\Windows\\sysWOW64\\wbem\\wmiprvse.exe')) OR (SourceImage ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\%' AND SourceImage ILIKE '%\\MsMpEng.exe') OR (SourceImage ILIKE 'C:\\Program Files\\WindowsApps\\%' AND SourceImage ILIKE '%\\GamingServices.exe') OR (SourceImage ILIKE '%\\PROCEXP64.EXE' OR SourceImage ILIKE '%\\PROCEXP.EXE') OR (SourceImage ILIKE 'C:\\ProgramData\\VMware\\VMware Tools\\%' AND SourceImage ILIKE '%\\vmtoolsd.exe') OR ((SourceImage ILIKE 'C:\\Program Files\\%' OR SourceImage ILIKE 'C:\\Program Files (x86)\\%') AND SourceImage ILIKE '%Antivirus%') OR (SourceImage ILIKE '%\\thor64.exe' OR SourceImage ILIKE '%\\thor.exe' OR SourceImage ILIKE '%\\aurora-agent-64.exe' OR SourceImage ILIKE '%\\aurora-agent.exe') OR ((SourceImage ILIKE '%\\AppData\\Local\\Temp\\%' AND SourceImage ILIKE '%\\vs\_bootstrapper\_%') AND GrantedAccess='0x1410') OR (SourceImage ILIKE 'C:\\Program Files\\%' OR SourceImage ILIKE 'C:\\Program Files (x86)\\%' OR SourceImage ILIKE 'C:\\WINDOWS\\system32\\%') OR SourceCommandLine ILIKE 'C:\\WINDOWS\\system32\\wermgr.exe -upload' OR ((SourceImage ILIKE '%C:\\Users\\%' AND SourceImage ILIKE '%\\AppData\\Local\\%') AND (SourceImage ILIKE '%\\Microsoft VS Code\\Code.exe' OR SourceImage ILIKE '%\\software\_reporter\_tool.exe' OR SourceImage ILIKE '%\\DropboxUpdate.exe' OR SourceImage ILIKE '%\\MBAMInstallerService.exe' OR SourceImage ILIKE '%\\WebEx\\WebexHost.exe' OR SourceImage ILIKE '%\\Programs\\Microsoft VS Code\\Code.exe' OR SourceImage ILIKE '%\\JetBrains\\Toolbox\\bin\\jetbrains-toolbox.exe')) OR (SourceImage ILIKE '%\\xampp-control.exe' AND GrantedAccess='0x410') OR (SourceImage ILIKE '%\\SteamLibrary\\steamapps\\%' AND (GrantedAccess IN ('0x410', '0x10')))))

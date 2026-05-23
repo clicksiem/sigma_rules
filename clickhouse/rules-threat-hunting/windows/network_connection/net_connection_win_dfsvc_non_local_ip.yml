@@ -1,0 +1,13 @@
+id: 3c21219b-49b5-4268-bce6-c914ed50f09c
+name: Dfsvc.EXE Network Connection To Non-Local IPs
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1203
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dfsvc.exe' AND Initiated='true') AND (NOT (isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')))

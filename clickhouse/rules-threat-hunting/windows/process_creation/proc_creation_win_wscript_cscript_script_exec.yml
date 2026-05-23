@@ -1,0 +1,14 @@
+id: 1e33157c-53b1-41ad-bbcc-780b80b58288
+name: WSF/JSE/JS/VBA/VBE File Execution Via Cscript/Wscript
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Haag
+group: windows
+tags:
+- attack.execution
+- attack.t1059.005
+- attack.t1059.007
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE ((OriginalFileName IN ('wscript.exe', 'cscript.exe')) OR (Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe')) AND (CommandLine ILIKE '%.js%' OR CommandLine ILIKE '%.jse%' OR CommandLine ILIKE '%.vba%' OR CommandLine ILIKE '%.vbe%' OR CommandLine ILIKE '%.vbs%' OR CommandLine ILIKE '%.wsf%' OR CommandLine ILIKE '%.wsh%')

@@ -1,0 +1,13 @@
+id: 2d87d610-d760-45ee-a7e6-7a6f2a65de00
+name: Mustang Panda Dropper
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community
+group: windows
+tags:
+- attack.t1587.001
+- attack.resource-development
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%Temp\\wtask.exe /create%' OR CommandLine ILIKE '%\%windir:~-3,1\%\%PUBLIC:~-9,1\%%' OR CommandLine ILIKE '%/tn "Security Script %' OR CommandLine ILIKE '%\%windir:~-1,1\%%') OR (CommandLine ILIKE '%/E:vbscript%' AND CommandLine ILIKE '%C:\\Users\\%' AND CommandLine ILIKE '%.txt%' AND CommandLine ILIKE '%/F%')) OR Image ILIKE '%Temp\\winwsh.exe'

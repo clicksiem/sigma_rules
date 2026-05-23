@@ -1,0 +1,17 @@
+id: 73d70463-75c9-4258-92c6-17500fe972f2
+name: Winnti Pipemon Characteristics
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+- attack.g0044
+- detection.emerging-threats
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%setup0.exe -p%' OR (CommandLine ILIKE '%setup.exe%' AND (CommandLine ILIKE '%-x:0' OR CommandLine ILIKE '%-x:1' OR CommandLine ILIKE '%-x:2'))

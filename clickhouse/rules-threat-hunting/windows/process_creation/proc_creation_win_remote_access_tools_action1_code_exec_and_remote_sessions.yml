@@ -1,0 +1,13 @@
+id: aa3168fb-d594-4f93-a92d-7a9ba675b766
+name: Remote Access Tool - Action1 Arbitrary Code Execution and Remote Sessions
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\action1\_agent.exe' AND Image ILIKE '%\\Windows\\Action1\\package\_downloads\\%') OR ((ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\powershell.exe') AND (ParentCommandLine ILIKE '%\\Action1\\scripts\\Run\_Command\_%' OR ParentCommandLine ILIKE '%\\Action1\\scripts\\Run\_PowerShell\_%')) OR Image ILIKE '%\\agent1\_remote.exe'
