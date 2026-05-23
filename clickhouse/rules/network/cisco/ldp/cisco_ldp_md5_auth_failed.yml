@@ -1,0 +1,19 @@
+id: 50e606bf-04ce-4ca7-9d54-3449494bbd4b
+name: Cisco LDP Authentication Failures
+level: 3
+size: '>0'
+active: true
+author:
+- Tim Brown
+group: cisco
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.credential-access
+- attack.collection
+- attack.stealth
+- attack.t1078
+- attack.t1110
+- attack.t1557
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'LDP') AND (hasToken(full_log, 'SOCKET\_TCP\_PACKET\_MD5\_AUTHEN\_FAIL') OR hasToken(full_log, 'TCPMD5AuthenFail'))

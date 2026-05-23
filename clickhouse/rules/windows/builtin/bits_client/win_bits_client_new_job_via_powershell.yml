@@ -1,0 +1,14 @@
+id: fe3a2d49-f255-4d10-935c-bda7391108eb
+name: New BITS Job Created Via PowerShell
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+rule: SELECT * FROM logs WHERE EventID=3 AND (processPath ILIKE '%\\powershell.exe' OR processPath ILIKE '%\\pwsh.exe')

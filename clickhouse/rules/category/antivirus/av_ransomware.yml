@@ -1,0 +1,12 @@
+id: 4c6ca276-d4d0-4a8c-9e4c-d69832f8671f
+name: Antivirus Ransomware Detection
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Arnim Rupp
+group: ''
+tags:
+- attack.t1486
+- attack.impact
+rule: SELECT * FROM logs WHERE Signature ILIKE '%BlackWorm%' OR Signature ILIKE '%Chaos%' OR Signature ILIKE '%Cobra%' OR Signature ILIKE '%ContiCrypt%' OR Signature ILIKE '%Crypter%' OR Signature ILIKE '%CRYPTES%' OR Signature ILIKE '%Cryptor%' OR Signature ILIKE '%CylanCrypt%' OR Signature ILIKE '%DelShad%' OR Signature ILIKE '%Destructor%' OR Signature ILIKE '%Filecoder%' OR Signature ILIKE '%GandCrab%' OR Signature ILIKE '%GrandCrab%' OR Signature ILIKE '%Haperlock%' OR Signature ILIKE '%Hiddentear%' OR Signature ILIKE '%HydraCrypt%' OR Signature ILIKE '%Krypt%' OR Signature ILIKE '%Lockbit%' OR Signature ILIKE '%Locker%' OR Signature ILIKE '%Mallox%' OR Signature ILIKE '%Phobos%' OR Signature ILIKE '%Ransom%' OR Signature ILIKE '%Ryuk%' OR Signature ILIKE '%Ryzerlo%' OR Signature ILIKE '%Stopcrypt%' OR Signature ILIKE '%Tescrypt%' OR Signature ILIKE '%TeslaCrypt%' OR Signature ILIKE '%WannaCry%' OR Signature ILIKE '%Xorist%'

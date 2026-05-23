@@ -1,0 +1,14 @@
+id: 614a7e17-5643-4d89-b6fe-f9df1a79641c
+name: Wmiprvse Wbemcomn DLL Hijack - File
+level: 10
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE Image='System' AND TargetFilename ILIKE '%\\wbem\\wbemcomn.dll'

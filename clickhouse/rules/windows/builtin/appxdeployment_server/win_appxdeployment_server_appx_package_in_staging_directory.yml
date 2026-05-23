@@ -1,0 +1,11 @@
+id: 5cdeaf3d-1489-477c-95ab-c318559fc051
+name: AppX Located in Known Staging Directory Added to Deployment Pipeline
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE EventID=854 AND ((Path ILIKE '%:/Perflogs/%' OR Path ILIKE '%:/Users/Public/%' OR Path ILIKE '%:/Windows/Temp/%' OR Path ILIKE '%/AppdData/Local/Temp/%' OR Path ILIKE '%/Desktop/%' OR Path ILIKE '%/Downloads/%') OR (Path ILIKE '%:\\PerfLogs\\%' OR Path ILIKE '%:\\Users\\Public\\%' OR Path ILIKE '%:\\Windows\\Temp\\%' OR Path ILIKE '%\\AppdData\\Local\\Temp\\%' OR Path ILIKE '%\\Desktop\\%' OR Path ILIKE '%\\Downloads\\%'))

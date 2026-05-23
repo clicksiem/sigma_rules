@@ -1,0 +1,16 @@
+id: 5bed80b6-b3e8-428e-a3ae-d3c757589e41
+name: RDP over Reverse SSH Tunnel WFP
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.command-and-control
+- attack.lateral-movement
+- attack.t1090.001
+- attack.t1090.002
+- attack.t1021.001
+- car.2013-07-002
+rule: SELECT * FROM logs WHERE EventID=5156 AND ((SourcePort=3389 AND (DestAddress ILIKE '127.%' OR DestAddress='::1')) OR (DestPort=3389 AND (SourceAddress ILIKE '127.%' OR SourceAddress='::1'))) AND (NOT (FilterOrigin='AppContainer Loopback' OR (Application ILIKE '%\\thor.exe' OR Application ILIKE '%\\thor64.exe')))

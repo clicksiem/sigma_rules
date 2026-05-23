@@ -1,0 +1,11 @@
+id: 286b47ed-f6fe-40b3-b3a8-35129acd43bc
+name: Suspicious Access to Sensitive File Extensions - Zeek
+level: 5
+size: '>0'
+active: true
+author:
+- Samir Bousseaden, @neu5ron
+group: zeek
+tags:
+- attack.collection
+rule: SELECT * FROM logs WHERE name ILIKE '%.pst' OR name ILIKE '%.ost' OR name ILIKE '%.msg' OR name ILIKE '%.nst' OR name ILIKE '%.oab' OR name ILIKE '%.edb' OR name ILIKE '%.nsf' OR name ILIKE '%.bak' OR name ILIKE '%.dmp' OR name ILIKE '%.kirbi' OR name ILIKE '%.rdp'

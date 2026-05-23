@@ -1,0 +1,12 @@
+id: a46c93b7-55ed-4d27-a41b-c259456c4746
+name: Linux Crypto Mining Pool Connections
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.impact
+- attack.t1496
+rule: SELECT * FROM logs WHERE DestinationHostname IN ('pool.minexmr.com', 'fr.minexmr.com', 'de.minexmr.com', 'sg.minexmr.com', 'ca.minexmr.com', 'us-west.minexmr.com', 'pool.supportxmr.com', 'mine.c3pool.com', 'xmr-eu1.nanopool.org', 'xmr-eu2.nanopool.org', 'xmr-us-east1.nanopool.org', 'xmr-us-west1.nanopool.org', 'xmr-asia1.nanopool.org', 'xmr-jp1.nanopool.org', 'xmr-au1.nanopool.org', 'xmr.2miners.com', 'xmr.hashcity.org', 'xmr.f2pool.com', 'xmrpool.eu', 'pool.hashvault.pro', 'moneroocean.stream', 'monerocean.stream')

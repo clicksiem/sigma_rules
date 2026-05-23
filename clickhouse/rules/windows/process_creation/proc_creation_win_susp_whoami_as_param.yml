@@ -1,0 +1,13 @@
+id: e9142d84-fbe0-401d-ac50-3e519fb00c89
+name: WhoAmI as Parameter
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+- car.2016-03-001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%.exe whoami%'

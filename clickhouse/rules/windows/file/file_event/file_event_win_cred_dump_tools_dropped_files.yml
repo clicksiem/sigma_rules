@@ -1,0 +1,16 @@
+id: 8fbf3271-1ef6-4e94-8210-03c2317947f6
+name: Cred Dump Tools Dropped Files
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.t1003.002
+- attack.t1003.003
+- attack.t1003.004
+- attack.t1003.005
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\fgdump-log%' OR TargetFilename ILIKE '%\\kirbi%' OR TargetFilename ILIKE '%\\pwdump%' OR TargetFilename ILIKE '%\\pwhashes%' OR TargetFilename ILIKE '%\\wce\_ccache%' OR TargetFilename ILIKE '%\\wce\_krbtkts%') OR (TargetFilename ILIKE '%\\cachedump.exe' OR TargetFilename ILIKE '%\\cachedump64.exe' OR TargetFilename ILIKE '%\\DumpExt.dll' OR TargetFilename ILIKE '%\\DumpSvc.exe' OR TargetFilename ILIKE '%\\Dumpy.exe' OR TargetFilename ILIKE '%\\fgexec.exe' OR TargetFilename ILIKE '%\\lsremora.dll' OR TargetFilename ILIKE '%\\lsremora64.dll' OR TargetFilename ILIKE '%\\NTDS.out' OR TargetFilename ILIKE '%\\procdump.exe' OR TargetFilename ILIKE '%\\procdump64.exe' OR TargetFilename ILIKE '%\\procdump64a.exe' OR TargetFilename ILIKE '%\\pstgdump.exe' OR TargetFilename ILIKE '%\\pwdump.exe' OR TargetFilename ILIKE '%\\SAM.out' OR TargetFilename ILIKE '%\\SECURITY.out' OR TargetFilename ILIKE '%\\servpw.exe' OR TargetFilename ILIKE '%\\servpw64.exe' OR TargetFilename ILIKE '%\\SYSTEM.out' OR TargetFilename ILIKE '%\\test.pwd' OR TargetFilename ILIKE '%\\wceaux.dll')

@@ -1,0 +1,12 @@
+id: c8557060-9221-4448-8794-96320e6f3e74
+name: Windows PowerShell User Agent
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE `c-useragent` ILIKE '% WindowsPowerShell/%'

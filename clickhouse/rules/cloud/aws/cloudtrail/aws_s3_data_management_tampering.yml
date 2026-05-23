@@ -1,0 +1,12 @@
+id: 78b3756a-7804-4ef7-8555-7b9024a02e2d
+name: AWS S3 Data Management Tampering
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: aws
+tags:
+- attack.exfiltration
+- attack.t1537
+rule: SELECT * FROM logs WHERE eventSource='s3.amazonaws.com' AND (eventName IN ('PutBucketLogging', 'PutBucketWebsite', 'PutEncryptionConfiguration', 'PutLifecycleConfiguration', 'PutReplicationConfiguration', 'ReplicateObject', 'RestoreObject'))

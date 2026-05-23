@@ -1,0 +1,12 @@
+id: d3bf399f-b0cf-4250-8bb4-dfc192ab81dc
+name: Ie4uinit Lolbin Use From Invalid Path
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\ie4uinit.exe' OR OriginalFileName='IE4UINIT.EXE') AND (NOT ((CurrentDirectory IN ('c:\\windows\\system32\\', 'c:\\windows\\sysWOW64\\')) OR isNull(CurrentDirectory)))

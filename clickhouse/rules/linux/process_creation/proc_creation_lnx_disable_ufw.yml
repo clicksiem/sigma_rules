@@ -1,0 +1,12 @@
+id: 84c9e83c-599a-458a-a0cb-0ecce44e807a
+name: Ufw Force Stop Using Ufw-Init
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1686
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%-ufw-init%' AND CommandLine ILIKE '%force-stop%') OR (CommandLine ILIKE '%ufw%' AND CommandLine ILIKE '%disable%')

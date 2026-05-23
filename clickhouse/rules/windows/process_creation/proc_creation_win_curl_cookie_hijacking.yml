@@ -1,0 +1,11 @@
+id: 5a6e1e16-07de-48d8-8aae-faa766c05e88
+name: Potential Cookies Session Hijacking
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\curl.exe' OR OriginalFileName='curl.exe') AND (match(CommandLine, '\s-c\s') OR CommandLine ILIKE '%--cookie-jar%')

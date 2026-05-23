@@ -1,0 +1,12 @@
+id: 0442defa-b4a2-41c9-ae2c-ea7042fc4701
+name: Potential Credential Dumping Attempt Using New NetworkProvider - REG
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\System\\CurrentControlSet\\Services\\%' AND TargetObject ILIKE '%\\NetworkProvider%') AND (NOT ((TargetObject ILIKE '%\\System\\CurrentControlSet\\Services\\WebClient\\NetworkProvider%' OR TargetObject ILIKE '%\\System\\CurrentControlSet\\Services\\LanmanWorkstation\\NetworkProvider%' OR TargetObject ILIKE '%\\System\\CurrentControlSet\\Services\\RDPNP\\NetworkProvider%') OR Image ILIKE 'C:\\Windows\\System32\\poqexec.exe'))

@@ -1,0 +1,15 @@
+id: 9827ae57-3802-418f-994b-d5ecf5cd974b
+name: Potential Registry Persistence Attempt Via DbgManagedDebugger
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\.NETFramework\\DbgManagedDebugger' AND (NOT Details ILIKE '"C:\\Windows\\system32\\vsjitdebugger.exe" PID \%d APPDOM \%d EXTEXT "\%s" EVTHDL \%d')

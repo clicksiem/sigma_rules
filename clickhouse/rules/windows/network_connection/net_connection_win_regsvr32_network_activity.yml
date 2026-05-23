@@ -1,0 +1,14 @@
+id: c7e91a02-d771-4a6d-a700-42587e0b1095
+name: Network Connection Initiated By Regsvr32.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Dmitriy Lifanov, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1559.001
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE Initiated='true' AND Image ILIKE '%\\regsvr32.exe'

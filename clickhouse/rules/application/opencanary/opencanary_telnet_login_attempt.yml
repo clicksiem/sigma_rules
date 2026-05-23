@@ -1,0 +1,17 @@
+id: 512cff7a-683a-43ad-afe0-dd398e872f36
+name: OpenCanary - Telnet Login Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.command-and-control
+- attack.stealth
+- attack.t1133
+- attack.t1078
+rule: SELECT * FROM logs WHERE logtype=6001

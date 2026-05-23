@@ -1,0 +1,12 @@
+id: 6331d09b-4785-4c13-980f-f96661356249
+name: PowerShell Downgrade Attack - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Lee Holmes (idea), Harish Segar (improvements)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Data ILIKE '%EngineVersion=2.%' AND (NOT Data ILIKE '%HostVersion=2.%')

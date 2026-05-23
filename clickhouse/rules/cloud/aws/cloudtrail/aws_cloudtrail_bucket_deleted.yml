@@ -1,0 +1,11 @@
+id: 39c9f26d-6e3b-4dbb-9c7a-4154b0281112
+name: AWS Bucket Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Ivan Saakov, Nasreddine Bencherchali
+group: aws
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE eventName='DeleteBucket' AND (errorCode='Success' OR isNull(errorCode))

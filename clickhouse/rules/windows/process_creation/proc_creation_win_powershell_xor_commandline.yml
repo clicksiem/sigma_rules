@@ -1,0 +1,15 @@
+id: bb780e0c-16cf-4383-8383-1e5471db6cf9
+name: Suspicious XOR Encoded PowerShell Command
+level: 5
+size: '>0'
+active: true
+author:
+- Sami Ruohonen, Harish Segar, Tim Shelton, Teymur Kheirkhabarov, Vasiliy Burov, oscd.community, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1140
+- attack.t1027
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll')) OR Description='Windows PowerShell' OR Product='PowerShell Core 6') AND CommandLine ILIKE '%bxor%' AND (CommandLine ILIKE '%ForEach%' OR CommandLine ILIKE '%for(%' OR CommandLine ILIKE '%for %' OR CommandLine ILIKE '%-join %' OR CommandLine ILIKE '%-join''%' OR CommandLine ILIKE '%-join"%' OR CommandLine ILIKE '%-join`%' OR CommandLine ILIKE '%::Join%' OR CommandLine ILIKE '%[char]%')

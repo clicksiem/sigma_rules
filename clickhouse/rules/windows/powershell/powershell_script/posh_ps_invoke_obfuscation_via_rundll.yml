@@ -1,0 +1,14 @@
+id: e6cb92b4-b470-4eb8-8a9d-d63e8583aae0
+name: Invoke-Obfuscation RUNDLL LAUNCHER - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%rundll32.exe%' AND ScriptBlockText ILIKE '%shell32.dll%' AND ScriptBlockText ILIKE '%shellexec\_rundll%' AND ScriptBlockText ILIKE '%powershell%'

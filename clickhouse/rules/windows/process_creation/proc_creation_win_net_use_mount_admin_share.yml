@@ -1,0 +1,12 @@
+id: 3abd6094-7027-475f-9630-8ab9be7b9725
+name: Windows Admin Share Mount Via Net.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- oscd.community, Teymur Kheirkhabarov @HeirhabarovT, Zach Stanford @svch0st, wagga
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND (CommandLine ILIKE '% use %' AND CommandLine ILIKE '% \\\\%\\%$%')

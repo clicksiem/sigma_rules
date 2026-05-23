@@ -1,0 +1,11 @@
+id: c0239255-822c-4630-b7f1-35362bcb8f44
+name: Triple Cross eBPF Rootkit Default LockFile
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE TargetFilename='/tmp/rootlog'

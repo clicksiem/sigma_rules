@@ -1,0 +1,12 @@
+id: e9c8808f-4cfb-4ba9-97d4-e5f3beaa244d
+name: Windows Defender Exclusion Registry Key - Write Access Requested
+level: 5
+size: '>0'
+active: true
+author:
+- '@BarryShooshooga, Nasreddine Bencherchali (Nextron Systems)'
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (AccessList ILIKE '%\%\%4417%' OR AccessList ILIKE '%\%\%4418%') AND (EventID IN (4656, 4663)) AND ObjectName ILIKE '%\\Microsoft\\Windows Defender\\Exclusions\\%'

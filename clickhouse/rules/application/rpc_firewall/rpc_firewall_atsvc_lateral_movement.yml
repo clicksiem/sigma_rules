@@ -1,0 +1,16 @@
+id: 0fcd1c79-4eeb-4746-aba9-1b458f7a79cb
+name: Remote Schedule Task Lateral Movement via ATSvc
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.privilege-escalation
+- attack.lateral-movement
+- attack.execution
+- attack.persistence
+- attack.t1053
+- attack.t1053.002
+rule: SELECT * FROM logs WHERE EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='1ff70682-0a51-30e8-076d-740be8cee98b' AND (OpNum IN (0, 1))

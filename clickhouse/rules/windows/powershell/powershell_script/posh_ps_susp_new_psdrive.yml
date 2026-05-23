@@ -1,0 +1,12 @@
+id: 1c563233-030e-4a07-af8c-ee0490a66d3a
+name: Suspicious New-PSDrive to Admin Share
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-PSDrive%' AND ScriptBlockText ILIKE '%-psprovider %' AND ScriptBlockText ILIKE '%filesystem%' AND ScriptBlockText ILIKE '%-root %' AND ScriptBlockText ILIKE '%\\\\%' AND ScriptBlockText ILIKE '%$%'

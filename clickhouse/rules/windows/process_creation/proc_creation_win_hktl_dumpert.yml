@@ -1,0 +1,12 @@
+id: 2704ab9e-afe2-4854-a3b1-0c0706d03578
+name: HackTool - Dumpert Process Dumper Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE Hashes ILIKE '%MD5=09D278F9DE118EF09163C6140255C690%' OR CommandLine ILIKE '%Dumpert.dll%'

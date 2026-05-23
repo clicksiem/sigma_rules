@@ -1,0 +1,13 @@
+id: f5e3b62f-e577-4e59-931e-0a15b2b94e1e
+name: HackTool - Htran/NATBypass Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1090
+- attack.s0040
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\htran.exe' OR Image ILIKE '%\\lcx.exe') OR (CommandLine ILIKE '%.exe -tran %' OR CommandLine ILIKE '%.exe -slave %')

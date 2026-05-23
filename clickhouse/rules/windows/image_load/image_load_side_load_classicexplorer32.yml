@@ -1,0 +1,15 @@
+id: caa02837-f659-466f-bca6-48bde2826ab4
+name: Potential DLL Sideloading Via ClassicExplorer32.dll
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\ClassicExplorer32.dll' AND (NOT ImageLoaded ILIKE 'C:\\Program Files\\Classic Shell\\%')

@@ -1,0 +1,12 @@
+id: ba4cfc11-d0fa-4d94-bf20-7c332c412e76
+name: Potentially Suspicious DLL Registered Via Odbcconf.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.008
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\odbcconf.exe' OR OriginalFileName='odbcconf.exe') AND CommandLine ILIKE '%REGSVR %') AND (NOT CommandLine ILIKE '%.dll%')

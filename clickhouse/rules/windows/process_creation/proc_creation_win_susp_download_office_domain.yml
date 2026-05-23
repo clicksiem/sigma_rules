@@ -1,0 +1,14 @@
+id: 00d49ed5-4491-4271-a8db-650a4ef6f8c1
+name: Suspicious Download from Office Domain
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.resource-development
+- attack.t1105
+- attack.t1608
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\curl.exe' OR Image ILIKE '%\\wget.exe') OR (CommandLine ILIKE '%Invoke-WebRequest%' OR CommandLine ILIKE '%iwr %' OR CommandLine ILIKE '%curl %' OR CommandLine ILIKE '%wget %' OR CommandLine ILIKE '%Start-BitsTransfer%' OR CommandLine ILIKE '%.DownloadFile(%' OR CommandLine ILIKE '%.DownloadString(%')) AND (CommandLine ILIKE '%https://attachment.outlook.live.net/owa/%' OR CommandLine ILIKE '%https://onenoteonlinesync.onenote.com/onenoteonlinesync/%')

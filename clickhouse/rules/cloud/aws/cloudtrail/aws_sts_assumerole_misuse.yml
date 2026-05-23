@@ -1,0 +1,15 @@
+id: 905d389b-b853-46d0-9d3d-dea0d3a3cd49
+name: AWS STS AssumeRole Misuse
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: aws
+tags:
+- attack.lateral-movement
+- attack.privilege-escalation
+- attack.t1548
+- attack.t1550
+- attack.t1550.001
+rule: SELECT * FROM logs WHERE `userIdentity.type`='AssumedRole' AND `userIdentity.sessionContext.sessionIssuer.type`='Role'

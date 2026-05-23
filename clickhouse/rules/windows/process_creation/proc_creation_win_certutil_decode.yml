@@ -1,0 +1,12 @@
+id: cc9cbe82-7bc0-4ef5-bc23-bbfb83947be7
+name: File Decoded From Base64/Hex Via Certutil.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certutil.exe' OR OriginalFileName='CertUtil.exe') AND (CommandLine ILIKE '%-decode %' OR CommandLine ILIKE '%/decode %' OR CommandLine ILIKE '%–decode %' OR CommandLine ILIKE '%—decode %' OR CommandLine ILIKE '%―decode %' OR CommandLine ILIKE '%-decodehex %' OR CommandLine ILIKE '%/decodehex %' OR CommandLine ILIKE '%–decodehex %' OR CommandLine ILIKE '%—decodehex %' OR CommandLine ILIKE '%―decodehex %')

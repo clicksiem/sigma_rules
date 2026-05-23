@@ -1,0 +1,14 @@
+id: 7a1b4c5e-8f3d-4b9a-7c2e-1f4a5b8c6d9e
+name: Suspicious Space Characters in RunMRU Registry Path - ClickFix
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1204.004
+- attack.t1027.010
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU\\%' AND Details ILIKE '%#%') AND (Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %')

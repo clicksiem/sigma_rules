@@ -1,0 +1,12 @@
+id: 904e8e61-8edf-4350-b59c-b905fc8e810c
+name: Security Software Discovery Via Powershell Script
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Anish Bogati, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1518.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%get-process | ?%' OR ScriptBlockText ILIKE '%get-process | where%' OR ScriptBlockText ILIKE '%gps | ?%' OR ScriptBlockText ILIKE '%gps | where%') AND (ScriptBlockText ILIKE '%Company -like%' OR ScriptBlockText ILIKE '%Description -like%' OR ScriptBlockText ILIKE '%Name -like%' OR ScriptBlockText ILIKE '%Path -like%' OR ScriptBlockText ILIKE '%Product -like%') AND (ScriptBlockText ILIKE '%*avira*%' OR ScriptBlockText ILIKE '%*carbonblack*%' OR ScriptBlockText ILIKE '%*cylance*%' OR ScriptBlockText ILIKE '%*defender*%' OR ScriptBlockText ILIKE '%*kaspersky*%' OR ScriptBlockText ILIKE '%*malware*%' OR ScriptBlockText ILIKE '%*sentinel*%' OR ScriptBlockText ILIKE '%*symantec*%' OR ScriptBlockText ILIKE '%*virus*%')

@@ -1,0 +1,12 @@
+id: 4e25af4b-246d-44ea-8563-e42aacab006b
+name: Potential Xterm Reverse Shell
+level: 5
+size: '>0'
+active: true
+author:
+- '@d4ns4n_'
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE Image ILIKE '%xterm%' AND CommandLine ILIKE '%-display%' AND CommandLine ILIKE '%:1'

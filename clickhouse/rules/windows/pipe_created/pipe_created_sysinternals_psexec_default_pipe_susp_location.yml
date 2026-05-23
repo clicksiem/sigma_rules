@@ -1,0 +1,13 @@
+id: 41504465-5e3a-4a5b-a5b4-2a0baadd4463
+name: PsExec Tool Execution From Suspicious Locations - PipeName
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE PipeName ILIKE '\\PSEXESVC' AND (Image ILIKE '%:\\Users\\Public\\%' OR Image ILIKE '%:\\Windows\\Temp\\%' OR Image ILIKE '%\\AppData\\Local\\Temp\\%' OR Image ILIKE '%\\Desktop\\%' OR Image ILIKE '%\\Downloads\\%')

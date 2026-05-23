@@ -1,0 +1,22 @@
+id: 851fd622-b675-4d26-b803-14bc7baa517a
+name: HackTool - WinPwn Execution - ScriptBlock
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.credential-access
+- attack.discovery
+- attack.execution
+- attack.privilege-escalation
+- attack.t1046
+- attack.t1082
+- attack.t1106
+- attack.t1518
+- attack.t1548.002
+- attack.t1552.001
+- attack.t1555
+- attack.t1555.003
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Offline\_Winpwn%' OR ScriptBlockText ILIKE '%WinPwn %' OR ScriptBlockText ILIKE '%WinPwn.exe%' OR ScriptBlockText ILIKE '%WinPwn.ps1%'

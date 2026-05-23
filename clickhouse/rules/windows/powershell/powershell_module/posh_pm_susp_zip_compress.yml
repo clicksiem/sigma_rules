@@ -1,0 +1,12 @@
+id: daf7eb81-35fd-410d-9d7a-657837e602bb
+name: Zip A Folder With PowerShell For Staging In Temp  - PowerShell Module
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1074.001
+rule: SELECT * FROM logs WHERE ContextInfo ILIKE '%Compress-Archive -Path%-DestinationPath $env:TEMP%' AND ContextInfo ILIKE '%Compress-Archive -Path%-DestinationPath%\\AppData\\Local\\Temp\\%' AND ContextInfo ILIKE '%Compress-Archive -Path%-DestinationPath%:\\Windows\\Temp\\%'

@@ -1,0 +1,13 @@
+id: 8028c2c3-e25a-46e3-827f-bbb5abf181d7
+name: WMImplant Hack Tool
+level: 8
+size: '>0'
+active: true
+author:
+- NVISO
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%WMImplant%' OR ScriptBlockText ILIKE '% change\_user %' OR ScriptBlockText ILIKE '% gen\_cli %' OR ScriptBlockText ILIKE '% command\_exec %' OR ScriptBlockText ILIKE '% disable\_wdigest %' OR ScriptBlockText ILIKE '% disable\_winrm %' OR ScriptBlockText ILIKE '% enable\_wdigest %' OR ScriptBlockText ILIKE '% enable\_winrm %' OR ScriptBlockText ILIKE '% registry\_mod %' OR ScriptBlockText ILIKE '% remote\_posh %' OR ScriptBlockText ILIKE '% sched\_job %' OR ScriptBlockText ILIKE '% service\_mod %' OR ScriptBlockText ILIKE '% process\_kill %' OR ScriptBlockText ILIKE '% active\_users %' OR ScriptBlockText ILIKE '% basic\_info %' OR ScriptBlockText ILIKE '% power\_off %' OR ScriptBlockText ILIKE '% vacant\_system %' OR ScriptBlockText ILIKE '% logon\_events %'

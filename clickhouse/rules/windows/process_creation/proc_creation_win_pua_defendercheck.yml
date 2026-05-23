@@ -1,0 +1,12 @@
+id: f0ca6c24-3225-47d5-b1f5-352bf07ecfa7
+name: PUA - DefenderCheck Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.005
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\DefenderCheck.exe' OR Description='DefenderCheck'

@@ -1,0 +1,13 @@
+id: e9b61244-893f-427c-b287-3e708f321c6b
+name: Potential Privilege Escalation Using Symlink Between Osk and Cmd
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.008
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND (CommandLine ILIKE '%mklink%' AND CommandLine ILIKE '%\\osk.exe%' AND CommandLine ILIKE '%\\cmd.exe%')

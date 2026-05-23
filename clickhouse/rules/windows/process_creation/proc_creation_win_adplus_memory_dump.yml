@@ -1,0 +1,13 @@
+id: 2f869d59-7f6a-4931-992c-cce556ff2d53
+name: Potential Adplus.EXE Abuse
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\adplus.exe' OR OriginalFileName='Adplus.exe') AND (CommandLine ILIKE '% -hang %' OR CommandLine ILIKE '% -pn %' OR CommandLine ILIKE '% -pmn %' OR CommandLine ILIKE '% -p %' OR CommandLine ILIKE '% -po %' OR CommandLine ILIKE '% -c %' OR CommandLine ILIKE '% -sc %')

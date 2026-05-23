@@ -1,0 +1,12 @@
+id: f512acbf-e662-4903-843e-97ce4652b740
+name: Volume Shadow Copy Mount
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g, Open Threat Research (OTR)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+rule: SELECT * FROM logs WHERE Provider_Name='Microsoft-Windows-Ntfs' AND EventID=98 AND DeviceName ILIKE '%HarddiskVolumeShadowCopy%'

@@ -1,0 +1,12 @@
+id: 1444443e-6757-43e4-9ea4-c8fc705f79a2
+name: Boot Configuration Tampering Via Bcdedit.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\bcdedit.exe' OR OriginalFileName='bcdedit.exe') AND CommandLine ILIKE '%set%' AND ((CommandLine ILIKE '%bootstatuspolicy%' AND CommandLine ILIKE '%ignoreallfailures%') OR (CommandLine ILIKE '%recoveryenabled%' AND CommandLine ILIKE '%no%'))

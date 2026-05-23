@@ -1,0 +1,14 @@
+id: b439f47d-ef52-4b29-9a2f-57d8a96cb6b8
+name: WMI ActiveScriptEventConsumers Activity Via Scrcons.EXE DLL Load
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\scrcons.exe' AND (ImageLoaded ILIKE '%\\vbscript.dll' OR ImageLoaded ILIKE '%\\wbemdisp.dll' OR ImageLoaded ILIKE '%\\wshom.ocx' OR ImageLoaded ILIKE '%\\scrrun.dll')

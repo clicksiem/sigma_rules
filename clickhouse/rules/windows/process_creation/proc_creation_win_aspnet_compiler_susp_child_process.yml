@@ -1,0 +1,13 @@
+id: 9ccba514-7cb6-4c5c-b377-700758f2f120
+name: Suspicious Child Process of AspNetCompiler
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\aspnet\_compiler.exe' AND ((Image ILIKE '%\\calc.exe' OR Image ILIKE '%\\notepad.exe') OR (Image ILIKE '%\\Users\\Public\\%' OR Image ILIKE '%\\AppData\\Local\\Temp\\%' OR Image ILIKE '%\\AppData\\Local\\Roaming\\%' OR Image ILIKE '%:\\Temp\\%' OR Image ILIKE '%:\\Windows\\Temp\\%' OR Image ILIKE '%:\\Windows\\System32\\Tasks\\%' OR Image ILIKE '%:\\Windows\\Tasks\\%'))

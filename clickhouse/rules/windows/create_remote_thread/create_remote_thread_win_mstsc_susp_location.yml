@@ -1,0 +1,11 @@
+id: c0aac16a-b1e7-4330-bab0-3c27bb4987c7
+name: Remote Thread Creation In Mstsc.Exe From Suspicious Location
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+rule: SELECT * FROM logs WHERE TargetImage ILIKE '%\\mstsc.exe' AND (SourceImage ILIKE '%:\\Temp\\%' OR SourceImage ILIKE '%:\\Users\\Public\\%' OR SourceImage ILIKE '%:\\Windows\\PerfLogs\\%' OR SourceImage ILIKE '%:\\Windows\\Tasks\\%' OR SourceImage ILIKE '%:\\Windows\\Temp\\%' OR SourceImage ILIKE '%\\AppData\\Local\\Temp\\%')

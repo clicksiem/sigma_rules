@@ -1,0 +1,12 @@
+id: bedfc8ad-d1c7-4e37-a20e-e2b0dbee759c
+name: HackTool - SharpEvtMute Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SharpEvtMute.exe' OR Description='SharpEvtMute' OR (CommandLine ILIKE '%--Filter "rule %' OR CommandLine ILIKE '%--Encoded --Filter \\"%')

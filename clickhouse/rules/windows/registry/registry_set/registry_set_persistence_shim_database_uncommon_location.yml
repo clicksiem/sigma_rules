@@ -1,0 +1,13 @@
+id: 6b6976a3-b0e6-4723-ac24-ae38a737af41
+name: Potential Persistence Via Shim Database In Uncommon Location
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.011
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\%' AND TargetObject ILIKE '%\\DatabasePath%') AND (NOT Details ILIKE '%:\\Windows\\AppPatch\\Custom%')

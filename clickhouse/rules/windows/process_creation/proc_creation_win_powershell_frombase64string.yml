@@ -1,0 +1,15 @@
+id: e32d4572-9826-4738-b651-95fa63747e8a
+name: Base64 Encoded PowerShell Command Detected
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1140
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%::FromBase64String(%'

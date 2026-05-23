@@ -1,0 +1,15 @@
+id: 3735d5ac-d770-4da0-99ff-156b180bc600
+name: Potential CCleanerReactivator.DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\CCleanerReactivator.dll' AND (NOT ((Image ILIKE 'C:\\Program Files\\CCleaner\\%' OR Image ILIKE 'C:\\Program Files (x86)\\CCleaner\\%') AND Image ILIKE '%\\CCleanerReactivator.exe'))

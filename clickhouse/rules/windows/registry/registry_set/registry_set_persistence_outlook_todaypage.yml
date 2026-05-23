@@ -1,0 +1,13 @@
+id: 487bb375-12ef-41f6-baae-c6a1572b4dd1
+name: Potential Persistence Via Outlook Today Page
+level: 8
+size: '>0'
+active: true
+author:
+- Tobias Michalski (Nextron Systems), David Bertho (@dbertho) & Eirik Sveen (@0xSV1), Storebrand
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%Software\\Microsoft\\Office\\%' AND TargetObject ILIKE '%\\Outlook\\Today\\%') AND ((TargetObject ILIKE '%\\Stamp' AND Details='DWORD (0x00000001)') OR (TargetObject ILIKE '%\\URL' OR TargetObject ILIKE '%\\UserDefinedUrl')) AND (NOT ((Image ILIKE 'C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\%' OR Image ILIKE 'C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\Updates\\%') AND Image ILIKE '%\\OfficeClickToRun.exe'))

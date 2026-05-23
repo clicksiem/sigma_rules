@@ -1,0 +1,12 @@
+id: 880973f3-9708-491c-a77b-2a35a1921158
+name: Linux Shell Pipe to Shell
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.stealth
+- attack.t1140
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE 'sh -c %' OR CommandLine ILIKE 'bash -c %') AND ((CommandLine ILIKE '%| bash %' OR CommandLine ILIKE '%| sh %' OR CommandLine ILIKE '%|bash %' OR CommandLine ILIKE '%|sh %') OR (CommandLine ILIKE '%| bash' OR CommandLine ILIKE '%| sh' OR CommandLine ILIKE '%|bash' OR CommandLine ILIKE '% |sh'))

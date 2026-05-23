@@ -1,0 +1,14 @@
+id: f3c89218-8c3d-4ba9-9974-f1d8e6a1b4a6
+name: Invoke-Obfuscation VAR++ LAUNCHER OBFUSCATION - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(Payload, '(?i)&&set.*(\{\d\}){2,}\\"\s+?-f.*&&.*cmd.*/c')

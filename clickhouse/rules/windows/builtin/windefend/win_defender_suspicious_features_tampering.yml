@@ -1,0 +1,12 @@
+id: 801bd44f-ceed-4eb6-887c-11544633c0aa
+name: Windows Defender Configuration Changes
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=5007 AND (NewValue ILIKE '%\\Windows Defender\\DisableAntiSpyware %' OR NewValue ILIKE '%\\Windows Defender\\Scan\\DisableRemovableDriveScanning %' OR NewValue ILIKE '%\\Windows Defender\\Scan\\DisableScanningMappedNetworkDrivesForFullScan %' OR NewValue ILIKE '%\\Windows Defender\\SpyNet\\DisableBlockAtFirstSeen %' OR NewValue ILIKE '%\\Real-Time Protection\\SpyNetReporting %')

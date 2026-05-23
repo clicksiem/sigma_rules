@@ -1,0 +1,15 @@
+id: 9b0b7ac3-6223-47aa-a3fd-e8f211e637db
+name: Changing Existing Service ImagePath Value Via Reg.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' AND (CommandLine ILIKE '%add %' AND CommandLine ILIKE '%SYSTEM\\CurrentControlSet\\Services\\%' AND CommandLine ILIKE '% ImagePath %')) AND (CommandLine ILIKE '% -d %' OR CommandLine ILIKE '% /d %' OR CommandLine ILIKE '% –d %' OR CommandLine ILIKE '% —d %' OR CommandLine ILIKE '% ―d %')

@@ -1,0 +1,12 @@
+id: 99c4658d-2c5e-4d87-828d-7c066ca537c3
+name: Disable-WindowsOptionalFeature Command PowerShell
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Disable-WindowsOptionalFeature%' AND ScriptBlockText ILIKE '%-Online%' AND ScriptBlockText ILIKE '%-FeatureName%') AND (ScriptBlockText ILIKE '%Windows-Defender-Gui%' OR ScriptBlockText ILIKE '%Windows-Defender-Features%' OR ScriptBlockText ILIKE '%Windows-Defender%' OR ScriptBlockText ILIKE '%Windows-Defender-ApplicationGuard%')

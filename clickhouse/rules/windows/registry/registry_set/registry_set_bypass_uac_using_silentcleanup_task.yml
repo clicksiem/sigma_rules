@@ -1,0 +1,12 @@
+id: 724ea201-6514-4f38-9739-e5973c34f49a
+name: Bypass UAC Using SilentCleanup Task
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nextron Systems
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Environment\\windir' AND (NOT Details ILIKE '\%SystemRoot\%')

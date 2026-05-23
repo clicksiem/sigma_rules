@@ -1,0 +1,12 @@
+id: af491bca-e752-4b44-9c86-df5680533dbc
+name: Finger.EXE Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), omkar72, oscd.community
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE OriginalFileName='finger.exe' OR Image ILIKE '%\\finger.exe'

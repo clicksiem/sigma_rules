@@ -1,0 +1,12 @@
+id: 1edff897-9146-48d2-9066-52e8d8f80a2f
+name: Suspicious Invoke-WebRequest Execution With DirectIP
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('powershell\_ise.EXE', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%curl %' OR CommandLine ILIKE '%Invoke-RestMethod%' OR CommandLine ILIKE '%Invoke-WebRequest%' OR CommandLine ILIKE '% irm %' OR CommandLine ILIKE '%iwr %' OR CommandLine ILIKE '%wget %') AND (CommandLine ILIKE '%://1%' OR CommandLine ILIKE '%://2%' OR CommandLine ILIKE '%://3%' OR CommandLine ILIKE '%://4%' OR CommandLine ILIKE '%://5%' OR CommandLine ILIKE '%://6%' OR CommandLine ILIKE '%://7%' OR CommandLine ILIKE '%://8%' OR CommandLine ILIKE '%://9%')

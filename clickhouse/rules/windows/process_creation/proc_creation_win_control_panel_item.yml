@@ -1,0 +1,16 @@
+id: 0ba863e6-def5-4e50-9cea-4dd8c7dc46a4
+name: Control Panel Items
+level: 8
+size: '>0'
+active: true
+author:
+- Kyaw Min Thein, Furkan Caliskan (@caliskanfurkan_)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1218.002
+- attack.persistence
+- attack.t1546
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '%add%' AND CommandLine ILIKE '%CurrentVersion\\Control Panel\\CPLs%')) OR (CommandLine ILIKE '%.cpl' AND (NOT ((CommandLine ILIKE '%\\System32\\%' OR CommandLine ILIKE '%\%System\%%' OR CommandLine ILIKE '%|C:\\Windows\\system32|%') OR (CommandLine ILIKE '%regsvr32 %' AND CommandLine ILIKE '% /s %' AND CommandLine ILIKE '%igfxCPL.cpl%'))))

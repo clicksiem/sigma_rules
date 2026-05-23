@@ -1,0 +1,12 @@
+id: f35c5d71-b489-4e22-a115-f003df287317
+name: Potential CobaltStrike Process Patterns
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%cmd.exe /C whoami' AND ParentImage ILIKE 'C:\\Temp\\%') OR ((ParentImage ILIKE '%\\runonce.exe' OR ParentImage ILIKE '%\\dllhost.exe') AND (CommandLine ILIKE '%cmd.exe /c echo%' AND CommandLine ILIKE '%> \\\\.\\pipe%')) OR ((ParentCommandLine ILIKE '%cmd.exe /C echo%' AND ParentCommandLine ILIKE '% > \\\\.\\pipe%') AND CommandLine ILIKE '%conhost.exe 0xffffffff -ForceV1') OR (ParentCommandLine ILIKE '%/C whoami' AND CommandLine ILIKE '%conhost.exe 0xffffffff -ForceV1')

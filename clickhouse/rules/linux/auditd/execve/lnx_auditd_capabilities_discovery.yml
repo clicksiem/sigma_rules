@@ -1,0 +1,14 @@
+id: fe10751f-1995-40a5-aaa2-c97ccb4123fe
+name: Linux Capabilities Discovery
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.discovery
+- attack.privilege-escalation
+- attack.t1083
+- attack.t1548
+rule: SELECT * FROM logs WHERE type='EXECVE' AND a0='getcap' AND a1='-r' AND a2='/'

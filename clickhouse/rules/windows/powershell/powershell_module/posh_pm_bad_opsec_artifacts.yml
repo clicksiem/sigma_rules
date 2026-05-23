@@ -1,0 +1,12 @@
+id: 8d31a8ce-46b5-4dd6-bdc3-680931f1db86
+name: Bad Opsec Powershell Code Artifacts
+level: 10
+size: '>0'
+active: true
+author:
+- ok @securonix invrep_de, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Payload ILIKE '%$DoIt%' OR Payload ILIKE '%harmj0y%' OR Payload ILIKE '%mattifestation%' OR Payload ILIKE '%\_RastaMouse%' OR Payload ILIKE '%tifkin\_%' OR Payload ILIKE '%0xdeadbeef%'

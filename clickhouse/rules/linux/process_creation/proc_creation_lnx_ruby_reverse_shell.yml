@@ -1,0 +1,11 @@
+id: b8bdac18-c06e-4016-ac30-221553e74f59
+name: Potential Ruby Reverse Shell
+level: 5
+size: '>0'
+active: true
+author:
+- '@d4ns4n_'
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%ruby%' AND (CommandLine ILIKE '% -e%' AND CommandLine ILIKE '%rsocket%' AND CommandLine ILIKE '%TCPSocket%') AND (CommandLine ILIKE '% ash%' OR CommandLine ILIKE '% bash%' OR CommandLine ILIKE '% bsh%' OR CommandLine ILIKE '% csh%' OR CommandLine ILIKE '% ksh%' OR CommandLine ILIKE '% pdksh%' OR CommandLine ILIKE '% sh%' OR CommandLine ILIKE '% tcsh%')

@@ -1,0 +1,13 @@
+id: 32438676-1dba-4ac7-bf69-b86cba995e05
+name: GCP Access Policy Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Bryan Lim
+group: gcp
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1098
+rule: SELECT * FROM logs WHERE (`data.protoPayload.authorizationInfo.permission` IN ('accesscontextmanager.accessPolicies.delete', 'accesscontextmanager.accessPolicies.accessLevels.delete', 'accesscontextmanager.accessPolicies.accessZones.delete', 'accesscontextmanager.accessPolicies.authorizedOrgsDescs.delete')) AND `data.protoPayload.authorizationInfo.granted`='true' AND `data.protoPayload.serviceName`='accesscontextmanager.googleapis.com'

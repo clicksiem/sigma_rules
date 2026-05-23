@@ -1,0 +1,16 @@
+id: 5588576c-5898-4fac-bcdd-7475a60e8f43
+name: Suspicious DNS Query Indicating Kerberos Coercion via DNS Object SPN Spoofing - Network
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: zeek
+tags:
+- attack.collection
+- attack.credential-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1557.001
+- attack.t1187
+rule: SELECT * FROM logs WHERE query ILIKE '%UWhRCA%' AND query ILIKE '%BAAAA%'

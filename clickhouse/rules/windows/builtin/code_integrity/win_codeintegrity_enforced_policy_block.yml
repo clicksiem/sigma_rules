@@ -1,0 +1,13 @@
+id: e4be5675-4a53-426a-8c81-a8bb2387e947
+name: CodeIntegrity - Blocked Image/Driver Load For Policy Violation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543
+rule: SELECT * FROM logs WHERE EventID=3077

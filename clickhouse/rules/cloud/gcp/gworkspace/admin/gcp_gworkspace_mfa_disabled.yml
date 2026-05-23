@@ -1,0 +1,11 @@
+id: 780601d1-6376-4f2a-884e-b8d45599f78c
+name: Google Workspace MFA Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE (eventService='admin.googleapis.com' AND (eventName IN ('ENFORCE\_STRONG\_AUTHENTICATION', 'ALLOW\_STRONG\_AUTHENTICATION'))) AND new_value='false'

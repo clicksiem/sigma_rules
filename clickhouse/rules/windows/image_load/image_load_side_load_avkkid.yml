@@ -1,0 +1,15 @@
+id: 952ed57c-8f99-453d-aee0-53a49c22f95d
+name: Potential AVKkid.DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\AVKkid.dll' AND (NOT ((Image ILIKE '%C:\\Program Files (x86)\\G DATA\\%' OR Image ILIKE '%C:\\Program Files\\G DATA\\%') AND Image ILIKE '%\\AVKKid.exe' AND (ImageLoaded ILIKE 'C:\\Program Files (x86)\\G DATA\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\G DATA\\%')))

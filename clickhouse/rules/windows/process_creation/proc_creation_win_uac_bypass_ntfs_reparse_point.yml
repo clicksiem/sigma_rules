@@ -1,0 +1,12 @@
+id: 39ed3c80-e6a1-431b-9df3-911ac53d08a7
+name: UAC Bypass Using NTFS Reparse Point - Process
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '"C:\\Windows\\system32\\wusa.exe"  /quiet C:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\Temp\\update.msu' AND (IntegrityLevel IN ('High', 'System', 'S-1-16-16384', 'S-1-16-12288'))) OR (ParentCommandLine ILIKE '"C:\\Windows\\system32\\dism.exe" /online /quiet /norestart /add-package /packagepath:"C:\\Windows\\system32\\pe386" /ignorecheck' AND (IntegrityLevel IN ('High', 'System')) AND (CommandLine ILIKE '%C:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' AND CommandLine ILIKE '%\\dismhost.exe {%') AND Image ILIKE '%\\DismHost.exe')

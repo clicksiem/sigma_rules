@@ -1,0 +1,22 @@
+id: 48d91a3a-2363-43ba-a456-ca71ac3da5c2
+name: Audit CVE Event
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Zach Mathis
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1203
+- attack.privilege-escalation
+- attack.t1068
+- attack.t1211
+- attack.credential-access
+- attack.t1212
+- attack.lateral-movement
+- attack.t1210
+- attack.impact
+- attack.t1499.004
+rule: SELECT * FROM logs WHERE (Provider_Name IN ('Microsoft-Windows-Audit-CVE', 'Audit-CVE')) AND EventID=1

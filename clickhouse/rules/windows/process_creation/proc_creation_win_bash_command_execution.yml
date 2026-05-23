@@ -1,0 +1,12 @@
+id: 5edc2273-c26f-406c-83f3-f4d948e740dd
+name: Indirect Inline Command Execution Via Bash.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%:\\Windows\\System32\\bash.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\bash.exe') OR OriginalFileName='Bash.exe') AND CommandLine ILIKE '% -c %'

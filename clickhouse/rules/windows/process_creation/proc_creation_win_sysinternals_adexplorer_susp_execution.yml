@@ -1,0 +1,14 @@
+id: ef61af62-bc74-4f58-b49b-626448227652
+name: Suspicious Active Directory Database Snapshot Via ADExplorer
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.002
+- attack.t1069.002
+- attack.t1482
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\ADExp.exe' OR Image ILIKE '%\\ADExplorer.exe' OR Image ILIKE '%\\ADExplorer64.exe' OR Image ILIKE '%\\ADExplorer64a.exe') OR OriginalFileName='AdExp' OR Description='Active Directory Editor' OR Product='Sysinternals ADExplorer') AND CommandLine ILIKE '%snapshot%' AND (CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\AppData\\%' OR CommandLine ILIKE '%\\Windows\\Temp\\%')

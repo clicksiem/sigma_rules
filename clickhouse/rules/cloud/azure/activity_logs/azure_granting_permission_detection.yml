@@ -1,0 +1,13 @@
+id: a622fcd2-4b5a-436a-b8a2-a4171161833c
+name: Granting Of Permissions To An Account
+level: 5
+size: '>0'
+active: true
+author:
+- sawwinnnaung
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098.003
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'Microsoft.Authorization/roleAssignments/write')

@@ -1,0 +1,14 @@
+id: ff2fff64-4cd6-4a2b-ba7d-e28a30bbe66b
+name: Suspicious Scheduled Task Name As GUID
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' AND CommandLine ILIKE '%/Create %') AND (CommandLine ILIKE '%/TN "{%' OR CommandLine ILIKE '%/TN ''{%' OR CommandLine ILIKE '%/TN {%') AND (CommandLine ILIKE '%}"%' OR CommandLine ILIKE '%}''%' OR CommandLine ILIKE '%} %')

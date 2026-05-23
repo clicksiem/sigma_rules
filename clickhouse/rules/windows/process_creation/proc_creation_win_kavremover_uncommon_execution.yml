@@ -1,0 +1,13 @@
+id: d047726b-c71c-4048-a99b-2e2f50dc107d
+name: Kavremover Dropped Binary LOLBIN Usage
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% run run-cmd %' AND (NOT (ParentImage ILIKE '%\\cleanapi.exe' OR ParentImage ILIKE '%\\kavremover.exe'))

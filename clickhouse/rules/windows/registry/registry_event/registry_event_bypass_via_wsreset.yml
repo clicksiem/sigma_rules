@@ -1,0 +1,12 @@
+id: 6ea3bf32-9680-422d-9f50-e90716b12a66
+name: UAC Bypass Via Wsreset
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Dmitry Uchakin
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\AppX82a6gwre4fdg3bt635tn5ctqjf8msdd2\\Shell\\open\\command'

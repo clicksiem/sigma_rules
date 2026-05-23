@@ -1,0 +1,16 @@
+id: e3b50fa5-3c3f-444e-937b-0a99d33731cd
+name: Outlook Macro Execution Without Warning Setting Enabled
+level: 8
+size: '>0'
+active: true
+author:
+- '@ScoubiMtl'
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.command-and-control
+- attack.t1137
+- attack.t1008
+- attack.t1546
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Outlook\\Security\\Level' AND Details ILIKE '%0x00000001%'

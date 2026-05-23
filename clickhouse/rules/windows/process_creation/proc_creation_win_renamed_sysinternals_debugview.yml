@@ -1,0 +1,12 @@
+id: cd764533-2e07-40d6-a718-cfeec7f2da7f
+name: Renamed SysInternals DebugView Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.resource-development
+- attack.t1588.002
+rule: SELECT * FROM logs WHERE Product='Sysinternals DebugView' AND (NOT (OriginalFileName='Dbgview.exe' AND Image ILIKE '%\\Dbgview.exe'))

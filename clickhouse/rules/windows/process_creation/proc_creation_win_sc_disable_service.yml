@@ -1,0 +1,13 @@
+id: 85c312b7-f44d-4a51-a024-d671c40b49fc
+name: Service StartupType Change Via Sc.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' OR OriginalFileName='sc.exe') AND ((CommandLine ILIKE '% config %' AND CommandLine ILIKE '%start%') AND (CommandLine ILIKE '%disabled%' OR CommandLine ILIKE '%demand%'))

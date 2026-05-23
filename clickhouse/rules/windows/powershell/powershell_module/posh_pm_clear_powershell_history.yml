@@ -1,0 +1,12 @@
+id: f99276ad-d122-4989-a09a-d00904a5f9d2
+name: Clear PowerShell History - PowerShell Module
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, Jonhnathan Ribeiro, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE ((Payload ILIKE '%Set-PSReadlineOption%' AND Payload ILIKE '%–HistorySaveStyle%' AND Payload ILIKE '%SaveNothing%') OR (Payload ILIKE '%Set-PSReadlineOption%' AND Payload ILIKE '%-HistorySaveStyle%' AND Payload ILIKE '%SaveNothing%')) OR ((Payload ILIKE '%del%' OR Payload ILIKE '%Remove-Item%' OR Payload ILIKE '%rm%') AND Payload ILIKE '%(Get-PSReadlineOption).HistorySavePath%')

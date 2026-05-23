@@ -1,0 +1,12 @@
+id: 69ca12af-119d-44ed-b50f-a47af0ebc364
+name: LSASS Process Memory Dump Creation Via Taskmgr.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\Windows\\system32\\taskmgr.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\taskmgr.exe') AND (TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%' AND TargetFilename ILIKE '%\\lsass%' AND TargetFilename ILIKE '%.DMP%')

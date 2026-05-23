@@ -1,0 +1,12 @@
+id: 7530b96f-ad8e-431d-a04d-ac85cc461fdc
+name: Custom File Open Handler Executes PowerShell
+level: 8
+size: '>0'
+active: true
+author:
+- CD_R0M_
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%shell\\open\\command\\%' AND (Details ILIKE '%powershell%' AND Details ILIKE '%-command%')

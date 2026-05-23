@@ -1,0 +1,12 @@
+id: df3fcaea-2715-4214-99c5-0056ea59eb35
+name: Credentials In Files - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Igor Fits, oscd.community
+group: linux
+tags:
+- attack.credential-access
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE type='EXECVE' AND (hasToken(full_log, 'grep') AND hasToken(full_log, 'password'))

@@ -1,0 +1,12 @@
+id: 2b669496-d215-47d8-bd9a-f4a45bf07cda
+name: Data Exfiltration to Unsanctioned Apps
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: m365
+tags:
+- attack.exfiltration
+- attack.t1537
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Data exfiltration to unsanctioned apps' AND status='success'

@@ -1,0 +1,12 @@
+id: 07f8bdc2-c9b3-472a-9817-5a670b872f53
+name: Potential Reconnaissance For Cached Credentials Via Cmdkey.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- jmallette, Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmdkey.exe' OR OriginalFileName='cmdkey.exe') AND (CommandLine ILIKE '% -l%' OR CommandLine ILIKE '% /l%' OR CommandLine ILIKE '% –l%' OR CommandLine ILIKE '% —l%' OR CommandLine ILIKE '% ―l%')

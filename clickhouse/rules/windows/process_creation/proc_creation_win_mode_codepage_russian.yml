@@ -1,0 +1,12 @@
+id: 12fbff88-16b5-4b42-9754-cd001a789fb3
+name: CodePage Modification Via MODE.COM To Russian Language
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mode.com' OR OriginalFileName='MODE.COM') AND ((CommandLine ILIKE '% con %' AND CommandLine ILIKE '% cp %' AND CommandLine ILIKE '% select=%') AND (CommandLine ILIKE '%=1251' OR CommandLine ILIKE '%=866'))

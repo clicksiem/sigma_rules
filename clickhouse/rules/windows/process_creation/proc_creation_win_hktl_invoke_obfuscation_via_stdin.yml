@@ -1,0 +1,14 @@
+id: 9c14c9fa-1a63-4a64-8e57-d19280559490
+name: Invoke-Obfuscation Via Stdin
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(CommandLine, '(?i)(?:set).*&&\s?set.*(?:environment|invoke|\$\{?input).*&&.*"')

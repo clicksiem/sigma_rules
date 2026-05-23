@@ -1,0 +1,12 @@
+id: 6b65c28e-11f3-46cb-902a-68f2cafaf474
+name: Odbcconf.EXE Suspicious DLL Location
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.008
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\odbcconf.exe' OR OriginalFileName='odbcconf.exe') AND (CommandLine ILIKE '%:\\PerfLogs\\%' OR CommandLine ILIKE '%:\\ProgramData\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\Registration\\CRMLog%' OR CommandLine ILIKE '%:\\Windows\\System32\\com\\dmp\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\FxsTmp\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\spool\\drivers\\color\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\spool\\PRINTERS\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\spool\\SERVERS\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\Tasks\_Migrated\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\Tasks\\Microsoft\\Windows\\SyncCenter\\%' OR CommandLine ILIKE '%:\\Windows\\SysWOW64\\com\\dmp\\%' OR CommandLine ILIKE '%:\\Windows\\SysWOW64\\FxsTmp\\%' OR CommandLine ILIKE '%:\\Windows\\SysWOW64\\Tasks\\Microsoft\\Windows\\PLA\\System\\%' OR CommandLine ILIKE '%:\\Windows\\SysWOW64\\Tasks\\Microsoft\\Windows\\SyncCenter\\%' OR CommandLine ILIKE '%:\\Windows\\Tasks\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%:\\Windows\\Tracing\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%')

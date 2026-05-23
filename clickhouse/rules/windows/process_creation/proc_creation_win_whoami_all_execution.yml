@@ -1,0 +1,13 @@
+id: c248c896-e412-4279-8c15-1c558067b6fa
+name: Enumerate All Information With Whoami.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+- car.2016-03-001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\whoami.exe' OR OriginalFileName='whoami.exe') AND (CommandLine ILIKE '% -all%' OR CommandLine ILIKE '% /all%' OR CommandLine ILIKE '% –all%' OR CommandLine ILIKE '% —all%' OR CommandLine ILIKE '% ―all%')

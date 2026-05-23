@@ -1,0 +1,12 @@
+id: 68b8547b-107f-43f3-97fb-900a7d63c190
+name: OpenCanary - NMAP NULL Scan
+level: 8
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM)
+group: opencanary
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE logtype=5003

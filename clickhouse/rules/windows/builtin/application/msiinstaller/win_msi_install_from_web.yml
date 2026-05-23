@@ -1,0 +1,13 @@
+id: 5594e67a-7f92-4a04-b65d-1a42fd824a60
+name: MSI Installation From Web
+level: 5
+size: '>0'
+active: true
+author:
+- Stamatis Chatzimangou
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.t1218.007
+rule: SELECT * FROM logs WHERE Provider_Name='MsiInstaller' AND (EventID IN (1040, 1042)) AND Data ILIKE '%://%'

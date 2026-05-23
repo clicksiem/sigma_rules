@@ -1,0 +1,12 @@
+id: ff151c33-45fa-475d-af4f-c2f93571f4fe
+name: Azure AD Health Monitoring Agent Registry Keys Access
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: windows
+tags:
+- attack.discovery
+- attack.t1012
+rule: SELECT * FROM logs WHERE ((EventID IN (4656, 4663)) AND ObjectType='Key' AND ObjectName ILIKE '\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\Microsoft Online\\Reporting\\MonitoringAgent') AND (NOT (ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.DiagnosticsAgent.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.InsightsService.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.MonitoringAgent.Startup.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.PshSurrogate.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Common.Clients.ResourceMonitor.exe%'))

@@ -1,0 +1,12 @@
+id: 56fda488-113e-4ce9-8076-afc2457922c3
+name: Possible DCSync Attack
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.t1033
+- attack.discovery
+rule: SELECT * FROM logs WHERE (EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='e3514235-4b06-11d1-ab04-00c04fc2dcd2') AND (NOT (OpNum IN (0, 1, 12)))

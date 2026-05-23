@@ -1,0 +1,12 @@
+id: 0f017df3-8f5a-414f-ad6b-24aff1128278
+name: Suspicious Eventlog Clear
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.005
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Clear-EventLog %' OR ScriptBlockText ILIKE '%Remove-EventLog %' OR ScriptBlockText ILIKE '%Limit-EventLog %' OR ScriptBlockText ILIKE '%Clear-WinEvent %') OR (ScriptBlockText ILIKE '%Eventing.Reader.EventLogSession%' AND ScriptBlockText ILIKE '%ClearLog%') OR (ScriptBlockText ILIKE '%Diagnostics.EventLog%' AND ScriptBlockText ILIKE '%Clear%')

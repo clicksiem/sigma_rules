@@ -1,0 +1,12 @@
+id: 760e75d8-c3b5-409b-a9bf-6130b4c4603f
+name: Self Extraction Directive File Created In Potentially Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%:\\ProgramData\\%' OR TargetFilename ILIKE '%:\\Temp\\%' OR TargetFilename ILIKE '%:\\Windows\\System32\\Tasks\\%' OR TargetFilename ILIKE '%:\\Windows\\Tasks\\%' OR TargetFilename ILIKE '%:\\Windows\\Temp\\%' OR TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%') AND TargetFilename ILIKE '%.sed'

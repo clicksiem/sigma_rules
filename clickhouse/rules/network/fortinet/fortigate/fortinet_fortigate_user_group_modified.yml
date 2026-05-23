@@ -1,0 +1,12 @@
+id: 69ffc84e-8b1a-4024-8351-e018f66b8275
+name: FortiGate - User Group Modified
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi @pedrinazziM (InTheCyber)
+group: fortigate
+tags:
+- attack.persistence
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE action='Edit' AND cfgpath='user.group'

@@ -1,0 +1,14 @@
+id: 7ea78478-a4f9-42a6-9dcd-f861816122bf
+name: Disabled MFA to Bypass Authentication Mechanisms
+level: 5
+size: '>0'
+active: true
+author:
+- '@ionsor'
+group: azure
+tags:
+- attack.credential-access
+- attack.persistence
+- attack.defense-impairment
+- attack.t1556
+rule: SELECT * FROM logs WHERE eventSource='AzureActiveDirectory' AND eventName='Disable Strong Authentication.' AND status='success'

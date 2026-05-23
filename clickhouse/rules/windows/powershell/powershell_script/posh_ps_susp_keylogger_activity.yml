@@ -1,0 +1,13 @@
+id: 965e2db9-eddb-4cf6-a986-7a967df651e4
+name: Potential Keylogger Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1056.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%[Windows.Input.Keyboard]::IsKeyDown([System.Windows.Input.Key]::%'

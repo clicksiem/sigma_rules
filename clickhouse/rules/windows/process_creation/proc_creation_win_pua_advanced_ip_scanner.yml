@@ -1,0 +1,13 @@
+id: bef37fa2-f205-4a7b-b484-0759bfd5f86f
+name: PUA - Advanced IP Scanner Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), @ROxPinTeddy
+group: windows
+tags:
+- attack.discovery
+- attack.t1046
+- attack.t1135
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\advanced\_ip\_scanner%' OR OriginalFileName ILIKE '%advanced\_ip\_scanner%' OR Description ILIKE '%Advanced IP Scanner%') OR (CommandLine ILIKE '%/portable%' AND CommandLine ILIKE '%/lng%')

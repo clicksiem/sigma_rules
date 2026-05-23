@@ -1,0 +1,11 @@
+id: ec88289a-7e1a-4cc3-8d18-bd1f60e4b9ba
+name: Persistence Via TypedPaths - CommandLine
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\TypedPaths%'

@@ -1,0 +1,11 @@
+id: 5f92fff9-82e2-48eb-8fc1-8b133556a551
+name: Remote Encrypting File System Abuse
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.lateral-movement
+rule: SELECT * FROM logs WHERE EventLog='RPCFW' AND EventID=3 AND (InterfaceUuid IN ('df1941c5-fe89-4e79-bf10-463657acf44d', 'c681d488-d850-11d0-8c52-00c04fd90f7e'))

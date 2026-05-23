@@ -1,0 +1,13 @@
+id: 96036718-71cc-4027-a538-d1587e0006a7
+name: Windows Processes Suspicious Parent Directory
+level: 3
+size: '>0'
+active: true
+author:
+- vburov
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\svchost.exe' OR Image ILIKE '%\\taskhost.exe' OR Image ILIKE '%\\lsm.exe' OR Image ILIKE '%\\lsass.exe' OR Image ILIKE '%\\services.exe' OR Image ILIKE '%\\lsaiso.exe' OR Image ILIKE '%\\csrss.exe' OR Image ILIKE '%\\wininit.exe' OR Image ILIKE '%\\winlogon.exe') AND (NOT (((ParentImage ILIKE '%\\SavService.exe' OR ParentImage ILIKE '%\\ngen.exe') OR (ParentImage ILIKE '%\\System32\\%' OR ParentImage ILIKE '%\\SysWOW64\\%')) OR ((ParentImage ILIKE '%\\Windows Defender\\%' OR ParentImage ILIKE '%\\Microsoft Security Client\\%') AND ParentImage ILIKE '%\\MsMpEng.exe') OR (isNull(ParentImage) OR (ParentImage IN ('', '-')))))

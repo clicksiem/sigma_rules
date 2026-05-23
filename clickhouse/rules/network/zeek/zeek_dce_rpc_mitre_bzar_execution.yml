@@ -1,0 +1,16 @@
+id: b640c0b8-87f8-4daa-aef8-95a24261dd1d
+name: MITRE BZAR Indicators for Execution
+level: 5
+size: '>0'
+active: true
+author:
+- '@neu5ron, SOC Prime'
+group: zeek
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1047
+- attack.t1053.002
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE (endpoint='JobAdd' AND operation='atsvc') OR (endpoint='ITaskSchedulerService' AND operation='SchRpcEnableTask') OR (endpoint='ITaskSchedulerService' AND operation='SchRpcRegisterTask') OR (endpoint='ITaskSchedulerService' AND operation='SchRpcRun') OR (endpoint='IWbemServices' AND operation='ExecMethod') OR (endpoint='IWbemServices' AND operation='ExecMethodAsync') OR (endpoint='svcctl' AND operation='CreateServiceA') OR (endpoint='svcctl' AND operation='CreateServiceW') OR (endpoint='svcctl' AND operation='StartServiceA') OR (endpoint='svcctl' AND operation='StartServiceW')

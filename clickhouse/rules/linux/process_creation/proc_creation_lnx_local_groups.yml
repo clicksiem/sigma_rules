@@ -1,0 +1,12 @@
+id: 676381a6-15ca-4d73-a9c8-6a22e970b90d
+name: Local Groups Discovery - Linux
+level: 3
+size: '>0'
+active: true
+author:
+- Ömer Günal, Alejandro Ortuno, oscd.community
+group: linux
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%/groups' OR ((Image ILIKE '%/cat' OR Image ILIKE '%/ed' OR Image ILIKE '%/head' OR Image ILIKE '%/less' OR Image ILIKE '%/more' OR Image ILIKE '%/nano' OR Image ILIKE '%/tail' OR Image ILIKE '%/vi' OR Image ILIKE '%/vim') AND CommandLine ILIKE '%/etc/group%')

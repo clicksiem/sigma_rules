@@ -1,0 +1,14 @@
+id: 0adfbc14-0ed1-11eb-adc1-0242ac120002
+name: Invoke-Obfuscation VAR+ Launcher - PowerShell
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(ScriptBlockText, 'cmd.{0,5}(?:/c|/r)(?:\s|)"set\s[a-zA-Z]{3,6}.*(?:\{\d\}){1,}\\"\s+?-f(?:.*\)){1,}.*"')

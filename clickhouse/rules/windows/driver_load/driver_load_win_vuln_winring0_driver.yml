@@ -1,0 +1,13 @@
+id: 1a42dfa6-6cb2-4df9-9b48-295be477e835
+name: Vulnerable WinRing0 Driver Load
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE Hashes ILIKE '%IMPHASH=D41FA95D4642DC981F10DE36F4DC8CD7%' OR (ImageLoaded ILIKE '%\\WinRing0x64.sys' OR ImageLoaded ILIKE '%\\WinRing0.sys' OR ImageLoaded ILIKE '%\\WinRing0.dll' OR ImageLoaded ILIKE '%\\WinRing0x64.dll' OR ImageLoaded ILIKE '%\\winring00x64.sys')

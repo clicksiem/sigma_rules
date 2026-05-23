@@ -1,0 +1,15 @@
+id: 2ff692c2-4594-41ec-8fcb-46587de769e0
+name: CrashControl CrashDump Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- Tobias Michalski (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.stealth
+- attack.defense-impairment
+- attack.t1564
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%SYSTEM\\CurrentControlSet\\Control\\CrashControl%' AND Details='DWORD (0x00000000)'

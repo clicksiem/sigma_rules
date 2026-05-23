@@ -1,0 +1,13 @@
+id: 106d7cbd-80ff-4985-b682-a7043e5acb72
+name: Loading of Kernel Module via Insmod
+level: 8
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1547.006
+rule: SELECT * FROM logs WHERE type='SYSCALL' AND comm='insmod' AND exe='/usr/bin/kmod'

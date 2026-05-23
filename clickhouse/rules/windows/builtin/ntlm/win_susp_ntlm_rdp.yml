@@ -1,0 +1,12 @@
+id: ce5678bb-b9aa-4fb5-be4b-e57f686256ad
+name: Potential Remote Desktop Connection to Non-Domain Host
+level: 5
+size: '>0'
+active: true
+author:
+- James Pemberton
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE EventID=8001 AND TargetName ILIKE 'TERMSRV%'

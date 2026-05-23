@@ -1,0 +1,12 @@
+id: 20f754db-d025-4a8f-9d74-e0037e999a9a
+name: SES Identity Has Been Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Janantha Marasinghe
+group: aws
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE eventSource='ses.amazonaws.com' AND eventName='DeleteIdentity'

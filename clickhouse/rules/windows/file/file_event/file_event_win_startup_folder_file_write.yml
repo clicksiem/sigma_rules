@@ -1,0 +1,13 @@
+id: 2aa0a6b4-a865-495b-ab51-c28249537b75
+name: Startup Folder File Write
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp%' AND (NOT ((Image IN ('C:\\Windows\\System32\\wuauclt.exe', 'C:\\Windows\\uus\\ARM64\\wuaucltcore.exe')) OR (TargetFilename ILIKE 'C:\\$WINDOWS.~BT\\NewOS\\%' OR TargetFilename ILIKE 'C:\\$WinREAgent\\Scratch\\Mount\\%'))) AND (NOT (Image ILIKE '%\\ONENOTE.EXE' AND TargetFilename ILIKE '%\\Send to OneNote.lnk'))

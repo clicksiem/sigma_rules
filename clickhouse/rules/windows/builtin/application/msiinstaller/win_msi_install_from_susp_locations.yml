@@ -1,0 +1,11 @@
+id: c7c8aa1c-5aff-408e-828b-998e3620b341
+name: MSI Installation From Suspicious Locations
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Provider_Name='MsiInstaller' AND (EventID IN (1040, 1042)) AND (Data ILIKE '%:\\Windows\\TEMP\\%' OR Data ILIKE '%\\\\%' OR Data ILIKE '%\\Desktop\\%' OR Data ILIKE '%\\PerfLogs\\%' OR Data ILIKE '%\\Users\\Public\\%')) AND (NOT (Data ILIKE '%\\AppData\\Local\\Temp\\WinGet\\%' OR Data ILIKE '%C:\\Windows\\TEMP\\UpdHealthTools.msi%'))

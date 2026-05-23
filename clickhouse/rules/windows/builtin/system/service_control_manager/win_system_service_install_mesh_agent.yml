@@ -1,0 +1,12 @@
+id: e0d1ad53-c7eb-48ec-a87a-72393cc6cedc
+name: Mesh Agent Service Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (ImagePath ILIKE '%MeshAgent.exe%' OR ServiceName ILIKE '%Mesh Agent%')

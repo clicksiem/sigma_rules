@@ -1,0 +1,12 @@
+id: fb50eb7a-5ab1-43ae-bcc9-091818cb8424
+name: Disabled IE Security Features
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% -name IEHarden %' AND CommandLine ILIKE '% -value 0 %') OR (CommandLine ILIKE '% -name DEPOff %' AND CommandLine ILIKE '% -value 1 %') OR (CommandLine ILIKE '% -name DisableFirstRunCustomize %' AND CommandLine ILIKE '% -value 2 %')

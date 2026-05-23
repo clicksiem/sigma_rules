@@ -1,0 +1,13 @@
+id: ec8c4047-fad9-416a-8c81-0f479353d7f6
+name: Diagnostic Library Sdiageng.DLL Loaded By Msdt.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Greg (rule)
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+- cve.2022-30190
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\msdt.exe' AND ImageLoaded ILIKE '%\\sdiageng.dll'

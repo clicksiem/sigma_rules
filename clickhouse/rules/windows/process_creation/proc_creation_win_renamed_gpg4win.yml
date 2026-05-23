@@ -1,0 +1,12 @@
+id: ec0722a3-eb5c-4a56-8ab2-bf6f20708592
+name: Renamed Gpg.EXE Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1486
+rule: SELECT * FROM logs WHERE OriginalFileName='gpg.exe' AND (NOT (Image ILIKE '%\\gpg.exe' OR Image ILIKE '%\\gpg2.exe'))

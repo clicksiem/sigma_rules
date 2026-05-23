@@ -1,0 +1,14 @@
+id: a9c73e8b-3b2d-4c45-8ef2-5f9a9c9998ad
+name: MMC Loading Script Engines DLLs
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.005
+- attack.t1218.014
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\mmc.exe' AND (ImageLoaded ILIKE '%\\vbscript.dll' OR ImageLoaded ILIKE '%\\jscript.dll' OR ImageLoaded ILIKE '%\\jscript9.dll')

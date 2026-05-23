@@ -1,0 +1,12 @@
+id: fa0c05b6-8ad3-468d-8231-c1cbccb64fba
+name: Antivirus Hacktool Detection
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Arnim Rupp
+group: ''
+tags:
+- attack.execution
+- attack.t1204
+rule: SELECT * FROM logs WHERE (Signature ILIKE 'ATK/%' OR Signature ILIKE 'Exploit.Script.CVE%' OR Signature ILIKE 'HKTL%' OR Signature ILIKE 'HTOOL%' OR Signature ILIKE 'PWS.%' OR Signature ILIKE 'PWSX%' OR Signature ILIKE 'SecurityTool%') OR (Signature ILIKE '%Adfind%' OR Signature ILIKE '%Brutel%' OR Signature ILIKE '%BruteR%' OR Signature ILIKE '%Cobalt%' OR Signature ILIKE '%COBEACON%' OR Signature ILIKE '%Cometer%' OR Signature ILIKE '%DumpCreds%' OR Signature ILIKE '%FastReverseProxy%' OR Signature ILIKE '%Hacktool%' OR Signature ILIKE '%Havoc%' OR Signature ILIKE '%Impacket%' OR Signature ILIKE '%Keylogger%' OR Signature ILIKE '%Koadic%' OR Signature ILIKE '%Mimikatz%' OR Signature ILIKE '%Nighthawk%' OR Signature ILIKE '%PentestPowerShell%' OR Signature ILIKE '%Potato%' OR Signature ILIKE '%PowerSploit%' OR Signature ILIKE '%PowerSSH%' OR Signature ILIKE '%PshlSpy%' OR Signature ILIKE '%PSWTool%' OR Signature ILIKE '%PWCrack%' OR Signature ILIKE '%PWDump%' OR Signature ILIKE '%Rozena%' OR Signature ILIKE '%Rusthound%' OR Signature ILIKE '%Sbelt%' OR Signature ILIKE '%Seatbelt%' OR Signature ILIKE '%SecurityTool%' OR Signature ILIKE '%SharpDump%' OR Signature ILIKE '%SharpHound%' OR Signature ILIKE '%Shellcode%' OR Signature ILIKE '%Sliver%' OR Signature ILIKE '%Snaffler%' OR Signature ILIKE '%SOAPHound%' OR Signature ILIKE '%Splinter%' OR Signature ILIKE '%Swrort%' OR Signature ILIKE '%TurtleLoader%')

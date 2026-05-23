@@ -1,0 +1,12 @@
+id: 48437c39-9e5f-47fb-af95-3d663c3f2919
+name: UAC Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\EnableLUA%' AND Details='DWORD (0x00000000)'

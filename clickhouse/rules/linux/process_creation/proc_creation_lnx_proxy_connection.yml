@@ -1,0 +1,12 @@
+id: 72f4ab3f-787d-495d-a55d-68c2ff46cf4c
+name: Connection Proxy
+level: 3
+size: '>0'
+active: true
+author:
+- Ömer Günal
+group: linux
+tags:
+- attack.command-and-control
+- attack.t1090
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%http\_proxy=%' OR CommandLine ILIKE '%https\_proxy=%'

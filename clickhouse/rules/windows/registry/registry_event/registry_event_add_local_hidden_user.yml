@@ -1,0 +1,12 @@
+id: 460479f3-80b7-42da-9c43-2cc1d54dbccd
+name: Creation of a Local Hidden User Account by Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1136.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SAM\\SAM\\Domains\\Account\\Users\\Names\\%' AND TargetObject ILIKE '%$\\(Default)' AND Image ILIKE '%\\lsass.exe'

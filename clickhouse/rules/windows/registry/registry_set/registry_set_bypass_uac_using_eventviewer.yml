@@ -1,0 +1,13 @@
+id: 674202d0-b22a-4af4-ae5f-2eda1f3da1af
+name: Bypass UAC Using Event Viewer
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.010
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\_Classes\\mscfile\\shell\\open\\command\\(Default)' AND (NOT Details ILIKE '\%SystemRoot\%\\system32\\mmc.exe "\%1" \%%')

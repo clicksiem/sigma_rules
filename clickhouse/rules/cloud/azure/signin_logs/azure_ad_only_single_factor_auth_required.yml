@@ -1,0 +1,18 @@
+id: 28eea407-28d7-4e42-b0be-575d5ba60b2c
+name: Azure AD Only Single Factor Authentication Required
+level: 3
+size: '>0'
+active: true
+author:
+- MikeDuddington, '@dudders1'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.credential-access
+- attack.stealth
+- attack.defense-impairment
+- attack.t1078.004
+- attack.t1556.006
+rule: SELECT * FROM logs WHERE Status='Success' AND AuthenticationRequirement='singleFactorAuthentication'

@@ -1,0 +1,12 @@
+id: 97de11cd-4b67-4abf-9a8b-1020e670aa9e
+name: Pnscan Binary Data Transmission Activity
+level: 5
+size: '>0'
+active: true
+author:
+- David Burkett (@signalblur)
+group: linux
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE match(CommandLine, '-(W|R)\s?(\s|"|')([0-9a-fA-F]{2}\s?){2,20}(\s|"|')')

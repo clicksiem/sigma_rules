@@ -1,0 +1,12 @@
+id: 1775e15e-b61b-4d14-a1a3-80981298085a
+name: Rundll32 Execution Without CommandLine Parameters
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\rundll32.exe' OR CommandLine ILIKE '%\\rundll32.exe"' OR CommandLine ILIKE '%\\rundll32') AND (NOT (ParentImage ILIKE '%\\AppData\\Local\\%' OR ParentImage ILIKE '%\\Microsoft\\Edge\\%'))

@@ -1,0 +1,14 @@
+id: b85e5894-9b19-4d86-8c87-a2f3b81f0521
+name: BITS Transfer Job Downloading File Potential Suspicious Extension
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+rule: SELECT * FROM logs WHERE (EventID=16403 AND (LocalName ILIKE '%.bat' OR LocalName ILIKE '%.dll' OR LocalName ILIKE '%.exe' OR LocalName ILIKE '%.hta' OR LocalName ILIKE '%.ps1' OR LocalName ILIKE '%.psd1' OR LocalName ILIKE '%.sh' OR LocalName ILIKE '%.vbe' OR LocalName ILIKE '%.vbs')) AND (NOT (LocalName ILIKE '%\\AppData\\%' AND RemoteName ILIKE '%.com%'))

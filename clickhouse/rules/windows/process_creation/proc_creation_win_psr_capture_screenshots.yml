@@ -1,0 +1,12 @@
+id: 2158f96f-43c2-43cb-952a-ab4580f32382
+name: Screen Capture Activity Via Psr.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community
+group: windows
+tags:
+- attack.collection
+- attack.t1113
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Psr.exe' AND (CommandLine ILIKE '%/start%' OR CommandLine ILIKE '%-start%')

@@ -1,0 +1,18 @@
+id: 2ddef153-167b-4e89-86b6-757a9e65dcac
+name: File Download Via Bitsadmin To A Suspicious Target Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+- attack.s0190
+- attack.t1036.003
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\bitsadmin.exe' OR OriginalFileName='bitsadmin.exe') AND (CommandLine ILIKE '% /transfer %' OR CommandLine ILIKE '% /create %' OR CommandLine ILIKE '% /addfile %') AND (CommandLine ILIKE '%:\\Perflogs%' OR CommandLine ILIKE '%:\\ProgramData\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\%' OR CommandLine ILIKE '%\\$Recycle.Bin\\%' OR CommandLine ILIKE '%\\AppData\\Local\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\\Contacts\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Favorites\\%' OR CommandLine ILIKE '%\\Favourites\\%' OR CommandLine ILIKE '%\\inetpub\\wwwroot\\%' OR CommandLine ILIKE '%\\Music\\%' OR CommandLine ILIKE '%\\Pictures\\%' OR CommandLine ILIKE '%\\Start Menu\\Programs\\Startup\\%' OR CommandLine ILIKE '%\\Users\\Default\\%' OR CommandLine ILIKE '%\\Videos\\%' OR CommandLine ILIKE '%\%ProgramData\%%' OR CommandLine ILIKE '%\%public\%%' OR CommandLine ILIKE '%\%temp\%%' OR CommandLine ILIKE '%\%tmp\%%')

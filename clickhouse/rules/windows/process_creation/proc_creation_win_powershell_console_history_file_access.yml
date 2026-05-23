@@ -1,0 +1,12 @@
+id: f4ff7323-b5fc-4323-8b52-6b9408e15788
+name: Potential PowerShell Console History Access Attempt via History File
+level: 5
+size: '>0'
+active: true
+author:
+- Luc Génaux
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%ConsoleHost\_history.txt%' OR CommandLine ILIKE '%(Get-PSReadLineOption).HistorySavePath%'

@@ -1,0 +1,13 @@
+id: d2d901db-7a75-45a1-bc39-0cbf00812192
+name: Number Of Resource Creation Or Deployment Activities
+level: 5
+size: '>0'
+active: true
+author:
+- sawwinnnaung
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'Microsoft.Compute/virtualMachines/write') OR hasToken(full_log, 'Microsoft.Resources/deployments/write')

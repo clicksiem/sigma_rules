@@ -1,0 +1,12 @@
+id: 53d8d3e1-ca33-4012-adf3-e05a4d652e34
+name: Process Memory Dump Via Dotnet-Dump
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dotnet-dump.exe' OR OriginalFileName='dotnet-dump.dll') AND CommandLine ILIKE '%collect%'

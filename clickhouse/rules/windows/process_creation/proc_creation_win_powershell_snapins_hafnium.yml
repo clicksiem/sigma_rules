@@ -1,0 +1,14 @@
+id: 25676e10-2121-446e-80a4-71ff8506af47
+name: Exchange PowerShell Snap-Ins Usage
+level: 8
+size: '>0'
+active: true
+author:
+- FPT.EagleEye, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.collection
+- attack.t1114
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND CommandLine ILIKE '%Add-PSSnapin%' AND (CommandLine ILIKE '%Microsoft.Exchange.Powershell.Snapin%' OR CommandLine ILIKE '%Microsoft.Exchange.Management.PowerShell.SnapIn%')) AND (NOT (ParentImage ILIKE 'C:\\Windows\\System32\\msiexec.exe' AND CommandLine ILIKE '%$exserver=Get-ExchangeServer ([Environment]::MachineName) -ErrorVariable exerr 2> $null%'))

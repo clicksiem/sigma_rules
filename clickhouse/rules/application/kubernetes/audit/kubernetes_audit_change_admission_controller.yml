@@ -1,0 +1,18 @@
+id: eed82177-38f5-4299-8a76-098d50d225ab
+name: Kubernetes Admission Controller Modification
+level: 5
+size: '>0'
+active: true
+author:
+- kelnage
+group: kubernetes
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.persistence
+- attack.stealth
+- attack.t1078
+- attack.credential-access
+- attack.t1552
+- attack.t1552.007
+rule: SELECT * FROM logs WHERE `objectRef.apiGroup`='admissionregistration.k8s.io' AND (`objectRef.resource` IN ('mutatingwebhookconfigurations', 'validatingwebhookconfigurations')) AND (verb IN ('create', 'delete', 'patch', 'replace', 'update'))

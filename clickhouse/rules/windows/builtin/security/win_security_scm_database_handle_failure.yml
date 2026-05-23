@@ -1,0 +1,12 @@
+id: 13addce7-47b2-4ca0-a98f-1de964d1d669
+name: SCM Database Handle Failure
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.discovery
+- attack.t1010
+rule: SELECT * FROM logs WHERE (EventID=4656 AND ObjectType ILIKE 'SC\_MANAGER OBJECT' AND ObjectName='ServicesActive' AND AccessMask='0xf003f') AND (NOT SubjectLogonId='0x3e4')

@@ -1,0 +1,14 @@
+id: 60167e5c-84b2-4c95-a7ac-86281f27c445
+name: Remote PowerShell Session (PS Classic)
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.lateral-movement
+- attack.t1021.006
+rule: SELECT * FROM logs WHERE Data ILIKE '%HostName=ServerRemoteHost%' AND Data ILIKE '%wsmprovhost.exe%'

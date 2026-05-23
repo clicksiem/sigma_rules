@@ -1,0 +1,14 @@
+id: 7a922f1b-2635-4d6c-91ef-af228b198ad3
+name: Invoke-Obfuscation COMPRESS OBFUSCATION - Security
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ServiceFileName ILIKE '%new-object%' AND ServiceFileName ILIKE '%text.encoding]::ascii%' AND ServiceFileName ILIKE '%readtoend%') AND (ServiceFileName ILIKE '%system.io.compression.deflatestream%' OR ServiceFileName ILIKE '%system.io.streamreader%')

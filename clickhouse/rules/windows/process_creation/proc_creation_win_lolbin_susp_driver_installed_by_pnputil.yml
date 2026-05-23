@@ -1,0 +1,13 @@
+id: a2ea3ae7-d3d0-40a0-a55c-25a45c87cac1
+name: Suspicious Driver Install by pnputil.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Hai Vaknin @LuxNoBulIshit, Avihay eldad  @aloneliassaf, Austin Songer @austinsonger
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%-i%' OR CommandLine ILIKE '%/install%' OR CommandLine ILIKE '%-a%' OR CommandLine ILIKE '%/add-driver%' OR CommandLine ILIKE '%.inf%') AND Image ILIKE '%\\pnputil.exe'

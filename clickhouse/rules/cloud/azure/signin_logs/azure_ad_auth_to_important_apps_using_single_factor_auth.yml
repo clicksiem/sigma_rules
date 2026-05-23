@@ -1,0 +1,15 @@
+id: f272fb46-25f2-422c-b667-45837994980f
+name: Authentications To Important Apps Using Single Factor Authentication
+level: 5
+size: '>0'
+active: true
+author:
+- MikeDuddington, '@dudders1'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE Status='Success' AND AppId='Insert Application ID use OR for multiple' AND AuthenticationRequirement='singleFactorAuthentication'

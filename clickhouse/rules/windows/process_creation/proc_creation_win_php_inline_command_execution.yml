@@ -1,0 +1,12 @@
+id: d81871ef-5738-47ab-9797-7a9c90cd4bfb
+name: Php Inline Command Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\php.exe' OR OriginalFileName='php.exe') AND CommandLine ILIKE '% -r%'

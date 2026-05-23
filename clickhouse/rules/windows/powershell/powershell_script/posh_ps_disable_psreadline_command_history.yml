@@ -1,0 +1,12 @@
+id: 602f5669-6927-4688-84db-0d4b7afb2150
+name: Disable Powershell Command History
+level: 8
+size: '>0'
+active: true
+author:
+- Ali Alwashali
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Remove-Module%' AND ScriptBlockText ILIKE '%psreadline%'

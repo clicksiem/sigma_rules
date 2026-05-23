@@ -1,0 +1,12 @@
+id: e074832a-eada-4fd7-94a1-10642b130e16
+name: HackTool - SafetyKatz Dump Indicator
+level: 8
+size: '>0'
+active: true
+author:
+- Markus Neis
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Temp\\debug.bin'

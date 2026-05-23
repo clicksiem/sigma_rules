@@ -1,0 +1,12 @@
+id: 6fe4aa1e-0531-4510-8be2-782154b73b48
+name: File Recovery From Backup Via Wbadmin.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wbadmin.exe' OR OriginalFileName='WBADMIN.EXE') AND (CommandLine ILIKE '% recovery%' AND CommandLine ILIKE '%recoveryTarget%' AND CommandLine ILIKE '%itemtype:File%')

@@ -1,0 +1,13 @@
+id: 969c7590-8c19-4797-8c1b-23155de6e7ac
+name: Okta Identity Provider Created
+level: 5
+size: '>0'
+active: true
+author:
+- kelnage
+group: okta
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098.001
+rule: SELECT * FROM logs WHERE eventType='system.idp.lifecycle.create'

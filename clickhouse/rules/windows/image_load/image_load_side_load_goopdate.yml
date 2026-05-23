@@ -1,0 +1,15 @@
+id: b6188d2f-b3c4-4d2c-a17d-9706e0851af0
+name: Potential Goopdate.DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\goopdate.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files (x86)\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\%')) AND (NOT (((Image ILIKE '%\\AppData\\Local\\Temp\\GUM%' AND Image ILIKE '%.tmp\\Dropbox%') AND (ImageLoaded ILIKE '%\\AppData\\Local\\Temp\\GUM%' AND ImageLoaded ILIKE '%.tmp\\goopdate.dll%')) OR ((Image ILIKE '%\\AppData\\Local\\Temp\\GUM%' OR Image ILIKE '%:\\Windows\\SystemTemp\\GUM%') AND Image ILIKE '%.tmp\\GoogleUpdate.exe' AND (ImageLoaded ILIKE '%\\AppData\\Local\\Temp\\GUM%' OR ImageLoaded ILIKE '%:\\Windows\\SystemTemp\\GUM%'))))

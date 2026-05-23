@@ -1,0 +1,12 @@
+id: b57ba453-b384-4ab9-9f40-1038086b4e53
+name: VeeamBackup Database Credentials Dump Via Sqlcmd.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1005
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\sqlcmd.exe' AND (CommandLine ILIKE '%SELECT%' AND CommandLine ILIKE '%TOP%' AND CommandLine ILIKE '%[VeeamBackup].[dbo].[Credentials]%')

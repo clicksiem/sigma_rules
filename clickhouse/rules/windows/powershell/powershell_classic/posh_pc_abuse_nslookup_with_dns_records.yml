@@ -1,0 +1,12 @@
+id: 999bff6d-dc15-44c9-9f5c-e1051bfc86e1
+name: Nslookup PowerShell Download Cradle
+level: 5
+size: '>0'
+active: true
+author:
+- Sai Prashanth Pulisetti @pulisettis, Aishwarya Singam
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (Data ILIKE '%powershell%' AND Data ILIKE '%nslookup%' AND Data ILIKE '%[1]%') AND (Data ILIKE '%-q=txt http%' OR Data ILIKE '%-querytype=txt http%' OR Data ILIKE '%-type=txt http%')

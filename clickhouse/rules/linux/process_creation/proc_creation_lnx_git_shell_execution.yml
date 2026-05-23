@@ -1,0 +1,12 @@
+id: 47b3bbd4-1bf7-48cc-84ab-995362aaa75a
+name: Shell Execution via Git - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%/git' AND (ParentCommandLine ILIKE '% -p %' AND ParentCommandLine ILIKE '%help%') AND (CommandLine ILIKE '%bash 0<&1%' OR CommandLine ILIKE '%dash 0<&1%' OR CommandLine ILIKE '%sh 0<&1%')

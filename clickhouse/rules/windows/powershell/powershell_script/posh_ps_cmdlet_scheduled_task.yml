@@ -1,0 +1,14 @@
+id: 363eccc0-279a-4ccf-a3ab-24c2e63b11fb
+name: Powershell Create Scheduled Task
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE ((ScriptBlockText ILIKE '%New-ScheduledTaskAction%' OR ScriptBlockText ILIKE '%New-ScheduledTaskTrigger%' OR ScriptBlockText ILIKE '%New-ScheduledTaskPrincipal%' OR ScriptBlockText ILIKE '%New-ScheduledTaskSettingsSet%' OR ScriptBlockText ILIKE '%New-ScheduledTask%' OR ScriptBlockText ILIKE '%Register-ScheduledTask%') OR (ScriptBlockText ILIKE '%Invoke-CimMethod%' AND ScriptBlockText ILIKE '%-ClassName%' AND ScriptBlockText ILIKE '%PS\_ScheduledTask%' AND ScriptBlockText ILIKE '%-NameSpace%' AND ScriptBlockText ILIKE '%Root\\Microsoft\\Windows\\TaskScheduler%')) AND (NOT (ScriptBlockText ILIKE '%Microsoft.PowerShell.Core\\Export-ModuleMember%' AND ScriptBlockText ILIKE '%Microsoft.Management.Infrastructure.CimInstance%' AND ScriptBlockText ILIKE '%\_\_cmdletization\_methodParameter%'))

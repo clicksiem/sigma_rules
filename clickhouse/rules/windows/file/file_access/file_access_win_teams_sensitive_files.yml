@@ -1,0 +1,12 @@
+id: 65744385-8541-44a6-8630-ffc824d7d4cc
+name: Microsoft Teams Sensitive File Access By Uncommon Applications
+level: 5
+size: '>0'
+active: true
+author:
+- '@SerkinValery'
+group: windows
+tags:
+- attack.credential-access
+- attack.t1528
+rule: SELECT * FROM logs WHERE (FileName ILIKE '%\\Microsoft\\Teams\\Cookies%' OR FileName ILIKE '%\\Microsoft\\Teams\\Local Storage\\leveldb%') AND (NOT Image ILIKE '%\\Microsoft\\Teams\\current\\Teams.exe')

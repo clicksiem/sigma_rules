@@ -1,0 +1,12 @@
+id: c462f537-a1e3-41a6-b5fc-b2c2cef9bf82
+name: Suspicious PsExec Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE (EventID=5145 AND ShareName ILIKE '\\\\*\\IPC$' AND (RelativeTargetName ILIKE '%-stdin' OR RelativeTargetName ILIKE '%-stdout' OR RelativeTargetName ILIKE '%-stderr')) AND (NOT RelativeTargetName ILIKE 'PSEXESVC%')

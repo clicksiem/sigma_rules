@@ -1,0 +1,12 @@
+id: f2bed782-994e-4f40-9cd5-518198cb3fba
+name: Linux Sudo Chroot Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawn Poudel (Nextron Systems)
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.t1068
+rule: SELECT * FROM logs WHERE Image ILIKE '%/sudo' AND (CommandLine ILIKE '% --chroot %' OR CommandLine ILIKE '%sudo -R %')

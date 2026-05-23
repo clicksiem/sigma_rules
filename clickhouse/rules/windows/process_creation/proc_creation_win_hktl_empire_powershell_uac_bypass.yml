@@ -1,0 +1,13 @@
+id: 3268b746-88d8-4cd3-bffc-30077d02c787
+name: HackTool - Empire PowerShell UAC Bypass
+level: 10
+size: '>0'
+active: true
+author:
+- Ecco
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+- car.2019-04-001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% -NoP -NonI -w Hidden -c $x=$((gp HKCU:Software\\Microsoft\\Windows Update).Update)%' OR CommandLine ILIKE '% -NoP -NonI -c $x=$((gp HKCU:Software\\Microsoft\\Windows Update).Update);%'

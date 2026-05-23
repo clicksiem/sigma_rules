@@ -1,0 +1,15 @@
+id: 2074e137-1b73-4e2d-88ba-5a3407dbdce0
+name: Notepad++ Updater DNS Query to Uncommon Domains
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1195.002
+- attack.initial-access
+- attack.t1557
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\gup.exe' AND (NOT QueryName='notepad-plus-plus.org') AND (NOT (QueryName ILIKE '%.sourceforge.net' OR (QueryName ILIKE '%.githubusercontent.com' OR QueryName='github.com') OR QueryName ILIKE '%.googleapis.com' OR (QueryName ILIKE '%.azurewebsites.net' OR QueryName ILIKE '%block.opendns.com' OR QueryName ILIKE '%gateway.zscalerthree.net')))

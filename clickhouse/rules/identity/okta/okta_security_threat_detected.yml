@@ -1,0 +1,11 @@
+id: 5c82f0b9-3c6d-477f-a318-0e14a1df73e0
+name: Okta Security Threat Detected
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: okta
+tags:
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE eventType='security.threat.detected'

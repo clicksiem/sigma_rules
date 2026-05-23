@@ -1,0 +1,13 @@
+id: 979baf41-ca44-4540-9d0c-4fcef3b5a3a4
+name: Potential File Extension Spoofing Using Right-to-Left Override
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Peters (Nextron Systems), Florian Roth (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1036.002
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\u202e%' OR TargetFilename ILIKE '%[U+202E]%' OR TargetFilename ILIKE '%‮%') AND (TargetFilename ILIKE '%3pm.%' OR TargetFilename ILIKE '%4pm.%' OR TargetFilename ILIKE '%cod.%' OR TargetFilename ILIKE '%fdp.%' OR TargetFilename ILIKE '%ftr.%' OR TargetFilename ILIKE '%gepj.%' OR TargetFilename ILIKE '%gnp.%' OR TargetFilename ILIKE '%gpj.%' OR TargetFilename ILIKE '%ism.%' OR TargetFilename ILIKE '%lmth.%' OR TargetFilename ILIKE '%nls.%' OR TargetFilename ILIKE '%piz.%' OR TargetFilename ILIKE '%slx.%' OR TargetFilename ILIKE '%tdo.%' OR TargetFilename ILIKE '%vsc.%' OR TargetFilename ILIKE '%vwm.%' OR TargetFilename ILIKE '%xcod.%' OR TargetFilename ILIKE '%xslx.%' OR TargetFilename ILIKE '%xtpp.%')

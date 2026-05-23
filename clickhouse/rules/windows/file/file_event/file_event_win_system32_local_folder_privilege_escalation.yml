@@ -1,0 +1,13 @@
+id: 07a99744-56ac-40d2-97b7-2095967b0e03
+name: Potential Privilege Escalation Attempt Via .Exe.Local Technique
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Subhash P (@pbssubhash)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE 'C:\\Windows\\System32\\logonUI.exe.local%' OR TargetFilename ILIKE 'C:\\Windows\\System32\\werFault.exe.local%' OR TargetFilename ILIKE 'C:\\Windows\\System32\\consent.exe.local%' OR TargetFilename ILIKE 'C:\\Windows\\System32\\narrator.exe.local%' OR TargetFilename ILIKE 'C:\\Windows\\System32\\wermgr.exe.local%') AND TargetFilename ILIKE '%\\comctl32.dll'

@@ -1,0 +1,12 @@
+id: 8a3038e8-9c9d-46f8-b184-66234a160f6f
+name: Potential Remote Desktop Tunneling
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%:3389%' AND (CommandLine ILIKE '% -L %' OR CommandLine ILIKE '% -P %' OR CommandLine ILIKE '% -R %' OR CommandLine ILIKE '% -pw %' OR CommandLine ILIKE '% -ssh %')

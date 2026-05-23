@@ -1,0 +1,13 @@
+id: 850d55f9-6eeb-4492-ad69-a72338f65ba4
+name: C# IL Code Compilation Via Ilasm.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\ilasm.exe' OR OriginalFileName='ilasm.exe') AND (CommandLine ILIKE '% /dll%' OR CommandLine ILIKE '% /exe%')

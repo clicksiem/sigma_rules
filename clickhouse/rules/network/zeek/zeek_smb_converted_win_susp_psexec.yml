@@ -1,0 +1,12 @@
+id: f1b3a22a-45e6-4004-afb5-4291f9c21166
+name: Suspicious PsExec Execution - Zeek
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden, @neu5ron, Tim Shelton
+group: zeek
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE ((path ILIKE '%\\%' AND path ILIKE '%\\IPC$%') AND (name ILIKE '%-stdin' OR name ILIKE '%-stdout' OR name ILIKE '%-stderr')) AND (NOT name ILIKE 'PSEXESVC%')

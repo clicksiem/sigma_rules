@@ -1,0 +1,13 @@
+id: 85d23b42-9a9d-4f8f-b3d7-d2733c1d58f5
+name: HackTool - HollowReaper Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.012
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\HollowReaper.exe'

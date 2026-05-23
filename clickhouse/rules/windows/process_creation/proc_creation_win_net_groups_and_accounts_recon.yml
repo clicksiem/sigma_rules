@@ -1,0 +1,13 @@
+id: d95de845-b83c-4a9a-8a6a-4fc802ebf6c0
+name: Suspicious Group And Account Reconnaissance Activity Using Net.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), omkar72, @svch0st, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.001
+- attack.t1087.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND ((((CommandLine ILIKE '% group %' OR CommandLine ILIKE '% localgroup %') AND (CommandLine ILIKE '%domain admins%' OR CommandLine ILIKE '% administrator%' OR CommandLine ILIKE '% administrateur%' OR CommandLine ILIKE '%enterprise admins%' OR CommandLine ILIKE '%Exchange Trusted Subsystem%' OR CommandLine ILIKE '%Remote Desktop Users%' OR CommandLine ILIKE '%Utilisateurs du Bureau à distance%' OR CommandLine ILIKE '%Usuarios de escritorio remoto%' OR CommandLine ILIKE '% /do%')) AND (NOT CommandLine ILIKE '% /add%')) OR (CommandLine ILIKE '% accounts %' AND CommandLine ILIKE '% /do%'))

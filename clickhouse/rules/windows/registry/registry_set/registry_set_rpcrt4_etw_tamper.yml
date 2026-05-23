@@ -1,0 +1,14 @@
+id: 90f342e1-1aaa-4e43-b092-39fda57ed11e
+name: ETW Logging Disabled For rpcrt4.dll
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows NT\\Rpc\\ExtErrorInformation' AND (Details IN ('DWORD (0x00000000)', 'DWORD (0x00000002)'))

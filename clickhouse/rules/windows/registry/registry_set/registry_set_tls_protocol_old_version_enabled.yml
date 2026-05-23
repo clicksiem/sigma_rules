@@ -1,0 +1,11 @@
+id: 439957a7-ad86-4a8f-9705-a28131c6821b
+name: Old TLS1.0/TLS1.1 Protocol Version Enabled
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.0\\%' OR TargetObject ILIKE '%\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.1\\%') AND TargetObject ILIKE '%\\Enabled' AND Details='DWORD (0x00000001)'

@@ -1,0 +1,12 @@
+id: a982fc9c-6333-4ffb-a51d-addb04e8b529
+name: Windows Defender Exclusions Added - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows Defender\\Exclusions%'

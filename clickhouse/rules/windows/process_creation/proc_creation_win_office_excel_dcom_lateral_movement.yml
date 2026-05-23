@@ -1,0 +1,12 @@
+id: 551d9c1f-816c-445b-a7a6-7a3864720d60
+name: Potential Excel.EXE DCOM Lateral Movement Via ActivateMicrosoftApp
+level: 8
+size: '>0'
+active: true
+author:
+- Aaron Stratton
+group: windows
+tags:
+- attack.t1021.003
+- attack.lateral-movement
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\excel.exe' AND ((OriginalFileName IN ('foxprow.exe', 'schdplus.exe', 'winproj.exe')) OR (Image ILIKE '%\\foxprow.exe' OR Image ILIKE '%\\schdplus.exe' OR Image ILIKE '%\\winproj.exe'))

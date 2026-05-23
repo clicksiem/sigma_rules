@@ -1,0 +1,11 @@
+id: 889719ef-dd62-43df-86c3-768fb08dc7c0
+name: Suspicious PowerShell Mailbox Export to Share
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%New-MailboxExportRequest%' AND CommandLine ILIKE '% -Mailbox %' AND CommandLine ILIKE '% -FilePath \\\\%'

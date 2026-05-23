@@ -1,0 +1,12 @@
+id: 076ebe48-cc05-4d8f-9d41-89245cd93a14
+name: Remote Access Tool - ScreenConnect Command Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Ali Alwashali
+group: windows
+tags:
+- attack.execution
+- attack.t1059.003
+rule: SELECT * FROM logs WHERE Provider_Name='ScreenConnect' AND EventID=200 AND Data ILIKE '%Executed command of length%'

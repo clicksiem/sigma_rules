@@ -1,0 +1,13 @@
+id: 198effb6-6c98-4d0c-9ea3-451fa143c45c
+name: Run Once Task Execution as Configured in Registry
+level: 3
+size: '>0'
+active: true
+author:
+- Avneet Singh @v3t0_, oscd.community, Christopher Peacock @SecurePeacock (updated)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\runonce.exe' OR Description='Run Once Wrapper') AND (CommandLine ILIKE '%/AlternateShellStartup%' OR CommandLine ILIKE '%/r')

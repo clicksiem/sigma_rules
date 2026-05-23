@@ -1,0 +1,13 @@
+id: b5de0c9a-6f19-43e0-af4e-55ad01f550af
+name: Unsigned DLL Loaded by Windows Utility
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\InstallUtil.exe' OR Image ILIKE '%\\RegAsm.exe' OR Image ILIKE '%\\RegSvcs.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe') AND (NOT (Signed='true' OR (SignatureStatus IN ('errorChaining', 'errorCode\_endpoint', 'errorExpired', 'trusted', 'Valid')) OR isNull(Signed) OR (Signed IN ('', '-')) OR isNull(SignatureStatus) OR (SignatureStatus IN ('', '-')) OR ((Image IN ('C:\\Windows\\SysWOW64\\rundll32.exe', 'C:\\Windows\\System32\\rundll32.exe')) AND ImageLoaded ILIKE 'C:\\Windows\\Installer\\%' AND (ImageLoaded ILIKE '%.tmp-\\Microsoft.Deployment.WindowsInstaller.dll' OR ImageLoaded ILIKE '%.tmp-\\Avira.OE.Setup.CustomActions.dll')) OR ((Image ILIKE 'C:\\Windows\\SysWOW64\\%' OR Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\Microsoft.NET\\Framework64%') AND Image ILIKE '%\\RegAsm.exe' AND ImageLoaded ILIKE '%.dll' AND ImageLoaded ILIKE 'C:\\Windows\\assembly\\NativeImages%'))) AND (NOT ((Image IN ('C:\\Windows\\SysWOW64\\regsvr32.exe', 'C:\\Windows\\System32\\regsvr32.exe')) AND (ImageLoaded ILIKE 'C:\\Program Files (x86)\\K-Lite Codec Pack\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\K-Lite Codec Pack\\%')))

@@ -1,0 +1,12 @@
+id: 02b18447-ea83-4b1b-8805-714a8a34546a
+name: Potential Mpclient.DLL Sideloading Via OfflineScannerShell.EXE Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\OfflineScannerShell.exe' OR OriginalFileName='OfflineScannerShell.exe') AND (NOT (CurrentDirectory ILIKE 'C:\\Program Files\\Windows Defender\\Offline\\' OR CurrentDirectory='' OR isNull(CurrentDirectory)))

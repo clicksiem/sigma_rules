@@ -1,0 +1,13 @@
+id: e5b33f7d-eb93-48b6-9851-09e1e610b6d7
+name: Credential Dumping Attempt Via WerFault
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.s0002
+rule: SELECT * FROM logs WHERE SourceImage ILIKE '%\\WerFault.exe' AND TargetImage ILIKE '%\\lsass.exe' AND GrantedAccess='0x1FFFFF'

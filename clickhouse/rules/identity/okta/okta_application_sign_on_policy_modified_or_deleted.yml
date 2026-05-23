@@ -1,0 +1,11 @@
+id: 8f668cc4-c18e-45fe-ad00-624a981cf88a
+name: Okta Application Sign-On Policy Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: okta
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventType IN ('application.policy.sign\_on.update', 'application.policy.sign\_on.rule.delete')

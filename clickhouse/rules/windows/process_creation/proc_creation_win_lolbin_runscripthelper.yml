@@ -1,0 +1,14 @@
+id: eca49c87-8a75-4f13-9c73-a5a29e845f03
+name: Suspicious Runscripthelper.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059
+- attack.t1202
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Runscripthelper.exe' AND CommandLine ILIKE '%surfacecheck%'

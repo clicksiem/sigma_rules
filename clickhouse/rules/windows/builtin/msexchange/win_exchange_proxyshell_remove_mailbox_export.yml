@@ -1,0 +1,12 @@
+id: 09570ae5-889e-43ea-aac0-0e1221fb3d95
+name: Remove Exported Mailbox from Exchange Webserver
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'Remove-MailboxExportRequest') AND hasToken(full_log, ' -Identity ') AND hasToken(full_log, ' -Confirm "False"')

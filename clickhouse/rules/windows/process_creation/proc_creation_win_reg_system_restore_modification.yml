@@ -1,0 +1,12 @@
+id: 7c06ab9b-b1d2-4ba9-b06e-09491ded20d9
+name: System Restore Registry Modification via CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\reg.exe') OR (OriginalFileName IN ('powershell.exe', 'pwsh.dll', 'reg.exe'))) AND (CommandLine ILIKE '% add %' OR CommandLine ILIKE '%Set-ItemProperty%' OR CommandLine ILIKE '%New-ItemProperty%') AND (CommandLine ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\SystemRestore%' OR CommandLine ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore%') AND (CommandLine ILIKE '%DisableConfig%' OR CommandLine ILIKE '%DisableSR%')

@@ -1,0 +1,13 @@
+id: ede05abc-2c9e-4624-9944-9ff17fdc0bf5
+name: Suspicious DNS Z Flag Bit Set
+level: 5
+size: '>0'
+active: true
+author:
+- '@neu5ron, SOC Prime Team, Corelight'
+group: zeek
+tags:
+- attack.t1095
+- attack.t1571
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE (NOT Z=0) AND query ILIKE '%.%' AND (NOT ((query ILIKE '%.arpa' OR query ILIKE '%.local' OR query ILIKE '%.ultradns.net' OR query ILIKE '%.twtrdns.net' OR query ILIKE '%.azuredns-prd.info' OR query ILIKE '%.azure-dns.com' OR query ILIKE '%.azuredns-ff.info' OR query ILIKE '%.azuredns-ff.org' OR query ILIKE '%.azuregov-dns.org') OR (qtype_name IN ('ns', 'mx')) OR answers ILIKE '%\\x00' OR (`id.resp_p` IN (137, 138, 139))))

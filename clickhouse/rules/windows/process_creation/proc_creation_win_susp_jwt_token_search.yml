@@ -1,0 +1,13 @@
+id: 6d3a3952-6530-44a3-8554-cf17c116c615
+name: Potentially Suspicious JWT Token Search Via CLI
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), kagebunsher
+group: windows
+tags:
+- attack.credential-access
+- attack.t1528
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%find %' OR CommandLine ILIKE '%find.exe%' OR CommandLine ILIKE '%findstr%' OR CommandLine ILIKE '%select-string %' OR CommandLine ILIKE '%strings%') AND (CommandLine ILIKE '%eyJ0eXAiOi%' OR CommandLine ILIKE '%eyJhbGciOi%' OR CommandLine ILIKE '% eyJ0eX%' OR CommandLine ILIKE '% "eyJ0eX"%' OR CommandLine ILIKE '% ''eyJ0eX''%' OR CommandLine ILIKE '% eyJhbG%' OR CommandLine ILIKE '% "eyJhbG"%' OR CommandLine ILIKE '% ''eyJhbG''%')

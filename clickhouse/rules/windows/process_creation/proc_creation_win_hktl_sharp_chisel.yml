@@ -1,0 +1,12 @@
+id: cf93e05e-d798-4d9e-b522-b0248dc61eaf
+name: HackTool - SharpChisel Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1090.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SharpChisel.exe' OR Product='SharpChisel'

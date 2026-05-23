@@ -1,0 +1,13 @@
+id: 4f84b697-c9ed-4420-8ab5-e09af5b2345d
+name: New DLL Added to AppInit_DLLs Registry Key
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, oscd.community, Tim Shelton
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.010
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\_Dlls' OR TargetObject ILIKE '%\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\_Dlls') OR (NewName ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\_Dlls' OR NewName ILIKE '%\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\_Dlls')) AND (NOT Details='(Empty)')

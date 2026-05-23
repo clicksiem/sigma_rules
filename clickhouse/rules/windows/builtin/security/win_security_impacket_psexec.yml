@@ -1,0 +1,12 @@
+id: 32d56ea1-417f-44ff-822b-882873f5f43b
+name: Impacket PsExec Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE EventID=5145 AND ShareName ILIKE '\\\\*\\IPC$' AND (RelativeTargetName ILIKE '%RemCom\_stdin%' OR RelativeTargetName ILIKE '%RemCom\_stdout%' OR RelativeTargetName ILIKE '%RemCom\_stderr%')

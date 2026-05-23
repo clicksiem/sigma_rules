@@ -1,0 +1,12 @@
+id: 78a80655-a51e-4669-bc6b-e9d206a462ee
+name: Install Root Certificate
+level: 3
+size: '>0'
+active: true
+author:
+- Ömer Günal, oscd.community
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1553.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/update-ca-certificates' OR Image ILIKE '%/update-ca-trust'

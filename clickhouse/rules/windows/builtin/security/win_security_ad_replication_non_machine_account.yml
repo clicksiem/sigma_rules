@@ -1,0 +1,12 @@
+id: 17d619c1-e020-4347-957e-1d1207455c93
+name: Active Directory Replication from Non Machine Account
+level: 10
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.006
+rule: SELECT * FROM logs WHERE (EventID=4662 AND AccessMask='0x100' AND (Properties ILIKE '%1131f6aa-9c07-11d1-f79f-00c04fc2dcd2%' OR Properties ILIKE '%1131f6ad-9c07-11d1-f79f-00c04fc2dcd2%' OR Properties ILIKE '%89e95b76-444d-4c62-991a-0facbeda640c%')) AND (NOT (SubjectUserName ILIKE '%$' OR SubjectUserName ILIKE 'MSOL\_%'))

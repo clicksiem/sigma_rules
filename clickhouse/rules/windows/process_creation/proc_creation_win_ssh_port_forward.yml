@@ -1,0 +1,15 @@
+id: 327f48c1-a6db-4eb8-875a-f6981f1b0183
+name: Port Forwarding Activity Via SSH.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.lateral-movement
+- attack.t1572
+- attack.t1021.001
+- attack.t1021.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\ssh.exe' AND (CommandLine ILIKE '% -R %' OR CommandLine ILIKE '% /R %' OR CommandLine ILIKE '% –R %' OR CommandLine ILIKE '% —R %' OR CommandLine ILIKE '% ―R %')

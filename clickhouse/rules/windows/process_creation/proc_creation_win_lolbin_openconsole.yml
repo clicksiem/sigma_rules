@@ -1,0 +1,12 @@
+id: 814c95cc-8192-4378-a70a-f1aafd877af1
+name: Use of OpenConsole
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (OriginalFileName='OpenConsole.exe' OR Image ILIKE '%\\OpenConsole.exe') AND (NOT Image ILIKE 'C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal%')

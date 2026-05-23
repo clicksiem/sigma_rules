@@ -1,0 +1,12 @@
+id: f4bbd493-b796-416e-bbf2-121235348529
+name: Non Interactive PowerShell Process Spawned
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g (rule), oscd.community (improvements)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (NOT ((ParentImage ILIKE '%:\\Windows\\explorer.exe' OR ParentImage ILIKE '%:\\Windows\\System32\\CompatTelRunner.exe' OR ParentImage ILIKE '%:\\Windows\\SysWOW64\\explorer.exe') OR ParentImage ILIKE ':\\$WINDOWS.~BT\\Sources\\SetupHost.exe')) AND (NOT ((ParentImage ILIKE '%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe' AND ParentCommandLine ILIKE '% --ms-enable-electron-run-as-node %') OR (ParentImage ILIKE '%:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal\_%' AND ParentImage ILIKE '%\\WindowsTerminal.exe') OR ParentImage ILIKE '%:\\Program Files\\Windows Defender Advanced Threat Protection\\SenseIR.exe'))

@@ -1,0 +1,13 @@
+id: f956c7c1-0f60-4bc5-b7d7-b39ab3c08908
+name: PktMon.EXE Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.credential-access
+- attack.t1040
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\pktmon.exe' OR OriginalFileName='PktMon.exe'

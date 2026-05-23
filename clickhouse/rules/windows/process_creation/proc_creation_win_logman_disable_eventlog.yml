@@ -1,0 +1,13 @@
+id: cd1f961e-0b96-436b-b7c6-38da4583ec00
+name: Suspicious Windows Trace ETW Session Tamper Via Logman.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+- attack.t1685.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\logman.exe' OR OriginalFileName='Logman.exe') AND (CommandLine ILIKE '%stop %' OR CommandLine ILIKE '%delete %') AND (CommandLine ILIKE '%Circular Kernel Context Logger%' OR CommandLine ILIKE '%EventLog-%' OR CommandLine ILIKE '%SYSMON TRACE%' OR CommandLine ILIKE '%SysmonDnsEtwSession%')

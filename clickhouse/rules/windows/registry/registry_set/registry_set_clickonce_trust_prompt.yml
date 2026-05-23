@@ -1,0 +1,13 @@
+id: ac9159cc-c364-4304-8f0a-d63fc1a0aabb
+name: ClickOnce Trust Prompt Tampering
+level: 5
+size: '>0'
+active: true
+author:
+- '@SerkinValery, Nasreddine Bencherchali (Nextron Systems)'
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\MICROSOFT\\.NETFramework\\Security\\TrustManager\\PromptingLevel\\%' AND (TargetObject ILIKE '%\\Internet' OR TargetObject ILIKE '%\\LocalIntranet' OR TargetObject ILIKE '%\\MyComputer' OR TargetObject ILIKE '%\\TrustedSites' OR TargetObject ILIKE '%\\UntrustedSites') AND Details='Enabled'

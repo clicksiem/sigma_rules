@@ -1,0 +1,12 @@
+id: 853e74f9-9392-4935-ad3b-2e8c040dae86
+name: UAC Bypass Using DismHost
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%C:\\Users\\%' AND ParentImage ILIKE '%\\AppData\\Local\\Temp\\%' AND ParentImage ILIKE '%\\DismHost.exe%') AND (IntegrityLevel IN ('High', 'System', 'S-1-16-16384', 'S-1-16-12288'))

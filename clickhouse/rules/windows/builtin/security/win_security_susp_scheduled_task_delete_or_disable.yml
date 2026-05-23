@@ -1,0 +1,14 @@
+id: 7595ba94-cf3b-4471-aa03-4f6baa9e5fad
+name: Important Scheduled Task Deleted/Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE ((EventID IN (4699, 4701)) AND (TaskName ILIKE '%\\Windows\\SystemRestore\\SR%' OR TaskName ILIKE '%\\Windows\\Windows Defender\\%' OR TaskName ILIKE '%\\Windows\\BitLocker%' OR TaskName ILIKE '%\\Windows\\WindowsBackup\\%' OR TaskName ILIKE '%\\Windows\\WindowsUpdate\\%' OR TaskName ILIKE '%\\Windows\\UpdateOrchestrator\\Schedule%' OR TaskName ILIKE '%\\Windows\\ExploitGuard%')) AND (NOT (EventID=4699 AND SubjectUserName ILIKE '%$' AND TaskName ILIKE '%\\Windows\\Windows Defender\\%'))

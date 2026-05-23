@@ -1,0 +1,11 @@
+id: 5daf11c3-022b-4969-adb9-365e6c078c7c
+name: CodeIntegrity - Disallowed File For Protected Processes Has Been Blocked
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE EventID=3104

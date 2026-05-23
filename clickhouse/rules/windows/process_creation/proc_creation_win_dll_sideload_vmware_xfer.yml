@@ -1,0 +1,15 @@
+id: ebea773c-a8f1-42ad-a856-00cb221966e8
+name: DLL Sideloading by VMware Xfer Utility
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\VMwareXferlogs.exe' AND (NOT Image ILIKE 'C:\\Program Files\\VMware\\%')

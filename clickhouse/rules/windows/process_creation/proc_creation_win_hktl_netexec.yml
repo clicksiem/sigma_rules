@@ -1,0 +1,14 @@
+id: 7638e5fe-600c-4289-a968-f49dd537ec7d
+name: HackTool - NetExec Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Chirag Damani
+group: windows
+tags:
+- attack.discovery
+- attack.t1018
+- attack.lateral-movement
+- attack.t1021
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\nxc.exe' AND (CommandLine ILIKE '% ftp %' OR CommandLine ILIKE '% ldap %' OR CommandLine ILIKE '% mssql %' OR CommandLine ILIKE '% nfs %' OR CommandLine ILIKE '% rdp %' OR CommandLine ILIKE '% smb %' OR CommandLine ILIKE '% ssh %' OR CommandLine ILIKE '% vnc %' OR CommandLine ILIKE '% winrm %' OR CommandLine ILIKE '% wmi %')

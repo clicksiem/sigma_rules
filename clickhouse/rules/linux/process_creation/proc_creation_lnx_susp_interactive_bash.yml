@@ -1,0 +1,14 @@
+id: ea3ecad2-db86-4a89-ad0b-132a10d2db55
+name: Interactive Bash Suspicious Children
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.004
+- attack.t1036
+rule: SELECT * FROM logs WHERE ParentCommandLine='bash -i' AND ((CommandLine ILIKE '%-c import %' OR CommandLine ILIKE '%base64%' OR CommandLine ILIKE '%pty.spawn%') OR (Image ILIKE '%whoami' OR Image ILIKE '%iptables' OR Image ILIKE '%/ncat' OR Image ILIKE '%/nc' OR Image ILIKE '%/netcat'))

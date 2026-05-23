@@ -1,0 +1,14 @@
+id: cf0c254b-22f1-4b2b-8221-e137b3c0af94
+name: HackTool - Impersonate Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Sai Prashanth Pulisetti @pulisettis
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134.001
+- attack.t1134.003
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%impersonate.exe%' AND (CommandLine ILIKE '% list %' OR CommandLine ILIKE '% exec %' OR CommandLine ILIKE '% adduser %')) OR (Hashes ILIKE '%MD5=9520714AB576B0ED01D1513691377D01%' OR Hashes ILIKE '%SHA256=E81CC96E2118DC4FBFE5BAD1604E0AC7681960143E2101E1A024D52264BB0A8A%' OR Hashes ILIKE '%IMPHASH=0A358FFC1697B7A07D0E817AC740DF62%')

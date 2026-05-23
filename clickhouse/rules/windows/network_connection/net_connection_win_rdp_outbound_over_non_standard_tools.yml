@@ -1,0 +1,13 @@
+id: ed74fe75-7594-4b4b-ae38-e38e3fd2eb23
+name: Outbound RDP Connections Over Non-Standard Tools
+level: 8
+size: '>0'
+active: true
+author:
+- Markus Neis
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.001
+- car.2013-07-002
+rule: SELECT * FROM logs WHERE (DestinationPort=3389 AND Initiated='true') AND (NOT (Image IN ('C:\\Windows\\System32\\mstsc.exe', 'C:\\Windows\\SysWOW64\\mstsc.exe'))) AND (NOT ((Image ILIKE 'C:\\Windows\\System32\\dns.exe' AND SourcePort=53 AND Protocol='udp') OR (Image ILIKE '%\\Avast Software\\Avast\\AvastSvc.exe' OR Image ILIKE '%\\Avast\\AvastSvc.exe') OR Image ILIKE '%\\RDCMan.exe' OR Image ILIKE 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' OR (Image ILIKE '%\\FSAssessment.exe' OR Image ILIKE '%\\FSDiscovery.exe' OR Image ILIKE '%\\MobaRTE.exe' OR Image ILIKE '%\\mRemote.exe' OR Image ILIKE '%\\mRemoteNG.exe' OR Image ILIKE '%\\Passwordstate.exe' OR Image ILIKE '%\\RemoteDesktopManager.exe' OR Image ILIKE '%\\RemoteDesktopManager64.exe' OR Image ILIKE '%\\RemoteDesktopManagerFree.exe' OR Image ILIKE '%\\RSSensor.exe' OR Image ILIKE '%\\RTS2App.exe' OR Image ILIKE '%\\RTSApp.exe' OR Image ILIKE '%\\spiceworks-finder.exe' OR Image ILIKE '%\\Terminals.exe' OR Image ILIKE '%\\ws\_TunnelService.exe') OR (Image ILIKE '%\\thor.exe' OR Image ILIKE '%\\thor64.exe') OR Image ILIKE 'C:\\Program Files\\SplunkUniversalForwarder\\bin\\%' OR Image ILIKE '%\\Ranger\\SentinelRanger.exe' OR Image ILIKE 'C:\\Program Files\\Mozilla Firefox\\firefox.exe' OR (Image IN ('C:\\Program Files\\TSplus\\Java\\bin\\HTML5service.exe', 'C:\\Program Files (x86)\\TSplus\\Java\\bin\\HTML5service.exe')) OR isNull(Image) OR Image='' OR Image='<unknown process>'))

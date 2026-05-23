@@ -1,0 +1,12 @@
+id: 52753ea4-b3a0-4365-910d-36cff487b789
+name: Hijack Legit RDP Session to Move Laterally
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\mstsc.exe' AND TargetFilename ILIKE '%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\%'

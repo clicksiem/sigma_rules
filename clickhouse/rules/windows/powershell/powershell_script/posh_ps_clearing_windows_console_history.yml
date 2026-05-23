@@ -1,0 +1,13 @@
+id: bde47d4b-9987-405c-94c7-b080410e8ea7
+name: Clearing Windows Console History
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Clear-History%' OR ((ScriptBlockText ILIKE '%Remove-Item%' OR ScriptBlockText ILIKE '%rm%') AND (ScriptBlockText ILIKE '%ConsoleHost\_history.txt%' OR ScriptBlockText ILIKE '%(Get-PSReadlineOption).HistorySavePath%'))

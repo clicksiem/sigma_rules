@@ -1,0 +1,12 @@
+id: be58d2e2-06c8-4f58-b666-b99f6dc3b6cd
+name: Suspicious Process Masquerading As SvcHost.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\svchost.exe' AND (NOT ((Image IN ('C:\\Windows\\System32\\svchost.exe', 'C:\\Windows\\SysWOW64\\svchost.exe')) OR OriginalFileName='svchost.exe'))

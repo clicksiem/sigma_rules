@@ -1,0 +1,14 @@
+id: 9e8894c0-0ae0-11ef-9d85-1f2942bec57c
+name: Suspicious Shell Open Command Registry Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1548.002
+- attack.t1546.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\shell\\open\\command\\%' AND (Details ILIKE '%\\$Recycle.Bin\\%' OR Details ILIKE '%\\AppData\\Local\\Temp\\%' OR Details ILIKE '%\\Contacts\\%' OR Details ILIKE '%\\Music\\%' OR Details ILIKE '%\\PerfLogs\\%' OR Details ILIKE '%\\Photos\\%' OR Details ILIKE '%\\Pictures\\%' OR Details ILIKE '%\\Users\\Public\\%' OR Details ILIKE '%\\Videos\\%' OR Details ILIKE '%\\Windows\\Temp\\%' OR Details ILIKE '%\%AppData\%%' OR Details ILIKE '%\%LocalAppData\%%' OR Details ILIKE '%\%Temp\%%' OR Details ILIKE '%\%tmp\%%')

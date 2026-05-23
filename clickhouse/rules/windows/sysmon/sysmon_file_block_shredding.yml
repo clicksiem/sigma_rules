@@ -1,0 +1,11 @@
+id: c3e5c1b1-45e9-4632-b242-27939c170239
+name: Sysmon Blocked File Shredding
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE EventID=28

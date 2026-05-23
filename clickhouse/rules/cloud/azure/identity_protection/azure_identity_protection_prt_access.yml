@@ -1,0 +1,12 @@
+id: a84fc3b1-c9ce-4125-8e74-bdcdb24021f1
+name: Primary Refresh Token Access Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.t1528
+- attack.credential-access
+rule: SELECT * FROM logs WHERE riskEventType='attemptedPrtAccess'

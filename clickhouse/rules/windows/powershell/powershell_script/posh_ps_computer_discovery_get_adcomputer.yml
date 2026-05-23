@@ -1,0 +1,12 @@
+id: db885529-903f-4c5d-9864-28fe199e6370
+name: Computer Discovery And Export Via Get-ADComputer Cmdlet - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Get-ADComputer %' AND ScriptBlockText ILIKE '% -Filter *%') AND (ScriptBlockText ILIKE '% | Select %' OR ScriptBlockText ILIKE '%Out-File%' OR ScriptBlockText ILIKE '%Set-Content%' OR ScriptBlockText ILIKE '%Add-Content%')

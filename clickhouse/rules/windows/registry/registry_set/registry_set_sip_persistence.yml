@@ -1,0 +1,13 @@
+id: 5a2b21ee-6aaa-4234-ac9d-59a59edf90a1
+name: Persistence Via New SIP Provider
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1553.003
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Cryptography\\Providers\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Cryptography\\OID\\EncodingType%' OR TargetObject ILIKE '%\\SOFTWARE\\WOW6432Node\\Microsoft\\Cryptography\\Providers\\%' OR TargetObject ILIKE '%\\SOFTWARE\\WOW6432Node\\Microsoft\\Cryptography\\OID\\EncodingType%') AND (TargetObject ILIKE '%\\Dll%' OR TargetObject ILIKE '%\\$DLL%')) AND (NOT ((Details IN ('WINTRUST.DLL', 'mso.dll')) OR (Image ILIKE 'C:\\Windows\\System32\\poqexec.exe' AND TargetObject ILIKE '%\\CryptSIPDll%' AND Details ILIKE 'C:\\Windows\\System32\\PsfSip.dll')))

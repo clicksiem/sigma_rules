@@ -1,0 +1,13 @@
+id: afd12fed-b0ec-45c9-a13d-aa86625dac81
+name: Create Volume Shadow Copy with Powershell
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+- attack.ds0005
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Win32\_ShadowCopy%' AND ScriptBlockText ILIKE '%).Create(%' AND ScriptBlockText ILIKE '%ClientAccessible%'

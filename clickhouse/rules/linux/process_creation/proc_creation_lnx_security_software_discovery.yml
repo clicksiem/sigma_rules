@@ -1,0 +1,12 @@
+id: c9d8b7fd-78e4-44fe-88f6-599135d46d60
+name: Security Software Discovery - Linux
+level: 3
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community
+group: linux
+tags:
+- attack.discovery
+- attack.t1518.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/grep' OR Image ILIKE '%/egrep') AND (CommandLine ILIKE '%nessusd%' OR CommandLine ILIKE '%td-agent%' OR CommandLine ILIKE '%packetbeat%' OR CommandLine ILIKE '%filebeat%' OR CommandLine ILIKE '%auditbeat%' OR CommandLine ILIKE '%osqueryd%' OR CommandLine ILIKE '%cbagentd%' OR CommandLine ILIKE '%falcond%')

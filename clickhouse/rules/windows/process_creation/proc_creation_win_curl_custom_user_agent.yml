@@ -1,0 +1,11 @@
+id: 85de1f22-d189-44e4-8239-dc276b45379b
+name: Curl Web Request With Potential Custom User-Agent
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\curl.exe' OR OriginalFileName='curl.exe') AND (match(CommandLine, '\s-H\s') OR CommandLine ILIKE '%--header%') AND CommandLine ILIKE '%User-Agent:%'

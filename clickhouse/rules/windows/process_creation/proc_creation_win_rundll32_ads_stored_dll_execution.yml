@@ -1,0 +1,12 @@
+id: 9248c7e1-2bf3-4661-a22c-600a8040b446
+name: Potential Rundll32 Execution With DLL Stored In ADS
+level: 8
+size: '>0'
+active: true
+author:
+- Harjot Singh, '@cyb3rjy0t'
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND match(CommandLine, '[Rr][Uu][Nn][Dd][Ll][Ll]32(?:\.[Ee][Xx][Ee])? \S+?\w:\S+?:')

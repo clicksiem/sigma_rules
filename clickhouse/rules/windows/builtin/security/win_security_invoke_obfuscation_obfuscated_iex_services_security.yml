@@ -1,0 +1,12 @@
+id: fd0f5778-d3cb-4c9a-9695-66759d04702a
+name: Invoke-Obfuscation Obfuscated IEX Invocation - Security
+level: 8
+size: '>0'
+active: true
+author:
+- Daniel Bohannon (@Mandiant/@FireEye), oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE EventID=4697 AND (match(ServiceFileName, '\$PSHome\[\s*\d{1,3}\s*\]\s*\+\s*\$PSHome\[') OR match(ServiceFileName, '\$ShellId\[\s*\d{1,3}\s*\]\s*\+\s*\$ShellId\[') OR match(ServiceFileName, '\$env:Public\[\s*\d{1,3}\s*\]\s*\+\s*\$env:Public\[') OR match(ServiceFileName, '\$env:ComSpec\[(\s*\d{1,3}\s*,){2}') OR match(ServiceFileName, '\\*mdr\*\W\s*\)\.Name') OR match(ServiceFileName, '\$VerbosePreference\.ToString\(') OR match(ServiceFileName, '\String\]\s*\$VerbosePreference'))

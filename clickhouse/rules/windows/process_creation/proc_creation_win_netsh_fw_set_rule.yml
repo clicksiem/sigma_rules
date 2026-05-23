@@ -1,0 +1,11 @@
+id: a70dcb37-3bee-453a-99df-d0c683151be6
+name: Firewall Rule Update Via Netsh.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\netsh.exe' OR OriginalFileName='netsh.exe') AND (CommandLine ILIKE '% firewall %' AND CommandLine ILIKE '% set %')

@@ -1,0 +1,14 @@
+id: 90f138c1-f578-4ac3-8c49-eecfd847c8b7
+name: BITS Transfer Job Download From Direct IP
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+rule: SELECT * FROM logs WHERE (EventID=16403 AND (RemoteName ILIKE '%http://1%' OR RemoteName ILIKE '%http://2%' OR RemoteName ILIKE '%http://3%' OR RemoteName ILIKE '%http://4%' OR RemoteName ILIKE '%http://5%' OR RemoteName ILIKE '%http://6%' OR RemoteName ILIKE '%http://7%' OR RemoteName ILIKE '%http://8%' OR RemoteName ILIKE '%http://9%' OR RemoteName ILIKE '%https://1%' OR RemoteName ILIKE '%https://2%' OR RemoteName ILIKE '%https://3%' OR RemoteName ILIKE '%https://4%' OR RemoteName ILIKE '%https://5%' OR RemoteName ILIKE '%https://6%' OR RemoteName ILIKE '%https://7%' OR RemoteName ILIKE '%https://8%' OR RemoteName ILIKE '%https://9%')) AND (NOT ((RemoteName ILIKE '%://10.%' OR RemoteName ILIKE '%://192.168.%' OR RemoteName ILIKE '%://172.16.%' OR RemoteName ILIKE '%://172.17.%' OR RemoteName ILIKE '%://172.18.%' OR RemoteName ILIKE '%://172.19.%' OR RemoteName ILIKE '%://172.20.%' OR RemoteName ILIKE '%://172.21.%' OR RemoteName ILIKE '%://172.22.%' OR RemoteName ILIKE '%://172.23.%' OR RemoteName ILIKE '%://172.24.%' OR RemoteName ILIKE '%://172.25.%' OR RemoteName ILIKE '%://172.26.%' OR RemoteName ILIKE '%://172.27.%' OR RemoteName ILIKE '%://172.28.%' OR RemoteName ILIKE '%://172.29.%' OR RemoteName ILIKE '%://172.30.%' OR RemoteName ILIKE '%://172.31.%' OR RemoteName ILIKE '%://127.%' OR RemoteName ILIKE '%://169.254.%') OR (RemoteName ILIKE '%https://7-%' OR RemoteName ILIKE '%http://7-%')))

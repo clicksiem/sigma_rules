@@ -1,0 +1,13 @@
+id: 1cb0c6ce-3d00-44fc-ab9c-6d6d577bf20b
+name: DNS Query To Devtunnels Domain
+level: 5
+size: '>0'
+active: true
+author:
+- citron_ninja
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+- attack.t1572
+rule: SELECT * FROM logs WHERE QueryName ILIKE '%.devtunnels.ms'

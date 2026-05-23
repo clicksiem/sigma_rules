@@ -1,0 +1,12 @@
+id: fb4e2211-6d08-426b-8e6f-0d4a161e3b1d
+name: Clfs.SYS Loaded By Process Located In a Potential Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\clfs.sys' AND ((Image ILIKE '%:\\Perflogs\\%' OR Image ILIKE '%:\\Users\\Public\\%' OR Image ILIKE '%\\Temporary Internet%' OR Image ILIKE '%\\Windows\\Temp\\%') OR ((Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\Favorites\\%') OR (Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\Favourites\\%') OR (Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\Contacts\\%') OR (Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\Pictures\\%')))

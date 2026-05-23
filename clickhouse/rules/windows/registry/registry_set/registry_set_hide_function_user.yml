@@ -1,0 +1,13 @@
+id: 5a93eb65-dffa-4543-b761-94aa60098fb6
+name: Registry Hide Function from User
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\HideClock' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\HideSCAHealth' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\HideSCANetwork' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\HideSCAPower' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\HideSCAVolume') AND Details='DWORD (0x00000001)') OR ((TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ShowInfoTip' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ShowCompColor') AND Details='DWORD (0x00000000)')

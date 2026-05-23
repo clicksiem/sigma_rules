@@ -1,0 +1,11 @@
+id: 259df6bc-003f-4306-9f54-4ff1a08fa38e
+name: Potential Perl Reverse Shell Execution
+level: 8
+size: '>0'
+active: true
+author:
+- '@d4ns4n_, Nasreddine Bencherchali (Nextron Systems)'
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/perl' AND CommandLine ILIKE '% -e %') AND ((CommandLine ILIKE '%fdopen(%' AND CommandLine ILIKE '%::Socket::INET%') OR (CommandLine ILIKE '%Socket%' AND CommandLine ILIKE '%connect%' AND CommandLine ILIKE '%open%' AND CommandLine ILIKE '%exec%'))

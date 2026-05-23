@@ -1,0 +1,12 @@
+id: 435e10e4-992a-4281-96f3-38b11106adde
+name: Computer Discovery And Export Via Get-ADComputer Cmdlet
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND ((CommandLine ILIKE '%Get-ADComputer %' AND CommandLine ILIKE '% -Filter *%') AND (CommandLine ILIKE '% > %' OR CommandLine ILIKE '% | Select %' OR CommandLine ILIKE '%Out-File%' OR CommandLine ILIKE '%Set-Content%' OR CommandLine ILIKE '%Add-Content%'))

@@ -1,0 +1,13 @@
+id: edd8a48c-1b9f-4ba1-83aa-490338cd1ccb
+name: Renamed Jusched.EXE Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Markus Neis, Swisscom
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE (Description IN ('Java Update Scheduler', 'Java(TM) Update Scheduler')) AND (NOT Image ILIKE '%\\jusched.exe')

@@ -1,0 +1,12 @@
+id: 33efc23c-6ea2-4503-8cfe-bdf82ce8f719
+name: Lsass Full Dump Request Via DumpType Registry Settings
+level: 8
+size: '>0'
+active: true
+author:
+- '@pbssubhash'
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting\\LocalDumps\\DumpType%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting\\LocalDumps\\lsass.exe\\DumpType%') AND Details='DWORD (0x00000002)'

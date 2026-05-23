@@ -1,0 +1,14 @@
+id: 3236fcd0-b7e3-4433-b4f8-86ad61a9af2d
+name: PowerShell Download Via Net.WebClient - PowerShell Classic
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.command-and-control
+- attack.t1059.001
+- attack.t1105
+rule: SELECT * FROM logs WHERE Data ILIKE '%Net.WebClient%' AND (Data ILIKE '%.DownloadFile(%' OR Data ILIKE '%.DownloadString(%')

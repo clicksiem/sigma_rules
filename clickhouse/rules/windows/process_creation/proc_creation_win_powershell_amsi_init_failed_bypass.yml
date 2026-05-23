@@ -1,0 +1,12 @@
+id: 30edb182-aa75-42c0-b0a9-e998bb29067c
+name: Potential AMSI Bypass Via .NET Reflection
+level: 8
+size: '>0'
+active: true
+author:
+- Markus Neis, @Kostastsale
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%System.Management.Automation.AmsiUtils%' AND CommandLine ILIKE '%amsiInitFailed%') OR (CommandLine ILIKE '%[Ref].Assembly.GetType%' AND CommandLine ILIKE '%SetValue($null,$true)%' AND CommandLine ILIKE '%NonPublic,Static%')

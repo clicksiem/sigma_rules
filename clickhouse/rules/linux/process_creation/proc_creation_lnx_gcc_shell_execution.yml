@@ -1,0 +1,12 @@
+id: 9b5de532-a757-4d70-946c-1f3e44f48b4d
+name: Shell Execution GCC  - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)
+group: linux
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/c89' OR Image ILIKE '%/c99' OR Image ILIKE '%/gcc') AND CommandLine ILIKE '%-wrapper%') AND (CommandLine ILIKE '%/bin/bash,-s%' OR CommandLine ILIKE '%/bin/dash,-s%' OR CommandLine ILIKE '%/bin/fish,-s%' OR CommandLine ILIKE '%/bin/sh,-s%' OR CommandLine ILIKE '%/bin/zsh,-s%')

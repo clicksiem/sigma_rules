@@ -1,0 +1,11 @@
+id: 457df417-8b9d-4912-85f3-9dbda39c3645
+name: Suspicious Nohup Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%/nohup' AND CommandLine ILIKE '%/tmp/%'

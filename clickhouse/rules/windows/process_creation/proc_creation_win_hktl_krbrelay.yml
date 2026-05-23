@@ -1,0 +1,12 @@
+id: e96253b8-6b3b-4f90-9e59-3b24b99cf9b4
+name: HackTool - KrbRelay Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\KrbRelay.exe' OR OriginalFileName='KrbRelay.exe') OR (CommandLine ILIKE '% -spn %' AND CommandLine ILIKE '% -clsid %' AND CommandLine ILIKE '% -rbcd %') OR (CommandLine ILIKE '%shadowcred%' AND CommandLine ILIKE '%clsid%' AND CommandLine ILIKE '%spn%') OR (CommandLine ILIKE '%spn %' AND CommandLine ILIKE '%session %' AND CommandLine ILIKE '%clsid %')

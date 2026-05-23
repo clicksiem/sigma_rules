@@ -1,0 +1,13 @@
+id: f459ccb4-9805-41ea-b5b2-55e279e2424a
+name: Remote Access Tool - Team Viewer Session Started On MacOS Host
+level: 3
+size: '>0'
+active: true
+author:
+- Josh Nickels, Qi Nan
+group: macos
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1133
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%/TeamViewer\_Service' AND Image ILIKE '%/TeamViewer\_Desktop' AND CommandLine ILIKE '%/TeamViewer\_Desktop --IPCport 5939 --Module 1'

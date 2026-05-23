@@ -1,0 +1,15 @@
+id: e4903324-1a10-4ed3-981b-f6fe3be3a2c2
+name: Potential Edputil.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\edputil.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Windows\\System32\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SysWOW64\\%' OR ImageLoaded ILIKE 'C\\Windows\\WinSxS\\%'))

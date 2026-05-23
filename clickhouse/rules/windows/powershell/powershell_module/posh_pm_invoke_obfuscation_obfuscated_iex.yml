@@ -1,0 +1,14 @@
+id: 2f211361-7dce-442d-b78a-c04039677378
+name: Invoke-Obfuscation Obfuscated IEX Invocation - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Daniel Bohannon (@Mandiant/@FireEye), oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(Payload, '\$PSHome\[\s*\d{1,3}\s*\]\s*\+\s*\$PSHome\[') OR match(Payload, '\$ShellId\[\s*\d{1,3}\s*\]\s*\+\s*\$ShellId\[') OR match(Payload, '\$env:Public\[\s*\d{1,3}\s*\]\s*\+\s*\$env:Public\[') OR match(Payload, '\$env:ComSpec\[(\s*\d{1,3}\s*,){2}') OR match(Payload, '\*mdr\*\W\s*\)\.Name') OR match(Payload, '\$VerbosePreference\.ToString\(') OR match(Payload, '\[String\]\s*\$VerbosePreference')

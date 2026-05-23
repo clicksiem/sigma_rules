@@ -1,0 +1,14 @@
+id: 7050bba1-1aed-454e-8f73-3f46f09ce56a
+name: Cloudflared Tunnel Connections Cleanup
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1102
+- attack.t1090
+- attack.t1572
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% tunnel %' AND CommandLine ILIKE '%cleanup %') AND (CommandLine ILIKE '%-config %' OR CommandLine ILIKE '%-connector-id %')

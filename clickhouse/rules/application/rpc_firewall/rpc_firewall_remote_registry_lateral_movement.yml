@@ -1,0 +1,14 @@
+id: 35c55673-84ca-4e99-8d09-e334f3c29539
+name: Remote Registry Lateral Movement
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.lateral-movement
+- attack.defense-impairment
+- attack.t1112
+- attack.persistence
+rule: SELECT * FROM logs WHERE EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='338cd001-2244-31f1-aaaa-900038001003' AND (OpNum IN (6, 7, 8, 13, 18, 19, 21, 22, 23, 35))

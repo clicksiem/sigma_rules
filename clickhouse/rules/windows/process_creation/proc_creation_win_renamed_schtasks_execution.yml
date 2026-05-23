@@ -1,0 +1,16 @@
+id: f91e51c9-f344-4b32-969b-0b6f6b8537d4
+name: Renamed Schtasks Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1036.003
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (((CommandLine ILIKE '% -create %' OR CommandLine ILIKE '% /create %' OR CommandLine ILIKE '% –create %' OR CommandLine ILIKE '% —create %' OR CommandLine ILIKE '% ―create %' OR CommandLine ILIKE '% -delete %' OR CommandLine ILIKE '% /delete %' OR CommandLine ILIKE '% –delete %' OR CommandLine ILIKE '% —delete %' OR CommandLine ILIKE '% ―delete %' OR CommandLine ILIKE '% -query %' OR CommandLine ILIKE '% /query %' OR CommandLine ILIKE '% –query %' OR CommandLine ILIKE '% —query %' OR CommandLine ILIKE '% ―query %' OR CommandLine ILIKE '% -change %' OR CommandLine ILIKE '% /change %' OR CommandLine ILIKE '% –change %' OR CommandLine ILIKE '% —change %' OR CommandLine ILIKE '% ―change %' OR CommandLine ILIKE '% -run %' OR CommandLine ILIKE '% /run %' OR CommandLine ILIKE '% –run %' OR CommandLine ILIKE '% —run %' OR CommandLine ILIKE '% ―run %' OR CommandLine ILIKE '% -end %' OR CommandLine ILIKE '% /end %' OR CommandLine ILIKE '% –end %' OR CommandLine ILIKE '% —end %' OR CommandLine ILIKE '% ―end %') AND (CommandLine ILIKE '% -tn %' OR CommandLine ILIKE '% /tn %' OR CommandLine ILIKE '% –tn %' OR CommandLine ILIKE '% —tn %' OR CommandLine ILIKE '% ―tn %' OR CommandLine ILIKE '% -tr %' OR CommandLine ILIKE '% /tr %' OR CommandLine ILIKE '% –tr %' OR CommandLine ILIKE '% —tr %' OR CommandLine ILIKE '% ―tr %' OR CommandLine ILIKE '% -sc %' OR CommandLine ILIKE '% /sc %' OR CommandLine ILIKE '% –sc %' OR CommandLine ILIKE '% —sc %' OR CommandLine ILIKE '% ―sc %' OR CommandLine ILIKE '% -st %' OR CommandLine ILIKE '% /st %' OR CommandLine ILIKE '% –st %' OR CommandLine ILIKE '% —st %' OR CommandLine ILIKE '% ―st %' OR CommandLine ILIKE '% -ru %' OR CommandLine ILIKE '% /ru %' OR CommandLine ILIKE '% –ru %' OR CommandLine ILIKE '% —ru %' OR CommandLine ILIKE '% ―ru %' OR CommandLine ILIKE '% -fo %' OR CommandLine ILIKE '% /fo %' OR CommandLine ILIKE '% –fo %' OR CommandLine ILIKE '% —fo %' OR CommandLine ILIKE '% ―fo %')) AND (NOT CommandLine ILIKE '%schtasks%')) OR (OriginalFileName='schtasks.exe' AND (NOT Image ILIKE '%\\schtasks.exe'))

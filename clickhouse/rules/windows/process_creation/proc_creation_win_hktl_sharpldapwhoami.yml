@@ -1,0 +1,13 @@
+id: d9367cbb-c2e0-47ce-bdc0-128cb6da898d
+name: HackTool - SharpLdapWhoami Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+- car.2016-03-001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SharpLdapWhoami.exe' OR (OriginalFileName ILIKE '%SharpLdapWhoami%' OR Product='SharpLdapWhoami') OR (CommandLine ILIKE '% /method:ntlm' OR CommandLine ILIKE '% /method:kerb' OR CommandLine ILIKE '% /method:nego' OR CommandLine ILIKE '% /m:nego' OR CommandLine ILIKE '% /m:ntlm' OR CommandLine ILIKE '% /m:kerb')

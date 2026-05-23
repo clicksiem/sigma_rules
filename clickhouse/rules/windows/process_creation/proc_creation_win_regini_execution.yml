@@ -1,0 +1,13 @@
+id: 5f60740a-f57b-4e76-82a1-15b6ff2cb134
+name: Registry Modification Via Regini.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Eli Salem, Sander Wiebing, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regini.exe' OR OriginalFileName='REGINI.EXE') AND (NOT match(CommandLine, ':[^ \\]'))

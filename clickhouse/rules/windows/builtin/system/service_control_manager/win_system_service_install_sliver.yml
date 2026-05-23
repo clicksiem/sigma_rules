@@ -1,0 +1,15 @@
+id: 31c51af6-e7aa-4da7-84d4-8f32cc580af2
+name: Sliver C2 Default Service Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.privilege-escalation
+- attack.t1543.003
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (match(ImagePath, '^[a-zA-Z]:\\windows\\temp\\[a-zA-Z0-9]{10}\.exe') OR (ServiceName IN ('Sliver', 'Sliver implant')))

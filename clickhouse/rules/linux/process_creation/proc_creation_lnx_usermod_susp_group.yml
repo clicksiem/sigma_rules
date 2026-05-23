@@ -1,0 +1,12 @@
+id: 6a50f16c-3b7b-42d1-b081-0fdd3ba70a73
+name: User Added To Root/Sudoers Group Using Usermod
+level: 5
+size: '>0'
+active: true
+author:
+- TuanLe (GTSC)
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+rule: SELECT * FROM logs WHERE Image ILIKE '%/usermod' AND (CommandLine ILIKE '%-aG root%' OR CommandLine ILIKE '%-aG sudoers%')

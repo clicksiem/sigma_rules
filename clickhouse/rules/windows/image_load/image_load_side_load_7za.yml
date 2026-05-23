@@ -1,0 +1,15 @@
+id: 4f6edb78-5c21-42ab-a558-fd2a6fc1fd57
+name: Potential 7za.DLL Sideloading
+level: 3
+size: '>0'
+active: true
+author:
+- X__Junior
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\7za.dll' AND (NOT ((Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%') AND (ImageLoaded ILIKE 'C:\\Program Files (x86)\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\%')))

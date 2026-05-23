@@ -1,0 +1,12 @@
+id: 0718cd72-f316-4aa2-988f-838ea8533277
+name: Suspicious Start-Process PassThru
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Start-Process%' AND ScriptBlockText ILIKE '%-PassThru %' AND ScriptBlockText ILIKE '%-FilePath %'

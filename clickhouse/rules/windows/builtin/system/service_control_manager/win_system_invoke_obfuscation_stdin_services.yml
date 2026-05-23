@@ -1,0 +1,14 @@
+id: 72862bf2-0eb1-11eb-adc1-0242ac120002
+name: Invoke-Obfuscation STDIN+ Launcher - System
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045 AND (ImagePath ILIKE '%cmd%' AND ImagePath ILIKE '%powershell%') AND (ImagePath ILIKE '%/c%' OR ImagePath ILIKE '%/r%')) AND (ImagePath ILIKE '%noexit%' OR (ImagePath ILIKE '%input%' AND ImagePath ILIKE '%$%'))

@@ -1,0 +1,12 @@
+id: 8bc64091-6875-4881-aaf9-7bd25b5dda08
+name: Suspicious Process Patterns NTDS.DIT Exfil
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\NTDSDump.exe' OR Image ILIKE '%\\NTDSDumpEx.exe') OR (CommandLine ILIKE '%ntds.dit%' AND CommandLine ILIKE '%system.hiv%') OR CommandLine ILIKE '%NTDSgrab.ps1%') OR (CommandLine ILIKE '%ac i ntds%' AND CommandLine ILIKE '%create full%') OR (CommandLine ILIKE '%/c copy %' AND CommandLine ILIKE '%\\windows\\ntds\\ntds.dit%') OR (CommandLine ILIKE '%activate instance ntds%' AND CommandLine ILIKE '%create full%') OR (CommandLine ILIKE '%powershell%' AND CommandLine ILIKE '%ntds.dit%')) OR (CommandLine ILIKE '%ntds.dit%' AND ((ParentImage ILIKE '%\\apache%' OR ParentImage ILIKE '%\\tomcat%' OR ParentImage ILIKE '%\\AppData\\%' OR ParentImage ILIKE '%\\Temp\\%' OR ParentImage ILIKE '%\\Public\\%' OR ParentImage ILIKE '%\\PerfLogs\\%') OR (Image ILIKE '%\\apache%' OR Image ILIKE '%\\tomcat%' OR Image ILIKE '%\\AppData\\%' OR Image ILIKE '%\\Temp\\%' OR Image ILIKE '%\\Public\\%' OR Image ILIKE '%\\PerfLogs\\%')))

@@ -1,0 +1,12 @@
+id: 53059bc0-1472-438b-956a-7508a94a91f0
+name: Disable System Firewall
+level: 8
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1686
+rule: SELECT * FROM logs WHERE type ILIKE 'SERVICE\_STOP' AND (unit IN ('firewalld', 'iptables', 'ufw'))

@@ -1,0 +1,13 @@
+id: 9e07f6e7-83aa-45c6-998e-0af26efd0a85
+name: Powershell WMI Persistence
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%New-CimInstance %' AND ScriptBlockText ILIKE '%-Namespace root/subscription %' AND ScriptBlockText ILIKE '%-ClassName \_\_EventFilter %' AND ScriptBlockText ILIKE '%-Property %') OR (ScriptBlockText ILIKE '%New-CimInstance %' AND ScriptBlockText ILIKE '%-Namespace root/subscription %' AND ScriptBlockText ILIKE '%-ClassName CommandLineEventConsumer %' AND ScriptBlockText ILIKE '%-Property %')

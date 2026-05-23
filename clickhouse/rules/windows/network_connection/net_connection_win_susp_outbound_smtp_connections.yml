@@ -1,0 +1,12 @@
+id: 9976fa64-2804-423c-8a5b-646ade840773
+name: Suspicious Outbound SMTP Connections
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048.003
+rule: SELECT * FROM logs WHERE ((DestinationPort IN (25, 587, 465, 2525)) AND Initiated='true') AND (NOT ((Image ILIKE '%\\thunderbird.exe' OR Image ILIKE '%\\outlook.exe') OR Image ILIKE 'C:\\Program Files\\Microsoft\\Exchange Server\\%' OR (Image ILIKE 'C:\\Program Files\\WindowsApps\\microsoft.windowscommunicationsapps\_%' AND Image ILIKE '%\\HxTsr.exe')))

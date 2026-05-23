@@ -1,0 +1,15 @@
+id: e1d02b53-c03c-4948-b11d-4d00cca49d03
+name: Increased Failed Authentications Of Any Type
+level: 5
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', MikeDuddington, '@dudders1'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE Status='failure' AND Count ILIKE '<10\%'

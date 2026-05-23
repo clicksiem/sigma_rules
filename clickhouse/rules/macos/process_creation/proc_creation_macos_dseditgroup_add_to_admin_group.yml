@@ -1,0 +1,15 @@
+id: 5d0fdb62-f225-42fb-8402-3dfe64da468a
+name: User Added To Admin Group Via DseditGroup
+level: 5
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%/dseditgroup' AND (CommandLine ILIKE '% -o edit %' AND CommandLine ILIKE '% -a %' AND CommandLine ILIKE '% -t user%' AND CommandLine ILIKE '%admin%')

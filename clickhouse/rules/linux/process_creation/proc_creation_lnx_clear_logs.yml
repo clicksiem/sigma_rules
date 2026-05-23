@@ -1,0 +1,12 @@
+id: 80915f59-9b56-4616-9de0-fd0dea6c12fe
+name: Linux Logs Clearing Attempts
+level: 5
+size: '>0'
+active: true
+author:
+- Ömer Günal, oscd.community
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685.006
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/rm' OR Image ILIKE '%/rmdir' OR Image ILIKE '%/shred' OR Image ILIKE '%/unlink') AND (CommandLine ILIKE '%/var/log%' OR CommandLine ILIKE '%/var/spool/mail%')) AND (NOT ((Image ILIKE '%/rm' AND CommandLine ILIKE 'rm -f /var/log/sysstat/%') OR (Image ILIKE '%/rm' AND CommandLine ILIKE 'rm -f -- /var/log//dmesg%')))

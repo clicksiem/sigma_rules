@@ -1,0 +1,12 @@
+id: 799a5f48-0ac1-4e0f-9152-71d137d48c2a
+name: Abusable DLL Potential Sideloading From Suspicious Location
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\coreclr.dll' OR ImageLoaded ILIKE '%\\facesdk.dll' OR ImageLoaded ILIKE '%\\HPCustPartUI.dll' OR ImageLoaded ILIKE '%\\libcef.dll' OR ImageLoaded ILIKE '%\\ZIPDLL.dll') AND ((ImageLoaded ILIKE '%:\\Perflogs\\%' OR ImageLoaded ILIKE '%:\\Users\\Public\\%' OR ImageLoaded ILIKE '%\\Temporary Internet%' OR ImageLoaded ILIKE '%\\Windows\\Temp\\%') OR ((ImageLoaded ILIKE '%:\\Users\\%' AND ImageLoaded ILIKE '%\\Favorites\\%') OR (ImageLoaded ILIKE '%:\\Users\\%' AND ImageLoaded ILIKE '%\\Favourites\\%') OR (ImageLoaded ILIKE '%:\\Users\\%' AND ImageLoaded ILIKE '%\\Contacts\\%') OR (ImageLoaded ILIKE '%:\\Users\\%' AND ImageLoaded ILIKE '%\\Pictures\\%')))

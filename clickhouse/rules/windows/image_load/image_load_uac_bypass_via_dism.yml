@@ -1,0 +1,16 @@
+id: a5ea83a7-05a5-44c1-be2e-addccbbd8c03
+name: UAC Bypass With Fake DLL
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Dmitry Uchakin
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1548.002
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dism.exe' AND ImageLoaded ILIKE '%\\dismcore.dll') AND (NOT ImageLoaded ILIKE 'C:\\Windows\\System32\\Dism\\dismcore.dll')

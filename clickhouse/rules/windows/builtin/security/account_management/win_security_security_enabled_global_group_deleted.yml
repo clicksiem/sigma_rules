@@ -1,0 +1,13 @@
+id: b237c54b-0f15-4612-a819-44b735e0de27
+name: A Security-Enabled Global Group Was Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- Alexandr Yampolskyi, SOC Prime
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE EventID IN (4730, 634)

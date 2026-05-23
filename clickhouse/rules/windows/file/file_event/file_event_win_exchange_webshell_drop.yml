@@ -1,0 +1,12 @@
+id: bd1212e5-78da-431e-95fa-c58e3237a8e6
+name: Suspicious ASPX File Drop by Exchange
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), MSTI (query, idea)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\w3wp.exe' AND CommandLine ILIKE '%MSExchange%' AND (TargetFilename ILIKE '%FrontEnd\\HttpProxy\\%' OR TargetFilename ILIKE '%\\inetpub\\wwwroot\\aspnet\_client\\%')) AND (TargetFilename ILIKE '%.aspx' OR TargetFilename ILIKE '%.asp' OR TargetFilename ILIKE '%.ashx')

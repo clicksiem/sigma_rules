@@ -1,0 +1,12 @@
+id: ab9e3b40-0c85-4ba1-aede-455d226fd124
+name: Suspicious Redirection to Local Admin Share
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%>%' AND (CommandLine ILIKE '%\\\\127.0.0.1\\admin$\\%' OR CommandLine ILIKE '%\\\\localhost\\admin$\\%')

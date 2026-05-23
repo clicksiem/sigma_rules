@@ -1,0 +1,12 @@
+id: e6c54d94-498c-4562-a37c-b469d8e9a275
+name: Suspicious PowerShell Download and Execute Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%IEX ((New-Object Net.WebClient).DownloadString%' OR CommandLine ILIKE '%IEX (New-Object Net.WebClient).DownloadString%' OR CommandLine ILIKE '%IEX((New-Object Net.WebClient).DownloadString%' OR CommandLine ILIKE '%IEX(New-Object Net.WebClient).DownloadString%' OR CommandLine ILIKE '% -command (New-Object System.Net.WebClient).DownloadFile(%' OR CommandLine ILIKE '% -c (New-Object System.Net.WebClient).DownloadFile(%'

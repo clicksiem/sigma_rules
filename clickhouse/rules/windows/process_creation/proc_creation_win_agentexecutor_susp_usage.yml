@@ -1,0 +1,12 @@
+id: c0b40568-b1e9-4b03-8d6c-b096da6da9ab
+name: Suspicious AgentExecutor PowerShell Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), memory-shards
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\AgentExecutor.exe' OR OriginalFileName='AgentExecutor.exe') AND (CommandLine ILIKE '% -powershell%' OR CommandLine ILIKE '% -remediationScript%')) AND (NOT ((CommandLine ILIKE '%C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\%' OR CommandLine ILIKE '%C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\%') OR ParentImage ILIKE '%\\Microsoft.Management.Services.IntuneWindowsAgent.exe'))

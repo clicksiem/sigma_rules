@@ -1,0 +1,12 @@
+id: cbec226f-63d9-4eca-9f52-dfb6652f24df
+name: Suspicious Process Parents
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\minesweeper.exe' OR ParentImage ILIKE '%\\winver.exe' OR ParentImage ILIKE '%\\bitsadmin.exe') OR ((ParentImage ILIKE '%\\csrss.exe' OR ParentImage ILIKE '%\\certutil.exe' OR ParentImage ILIKE '%\\eventvwr.exe' OR ParentImage ILIKE '%\\calc.exe' OR ParentImage ILIKE '%\\notepad.exe') AND (NOT ((Image ILIKE '%\\WerFault.exe' OR Image ILIKE '%\\wermgr.exe' OR Image ILIKE '%\\conhost.exe' OR Image ILIKE '%\\mmc.exe' OR Image ILIKE '%\\win32calc.exe' OR Image ILIKE '%\\notepad.exe') OR isNull(Image))))

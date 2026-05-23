@@ -1,0 +1,15 @@
+id: 646ea171-dded-4578-8a4d-65e9822892e3
+name: Process Memory Dump Via Comsvcs.DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Modexp, Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.stealth
+- attack.t1036
+- attack.t1003.001
+- car.2013-05-009
+rule: 'SELECT * FROM logs WHERE ((Image ILIKE ''%\\rundll32.exe'' OR OriginalFileName=''RUNDLL32.EXE'' OR CommandLine ILIKE ''%rundll32%'') AND ((CommandLine ILIKE ''%comsvcs%'' AND CommandLine ILIKE ''%full%'') AND (CommandLine ILIKE ''%#-%'' OR CommandLine ILIKE ''%#+%'' OR CommandLine ILIKE ''%#24%'' OR CommandLine ILIKE ''%24 %'' OR CommandLine ILIKE ''%MiniDump%'' OR CommandLine ILIKE ''%#65560%''))) OR ((CommandLine ILIKE ''%24%'' AND CommandLine ILIKE ''%comsvcs%'' AND CommandLine ILIKE ''%full%'') AND (CommandLine ILIKE ''% #%'' OR CommandLine ILIKE ''%,#%'' OR CommandLine ILIKE ''%, #%'' OR CommandLine ILIKE ''%"#%''))'

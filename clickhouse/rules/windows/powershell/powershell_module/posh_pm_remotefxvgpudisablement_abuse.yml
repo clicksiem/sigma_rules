@@ -1,0 +1,12 @@
+id: 38a7625e-b2cb-485d-b83d-aff137d859f4
+name: Potential RemoteFXvGPUDisablement.EXE Abuse - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE Payload ILIKE '%ModuleContents=function Get-VMRemoteFXPhysicalVideoAdapter {%'

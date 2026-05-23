@@ -1,0 +1,12 @@
+id: d08722cd-3d09-449a-80b4-83ea2d9d4616
+name: Hidden Files and Directories
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.stealth
+- attack.t1564.001
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND (a0 IN ('mkdir', 'nano', 'touch', 'vi', 'vim'))) AND (match(a1, '(^|\/)\.[^.\/]') OR match(a2, '(^|\/)\.[^.\/]'))

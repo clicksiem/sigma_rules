@@ -1,0 +1,12 @@
+id: 6a53d871-682d-40b6-83e0-b7c1a6c4e3a5
+name: PetitPotam Suspicious Kerberos TGT Request
+level: 8
+size: '>0'
+active: true
+author:
+- Mauricio Velazco, Michael Haag
+group: windows
+tags:
+- attack.credential-access
+- attack.t1187
+rule: SELECT * FROM logs WHERE (EventID=4768 AND TargetUserName ILIKE '%$' AND CertThumbprint ILIKE '%') AND (NOT (IpAddress='::1' OR CertThumbprint=''))

@@ -1,0 +1,12 @@
+id: 6e2a900a-ced9-4e4a-a9c2-13e706f9518a
+name: HackTool - Potential Remote Credential Dumping Activity Via CrackMapExec Or Impacket-Secretsdump
+level: 8
+size: '>0'
+active: true
+author:
+- SecurityAura
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\svchost.exe' AND match(TargetFilename, '\\Windows\\System32\\[a-zA-Z0-9]{8}\.tmp$')

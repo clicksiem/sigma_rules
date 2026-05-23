@@ -1,0 +1,12 @@
+id: 06ce37c2-61ab-4f05-9ff5-b1a96d18ae32
+name: WMIC Loading Scripting Libraries
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.stealth
+- attack.t1220
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\wmic.exe' AND (ImageLoaded ILIKE '%\\jscript.dll' OR ImageLoaded ILIKE '%\\vbscript.dll')

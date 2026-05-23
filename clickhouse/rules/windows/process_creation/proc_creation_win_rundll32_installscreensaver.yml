@@ -1,0 +1,12 @@
+id: 15bd98ea-55f4-4d37-b09a-e7caa0fa2221
+name: Rundll32 InstallScreenSaver Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Christopher Peacock @securepeacock, SCYTHE @scythe_io, TactiKoolSec
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND CommandLine ILIKE '%InstallScreenSaver%'

@@ -1,0 +1,12 @@
+id: 0f2468a2-5055-4212-a368-7321198ee706
+name: Activity from Infrequent Country
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: m365
+tags:
+- attack.command-and-control
+- attack.t1573
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Activity from infrequent country' AND status='success'

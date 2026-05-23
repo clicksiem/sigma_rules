@@ -1,0 +1,16 @@
+id: 21541900-27a9-4454-9c4c-3f0a4240344a
+name: OMIGOD SCX RunAsProvider ExecuteShellCommand
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.execution
+- attack.t1068
+- attack.t1190
+- attack.t1203
+rule: SELECT * FROM logs WHERE User='root' AND LogonId=0 AND CurrentDirectory='/var/opt/microsoft/scx/tmp' AND CommandLine ILIKE '%/bin/sh%'

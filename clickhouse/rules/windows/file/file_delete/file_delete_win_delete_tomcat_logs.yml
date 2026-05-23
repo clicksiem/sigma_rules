@@ -1,0 +1,12 @@
+id: 270185ff-5f50-4d6d-a27f-24c3b8c9fef8
+name: Tomcat WebServer Logs Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\Tomcat%' AND TargetFilename ILIKE '%\\logs\\%') AND (TargetFilename ILIKE '%catalina.%' OR TargetFilename ILIKE '%\_access\_log.%' OR TargetFilename ILIKE '%localhost.%')

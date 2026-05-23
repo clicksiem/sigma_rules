@@ -1,0 +1,12 @@
+id: 42333b2c-b425-441c-b70e-99404a17170f
+name: HackTool - Sliver C2 Implant Activity Pattern
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%-NoExit -Command [Console]::OutputEncoding=[Text.UTF8Encoding]::UTF8%'

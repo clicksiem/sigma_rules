@@ -1,0 +1,11 @@
+id: 6c304b02-06e6-402d-8be4-d5833cdf8198
+name: Potential SentinelOne Shell Context Menu Scan Command Tampering
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\shell\\SentinelOneScan\\command\\%' AND (NOT (((Details ILIKE 'C:\\Program Files\\SentinelOne\\Sentinel Agent%' OR Details ILIKE 'C:\\Program Files (x86)\\SentinelOne\\Sentinel Agent%') AND Details ILIKE '%\\SentinelScanFromContextMenu.exe%') OR (Image ILIKE '%C:\\Program Files\\SentinelOne\\' OR Image ILIKE '%C:\\Program Files (x86)\\SentinelOne\\')))

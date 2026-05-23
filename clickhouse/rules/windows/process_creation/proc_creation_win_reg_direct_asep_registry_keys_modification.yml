@@ -1,0 +1,13 @@
+id: 24357373-078f-44ed-9ac4-6d334a668a11
+name: Direct Autorun Keys Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, Daniil Yugoslavskiy, oscd.community, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND CommandLine ILIKE '%add%' AND (CommandLine ILIKE '%\\software\\Microsoft\\Windows\\CurrentVersion\\Run%' OR CommandLine ILIKE '%\\software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run%' OR CommandLine ILIKE '%\\software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run%' OR CommandLine ILIKE '%\\software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit%' OR CommandLine ILIKE '%\\software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell%' OR CommandLine ILIKE '%\\software\\Microsoft\\Windows NT\\CurrentVersion\\Windows%' OR CommandLine ILIKE '%\\system\\CurrentControlSet\\Control\\SafeBoot\\AlternateShell%')

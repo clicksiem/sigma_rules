@@ -1,0 +1,16 @@
+id: 5259cbf2-0a75-48bf-b57a-c54d6fabaef3
+name: Bitbucket User Details Export Attempt Detected
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.collection
+- attack.reconnaissance
+- attack.discovery
+- attack.t1213
+- attack.t1082
+- attack.t1591.004
+rule: SELECT * FROM logs WHERE `auditType.category`='Users and groups' AND (`auditType.action` IN ('User permissions export failed', 'User permissions export started', 'User permissions exported'))

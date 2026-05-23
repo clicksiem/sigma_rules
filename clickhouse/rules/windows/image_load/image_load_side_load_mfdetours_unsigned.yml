@@ -1,0 +1,15 @@
+id: 948a0953-f287-4806-bbcb-3b2e396df89f
+name: Unsigned Mfdetours.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\mfdetours.dll' AND (NOT (ImageLoaded ILIKE '%:\\Program Files (x86)\\Windows Kits\\10\\bin\\%' AND SignatureStatus='Valid'))

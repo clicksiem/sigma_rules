@@ -1,0 +1,12 @@
+id: 719c22d7-c11a-4f2c-93a6-2cfdd5412f68
+name: Decode Base64 Encoded Text -MacOs
+level: 3
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community
+group: macos
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE Image='/usr/bin/base64' AND CommandLine ILIKE '%-d%'

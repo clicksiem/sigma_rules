@@ -1,0 +1,12 @@
+id: 166e9c50-8cd9-44af-815d-d1f0c0e90dde
+name: Suspicious Svchost Process Access
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Burrell
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%:\\Windows\\System32\\svchost.exe' AND GrantedAccess='0x1F3FFF' AND CallTrace ILIKE '%UNKNOWN%') AND (NOT (SourceImage ILIKE '%:\\Program Files\\Microsoft Visual Studio\\%' AND SourceImage ILIKE '%\\MSBuild\\Current\\Bin\\MSBuild.exe' AND (CallTrace ILIKE '%Microsoft.Build.ni.dll%' OR CallTrace ILIKE '%System.ni.dll%')))

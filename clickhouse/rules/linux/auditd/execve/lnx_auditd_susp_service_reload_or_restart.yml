@@ -1,0 +1,13 @@
+id: 2625cc59-0634-40d0-821e-cb67382a3dd7
+name: Service Reload or Start - Linux
+level: 3
+size: '>0'
+active: true
+author:
+- Jakob Weinzettl, oscd.community, CheraghiMilad
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1543.002
+rule: SELECT * FROM logs WHERE type='EXECVE' AND (a0 ILIKE '%systemctl%' OR a0 ILIKE '%service%') AND (a1 ILIKE '%reload%' OR a1 ILIKE '%start%')

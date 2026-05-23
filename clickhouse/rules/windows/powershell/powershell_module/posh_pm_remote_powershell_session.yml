@@ -1,0 +1,14 @@
+id: 96b9f619-aa91-478f-bacb-c3e50f8df575
+name: Remote PowerShell Session (PS Module)
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g, Tim Shelton
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.lateral-movement
+- attack.t1021.006
+rule: SELECT * FROM logs WHERE (ContextInfo ILIKE '% = ServerRemoteHost %' AND ContextInfo ILIKE '%wsmprovhost.exe%') AND (NOT ContextInfo ILIKE '%\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\Microsoft.PowerShell.Archive\\Microsoft.PowerShell.Archive.psm1%')

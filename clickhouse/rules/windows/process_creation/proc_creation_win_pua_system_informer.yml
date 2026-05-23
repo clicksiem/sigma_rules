@@ -1,0 +1,17 @@
+id: 5722dff1-4bdd-4949-86ab-fbaf707e767a
+name: PUA - System Informer Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.discovery
+- attack.stealth
+- attack.t1082
+- attack.t1564
+- attack.t1543
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SystemInformer.exe' OR OriginalFileName='SystemInformer.exe' OR Description='System Informer' OR Product='System Informer' OR (Hashes ILIKE '%MD5=19426363A37C03C3ED6FEDF57B6696EC%' OR Hashes ILIKE '%SHA1=8B12C6DA8FAC0D5E8AB999C31E5EA04AF32D53DC%' OR Hashes ILIKE '%SHA256=8EE9D84DE50803545937A63C686822388A3338497CDDB660D5D69CF68B68F287%' OR Hashes ILIKE '%IMPHASH=B68908ADAEB5D662F87F2528AF318F12%')

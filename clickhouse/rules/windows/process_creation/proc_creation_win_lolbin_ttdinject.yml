@@ -1,0 +1,13 @@
+id: b27077d6-23e6-45d2-81a0-e2b356eea5fd
+name: Use of TTDInject.exe
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE Image ILIKE '%ttdinject.exe' OR OriginalFileName='TTDInject.EXE'

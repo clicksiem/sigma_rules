@@ -1,0 +1,11 @@
+id: 2d510d8d-912b-45c5-b1df-36faa3d8c3f4
+name: NetSupport Manager Service Install
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (ImagePath ILIKE '%\\NetSupport Manager\\client32.exe%' OR ServiceName='Client32')

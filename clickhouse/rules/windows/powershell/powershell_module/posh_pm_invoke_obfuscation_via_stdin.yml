@@ -1,0 +1,14 @@
+id: c72aca44-8d52-45ad-8f81-f96c4d3c755e
+name: Invoke-Obfuscation Via Stdin - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(Payload, '(?i)(set).*&&\s?set.*(environment|invoke|\$?\{?input).*&&.*"')

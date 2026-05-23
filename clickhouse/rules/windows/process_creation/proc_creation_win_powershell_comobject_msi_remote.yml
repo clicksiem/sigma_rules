@@ -1,0 +1,16 @@
+id: 222720a7-047f-4054-baa5-bab9be757db0
+name: PowerShell MSI Install via WindowsInstaller COM From Remote Location
+level: 5
+size: '>0'
+active: true
+author:
+- Meroujan Antonyan (vx3r)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1218
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell\_ISE.EXE', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%-ComObject%' AND CommandLine ILIKE '%InstallProduct(%') AND (CommandLine ILIKE '%http%' OR CommandLine ILIKE '%\\\\%')) AND (NOT (CommandLine ILIKE '%://127.0.0.1%' OR CommandLine ILIKE '%://localhost%'))

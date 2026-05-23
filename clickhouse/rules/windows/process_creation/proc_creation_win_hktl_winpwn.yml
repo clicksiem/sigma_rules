@@ -1,0 +1,22 @@
+id: d557dc06-62e8-4468-a8e8-7984124908ce
+name: HackTool - WinPwn Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.credential-access
+- attack.discovery
+- attack.execution
+- attack.privilege-escalation
+- attack.t1046
+- attack.t1082
+- attack.t1106
+- attack.t1518
+- attack.t1548.002
+- attack.t1552.001
+- attack.t1555
+- attack.t1555.003
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Offline\_Winpwn%' OR CommandLine ILIKE '%WinPwn %' OR CommandLine ILIKE '%WinPwn.exe%' OR CommandLine ILIKE '%WinPwn.ps1%'

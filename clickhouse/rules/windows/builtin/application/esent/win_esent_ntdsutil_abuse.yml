@@ -1,0 +1,12 @@
+id: e6e88853-5f20-4c4a-8d26-cd469fd8d31f
+name: Ntdsutil Abuse
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE Provider_Name='ESENT' AND (EventID IN (216, 325, 326, 327)) AND Data ILIKE '%ntds.dit%'

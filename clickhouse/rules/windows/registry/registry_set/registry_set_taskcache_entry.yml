@@ -1,0 +1,15 @@
+id: 4720b7df-40c3-48fd-bbdf-fd4b3c464f0d
+name: Scheduled TaskCache Change by Uncommon Program
+level: 8
+size: '>0'
+active: true
+author:
+- Syed Hasan (@syedhasan009)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\%' AND (NOT (Details='(Empty)' OR isNull(Details) OR (TargetObject ILIKE '%Microsoft\\Windows\\UpdateOrchestrator%' OR TargetObject ILIKE '%Microsoft\\Windows\\SoftwareProtectionPlatform\\SvcRestartTask\\Index%' OR TargetObject ILIKE '%Microsoft\\Windows\\Flighting\\OneSettings\\RefreshCache\\Index%') OR Image ILIKE '%C:\\Windows\\System32\\MoUsoCoreWorker.exe' OR Image ILIKE '%C:\\Windows\\System32\\services.exe' OR (Image ILIKE 'C:\\Windows\\%' AND Image ILIKE '%\\TiWorker.exe') OR Image ILIKE 'C:\\WINDOWS\\system32\\svchost.exe' OR (Image ILIKE 'C:\\Windows\\Microsoft.NET\\Framework%' AND Image ILIKE '%\\ngen.exe' AND (TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\{B66B135D-DA06-4FC4-95F8-7458E1D10129}%' OR TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\Microsoft\\Windows\\.NET Framework\\.NET Framework NGEN%')) OR (Image IN ('C:\\Program Files\\Microsoft Office\\root\\Integration\\Integrator.exe', 'C:\\Program Files (x86)\\Microsoft Office\\root\\Integration\\Integrator.exe', 'C:\\Program Files\\Common Files\\microsoft shared\\ClickToRun\\OfficeC2RClient.exe', 'C:\\Program Files (x86)\\Common Files\\microsoft shared\\ClickToRun\\OfficeC2RClient.exe')) OR Image ILIKE 'C:\\Windows\\System32\\msiexec.exe' OR (Image ILIKE 'C:\\Windows\\explorer.exe' AND TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\Microsoft\\Windows\\PLA\\Server Manager Performance Monitor\\%') OR Image='System' OR Image ILIKE 'C:\\Windows\\System32\\RuntimeBroker.exe')) AND (NOT ((Image IN ('C:\\Program Files (x86)\\Dropbox\\Update\\DropboxUpdate.exe', 'C:\\Program Files\\Dropbox\\Update\\DropboxUpdate.exe')) OR (Image ILIKE '%C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe' OR Image ILIKE '%C:\\Program Files\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe') OR (Image ILIKE '%C:\\Program Files (x86)\\Microsoft OneDrive\\OneDrive.exe' OR Image ILIKE '%C:\\Program Files\\Microsoft OneDrive\\OneDrive.exe')))

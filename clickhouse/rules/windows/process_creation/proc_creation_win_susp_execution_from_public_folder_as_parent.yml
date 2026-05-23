@@ -1,0 +1,14 @@
+id: 69bd9b97-2be2-41b6-9816-fb08757a4d1a
+name: Potentially Suspicious Execution From Parent Process In Public Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1564
+- attack.t1059
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%:\\Users\\Public\\%' AND ((Image ILIKE '%\\bitsadmin.exe' OR Image ILIKE '%\\certutil.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wscript.exe') OR (CommandLine ILIKE '%bitsadmin%' OR CommandLine ILIKE '%certutil%' OR CommandLine ILIKE '%cscript%' OR CommandLine ILIKE '%mshta%' OR CommandLine ILIKE '%powershell%' OR CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%wscript%'))

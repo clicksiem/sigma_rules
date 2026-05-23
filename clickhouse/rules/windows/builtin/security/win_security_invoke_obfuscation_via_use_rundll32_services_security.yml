@@ -1,0 +1,14 @@
+id: cd0f7229-d16f-42de-8fe3-fba365fbcb3a
+name: Invoke-Obfuscation Via Use Rundll32 - Security
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ServiceFileName ILIKE '%&&%' AND ServiceFileName ILIKE '%rundll32%' AND ServiceFileName ILIKE '%shell32.dll%' AND ServiceFileName ILIKE '%shellexec\_rundll%') AND (ServiceFileName ILIKE '%value%' OR ServiceFileName ILIKE '%invoke%' OR ServiceFileName ILIKE '%comspec%' OR ServiceFileName ILIKE '%iex%')

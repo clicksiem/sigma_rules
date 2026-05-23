@@ -1,0 +1,12 @@
+id: a49fa4d5-11db-418c-8473-1e014a8dd462
+name: Lsass Memory Dump via Comsvcs DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE TargetImage ILIKE '%\\lsass.exe' AND SourceImage ILIKE '%\\rundll32.exe' AND CallTrace ILIKE '%comsvcs.dll%'

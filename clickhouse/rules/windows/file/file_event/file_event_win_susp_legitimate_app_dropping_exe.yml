@@ -1,0 +1,12 @@
+id: f0540f7e-2db3-4432-b9e0-3965486744bc
+name: Legitimate Application Dropped Executable
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\eqnedt32.exe' OR Image ILIKE '%\\wordpad.exe' OR Image ILIKE '%\\wordview.exe' OR Image ILIKE '%\\certutil.exe' OR Image ILIKE '%\\certoc.exe' OR Image ILIKE '%\\CertReq.exe' OR Image ILIKE '%\\Desktopimgdownldr.exe' OR Image ILIKE '%\\esentutl.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\AcroRd32.exe' OR Image ILIKE '%\\RdrCEF.exe' OR Image ILIKE '%\\hh.exe' OR Image ILIKE '%\\finger.exe') AND (TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.ocx')

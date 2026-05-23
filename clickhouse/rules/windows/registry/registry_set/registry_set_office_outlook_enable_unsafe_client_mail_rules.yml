@@ -1,0 +1,13 @@
+id: 6763c6c8-bd01-4687-bc8d-4fa52cf8ba08
+name: Outlook EnableUnsafeClientMailRules Setting Enabled - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Outlook\\Security\\EnableUnsafeClientMailRules' AND Details='DWORD (0x00000001)'

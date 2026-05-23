@@ -1,0 +1,15 @@
+id: 2b140a5c-dc02-4bb8-b6b1-8bdb45714cde
+name: System Control Panel Item Loaded From Uncommon Location
+level: 8
+size: '>0'
+active: true
+author:
+- Anish Bogati
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\appwiz.cpl' OR ImageLoaded ILIKE '%\\bthprops.cpl' OR ImageLoaded ILIKE '%\\hdwwiz.cpl') AND (NOT (ImageLoaded ILIKE 'C:\\Windows\\Prefetch\\%' OR ImageLoaded ILIKE 'C:\\Windows\\System32\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SysWOW64\\%' OR ImageLoaded ILIKE 'C:\\Windows\\WinSxS\\%'))

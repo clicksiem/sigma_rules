@@ -1,0 +1,12 @@
+id: db1c21e4-cd66-4b4e-85ca-590f0780529c
+name: Windows Recovery Environment Disabled Via Reagentc
+level: 5
+size: '>0'
+active: true
+author:
+- Daniel Koifman (KoifSec), Michael Vilshin
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reagentc.exe' OR OriginalFileName='reagentc.exe') AND (CommandLine ILIKE '%-disable%' OR CommandLine ILIKE '%/disable%' OR CommandLine ILIKE '%–disable%' OR CommandLine ILIKE '%—disable%' OR CommandLine ILIKE '%―disable%')

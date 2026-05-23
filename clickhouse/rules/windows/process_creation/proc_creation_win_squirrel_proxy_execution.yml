@@ -1,0 +1,13 @@
+id: 45239e6a-b035-4aaf-b339-8ad379fcb67e
+name: Process Proxy Execution Via Squirrel.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Karneades / Markus Neis, Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\squirrel.exe' OR Image ILIKE '%\\update.exe') AND (CommandLine ILIKE '%--processStart%' OR CommandLine ILIKE '%--processStartAndWait%' OR CommandLine ILIKE '%--createShortcut%')) AND (NOT (((CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\Discord\\Update.exe%' AND CommandLine ILIKE '%Discord.exe%') AND (CommandLine ILIKE '%--createShortcut%' OR CommandLine ILIKE '%--processStart%')) OR ((CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\GitHubDesktop\\Update.exe%' AND CommandLine ILIKE '%GitHubDesktop.exe%') AND (CommandLine ILIKE '%--createShortcut%' OR CommandLine ILIKE '%--processStartAndWait%')) OR ((CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\Microsoft\\Teams\\Update.exe%' AND CommandLine ILIKE '%Teams.exe%') AND (CommandLine ILIKE '%--processStart%' OR CommandLine ILIKE '%--createShortcut%')) OR ((CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\yammerdesktop\\Update.exe%' AND CommandLine ILIKE '%Yammer.exe%') AND (CommandLine ILIKE '%--processStart%' OR CommandLine ILIKE '%--createShortcut%'))))

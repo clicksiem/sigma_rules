@@ -1,0 +1,12 @@
+id: efafe0bf-4238-479e-af8f-797bd3490d2d
+name: Outbound Network Connection Initiated By Cmstp.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmstp.exe' AND Initiated='true') AND (NOT (isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')))

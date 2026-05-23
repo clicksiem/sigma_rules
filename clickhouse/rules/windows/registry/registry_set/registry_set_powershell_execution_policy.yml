@@ -1,0 +1,11 @@
+id: fad91067-08c5-4d1a-8d8c-d96a21b37814
+name: Potential PowerShell Execution Policy Tampering
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%\\ShellIds\\Microsoft.PowerShell\\ExecutionPolicy' OR TargetObject ILIKE '%\\Policies\\Microsoft\\Windows\\PowerShell\\ExecutionPolicy') AND (Details ILIKE '%Bypass%' OR Details ILIKE '%Unrestricted%')) AND (NOT (Image ILIKE '%:\\Windows\\System32\\%' OR Image ILIKE '%:\\Windows\\SysWOW64\\%'))

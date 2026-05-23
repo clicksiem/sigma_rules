@@ -1,0 +1,12 @@
+id: cf610c15-ed71-46e1-bdf8-2bd1a99de6c4
+name: Download File To Potentially Suspicious Directory Via Wget
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%/wget' AND (match(CommandLine, '\s-O\s') OR CommandLine ILIKE '%--output-document%') AND CommandLine ILIKE '%/tmp/%'

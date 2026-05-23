@@ -1,0 +1,13 @@
+id: 1e75c1cc-c5d4-42aa-ac3d-91b0b68b3b4c
+name: Arbitrary File Download Via Squirrel.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Karneades / Markus Neis, Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\squirrel.exe' OR Image ILIKE '%\\update.exe') AND (CommandLine ILIKE '% --download %' OR CommandLine ILIKE '% --update %' OR CommandLine ILIKE '% --updateRollback=%') AND CommandLine ILIKE '%http%'

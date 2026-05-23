@@ -1,0 +1,15 @@
+id: 38360161-76c4-4283-842e-efcf997dafc8
+name: Suspicious Login Activity Classified By Google
+level: 5
+size: '>0'
+active: true
+author:
+- Tom Kluter
+group: gcp
+tags:
+- attack.initial-access
+- attack.privilege-escalation
+- attack.persistence
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE `protoPayload.Servicename`='login.googleapis.com' AND (`protoPayload.metadata.event.eventName` IN ('suspicious\_login\_less\_secure\_app', 'suspicious\_login', 'suspicious\_programmatic\_login'))

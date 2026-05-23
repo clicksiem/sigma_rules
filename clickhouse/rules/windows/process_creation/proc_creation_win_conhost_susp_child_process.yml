@@ -1,0 +1,12 @@
+id: 7dc2dedd-7603-461a-bc13-15803d132355
+name: Uncommon Child Process Of Conhost.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- omkar72
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\conhost.exe' AND (NOT (Image ILIKE '%:\\Windows\\System32\\conhost.exe' OR isNull(Image) OR Image='')) AND (NOT Provider_Name='SystemTraceProvider-Process')

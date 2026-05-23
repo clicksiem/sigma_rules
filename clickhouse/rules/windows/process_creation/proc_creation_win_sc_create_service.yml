@@ -1,0 +1,13 @@
+id: 85ff530b-261d-48c6-a441-facaa2e81e48
+name: New Service Creation Using Sc.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' AND (CommandLine ILIKE '%create%' AND CommandLine ILIKE '%binPath%')) AND (NOT ((ParentImage ILIKE 'C:\\Program Files (x86)\\Dropbox\\Client\\%' OR ParentImage ILIKE 'C:\\Program Files\\Dropbox\\Client\\%') AND ParentImage ILIKE '%\\Dropbox.exe'))

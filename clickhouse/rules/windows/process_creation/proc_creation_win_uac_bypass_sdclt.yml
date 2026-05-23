@@ -1,0 +1,12 @@
+id: 40f9af16-589d-4984-b78d-8c2aec023197
+name: Potential UAC Bypass Via Sdclt.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%sdclt.exe' AND (IntegrityLevel IN ('High', 'S-1-16-12288'))

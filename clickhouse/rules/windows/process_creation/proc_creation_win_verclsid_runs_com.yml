@@ -1,0 +1,12 @@
+id: d06be4b9-8045-428b-a567-740a26d9db25
+name: Verclsid.exe Runs COM Object
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\verclsid.exe' OR OriginalFileName='verclsid.exe') AND (CommandLine ILIKE '%/S%' AND CommandLine ILIKE '%/C%')) AND (NOT (ParentImage ILIKE '%C:\\Windows\\System32\\RuntimeBroker.exe' AND (CommandLine ILIKE '%verclsid.exe" /S /C {%' AND CommandLine ILIKE '%} /I {%')))

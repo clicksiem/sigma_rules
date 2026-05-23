@@ -1,0 +1,12 @@
+id: 6f4191bb-912b-48a8-9ce7-682769541e6d
+name: Suspicious Msiexec Execute Arbitrary DLL
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.007
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\msiexec.exe' AND (CommandLine ILIKE '% -Y%' OR CommandLine ILIKE '% /Y%' OR CommandLine ILIKE '% –Y%' OR CommandLine ILIKE '% —Y%' OR CommandLine ILIKE '% ―Y%')) AND (NOT (CommandLine ILIKE '%\\MsiExec.exe" /Y "C:\\Program Files\\%' OR CommandLine ILIKE '%\\MsiExec.exe" /Y "C:\\Program Files (x86)\\%' OR CommandLine ILIKE '%\\MsiExec.exe" /Y "C:\\Windows\\System32\\%' OR CommandLine ILIKE '%\\MsiExec.exe" /Y "C:\\Windows\\SysWOW64\\%'))

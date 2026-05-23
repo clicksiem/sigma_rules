@@ -1,0 +1,12 @@
+id: 3fcc9b35-39e4-44c0-a2ad-9e82b6902b31
+name: Syslog Clearing or Removal Via System Utilities
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems), Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685.006
+rule: 'SELECT * FROM logs WHERE (CommandLine ILIKE ''%/var/log/syslog%'' AND ((Image ILIKE ''%/rm'' AND (CommandLine ILIKE ''% -r %'' OR CommandLine ILIKE ''% -f %'' OR CommandLine ILIKE ''% -rf %'' OR CommandLine ILIKE ''%/var/log/syslog%'')) OR Image ILIKE ''%/unlink'' OR Image ILIKE ''%/mv'' OR (Image ILIKE ''%/truncate'' AND (CommandLine ILIKE ''%0 %'' AND CommandLine ILIKE ''%/var/log/syslog%'') AND (CommandLine ILIKE ''%-s %'' OR CommandLine ILIKE ''%-c %'' OR CommandLine ILIKE ''%--size%'')) OR (Image ILIKE ''%/ln'' AND (CommandLine ILIKE ''%/dev/null %'' AND CommandLine ILIKE ''%/var/log/syslog%'') AND (CommandLine ILIKE ''%-sf %'' OR CommandLine ILIKE ''%-sfn %'' OR CommandLine ILIKE ''%-sfT %'')) OR (Image ILIKE ''%/cp'' AND CommandLine ILIKE ''%/dev/null%'') OR (Image ILIKE ''%/shred'' AND CommandLine ILIKE ''%-u %''))) OR ((CommandLine ILIKE ''% > /var/log/syslog%'' OR CommandLine ILIKE ''% >/var/log/syslog%'' OR CommandLine ILIKE ''% >| /var/log/syslog%'' OR CommandLine ILIKE ''%: > /var/log/syslog%'' OR CommandLine ILIKE ''%:> /var/log/syslog%'' OR CommandLine ILIKE ''%:>/var/log/syslog%'' OR CommandLine ILIKE ''%>|/var/log/syslog%'') OR (CommandLine ILIKE ''%journalctl --vacuum%'' OR CommandLine ILIKE ''%journalctl --rotate%''))'

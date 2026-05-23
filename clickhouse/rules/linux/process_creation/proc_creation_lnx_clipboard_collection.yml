@@ -1,0 +1,12 @@
+id: ec127035-a636-4b9a-8555-0efd4e59f316
+name: Clipboard Collection with Xclip Tool
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur, Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: linux
+tags:
+- attack.collection
+- attack.t1115
+rule: SELECT * FROM logs WHERE Image ILIKE '%xclip%' AND (CommandLine ILIKE '%-sel%' AND CommandLine ILIKE '%clip%' AND CommandLine ILIKE '%-o%')

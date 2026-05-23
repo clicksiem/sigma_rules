@@ -1,0 +1,12 @@
+id: 9a0d8ca0-2385-4020-b6c6-cb6153ca56f3
+name: System Owner or User Discovery - Linux
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: linux
+tags:
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE type='EXECVE' AND (a0 IN ('hostname', 'id', 'last', 'uname', 'users', 'w', 'who', 'whoami'))

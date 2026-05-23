@@ -1,0 +1,13 @@
+id: 50e54b8d-ad73-43f8-96a1-5191685b17a4
+name: Silenttrinity Stager Msbuild Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Kiran kumar s, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\msbuild.exe' AND ((DestinationPort IN (80, 443)) AND Initiated='true')

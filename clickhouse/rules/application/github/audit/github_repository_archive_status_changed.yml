@@ -1,0 +1,13 @@
+id: dca8991c-cb16-4128-abf8-6b11e5cd156f
+name: GitHub Repository Archive Status Changed
+level: 3
+size: '>0'
+active: true
+author:
+- Ivan Saakov
+group: github
+tags:
+- attack.persistence
+- attack.impact
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE action IN ('repo.archived', 'repo.unarchived')

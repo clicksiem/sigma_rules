@@ -1,0 +1,12 @@
+id: c67e0c98-4d39-46ee-8f6b-437ebf6b950e
+name: Shellshock Expression
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE hasToken(full_log, '(){:;};') OR hasToken(full_log, '() {:;};') OR hasToken(full_log, '() { :;};') OR hasToken(full_log, '() { :; };')

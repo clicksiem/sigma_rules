@@ -1,0 +1,12 @@
+id: 30d07da2-83ab-45d8-ae75-ec7c0edcaffc
+name: Renamed BOINC Client Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553
+rule: SELECT * FROM logs WHERE OriginalFileName='BOINC.exe' AND (NOT Image ILIKE '%\\BOINC.exe')

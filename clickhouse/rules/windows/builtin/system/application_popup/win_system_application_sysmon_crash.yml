@@ -1,0 +1,12 @@
+id: 4d7f1827-1637-4def-8d8a-fd254f9454df
+name: Sysmon Application Crashed
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Shelton
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE Provider_Name='Application Popup' AND EventID=26 AND (Caption IN ('sysmon64.exe - Application Error', 'sysmon.exe - Application Error'))

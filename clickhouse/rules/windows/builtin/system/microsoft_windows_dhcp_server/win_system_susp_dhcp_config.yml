@@ -1,0 +1,15 @@
+id: 13fc89a9-971e-4ca6-b9dc-aa53a445bf40
+name: DHCP Server Loaded the CallOut DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Dimitrios Slamaris
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE EventID=1033 AND Provider_Name='Microsoft-Windows-DHCP-Server'

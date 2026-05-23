@@ -1,0 +1,12 @@
+id: 962fe167-e48d-4fd6-9974-11e5b9a5d6d1
+name: LSASS Access From Non System Account
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE ((EventID IN (4663, 4656)) AND (AccessMask IN ('0x100000', '0x1010', '0x1400', '0x1410', '0x1418', '0x1438', '0x143a', '0x1f0fff', '0x1f1fff', '0x1f2fff', '0x1f3fff', '0x40', '143a', '1f0fff', '1f1fff', '1f2fff', '1f3fff')) AND ObjectType='Process' AND ObjectName ILIKE '%\\lsass.exe') AND (NOT (SubjectUserName ILIKE '%$' OR (ProcessName ILIKE '%:\\Program Files\\%' OR ProcessName ILIKE '%:\\Program Files (x86)\\%') OR (ProcessName ILIKE 'C:\\Windows\\System32\\wbem\\WmiPrvSE.exe' AND AccessMask='0x1410'))) AND (NOT ProcessName ILIKE '%\\SteamLibrary\\steamapps\\%')

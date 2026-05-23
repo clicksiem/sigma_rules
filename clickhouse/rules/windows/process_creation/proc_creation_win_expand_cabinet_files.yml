@@ -1,0 +1,12 @@
+id: 9f107a84-532c-41af-b005-8d12a607639f
+name: Potentially Suspicious Cabinet File Expansion
+level: 5
+size: '>0'
+active: true
+author:
+- Bhabesh Raj, X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\expand.exe' AND (CommandLine ILIKE '%-F:%' OR CommandLine ILIKE '%/F:%' OR CommandLine ILIKE '%–F:%' OR CommandLine ILIKE '%—F:%' OR CommandLine ILIKE '%―F:%')) AND ((CommandLine ILIKE '%:\\Perflogs\\%' OR CommandLine ILIKE '%:\\ProgramData%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\Admin$\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\\C$\\%' OR CommandLine ILIKE '%\\Temporary Internet%') OR ((CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Favorites\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Favourites\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Contacts\\%'))) AND (NOT (ParentImage ILIKE 'C:\\Program Files (x86)\\Dell\\UpdateService\\ServiceShell.exe' AND CommandLine ILIKE '%C:\\ProgramData\\Dell\\UpdateService\\Temp\\%'))

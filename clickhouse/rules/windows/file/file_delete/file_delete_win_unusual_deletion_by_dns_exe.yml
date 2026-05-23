@@ -1,0 +1,13 @@
+id: 8f0b1fb1-9bd4-4e74-8cdf-a8de4d2adfd0
+name: Unusual File Deletion by Dns.exe
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Rauch (Nextron Systems), Elastic (idea)
+group: windows
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1133
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\dns.exe' AND (NOT TargetFilename ILIKE '%\\dns.log')

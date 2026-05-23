@@ -1,0 +1,14 @@
+id: 4809c683-059b-4935-879d-36835986f8cf
+name: System Information Discovery Using System_Profiler
+level: 5
+size: '>0'
+active: true
+author:
+- Stephen Lincoln `@slincoln_aiq` (AttackIQ)
+group: macos
+tags:
+- attack.discovery
+- attack.stealth
+- attack.t1082
+- attack.t1497.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/system\_profiler' OR CommandLine ILIKE '%system\_profiler%') AND (CommandLine ILIKE '%SPApplicationsDataType%' OR CommandLine ILIKE '%SPHardwareDataType%' OR CommandLine ILIKE '%SPNetworkDataType%' OR CommandLine ILIKE '%SPUSBDataType%')

@@ -1,0 +1,12 @@
+id: 815bfc17-7fc6-4908-a55e-2f37b98cedb4
+name: AD Groups Or Users Enumeration Using PowerShell - PoshModule
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE (Payload ILIKE '%get-ADPrincipalGroupMembership%' OR ContextInfo ILIKE '%get-ADPrincipalGroupMembership%') OR ((Payload ILIKE '%get-aduser%' AND Payload ILIKE '%-f %' AND Payload ILIKE '%-pr %' AND Payload ILIKE '%DoesNotRequirePreAuth%') OR (ContextInfo ILIKE '%get-aduser%' AND ContextInfo ILIKE '%-f %' AND ContextInfo ILIKE '%-pr %' AND ContextInfo ILIKE '%DoesNotRequirePreAuth%'))

@@ -1,0 +1,11 @@
+id: ef64fc9c-a45e-43cc-8fd8-7d75d73b4c99
+name: Wusa.EXE Executed By Parent Process Located In Suspicious Location
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\wusa.exe' AND ((ParentImage ILIKE '%:\\Perflogs\\%' OR ParentImage ILIKE '%:\\Users\\Public\\%' OR ParentImage ILIKE '%:\\Windows\\Temp\\%' OR ParentImage ILIKE '%\\Appdata\\Local\\Temp\\%' OR ParentImage ILIKE '%\\Temporary Internet%') OR ((ParentImage ILIKE '%:\\Users\\%' AND ParentImage ILIKE '%\\Favorites\\%') OR (ParentImage ILIKE '%:\\Users\\%' AND ParentImage ILIKE '%\\Favourites\\%') OR (ParentImage ILIKE '%:\\Users\\%' AND ParentImage ILIKE '%\\Contacts\\%') OR (ParentImage ILIKE '%:\\Users\\%' AND ParentImage ILIKE '%\\Pictures\\%'))) AND (NOT CommandLine ILIKE '%.msu%')

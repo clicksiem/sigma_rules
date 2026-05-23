@@ -1,0 +1,12 @@
+id: 3ffd6f51-e6c1-47b7-94b4-c1e61d4117c5
+name: Certificate Exported Via Certutil.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certutil.exe' OR OriginalFileName='CertUtil.exe') AND (CommandLine ILIKE '%-exportPFX %' OR CommandLine ILIKE '%/exportPFX %' OR CommandLine ILIKE '%–exportPFX %' OR CommandLine ILIKE '%—exportPFX %' OR CommandLine ILIKE '%―exportPFX %')

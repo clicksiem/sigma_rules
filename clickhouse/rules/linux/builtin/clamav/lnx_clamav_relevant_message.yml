@@ -1,0 +1,12 @@
+id: 36aa86ca-fd9d-4456-814e-d3b1b8e1e0bb
+name: Relevant ClamAV Message
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.resource-development
+- attack.t1588.001
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'Trojan%FOUND') OR hasToken(full_log, 'VirTool%FOUND') OR hasToken(full_log, 'Webshell%FOUND') OR hasToken(full_log, 'Rootkit%FOUND') OR hasToken(full_log, 'Htran%FOUND')

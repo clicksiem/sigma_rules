@@ -1,0 +1,15 @@
+id: 0ea52357-cd59-4340-9981-c46c7e900428
+name: Potentially Suspicious Rundll32.EXE Execution of UDL File
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.execution
+- attack.command-and-control
+- attack.stealth
+- attack.t1218.011
+- attack.t1071
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\explorer.exe' AND (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND ((CommandLine ILIKE '%oledb32.dll%' AND CommandLine ILIKE '%,OpenDSLFile %' AND CommandLine ILIKE '%\\Users\\%\\Downloads\\%') AND CommandLine ILIKE '%.udl')

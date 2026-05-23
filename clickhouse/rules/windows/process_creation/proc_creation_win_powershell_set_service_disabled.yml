@@ -1,0 +1,13 @@
+id: 62b20d44-1546-4e61-afce-8e175eb9473c
+name: Service StartupType Change Via PowerShell Set-Service
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powershell.exe' OR OriginalFileName='PowerShell.EXE') AND ((CommandLine ILIKE '%Set-Service%' AND CommandLine ILIKE '%-StartupType%') AND (CommandLine ILIKE '%Disabled%' OR CommandLine ILIKE '%Manual%'))

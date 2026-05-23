@@ -1,0 +1,13 @@
+id: d99b79d2-0a6f-4f46-ad8b-260b6e17f982
+name: Security Eventlog Cleared
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.005
+- car.2016-04-002
+rule: SELECT * FROM logs WHERE (EventID=517 AND Provider_Name='Security') OR (EventID=1102 AND Provider_Name='Microsoft-Windows-Eventlog')

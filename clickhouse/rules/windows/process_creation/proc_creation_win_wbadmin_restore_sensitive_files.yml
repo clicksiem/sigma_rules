@@ -1,0 +1,12 @@
+id: 84972c80-251c-4c3a-9079-4f00aad93938
+name: Sensitive File Recovery From Backup Via Wbadmin.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wbadmin.exe' OR OriginalFileName='WBADMIN.EXE') AND ((CommandLine ILIKE '% recovery%' AND CommandLine ILIKE '%recoveryTarget%' AND CommandLine ILIKE '%itemtype:File%') AND (CommandLine ILIKE '%\\config\\SAM%' OR CommandLine ILIKE '%\\config\\SECURITY%' OR CommandLine ILIKE '%\\config\\SYSTEM%' OR CommandLine ILIKE '%\\Windows\\NTDS\\NTDS.dit%'))

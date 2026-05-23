@@ -1,0 +1,12 @@
+id: a9723fcc-881c-424c-8709-fd61442ab3c3
+name: Recon Information for Export with PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1119
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Get-Service %' OR ScriptBlockText ILIKE '%Get-ChildItem %' OR ScriptBlockText ILIKE '%Get-Process %') AND ScriptBlockText ILIKE '%> $env:TEMP\\%'

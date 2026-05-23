@@ -1,0 +1,12 @@
+id: bc92ca75-cd42-4d61-9a37-9d5aa259c88b
+name: Win Defender Restored Quarantine File
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=1009

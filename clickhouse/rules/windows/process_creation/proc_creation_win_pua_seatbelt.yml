@@ -1,0 +1,14 @@
+id: 38646daa-e78f-4ace-9de0-55547b2d30da
+name: PUA - Seatbelt Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1526
+- attack.t1087
+- attack.t1083
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\Seatbelt.exe' OR OriginalFileName='Seatbelt.exe' OR Description='Seatbelt' OR (CommandLine ILIKE '% DpapiMasterKeys%' OR CommandLine ILIKE '% InterestingProcesses%' OR CommandLine ILIKE '% InterestingFiles%' OR CommandLine ILIKE '% CertificateThumbprints%' OR CommandLine ILIKE '% ChromiumBookmarks%' OR CommandLine ILIKE '% ChromiumHistory%' OR CommandLine ILIKE '% ChromiumPresence%' OR CommandLine ILIKE '% CloudCredentials%' OR CommandLine ILIKE '% CredEnum%' OR CommandLine ILIKE '% CredGuard%' OR CommandLine ILIKE '% FirefoxHistory%' OR CommandLine ILIKE '% ProcessCreationEvents%')) OR ((CommandLine ILIKE '% -group=misc%' OR CommandLine ILIKE '% -group=remote%' OR CommandLine ILIKE '% -group=chromium%' OR CommandLine ILIKE '% -group=slack%' OR CommandLine ILIKE '% -group=system%' OR CommandLine ILIKE '% -group=user%' OR CommandLine ILIKE '% -group=all%') AND CommandLine ILIKE '% -outputfile=%')

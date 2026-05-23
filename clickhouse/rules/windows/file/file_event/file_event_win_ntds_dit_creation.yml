@@ -1,0 +1,12 @@
+id: 0b8baa3f-575c-46ee-8715-d6f28cc7d33c
+name: NTDS.DIT Created
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%ntds.dit'

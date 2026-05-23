@@ -1,0 +1,12 @@
+id: 98054878-5eab-434c-85d4-72d4e5a3361b
+name: HackTool - EDRSilencer Execution - Filter Added
+level: 8
+size: '>0'
+active: true
+author:
+- Thodoris Polyzos (@SmoothDeploy)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (EventID IN (5441, 5447)) AND FilterName ILIKE '%Custom Outbound Filter%'

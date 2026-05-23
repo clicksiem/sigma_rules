@@ -1,0 +1,14 @@
+id: a5a30a6e-75ca-4233-8b8c-42e0f2037d3b
+name: Invoke-Obfuscation Via Use Rundll32 - PowerShell
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%&&%' AND ScriptBlockText ILIKE '%rundll32%' AND ScriptBlockText ILIKE '%shell32.dll%' AND ScriptBlockText ILIKE '%shellexec\_rundll%') AND (ScriptBlockText ILIKE '%value%' OR ScriptBlockText ILIKE '%invoke%' OR ScriptBlockText ILIKE '%comspec%' OR ScriptBlockText ILIKE '%iex%')

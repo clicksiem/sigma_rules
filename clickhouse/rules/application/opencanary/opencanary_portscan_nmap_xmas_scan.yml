@@ -1,0 +1,12 @@
+id: d7553d7b-f485-479c-b192-cdac6edd83a4
+name: OpenCanary - NMAP XMAS Scan
+level: 8
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM)
+group: opencanary
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE logtype=5004

@@ -1,0 +1,12 @@
+id: b447f7de-1e53-4cbf-bfb4-f1f6d0b04e4e
+name: Suspicious Binaries and Scripts in Public Folder
+level: 8
+size: '>0'
+active: true
+author:
+- The DFIR Report
+group: windows
+tags:
+- attack.execution
+- attack.t1204
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\Users\\Public\\%' AND (TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs')

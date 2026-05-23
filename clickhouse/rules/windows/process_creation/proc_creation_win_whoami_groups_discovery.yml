@@ -1,0 +1,12 @@
+id: bd8b828d-0dca-48e1-8a63-8a58ecf2644f
+name: Group Membership Reconnaissance Via Whoami.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\whoami.exe' OR OriginalFileName='whoami.exe') AND (CommandLine ILIKE '% /groups%' OR CommandLine ILIKE '% -groups%')

@@ -1,0 +1,13 @@
+id: 9f383dc0-fdeb-4d56-acbc-9f9f4f8f20f3
+name: Unusual File Modification by dns.exe
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Rauch (Nextron Systems), Elastic (idea)
+group: windows
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1133
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\dns.exe' AND (NOT TargetFilename ILIKE '%\\dns.log')

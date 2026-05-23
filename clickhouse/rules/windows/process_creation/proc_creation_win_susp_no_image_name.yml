@@ -1,0 +1,11 @@
+id: f208d6d8-d83a-4c2c-960d-877c37da84e5
+name: Process Launched Without Image Name
+level: 5
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\.exe'

@@ -1,0 +1,12 @@
+id: d80d5c81-04ba-45b4-84e4-92eba40e0ad3
+name: Arbitrary DLL or Csproj Code Execution Via Dotnet.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\dotnet.exe' OR OriginalFileName='.NET Host') AND (CommandLine ILIKE '%.csproj' OR CommandLine ILIKE '%.csproj"' OR CommandLine ILIKE '%.dll' OR CommandLine ILIKE '%.dll"' OR CommandLine ILIKE '%.csproj''' OR CommandLine ILIKE '%.dll''')) AND (NOT ((ParentImage IN ('C:\\Program Files (x86)\\Notepad++\\notepad++.exe', 'C:\\Program Files\\Notepad++\\notepad++.exe')) AND (CommandLine ILIKE '%C:\\ProgramData\\CSScriptNpp\\%' AND CommandLine ILIKE '%-cscs\_path:%' AND CommandLine ILIKE '%\\cs-script\\cscs.dll%')))

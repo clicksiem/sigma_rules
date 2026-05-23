@@ -1,0 +1,12 @@
+id: 14f3f1c8-02d5-43a2-a191-91ffb52d3015
+name: RDS Database Security Group Modification
+level: 5
+size: '>0'
+active: true
+author:
+- jamesc-grafana
+group: aws
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE eventSource='rds.amazonaws.com' AND (eventName IN ('AuthorizeDBSecurityGroupIngress', 'CreateDBSecurityGroup', 'DeleteDBSecurityGroup', 'RevokeDBSecurityGroupIngress'))

@@ -1,0 +1,11 @@
+id: cad1fe90-2406-44dc-bd03-59d0b58fe722
+name: HackTool - NPPSpy Hacktool Usage
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\NPPSpy.txt' OR TargetFilename ILIKE '%\\NPPSpy.dll'

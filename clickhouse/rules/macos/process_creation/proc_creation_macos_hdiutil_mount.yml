@@ -1,0 +1,14 @@
+id: bf241472-f014-4f01-a869-96f99330ca8c
+name: Disk Image Mounting Via Hdiutil - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Omar Khaled (@beacon_exe)
+group: macos
+tags:
+- attack.initial-access
+- attack.collection
+- attack.t1566.001
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%/hdiutil' AND (CommandLine ILIKE '%attach %' OR CommandLine ILIKE '%mount %')

@@ -1,0 +1,15 @@
+id: 6360757a-d460-456c-8b13-74cf0e60cceb
+name: Potential DLL Sideloading Via comctl32.dll
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Subhash Popuri (@pbssubhash)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE 'C:\\Windows\\System32\\logonUI.exe.local\\%' OR ImageLoaded ILIKE 'C:\\Windows\\System32\\werFault.exe.local\\%' OR ImageLoaded ILIKE 'C:\\Windows\\System32\\consent.exe.local\\%' OR ImageLoaded ILIKE 'C:\\Windows\\System32\\narrator.exe.local\\%' OR ImageLoaded ILIKE 'C:\\windows\\system32\\wermgr.exe.local\\%') AND ImageLoaded ILIKE '%\\comctl32.dll'

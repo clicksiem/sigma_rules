@@ -1,0 +1,17 @@
+id: c453ab7a-1f5c-4716-a3b4-dea8135fb43a
+name: Registry Manipulation via WMI Stdregprov
+level: 5
+size: '>0'
+active: true
+author:
+- Daniel Koifman (KoifSec)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.discovery
+- attack.defense-impairment
+- attack.t1047
+- attack.t1112
+- attack.t1012
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND (CommandLine ILIKE '%call%' AND CommandLine ILIKE '%stdregprov%')

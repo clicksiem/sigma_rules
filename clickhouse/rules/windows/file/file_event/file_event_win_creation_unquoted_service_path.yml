@@ -1,0 +1,13 @@
+id: 8c3c76ca-8f8b-4b1d-aaf3-81aebcd367c9
+name: Creation Exe for Service with Unquoted Path
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.009
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\program.exe'

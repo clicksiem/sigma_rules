@@ -1,0 +1,14 @@
+id: 882fbe50-d8d7-4e29-ae80-0648a8556866
+name: Crash Dump Created By Operating System
+level: 5
+size: '>0'
+active: true
+author:
+- Jason Mull
+group: windows
+tags:
+- attack.credential-access
+- attack.collection
+- attack.t1003.002
+- attack.t1005
+rule: SELECT * FROM logs WHERE Provider_Name='Microsoft-Windows-WER-SystemErrorReporting' AND EventID=1001

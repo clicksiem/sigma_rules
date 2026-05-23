@@ -1,0 +1,13 @@
+id: ada4b0c4-758b-46ac-9033-9004613a150d
+name: Modify Group Policy Settings
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1484.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND CommandLine ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\Windows\\System%' AND (CommandLine ILIKE '%GroupPolicyRefreshTimeDC%' OR CommandLine ILIKE '%GroupPolicyRefreshTimeOffsetDC%' OR CommandLine ILIKE '%GroupPolicyRefreshTime%' OR CommandLine ILIKE '%GroupPolicyRefreshTimeOffset%' OR CommandLine ILIKE '%EnableSmartScreen%' OR CommandLine ILIKE '%ShellSmartScreenLevel%')

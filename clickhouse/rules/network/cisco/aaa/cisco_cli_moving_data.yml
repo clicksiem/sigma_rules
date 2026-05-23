@@ -1,0 +1,17 @@
+id: 5e51acb2-bcbe-435b-99c6-0e3cd5e2aa59
+name: Cisco Stage Data
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.collection
+- attack.lateral-movement
+- attack.command-and-control
+- attack.exfiltration
+- attack.t1074
+- attack.t1105
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'tftp') OR hasToken(full_log, 'rcp') OR hasToken(full_log, 'puts') OR hasToken(full_log, 'copy') OR hasToken(full_log, 'configure replace') OR hasToken(full_log, 'archive tar')

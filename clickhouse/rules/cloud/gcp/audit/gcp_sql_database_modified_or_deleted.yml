@@ -1,0 +1,11 @@
+id: f346bbd5-2c4e-4789-a221-72de7685090d
+name: Google Cloud SQL Database Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` IN ('cloudsql.instances.create', 'cloudsql.instances.delete', 'cloudsql.users.update', 'cloudsql.users.delete')

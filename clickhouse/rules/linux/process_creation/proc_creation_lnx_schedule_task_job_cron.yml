@@ -1,0 +1,14 @@
+id: 6b14bac8-3e3a-4324-8109-42f0546a347f
+name: Scheduled Cron Task/Job - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: linux
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1053.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%crontab' AND CommandLine ILIKE '%/tmp/%'

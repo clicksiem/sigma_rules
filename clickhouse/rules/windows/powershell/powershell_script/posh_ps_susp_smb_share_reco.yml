@@ -1,0 +1,12 @@
+id: 95f0643a-ed40-467c-806b-aac9542ec5ab
+name: Suspicious Get Information for SMB Share
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%get-smbshare%'

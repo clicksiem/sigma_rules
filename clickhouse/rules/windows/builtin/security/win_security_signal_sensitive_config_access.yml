@@ -1,0 +1,12 @@
+id: 5d6c375a-18ae-4952-b4f6-8b803f6c8555
+name: File Access Of Signal Desktop Sensitive Data
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+rule: SELECT * FROM logs WHERE (EventID=4663 AND ObjectType='File' AND ObjectName ILIKE '%\\AppData\\Roaming\\Signal\\%' AND (ObjectName ILIKE '%\\config.json' OR ObjectName ILIKE '%\\db.sqlite')) AND (NOT (ProcessName ILIKE '%\\signal-portable.exe' OR ProcessName ILIKE '%\\signal.exe'))

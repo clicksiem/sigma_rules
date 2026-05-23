@@ -1,0 +1,12 @@
+id: 8b93a509-1cb8-42e1-97aa-ee24224cdc15
+name: Sensitive File Dump Via Wbadmin.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wbadmin.exe' OR OriginalFileName='WBADMIN.EXE') AND (CommandLine ILIKE '%start%' OR CommandLine ILIKE '%backup%') AND (CommandLine ILIKE '%\\config\\SAM%' OR CommandLine ILIKE '%\\config\\SECURITY%' OR CommandLine ILIKE '%\\config\\SYSTEM%' OR CommandLine ILIKE '%\\Windows\\NTDS\\NTDS.dit%')

@@ -1,0 +1,12 @@
+id: 87261fb2-69d0-42fe-b9de-88c6b5f65a43
+name: Atera Agent Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE EventID=1033 AND Provider_Name='MsiInstaller' AND Message ILIKE '%AteraAgent%'

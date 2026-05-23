@@ -1,0 +1,13 @@
+id: 259e5a6a-b8d2-4c38-86e2-26c5e651361d
+name: PsExec Service File Creation
+level: 3
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\PSEXESVC.exe'

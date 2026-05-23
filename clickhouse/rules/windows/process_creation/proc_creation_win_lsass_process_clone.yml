@@ -1,0 +1,13 @@
+id: c8da0dfd-4ed0-4b68-962d-13c9c884384e
+name: Potential Credential Dumping Via LSASS Process Clone
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Samir Bousseaden
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\Windows\\System32\\lsass.exe' AND Image ILIKE '%\\Windows\\System32\\lsass.exe'

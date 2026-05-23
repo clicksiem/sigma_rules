@@ -1,0 +1,12 @@
+id: fa935401-513b-467b-81f4-f9e77aa0dd78
+name: Crypto Miner User Agent
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE `c-useragent` ILIKE 'XMRig %' OR `c-useragent` ILIKE 'ccminer%'

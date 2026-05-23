@@ -1,0 +1,13 @@
+id: a07f0359-4c90-4dc4-a681-8ffea40b4f47
+name: Service Binary in Suspicious Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE 'HKLM\\System\\CurrentControlSet\\Services\\%' AND TargetObject ILIKE '%\\Start' AND (Image ILIKE '%\\Users\\Public\\%' OR Image ILIKE '%\\Perflogs\\%' OR Image ILIKE '%\\ADMIN$\\%' OR Image ILIKE '%\\Temp\\%') AND (Details IN ('DWORD (0x00000000)', 'DWORD (0x00000001)', 'DWORD (0x00000002)'))) OR (TargetObject ILIKE 'HKLM\\System\\CurrentControlSet\\Services\\%' AND TargetObject ILIKE '%\\ImagePath' AND (Details ILIKE '%\\Users\\Public\\%' OR Details ILIKE '%\\Perflogs\\%' OR Details ILIKE '%\\ADMIN$\\%' OR Details ILIKE '%\\Temp\\%'))) AND (NOT ((Image ILIKE '%\\Common Files\\%' AND Image ILIKE '%\\Temp\\%') OR (TargetObject ILIKE '%\\CurrentControlSet\\Services\\MBAMInstallerService\\ImagePath' AND Details ILIKE '%\\AppData\\Local\\Temp\\MBAMInstallerService.exe"' AND Image ILIKE 'C:\\Windows\\system32\\services.exe')))

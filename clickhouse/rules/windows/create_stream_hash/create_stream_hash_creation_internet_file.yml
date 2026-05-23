@@ -1,0 +1,11 @@
+id: 573df571-a223-43bc-846e-3f98da481eca
+name: Creation Of a Suspicious ADS File Outside a Browser Download
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Contents ILIKE '[ZoneTransfer]  ZoneId=3%' AND TargetFilename ILIKE '%:Zone.Identifier' AND (TargetFilename ILIKE '%.exe%' OR TargetFilename ILIKE '%.scr%' OR TargetFilename ILIKE '%.bat%' OR TargetFilename ILIKE '%.cmd%' OR TargetFilename ILIKE '%.docx%' OR TargetFilename ILIKE '%.hta%' OR TargetFilename ILIKE '%.jse%' OR TargetFilename ILIKE '%.lnk%' OR TargetFilename ILIKE '%.pptx%' OR TargetFilename ILIKE '%.ps%' OR TargetFilename ILIKE '%.reg%' OR TargetFilename ILIKE '%.sct%' OR TargetFilename ILIKE '%.vb%' OR TargetFilename ILIKE '%.wsc%' OR TargetFilename ILIKE '%.wsf%' OR TargetFilename ILIKE '%.xlsx%')) AND (NOT (Image ILIKE '%\\brave.exe' OR (Image IN ('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe')) OR (Image IN ('C:\\Program Files\\Mozilla Firefox\\firefox.exe', 'C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe')) OR (Image IN ('C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe', 'C:\\Program Files\\Internet Explorer\\iexplore.exe')) OR Image ILIKE '%\\maxthon.exe' OR (Image ILIKE 'C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\%' OR Image ILIKE '%\\WindowsApps\\MicrosoftEdge.exe' OR (Image IN ('C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe'))) OR ((Image ILIKE 'C:\\Program Files (x86)\\Microsoft\\EdgeCore\\%' OR Image ILIKE 'C:\\Program Files\\Microsoft\\EdgeCore\\%') AND (Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\msedgewebview2.exe')) OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\safari.exe' OR Image ILIKE '%\\seamonkey.exe' OR Image ILIKE '%\\vivaldi.exe' OR Image ILIKE '%\\whale.exe' OR (Image ILIKE 'C:\\Program Files\\WindowsApps\\Microsoft.ScreenSketch\_%' AND Image ILIKE '%\\SnippingTool\\SnippingTool.exe' AND TargetFilename ILIKE 'C:\\Users\\%' AND (TargetFilename ILIKE '%\\AppData\\Local\\Packages\\Microsoft.ScreenSketch\_%' AND TargetFilename ILIKE '%\\TempState\\Screenshot %') AND TargetFilename ILIKE '%.png:Zone.Identifier')))

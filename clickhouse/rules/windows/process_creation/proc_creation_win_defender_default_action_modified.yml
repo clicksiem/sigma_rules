@@ -1,0 +1,12 @@
+id: 1e8a9b4d-3c2a-4f9b-8d1e-7c6a5b4f3d2e
+name: PowerShell Defender Threat Severity Default Action Set to 'Allow' or 'NoAction'
+level: 8
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Set-MpPreference%' AND (CommandLine ILIKE '%-LowThreatDefaultAction%' OR CommandLine ILIKE '%-ModerateThreatDefaultAction%' OR CommandLine ILIKE '%-HighThreatDefaultAction%' OR CommandLine ILIKE '%-SevereThreatDefaultAction%' OR CommandLine ILIKE '%-ltdefac %' OR CommandLine ILIKE '%-mtdefac %' OR CommandLine ILIKE '%-htdefac %' OR CommandLine ILIKE '%-stdefac %') AND (CommandLine ILIKE '%Allow%' OR CommandLine ILIKE '%6%' OR CommandLine ILIKE '%NoAction%' OR CommandLine ILIKE '%9%')

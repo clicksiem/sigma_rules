@@ -1,0 +1,14 @@
+id: ad1f4bb9-8dfb-4765-adb6-2a7cfb6c0f94
+name: Suspicious WSMAN Provider Image Loads
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.lateral-movement
+- attack.t1021.003
+rule: SELECT * FROM logs WHERE (((ImageLoaded ILIKE '%\\WsmSvc.dll' OR ImageLoaded ILIKE '%\\WsmAuto.dll' OR ImageLoaded ILIKE '%\\Microsoft.WSMan.Management.ni.dll') OR (OriginalFileName IN ('WsmSvc.dll', 'WSMANAUTOMATION.DLL', 'Microsoft.WSMan.Management.dll'))) OR (Image ILIKE '%\\svchost.exe' AND OriginalFileName='WsmWmiPl.dll')) AND (NOT ((Image IN ('C:\\Program Files (x86)\\PowerShell\\6\\pwsh.exe', 'C:\\Program Files (x86)\\PowerShell\\7\\pwsh.exe', 'C:\\Program Files\\PowerShell\\6\\pwsh.exe', 'C:\\Program Files\\PowerShell\\7\\pwsh.exe', 'C:\\Windows\\System32\\sdiagnhost.exe', 'C:\\Windows\\System32\\services.exe', 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell\_ise.exe', 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe')) OR (CommandLine ILIKE '%svchost.exe -k netsvcs -p -s BITS%' OR CommandLine ILIKE '%svchost.exe -k GraphicsPerfSvcGroup -s GraphicsPerfSvc%' OR CommandLine ILIKE '%svchost.exe -k NetworkService -p -s Wecsvc%' OR CommandLine ILIKE '%svchost.exe -k netsvcs%') OR ((Image ILIKE 'C:\\Windows\\Microsoft.NET\\Framework64\\v%' OR Image ILIKE 'C:\\Windows\\Microsoft.NET\\Framework\\v%' OR Image ILIKE 'C:\\Windows\\Microsoft.NET\\FrameworkArm\\v%' OR Image ILIKE 'C:\\Windows\\Microsoft.NET\\FrameworkArm64\\v%') AND Image ILIKE '%\\mscorsvw.exe') OR (Image IN ('C:\\Windows\\System32\\Configure-SMRemoting.exe', 'C:\\Windows\\System32\\ServerManager.exe')) OR Image ILIKE 'C:\\Windows\\Temp\\asgard2-agent\\%' OR Image ILIKE 'C:\\Program Files\\Citrix\\%' OR Image ILIKE 'C:\\$WINDOWS.~BT\\Sources\\%' OR Image ILIKE '%\\mmc.exe')) AND (NOT (Image ILIKE '%\\svchost.exe' AND isNull(CommandLine)))

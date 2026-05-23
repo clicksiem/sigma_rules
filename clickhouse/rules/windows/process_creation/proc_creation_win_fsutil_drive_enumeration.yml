@@ -1,0 +1,12 @@
+id: 63de06b9-a385-40b5-8b32-73f2b9ef84b6
+name: Fsutil Drive Enumeration
+level: 3
+size: '>0'
+active: true
+author:
+- Christopher Peacock '@securepeacock', SCYTHE '@scythe_io'
+group: windows
+tags:
+- attack.discovery
+- attack.t1120
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\fsutil.exe' OR OriginalFileName='fsutil.exe') AND CommandLine ILIKE '%drives%'

@@ -1,0 +1,12 @@
+id: c7942406-33dd-4377-a564-0f62db0593a3
+name: Suspicious CodePage Switch Via CHCP
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\chcp.com' AND (CommandLine ILIKE '% 936' OR CommandLine ILIKE '% 1258')

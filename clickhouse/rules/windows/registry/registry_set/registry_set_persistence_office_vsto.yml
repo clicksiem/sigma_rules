@@ -1,0 +1,12 @@
+id: 9d15044a-7cfe-4d23-8085-6ebc11df7685
+name: Potential Persistence Via Visual Studio Tools for Office
+level: 5
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.t1137.006
+- attack.persistence
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Office\\Outlook\\Addins\\%' OR TargetObject ILIKE '%\\Software\\Microsoft\\Office\\Word\\Addins\\%' OR TargetObject ILIKE '%\\Software\\Microsoft\\Office\\Excel\\Addins\\%' OR TargetObject ILIKE '%\\Software\\Microsoft\\Office\\Powerpoint\\Addins\\%' OR TargetObject ILIKE '%\\Software\\Microsoft\\VSTO\\Security\\Inclusion\\%') AND (NOT ((Image IN ('C:\\Windows\\System32\\msiexec.exe', 'C:\\Windows\\SysWOW64\\msiexec.exe', 'C:\\Windows\\System32\\regsvr32.exe', 'C:\\Windows\\SysWOW64\\regsvr32.exe')) OR ((Image ILIKE 'C:\\Program Files\\Common Files (x86)\\Microsoft Shared\\ClickToRun\\%' OR Image ILIKE 'C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\%') AND Image ILIKE '%\\OfficeClickToRun.exe') OR (Image IN ('C:\\Program Files (x86)\\Microsoft Office\\root\\integration\\integrator.exe', 'C:\\Program Files\\Microsoft Office\\root\\integration\\integrator.exe')) OR ((Image ILIKE 'C:\\Program Files\\Microsoft Office\\OFFICE%' OR Image ILIKE 'C:\\Program Files (x86)\\Microsoft Office\\OFFICE%' OR Image ILIKE 'C:\\Program Files\\Microsoft Office\\Root\\OFFICE%' OR Image ILIKE 'C:\\Program Files (x86)\\Microsoft Office\\Root\\OFFICE%' OR Image ILIKE 'C:\\PROGRA~2\\MICROS~2\\Office%') AND (Image ILIKE '%\\excel.exe' OR Image ILIKE '%\\Integrator.exe' OR Image ILIKE '%\\OneNote.exe' OR Image ILIKE '%\\outlook.exe' OR Image ILIKE '%\\powerpnt.exe' OR Image ILIKE '%\\Teams.exe' OR Image ILIKE '%\\visio.exe' OR Image ILIKE '%\\winword.exe')) OR ((Image ILIKE 'C:\\Program Files\\Common Files\\Microsoft Shared\\VSTO\\%' OR Image ILIKE 'C:\\Program Files (x86)\\Microsoft Shared\\VSTO\\%') AND Image ILIKE '%\\VSTOInstaller.exe'))) AND (NOT (((Image IN ('C:\\Program Files\\AVG\\Antivirus\\RegSvr.exe', 'C:\\Program Files (x86)\\AVG\\Antivirus\\RegSvr.exe')) AND TargetObject ILIKE '%\\Microsoft\\Office\\Outlook\\Addins\\Antivirus.AsOutExt\\%') OR ((Image IN ('C:\\Program Files\\Avast Software\\Avast\\RegSvr.exe', 'C:\\Program Files (x86)\\Avast Software\\Avast\\RegSvr.exe')) AND TargetObject ILIKE '%\\Microsoft\\Office\\Outlook\\Addins\\Avast.AsOutExt\\%')))

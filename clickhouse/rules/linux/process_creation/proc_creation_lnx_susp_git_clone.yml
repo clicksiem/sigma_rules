@@ -1,0 +1,12 @@
+id: cfec9d29-64ec-4a0f-9ffe-0fdb856d5446
+name: Suspicious Git Clone - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.reconnaissance
+- attack.t1593.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/git' AND CommandLine ILIKE '% clone %') AND (CommandLine ILIKE '%exploit%' OR CommandLine ILIKE '%Vulns%' OR CommandLine ILIKE '%vulnerability%' OR CommandLine ILIKE '%RCE%' OR CommandLine ILIKE '%RemoteCodeExecution%' OR CommandLine ILIKE '%Invoke-%' OR CommandLine ILIKE '%CVE-%' OR CommandLine ILIKE '%poc-%' OR CommandLine ILIKE '%ProofOfConcept%' OR CommandLine ILIKE '%proxyshell%' OR CommandLine ILIKE '%log4shell%' OR CommandLine ILIKE '%eternalblue%' OR CommandLine ILIKE '%eternal-blue%' OR CommandLine ILIKE '%MS17-%')

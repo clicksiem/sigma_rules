@@ -1,0 +1,18 @@
+id: 5b80a791-ad9b-4b75-bcc1-ad4e1e89c200
+name: File With Suspicious Extension Downloaded Via Bitsadmin
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+- attack.s0190
+- attack.t1036.003
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\bitsadmin.exe' OR OriginalFileName='bitsadmin.exe') AND (CommandLine ILIKE '% /transfer %' OR CommandLine ILIKE '% /create %' OR CommandLine ILIKE '% /addfile %') AND (CommandLine ILIKE '%.7z%' OR CommandLine ILIKE '%.asax%' OR CommandLine ILIKE '%.ashx%' OR CommandLine ILIKE '%.asmx%' OR CommandLine ILIKE '%.asp%' OR CommandLine ILIKE '%.aspx%' OR CommandLine ILIKE '%.bat%' OR CommandLine ILIKE '%.cfm%' OR CommandLine ILIKE '%.cgi%' OR CommandLine ILIKE '%.chm%' OR CommandLine ILIKE '%.cmd%' OR CommandLine ILIKE '%.dll%' OR CommandLine ILIKE '%.gif%' OR CommandLine ILIKE '%.jpeg%' OR CommandLine ILIKE '%.jpg%' OR CommandLine ILIKE '%.jsp%' OR CommandLine ILIKE '%.jspx%' OR CommandLine ILIKE '%.log%' OR CommandLine ILIKE '%.png%' OR CommandLine ILIKE '%.ps1%' OR CommandLine ILIKE '%.psm1%' OR CommandLine ILIKE '%.rar%' OR CommandLine ILIKE '%.scf%' OR CommandLine ILIKE '%.sct%' OR CommandLine ILIKE '%.txt%' OR CommandLine ILIKE '%.vbe%' OR CommandLine ILIKE '%.vbs%' OR CommandLine ILIKE '%.war%' OR CommandLine ILIKE '%.wsf%' OR CommandLine ILIKE '%.wsh%' OR CommandLine ILIKE '%.xll%' OR CommandLine ILIKE '%.zip%')

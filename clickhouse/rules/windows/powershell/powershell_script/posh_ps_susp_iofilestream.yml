@@ -1,0 +1,12 @@
+id: 70ad982f-67c8-40e0-a955-b920c2fa05cb
+name: Suspicious IO.FileStream
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-Object%' AND ScriptBlockText ILIKE '%IO.FileStream%' AND ScriptBlockText ILIKE '%\\\\.\\%'

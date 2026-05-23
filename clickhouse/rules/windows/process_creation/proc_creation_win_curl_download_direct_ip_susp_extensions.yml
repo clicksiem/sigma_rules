@@ -1,0 +1,11 @@
+id: 5cb299fc-5fb1-4d07-b989-0644c68b6043
+name: Suspicious File Download From IP Via Curl.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\curl.exe' OR OriginalFileName='curl.exe') AND match(CommandLine, '://[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') AND CommandLine ILIKE '%http%' AND (CommandLine ILIKE '% -O%' OR CommandLine ILIKE '%--remote-name%' OR CommandLine ILIKE '%--output%') AND (CommandLine ILIKE '%.bat' OR CommandLine ILIKE '%.bat"' OR CommandLine ILIKE '%.dat' OR CommandLine ILIKE '%.dat"' OR CommandLine ILIKE '%.dll' OR CommandLine ILIKE '%.dll"' OR CommandLine ILIKE '%.exe' OR CommandLine ILIKE '%.exe"' OR CommandLine ILIKE '%.gif' OR CommandLine ILIKE '%.gif"' OR CommandLine ILIKE '%.hta' OR CommandLine ILIKE '%.hta"' OR CommandLine ILIKE '%.jpeg' OR CommandLine ILIKE '%.jpeg"' OR CommandLine ILIKE '%.log' OR CommandLine ILIKE '%.log"' OR CommandLine ILIKE '%.msi' OR CommandLine ILIKE '%.msi"' OR CommandLine ILIKE '%.png' OR CommandLine ILIKE '%.png"' OR CommandLine ILIKE '%.ps1' OR CommandLine ILIKE '%.ps1"' OR CommandLine ILIKE '%.psm1' OR CommandLine ILIKE '%.psm1"' OR CommandLine ILIKE '%.vbe' OR CommandLine ILIKE '%.vbe"' OR CommandLine ILIKE '%.vbs' OR CommandLine ILIKE '%.vbs"' OR CommandLine ILIKE '%.bat''' OR CommandLine ILIKE '%.dat''' OR CommandLine ILIKE '%.dll''' OR CommandLine ILIKE '%.exe''' OR CommandLine ILIKE '%.gif''' OR CommandLine ILIKE '%.hta''' OR CommandLine ILIKE '%.jpeg''' OR CommandLine ILIKE '%.log''' OR CommandLine ILIKE '%.msi''' OR CommandLine ILIKE '%.png''' OR CommandLine ILIKE '%.ps1''' OR CommandLine ILIKE '%.psm1''' OR CommandLine ILIKE '%.vbe''' OR CommandLine ILIKE '%.vbs''')

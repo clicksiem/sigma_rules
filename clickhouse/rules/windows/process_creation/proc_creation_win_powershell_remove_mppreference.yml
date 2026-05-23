@@ -1,0 +1,12 @@
+id: 07e3cb2c-0608-410d-be4b-1511cb1a0448
+name: Tamper Windows Defender Remove-MpPreference
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Remove-MpPreference%' AND (CommandLine ILIKE '%-ControlledFolderAccessProtectedFolders %' OR CommandLine ILIKE '%-AttackSurfaceReductionRules\_Ids %' OR CommandLine ILIKE '%-AttackSurfaceReductionRules\_Actions %' OR CommandLine ILIKE '%-CheckForSignaturesBeforeRunningScan %')

@@ -1,0 +1,12 @@
+id: 03409c93-a7c7-49ba-9a4c-a00badf2a153
+name: Troubleshooting Pack Cmdlet Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Invoke-TroubleshootingPack%' AND ScriptBlockText ILIKE '%C:\\Windows\\Diagnostics\\System\\PCW%' AND ScriptBlockText ILIKE '%-AnswerFile%' AND ScriptBlockText ILIKE '%-Unattended%'

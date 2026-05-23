@@ -1,0 +1,14 @@
+id: 4508a70e-97ef-4300-b62b-ff27992990ea
+name: DotNet CLR DLL Loaded By Scripting Applications
+level: 8
+size: '>0'
+active: true
+author:
+- omkar72, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmstp.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\msxsl.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe') AND (ImageLoaded ILIKE '%\\clr.dll' OR ImageLoaded ILIKE '%\\mscoree.dll' OR ImageLoaded ILIKE '%\\mscorlib.dll')

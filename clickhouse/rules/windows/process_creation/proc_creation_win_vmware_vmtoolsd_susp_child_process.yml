@@ -1,0 +1,13 @@
+id: 5687f942-867b-4578-ade7-1e341c46e99a
+name: VMToolsd Suspicious Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- bohops, Bhabesh Raj
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.t1059
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\vmtoolsd.exe' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wscript.exe') OR (OriginalFileName IN ('Cmd.Exe', 'cscript.exe', 'MSHTA.EXE', 'PowerShell.EXE', 'pwsh.dll', 'REGSVR32.EXE', 'RUNDLL32.EXE', 'wscript.exe')))) AND (NOT ((Image ILIKE '%\\cmd.exe' AND (CommandLine ILIKE '%\\VMware\\VMware Tools\\poweron-vm-default.bat%' OR CommandLine ILIKE '%\\VMware\\VMware Tools\\poweroff-vm-default.bat%' OR CommandLine ILIKE '%\\VMware\\VMware Tools\\resume-vm-default.bat%' OR CommandLine ILIKE '%\\VMware\\VMware Tools\\suspend-vm-default.bat%')) OR (Image ILIKE '%\\cmd.exe' AND CommandLine='') OR (Image ILIKE '%\\cmd.exe' AND isNull(CommandLine))))

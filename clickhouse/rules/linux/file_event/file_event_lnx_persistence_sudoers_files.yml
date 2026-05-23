@@ -1,0 +1,13 @@
+id: ddb26b76-4447-4807-871f-1b035b2bfa5d
+name: Persistence Via Sudoers.d Files
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1548.003
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '/etc/sudoers.d/%' AND (NOT (Image ILIKE '%/usr/bin/dpkg' AND TargetFilename='/etc/sudoers.d/README.dpkg-new'))

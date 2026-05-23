@@ -1,0 +1,15 @@
+id: 04b45a8a-d11d-49e4-9acc-4a1b524407a5
+name: DNS-over-HTTPS Enabled by Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: windows
+tags:
+- attack.persistence
+- attack.stealth
+- attack.defense-impairment
+- attack.t1140
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\Edge\\BuiltInDnsClientEnabled' AND Details='DWORD (0x00000001)') OR (TargetObject ILIKE '%\\SOFTWARE\\Google\\Chrome\\DnsOverHttpsMode' AND Details='secure') OR (TargetObject ILIKE '%\\SOFTWARE\\Policies\\Mozilla\\Firefox\\DNSOverHTTPS\\Enabled' AND Details='DWORD (0x00000001)')

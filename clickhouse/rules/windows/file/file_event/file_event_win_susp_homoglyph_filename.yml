@@ -1,0 +1,13 @@
+id: 4f1707b1-b50b-45b4-b5a2-3978b5a5d0d6
+name: Potential Homoglyph Attack Using Lookalike Characters in Filename
+level: 5
+size: '>0'
+active: true
+author:
+- Micah Babinski, @micahbabinski
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%А%' OR TargetFilename ILIKE '%В%' OR TargetFilename ILIKE '%Е%' OR TargetFilename ILIKE '%К%' OR TargetFilename ILIKE '%М%' OR TargetFilename ILIKE '%Н%' OR TargetFilename ILIKE '%О%' OR TargetFilename ILIKE '%Р%' OR TargetFilename ILIKE '%С%' OR TargetFilename ILIKE '%Т%' OR TargetFilename ILIKE '%Х%' OR TargetFilename ILIKE '%Ѕ%' OR TargetFilename ILIKE '%І%' OR TargetFilename ILIKE '%Ј%' OR TargetFilename ILIKE '%Ү%' OR TargetFilename ILIKE '%Ӏ%' OR TargetFilename ILIKE '%Ԍ%' OR TargetFilename ILIKE '%Ԛ%' OR TargetFilename ILIKE '%Ԝ%' OR TargetFilename ILIKE '%Α%' OR TargetFilename ILIKE '%Β%' OR TargetFilename ILIKE '%Ε%' OR TargetFilename ILIKE '%Ζ%' OR TargetFilename ILIKE '%Η%' OR TargetFilename ILIKE '%Ι%' OR TargetFilename ILIKE '%Κ%' OR TargetFilename ILIKE '%Μ%' OR TargetFilename ILIKE '%Ν%' OR TargetFilename ILIKE '%Ο%' OR TargetFilename ILIKE '%Ρ%' OR TargetFilename ILIKE '%Τ%' OR TargetFilename ILIKE '%Υ%' OR TargetFilename ILIKE '%Χ%') OR (TargetFilename ILIKE '%а%' OR TargetFilename ILIKE '%е%' OR TargetFilename ILIKE '%о%' OR TargetFilename ILIKE '%р%' OR TargetFilename ILIKE '%с%' OR TargetFilename ILIKE '%х%' OR TargetFilename ILIKE '%ѕ%' OR TargetFilename ILIKE '%і%' OR TargetFilename ILIKE '%ӏ%' OR TargetFilename ILIKE '%ј%' OR TargetFilename ILIKE '%һ%' OR TargetFilename ILIKE '%ԁ%' OR TargetFilename ILIKE '%ԛ%' OR TargetFilename ILIKE '%ԝ%' OR TargetFilename ILIKE '%ο%')

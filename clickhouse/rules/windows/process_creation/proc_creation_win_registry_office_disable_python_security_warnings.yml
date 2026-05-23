@@ -1,0 +1,12 @@
+id: 023c654f-8f16-44d9-bb2b-00ff36a62af9
+name: Python Function Execution Security Warning Disabled In Excel
+level: 8
+size: '>0'
+active: true
+author:
+- '@Kostastsale'
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\Microsoft\\Office\\%' AND CommandLine ILIKE '%\\Excel\\Security%' AND CommandLine ILIKE '%PythonFunctionWarnings%') AND CommandLine ILIKE '% 0%'

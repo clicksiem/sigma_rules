@@ -1,0 +1,13 @@
+id: 53330955-dc52-487f-a3a2-da24dcff99b5
+name: New BgInfo.EXE Custom DB Path Registry Configuration
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Winternals\\BGInfo\\Database'

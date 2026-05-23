@@ -1,0 +1,16 @@
+id: eafe6f2b-cfec-4612-aec2-49563c33a087
+name: Google Workspace Government Attack Warning
+level: 5
+size: '>0'
+active: true
+author:
+- Tom Kluter
+group: gcp
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.impact
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE `protoPayload.serviceName`='login.googleapis.com' AND `protoPayload.metadata.event.eventName` ILIKE 'gov\_attack\_warning'

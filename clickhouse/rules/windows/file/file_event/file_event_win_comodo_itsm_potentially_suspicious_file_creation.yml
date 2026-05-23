@@ -1,0 +1,15 @@
+id: 9e4b7d3a-6f2c-4e9a-8d1b-3c5e7a9f2b4d
+name: Potentially Suspicious File Creation by OpenEDR's ITSMService
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+- attack.lateral-movement
+- attack.t1570
+- attack.t1219
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\COMODO\\Endpoint Manager\\ITSMService.exe' AND (TargetFilename ILIKE '%.7z' OR TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.cmd' OR TargetFilename ILIKE '%.com' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.pif' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.rar' OR TargetFilename ILIKE '%.scr' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.zip')

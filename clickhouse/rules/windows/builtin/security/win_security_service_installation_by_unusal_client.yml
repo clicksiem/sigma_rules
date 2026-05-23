@@ -1,0 +1,13 @@
+id: c4e92a97-a9ff-4392-9d2d-7a4c642768ca
+name: Service Installed By Unusual Client - Security
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Rauch (Nextron Systems), Elastic (idea)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ClientProcessId=0 OR ParentProcessId=0)

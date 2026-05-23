@@ -1,0 +1,11 @@
+id: 4f7a6757-ff79-46db-9687-66501a02d9ec
+name: Active Directory Structure Export Via Ldifde.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\ldifde.exe' OR OriginalFileName='ldifde.exe') AND CommandLine ILIKE '%-f%') AND (NOT CommandLine ILIKE '% -i%')

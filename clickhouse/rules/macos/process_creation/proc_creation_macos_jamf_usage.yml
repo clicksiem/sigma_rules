@@ -1,0 +1,11 @@
+id: be2e3a5c-9cc7-4d02-842a-68e9cb26ec49
+name: JAMF MDM Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Jay Pandit
+group: macos
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%/jamf' AND (CommandLine ILIKE '%createAccount%' OR CommandLine ILIKE '%manage%' OR CommandLine ILIKE '%removeFramework%' OR CommandLine ILIKE '%removeMdmProfile%' OR CommandLine ILIKE '%resetPassword%' OR CommandLine ILIKE '%setComputerName%')

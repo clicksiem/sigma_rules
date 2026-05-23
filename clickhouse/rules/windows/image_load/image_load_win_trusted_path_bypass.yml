@@ -1,0 +1,16 @@
+id: 0cbe38c0-270c-41d9-ab79-6e5a9a669290
+name: Trusted Path Bypass via Windows Directory Spoofing
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.007
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%:\\Windows \\System32\\%' OR ImageLoaded ILIKE '%:\\Windows \\SysWOW64\\%'

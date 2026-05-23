@@ -1,0 +1,11 @@
+id: bdeb2cff-af74-4094-8426-724dc937f20a
+name: PowerShell Script Change Permission Via Set-Acl
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE ((OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll')) OR (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe')) AND (CommandLine ILIKE '%Set-Acl %' AND CommandLine ILIKE '%-AclObject %' AND CommandLine ILIKE '%-Path %')

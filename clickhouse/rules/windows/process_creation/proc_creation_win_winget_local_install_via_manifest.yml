@@ -1,0 +1,12 @@
+id: 313d6012-51a0-4d93-8dfc-de8553239e25
+name: Install New Package Via Winget Local Manifest
+level: 5
+size: '>0'
+active: true
+author:
+- Sreeman, Florian Roth (Nextron Systems), frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\winget.exe' OR OriginalFileName='winget.exe') AND (CommandLine ILIKE '%install%' OR CommandLine ILIKE '% add %') AND (CommandLine ILIKE '%-m %' OR CommandLine ILIKE '%--manifest%')

@@ -1,0 +1,15 @@
+id: 056c7317-9a09-4bd4-9067-d051312752ea
+name: Powershell Executed From Headless ConHost Process
+level: 5
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1059.003
+- attack.t1564.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\conhost.exe' OR OriginalFileName='CONHOST.EXE') AND (CommandLine ILIKE '%--headless%' AND CommandLine ILIKE '%powershell%')

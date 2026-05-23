@@ -1,0 +1,12 @@
+id: 74babdd6-a758-4549-9632-26535279e654
+name: Suspicious Executable File Creation
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\$Recycle.Bin.exe' OR TargetFilename ILIKE '%:\\Documents and Settings.exe' OR TargetFilename ILIKE '%:\\MSOCache.exe' OR TargetFilename ILIKE '%:\\PerfLogs.exe' OR TargetFilename ILIKE '%:\\Recovery.exe' OR TargetFilename ILIKE '%.bat.exe' OR TargetFilename ILIKE '%.sys.exe'

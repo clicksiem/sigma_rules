@@ -1,0 +1,16 @@
+id: c265cf08-3f99-46c1-8d59-328247057d57
+name: User Added to Local Administrator Group
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE (EventID=4732 AND (TargetUserName ILIKE 'Administr%' OR TargetSid='S-1-5-32-544')) AND (NOT SubjectUserName ILIKE '%$')

@@ -1,0 +1,15 @@
+id: 8a582fe2-0882-4b89-a82a-da6b2dc32937
+name: Suspicious WmiPrvSE Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Vadim Khrykov (ThreatIntel), Cyb3rEng, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1047
+- attack.t1204.002
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\wbem\\WmiPrvSE.exe' AND ((Image ILIKE '%\\certutil.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\msiexec.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\verclsid.exe' OR Image ILIKE '%\\wscript.exe') OR (Image ILIKE '%\\cmd.exe' AND (CommandLine ILIKE '%cscript%' OR CommandLine ILIKE '%mshta%' OR CommandLine ILIKE '%powershell%' OR CommandLine ILIKE '%pwsh%' OR CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%wscript%'))) AND (NOT (Image ILIKE '%\\WerFault.exe' OR Image ILIKE '%\\WmiPrvSE.exe' OR (Image ILIKE '%\\msiexec.exe' AND CommandLine ILIKE '%/i %')))

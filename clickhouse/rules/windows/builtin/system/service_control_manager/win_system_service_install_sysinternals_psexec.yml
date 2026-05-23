@@ -1,0 +1,13 @@
+id: 42c575ea-e41e-41f1-b248-8093c3e82a28
+name: PsExec Service Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (ServiceName='PSEXESVC' OR ImagePath ILIKE '%\\PSEXESVC.exe')

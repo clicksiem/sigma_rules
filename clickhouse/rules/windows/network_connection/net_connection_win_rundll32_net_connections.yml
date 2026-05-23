@@ -1,0 +1,13 @@
+id: cdc8da7d-c303-42f8-b08c-b4ab47230263
+name: Rundll32 Internet Connection
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' AND Initiated='true') AND (NOT ((isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')) OR (isIPAddressInRange(DestinationIp, '20.0.0.0/8') OR isIPAddressInRange(DestinationIp, '51.103.0.0/16') OR isIPAddressInRange(DestinationIp, '51.104.0.0/16') OR isIPAddressInRange(DestinationIp, '51.105.0.0/16')) OR CommandLine ILIKE '%\\system32\\PcaSvc.dll,PcaPatchSdbTask' OR SourceHostname ILIKE '%.internal.cloudapp.net' OR (ParentImage ILIKE 'C:\\Windows\\System32\\svchost.exe' AND DestinationPort=443)))

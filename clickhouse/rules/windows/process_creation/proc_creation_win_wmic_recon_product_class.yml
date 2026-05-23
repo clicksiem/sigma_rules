@@ -1,0 +1,14 @@
+id: e568650b-5dcd-4658-8f34-ded0b1e13992
+name: Potential Product Class Reconnaissance Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Haag, Florian Roth (Nextron Systems), juju4, oscd.community, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND (CommandLine ILIKE '%AntiVirusProduct%' OR CommandLine ILIKE '%AntiSpywareProduct%' OR CommandLine ILIKE '%FirewallProduct%')

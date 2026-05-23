@@ -1,0 +1,13 @@
+id: 6ddff2e8-ea1a-45d0-8938-93dfc1d67ae7
+name: PUA - Restic Backup Tool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nounou Mbeiri, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+- attack.t1567.002
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%--password-file%' AND CommandLine ILIKE '%init%' AND CommandLine ILIKE '% -r %') OR (CommandLine ILIKE '%--use-fs-snapshot%' AND CommandLine ILIKE '%backup%' AND CommandLine ILIKE '% -r %')) OR ((CommandLine ILIKE '%sftp:%' OR CommandLine ILIKE '%rest:http%' OR CommandLine ILIKE '%s3:s3.%' OR CommandLine ILIKE '%s3.http%' OR CommandLine ILIKE '%azure:%' OR CommandLine ILIKE '% gs:%' OR CommandLine ILIKE '%rclone:%' OR CommandLine ILIKE '%swift:%' OR CommandLine ILIKE '% b2:%') AND (CommandLine ILIKE '% init %' AND CommandLine ILIKE '% -r %'))

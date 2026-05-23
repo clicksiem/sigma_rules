@@ -1,0 +1,12 @@
+id: 01d2e2a1-5f09-44f7-9fc1-24faa7479b6d
+name: Uncommon Svchost Parent Process
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\svchost.exe' AND (NOT ((ParentImage ILIKE '%\\Mrt.exe' OR ParentImage ILIKE '%\\MsMpEng.exe' OR ParentImage ILIKE '%\\ngen.exe' OR ParentImage ILIKE '%\\rpcnet.exe' OR ParentImage ILIKE '%\\services.exe' OR ParentImage ILIKE '%\\TiWorker.exe') OR isNull(ParentImage) OR (ParentImage IN ('-', ''))))

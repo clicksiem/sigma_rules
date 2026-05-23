@@ -1,0 +1,12 @@
+id: 65236ec7-ace0-4f0c-82fd-737b04fd4dcb
+name: EVTX Created In Uncommon Location
+level: 5
+size: '>0'
+active: true
+author:
+- D3F7A5105
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.evtx' AND (NOT (TargetFilename ILIKE 'C:\\Windows\\System32\\winevt\\Logs\\%' OR (TargetFilename ILIKE 'C:\\ProgramData\\Microsoft\\Windows\\Containers\\BaseImages\\%' AND TargetFilename ILIKE '%\\Windows\\System32\\winevt\\Logs\\')))

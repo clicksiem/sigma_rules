@@ -1,0 +1,11 @@
+id: 0ddcff6d-d262-40b0-804b-80eb592de8e3
+name: Azure Service Principal Created
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE `properties.message`='Add service principal'

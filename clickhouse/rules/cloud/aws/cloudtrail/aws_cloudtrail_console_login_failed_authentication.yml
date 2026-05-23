@@ -1,0 +1,12 @@
+id: 6393e346-1977-46ef-8987-ad414a145fad
+name: AWS ConsoleLogin Failed Authentication
+level: 5
+size: '>0'
+active: true
+author:
+- Ivan Saakov, Nasreddine Bencherchali
+group: aws
+tags:
+- attack.credential-access
+- attack.t1110
+rule: SELECT * FROM logs WHERE eventName='ConsoleLogin' AND errorMessage='Failed authentication'

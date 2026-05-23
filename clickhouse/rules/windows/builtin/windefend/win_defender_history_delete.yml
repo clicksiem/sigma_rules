@@ -1,0 +1,11 @@
+id: 2afe6582-e149-11ea-87d0-0242ac130003
+name: Windows Defender Malware Detection History Deletion
+level: 1
+size: '>0'
+active: true
+author:
+- Cian Heasley
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE EventID=1013

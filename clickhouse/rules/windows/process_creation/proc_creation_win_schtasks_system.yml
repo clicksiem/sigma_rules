@@ -1,0 +1,14 @@
+id: 89ca78fd-b37c-4310-b3d3-81a023f83936
+name: Schtasks Creation Or Modification With SYSTEM Privileges
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '% /change %' OR CommandLine ILIKE '% /create %')) AND CommandLine ILIKE '%/ru %' AND (CommandLine ILIKE '%NT AUT%' OR CommandLine ILIKE '% SYSTEM %')) AND (NOT ((Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '%/TN TVInstallRestore%' AND CommandLine ILIKE '%\\TeamViewer\_.exe%')) OR (CommandLine ILIKE '%Subscription Heartbeat%' AND CommandLine ILIKE '%\\HeartbeatConfig.xml%' AND CommandLine ILIKE '%\\Microsoft Shared\\OFFICE%') OR (CommandLine ILIKE '%/Create /F /RU System /SC WEEKLY /TN AviraSystemSpeedupVerify /TR %' OR CommandLine ILIKE '%:\\Program Files (x86)\\Avira\\System Speedup\\setup\\avira\_speedup\_setup.exe%' OR CommandLine ILIKE '%/VERIFY /VERYSILENT /NOSTART /NODOTNET /NORESTART" /RL HIGHEST%')))

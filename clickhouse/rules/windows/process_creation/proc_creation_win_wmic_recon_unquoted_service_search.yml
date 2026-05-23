@@ -1,0 +1,12 @@
+id: 68bcd73b-37ef-49cb-95fc-edc809730be6
+name: Potential Unquoted Service Path Reconnaissance Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE (OriginalFileName='wmic.exe' OR Image ILIKE '%\\WMIC.exe') AND (CommandLine ILIKE '% service get %' AND CommandLine ILIKE '%name,displayname,pathname,startmode%')

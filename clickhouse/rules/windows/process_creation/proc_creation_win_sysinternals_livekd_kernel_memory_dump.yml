@@ -1,0 +1,11 @@
+id: c7746f1c-47d3-43d6-8c45-cd1e54b6b0a2
+name: Kernel Memory Dump Via LiveKD
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\livekd.exe' OR Image ILIKE '%\\livekd64.exe') OR OriginalFileName='livekd.exe') AND (CommandLine ILIKE '% -m%' OR CommandLine ILIKE '% /m%' OR CommandLine ILIKE '% –m%' OR CommandLine ILIKE '% —m%' OR CommandLine ILIKE '% ―m%')

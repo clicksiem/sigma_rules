@@ -1,0 +1,11 @@
+id: 4d9f2ee2-c903-48ab-b9c1-8c0f474913d0
+name: Google Cloud Storage Buckets Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` IN ('storage.buckets.delete', 'storage.buckets.insert', 'storage.buckets.update', 'storage.buckets.patch')

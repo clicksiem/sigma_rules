@@ -1,0 +1,12 @@
+id: a7af2487-9c2f-42e4-9bb9-ff961f0561d5
+name: Audio Capture
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur, Milad Cheraghi
+group: linux
+tags:
+- attack.collection
+- attack.t1123
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND a0='arecord' AND a1='-vv' AND a2='-fdat') OR (type='SYSCALL' AND exe ILIKE '%/ecasound' AND SYSCALL ILIKE 'memfd\_create')

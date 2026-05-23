@@ -1,0 +1,12 @@
+id: c52a914f-3d8b-4b2a-bb75-b3991e75f8ba
+name: Binary Padding - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Igor Fits, oscd.community
+group: linux
+tags:
+- attack.stealth
+- attack.t1027.001
+rule: SELECT * FROM logs WHERE type='EXECVE' AND ((hasToken(full_log, 'truncate') AND hasToken(full_log, '-s')) OR ((hasToken(full_log, 'dd') AND hasToken(full_log, 'if=')) AND (NOT hasToken(full_log, 'of='))))

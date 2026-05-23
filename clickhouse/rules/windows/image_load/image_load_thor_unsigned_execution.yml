@@ -1,0 +1,15 @@
+id: ea5c131b-380d-49f9-aeb3-920694da4d4b
+name: Suspicious Unsigned Thor Scanner Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\thor.exe' OR Image ILIKE '%\\thor64.exe') AND (ImageLoaded ILIKE '%\\thor.exe' OR ImageLoaded ILIKE '%\\thor64.exe')) AND (NOT (Signed='true' AND SignatureStatus='valid' AND Signature='Nextron Systems GmbH'))

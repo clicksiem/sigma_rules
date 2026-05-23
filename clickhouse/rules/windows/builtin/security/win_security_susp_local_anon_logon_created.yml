@@ -1,0 +1,13 @@
+id: 1bbf25b9-8038-4154-a50b-118f2a32be27
+name: Suspicious Windows ANONYMOUS LOGON Local Account Created
+level: 8
+size: '>0'
+active: true
+author:
+- James Pemberton / @4A616D6573
+group: windows
+tags:
+- attack.persistence
+- attack.t1136.001
+- attack.t1136.002
+rule: SELECT * FROM logs WHERE EventID=4720 AND (SamAccountName ILIKE '%ANONYMOUS%' AND SamAccountName ILIKE '%LOGON%')

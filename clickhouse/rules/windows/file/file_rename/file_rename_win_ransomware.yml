@@ -1,0 +1,12 @@
+id: e3f673b3-65d1-4d80-9146-466f8b63fa99
+name: Suspicious Appended Extension
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1486
+rule: SELECT * FROM logs WHERE ((SourceFilename ILIKE '%.doc' OR SourceFilename ILIKE '%.docx' OR SourceFilename ILIKE '%.jpeg' OR SourceFilename ILIKE '%.jpg' OR SourceFilename ILIKE '%.lnk' OR SourceFilename ILIKE '%.pdf' OR SourceFilename ILIKE '%.png' OR SourceFilename ILIKE '%.pst' OR SourceFilename ILIKE '%.rtf' OR SourceFilename ILIKE '%.xls' OR SourceFilename ILIKE '%.xlsx') AND (TargetFilename ILIKE '%.doc.%' OR TargetFilename ILIKE '%.docx.%' OR TargetFilename ILIKE '%.jpeg.%' OR TargetFilename ILIKE '%.jpg.%' OR TargetFilename ILIKE '%.lnk.%' OR TargetFilename ILIKE '%.pdf.%' OR TargetFilename ILIKE '%.png.%' OR TargetFilename ILIKE '%.pst.%' OR TargetFilename ILIKE '%.rtf.%' OR TargetFilename ILIKE '%.xls.%' OR TargetFilename ILIKE '%.xlsx.%')) AND (NOT (TargetFilename ILIKE '%.backup' OR TargetFilename ILIKE '%.bak' OR TargetFilename ILIKE '%.old' OR TargetFilename ILIKE '%.orig' OR TargetFilename ILIKE '%.temp' OR TargetFilename ILIKE '%.tmp')) AND (NOT (TargetFilename ILIKE '%:\\ProgramData\\Anaconda3\\%' AND TargetFilename ILIKE '%.c~'))

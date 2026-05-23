@@ -1,0 +1,13 @@
+id: 02ee49e2-e294-4d0f-9278-f5b3212fc588
+name: New RUN Key Pointing to Suspicious Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis, Sander Wiebing, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Run%' OR TargetObject ILIKE '%\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run%' OR TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run%') AND ((Details ILIKE '%:\\Perflogs%' OR Details ILIKE '%:\\ProgramData''%' OR Details ILIKE '%:\\Windows\\Temp%' OR Details ILIKE '%:\\Temp%' OR Details ILIKE '%\\AppData\\Local\\Temp%' OR Details ILIKE '%\\AppData\\Roaming%' OR Details ILIKE '%:\\$Recycle.bin%' OR Details ILIKE '%:\\Users\\Default%' OR Details ILIKE '%:\\Users\\public%' OR Details ILIKE '%\%temp\%%' OR Details ILIKE '%\%tmp\%%' OR Details ILIKE '%\%Public\%%' OR Details ILIKE '%\%AppData\%%') OR (Details ILIKE '%:\\Users\\%' AND (Details ILIKE '%\\Favorites%' OR Details ILIKE '%\\Favourites%' OR Details ILIKE '%\\Contacts%' OR Details ILIKE '%\\Music%' OR Details ILIKE '%\\Pictures%' OR Details ILIKE '%\\Documents%' OR Details ILIKE '%\\Photos%'))) AND (NOT (TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\RunOnce\\%' AND Image ILIKE 'C:\\Windows\\SoftwareDistribution\\Download\\%' AND (Details ILIKE '%rundll32.exe %' AND Details ILIKE '%C:\\WINDOWS\\system32\\advpack.dll,DelNodeRunDLL32%') AND (Details ILIKE '%\\AppData\\Local\\Temp\\%' OR Details ILIKE '%C:\\Windows\\Temp\\%'))) AND (NOT ((Image ILIKE '%C:\\Program Files\\Spotify\\Spotify.exe' OR Image ILIKE '%C:\\Program Files (x86)\\Spotify\\Spotify.exe' OR Image ILIKE '%\\AppData\\Roaming\\Spotify\\Spotify.exe') AND TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\Spotify' AND Details ILIKE '%Spotify.exe --autostart --minimized'))

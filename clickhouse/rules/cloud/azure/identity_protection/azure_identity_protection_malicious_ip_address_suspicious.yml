@@ -1,0 +1,12 @@
+id: 36440e1c-5c22-467a-889b-593e66498472
+name: Malicious IP Address Sign-In Suspicious
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.t1090
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE riskEventType='suspiciousIPAddress'

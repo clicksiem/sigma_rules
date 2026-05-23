@@ -1,0 +1,12 @@
+id: 59ec40bb-322e-40ab-808d-84fa690d7e56
+name: Nginx Core Dump
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.impact
+- attack.t1499.004
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'exited on signal 6 (core dumped)')

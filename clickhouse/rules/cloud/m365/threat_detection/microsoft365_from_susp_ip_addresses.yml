@@ -1,0 +1,12 @@
+id: a3501e8e-af9e-43c6-8cd6-9360bdaae498
+name: Activity from Suspicious IP Addresses
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: m365
+tags:
+- attack.command-and-control
+- attack.t1573
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Activity from suspicious IP addresses' AND status='success'

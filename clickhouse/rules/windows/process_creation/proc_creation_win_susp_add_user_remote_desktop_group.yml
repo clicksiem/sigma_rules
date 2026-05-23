@@ -1,0 +1,16 @@
+id: ffa28e60-bdb1-46e0-9f82-05f7a61cc06e
+name: User Added to Remote Desktop Users Group
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.lateral-movement
+- attack.t1133
+- attack.t1136.001
+- attack.t1021.001
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%localgroup %' AND CommandLine ILIKE '% /add%') OR (CommandLine ILIKE '%Add-LocalGroupMember %' AND CommandLine ILIKE '% -Group %')) AND (CommandLine ILIKE '%Remote Desktop Users%' OR CommandLine ILIKE '%Utilisateurs du Bureau à distance%' OR CommandLine ILIKE '%Usuarios de escritorio remoto%')

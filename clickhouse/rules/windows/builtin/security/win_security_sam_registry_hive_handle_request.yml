@@ -1,0 +1,14 @@
+id: f8748f2c-89dc-4d95-afb0-5a2dfdbad332
+name: SAM Registry Hive Handle Request
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.discovery
+- attack.t1012
+- attack.credential-access
+- attack.t1552.002
+rule: SELECT * FROM logs WHERE EventID=4656 AND ObjectType='Key' AND ObjectName ILIKE '%\\SAM'

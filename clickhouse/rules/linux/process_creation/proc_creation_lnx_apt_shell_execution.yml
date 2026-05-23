@@ -1,0 +1,12 @@
+id: bb382fd5-b454-47ea-a264-1828e4c766d6
+name: Shell Invocation via Apt - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/apt' OR Image ILIKE '%/apt-get') AND CommandLine ILIKE '%APT::Update::Pre-Invoke::=%'

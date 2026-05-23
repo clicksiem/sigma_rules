@@ -1,0 +1,12 @@
+id: b9e8c7d6-a5f4-4e3d-8b1a-9f0c8d7e6a5b
+name: Windows Defender Context Menu Removed
+level: 8
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\reg.exe') OR (OriginalFileName IN ('powershell\_ise.EXE', 'PowerShell.EXE', 'pwsh.dll', 'reg.exe'))) AND (CommandLine ILIKE '%del%' OR CommandLine ILIKE '%Remove-Item%' OR CommandLine ILIKE '%ri %') AND CommandLine ILIKE '%\\shellex\\ContextMenuHandlers\\EPP%'

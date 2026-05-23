@@ -1,0 +1,17 @@
+id: f88e112a-21aa-44bd-9b01-6ee2a2bbbed1
+name: Failed Logon From Public IP
+level: 5
+size: '>0'
+active: true
+author:
+- NVISO
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.persistence
+- attack.stealth
+- attack.t1078
+- attack.t1190
+- attack.t1133
+rule: SELECT * FROM logs WHERE EventID=4625 AND (NOT (IpAddress ILIKE '%-%' OR (isIPAddressInRange(IpAddress, '::1/128') OR isIPAddressInRange(IpAddress, '10.0.0.0/8') OR isIPAddressInRange(IpAddress, '127.0.0.0/8') OR isIPAddressInRange(IpAddress, '172.16.0.0/12') OR isIPAddressInRange(IpAddress, '192.168.0.0/16') OR isIPAddressInRange(IpAddress, '169.254.0.0/16') OR isIPAddressInRange(IpAddress, 'fc00::/7') OR isIPAddressInRange(IpAddress, 'fe80::/10'))))

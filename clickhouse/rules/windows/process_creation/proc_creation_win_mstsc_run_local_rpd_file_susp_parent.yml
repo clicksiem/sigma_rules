@@ -1,0 +1,11 @@
+id: ff3b6b39-e765-42f9-bb2c-ea6761e0e0f6
+name: Mstsc.EXE Execution From Uncommon Parent
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\brave.exe' OR ParentImage ILIKE '%\\CCleanerBrowser.exe' OR ParentImage ILIKE '%\\chrome.exe' OR ParentImage ILIKE '%\\chromium.exe' OR ParentImage ILIKE '%\\firefox.exe' OR ParentImage ILIKE '%\\iexplore.exe' OR ParentImage ILIKE '%\\microsoftedge.exe' OR ParentImage ILIKE '%\\msedge.exe' OR ParentImage ILIKE '%\\opera.exe' OR ParentImage ILIKE '%\\vivaldi.exe' OR ParentImage ILIKE '%\\whale.exe' OR ParentImage ILIKE '%\\outlook.exe') AND (Image ILIKE '%\\mstsc.exe' OR OriginalFileName='mstsc.exe')

@@ -1,0 +1,12 @@
+id: 8b7273a4-ba5d-4d8a-b04f-11f2900d043a
+name: Windows Hypervisor Enforced Code Integrity Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Anish Bogati
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Control\\DeviceGuard\\HypervisorEnforcedCodeIntegrity' OR TargetObject ILIKE '%\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity\\Enabled' OR TargetObject ILIKE '%\\Microsoft\\Windows\\DeviceGuard\\HypervisorEnforcedCodeIntegrity') AND Details='DWORD (0x00000000)'

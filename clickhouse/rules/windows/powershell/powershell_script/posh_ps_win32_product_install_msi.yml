@@ -1,0 +1,12 @@
+id: 91109523-17f0-4248-a800-f81d9e7c081d
+name: PowerShell WMI Win32_Product Install MSI
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.007
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Invoke-CimMethod %' AND ScriptBlockText ILIKE '%-ClassName %' AND ScriptBlockText ILIKE '%Win32\_Product %' AND ScriptBlockText ILIKE '%-MethodName %' AND ScriptBlockText ILIKE '%.msi%'

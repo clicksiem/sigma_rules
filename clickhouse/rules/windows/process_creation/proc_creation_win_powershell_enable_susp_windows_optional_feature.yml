@@ -1,0 +1,11 @@
+id: c740d4cf-a1e9-41de-bb16-8a46a4f57918
+name: Potential Suspicious Windows Feature Enabled - ProcCreation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Enable-WindowsOptionalFeature%' AND CommandLine ILIKE '%-Online%' AND CommandLine ILIKE '%-FeatureName%') AND (CommandLine ILIKE '%TelnetServer%' OR CommandLine ILIKE '%Internet-Explorer-Optional-amd64%' OR CommandLine ILIKE '%TFTP%' OR CommandLine ILIKE '%SMB1Protocol%' OR CommandLine ILIKE '%Client-ProjFS%' OR CommandLine ILIKE '%Microsoft-Windows-Subsystem-Linux%')

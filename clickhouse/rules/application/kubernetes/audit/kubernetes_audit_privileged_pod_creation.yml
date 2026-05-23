@@ -1,0 +1,12 @@
+id: c5cd1b20-36bb-488d-8c05-486be3d0cb97
+name: Privileged Container Deployed
+level: 3
+size: '>0'
+active: true
+author:
+- Leo Tsaousis (@laripping)
+group: kubernetes
+tags:
+- attack.t1611
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE verb='create' AND `objectRef.resource`='pods' AND capabilities ILIKE '%'

@@ -1,0 +1,15 @@
+id: 77caf516-34e5-4df9-b4db-20744fea0a60
+name: AWS Successful Console Login Without MFA
+level: 5
+size: '>0'
+active: true
+author:
+- Thuya@Hacktilizer, Ivan Saakov
+group: aws
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE eventName='ConsoleLogin' AND `additionalEventData.MFAUsed`='NO' AND `responseElements.ConsoleLogin`='Success'

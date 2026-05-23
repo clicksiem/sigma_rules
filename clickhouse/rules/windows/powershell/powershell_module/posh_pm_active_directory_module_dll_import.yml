@@ -1,0 +1,13 @@
+id: 74176142-4684-4d8a-8b0a-713257e7df8e
+name: Potential Active Directory Enumeration Using AD Module - PsModule
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.reconnaissance
+- attack.discovery
+- attack.impact
+rule: SELECT * FROM logs WHERE (Payload ILIKE '%Import-Module %' OR Payload ILIKE '%ipmo %') AND Payload ILIKE '%Microsoft.ActiveDirectory.Management.dll%'

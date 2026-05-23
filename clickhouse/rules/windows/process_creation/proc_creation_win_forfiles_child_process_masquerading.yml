@@ -1,0 +1,12 @@
+id: f53714ec-5077-420e-ad20-907ff9bb2958
+name: Forfiles.EXE Child Process Masquerading
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Anish Bogati
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE ((ParentCommandLine ILIKE '%.exe' OR ParentCommandLine ILIKE '%.exe"') AND Image ILIKE '%\\cmd.exe' AND CommandLine ILIKE '/c echo "%') AND (NOT ((ParentImage ILIKE '%:\\Windows\\System32\\%' OR ParentImage ILIKE '%:\\Windows\\SysWOW64\\%') AND ParentImage ILIKE '%\\forfiles.exe' AND (Image ILIKE '%:\\Windows\\System32\\%' OR Image ILIKE '%:\\Windows\\SysWOW64\\%') AND Image ILIKE '%\\cmd.exe'))

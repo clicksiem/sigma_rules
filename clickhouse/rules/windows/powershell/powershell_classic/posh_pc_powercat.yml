@@ -1,0 +1,14 @@
+id: c5b20776-639a-49bf-94c7-84f912b91c15
+name: Netcat The Powershell Version
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.execution
+- attack.t1095
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Data ILIKE '%powercat %' OR Data ILIKE '%powercat.ps1%'

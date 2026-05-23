@@ -1,0 +1,16 @@
+id: e0cfaecd-602d-41af-988d-f6ccebb2af26
+name: Suspicious Installer Package Child Process
+level: 5
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.t1059
+- attack.t1059.007
+- attack.t1071
+- attack.t1071.001
+- attack.execution
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%/package\_script\_service' OR ParentImage ILIKE '%/installer') AND (Image ILIKE '%/sh' OR Image ILIKE '%/bash' OR Image ILIKE '%/dash' OR Image ILIKE '%/python' OR Image ILIKE '%/ruby' OR Image ILIKE '%/perl' OR Image ILIKE '%/php' OR Image ILIKE '%/javascript' OR Image ILIKE '%/osascript' OR Image ILIKE '%/tclsh' OR Image ILIKE '%/curl' OR Image ILIKE '%/wget') AND (CommandLine ILIKE '%preinstall%' OR CommandLine ILIKE '%postinstall%')

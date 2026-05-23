@@ -1,0 +1,18 @@
+id: 671ffc77-50a7-464f-9e3d-9ea2b493b26b
+name: Cisco Modify Configuration
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.impact
+- attack.t1490
+- attack.t1505
+- attack.t1565.002
+- attack.t1053
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'ip http server') OR hasToken(full_log, 'ip https server') OR hasToken(full_log, 'kron policy-list') OR hasToken(full_log, 'kron occurrence') OR hasToken(full_log, 'policy-list') OR hasToken(full_log, 'access-list') OR hasToken(full_log, 'ip access-group') OR hasToken(full_log, 'archive maximum') OR hasToken(full_log, 'ntp server')

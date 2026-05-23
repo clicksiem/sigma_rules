@@ -1,0 +1,12 @@
+id: 5f03babb-12db-4eec-8c82-7b4cb5580868
+name: Response File Execution Via Odbcconf.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Kirill Kiryanov, Beyu Denis, Daniil Yugoslavskiy, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.008
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\odbcconf.exe' OR OriginalFileName='odbcconf.exe') AND (CommandLine ILIKE '% -f %' OR CommandLine ILIKE '% /f %' OR CommandLine ILIKE '% –f %' OR CommandLine ILIKE '% —f %' OR CommandLine ILIKE '% ―f %') AND CommandLine ILIKE '%.rsp%'

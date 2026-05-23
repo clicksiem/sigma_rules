@@ -1,0 +1,12 @@
+id: 8e5c03fa-b7f0-11ea-b242-07e0576828d9
+name: Denied Access To Remote Desktop
+level: 5
+size: '>0'
+active: true
+author:
+- Pushkarev Dmitry
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.001
+rule: SELECT * FROM logs WHERE EventID=4825

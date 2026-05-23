@@ -1,0 +1,12 @@
+id: a1b2c3d4-e5f6-a7b8-c9d0-e1f2a3b4c5d6
+name: Disabling Windows Defender WMI Autologger Session via Reg.exe
+level: 8
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '%\\Control\\WMI\\Autologger\\DefenderApiLogger\\Start%' OR CommandLine ILIKE '%\\Control\\WMI\\Autologger\\DefenderAuditLogger\\Start%') AND (CommandLine ILIKE '%add%' AND CommandLine ILIKE '%0%')) AND (NOT CommandLine ILIKE '%0x00000001%')

@@ -1,0 +1,14 @@
+id: bf361876-6620-407a-812f-bfe11e51e924
+name: Compressed File Extraction Via Tar.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- AdmU3
+group: windows
+tags:
+- attack.collection
+- attack.exfiltration
+- attack.t1560
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\tar.exe' OR OriginalFileName='bsdtar') AND CommandLine ILIKE '%-x%'

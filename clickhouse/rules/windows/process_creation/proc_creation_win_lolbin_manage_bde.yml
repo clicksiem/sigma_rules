@@ -1,0 +1,12 @@
+id: c363385c-f75d-4753-a108-c1a8e28bdbda
+name: Potential Manage-bde.wsf Abuse To Proxy Execution
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1216
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\wscript.exe' OR OriginalFileName='wscript.exe') AND CommandLine ILIKE '%manage-bde.wsf%') OR (((ParentImage ILIKE '%\\cscript.exe' OR ParentImage ILIKE '%\\wscript.exe') AND ParentCommandLine ILIKE '%manage-bde.wsf%') AND (NOT Image ILIKE '%\\cmd.exe'))

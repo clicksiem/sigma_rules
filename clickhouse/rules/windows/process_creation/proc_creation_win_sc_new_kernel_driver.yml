@@ -1,0 +1,13 @@
+id: 431a1fdb-4799-4f3b-91c3-a683b003fc49
+name: New Kernel Driver Via SC.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' AND (CommandLine ILIKE '%create%' OR CommandLine ILIKE '%config%') AND (CommandLine ILIKE '%binPath%' AND CommandLine ILIKE '%type%' AND CommandLine ILIKE '%kernel%')) AND (NOT ((CommandLine ILIKE '%create netprotection\_network\_filter%' AND CommandLine ILIKE '%type= kernel start= %' AND CommandLine ILIKE '%binPath= System32\\drivers\\netprotection\_network\_filter%' AND CommandLine ILIKE '%DisplayName= netprotection\_network\_filter%' AND CommandLine ILIKE '%group= PNP\_TDI tag= yes%') OR (CommandLine ILIKE '%create avelam binpath=C:\\Windows\\system32\\drivers\\avelam.sys%' AND CommandLine ILIKE '%type=kernel start=boot error=critical group=Early-Launch%')))

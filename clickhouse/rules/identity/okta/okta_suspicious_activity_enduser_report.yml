@@ -1,0 +1,12 @@
+id: 07e97cc6-aed1-43ae-9081-b3470d2367f1
+name: Okta Suspicious Activity Reported by End-user
+level: 8
+size: '>0'
+active: true
+author:
+- kelnage
+group: okta
+tags:
+- attack.resource-development
+- attack.t1586.003
+rule: SELECT * FROM logs WHERE eventType ILIKE 'user.account.report\_suspicious\_activity\_by\_enduser'

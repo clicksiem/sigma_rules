@@ -1,0 +1,12 @@
+id: c3e76af5-4ce0-4a14-9c9a-25ceb8fda182
+name: WerFault LSASS Process Memory Dump
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE Image ILIKE 'C:\\WINDOWS\\system32\\WerFault.exe' AND (TargetFilename ILIKE '%\\lsass%' OR TargetFilename ILIKE '%lsass.exe%')

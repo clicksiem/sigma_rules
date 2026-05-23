@@ -1,0 +1,11 @@
+id: e6fe26ee-d063-4f5b-b007-39e90aaf50e3
+name: Potential Persistence Via AutodialDLL
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Services\\WinSock2\\Parameters\\AutodialDLL%'

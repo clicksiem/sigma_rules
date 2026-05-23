@@ -1,0 +1,12 @@
+id: 6d8a7cf1-8085-423b-b87d-7e880faabbdf
+name: File Download Via Nscurl - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Daniel Cortez
+group: macos
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%/nscurl' AND (CommandLine ILIKE '%--download %' OR CommandLine ILIKE '%--download-directory %' OR CommandLine ILIKE '%--output %' OR CommandLine ILIKE '%-dir %' OR CommandLine ILIKE '%-dl %' OR CommandLine ILIKE '%-ld%' OR CommandLine ILIKE '%-o %')

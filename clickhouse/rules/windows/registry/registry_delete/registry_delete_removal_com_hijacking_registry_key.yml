@@ -1,0 +1,13 @@
+id: 96f697b0-b499-4e5d-9908-a67bec11cdb6
+name: Removal of Potential COM Hijacking Registry Keys
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\shell\\open\\command' AND (NOT (Image ILIKE '%C:\\Windows\\explorer.exe' OR Image ILIKE 'C:\\Windows\\system32\\svchost.exe' OR (Image IN ('C:\\Windows\\System32\\msiexec.exe', 'C:\\Windows\\SysWOW64\\msiexec.exe')) OR (Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%') OR Image ILIKE 'C:\\Windows\\System32\\OpenWith.exe')) AND (NOT ((Image ILIKE '%\\Dropbox.exe' AND TargetObject ILIKE '%\\Dropbox.%') OR (Image ILIKE '%\\AppData\\Local\\Temp\\Wireshark\_uninstaller.exe' AND TargetObject ILIKE '%\\wireshark-capture-file\\%') OR (Image ILIKE '%peazip%' AND TargetObject ILIKE '%\\PeaZip.%') OR (Image ILIKE '%\\Everything.exe' AND TargetObject ILIKE '%\\Everything.%') OR Image ILIKE 'C:\\Windows\\Installer\\MSI%' OR (Image ILIKE 'C:\\Program Files (x86)\\Java\\%' AND Image ILIKE '%\\installer.exe' AND TargetObject ILIKE '%\\Classes\\WOW6432Node\\CLSID\\{4299124F-F2C3-41b4-9C73-9236B2AD0E8F}%') OR Image ILIKE '%\\Microsoft\\EdgeUpdate\\Install%' OR ((Image IN ('C:\\Program Files (x86)\\Avira\\Antivirus\\', 'C:\\Program Files\\Avira\\Antivirus\\')) AND (TargetObject ILIKE '%\\CLSID\\{305CA226-D286-468e-B848-2B2E8E697B74}\\Shell\\Open\\Command' OR TargetObject ILIKE '%\\AntiVir.Keyfile\\shell\\open\\command')) OR ((Image ILIKE '%AppData\\Local\\Temp%' AND Image ILIKE '%\\setup.exe%') OR (Image ILIKE '%\\Temp\\is-%' AND Image ILIKE '%\\target.tmp%')) OR Image ILIKE '%\\ninite.exe' OR (Image ILIKE '%\\reg.exe' AND TargetObject ILIKE '%\\Discord\\shell\\open\\command') OR (Image ILIKE '%\\Spotify.exe' AND TargetObject ILIKE '%\\Spotify\\shell\\open\\command') OR (Image ILIKE '%C:\\eclipse\\eclipse.exe' AND TargetObject ILIKE '%\_Classes\\eclipse+%') OR (Image ILIKE '%\\Temp%' AND Image ILIKE '%\\TeamViewer%')))

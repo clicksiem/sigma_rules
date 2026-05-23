@@ -1,0 +1,12 @@
+id: 3f3f3506-1895-401b-9cc3-e86b16e630d0
+name: Potential Direct Syscall of NtOpenProcess
+level: 5
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems), Tim Shelton (FP)
+group: windows
+tags:
+- attack.execution
+- attack.t1106
+rule: SELECT * FROM logs WHERE CallTrace ILIKE 'UNKNOWN%' AND (NOT ((TargetImage ILIKE '%vcredist\_x64.exe' AND SourceImage ILIKE '%vcredist\_x64.exe') OR ((SourceImage ILIKE '%:\\Program Files (x86)\\%' OR SourceImage ILIKE '%:\\Program Files\\%' OR SourceImage ILIKE '%:\\Windows\\System32\\%' OR SourceImage ILIKE '%:\\Windows\\SysWOW64\\%' OR SourceImage ILIKE '%:\\Windows\\WinSxS\\%') AND (TargetImage ILIKE '%:\\Program Files (x86)\\%' OR TargetImage ILIKE '%:\\Program Files\\%' OR TargetImage ILIKE '%:\\Windows\\System32\\%' OR TargetImage ILIKE '%:\\Windows\\SysWOW64\\%' OR TargetImage ILIKE '%:\\Windows\\WinSxS\\%')) OR Provider_Name='Microsoft-Windows-Kernel-Audit-API-Calls')) AND (NOT ((TargetImage ILIKE '%:\\Windows\\system32\\systeminfo.exe' AND SourceImage ILIKE '%setup64.exe') OR (SourceImage ILIKE '%:\\Windows\\Explorer.EXE' AND TargetImage ILIKE '%:\\Program Files\\Cylance\\Desktop\\CylanceUI.exe') OR (SourceImage ILIKE '%AmazonSSMAgentSetup.exe' AND TargetImage ILIKE '%AmazonSSMAgentSetup.exe') OR (SourceImage ILIKE '%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe' AND TargetImage ILIKE '%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe') OR (TargetImage ILIKE '%\\AppData\\Local\\Microsoft\\Teams\\current\\Teams.exe' AND SourceImage ILIKE '%\\AppData\\Local\\Microsoft\\Teams\\current\\Teams.exe') OR (TargetImage ILIKE '%\\AppData\\Local\\Discord\\%' AND TargetImage ILIKE '%\\Discord.exe') OR (SourceImage ILIKE '%\\AppData\\Local\\yammerdesktop\\app-%' AND SourceImage ILIKE '%\\Yammer.exe' AND TargetImage ILIKE '%\\AppData\\Local\\yammerdesktop\\app-%' AND TargetImage ILIKE '%\\Yammer.exe' AND GrantedAccess='0x1000') OR TargetImage ILIKE '%\\Evernote\\Evernote.exe' OR (SourceImage ILIKE '%:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\%' AND SourceImage ILIKE '%\\AcroCEF.exe' AND TargetImage ILIKE '%:\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\%' AND TargetImage ILIKE '%\\AcroCEF.exe')))

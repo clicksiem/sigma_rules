@@ -1,0 +1,13 @@
+id: df68f791-ad95-447f-a271-640a0dab9cf8
+name: DNS Query Request To OneLaunch Update Service
+level: 3
+size: '>0'
+active: true
+author:
+- Josh Nickels
+group: windows
+tags:
+- attack.credential-access
+- attack.collection
+- attack.t1056
+rule: SELECT * FROM logs WHERE QueryName='update.onelaunch.com' AND Image ILIKE '%\\OneLaunch.exe'

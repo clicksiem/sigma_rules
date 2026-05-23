@@ -1,0 +1,14 @@
+id: 1279262f-1464-422f-ac0d-5b545320c526
+name: AWS KMS Imported Key Material Usage
+level: 8
+size: '>0'
+active: true
+author:
+- toopricey
+group: aws
+tags:
+- attack.impact
+- attack.t1486
+- attack.resource-development
+- attack.t1608.003
+rule: SELECT * FROM logs WHERE eventSource='kms.amazonaws.com' AND (eventName IN ('ImportKeyMaterial', 'DeleteImportedKeyMaterial'))

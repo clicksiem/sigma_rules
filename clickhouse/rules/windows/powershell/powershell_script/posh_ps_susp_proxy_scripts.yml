@@ -1,0 +1,12 @@
+id: bd33d2aa-497e-4651-9893-5c5364646595
+name: Suspicious TCP Tunnel Via PowerShell Script
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1090
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%[System.Net.HttpWebRequest]%' AND ScriptBlockText ILIKE '%System.Net.Sockets.TcpListener%' AND ScriptBlockText ILIKE '%AcceptTcpClient%'

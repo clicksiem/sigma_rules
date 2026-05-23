@@ -1,0 +1,12 @@
+id: 25ffa65d-76d8-4da5-a832-3f2b0136e133
+name: PUA - Sysinternal Tool Execution - Registry
+level: 3
+size: '>0'
+active: true
+author:
+- Markus Neis
+group: windows
+tags:
+- attack.resource-development
+- attack.t1588.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\EulaAccepted'

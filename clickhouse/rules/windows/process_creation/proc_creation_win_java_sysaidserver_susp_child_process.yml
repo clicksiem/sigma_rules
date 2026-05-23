@@ -1,0 +1,12 @@
+id: 60bfeac3-0d35-4302-8efb-1dd16f715bc6
+name: Suspicious SysAidServer Child
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1210
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\java.exe' OR ParentImage ILIKE '%\\javaw.exe') AND ParentCommandLine ILIKE '%SysAidServer%'

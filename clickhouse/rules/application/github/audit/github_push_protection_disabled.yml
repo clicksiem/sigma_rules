@@ -1,0 +1,12 @@
+id: ccd55945-badd-4bae-936b-823a735d37dd
+name: Github Push Protection Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: github
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE action IN ('business\_secret\_scanning\_custom\_pattern\_push\_protection.disabled', 'business\_secret\_scanning\_push\_protection.disable', 'business\_secret\_scanning\_push\_protection.disabled\_for\_new\_repos', 'org.secret\_scanning\_custom\_pattern\_push\_protection\_disabled', 'org.secret\_scanning\_push\_protection\_disable', 'org.secret\_scanning\_push\_protection\_new\_repos\_disable', 'repository\_secret\_scanning\_custom\_pattern\_push\_protection.disabled')

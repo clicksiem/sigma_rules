@@ -1,0 +1,20 @@
+id: f8ed0e8f-7438-4b79-85eb-f358ef2fbebd
+name: Github Self Hosted Runner Changes Detected
+level: 3
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: github
+tags:
+- attack.impact
+- attack.discovery
+- attack.collection
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+- attack.stealth
+- attack.t1526
+- attack.t1213.003
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE action IN ('org.remove\_self\_hosted\_runner', 'org.runner\_group\_created', 'org.runner\_group\_removed', 'org.runner\_group\_runner\_removed', 'org.runner\_group\_runners\_added', 'org.runner\_group\_runners\_updated', 'org.runner\_group\_updated', 'repo.register\_self\_hosted\_runner', 'repo.remove\_self\_hosted\_runner')

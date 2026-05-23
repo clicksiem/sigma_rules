@@ -1,0 +1,12 @@
+id: 867356ee-9352-41c9-a8f2-1be690d78216
+name: Potentially Suspicious Regsvr32 HTTP/FTP Pattern
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regsvr32.exe' OR OriginalFileName='REGSVR32.EXE') AND (CommandLine ILIKE '% /i%' OR CommandLine ILIKE '% -i%') AND (CommandLine ILIKE '%ftp%' OR CommandLine ILIKE '%http%')

@@ -1,0 +1,11 @@
+id: 9058ca8b-f397-4fd1-a9fa-2b7aad4d6309
+name: Okta Admin Functions Access Through Proxy
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal @faisalusuf
+group: okta
+tags:
+- attack.credential-access
+rule: SELECT * FROM logs WHERE `debugContext.debugData.requestUri` ILIKE '%admin%' AND `securityContext.isProxy`='true'

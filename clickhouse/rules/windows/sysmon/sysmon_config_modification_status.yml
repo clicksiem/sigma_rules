@@ -1,0 +1,12 @@
+id: 1f2b5353-573f-4880-8e33-7d04dcf97744
+name: Sysmon Configuration Modification
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564
+rule: SELECT * FROM logs WHERE (State='Stopped' OR hasToken(full_log, 'Sysmon config state changed')) AND (NOT State='Started')

@@ -1,0 +1,11 @@
+id: cb9cc1d1-e84e-4bdc-b7ad-c31b1b7908ec
+name: Insecure Transfer Via Curl.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\curl.exe' OR OriginalFileName='curl.exe') AND (match(CommandLine, '\s-k\s') OR CommandLine ILIKE '%--insecure%')

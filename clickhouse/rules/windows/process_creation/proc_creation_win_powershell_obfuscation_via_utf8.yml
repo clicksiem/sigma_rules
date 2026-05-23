@@ -1,0 +1,14 @@
+id: e312efd0-35a1-407f-8439-b8d434b438a6
+name: Potential PowerShell Obfuscation Via WCHAR/CHAR
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1027
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%[char]0x%' OR CommandLine ILIKE '%(WCHAR)0x%'

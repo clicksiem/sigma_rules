@@ -1,0 +1,16 @@
+id: bed2a484-9348-4143-8a8a-b801c979301c
+name: Webshell Detection With Command Line Keywords
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro, Anton Kutepov, oscd.community, Chad Hudson, Matt Anderson
+group: windows
+tags:
+- attack.persistence
+- attack.discovery
+- attack.t1505.003
+- attack.t1018
+- attack.t1033
+- attack.t1087
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\w3wp.exe' OR ParentImage ILIKE '%\\php-cgi.exe' OR ParentImage ILIKE '%\\nginx.exe' OR ParentImage ILIKE '%\\httpd.exe' OR ParentImage ILIKE '%\\caddy.exe' OR ParentImage ILIKE '%\\ws\_tomcatservice.exe') OR ((ParentImage ILIKE '%\\java.exe' OR ParentImage ILIKE '%\\javaw.exe') AND (ParentImage ILIKE '%-tomcat-%' OR ParentImage ILIKE '%\\tomcat%')) OR ((ParentImage ILIKE '%\\java.exe' OR ParentImage ILIKE '%\\javaw.exe') AND (CommandLine ILIKE '%catalina.jar%' OR CommandLine ILIKE '%CATALINA\_HOME%'))) AND (((OriginalFileName IN ('net.exe', 'net1.exe')) AND (CommandLine ILIKE '% user %' OR CommandLine ILIKE '% use %' OR CommandLine ILIKE '% group %')) OR (OriginalFileName='ping.exe' AND CommandLine ILIKE '% -n %') OR (CommandLine ILIKE '%&cd&echo%' OR CommandLine ILIKE '%cd /d %') OR (OriginalFileName='wmic.exe' AND CommandLine ILIKE '% /node:%') OR ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '% -enc %' OR CommandLine ILIKE '% -EncodedCommand %' OR CommandLine ILIKE '% -w hidden %' OR CommandLine ILIKE '% -windowstyle hidden%' OR CommandLine ILIKE '%.WebClient).Download%')) OR ((Image ILIKE '%\\dsquery.exe' OR Image ILIKE '%\\find.exe' OR Image ILIKE '%\\findstr.exe' OR Image ILIKE '%\\ipconfig.exe' OR Image ILIKE '%\\netstat.exe' OR Image ILIKE '%\\nslookup.exe' OR Image ILIKE '%\\pathping.exe' OR Image ILIKE '%\\quser.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\systeminfo.exe' OR Image ILIKE '%\\tasklist.exe' OR Image ILIKE '%\\tracert.exe' OR Image ILIKE '%\\ver.exe' OR Image ILIKE '%\\wevtutil.exe' OR Image ILIKE '%\\whoami.exe') OR (OriginalFileName IN ('dsquery.exe', 'find.exe', 'findstr.exe', 'ipconfig.exe', 'netstat.exe', 'nslookup.exe', 'pathping.exe', 'quser.exe', 'schtasks.exe', 'sysinfo.exe', 'tasklist.exe', 'tracert.exe', 'ver.exe', 'VSSADMIN.EXE', 'wevtutil.exe', 'whoami.exe'))) OR (CommandLine ILIKE '% Test-NetConnection %' OR CommandLine ILIKE '%dir \\%'))

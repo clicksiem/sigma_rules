@@ -1,0 +1,13 @@
+id: f1edd233-30b5-4823-9e6a-c4171b24d316
+name: Rundll32 Registered COM Objects
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.015
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND ((CommandLine ILIKE '%-sta %' OR CommandLine ILIKE '%-localserver %') AND (CommandLine ILIKE '%{%' AND CommandLine ILIKE '%}%'))

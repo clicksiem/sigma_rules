@@ -1,0 +1,13 @@
+id: b3d34dc5-2efd-4ae3-845f-8ec14921f449
+name: Browser Started with Remote Debugging
+level: 5
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.collection
+- attack.t1185
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% --remote-debugging-%' OR (Image ILIKE '%\\firefox.exe' AND CommandLine ILIKE '% -start-debugger-server%')

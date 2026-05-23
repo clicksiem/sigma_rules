@@ -1,0 +1,12 @@
+id: 1ac14d38-3dfc-4635-92c7-e3fd1c5f5bfc
+name: Winrar Compressing Dump Files
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\rar.exe' OR Image ILIKE '%\\winrar.exe') OR Description='Command line RAR') AND (CommandLine ILIKE '%.dmp%' OR CommandLine ILIKE '%.dump%' OR CommandLine ILIKE '%.hdmp%')

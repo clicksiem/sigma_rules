@@ -1,0 +1,12 @@
+id: 021310d9-30a6-480a-84b7-eaa69aeb92bb
+name: First Time Seen Remote Named Pipe - Zeek
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden, @neu5ron, Tim Shelton
+group: zeek
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE path ILIKE '\\\\*\\IPC$' AND (NOT (hasToken(full_log, 'samr') OR hasToken(full_log, 'lsarpc') OR hasToken(full_log, 'winreg') OR hasToken(full_log, 'netlogon') OR hasToken(full_log, 'srvsvc') OR hasToken(full_log, 'protected\_storage') OR hasToken(full_log, 'wkssvc') OR hasToken(full_log, 'browser') OR hasToken(full_log, 'netdfs') OR hasToken(full_log, 'svcctl') OR hasToken(full_log, 'spoolss') OR hasToken(full_log, 'ntsvcs') OR hasToken(full_log, 'LSM\_API\_service') OR hasToken(full_log, 'HydraLsPipe') OR hasToken(full_log, 'TermSrv\_API\_service') OR hasToken(full_log, 'MsFteWds')))

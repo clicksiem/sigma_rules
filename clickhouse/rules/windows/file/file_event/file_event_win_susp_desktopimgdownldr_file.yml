@@ -1,0 +1,12 @@
+id: fc4f4817-0c53-4683-a4ee-b17a64bc1039
+name: Suspicious Desktopimgdownldr Target File
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\svchost.exe' AND TargetFilename ILIKE '%\\Personalization\\LockScreenImage\\%') AND (NOT TargetFilename ILIKE '%C:\\Windows\\%') AND (NOT (TargetFilename ILIKE '%.jpg%' OR TargetFilename ILIKE '%.jpeg%' OR TargetFilename ILIKE '%.png%'))

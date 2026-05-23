@@ -1,0 +1,16 @@
+id: 665e2d43-70dc-4ccc-9d27-026c9dd7ed9c
+name: User Removed From Group With CA Policy Modification Access
+level: 5
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Thomas Detzner '@tdetzner'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.credential-access
+- attack.persistence
+- attack.defense-impairment
+- attack.t1548
+- attack.t1556
+rule: SELECT * FROM logs WHERE `properties.message`='Remove member from group'

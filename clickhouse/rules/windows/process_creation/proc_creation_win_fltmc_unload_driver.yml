@@ -1,0 +1,15 @@
+id: 4931188c-178e-4ee7-a348-39e8a7a56821
+name: Filter Driver Unloaded Via Fltmc.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.defense-impairment
+- attack.t1070
+- attack.t1685
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\fltMC.exe' OR OriginalFileName='fltMC.exe') AND CommandLine ILIKE '%unload%') AND (NOT (((ParentImage ILIKE '%\\AppData\\Local\\Temp\\%' OR ParentImage ILIKE '%:\\Windows\\Temp\\%') AND ParentImage ILIKE '%\\endpoint-protection-installer-x64.tmp' AND (CommandLine ILIKE '%unload rtp\_filesystem\_filter' OR CommandLine ILIKE '%unload rtp\_filter')) OR (ParentImage ILIKE 'C:\\Program Files (x86)\\ManageEngine\\uems\_agent\\bin\\dcfaservice64.exe' AND CommandLine ILIKE '%unload DFMFilter')))

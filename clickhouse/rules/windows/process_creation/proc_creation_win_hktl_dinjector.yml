@@ -1,0 +1,13 @@
+id: d78b5d61-187d-44b6-bf02-93486a80de5a
+name: HackTool - DInjector PowerShell Cradle Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% /am51%' AND CommandLine ILIKE '% /password%'

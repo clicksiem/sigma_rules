@@ -1,0 +1,14 @@
+id: 910ab938-668b-401b-b08c-b596e80fdca5
+name: Transferring Files with Credential Data via Network Shares
+level: 5
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+- attack.t1003.001
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE EventID=5145 AND ((RelativeTargetName ILIKE '%\\mimidrv%' OR RelativeTargetName ILIKE '%\\lsass%' OR RelativeTargetName ILIKE '%\\windows\\minidump\\%' OR RelativeTargetName ILIKE '%\\hiberfil%' OR RelativeTargetName ILIKE '%\\sqldmpr%') OR (RelativeTargetName IN ('Windows\\NTDS\\ntds.dit', 'Windows\\System32\\config\\SAM', 'Windows\\System32\\config\\SECURITY', 'Windows\\System32\\config\\SYSTEM')))

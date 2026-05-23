@@ -1,0 +1,12 @@
+id: 53b1b378-9b06-4992-b972-dde6e423d2b4
+name: Credentials In Files
+level: 8
+size: '>0'
+active: true
+author:
+- Igor Fits, Mikhail Larin, oscd.community
+group: macos
+tags:
+- attack.credential-access
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/grep' AND CommandLine ILIKE '%password%') OR CommandLine ILIKE '%laZagne%'

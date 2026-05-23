@@ -1,0 +1,13 @@
+id: dcff7e85-d01f-4eb5-badd-84e2e6be8294
+name: Windows Default Domain GPO Modification via GPME
+level: 5
+size: '>0'
+active: true
+author:
+- TropChaud
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1484.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mmc.exe' OR OriginalFileName='MMC.exe') AND (CommandLine ILIKE '%gpme.msc%' AND CommandLine ILIKE '%gpobject:%') AND (CommandLine ILIKE '%31B2F340-016D-11D2-945F-00C04FB984F9%' OR CommandLine ILIKE '%6AC1786C-016F-11D2-945F-00C04FB984F9%')

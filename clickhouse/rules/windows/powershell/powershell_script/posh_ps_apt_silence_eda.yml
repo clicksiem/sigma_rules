@@ -1,0 +1,19 @@
+id: 3ceb2083-a27f-449a-be33-14ec1b7cc973
+name: Silence.EDA Detection
+level: 10
+size: '>0'
+active: true
+author:
+- Alina Stepchenkova, Group-IB, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.command-and-control
+- attack.t1071.004
+- attack.t1572
+- attack.impact
+- attack.t1529
+- attack.g0091
+- attack.s0363
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%System.Diagnostics.Process%' AND ScriptBlockText ILIKE '%Stop-Computer%' AND ScriptBlockText ILIKE '%Restart-Computer%' AND ScriptBlockText ILIKE '%Exception in execution%' AND ScriptBlockText ILIKE '%$cmdargs%' AND ScriptBlockText ILIKE '%Close-Dnscat2Tunnel%') AND (ScriptBlockText ILIKE '%set type=$LookupType`nserver%' AND ScriptBlockText ILIKE '%$Command | nslookup 2>&1 | Out-String%' AND ScriptBlockText ILIKE '%New-RandomDNSField%' AND ScriptBlockText ILIKE '%[Convert]::ToString($SYNOptions, 16)%' AND ScriptBlockText ILIKE '%$Session.Dead = $True%' AND ScriptBlockText ILIKE '%$Session["Driver"] -eq%')

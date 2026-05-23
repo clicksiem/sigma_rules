@@ -1,0 +1,15 @@
+id: b45ab1d2-712f-4f01-a751-df3826969807
+name: AWS STS GetSessionToken Misuse
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: aws
+tags:
+- attack.lateral-movement
+- attack.privilege-escalation
+- attack.t1548
+- attack.t1550
+- attack.t1550.001
+rule: SELECT * FROM logs WHERE eventSource='sts.amazonaws.com' AND eventName='GetSessionToken' AND `userIdentity.type`='IAMUser'

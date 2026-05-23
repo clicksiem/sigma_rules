@@ -1,0 +1,15 @@
+id: f7b5b004-dece-46e4-a4a5-f6fd0e1c6947
+name: Privileged Account Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Yochana Henderson, '@Yochana-H', Tim Shelton
+group: azure
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE (`properties.message` ILIKE '%Add user%' AND `properties.message` ILIKE '%Add member to role%') AND Status='Success'

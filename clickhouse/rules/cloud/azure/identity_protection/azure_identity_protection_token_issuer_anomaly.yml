@@ -1,0 +1,12 @@
+id: e3393cba-31f0-4207-831e-aef90ab17a8c
+name: SAML Token Issuer Anomaly
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.t1606
+- attack.credential-access
+rule: SELECT * FROM logs WHERE riskEventType='tokenIssuerAnomaly'

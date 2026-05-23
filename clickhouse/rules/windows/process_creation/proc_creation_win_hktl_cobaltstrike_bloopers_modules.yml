@@ -1,0 +1,12 @@
+id: 4f154fb6-27d1-4813-a759-78b93e0b9c48
+name: Operator Bloopers Cobalt Strike Modules
+level: 8
+size: '>0'
+active: true
+author:
+- _pete_0, TheDFIRReport
+group: windows
+tags:
+- attack.execution
+- attack.t1059.003
+rule: SELECT * FROM logs WHERE (OriginalFileName='Cmd.Exe' OR Image ILIKE '%\\cmd.exe') AND (CommandLine ILIKE '%Invoke-UserHunter%' OR CommandLine ILIKE '%Invoke-ShareFinder%' OR CommandLine ILIKE '%Invoke-Kerberoast%' OR CommandLine ILIKE '%Invoke-SMBAutoBrute%' OR CommandLine ILIKE '%Invoke-Nightmare%' OR CommandLine ILIKE '%zerologon%' OR CommandLine ILIKE '%av\_query%')

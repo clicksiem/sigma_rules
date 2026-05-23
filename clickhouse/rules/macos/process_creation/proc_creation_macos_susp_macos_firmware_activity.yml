@@ -1,0 +1,11 @@
+id: 7ed2c9f7-c59d-4c82-a7e2-f859aa676099
+name: Suspicious MacOS Firmware Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: macos
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE Image='/usr/sbin/firmwarepasswd' AND (CommandLine ILIKE '%setpasswd%' OR CommandLine ILIKE '%full%' OR CommandLine ILIKE '%delete%' OR CommandLine ILIKE '%check%')

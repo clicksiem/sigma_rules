@@ -1,0 +1,12 @@
+id: 6adfbf8f-52be-4444-9bac-81b539624146
+name: Shell Execution via Find - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)
+group: linux
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/find' AND (CommandLine ILIKE '% . %' AND CommandLine ILIKE '%-exec%')) AND (CommandLine ILIKE '%/bin/bash%' OR CommandLine ILIKE '%/bin/dash%' OR CommandLine ILIKE '%/bin/fish%' OR CommandLine ILIKE '%/bin/sh%' OR CommandLine ILIKE '%/bin/zsh%')

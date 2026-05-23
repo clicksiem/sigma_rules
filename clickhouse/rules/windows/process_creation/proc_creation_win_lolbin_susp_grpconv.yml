@@ -1,0 +1,13 @@
+id: f14e169e-9978-4c69-acb3-1cff8200bc36
+name: Suspicious GrpConv Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%grpconv.exe -o%' OR CommandLine ILIKE '%grpconv -o%'

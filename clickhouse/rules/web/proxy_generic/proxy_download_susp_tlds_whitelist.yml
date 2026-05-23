@@ -1,0 +1,15 @@
+id: b5de2919-b74a-4805-91a7-5049accbaefe
+name: Download From Suspicious TLD - Whitelist
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.initial-access
+- attack.t1566
+- attack.execution
+- attack.t1203
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE (`c-uri-extension` IN ('exe', 'vbs', 'bat', 'rar', 'ps1', 'doc', 'docm', 'xls', 'xlsm', 'pptm', 'rtf', 'hta', 'dll', 'ws', 'wsf', 'sct', 'zip')) AND (NOT (`cs-host` ILIKE '%.com' OR `cs-host` ILIKE '%.org' OR `cs-host` ILIKE '%.net' OR `cs-host` ILIKE '%.edu' OR `cs-host` ILIKE '%.gov' OR `cs-host` ILIKE '%.uk' OR `cs-host` ILIKE '%.ca' OR `cs-host` ILIKE '%.de' OR `cs-host` ILIKE '%.jp' OR `cs-host` ILIKE '%.fr' OR `cs-host` ILIKE '%.au' OR `cs-host` ILIKE '%.us' OR `cs-host` ILIKE '%.ch' OR `cs-host` ILIKE '%.it' OR `cs-host` ILIKE '%.nl' OR `cs-host` ILIKE '%.se' OR `cs-host` ILIKE '%.no' OR `cs-host` ILIKE '%.es'))

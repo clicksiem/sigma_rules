@@ -1,0 +1,12 @@
+id: c3edc6a5-d9d4-48d8-930e-aab518390917
+name: Potential Persistence Via Outlook Form
+level: 8
+size: '>0'
+active: true
+author:
+- Tobias Michalski (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1137.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\outlook.exe' AND (TargetFilename ILIKE '%\\AppData\\Local\\Microsoft\\FORMS\\IPM%' OR TargetFilename ILIKE '%\\Local Settings\\Application Data\\Microsoft\\Forms%')

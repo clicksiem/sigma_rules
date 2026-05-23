@@ -1,0 +1,14 @@
+id: f576a613-2392-4067-9d1a-9345fb58d8d1
+name: Automated Collection Command Prompt
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1119
+- attack.credential-access
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%.doc%' OR CommandLine ILIKE '%.docx%' OR CommandLine ILIKE '%.xls%' OR CommandLine ILIKE '%.xlsx%' OR CommandLine ILIKE '%.ppt%' OR CommandLine ILIKE '%.pptx%' OR CommandLine ILIKE '%.rtf%' OR CommandLine ILIKE '%.pdf%' OR CommandLine ILIKE '%.txt%') AND ((CommandLine ILIKE '%dir %' AND CommandLine ILIKE '% /b %' AND CommandLine ILIKE '% /s %') OR (OriginalFileName='FINDSTR.EXE' AND (CommandLine ILIKE '% /e %' OR CommandLine ILIKE '% /si %')))

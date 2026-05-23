@@ -1,0 +1,12 @@
+id: d353dac0-1b41-46c2-820c-d7d2561fc6ed
+name: AWL Bypass with Winrm.vbs and Malicious WsmPty.xsl/WsmTxt.xsl - File
+level: 5
+size: '>0'
+active: true
+author:
+- Julia Fomina, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1216
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%WsmPty.xsl' OR TargetFilename ILIKE '%WsmTxt.xsl') AND (NOT (TargetFilename ILIKE 'C:\\Windows\\System32\\%' OR TargetFilename ILIKE 'C:\\Windows\\SysWOW64\\%'))

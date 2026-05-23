@@ -1,0 +1,12 @@
+id: 05ebafc8-7aa2-4bcd-a269-2aec93f9e842
+name: Add New Download Source To Winget
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\winget.exe' OR OriginalFileName='winget.exe') AND (CommandLine ILIKE '%source %' AND CommandLine ILIKE '%add %')

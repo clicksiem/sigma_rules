@@ -1,0 +1,13 @@
+id: 7892ec59-c5bb-496d-8968-e5d210ca3ac4
+name: DPAPI Backup Keys And Certificate Export Activity IOC
+level: 8
+size: '>0'
+active: true
+author:
+- Nounou Mbeiri, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555
+- attack.t1552.004
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%ntds\_capi\_%' OR TargetFilename ILIKE '%ntds\_legacy\_%' OR TargetFilename ILIKE '%ntds\_unknown\_%') AND (TargetFilename ILIKE '%.cer' OR TargetFilename ILIKE '%.key' OR TargetFilename ILIKE '%.pfx' OR TargetFilename ILIKE '%.pvk')

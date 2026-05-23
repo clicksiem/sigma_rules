@@ -1,0 +1,13 @@
+id: f8be3e82-46a3-4e4e-ada5-8e538ae8b9c9
+name: Credential Dumping Activity By Python Based Tool
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj, Jonhnathan Ribeiro
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.s0349
+rule: SELECT * FROM logs WHERE TargetImage ILIKE '%\\lsass.exe' AND (CallTrace ILIKE '%\_ctypes.pyd+%' AND CallTrace ILIKE '%:\\Windows\\System32\\KERNELBASE.dll+%' AND CallTrace ILIKE '%:\\Windows\\SYSTEM32\\ntdll.dll+%') AND (CallTrace ILIKE '%python27.dll+%' OR CallTrace ILIKE '%python3%.dll+%') AND GrantedAccess='0x1FFFFF'

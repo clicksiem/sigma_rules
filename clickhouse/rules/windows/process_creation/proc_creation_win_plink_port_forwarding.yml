@@ -1,0 +1,14 @@
+id: 48a61b29-389f-4032-b317-b30de6b95314
+name: Suspicious Plink Port Forwarding
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1572
+- attack.lateral-movement
+- attack.t1021.001
+rule: SELECT * FROM logs WHERE Description='Command-line SSH, Telnet, and Rlogin client' AND CommandLine ILIKE '% -R %'

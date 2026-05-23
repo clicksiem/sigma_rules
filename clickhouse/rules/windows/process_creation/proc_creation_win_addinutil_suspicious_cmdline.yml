@@ -1,0 +1,12 @@
+id: 631b22a4-70f4-4e2f-9ea8-42f84d9df6d8
+name: Suspicious AddinUtil.EXE CommandLine Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Michael McKinley (@McKinleyMike), Tony Latteri (@TheLatteri)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\addinutil.exe' OR OriginalFileName='AddInUtil.exe') AND (((CommandLine ILIKE '%-AddInRoot:%' OR CommandLine ILIKE '%-PipelineRoot:%') AND (CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\Windows\\Temp\\%')) OR ((CommandLine ILIKE '%-AddInRoot:.%' OR CommandLine ILIKE '%-AddInRoot:"."%' OR CommandLine ILIKE '%-PipelineRoot:.%' OR CommandLine ILIKE '%-PipelineRoot:"."%') AND (CurrentDirectory ILIKE '%\\AppData\\Local\\Temp\\%' OR CurrentDirectory ILIKE '%\\Desktop\\%' OR CurrentDirectory ILIKE '%\\Downloads\\%' OR CurrentDirectory ILIKE '%\\Users\\Public\\%' OR CurrentDirectory ILIKE '%\\Windows\\Temp\\%')))

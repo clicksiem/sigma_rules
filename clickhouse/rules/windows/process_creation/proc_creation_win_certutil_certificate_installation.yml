@@ -1,0 +1,12 @@
+id: d2125259-ddea-4c1c-9c22-977eb5b29cf0
+name: New Root Certificate Installed Via Certutil.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- oscd.community, @redcanary, Zach Stanford @svch0st
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certutil.exe' OR OriginalFileName='CertUtil.exe') AND (CommandLine ILIKE '%-addstore%' OR CommandLine ILIKE '%/addstore%' OR CommandLine ILIKE '%–addstore%' OR CommandLine ILIKE '%—addstore%' OR CommandLine ILIKE '%―addstore%') AND CommandLine ILIKE '%root%'

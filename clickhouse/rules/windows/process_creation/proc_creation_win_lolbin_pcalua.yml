@@ -1,0 +1,12 @@
+id: 0955e4e1-c281-4fb9-9ee1-5ee7b4b754d2
+name: Use of Pcalua For Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\pcalua.exe' AND CommandLine ILIKE '% -a%'

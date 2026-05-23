@@ -1,0 +1,13 @@
+id: d58ba5c6-0ed7-4b9d-a433-6878379efda9
+name: Remote Access Tool - AnyDesk Incoming Connection
+level: 5
+size: '>0'
+active: true
+author:
+- '@d4ns4n_ (Wuerth-Phoenix)'
+group: windows
+tags:
+- attack.persistence
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\AnyDesk.exe' OR Image ILIKE '%\\AnyDeskMSI.exe') AND Initiated='false'

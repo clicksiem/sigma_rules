@@ -1,0 +1,11 @@
+id: 15904280-565c-4b73-9303-3291f964e7f9
+name: Potential Persistence Attempt Via ErrorHandler.Cmd
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\WINDOWS\\Setup\\Scripts\\ErrorHandler.cmd'

@@ -1,0 +1,12 @@
+id: 82343930-652f-43f5-ab70-2ee9fdd6d5e9
+name: Potential ShellDispatch.DLL Functionality Abuse
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND CommandLine ILIKE '%RunDll\_ShellExecuteW%'

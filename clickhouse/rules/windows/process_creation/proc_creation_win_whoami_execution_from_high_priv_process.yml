@@ -1,0 +1,13 @@
+id: 79ce34ca-af29-4d0e-b832-fc1b377020db
+name: Whoami.EXE Execution From Privileged Process
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Teymur Kheirkhabarov
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE (OriginalFileName='whoami.exe' OR Image ILIKE '%\\whoami.exe') AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%' OR User ILIKE '%TrustedInstaller%')

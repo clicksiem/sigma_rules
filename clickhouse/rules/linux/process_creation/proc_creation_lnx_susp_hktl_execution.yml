@@ -1,0 +1,13 @@
+id: a015e032-146d-4717-8944-7a1884122111
+name: Linux HackTool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Georg Lauenstein (sure[secure])
+group: linux
+tags:
+- attack.execution
+- attack.resource-development
+- attack.t1587
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/crackmapexec' OR Image ILIKE '%/havoc' OR Image ILIKE '%/merlin-agent' OR Image ILIKE '%/merlinServer-Linux-x64' OR Image ILIKE '%/msfconsole' OR Image ILIKE '%/msfvenom' OR Image ILIKE '%/ps-empire server' OR Image ILIKE '%/ps-empire' OR Image ILIKE '%/sliver-client' OR Image ILIKE '%/sliver-server' OR Image ILIKE '%/Villain.py') OR (Image ILIKE '%/cobaltstrike%' OR Image ILIKE '%/teamserver%') OR (Image ILIKE '%/autorecon' OR Image ILIKE '%/httpx' OR Image ILIKE '%/legion' OR Image ILIKE '%/naabu' OR Image ILIKE '%/netdiscover' OR Image ILIKE '%/nuclei' OR Image ILIKE '%/recon-ng') OR Image ILIKE '%/sniper%' OR (Image ILIKE '%/dirb' OR Image ILIKE '%/dirbuster' OR Image ILIKE '%/eyewitness' OR Image ILIKE '%/feroxbuster' OR Image ILIKE '%/ffuf' OR Image ILIKE '%/gobuster' OR Image ILIKE '%/wfuzz' OR Image ILIKE '%/whatweb') OR (Image ILIKE '%/joomscan' OR Image ILIKE '%/nikto' OR Image ILIKE '%/wpscan') OR (Image ILIKE '%/aircrack-ng' OR Image ILIKE '%/bloodhound-python' OR Image ILIKE '%/bpfdos' OR Image ILIKE '%/ebpfki' OR Image ILIKE '%/evil-winrm' OR Image ILIKE '%/hashcat' OR Image ILIKE '%/hoaxshell.py' OR Image ILIKE '%/hydra' OR Image ILIKE '%/john' OR Image ILIKE '%/ncrack' OR Image ILIKE '%/nxc-ubuntu-latest' OR Image ILIKE '%/pidhide' OR Image ILIKE '%/pspy32' OR Image ILIKE '%/pspy32s' OR Image ILIKE '%/pspy64' OR Image ILIKE '%/pspy64s' OR Image ILIKE '%/setoolkit' OR Image ILIKE '%/sqlmap' OR Image ILIKE '%/writeblocker') OR Image ILIKE '%/linpeas%'

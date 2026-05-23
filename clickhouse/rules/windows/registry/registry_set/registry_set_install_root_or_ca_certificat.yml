@@ -1,0 +1,12 @@
+id: d223b46b-5621-4037-88fe-fda32eead684
+name: New Root or CA or AuthRoot Certificate to Store
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\SystemCertificates\\Root\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\SystemCertificates\\Root\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\EnterpriseCertificates\\Root\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\SystemCertificates\\CA\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\SystemCertificates\\CA\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\EnterpriseCertificates\\CA\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\SystemCertificates\\AuthRoot\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\SystemCertificates\\AuthRoot\\Certificates\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\EnterpriseCertificates\\AuthRoot\\Certificates\\%') AND TargetObject ILIKE '%\\Blob' AND Details='Binary Data'

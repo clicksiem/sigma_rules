@@ -1,0 +1,12 @@
+id: 48917adc-a28e-4f5d-b729-11e75da8941f
+name: Suspicious Windows Defender Folder Exclusion Added Via Reg.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\reg.exe' AND (CommandLine ILIKE '%SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\Paths%' OR CommandLine ILIKE '%SOFTWARE\\Microsoft\\Microsoft Antimalware\\Exclusions\\Paths%') AND (CommandLine ILIKE '%ADD %' AND CommandLine ILIKE '%/t %' AND CommandLine ILIKE '%REG\_DWORD %' AND CommandLine ILIKE '%/v %' AND CommandLine ILIKE '%/d %' AND CommandLine ILIKE '%0%')

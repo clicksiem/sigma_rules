@@ -1,0 +1,13 @@
+id: b0524451-19af-4efa-a46f-562a977f792e
+name: ShimCache Flush
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%rundll32%' AND CommandLine ILIKE '%apphelp.dll%') AND (CommandLine ILIKE '%ShimFlushCache%' OR CommandLine ILIKE '%#250%')) OR ((CommandLine ILIKE '%rundll32%' AND CommandLine ILIKE '%kernel32.dll%') AND (CommandLine ILIKE '%BaseFlushAppcompatCache%' OR CommandLine ILIKE '%#46%'))

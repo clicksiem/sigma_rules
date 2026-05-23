@@ -1,0 +1,12 @@
+id: cc268ac1-42d9-40fd-9ed3-8c4e1a5b87e6
+name: Devtoolslauncher.exe Executes Specified Binary
+level: 8
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community (rule), @_felamos (idea)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\devtoolslauncher.exe' AND CommandLine ILIKE '%LaunchForDeploy%'

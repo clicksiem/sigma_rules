@@ -1,0 +1,12 @@
+id: b6d98a4f-cef0-4abf-bbf6-24132854a83d
+name: Remote Access Tool - GoToAssist Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Description='GoTo Opener' OR Product='GoTo Opener' OR Company='LogMeIn, Inc.'

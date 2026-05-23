@@ -1,0 +1,14 @@
+id: 6e8fe0a8-ba0b-4a93-8f9e-82657e7a5984
+name: BaaUpdate.exe Suspicious DLL Load
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.lateral-movement
+- attack.t1021.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\BaaUpdate.exe' AND ImageLoaded ILIKE '%.dll' AND (ImageLoaded ILIKE '%:\\Perflogs\\%' OR ImageLoaded ILIKE '%:\\Users\\Default\\%' OR ImageLoaded ILIKE '%:\\Users\\Public\\%' OR ImageLoaded ILIKE '%:\\Windows\\Temp\\%' OR ImageLoaded ILIKE '%\\AppData\\Local\\Temp\\%' OR ImageLoaded ILIKE '%\\AppData\\Roaming\\%' OR ImageLoaded ILIKE '%\\Contacts\\%' OR ImageLoaded ILIKE '%\\Favorites\\%' OR ImageLoaded ILIKE '%\\Favourites\\%' OR ImageLoaded ILIKE '%\\Links\\%' OR ImageLoaded ILIKE '%\\Music\\%' OR ImageLoaded ILIKE '%\\Pictures\\%' OR ImageLoaded ILIKE '%\\ProgramData\\%' OR ImageLoaded ILIKE '%\\Temporary Internet%' OR ImageLoaded ILIKE '%\\Videos\\%')

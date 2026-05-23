@@ -1,0 +1,12 @@
+id: 20a5ffa1-3848-4584-b6f8-c7c7fd9f69c8
+name: Ruby Inline Command Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\ruby.exe' OR OriginalFileName='ruby.exe') AND CommandLine ILIKE '% -e%'

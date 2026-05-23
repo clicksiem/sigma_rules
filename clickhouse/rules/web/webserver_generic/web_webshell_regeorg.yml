@@ -1,0 +1,12 @@
+id: 2ea44a60-cfda-11ea-87d0-0242ac130003
+name: Webshell ReGeorg Detection Via Web Logs
+level: 8
+size: '>0'
+active: true
+author:
+- Cian Heasley
+group: ''
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE (`cs-uri-query` ILIKE '%cmd=read%' OR `cs-uri-query` ILIKE '%connect&target%' OR `cs-uri-query` ILIKE '%cmd=connect%' OR `cs-uri-query` ILIKE '%cmd=disconnect%' OR `cs-uri-query` ILIKE '%cmd=forward%') AND (isNull(`cs-referer`) AND isNull(`cs-user-agent`) AND `cs-method`='POST')

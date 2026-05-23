@@ -1,0 +1,12 @@
+id: 4916a35e-bfc4-47d0-8e25-a003d7067061
+name: Sysmon Driver Altitude Change
+level: 8
+size: '>0'
+active: true
+author:
+- B.Talebi
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Services\\%' AND TargetObject ILIKE '%\\Instances\\Sysmon Instance\\Altitude'

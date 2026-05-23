@@ -1,0 +1,15 @@
+id: 409f8a98-4496-4aaa-818a-c931c0a8b832
+name: Created Files by Microsoft Sync Center
+level: 5
+size: '>0'
+active: true
+author:
+- elhoim
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- attack.t1218
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\mobsync.exe' AND (TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe')

@@ -1,0 +1,13 @@
+id: b04934b2-0a68-4845-8a19-bdfed3a68a7a
+name: App Assigned To Azure RBAC/Microsoft Entra Role
+level: 5
+size: '>0'
+active: true
+author:
+- Bailey Bercik '@baileybercik', Mark Morowczynski '@markmorow'
+group: azure
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1098.003
+rule: SELECT * FROM logs WHERE `targetResources.type`='Service Principal' AND (`properties.message` IN ('Add member to role', 'Add eligible member to role', 'Add scoped member to role'))

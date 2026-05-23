@@ -1,0 +1,12 @@
+id: 85b0b087-eddf-4a2b-b033-d771fa2b9775
+name: PowerShell Download and Execution Cradles
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%.DownloadString(%' OR CommandLine ILIKE '%.DownloadFile(%' OR CommandLine ILIKE '%Invoke-WebRequest %' OR CommandLine ILIKE '%iwr %' OR CommandLine ILIKE '%Invoke-RestMethod %' OR CommandLine ILIKE '%irm %') AND (CommandLine ILIKE '%;iex $%' OR CommandLine ILIKE '%| IEX%' OR CommandLine ILIKE '%|IEX %' OR CommandLine ILIKE '%I`E`X%' OR CommandLine ILIKE '%I`EX%' OR CommandLine ILIKE '%IE`X%' OR CommandLine ILIKE '%iex %' OR CommandLine ILIKE '%IEX (%' OR CommandLine ILIKE '%IEX(%' OR CommandLine ILIKE '%Invoke-Expression%')

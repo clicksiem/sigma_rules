@@ -1,0 +1,13 @@
+id: 102e11e3-2db5-4c9e-bc26-357d42585d21
+name: Bulk Deletion Changes To Privileged Account Permissions
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Yochana Henderson, '@Yochana-H'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE `properties.message` IN ('Remove eligible member (permanent)', 'Remove eligible member (eligible)')

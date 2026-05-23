@@ -1,0 +1,12 @@
+id: c1337eb8-921a-4b59-855b-4ba188ddcc42
+name: Deletion of Volume Shadow Copies via WMI with PowerShell - PS Script
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Rauch, frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Get-WmiObject%' OR ScriptBlockText ILIKE '%gwmi%' OR ScriptBlockText ILIKE '%Get-CimInstance%' OR ScriptBlockText ILIKE '%gcim%') AND ScriptBlockText ILIKE '%Win32\_ShadowCopy%' AND (ScriptBlockText ILIKE '%.Delete()%' OR ScriptBlockText ILIKE '%Remove-WmiObject%' OR ScriptBlockText ILIKE '%rwmi%' OR ScriptBlockText ILIKE '%Remove-CimInstance%' OR ScriptBlockText ILIKE '%rcim%')

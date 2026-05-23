@@ -1,0 +1,12 @@
+id: 67f113fa-e23d-4271-befa-30113b3e08b1
+name: Suspicious JavaScript Execution Via Mshta.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mshta.exe' OR OriginalFileName='MSHTA.EXE') AND CommandLine ILIKE '%javascript%'

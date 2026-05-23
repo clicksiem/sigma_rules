@@ -1,0 +1,12 @@
+id: 7be5fb68-f9ef-476d-8b51-0256ebece19e
+name: Suspicious Execution of Hostname
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\HOSTNAME.EXE'

@@ -1,0 +1,14 @@
+id: 07837ab9-60e1-481f-a74d-c31fb496a94c
+name: Network Communication Initiated To Portmap.IO Domain
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.t1041
+- attack.command-and-control
+- attack.t1090.002
+- attack.exfiltration
+rule: SELECT * FROM logs WHERE Initiated='true' AND DestinationHostname ILIKE '%.portmap.io'

@@ -1,0 +1,11 @@
+id: f26eb764-fd89-464b-85e2-dc4a8e6e77b8
+name: Suspicious Electron Application Child Processes
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\chrome.exe' OR ParentImage ILIKE '%\\discord.exe' OR ParentImage ILIKE '%\\GitHubDesktop.exe' OR ParentImage ILIKE '%\\keybase.exe' OR ParentImage ILIKE '%\\msedge.exe' OR ParentImage ILIKE '%\\msedgewebview2.exe' OR ParentImage ILIKE '%\\msteams.exe' OR ParentImage ILIKE '%\\slack.exe' OR ParentImage ILIKE '%\\teams.exe') AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\whoami.exe' OR Image ILIKE '%\\wscript.exe') OR (Image ILIKE '%:\\ProgramData\\%' OR Image ILIKE '%:\\Temp\\%' OR Image ILIKE '%\\AppData\\Local\\Temp\\%' OR Image ILIKE '%\\Users\\Public\\%' OR Image ILIKE '%\\Windows\\Temp\\%')) AND (NOT (ParentImage ILIKE '%\\Discord.exe' AND Image ILIKE '%\\cmd.exe' AND CommandLine ILIKE '%\\NVSMI\\nvidia-smi.exe%'))

@@ -1,0 +1,12 @@
+id: de7ce410-b3fb-4e8a-b38c-3b999e2c3420
+name: PAExec Service Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (ServiceName ILIKE 'PAExec-%' OR ImagePath ILIKE 'C:\\WINDOWS\\PAExec-%')

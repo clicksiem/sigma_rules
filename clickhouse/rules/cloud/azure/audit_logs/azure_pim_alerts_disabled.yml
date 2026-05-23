@@ -1,0 +1,15 @@
+id: aeaef14c-e5bf-4690-a9c8-835caad458bd
+name: PIM Alert Setting Changes To Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Yochana Henderson, '@Yochana-H'
+group: azure
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE `properties.message`='Disable PIM Alert'

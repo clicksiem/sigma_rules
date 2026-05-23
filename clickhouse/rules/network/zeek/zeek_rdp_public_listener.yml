@@ -1,0 +1,12 @@
+id: 1fc0809e-06bf-4de3-ad52-25e5263b7623
+name: Publicly Accessible RDP Service
+level: 8
+size: '>0'
+active: true
+author:
+- Josh Brower @DefensiveDepth
+group: zeek
+tags:
+- attack.lateral-movement
+- attack.t1021.001
+rule: SELECT * FROM logs WHERE NOT (isIPAddressInRange(id.orig_h, '::1/128') OR isIPAddressInRange(id.orig_h, '10.0.0.0/8') OR isIPAddressInRange(id.orig_h, '127.0.0.0/8') OR isIPAddressInRange(id.orig_h, '172.16.0.0/12') OR isIPAddressInRange(id.orig_h, '192.168.0.0/16') OR isIPAddressInRange(id.orig_h, '169.254.0.0/16') OR isIPAddressInRange(id.orig_h, '2620:83:8000::/48') OR isIPAddressInRange(id.orig_h, 'fc00::/7') OR isIPAddressInRange(id.orig_h, 'fe80::/10'))

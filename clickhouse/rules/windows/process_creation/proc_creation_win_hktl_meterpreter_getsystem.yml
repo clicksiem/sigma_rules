@@ -1,0 +1,14 @@
+id: 15619216-e993-4721-b590-4c520615a67d
+name: Potential Meterpreter/CobaltStrike Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, Ecco, Florian Roth
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134.001
+- attack.t1134.002
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\services.exe' AND (((CommandLine ILIKE '%/c%' AND CommandLine ILIKE '%echo%' AND CommandLine ILIKE '%\\pipe\\%') AND (CommandLine ILIKE '%cmd%' OR CommandLine ILIKE '%\%COMSPEC\%%')) OR (CommandLine ILIKE '%rundll32%' AND CommandLine ILIKE '%.dll,a%' AND CommandLine ILIKE '%/p:%')) AND (NOT CommandLine ILIKE '%MpCmdRun%')

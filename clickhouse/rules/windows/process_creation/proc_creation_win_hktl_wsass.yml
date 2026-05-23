@@ -1,0 +1,12 @@
+id: 589ac73f-8e12-409c-964e-31a2f5775ae2
+name: HackTool - WSASS Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\wsass.exe' OR Hashes ILIKE '%IMPHASH=32F5095C9BBDCACF28FD4060EB4DFC42%' OR match(CommandLine, '(?i)\.exe[\"\']?\s+[^\"]{0,64}werfaultsecure\.exe[\"\']?\s+\d{2,10}')

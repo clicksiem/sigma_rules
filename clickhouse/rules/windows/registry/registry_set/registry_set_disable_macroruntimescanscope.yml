@@ -1,0 +1,11 @@
+id: ab871450-37dc-4a3a-997f-6662aa8ae0f1
+name: Disable Macro Runtime Scan Scope
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\%' AND TargetObject ILIKE '%\\Microsoft\\Office\\%' AND TargetObject ILIKE '%\\Common\\Security%') AND TargetObject ILIKE '%\\MacroRuntimeScanScope' AND Details='DWORD (0x00000000)'

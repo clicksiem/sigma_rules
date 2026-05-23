@@ -1,0 +1,16 @@
+id: ace3ff54-e7fd-46bd-8ea0-74b49a0aca1d
+name: Remote Schedule Task Lateral Movement via ITaskSchedulerService
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.lateral-movement
+- attack.t1053
+- attack.t1053.002
+rule: SELECT * FROM logs WHERE EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='86d35949-83c9-4044-b424-db363231fd0c' AND (OpNum IN (1, 3, 4, 10, 11, 12, 13, 14, 15))

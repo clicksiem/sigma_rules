@@ -1,0 +1,12 @@
+id: fb656378-f909-47c1-8747-278bf09f4f4f
+name: Potential Credential Dumping Attempt Via PowerShell Remote Thread
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (SourceImage ILIKE '%\\powershell.exe' OR SourceImage ILIKE '%\\pwsh.exe') AND TargetImage ILIKE '%\\lsass.exe'

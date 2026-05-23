@@ -1,0 +1,14 @@
+id: c539afac-c12a-46ed-b1bd-5a5567c9f045
+name: Potential Remote PowerShell Session Initiated
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.lateral-movement
+- attack.t1021.006
+rule: SELECT * FROM logs WHERE ((DestinationPort IN (5985, 5986)) AND Initiated='true' AND SourceIsIpv6='false') AND (NOT (((User ILIKE '%NETWORK SERVICE%' OR User ILIKE '%NETZWERKDIENST%' OR User ILIKE '%SERVICIO DE RED%' OR User ILIKE '%SERVIZIO DI RETE%') OR (User ILIKE '%SERVICE R%' AND User ILIKE '%SEAU%')) OR ((SourceIp IN ('::1', '127.0.0.1')) AND (DestinationIp IN ('::1', '127.0.0.1'))))) AND (NOT (Image IN ('C:\\Program Files\\Avast Software\\Avast\\AvastSvc.exe', 'C:\\Program Files (x86)\\Avast Software\\Avast\\AvastSvc.exe')))

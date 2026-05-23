@@ -1,0 +1,12 @@
+id: 1f0f6176-6482-4027-b151-00071af39d7e
+name: Arbitrary File Download Via ConfigSecurityPolicy.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1567
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%ConfigSecurityPolicy.exe%' OR Image ILIKE '%\\ConfigSecurityPolicy.exe' OR OriginalFileName='ConfigSecurityPolicy.exe') AND (CommandLine ILIKE '%ftp://%' OR CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

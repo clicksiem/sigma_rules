@@ -1,0 +1,12 @@
+id: 95361ce5-c891-4b0a-87ca-e24607884a96
+name: Binary Padding - MacOS
+level: 8
+size: '>0'
+active: true
+author:
+- Igor Fits, Mikhail Larin, oscd.community
+group: macos
+tags:
+- attack.stealth
+- attack.t1027.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/truncate' AND CommandLine ILIKE '%-s +%') OR (Image ILIKE '%/dd' AND (CommandLine ILIKE '%if=/dev/zero%' OR CommandLine ILIKE '%if=/dev/random%' OR CommandLine ILIKE '%if=/dev/urandom%'))

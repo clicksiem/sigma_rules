@@ -1,0 +1,12 @@
+id: 43e32da2-fdd0-4156-90de-50dfd62636f9
+name: Dism Remove Online Package
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\DismHost.exe' AND (ParentCommandLine ILIKE '%/Online%' AND ParentCommandLine ILIKE '%/Disable-Feature%')) OR (Image ILIKE '%\\Dism.exe' AND (CommandLine ILIKE '%/Online%' AND CommandLine ILIKE '%/Disable-Feature%'))

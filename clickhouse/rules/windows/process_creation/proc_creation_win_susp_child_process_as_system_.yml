@@ -1,0 +1,13 @@
+id: 590a5f4c-6c8c-4f10-8307-89afe9453a9d
+name: Suspicious Child Process Created as System
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, Roberto Rodriguez (@Cyb3rWard0g), Open Threat Research (OTR)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134.002
+rule: SELECT * FROM logs WHERE ((ParentUser ILIKE '%AUTHORI%' OR ParentUser ILIKE '%AUTORI%') AND (ParentUser ILIKE '%\\NETWORK SERVICE' OR ParentUser ILIKE '%\\LOCAL SERVICE') AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') AND (User ILIKE '%\\SYSTEM' OR User ILIKE '%\\Système' OR User ILIKE '%\\СИСТЕМА') AND (IntegrityLevel IN ('System', 'S-1-16-16384'))) AND (NOT (Image ILIKE '%\\rundll32.exe' AND CommandLine ILIKE '%DavSetCookie%'))

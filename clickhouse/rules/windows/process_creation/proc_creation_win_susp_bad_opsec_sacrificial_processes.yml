@@ -1,0 +1,12 @@
+id: a7c3d773-caef-227e-a7e7-c2f13c622329
+name: Bad Opsec Defaults Sacrificial Processes With Improper Arguments
+level: 8
+size: '>0'
+active: true
+author:
+- Oleg Kolesnikov @securonix invrep_de, oscd.community, Florian Roth (Nextron Systems), Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\WerFault.exe' AND CommandLine ILIKE '%WerFault.exe') OR (Image ILIKE '%\\rundll32.exe' AND CommandLine ILIKE '%rundll32.exe') OR (Image ILIKE '%\\regsvcs.exe' AND CommandLine ILIKE '%regsvcs.exe') OR (Image ILIKE '%\\regasm.exe' AND CommandLine ILIKE '%regasm.exe') OR (Image ILIKE '%\\regsvr32.exe' AND CommandLine ILIKE '%regsvr32.exe')) AND (NOT ((ParentImage ILIKE '%\\AppData\\Local\\Microsoft\\EdgeUpdate\\Install\\{%' AND Image ILIKE '%\\rundll32.exe' AND CommandLine ILIKE '%rundll32.exe') OR ((ParentImage ILIKE '%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\Application\\%' OR ParentImage ILIKE '%\\AppData\\Local\\Google\\Chrome\\Application\\%') AND ParentImage ILIKE '%\\Installer\\setup.exe' AND ParentCommandLine ILIKE '%--uninstall %' AND Image ILIKE '%\\rundll32.exe' AND CommandLine ILIKE '%rundll32.exe')))

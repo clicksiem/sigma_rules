@@ -1,0 +1,12 @@
+id: 7bd3902d-8b8b-4dd4-838a-c6862d40150d
+name: DNS HybridConnectionManager Service Bus
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.persistence
+- attack.t1554
+rule: SELECT * FROM logs WHERE QueryName ILIKE '%servicebus.windows.net%' AND Image ILIKE '%HybridConnectionManager%'

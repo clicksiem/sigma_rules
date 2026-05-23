@@ -1,0 +1,13 @@
+id: ae6f14e6-14de-45b0-9f44-c0986f50dc89
+name: Change Default File Association To Executable Via Assoc
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND (CommandLine ILIKE '%assoc %' AND CommandLine ILIKE '%exefile%')) AND (NOT CommandLine ILIKE '%.exe=exefile%')

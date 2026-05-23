@@ -1,0 +1,13 @@
+id: d26ce60c-2151-403c-9a42-49420d87b5e4
+name: HackTool Service Registration or Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND (EventID IN (7045, 7036))) AND ((ServiceName ILIKE '%cachedump%' OR ServiceName ILIKE '%DumpSvc%' OR ServiceName ILIKE '%gsecdump%' OR ServiceName ILIKE '%pwdump%' OR ServiceName ILIKE '%UACBypassedService%' OR ServiceName ILIKE '%WCE SERVICE%' OR ServiceName ILIKE '%WCESERVICE%' OR ServiceName ILIKE '%winexesvc%') OR ImagePath ILIKE '%bypass%')

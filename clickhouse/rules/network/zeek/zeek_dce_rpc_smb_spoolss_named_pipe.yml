@@ -1,0 +1,12 @@
+id: bae2865c-5565-470d-b505-9496c87d0c30
+name: SMB Spoolss Name Piped Usage
+level: 5
+size: '>0'
+active: true
+author:
+- OTR (Open Threat Research), @neu5ron
+group: zeek
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE path ILIKE '%IPC$' AND name='spoolss'

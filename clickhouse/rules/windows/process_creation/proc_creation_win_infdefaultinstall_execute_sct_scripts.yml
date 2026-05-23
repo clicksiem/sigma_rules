@@ -1,0 +1,12 @@
+id: ce7cf472-6fcc-490a-9481-3786840b5d9b
+name: InfDefaultInstall.exe .inf Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%InfDefaultInstall.exe %' AND CommandLine ILIKE '%.inf%'

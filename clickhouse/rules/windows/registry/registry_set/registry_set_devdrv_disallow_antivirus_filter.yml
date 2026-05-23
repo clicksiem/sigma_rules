@@ -1,0 +1,12 @@
+id: 31e124fb-5dc4-42a0-83b3-44a69c77b271
+name: Antivirus Filter Driver Disallowed On Dev Drive - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- '@kostastsale, Nasreddine Bencherchali (Nextron Systems)'
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\FilterManager\\FltmgrDevDriveAllowAntivirusFilter' AND Details='DWORD (0x00000000)'

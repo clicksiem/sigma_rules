@@ -1,0 +1,13 @@
+id: 37b437cf-3fc5-4c8e-9c94-1d7c9aff842b
+name: Allow RDP Remote Assistance Feature
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%System\\CurrentControlSet\\Control\\Terminal Server\\fAllowToGetHelp' AND Details='DWORD (0x00000001)'

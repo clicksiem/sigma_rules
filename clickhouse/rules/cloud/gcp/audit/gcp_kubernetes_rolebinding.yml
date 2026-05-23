@@ -1,0 +1,11 @@
+id: 0322d9f2-289a-47c2-b5e1-b63c90901a3e
+name: Google Cloud Kubernetes RoleBinding
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.credential-access
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.clusterrolebindings.create' OR `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.rolebindings.create' OR `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.clusterrolebindings.patch' OR `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.rolebindings.patch' OR `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.clusterrolebindings.update' OR `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.rolebindings.update' OR `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.clusterrolebindings.delete' OR `gcp.audit.method_name` ILIKE 'io.k8s.authorization.rbac.v%.rolebindings.delete'

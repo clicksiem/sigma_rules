@@ -1,0 +1,13 @@
+id: e2482f8d-3443-4237-b906-cc145d87a076
+name: Disable Internal Tools or Feature in Registry
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems), CrimpSec
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\DisableCMD' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoControlPanel' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoRun' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\StartMenuLogOff' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableChangePassword' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableLockWorkstation' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableRegistryTools' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\DisableTaskmgr' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoDispBackgroundPage' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\NoDispCPL' OR TargetObject ILIKE '%SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\\DisableNotificationCenter' OR TargetObject ILIKE '%SOFTWARE\\Policies\\Microsoft\\Windows\\System\\DisableCMD') AND Details='DWORD (0x00000001)') OR ((TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\ConsentPromptBehaviorAdmin' OR TargetObject ILIKE '%Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\InactivityTimeoutSecs' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\shutdownwithoutlogon' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\PushNotifications\\ToastEnabled' OR TargetObject ILIKE '%SYSTEM\\CurrentControlSet\\Control\\Storage\\Write Protection' OR TargetObject ILIKE '%SYSTEM\\CurrentControlSet\\Control\\StorageDevicePolicies\\WriteProtect') AND Details='DWORD (0x00000000)')

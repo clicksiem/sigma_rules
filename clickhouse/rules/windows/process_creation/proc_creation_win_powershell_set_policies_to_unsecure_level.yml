@@ -1,0 +1,12 @@
+id: 87e3c4e8-a6a8-4ad9-bb4f-46e7ff99a180
+name: Change PowerShell Policies to an Insecure Level
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (((OriginalFileName IN ('powershell\_ise.exe', 'PowerShell.EXE', 'pwsh.dll')) OR (Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe')) AND (CommandLine ILIKE '%-executionpolicy %' OR CommandLine ILIKE '% -ep %' OR CommandLine ILIKE '% -exec %') AND (CommandLine ILIKE '%Bypass%' OR CommandLine ILIKE '%Unrestricted%')) AND (NOT ((ParentImage IN ('C:\\Windows\\SysWOW64\\msiexec.exe', 'C:\\Windows\\System32\\msiexec.exe')) AND (CommandLine ILIKE '%-NoProfile -ExecutionPolicy Bypass -File "C:\\Program Files\\PowerShell\\7\\%' OR CommandLine ILIKE '%-NoProfile -ExecutionPolicy Bypass -File "C:\\Program Files (x86)\\PowerShell\\7\\%'))) AND (NOT ((ParentImage ILIKE '%C:\\Program Files\\Avast Software\\Avast\\%' OR ParentImage ILIKE '%C:\\Program Files (x86)\\Avast Software\\Avast\\%' OR ParentImage ILIKE '%\\instup.exe%') AND (CommandLine ILIKE '%-ExecutionPolicy ByPass -File "C:\\Program Files\\Avast Software\\Avast%' OR CommandLine ILIKE '%-ExecutionPolicy ByPass -File "C:\\Program Files (x86)\\Avast Software\\Avast\\%')))

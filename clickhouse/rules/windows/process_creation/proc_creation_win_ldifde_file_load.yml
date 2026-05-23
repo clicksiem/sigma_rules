@@ -1,0 +1,14 @@
+id: 6f535e01-ca1f-40be-ab8d-45b19c0c8b7f
+name: Import LDAP Data Interchange Format File Via Ldifde.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- '@gott_cyber'
+group: windows
+tags:
+- attack.command-and-control
+- attack.stealth
+- attack.t1218
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\ldifde.exe' OR OriginalFileName='ldifde.exe') AND (CommandLine ILIKE '%-i%' AND CommandLine ILIKE '%-f%')

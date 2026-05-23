@@ -1,0 +1,12 @@
+id: 9aa5106d-bce3-4b13-86df-3a20f1d5cf0b
+name: Forfiles Command Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic, E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\forfiles.exe' OR OriginalFileName='forfiles.exe') AND (CommandLine ILIKE '% -c %' OR CommandLine ILIKE '% /c %' OR CommandLine ILIKE '% –c %' OR CommandLine ILIKE '% —c %' OR CommandLine ILIKE '% ―c %')

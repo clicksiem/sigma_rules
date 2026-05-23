@@ -1,0 +1,12 @@
+id: 98c3bcf1-56f2-49dc-9d8d-c66cf190238b
+name: NTLM Logon
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1550.002
+rule: SELECT * FROM logs WHERE EventID=8002

@@ -1,0 +1,12 @@
+id: 975b2262-9a49-439d-92a6-0709cccdf0b2
+name: Unsigned AppX Installation Attempt Using Add-AppxPackage - PsScript
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.stealth
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Add-AppPackage %' OR ScriptBlockText ILIKE '%Add-AppxPackage %') AND ScriptBlockText ILIKE '% -AllowUnsigned%'

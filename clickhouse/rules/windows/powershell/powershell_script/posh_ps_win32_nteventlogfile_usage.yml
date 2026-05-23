@@ -1,0 +1,11 @@
+id: e2812b49-bae0-4b21-b366-7c142eafcde2
+name: Potentially Suspicious Call To Win32_NTEventlogFile Class - PSScript
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Win32\_NTEventlogFile%' AND (ScriptBlockText ILIKE '%.BackupEventlog(%' OR ScriptBlockText ILIKE '%.ChangeSecurityPermissions(%' OR ScriptBlockText ILIKE '%.ChangeSecurityPermissionsEx(%' OR ScriptBlockText ILIKE '%.ClearEventLog(%' OR ScriptBlockText ILIKE '%.Delete(%' OR ScriptBlockText ILIKE '%.DeleteEx(%' OR ScriptBlockText ILIKE '%.Rename(%' OR ScriptBlockText ILIKE '%.TakeOwnerShip(%' OR ScriptBlockText ILIKE '%.TakeOwnerShipEx(%')

@@ -1,0 +1,14 @@
+id: d2d642d7-b393-43fe-bae4-e81ed5915c4b
+name: Scheduled Task/Job At
+level: 3
+size: '>0'
+active: true
+author:
+- Ömer Günal, oscd.community
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%/at' OR Image ILIKE '%/atd'

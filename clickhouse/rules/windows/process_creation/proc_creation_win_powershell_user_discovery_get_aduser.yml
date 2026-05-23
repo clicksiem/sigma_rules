@@ -1,0 +1,12 @@
+id: 1114e048-b69c-4f41-bc20-657245ae6e3f
+name: User Discovery And Export Via Get-ADUser Cmdlet
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND ((CommandLine ILIKE '%Get-ADUser %' AND CommandLine ILIKE '% -Filter *%') AND (CommandLine ILIKE '% > %' OR CommandLine ILIKE '% | Select %' OR CommandLine ILIKE '%Out-File%' OR CommandLine ILIKE '%Set-Content%' OR CommandLine ILIKE '%Add-Content%'))

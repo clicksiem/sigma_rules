@@ -1,0 +1,13 @@
+id: e7888eb1-13b0-4616-bd99-4bc0c2b054b9
+name: Dllhost.EXE Execution Anomaly
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dllhost.exe' AND (CommandLine IN ('dllhost.exe', 'dllhost'))) AND (NOT isNull(CommandLine))

@@ -1,0 +1,14 @@
+id: 7794fa3c-edea-4cff-bec7-267dd4770fd7
+name: Clipboard Data Collection Via OSAScript
+level: 8
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.collection
+- attack.execution
+- attack.t1115
+- attack.t1059.002
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%osascript%' AND CommandLine ILIKE '% -e %' AND CommandLine ILIKE '%clipboard%'

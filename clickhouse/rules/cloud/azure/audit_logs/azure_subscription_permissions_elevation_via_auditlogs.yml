@@ -1,0 +1,15 @@
+id: ca9bf243-465e-494a-9e54-bf9fc239057d
+name: Azure Subscription Permission Elevation Via AuditLogs
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE Category='Administrative' AND OperationName='Assigns the caller to user access admin'

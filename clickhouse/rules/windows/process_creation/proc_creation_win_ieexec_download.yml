@@ -1,0 +1,12 @@
+id: 9801abb8-e297-4dbf-9fbd-57dde0e830ad
+name: File Download And Execution Via IEExec.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\IEExec.exe' OR OriginalFileName='IEExec.exe') AND (CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

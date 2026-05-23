@@ -1,0 +1,12 @@
+id: 5c8d7b41-3812-432f-a0bb-4cfb7c31827e
+name: FortiGate - Firewall Address Object Added
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi @pedrinazziM (InTheCyber)
+group: fortigate
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE action='Add' AND cfgpath='firewall.address'

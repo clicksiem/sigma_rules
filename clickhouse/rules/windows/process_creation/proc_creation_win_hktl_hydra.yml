@@ -1,0 +1,13 @@
+id: aaafa146-074c-11eb-adc1-0242ac120002
+name: HackTool - Hydra Password Bruteforce Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Vasiliy Burov
+group: windows
+tags:
+- attack.credential-access
+- attack.t1110
+- attack.t1110.001
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%-u %' AND CommandLine ILIKE '%-p %') AND (CommandLine ILIKE '%^USER^%' OR CommandLine ILIKE '%^PASS^%')

@@ -1,0 +1,16 @@
+id: 117d3d3a-755c-4a61-b23e-9171146d094c
+name: Suspicious Outlook Macro Created
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.command-and-control
+- attack.t1137
+- attack.t1008
+- attack.t1546
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Microsoft\\Outlook\\VbaProject.OTM' AND (NOT Image ILIKE '%\\outlook.exe')

@@ -1,0 +1,17 @@
+id: 2e4e488a-6164-4811-9ea1-f960c7359c40
+name: HackTool - CACTUSTORCH Remote Thread Creation
+level: 8
+size: '>0'
+active: true
+author:
+- '@SBousseaden (detection), Thomas Patzke (rule)'
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1055.012
+- attack.t1059.005
+- attack.t1059.007
+- attack.t1218.005
+rule: SELECT * FROM logs WHERE (SourceImage ILIKE '%\\System32\\cscript.exe' OR SourceImage ILIKE '%\\System32\\wscript.exe' OR SourceImage ILIKE '%\\System32\\mshta.exe' OR SourceImage ILIKE '%\\winword.exe' OR SourceImage ILIKE '%\\excel.exe') AND TargetImage ILIKE '%\\SysWOW64\\%' AND isNull(StartModule)

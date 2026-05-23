@@ -1,0 +1,12 @@
+id: ceb55fd0-726e-4656-bf4e-b585b7f7d572
+name: Suspicious Inbox Manipulation Rules
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.stealth
+- attack.t1140
+rule: SELECT * FROM logs WHERE riskEventType='mcasSuspiciousInboxManipulationRules'

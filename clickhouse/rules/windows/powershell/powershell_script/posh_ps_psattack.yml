@@ -1,0 +1,12 @@
+id: b7ec41a4-042c-4f31-a5db-d0fcde9fa5c5
+name: PowerShell PSAttack
+level: 8
+size: '>0'
+active: true
+author:
+- Sean Metcalf (source), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%PS ATTACK!!!%'

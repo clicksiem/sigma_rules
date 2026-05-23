@@ -1,0 +1,11 @@
+id: 350dfb37-3706-4cdc-9e2e-5e24bc3a46df
+name: MSSQL Disable Audit Settings
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE Provider_Name ILIKE '%MSSQL%' AND EventID=33205 AND (Data ILIKE '%statement:ALTER SERVER AUDIT%' OR Data ILIKE '%statement:DROP SERVER AUDIT%')

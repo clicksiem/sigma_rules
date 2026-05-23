@@ -1,0 +1,18 @@
+id: c484e533-ee16-4a93-b6ac-f0ea4868b2f1
+name: HackTool - SharpUp PrivEsc Tool Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.discovery
+- attack.execution
+- attack.stealth
+- attack.t1615
+- attack.t1569.002
+- attack.t1574.005
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SharpUp.exe' OR Description='SharpUp' OR (CommandLine ILIKE '%HijackablePaths%' OR CommandLine ILIKE '%UnquotedServicePath%' OR CommandLine ILIKE '%ProcessDLLHijack%' OR CommandLine ILIKE '%ModifiableServiceBinaries%' OR CommandLine ILIKE '%ModifiableScheduledTask%' OR CommandLine ILIKE '%DomainGPPPassword%' OR CommandLine ILIKE '%CachedGPPPassword%')

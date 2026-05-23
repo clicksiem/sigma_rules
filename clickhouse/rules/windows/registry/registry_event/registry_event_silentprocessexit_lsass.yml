@@ -1,0 +1,12 @@
+id: 55e29995-75e7-451a-bef0-6225e2f13597
+name: Potential Credential Dumping Via LSASS SilentProcessExit Technique
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Microsoft\\Windows NT\\CurrentVersion\\SilentProcessExit\\lsass.exe%'

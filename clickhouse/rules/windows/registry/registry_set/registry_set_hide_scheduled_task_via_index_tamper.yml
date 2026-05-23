@@ -1,0 +1,12 @@
+id: 5b16df71-8615-4f7f-ac9b-6c43c0509e61
+name: Hide Schedule Task Via Index Value Tamper
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\%' AND TargetObject ILIKE '%Index%') AND Details='DWORD (0x00000000)'

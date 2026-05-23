@@ -1,0 +1,12 @@
+id: aa0b3a82-eacc-4ec3-9150-b5a9a3e3f82f
+name: Potential Download/Upload Activity Using Type Command
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%type %' AND CommandLine ILIKE '% > \\\\%') OR (CommandLine ILIKE '%type \\\\%' AND CommandLine ILIKE '% > %')

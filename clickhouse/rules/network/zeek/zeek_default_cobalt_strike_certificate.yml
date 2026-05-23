@@ -1,0 +1,12 @@
+id: 7100f7e3-92ce-4584-b7b7-01b40d3d4118
+name: Default Cobalt Strike Certificate
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: zeek
+tags:
+- attack.command-and-control
+- attack.s0154
+rule: SELECT * FROM logs WHERE `certificate.serial`='8BB00EE'

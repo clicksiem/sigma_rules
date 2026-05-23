@@ -1,0 +1,14 @@
+id: 86b896ba-ffa1-4fea-83e3-ee28a4c915c7
+name: Invoke-Obfuscation Via Stdin - Powershell
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(ScriptBlockText, '(?i)(set).*&&\s?set.*(environment|invoke|\$\{?input).*&&.*"')

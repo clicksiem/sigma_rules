@@ -1,0 +1,15 @@
+id: 1a4bd6af-99ac-4466-b5b2-7b72b4a05462
+name: Security Event Logging Disabled via MiniNt Registry Key - Process
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1685.001
+- attack.t1112
+- car.2022-03-001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '% add %' AND CommandLine ILIKE '%\\SYSTEM\\CurrentControlSet\\Control\\MiniNt%')) OR (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\powershell\_ise.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%New-Item %' OR CommandLine ILIKE '%ni %') AND CommandLine ILIKE '%\\SYSTEM\\CurrentControlSet\\Control\\MiniNt%')

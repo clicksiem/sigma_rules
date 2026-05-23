@@ -1,0 +1,12 @@
+id: 220457c1-1c9f-4c2e-afe6-9598926222c1
+name: Delete All Scheduled Tasks
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '% /delete %' AND CommandLine ILIKE '%/tn *%' AND CommandLine ILIKE '% /f%')

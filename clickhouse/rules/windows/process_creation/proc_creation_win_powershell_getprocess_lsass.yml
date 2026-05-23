@@ -1,0 +1,12 @@
+id: b2815d0d-7481-4bf0-9b6c-a4c48a94b349
+name: PowerShell Get-Process LSASS
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.004
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Get-Process lsas%' OR CommandLine ILIKE '%ps lsas%' OR CommandLine ILIKE '%gps lsas%'

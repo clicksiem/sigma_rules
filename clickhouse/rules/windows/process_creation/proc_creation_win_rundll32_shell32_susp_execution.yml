@@ -1,0 +1,13 @@
+id: 32b96012-7892-429e-b26c-ac2bf46066ff
+name: Shell32 DLL Execution in Suspicious Directory
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND ((CommandLine ILIKE '%shell32.dll%' AND CommandLine ILIKE '%Control\_RunDLL%') AND (CommandLine ILIKE '%\%AppData\%%' OR CommandLine ILIKE '%\%LocalAppData\%%' OR CommandLine ILIKE '%\%Temp\%%' OR CommandLine ILIKE '%\%tmp\%%' OR CommandLine ILIKE '%\\AppData\\%' OR CommandLine ILIKE '%\\Temp\\%' OR CommandLine ILIKE '%\\Users\\Public\\%'))

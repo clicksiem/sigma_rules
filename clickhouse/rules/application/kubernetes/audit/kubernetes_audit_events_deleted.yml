@@ -1,0 +1,12 @@
+id: 3132570d-cab2-4561-9ea6-1743644b2290
+name: Kubernetes Events Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Leo Tsaousis (@laripping)
+group: kubernetes
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE verb='delete' AND `objectRef.resource`='events'

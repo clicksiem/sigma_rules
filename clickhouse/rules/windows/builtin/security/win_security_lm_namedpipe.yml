@@ -1,0 +1,12 @@
+id: 52d8b0c6-53d6-439a-9e41-52ad442ad9ad
+name: First Time Seen Remote Named Pipe
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE (EventID=5145 AND ShareName ILIKE '\\\\*\\IPC$') AND (NOT (RelativeTargetName IN ('atsvc', 'samr', 'lsarpc', 'lsass', 'winreg', 'netlogon', 'srvsvc', 'protected\_storage', 'wkssvc', 'browser', 'netdfs', 'svcctl', 'spoolss', 'ntsvcs', 'LSM\_API\_service', 'HydraLsPipe', 'TermSrv\_API\_service', 'MsFteWds', 'sql\\query', 'eventlog')))

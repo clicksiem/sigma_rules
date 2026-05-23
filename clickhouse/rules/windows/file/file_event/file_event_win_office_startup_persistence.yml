@@ -1,0 +1,12 @@
+id: 0e20c89d-2264-44ae-8238-aeeaba609ece
+name: Potential Persistence Via Microsoft Office Startup Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1137
+rule: SELECT * FROM logs WHERE (((TargetFilename ILIKE '%\\Microsoft\\Word\\STARTUP%' OR (TargetFilename ILIKE '%\\Office%' AND TargetFilename ILIKE '%\\Program Files%' AND TargetFilename ILIKE '%\\STARTUP%')) AND (TargetFilename ILIKE '%.doc' OR TargetFilename ILIKE '%.docm' OR TargetFilename ILIKE '%.docx' OR TargetFilename ILIKE '%.dot' OR TargetFilename ILIKE '%.dotm' OR TargetFilename ILIKE '%.rtf')) OR ((TargetFilename ILIKE '%\\Microsoft\\Excel\\XLSTART%' OR (TargetFilename ILIKE '%\\Office%' AND TargetFilename ILIKE '%\\Program Files%' AND TargetFilename ILIKE '%\\XLSTART%')) AND (TargetFilename ILIKE '%.xls' OR TargetFilename ILIKE '%.xlsm' OR TargetFilename ILIKE '%.xlsx' OR TargetFilename ILIKE '%.xlt' OR TargetFilename ILIKE '%.xltm'))) AND (NOT (Image ILIKE '%\\WINWORD.exe' OR Image ILIKE '%\\EXCEL.exe'))

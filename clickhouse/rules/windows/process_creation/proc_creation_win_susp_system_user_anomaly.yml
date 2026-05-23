@@ -1,0 +1,16 @@
+id: 2617e7ed-adb7-40ba-b0f3-8f9945fe6c09
+name: Suspicious SYSTEM User Process Creation
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), David ANDRE (additional keywords)
+group: windows
+tags:
+- attack.credential-access
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134
+- attack.t1003
+- attack.t1027
+rule: SELECT * FROM logs WHERE (((IntegrityLevel IN ('System', 'S-1-16-16384')) AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%')) AND ((Image ILIKE '%\\calc.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\forfiles.exe' OR Image ILIKE '%\\hh.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\ping.exe' OR Image ILIKE '%\\wscript.exe') OR match(CommandLine, 'net\s+user\s+') OR (CommandLine ILIKE '% -NoP %' OR CommandLine ILIKE '% -W Hidden %' OR CommandLine ILIKE '% -decode %' OR CommandLine ILIKE '% /decode %' OR CommandLine ILIKE '% /urlcache %' OR CommandLine ILIKE '% -urlcache %' OR CommandLine ILIKE '% -e% JAB%' OR CommandLine ILIKE '% -e% SUVYI%' OR CommandLine ILIKE '% -e% SQBFAFgA%' OR CommandLine ILIKE '% -e% aWV4I%' OR CommandLine ILIKE '% -e% IAB%' OR CommandLine ILIKE '% -e% PAA%' OR CommandLine ILIKE '% -e% aQBlAHgA%' OR CommandLine ILIKE '%vssadmin delete shadows%' OR CommandLine ILIKE '%reg SAVE HKLM%' OR CommandLine ILIKE '% -ma %' OR CommandLine ILIKE '%Microsoft\\Windows\\CurrentVersion\\Run%' OR CommandLine ILIKE '%.downloadstring(%' OR CommandLine ILIKE '%.downloadfile(%' OR CommandLine ILIKE '% /ticket:%' OR CommandLine ILIKE '%dpapi::%' OR CommandLine ILIKE '%event::clear%' OR CommandLine ILIKE '%event::drop%' OR CommandLine ILIKE '%id::modify%' OR CommandLine ILIKE '%kerberos::%' OR CommandLine ILIKE '%lsadump::%' OR CommandLine ILIKE '%misc::%' OR CommandLine ILIKE '%privilege::%' OR CommandLine ILIKE '%rpc::%' OR CommandLine ILIKE '%sekurlsa::%' OR CommandLine ILIKE '%sid::%' OR CommandLine ILIKE '%token::%' OR CommandLine ILIKE '%vault::cred%' OR CommandLine ILIKE '%vault::list%' OR CommandLine ILIKE '% p::d %' OR CommandLine ILIKE '%;iex(%' OR CommandLine ILIKE '%MiniDump%'))) AND (NOT ((CommandLine ILIKE '%ping%' AND CommandLine ILIKE '%127.0.0.1%' AND CommandLine ILIKE '% -n %') OR (Image ILIKE '%\\PING.EXE' AND ParentCommandLine ILIKE '%\\DismFoDInstall.cmd%') OR ParentImage ILIKE '%:\\Packages\\Plugins\\Microsoft.GuestConfiguration.ConfigurationforWindows\\%' OR ((ParentImage ILIKE '%:\\Program Files (x86)\\Java\\%' OR ParentImage ILIKE '%:\\Program Files\\Java\\%') AND ParentImage ILIKE '%\\bin\\javaws.exe' AND (Image ILIKE '%:\\Program Files (x86)\\Java\\%' OR Image ILIKE '%:\\Program Files\\Java\\%') AND Image ILIKE '%\\bin\\jp2launcher.exe' AND CommandLine ILIKE '% -ma %')))

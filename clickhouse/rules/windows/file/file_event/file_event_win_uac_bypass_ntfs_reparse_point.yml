@@ -1,0 +1,12 @@
+id: 7fff6773-2baa-46de-a24a-b6eec1aba2d1
+name: UAC Bypass Using NTFS Reparse Point - File
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Users\\%' AND TargetFilename ILIKE '%\\AppData\\Local\\Temp\\api-ms-win-core-kernel32-legacy-l1.DLL'

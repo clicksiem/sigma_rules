@@ -1,0 +1,12 @@
+id: 5dfc1465-8f65-4fde-8eb5-6194380c6a62
+name: Windows Recall Feature Enabled - DisableAIDataAnalysis Value Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Sajid Nawaz Khan
+group: windows
+tags:
+- attack.collection
+- attack.t1113
+rule: SELECT * FROM logs WHERE EventType='DeleteValue' AND TargetObject ILIKE '%\\Microsoft\\Windows\\WindowsAI\\DisableAIDataAnalysis'

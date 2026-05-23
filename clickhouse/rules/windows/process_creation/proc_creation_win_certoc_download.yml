@@ -1,0 +1,12 @@
+id: 70ad0861-d1fe-491c-a45f-fa48148a300d
+name: File Download via CertOC.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certoc.exe' OR OriginalFileName='CertOC.exe') AND (CommandLine ILIKE '%-GetCACAPS%' AND CommandLine ILIKE '%http%')

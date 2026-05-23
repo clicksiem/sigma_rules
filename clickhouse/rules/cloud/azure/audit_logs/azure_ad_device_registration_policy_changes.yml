@@ -1,0 +1,13 @@
+id: 9494bff8-959f-4440-bbce-fb87a208d517
+name: Changes to Device Registration Policy
+level: 8
+size: '>0'
+active: true
+author:
+- Michael Epping, '@mepples21'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1484
+rule: SELECT * FROM logs WHERE Category='Policy' AND ActivityDisplayName='Set device registration policies'

@@ -1,0 +1,14 @@
+id: e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c
+name: Apache Threading Error
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.initial-access
+- attack.lateral-movement
+- attack.t1190
+- attack.t1210
+rule: 'SELECT * FROM logs WHERE hasToken(full_log, ''\_\_pthread\_tpp\_change\_priority: Assertion `new\_prio == -1 || (new\_prio >= fifo\_min\_prio && new\_prio <= fifo\_max\_prio)'')'

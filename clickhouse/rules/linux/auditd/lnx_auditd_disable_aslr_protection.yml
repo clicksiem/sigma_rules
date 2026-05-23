@@ -1,0 +1,15 @@
+id: e497a24e-9345-4a62-9803-b06d7d7cb132
+name: ASLR Disabled Via Sysctl or Direct Syscall - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Milad Cheraghi
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.defense-impairment
+- attack.t1685
+- attack.t1055.009
+rule: SELECT * FROM logs WHERE (type='SYSCALL' AND SYSCALL='personality' AND a0=40000) OR (type='EXECVE' AND a0='sysctl' AND a1='-w' AND a2 ILIKE 'kernel.randomize\_va\_space=0')

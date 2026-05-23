@@ -1,0 +1,12 @@
+id: 899133d5-4d7c-4a7f-94ee-27355c879d90
+name: Python Inline Command Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((OriginalFileName='python.exe' OR (Image ILIKE '%python.exe' OR Image ILIKE '%python3.exe' OR Image ILIKE '%python2.exe')) AND CommandLine ILIKE '% -c%') AND (NOT (((ParentImage ILIKE 'C:\\Program Files\\Python%' OR ParentImage ILIKE 'C:\\Program Files (x86)\\Python%') AND ParentImage ILIKE '%\\python.exe' AND ParentCommandLine ILIKE '%-E -s -m ensurepip -U --default-pip%') OR ((ParentImage ILIKE 'C:\\Program Files\\Python%' OR ParentImage ILIKE 'C:\\Program Files (x86)\\Python%') AND (CommandLine ILIKE '%-W ignore::DeprecationWarning%' AND CommandLine ILIKE '%[''install'', ''--no-cache-dir'', ''--no-index'', ''--find-links'',%' AND CommandLine ILIKE '%''--upgrade'', ''pip''%')))) AND (NOT ((ParentImage ILIKE '%\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe' OR (ParentImage IN ('C:\\Program Files\\Microsoft VS Code\\Code.exe', 'C:\\Program Files (x86)\\Microsoft VS Code\\Code.exe'))) OR (CommandLine ILIKE '%<pip-setuptools-caller>%' AND CommandLine ILIKE '%exec(compile(%')))

@@ -1,0 +1,12 @@
+id: 6e22722b-dfb1-4508-a911-49ac840b40f8
+name: Suspicious Mstsc.EXE Execution With Local RDP File
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mstsc.exe' OR OriginalFileName='mstsc.exe') AND (CommandLine ILIKE '%.rdp' OR CommandLine ILIKE '%.rdp"') AND (CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\spool\\drivers\\color%' OR CommandLine ILIKE '%:\\Windows\\System32\\Tasks\_Migrated %' OR CommandLine ILIKE '%:\\Windows\\Tasks\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%:\\Windows\\Tracing\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\Downloads\\%')

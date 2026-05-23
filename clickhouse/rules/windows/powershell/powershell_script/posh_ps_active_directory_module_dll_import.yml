@@ -1,0 +1,13 @@
+id: 9e620995-f2d8-4630-8430-4afd89f77604
+name: Potential Active Directory Enumeration Using AD Module - PsScript
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.reconnaissance
+- attack.discovery
+- attack.impact
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Import-Module %' AND ScriptBlockText ILIKE '%Microsoft.ActiveDirectory.Management.dll%') OR ScriptBlockText ILIKE '%ipmo Microsoft.ActiveDirectory.Management.dll%'

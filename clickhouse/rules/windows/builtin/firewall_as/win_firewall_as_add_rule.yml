@@ -1,0 +1,12 @@
+id: cde0a575-7d3d-4a49-9817-b8004a7bf105
+name: Uncommon New Firewall Rule Added In Windows Firewall Exception List
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE (EventID IN (2004, 2071, 2097)) AND (NOT (Action=2 OR (ApplicationPath ILIKE 'C:\\Program Files (x86)\\%' OR ApplicationPath ILIKE 'C:\\Program Files\\%' OR ApplicationPath ILIKE 'C:\\Windows\\System32\\%' OR ApplicationPath ILIKE 'C:\\Windows\\SysWOW64\\%' OR ApplicationPath ILIKE 'C:\\Windows\\WinSxS\\%') OR (ApplicationPath ILIKE '%C:\\PerfLogs\\%' OR ApplicationPath ILIKE '%C:\\Temp\\%' OR ApplicationPath ILIKE '%C:\\Tmp\\%' OR ApplicationPath ILIKE '%C:\\Users\\Public\\%' OR ApplicationPath ILIKE '%C:\\Windows\\Tasks\\%' OR ApplicationPath ILIKE '%C:\\Windows\\Temp\\%' OR ApplicationPath ILIKE '%\\AppData\\Local\\Temp\\%') OR (ApplicationPath='System' AND ModifyingApplication ILIKE 'C:\\Windows\\System32\\dllhost.exe') OR (ModifyingApplication ILIKE 'C:\\Windows\\WinSxS\\%' AND ModifyingApplication ILIKE '%\\TiWorker.exe') OR isNull(ApplicationPath))) AND (NOT (((ModifyingApplication IN ('C:\\Windows\\System32\\svchost.exe', 'C:\\Windows\\System32\\dllhost.exe')) AND ApplicationPath='') OR (((ModifyingApplication ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' OR ModifyingApplication ILIKE 'C:\\Program Files\\Windows Defender\\%') AND ModifyingApplication ILIKE '%\\MsMpEng.exe') OR ((ApplicationPath ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' OR ApplicationPath ILIKE 'C:\\Program Files\\Windows Defender\\%') AND ApplicationPath ILIKE '%\\MsMpEng.exe'))))

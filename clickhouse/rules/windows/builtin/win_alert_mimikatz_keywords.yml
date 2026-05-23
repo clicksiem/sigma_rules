@@ -1,0 +1,19 @@
+id: 06d71506-7beb-4f22-8888-e2e5e2ca7fd8
+name: Mimikatz Use
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), David ANDRE (additional keywords)
+group: windows
+tags:
+- attack.s0002
+- attack.lateral-movement
+- attack.credential-access
+- car.2013-07-001
+- car.2019-04-004
+- attack.t1003.002
+- attack.t1003.004
+- attack.t1003.001
+- attack.t1003.006
+rule: SELECT * FROM logs WHERE (hasToken(full_log, 'dpapi::masterkey') OR hasToken(full_log, 'eo.oe.kiwi') OR hasToken(full_log, 'event::clear') OR hasToken(full_log, 'event::drop') OR hasToken(full_log, 'gentilkiwi.com') OR hasToken(full_log, 'kerberos::golden') OR hasToken(full_log, 'kerberos::ptc') OR hasToken(full_log, 'kerberos::ptt') OR hasToken(full_log, 'kerberos::tgt') OR hasToken(full_log, 'Kiwi Legit Printer') OR hasToken(full_log, 'lsadump::') OR hasToken(full_log, 'mimidrv.sys') OR hasToken(full_log, '\\mimilib.dll') OR hasToken(full_log, 'misc::printnightmare') OR hasToken(full_log, 'misc::shadowcopies') OR hasToken(full_log, 'misc::skeleton') OR hasToken(full_log, 'privilege::backup') OR hasToken(full_log, 'privilege::debug') OR hasToken(full_log, 'privilege::driver') OR hasToken(full_log, 'sekurlsa::')) AND (NOT EventID=15)

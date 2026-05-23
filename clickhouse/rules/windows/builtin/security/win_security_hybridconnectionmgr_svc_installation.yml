@@ -1,0 +1,12 @@
+id: 0ee4d8a5-4e67-4faf-acfa-62a78457d1f2
+name: HybridConnectionManager Service Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.persistence
+- attack.t1554
+rule: SELECT * FROM logs WHERE EventID=4697 AND ServiceName='HybridConnectionManager' AND ServiceFileName ILIKE '%HybridConnectionManager%'

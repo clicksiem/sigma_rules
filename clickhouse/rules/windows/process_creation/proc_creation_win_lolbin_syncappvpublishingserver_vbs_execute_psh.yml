@@ -1,0 +1,13 @@
+id: 36475a7d-0f6d-4dce-9b01-6aeb473bbaf1
+name: SyncAppvPublishingServer VBS Execute Arbitrary PowerShell Code
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.t1216
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\SyncAppvPublishingServer.vbs%' AND CommandLine ILIKE '%;%'

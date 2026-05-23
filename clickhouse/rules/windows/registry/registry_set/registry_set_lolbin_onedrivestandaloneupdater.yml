@@ -1,0 +1,12 @@
+id: 3aff0be0-7802-4a7e-a4fa-c60c74bc5e1d
+name: Lolbas OneDriveStandaloneUpdater.exe Proxy Download
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\OneDrive\\UpdateOfficeConfig\\UpdateRingSettingURLFromOC%'

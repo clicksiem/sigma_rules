@@ -1,0 +1,13 @@
+id: 8d85cf08-bf97-4260-ba49-986a2a65129c
+name: Suspicious PowerShell In Registry Run Keys
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Run%' OR TargetObject ILIKE '%\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run%' OR TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run%') AND (Details ILIKE '%powershell%' OR Details ILIKE '%pwsh %' OR Details ILIKE '%FromBase64String%' OR Details ILIKE '%.DownloadFile(%' OR Details ILIKE '%.DownloadString(%' OR Details ILIKE '% -w hidden %' OR Details ILIKE '% -w 1 %' OR Details ILIKE '%-windowstyle hidden%' OR Details ILIKE '%-window hidden%' OR Details ILIKE '% -nop %' OR Details ILIKE '% -encodedcommand %' OR Details ILIKE '%-ExecutionPolicy Bypass%' OR Details ILIKE '%Invoke-Expression%' OR Details ILIKE '%IEX (%' OR Details ILIKE '%Invoke-Command%' OR Details ILIKE '%ICM -%' OR Details ILIKE '%Invoke-WebRequest%' OR Details ILIKE '%IWR %' OR Details ILIKE '%Invoke-RestMethod%' OR Details ILIKE '%IRM %' OR Details ILIKE '% -noni %' OR Details ILIKE '% -noninteractive %')

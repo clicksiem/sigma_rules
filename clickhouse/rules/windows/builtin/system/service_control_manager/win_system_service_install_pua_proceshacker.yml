@@ -1,0 +1,15 @@
+id: c4ff1eac-84ad-44dd-a6fb-d56a92fc43a9
+name: ProcessHacker Privilege Elevation
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.privilege-escalation
+- attack.t1543.003
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND ServiceName ILIKE 'ProcessHacker%' AND AccountName='LocalSystem'

@@ -1,0 +1,12 @@
+id: 2d367498-5112-4ae5-a06a-96e7bc33a211
+name: Suspicious Binary Writes Via AnyDesk
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\AnyDesk.exe' OR Image ILIKE '%\\AnyDeskMSI.exe') AND (TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe')) AND (NOT TargetFilename ILIKE '%\\gcapi.dll')

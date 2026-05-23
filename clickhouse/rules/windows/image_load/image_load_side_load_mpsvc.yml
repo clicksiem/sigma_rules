@@ -1,0 +1,15 @@
+id: 5ba243e5-8165-4cf7-8c69-e1d3669654c1
+name: Potential DLL Sideloading Of MpSvc.DLL
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Wietze Beukema
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\MpSvc.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files\\Windows Defender\\%' OR ImageLoaded ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' OR ImageLoaded ILIKE 'C:\\Windows\\WinSxS\\%'))

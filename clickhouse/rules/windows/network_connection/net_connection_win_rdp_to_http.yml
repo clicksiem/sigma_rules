@@ -1,0 +1,15 @@
+id: b1e5da3b-ca8e-4adf-915c-9921f3d85481
+name: RDP to HTTP or HTTPS Target Ports
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1572
+- attack.lateral-movement
+- attack.t1021.001
+- car.2013-07-002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\svchost.exe' AND Initiated='true' AND SourcePort=3389 AND (DestinationPort IN (80, 443))

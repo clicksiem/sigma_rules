@@ -1,0 +1,12 @@
+id: e09eb557-96d2-4de9-ba2d-30f712a5afd3
+name: Commands to Clear or Remove the Syslog - Builtin
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: linux
+tags:
+- attack.impact
+- attack.t1565.001
+rule: SELECT * FROM logs WHERE (hasToken(full_log, 'rm /var/log/syslog') OR hasToken(full_log, 'rm -r /var/log/syslog') OR hasToken(full_log, 'rm -f /var/log/syslog') OR hasToken(full_log, 'rm -rf /var/log/syslog') OR hasToken(full_log, 'mv /var/log/syslog') OR hasToken(full_log, ' >/var/log/syslog') OR hasToken(full_log, ' > /var/log/syslog')) AND (NOT hasToken(full_log, '/syslog.'))

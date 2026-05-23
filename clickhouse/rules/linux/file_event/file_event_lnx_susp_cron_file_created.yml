@@ -1,0 +1,14 @@
+id: 6c4e2f43-d94d-4ead-b64d-97e53fa2bd05
+name: New Cron File Created
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.003
+rule: SELECT * FROM logs WHERE ((TargetFilename ILIKE '/etc/cron.d/%' OR TargetFilename ILIKE '/etc/cron.daily/%' OR TargetFilename ILIKE '/etc/cron.hourly/%' OR TargetFilename ILIKE '/etc/cron.monthly/%' OR TargetFilename ILIKE '/etc/cron.weekly/%' OR TargetFilename ILIKE '/var/spool/cron/crontabs/%' OR TargetFilename ILIKE '/var/spool/cron/root%') OR (TargetFilename ILIKE '%/etc/cron.allow%' OR TargetFilename ILIKE '%/etc/cron.deny%' OR TargetFilename ILIKE '%/etc/crontab%')) AND (NOT (TargetFilename IN ('/etc/cron.daily/apt', '/etc/cron.daily/dpkg', '/etc/cron.daily/passwd', '/etc/crontabs/root')))

@@ -1,0 +1,13 @@
+id: dd8756e7-a3a0-4768-b47e-8f545d1a751c
+name: Suspicious LNK Command-Line Padding with Whitespace Characters
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.execution
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\explorer.exe' OR ParentCommandLine ILIKE '%.lnk%') AND ((CommandLine ILIKE '%                 %' OR CommandLine ILIKE '%\\u0009%' OR CommandLine ILIKE '%\\u000A%' OR CommandLine ILIKE '%\\u0011%' OR CommandLine ILIKE '%\\u0012%' OR CommandLine ILIKE '%\\u0013%' OR CommandLine ILIKE '%\\u000B%' OR CommandLine ILIKE '%\\u000C%' OR CommandLine ILIKE '%\\u000D%') OR match(CommandLine, '\n\n\n\n\n\n'))

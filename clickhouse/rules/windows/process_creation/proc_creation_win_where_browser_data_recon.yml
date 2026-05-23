@@ -1,0 +1,12 @@
+id: 725a9768-0f5e-4cb3-aec2-bc5719c6831a
+name: Suspicious Where Execution
+level: 3
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1217
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\where.exe' OR OriginalFileName='where.exe') AND (CommandLine ILIKE '%places.sqlite%' OR CommandLine ILIKE '%cookies.sqlite%' OR CommandLine ILIKE '%formhistory.sqlite%' OR CommandLine ILIKE '%logins.json%' OR CommandLine ILIKE '%key4.db%' OR CommandLine ILIKE '%key3.db%' OR CommandLine ILIKE '%sessionstore.jsonlz4%' OR CommandLine ILIKE '%History%' OR CommandLine ILIKE '%Bookmarks%' OR CommandLine ILIKE '%Cookies%' OR CommandLine ILIKE '%Login Data%')

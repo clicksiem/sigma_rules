@@ -1,0 +1,12 @@
+id: 72124974-a68b-4366-b990-d30e0b2a190d
+name: Metasploit SMB Authentication
+level: 8
+size: '>0'
+active: true
+author:
+- Chakib Gzenayi (@Chak092), Hosni Mribah
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE ((EventID IN (4625, 4624)) AND LogonType=3 AND AuthenticationPackageName='NTLM' AND match(WorkstationName, '^[A-Za-z0-9]{16}$')) OR (EventID=4776 AND match(Workstation, '^[A-Za-z0-9]{16}$'))

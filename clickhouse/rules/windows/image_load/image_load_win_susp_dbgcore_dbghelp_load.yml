@@ -1,0 +1,14 @@
+id: 416bc4a2-7217-4519-8dc7-c3271817f1d5
+name: Suspicious Loading of Dbgcore/Dbghelp DLLs from Uncommon Location
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1003
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\Perflogs\\%' OR Image ILIKE '%:\\Temp\\%' OR Image ILIKE '%:\\Users\\Public\\%' OR Image ILIKE '%\\$Recycle.Bin\\%' OR Image ILIKE '%\\Contacts\\%' OR Image ILIKE '%\\Documents\\%' OR Image ILIKE '%\\Favorites\\%' OR Image ILIKE '%\\Favourites\\%' OR Image ILIKE '%\\inetpub\\wwwroot\\%' OR Image ILIKE '%\\Music\\%' OR Image ILIKE '%\\Pictures\\%' OR Image ILIKE '%\\Start Menu\\Programs\\Startup\\%' OR Image ILIKE '%\\Users\\Default\\%' OR Image ILIKE '%\\Videos\\%') AND (ImageLoaded ILIKE '%\\dbgcore.dll' OR ImageLoaded ILIKE '%\\dbghelp.dll')

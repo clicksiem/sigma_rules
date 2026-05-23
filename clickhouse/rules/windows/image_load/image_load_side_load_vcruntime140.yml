@@ -1,0 +1,15 @@
+id: d7a63acb-1284-49bc-bfea-7771146c8b1c
+name: Potential Vcruntime140 DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\vcruntime140.dll' AND (NOT ((ImageLoaded ILIKE 'C:\\Windows\\System32\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SysWOW64\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\%') OR (Signed=true AND SignatureStatus='Valid' AND Description='Microsoft® C Runtime Library')))

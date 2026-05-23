@@ -1,0 +1,11 @@
+id: 3390fbef-c98d-4bdd-a863-d65ed7c610dd
+name: New ODBC Driver Registered
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\ODBC\\ODBCINST.INI\\%' AND TargetObject ILIKE '%\\Driver') AND (NOT (TargetObject ILIKE '%\\SQL Server\\%' AND Details ILIKE '\%WINDIR\%\\System32\\SQLSRV32.dll')) AND (NOT ((TargetObject ILIKE '%\\Microsoft Access %' AND Details ILIKE 'C:\\Progra%' AND Details ILIKE '%\\ACEODBC.DLL') OR (TargetObject ILIKE '%\\Microsoft Excel Driver%' AND Details ILIKE 'C:\\Progra%' AND Details ILIKE '%\\ACEODBC.DLL')))

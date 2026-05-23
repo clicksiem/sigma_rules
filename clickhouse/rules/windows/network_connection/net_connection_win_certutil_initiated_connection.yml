@@ -1,0 +1,12 @@
+id: 0dba975d-a193-4ed1-a067-424df57570d1
+name: Uncommon Network Connection Initiated By Certutil.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\certutil.exe' AND Initiated='true' AND (DestinationPort IN (80, 135, 443, 445))

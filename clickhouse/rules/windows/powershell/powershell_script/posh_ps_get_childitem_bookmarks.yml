@@ -1,0 +1,12 @@
+id: e0565f5d-d420-4e02-8a68-ac00d864f9cf
+name: Automated Collection Bookmarks Using Get-ChildItem PowerShell
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1217
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-ChildItem%' AND ScriptBlockText ILIKE '% -Recurse %' AND ScriptBlockText ILIKE '% -Path %' AND ScriptBlockText ILIKE '% -Filter Bookmarks%' AND ScriptBlockText ILIKE '% -ErrorAction SilentlyContinue%' AND ScriptBlockText ILIKE '% -Force%'

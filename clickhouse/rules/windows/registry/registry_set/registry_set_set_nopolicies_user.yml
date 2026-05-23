@@ -1,0 +1,13 @@
+id: 1c3121ed-041b-4d97-a075-07f54f20fb4a
+name: Registry Explorer Policy Modification
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoLogOff' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoDesktop' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoRun' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoFind' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoControlPanel' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoFileMenu' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoClose' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoSetTaskbar' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoPropertiesMyDocuments' OR TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\NoTrayContextMenu') AND Details='DWORD (0x00000001)'

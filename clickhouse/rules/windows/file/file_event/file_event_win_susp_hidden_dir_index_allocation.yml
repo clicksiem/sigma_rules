@@ -1,0 +1,12 @@
+id: a8f866e1-bdd4-425e-a27a-37619238d9c7
+name: Potential Hidden Directory Creation Via NTFS INDEX_ALLOCATION Stream
+level: 5
+size: '>0'
+active: true
+author:
+- Scoubi (@ScoubiMtl)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%::$index\_allocation%'

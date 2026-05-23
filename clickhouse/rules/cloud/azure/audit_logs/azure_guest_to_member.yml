@@ -1,0 +1,15 @@
+id: 8dee7a0d-43fd-4b3c-8cd1-605e189d195e
+name: User State Changed From Guest To Member
+level: 5
+size: '>0'
+active: true
+author:
+- MikeDuddington, '@dudders1'
+group: azure
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE Category='UserManagement' AND OperationName='Update user' AND `properties.message` ILIKE '"displayName":"UserType","oldValue":"[\\"Guest\\"]","newValue":"[\\"Member\\"]"'

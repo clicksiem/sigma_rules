@@ -1,0 +1,12 @@
+id: 1f358e2e-cb63-43c3-b575-dfb072a6814f
+name: System and Hardware Information Discovery
+level: 1
+size: '>0'
+active: true
+author:
+- Ömer Günal, oscd.community
+group: linux
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE type='PATH' AND (name ILIKE '/sys/class/dmi/id/bios\_version' OR name ILIKE '/sys/class/dmi/id/product\_name' OR name ILIKE '/sys/class/dmi/id/chassis\_vendor' OR name='/proc/scsi/scsi' OR name='/proc/ide/hd0/model' OR name='/proc/version' OR name ILIKE '/etc/%version' OR name ILIKE '/etc/%release' OR name='/etc/issue')

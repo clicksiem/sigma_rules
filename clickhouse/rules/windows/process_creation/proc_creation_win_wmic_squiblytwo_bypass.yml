@@ -1,0 +1,16 @@
+id: 8d63dadf-b91b-4187-87b6-34a1114577ea
+name: Potential Remote SquiblyTwo Technique Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Markus Neis, Florian Roth, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1047
+- attack.t1220
+- attack.execution
+- attack.t1059.005
+- attack.t1059.007
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe' OR (Hashes ILIKE '%IMPHASH=1B1A3F43BF37B5BFE60751F2EE2F326E%' OR Hashes ILIKE '%IMPHASH=37777A96245A3C74EB217308F3546F4C%' OR Hashes ILIKE '%IMPHASH=9D87C9D67CE724033C0B40CC4CA1B206%' OR Hashes ILIKE '%IMPHASH=B12619881D79C3ACADF45E752A58554A%' OR Hashes ILIKE '%IMPHASH=16A48C3CABF98A9DC1BF02C07FE1EA00%')) AND ((CommandLine ILIKE '%-format:%' OR CommandLine ILIKE '%/format:%' OR CommandLine ILIKE '%–format:%' OR CommandLine ILIKE '%—format:%' OR CommandLine ILIKE '%―format:%') AND (CommandLine ILIKE '%://%' OR CommandLine ILIKE '%\\\\%'))

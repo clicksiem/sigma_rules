@@ -1,0 +1,12 @@
+id: 5d756aee-ad3e-4306-ad95-cb1abec48de2
+name: GoToAssist Temporary Installation Artefact
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\AppData\\Local\\Temp\\LogMeInInc\\GoToAssist Remote Support Expert\\%'

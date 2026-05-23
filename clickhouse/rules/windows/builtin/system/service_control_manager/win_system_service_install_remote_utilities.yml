@@ -1,0 +1,11 @@
+id: 85cce894-dd8b-4427-a958-5cc47a4dc9b9
+name: Remote Utilities Host Service Install
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND ((ImagePath ILIKE '%\\rutserv.exe%' AND ImagePath ILIKE '%-service%') OR ServiceName='Remote Utilities - Host')

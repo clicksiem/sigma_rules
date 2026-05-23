@@ -1,0 +1,14 @@
+id: 44030449-b0df-4c94-aae1-502359ab28ee
+name: PUA - TruffleHog Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.credential-access
+- attack.t1083
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\trufflehog.exe' OR ((CommandLine ILIKE '% docker --image %' OR CommandLine ILIKE '% Git %' OR CommandLine ILIKE '% GitHub %' OR CommandLine ILIKE '% Jira %' OR CommandLine ILIKE '% Slack %' OR CommandLine ILIKE '% Confluence %' OR CommandLine ILIKE '% SharePoint %' OR CommandLine ILIKE '% s3 %' OR CommandLine ILIKE '% gcs %') AND CommandLine ILIKE '% --results=verified%')

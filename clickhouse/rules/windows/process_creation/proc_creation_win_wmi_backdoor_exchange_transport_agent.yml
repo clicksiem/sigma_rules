@@ -1,0 +1,13 @@
+id: 797011dc-44f4-4e6f-9f10-a8ceefbe566b
+name: WMI Backdoor Exchange Transport Agent
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\EdgeTransport.exe' AND (NOT (Image ILIKE 'C:\\Windows\\System32\\conhost.exe' OR (Image ILIKE 'C:\\Program Files\\Microsoft\\Exchange Server\\%' AND Image ILIKE '%\\Bin\\OleConverter.exe')))

@@ -1,0 +1,12 @@
+id: 7692f583-bd30-4008-8615-75dab3f08a99
+name: Enable BPF Kprobes Tracing
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.stealth
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%echo 1 >%' AND CommandLine ILIKE '%/sys/kernel/debug/tracing/events/kprobes/%') AND (CommandLine ILIKE '%/myprobe/enable%' OR CommandLine ILIKE '%/myretprobe/enable%')

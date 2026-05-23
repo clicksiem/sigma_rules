@@ -1,0 +1,14 @@
+id: 7c3b43d8-d794-47d2-800a-d277715aa460
+name: Scheduled Cron Task/Job - MacOs
+level: 5
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: macos
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1053.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%/crontab' AND CommandLine ILIKE '%/tmp/%'

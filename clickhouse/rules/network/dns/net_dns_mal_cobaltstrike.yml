@@ -1,0 +1,12 @@
+id: 2975af79-28c4-4d2f-a951-9095f229df29
+name: Cobalt Strike DNS Beaconing
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.004
+rule: SELECT * FROM logs WHERE (query ILIKE 'aaa.stage.%' OR query ILIKE 'post.1%') OR query ILIKE '%.stage.123456.%'

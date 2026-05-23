@@ -1,0 +1,13 @@
+id: 28036918-04d3-423d-91c0-55ecf99fb892
+name: NET NGenAssemblyUsageLog Registry Key Tamper
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%SOFTWARE\\Microsoft\\.NETFramework\\NGenAssemblyUsageLog'

@@ -1,0 +1,16 @@
+id: 352a918a-34d8-4882-8470-44830c507aa3
+name: Malicious Usage Of IMDS Credentials Outside Of AWS Infrastructure
+level: 8
+size: '>0'
+active: true
+author:
+- jamesc-grafana
+group: aws
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.persistence
+- attack.stealth
+- attack.t1078
+- attack.t1078.002
+rule: SELECT * FROM logs WHERE match(`userIdentity.arn`, '.+:assumed-role/aws:.+') AND (NOT (eventSource='ssm.amazonaws.com' OR eventName='RegisterManagedInstance' OR sourceIPAddress='AWS Internal'))

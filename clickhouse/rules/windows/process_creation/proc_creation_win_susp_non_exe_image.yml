@@ -1,0 +1,11 @@
+id: c09dad97-1c78-4f71-b127-7edb2b8e491a
+name: Execution of Suspicious File Type Extension
+level: 5
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (NOT (Image ILIKE '%.bin' OR Image ILIKE '%.cgi' OR Image ILIKE '%.com' OR Image ILIKE '%.exe' OR Image ILIKE '%.scr' OR Image ILIKE '%.tmp')) AND (NOT ((Image IN ('System', 'Registry', 'MemCompression', 'vmmem')) OR Image ILIKE '%:\\Windows\\Installer\\MSI%' OR Image ILIKE '%:\\Windows\\System32\\DriverStore\\FileRepository\\%' OR (Image ILIKE '%:\\Config.Msi\\%' AND (Image ILIKE '%.rbf' OR Image ILIKE '%.rbs')) OR (ParentImage ILIKE '%:\\Windows\\Temp\\%' OR Image ILIKE '%:\\Windows\\Temp\\%') OR Image ILIKE '%:\\$Extend\\$Deleted\\%' OR (Image IN ('-', '')) OR isNull(Image))) AND (NOT (ParentImage ILIKE '%:\\ProgramData\\Avira\\%' OR (Image ILIKE '%NVIDIA\\NvBackend\\%' AND Image ILIKE '%.dat') OR ((Image ILIKE '%:\\Program Files (x86)\\WINPAKPRO\\%' OR Image ILIKE '%:\\Program Files\\WINPAKPRO\\%') AND Image ILIKE '%.ngn') OR (Image ILIKE '%:\\Program Files (x86)\\MyQ\\Server\\pcltool.dll' OR Image ILIKE '%:\\Program Files\\MyQ\\Server\\pcltool.dll') OR (Image ILIKE '%\\AppData\\Local\\Packages\\%' AND Image ILIKE '%\\LocalState\\rootfs\\%') OR Image ILIKE '%\\LZMA\_EXE' OR Image ILIKE '%:\\Program Files\\Mozilla Firefox\\%' OR (ParentImage ILIKE 'C:\\Windows\\System32\\services.exe' AND Image ILIKE '%com.docker.service')))

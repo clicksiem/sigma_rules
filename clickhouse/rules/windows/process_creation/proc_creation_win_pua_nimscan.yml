@@ -1,0 +1,12 @@
+id: 4fd6b1c7-19b8-4488-97f6-00f0924991a3
+name: PUA - NimScan Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\NimScan.exe' OR (Hashes ILIKE '%IMPHASH=41BB1C7571B3A724EB83A1D2B96DBB8C%' OR Hashes ILIKE '%IMPHASH=B1B6ADACB172795480179EFD18A29549%' OR Hashes ILIKE '%IMPHASH=0D1F896DC7642AD8384F9042F30279C2%')

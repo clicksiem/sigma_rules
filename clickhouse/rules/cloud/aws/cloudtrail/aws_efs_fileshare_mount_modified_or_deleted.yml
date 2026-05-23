@@ -1,0 +1,12 @@
+id: 6a7ba45c-63d8-473e-9736-2eaabff79964
+name: AWS EFS Fileshare Mount Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: aws
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE eventSource='elasticfilesystem.amazonaws.com' AND eventName='DeleteMountTarget'

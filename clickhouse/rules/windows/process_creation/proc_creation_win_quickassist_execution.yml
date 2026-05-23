@@ -1,0 +1,12 @@
+id: e20b5b14-ce93-4230-88af-981983ef6e74
+name: QuickAssist Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\QuickAssist.exe'

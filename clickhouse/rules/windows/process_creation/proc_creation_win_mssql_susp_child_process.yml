@@ -1,0 +1,15 @@
+id: 869b9ca7-9ea2-4a5a-8325-e80e62f75445
+name: Suspicious Child Process Of SQL Server
+level: 8
+size: '>0'
+active: true
+author:
+- FPT.EagleEye Team, wagga
+group: windows
+tags:
+- attack.t1505.003
+- attack.t1190
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\sqlservr.exe' AND (Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\bitsadmin.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\netstat.exe' OR Image ILIKE '%\\nltest.exe' OR Image ILIKE '%\\ping.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\sh.exe' OR Image ILIKE '%\\systeminfo.exe' OR Image ILIKE '%\\tasklist.exe' OR Image ILIKE '%\\wsl.exe')) AND (NOT (ParentImage ILIKE 'C:\\Program Files\\Microsoft SQL Server\\%' AND ParentImage ILIKE '%DATEV\_DBENGINE\\MSSQL\\Binn\\sqlservr.exe' AND Image ILIKE 'C:\\Windows\\System32\\cmd.exe' AND CommandLine ILIKE '"C:\\Windows\\system32\\cmd.exe" %'))

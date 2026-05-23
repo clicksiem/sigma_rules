@@ -1,0 +1,14 @@
+id: 04ad83ef-1a37-4c10-b57a-81092164bf33
+name: Github Repository/Organization Transferred
+level: 5
+size: '>0'
+active: true
+author:
+- Romain Gaillard (@romain-gaillard)
+group: github
+tags:
+- attack.persistence
+- attack.exfiltration
+- attack.t1020
+- attack.t1537
+rule: SELECT * FROM logs WHERE action IN ('migration.create', 'org.transfer\_outgoing', 'org.transfer', 'repo.transfer\_outgoing')

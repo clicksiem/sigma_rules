@@ -1,0 +1,13 @@
+id: 67a6c006-3fbe-46a7-9074-2ba3b82c3000
+name: Path To Screensaver Binary Modified
+level: 5
+size: '>0'
+active: true
+author:
+- Bartlomiej Czyz @bczyz1, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Control Panel\\Desktop\\SCRNSAVE.EXE' AND (NOT (Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\explorer.exe'))

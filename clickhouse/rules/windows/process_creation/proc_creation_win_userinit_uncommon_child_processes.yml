@@ -1,0 +1,13 @@
+id: 0a98a10c-685d-4ab0-bddc-b6bdd1d48458
+name: Uncommon Userinit Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Tom Ueltschi (@c_APT_ure), Tim Shelton
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1037.001
+- attack.persistence
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\userinit.exe' AND (NOT Image ILIKE '%:\\WINDOWS\\explorer.exe') AND (NOT ((CommandLine ILIKE '%netlogon.bat%' OR CommandLine ILIKE '%UsrLogon.cmd%') OR CommandLine='PowerShell.exe' OR (Image ILIKE '%:\\Windows\\System32\\proquota.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\proquota.exe') OR (Image ILIKE '%:\\Program Files (x86)\\Citrix\\HDX\\bin\\cmstart.exe' OR Image ILIKE '%:\\Program Files (x86)\\Citrix\\HDX\\bin\\icast.exe' OR Image ILIKE '%:\\Program Files (x86)\\Citrix\\System32\\icast.exe' OR Image ILIKE '%:\\Program Files\\Citrix\\HDX\\bin\\cmstart.exe' OR Image ILIKE '%:\\Program Files\\Citrix\\HDX\\bin\\icast.exe' OR Image ILIKE '%:\\Program Files\\Citrix\\System32\\icast.exe') OR isNull(Image)))

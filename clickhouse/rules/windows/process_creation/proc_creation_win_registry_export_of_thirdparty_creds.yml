@@ -1,0 +1,12 @@
+id: cc1abf27-78a3-4ac5-a51c-f3070b1d8e40
+name: Registry Export of Third-Party Credentials
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '%save%' OR CommandLine ILIKE '%export%') AND (CommandLine ILIKE '%\\Software\\Aerofox\\Foxmail\\V3.1%' OR CommandLine ILIKE '%\\Software\\Aerofox\\FoxmailPreview%' OR CommandLine ILIKE '%\\Software\\DownloadManager\\Passwords%' OR CommandLine ILIKE '%\\Software\\FTPWare\\COREFTP\\Sites%' OR CommandLine ILIKE '%\\Software\\IncrediMail\\Identities%' OR CommandLine ILIKE '%\\Software\\Martin Prikryl\\WinSCP 2\\Sessions%' OR CommandLine ILIKE '%\\Software\\Mobatek\\MobaXterm%' OR CommandLine ILIKE '%\\Software\\OpenSSH\\Agent\\Keys%' OR CommandLine ILIKE '%\\Software\\OpenVPN-GUI\\configs%' OR CommandLine ILIKE '%\\Software\\ORL\\WinVNC3\\Password%' OR CommandLine ILIKE '%\\Software\\Qualcomm\\Eudora\\CommandLine%' OR CommandLine ILIKE '%\\Software\\RealVNC\\WinVNC4%' OR CommandLine ILIKE '%\\Software\\RimArts\\B2\\Settings%' OR CommandLine ILIKE '%\\Software\\SimonTatham\\PuTTY\\Sessions%' OR CommandLine ILIKE '%\\Software\\SimonTatham\\PuTTY\\SshHostKeys%' OR CommandLine ILIKE '%\\Software\\Sota\\FFFTP%' OR CommandLine ILIKE '%\\Software\\TightVNC\\Server%' OR CommandLine ILIKE '%\\Software\\WOW6432Node\\Radmin\\v3.0\\Server\\Parameters\\Radmin%')

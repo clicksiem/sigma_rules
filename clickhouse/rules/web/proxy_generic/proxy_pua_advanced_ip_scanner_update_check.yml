@@ -1,0 +1,13 @@
+id: 1a9bb21a-1bb5-42d7-aa05-3219c7c8f47d
+name: PUA - Advanced IP/Port Scanner Update Check
+level: 5
+size: '>0'
+active: true
+author:
+- Axel Olsson
+group: ''
+tags:
+- attack.discovery
+- attack.reconnaissance
+- attack.t1590
+rule: SELECT * FROM logs WHERE `c-uri` ILIKE '%/checkupdate.php%' AND (`c-uri-query` ILIKE '%lng=%' AND `c-uri-query` ILIKE '%ver=%' AND `c-uri-query` ILIKE '%beta=%' AND `c-uri-query` ILIKE '%type=%' AND `c-uri-query` ILIKE '%rmode=%' AND `c-uri-query` ILIKE '%product=%')

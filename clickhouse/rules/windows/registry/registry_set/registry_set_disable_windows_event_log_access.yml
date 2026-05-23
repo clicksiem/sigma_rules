@@ -1,0 +1,15 @@
+id: ba226dcf-d390-4642-b9af-b534872f1156
+name: Windows Event Log Access Tampering Via Registry
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.defense-impairment
+- attack.t1547.001
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\%' AND TargetObject ILIKE '%\\CustomSD') OR ((TargetObject ILIKE '%\\Policies\\Microsoft\\Windows\\EventLog\\%' OR TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\WINEVT\\Channels%') AND TargetObject ILIKE '%\\ChannelAccess')) AND (Details ILIKE '%D:(D;%' OR (Details ILIKE '%D:(%' AND Details ILIKE '%)(D;%')) AND (NOT (Image ILIKE 'C:\\Windows\\servicing\\TrustedInstaller.exe' OR (Image ILIKE 'C:\\Windows\\WinSxS\\%' AND Image ILIKE '%\\TiWorker.exe'))) AND (NOT (Image='' OR isNull(Image)))

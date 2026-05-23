@@ -1,0 +1,12 @@
+id: 055fb54c-a8f4-4aee-bd44-f74cf30a0d9d
+name: HackTool - SharpMove Tool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Luca Di Bartolomeo (CrimpSec)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\SharpMove.exe' OR OriginalFileName='SharpMove.exe') OR (CommandLine ILIKE '%computername=%' AND (CommandLine ILIKE '%action=create%' OR CommandLine ILIKE '%action=dcom%' OR CommandLine ILIKE '%action=executevbs%' OR CommandLine ILIKE '%action=hijackdcom%' OR CommandLine ILIKE '%action=modschtask%' OR CommandLine ILIKE '%action=modsvc%' OR CommandLine ILIKE '%action=query%' OR CommandLine ILIKE '%action=scm%' OR CommandLine ILIKE '%action=startservice%' OR CommandLine ILIKE '%action=taskscheduler%'))

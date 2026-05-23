@@ -1,0 +1,13 @@
+id: ab70c354-d9ac-4e11-bbb6-ec8e3b153357
+name: Remote Access Tool - Team Viewer Session Started On Windows Host
+level: 3
+size: '>0'
+active: true
+author:
+- Josh Nickels, Qi Nan
+group: windows
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1133
+rule: SELECT * FROM logs WHERE Image ILIKE 'TeamViewer\_Desktop.exe' AND ParentImage ILIKE 'TeamViewer\_Service.exe' AND CommandLine ILIKE '%TeamViewer\_Desktop.exe --IPCport 5939 --Module 1'

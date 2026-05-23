@@ -1,0 +1,15 @@
+id: 7a3b6d1f-4a2b-4f8c-9d7e-e9f8cbf21a35
+name: Potential JLI.dll Side-Loading
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\jli.dll' AND (NOT ((ImageLoaded ILIKE 'C:\\Program Files\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\%') AND Description='OpenJDK Platform binary' AND OriginalFileName='jli.dll' AND Product ILIKE 'OpenJDK Platform%' AND Signed='true')) AND (NOT ImageLoaded ILIKE 'C:\\eclipse\\plugins\\%')

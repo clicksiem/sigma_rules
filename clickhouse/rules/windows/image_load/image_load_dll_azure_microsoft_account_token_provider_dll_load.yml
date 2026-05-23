@@ -1,0 +1,15 @@
+id: 50f852e6-af22-4c78-9ede-42ef36aa3453
+name: Potential Azure Browser SSO Abuse
+level: 3
+size: '>0'
+active: true
+author:
+- Den Iuzvyk
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE 'C:\\Windows\\System32\\MicrosoftAccountTokenProvider.dll' AND (NOT ((Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%') AND Image ILIKE '%\\BackgroundTaskHost.exe')) AND (NOT (((Image ILIKE 'C:\\Program Files\\Microsoft Visual Studio\\%' OR Image ILIKE 'C:\\Program Files (x86)\\Microsoft Visual Studio\\%') AND Image ILIKE '%\\IDE\\devenv.exe') OR (Image IN ('C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe', 'C:\\Program Files\\Internet Explorer\\iexplore.exe')) OR (Image ILIKE 'C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\%' OR Image ILIKE '%\\WindowsApps\\MicrosoftEdge.exe' OR (Image IN ('C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe'))) OR ((Image ILIKE 'C:\\Program Files (x86)\\Microsoft\\EdgeCore\\%' OR Image ILIKE 'C:\\Program Files\\Microsoft\\EdgeCore\\%') AND (Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\msedgewebview2.exe')) OR Image ILIKE '%\\AppData\\Local\\Microsoft\\OneDrive\\OneDrive.exe' OR isNull(Image)))

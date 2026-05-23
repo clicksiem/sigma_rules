@@ -1,0 +1,14 @@
+id: 4f281b83-0200-4b34-bf35-d24687ea57c2
+name: ETW Logging Disabled For SCM
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Software\\Microsoft\\Windows NT\\CurrentVersion\\Tracing\\SCM\\Regular\\TracingDisabled' AND Details='DWORD (0x00000001)'

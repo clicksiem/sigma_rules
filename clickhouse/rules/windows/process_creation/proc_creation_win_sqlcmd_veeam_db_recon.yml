@@ -1,0 +1,12 @@
+id: 696bfb54-227e-4602-ac5b-30d9d2053312
+name: Veeam Backup Database Suspicious Query
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.t1005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sqlcmd.exe' AND (CommandLine ILIKE '%VeeamBackup%' AND CommandLine ILIKE '%From %')) AND (CommandLine ILIKE '%BackupRepositories%' OR CommandLine ILIKE '%Backups%' OR CommandLine ILIKE '%Credentials%' OR CommandLine ILIKE '%HostCreds%' OR CommandLine ILIKE '%SmbFileShares%' OR CommandLine ILIKE '%Ssh\_creds%' OR CommandLine ILIKE '%VSphereInfo%')

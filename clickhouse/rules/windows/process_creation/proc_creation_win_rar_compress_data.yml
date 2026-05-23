@@ -1,0 +1,12 @@
+id: 6f3e2987-db24-4c78-a860-b4f4095a7095
+name: Files Added To An Archive Using Rar.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, E.M. Anhaus, oscd.community
+group: windows
+tags:
+- attack.collection
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\rar.exe' AND CommandLine ILIKE '% a %'

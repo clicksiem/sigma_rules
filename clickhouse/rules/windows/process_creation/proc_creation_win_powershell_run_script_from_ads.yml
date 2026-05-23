@@ -1,0 +1,12 @@
+id: 45a594aa-1fbd-4972-a809-ff5a99dd81b8
+name: Run PowerShell Script from ADS
+level: 8
+size: '>0'
+active: true
+author:
+- Sergey Soldatov, Kaspersky Lab, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%Get-Content%' AND CommandLine ILIKE '%-Stream%')

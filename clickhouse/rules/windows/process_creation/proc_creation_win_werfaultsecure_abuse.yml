@@ -1,0 +1,14 @@
+id: 1f0b4cac-9c81-41f4-95d0-8475ff46b3e2
+name: PPL Tampering Via WerFaultSecure
+level: 8
+size: '>0'
+active: true
+author:
+- Jason (https://github.com/0xbcf)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WerFaultSecure.exe' OR OriginalFileName='WerFaultSecure.exe') AND (CommandLine ILIKE '% /h %' AND CommandLine ILIKE '% /pid %' AND CommandLine ILIKE '% /tid %' AND CommandLine ILIKE '% /encfile %' AND CommandLine ILIKE '% /cancel %' AND CommandLine ILIKE '% /type %' AND CommandLine ILIKE '% 268310%')

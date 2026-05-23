@@ -1,0 +1,12 @@
+id: 9e3cb244-bdb8-4632-8c90-6079c8f4f16d
+name: Important Scheduled Task Deleted or Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE ((EventID IN (141, 142)) AND (TaskName ILIKE '%\\Windows\\SystemRestore\\SR%' OR TaskName ILIKE '%\\Windows\\Windows Defender\\%' OR TaskName ILIKE '%\\Windows\\BitLocker%' OR TaskName ILIKE '%\\Windows\\WindowsBackup\\%' OR TaskName ILIKE '%\\Windows\\WindowsUpdate\\%' OR TaskName ILIKE '%\\Windows\\UpdateOrchestrator\\%' OR TaskName ILIKE '%\\Windows\\ExploitGuard%')) AND (NOT (UserName ILIKE '%AUTHORI%' OR UserName ILIKE '%AUTORI%'))

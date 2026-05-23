@@ -1,0 +1,12 @@
+id: 737e618a-a410-49b5-bec3-9e55ff7fbc15
+name: Suspicious Calculator Usage
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\calc.exe %' OR (Image ILIKE '%\\calc.exe' AND (NOT (Image ILIKE '%:\\Windows\\System32\\%' OR Image ILIKE '%:\\Windows\\SysWOW64\\%' OR Image ILIKE '%:\\Windows\\WinSxS\\%')))

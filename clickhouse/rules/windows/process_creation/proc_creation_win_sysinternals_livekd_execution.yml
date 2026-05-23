@@ -1,0 +1,11 @@
+id: a85f7765-698a-4088-afa0-ecfbf8d01fa4
+name: Potential Memory Dumping Activity Via LiveKD
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\livekd.exe' OR Image ILIKE '%\\livekd64.exe') OR OriginalFileName='livekd.exe'

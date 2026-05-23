@@ -1,0 +1,18 @@
+id: 02773bed-83bf-469f-b7ff-e676e7d78bab
+name: BloodHound Collection Files
+level: 8
+size: '>0'
+active: true
+author:
+- C.J. May
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.001
+- attack.t1087.002
+- attack.t1482
+- attack.t1069.001
+- attack.t1069.002
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%BloodHound.zip' OR TargetFilename ILIKE '%\_computers.json' OR TargetFilename ILIKE '%\_containers.json' OR TargetFilename ILIKE '%\_gpos.json' OR TargetFilename ILIKE '%\_groups.json' OR TargetFilename ILIKE '%\_ous.json' OR TargetFilename ILIKE '%\_users.json') AND (NOT (Image ILIKE '%\\svchost.exe' AND TargetFilename ILIKE 'C:\\Program Files\\WindowsApps\\Microsoft.%' AND TargetFilename ILIKE '%\\pocket\_containers.json'))

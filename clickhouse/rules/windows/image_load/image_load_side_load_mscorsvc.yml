@@ -1,0 +1,15 @@
+id: cdb15e19-c2d0-432a-928e-e49c8c60dcf2
+name: Potential DLL Sideloading Of MsCorSvc.DLL
+level: 5
+size: '>0'
+active: true
+author:
+- Wietze Beukema
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\mscorsvc.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Windows\\Microsoft.NET\\Framework\\%' OR ImageLoaded ILIKE 'C:\\Windows\\Microsoft.NET\\Framework64\\%' OR ImageLoaded ILIKE 'C:\\Windows\\Microsoft.NET\\FrameworkArm\\%' OR ImageLoaded ILIKE 'C:\\Windows\\Microsoft.NET\\FrameworkArm64\\%' OR ImageLoaded ILIKE 'C:\\Windows\\WinSxS\\%'))

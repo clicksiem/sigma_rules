@@ -1,0 +1,11 @@
+id: b6676963-0353-4f88-90f5-36c20d443c6a
+name: Cscript/Wscript Potentially Suspicious Child Process
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Alejandro Houspanossian ('@lekz86')
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\wscript.exe' OR ParentImage ILIKE '%\\cscript.exe') AND (Image ILIKE '%\\rundll32.exe' OR ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND ((CommandLine ILIKE '%mshta%' AND CommandLine ILIKE '%http%') OR (CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%msiexec%')))) AND (NOT (Image ILIKE '%\\rundll32.exe' AND (CommandLine ILIKE '%UpdatePerUserSystemParameters%' OR CommandLine ILIKE '%PrintUIEntry%' OR CommandLine ILIKE '%ClearMyTracksByProcess%')))

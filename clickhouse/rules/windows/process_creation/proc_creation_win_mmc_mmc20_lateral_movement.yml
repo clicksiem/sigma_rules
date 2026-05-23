@@ -1,0 +1,13 @@
+id: f1f3bf22-deb2-418d-8cce-e1a45e46a5bd
+name: MMC20 Lateral Movement
+level: 8
+size: '>0'
+active: true
+author:
+- '@2xxeformyshirt (Security Risk Advisors) - rule; Teymur Kheirkhabarov (idea)'
+group: windows
+tags:
+- attack.execution
+- attack.lateral-movement
+- attack.t1021.003
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\svchost.exe' AND Image ILIKE '%\\mmc.exe' AND CommandLine ILIKE '%-Embedding%'

@@ -1,0 +1,12 @@
+id: 1edd77db-0669-4fef-9598-165bda82826d
+name: Guacamole Two Users Sharing Session Anomaly
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.credential-access
+- attack.t1212
+rule: SELECT * FROM logs WHERE hasToken(full_log, '(2 users now present)')

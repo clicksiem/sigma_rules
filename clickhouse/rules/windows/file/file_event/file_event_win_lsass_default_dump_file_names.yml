@@ -1,0 +1,12 @@
+id: a5a2d357-1ab8-4675-a967-ef9990a59391
+name: LSASS Process Memory Dump Files
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\Andrew.dmp' OR TargetFilename ILIKE '%\\Coredump.dmp' OR TargetFilename ILIKE '%\\lsass.dmp' OR TargetFilename ILIKE '%\\lsass.rar' OR TargetFilename ILIKE '%\\lsass.zip' OR TargetFilename ILIKE '%\\NotLSASS.zip' OR TargetFilename ILIKE '%\\PPLBlade.dmp' OR TargetFilename ILIKE '%\\rustive.dmp') OR (TargetFilename ILIKE '%\\lsass\_2%' OR TargetFilename ILIKE '%\\lsassdmp%' OR TargetFilename ILIKE '%\\lsassdump%') OR (TargetFilename ILIKE '%\\lsass%' AND TargetFilename ILIKE '%.dmp%') OR (TargetFilename ILIKE '%SQLDmpr%' AND TargetFilename ILIKE '%.mdmp') OR ((TargetFilename ILIKE '%\\nanodump%' OR TargetFilename ILIKE '%\\proc\_%') AND TargetFilename ILIKE '%.dmp')

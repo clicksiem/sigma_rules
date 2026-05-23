@@ -1,0 +1,13 @@
+id: 3c1b5fb0-c72f-45ba-abd1-4d4c353144ab
+name: Process Creation Using Sysnative Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%:\\Windows\\Sysnative\\%' OR Image ILIKE '%:\\Windows\\Sysnative\\%') AND (NOT ((Image ILIKE '%C:\\Windows\\Microsoft.NET\\Framework64\\v%' OR Image ILIKE '%C:\\Windows\\Microsoft.NET\\Framework\\v%' OR Image ILIKE '%C:\\Windows\\Microsoft.NET\\FrameworkArm\\v%' OR Image ILIKE '%C:\\Windows\\Microsoft.NET\\FrameworkArm64\\v%') AND Image ILIKE '%\\ngen.exe' AND CommandLine ILIKE '%install%')) AND (NOT (CommandLine ILIKE '%"C:\\Windows\\sysnative\\cmd.exe"%' AND CommandLine ILIKE '%\\xampp\\%' AND CommandLine ILIKE '%\\catalina\_start.bat%'))

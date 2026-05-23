@@ -1,0 +1,12 @@
+id: a3f5c081-e75b-43a0-9f5b-51f26fe5dba2
+name: Potential Suspicious Winget Package Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.stealth
+rule: SELECT * FROM logs WHERE Contents ILIKE '[ZoneTransfer]  ZoneId=3%' AND (Contents ILIKE '%://1%' OR Contents ILIKE '%://2%' OR Contents ILIKE '%://3%' OR Contents ILIKE '%://4%' OR Contents ILIKE '%://5%' OR Contents ILIKE '%://6%' OR Contents ILIKE '%://7%' OR Contents ILIKE '%://8%' OR Contents ILIKE '%://9%') AND TargetFilename ILIKE '%:Zone.Identifier' AND TargetFilename ILIKE '%\\AppData\\Local\\Temp\\WinGet\\%'

@@ -1,0 +1,12 @@
+id: 7ec15688-fd24-4177-ba43-1a950537ee39
+name: The Windows Defender Firewall Service Failed To Load Group Policy
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE EventID=2009

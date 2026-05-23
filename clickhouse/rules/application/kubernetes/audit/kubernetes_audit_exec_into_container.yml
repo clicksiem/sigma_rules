@@ -1,0 +1,12 @@
+id: a1b0ca4e-7835-413e-8471-3ff2b8a66be6
+name: Potential Remote Command Execution In Pod Container
+level: 5
+size: '>0'
+active: true
+author:
+- Leo Tsaousis (@laripping)
+group: kubernetes
+tags:
+- attack.t1609
+- attack.execution
+rule: SELECT * FROM logs WHERE verb='create' AND `objectRef.resource`='pods' AND `objectRef.subresource`='exec'

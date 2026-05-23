@@ -1,0 +1,14 @@
+id: 0fa66f66-e3f6-4a9c-93f8-4f2610b00171
+name: Potential DLL Sideloading Using Coregen.exe
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1218
+- attack.t1055
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\coregen.exe' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files (x86)\\Microsoft Silverlight\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\Microsoft Silverlight\\%' OR ImageLoaded ILIKE 'C:\\Windows\\System32\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SysWOW64\\%'))

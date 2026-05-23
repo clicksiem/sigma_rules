@@ -1,0 +1,12 @@
+id: 45d3a03d-f441-458c-8883-df101a3bb146
+name: Launch-VsDevShell.PS1 Proxy Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1216.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Launch-VsDevShell.ps1%' AND (CommandLine ILIKE '%VsWherePath %' OR CommandLine ILIKE '%VsInstallationPath %')

@@ -1,0 +1,12 @@
+id: 857c8db3-c89b-42fb-882b-f681c7cf4da2
+name: Unsigned Image Loaded Into LSASS Process
+level: 5
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\lsass.exe' AND Signed='false'

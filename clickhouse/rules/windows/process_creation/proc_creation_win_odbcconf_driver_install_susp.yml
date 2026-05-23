@@ -1,0 +1,12 @@
+id: cb0fe7c5-f3a3-484d-aa25-d350a7912729
+name: Suspicious Driver/DLL Installation Via Odbcconf.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.008
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\odbcconf.exe' OR OriginalFileName='odbcconf.exe') AND CommandLine ILIKE '%INSTALLDRIVER %') AND (NOT CommandLine ILIKE '%.dll%')

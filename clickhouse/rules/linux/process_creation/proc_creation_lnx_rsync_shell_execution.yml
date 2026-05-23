@@ -1,0 +1,12 @@
+id: e2326866-609f-4015-aea9-7ec634e8aa04
+name: Shell Execution via Rsync - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.), Florian Roth
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/rsync' OR Image ILIKE '%/rsyncd') AND CommandLine ILIKE '% -e %') AND (CommandLine ILIKE '%/ash %' OR CommandLine ILIKE '%/bash %' OR CommandLine ILIKE '%/dash %' OR CommandLine ILIKE '%/csh %' OR CommandLine ILIKE '%/sh %' OR CommandLine ILIKE '%/zsh %' OR CommandLine ILIKE '%/tcsh %' OR CommandLine ILIKE '%/ksh %' OR CommandLine ILIKE '%''ash %' OR CommandLine ILIKE '%''bash %' OR CommandLine ILIKE '%''dash %' OR CommandLine ILIKE '%''csh %' OR CommandLine ILIKE '%''sh %' OR CommandLine ILIKE '%''zsh %' OR CommandLine ILIKE '%''tcsh %' OR CommandLine ILIKE '%''ksh %')

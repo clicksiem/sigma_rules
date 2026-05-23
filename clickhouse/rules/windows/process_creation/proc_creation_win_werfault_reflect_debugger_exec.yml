@@ -1,0 +1,13 @@
+id: fabfb3a7-3ce1-4445-9c7c-3c27f1051cdd
+name: Potential ReflectDebugger Content Execution Via WerFault.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WerFault.exe' OR OriginalFileName='WerFault.exe') AND CommandLine ILIKE '% -pr %'

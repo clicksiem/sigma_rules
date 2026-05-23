@@ -1,0 +1,12 @@
+id: a136ac98-b2bc-4189-a14d-f0d0388e57a7
+name: AWS S3 Bucket Versioning Disable
+level: 5
+size: '>0'
+active: true
+author:
+- Sean Johnstone | Unit 42
+group: aws
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE eventSource='s3.amazonaws.com' AND eventName='PutBucketVersioning' AND requestParameters ILIKE '%Suspended%'

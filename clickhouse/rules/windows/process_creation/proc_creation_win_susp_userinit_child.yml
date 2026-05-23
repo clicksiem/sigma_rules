@@ -1,0 +1,13 @@
+id: b655a06a-31c0-477a-95c2-3726b83d649d
+name: Suspicious Userinit Child Process
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Samir Bousseaden (idea)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\userinit.exe' AND (NOT (CommandLine ILIKE '%\\netlogon\\%' OR (Image ILIKE '%\\explorer.exe' OR OriginalFileName='explorer.exe' OR CommandLine ILIKE 'C:\\Windows\\Explorer.EXE') OR isNull(Image)))

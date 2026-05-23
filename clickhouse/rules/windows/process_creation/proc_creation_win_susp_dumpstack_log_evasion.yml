@@ -1,0 +1,11 @@
+id: 4f647cfa-b598-4e12-ad69-c68dd16caef8
+name: DumpStack.log Defender Evasion
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\DumpStack.log' OR CommandLine ILIKE '% -o DumpStack.log%'

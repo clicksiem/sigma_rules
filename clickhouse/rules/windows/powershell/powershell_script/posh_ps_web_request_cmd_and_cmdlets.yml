@@ -1,0 +1,12 @@
+id: 1139d2e2-84b1-4226-b445-354492eba8ba
+name: Usage Of Web Request Commands And Cmdlets - ScriptBlock
+level: 5
+size: '>0'
+active: true
+author:
+- James Pemberton / @4A616D6573
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%[System.Net.WebRequest]::create%' OR ScriptBlockText ILIKE '%curl %' OR ScriptBlockText ILIKE '%Invoke-RestMethod%' OR ScriptBlockText ILIKE '%Invoke-WebRequest%' OR ScriptBlockText ILIKE '% irm %' OR ScriptBlockText ILIKE '%iwr %' OR ScriptBlockText ILIKE '%Resume-BitsTransfer%' OR ScriptBlockText ILIKE '%Start-BitsTransfer%' OR ScriptBlockText ILIKE '%wget %' OR ScriptBlockText ILIKE '%WinHttp.WinHttpRequest%') AND (NOT Path ILIKE 'C:\\Packages\\Plugins\\Microsoft.GuestConfiguration.ConfigurationforWindows\\%')

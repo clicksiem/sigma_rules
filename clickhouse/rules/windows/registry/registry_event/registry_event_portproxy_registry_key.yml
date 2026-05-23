@@ -1,0 +1,13 @@
+id: a54f842a-3713-4b45-8c84-5f136fdebd3c
+name: New PortProxy Registry Entry Added
+level: 5
+size: '>0'
+active: true
+author:
+- Andreas Hunkeler (@Karneades)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.command-and-control
+- attack.t1090
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Services\\PortProxy\\v4tov4\\tcp\\%'

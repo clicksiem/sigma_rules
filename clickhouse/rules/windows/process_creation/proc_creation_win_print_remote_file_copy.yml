@@ -1,0 +1,12 @@
+id: bafac3d6-7de9-4dd9-8874-4a1194b493ed
+name: Abusing Print Executable
+level: 5
+size: '>0'
+active: true
+author:
+- Furkan CALISKAN, @caliskanfurkan_, @oscd_initiative
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\print.exe' AND CommandLine ILIKE 'print%' AND (CommandLine ILIKE '%/D%' AND CommandLine ILIKE '%.exe%')) AND (NOT CommandLine ILIKE '%print.exe%')

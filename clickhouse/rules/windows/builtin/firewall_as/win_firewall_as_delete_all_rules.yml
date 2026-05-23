@@ -1,0 +1,12 @@
+id: 79609c82-a488-426e-abcf-9f341a39365d
+name: All Rules Have Been Deleted From The Windows Firewall Configuration
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE (EventID IN (2033, 2059)) AND (NOT ModifyingApplication ILIKE '%:\\Windows\\System32\\svchost.exe') AND (NOT (ModifyingApplication ILIKE '%:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' AND ModifyingApplication ILIKE '%\\MsMpEng.exe%'))

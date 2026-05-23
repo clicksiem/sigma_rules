@@ -1,0 +1,12 @@
+id: 4ede543c-e098-43d9-a28f-dd784a13132f
+name: WinRAR Execution in Non-Standard Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Tigzy
+group: windows
+tags:
+- attack.collection
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\rar.exe' OR Image ILIKE '%\\winrar.exe') OR (Description IN ('Command line RAR', 'WinRAR'))) AND (NOT (Image ILIKE '%\\UnRAR.exe' OR (Image ILIKE '%:\\Program Files (x86)\\WinRAR\\%' OR Image ILIKE '%:\\Program Files\\WinRAR\\%'))) AND (NOT Image ILIKE '%:\\Windows\\Temp\\%')

@@ -1,0 +1,11 @@
+id: 16905e21-66ee-42fe-b256-1318ada2d770
+name: Start of NT Virtual DOS Machine
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\ntvdm.exe' OR Image ILIKE '%\\csrstub.exe'

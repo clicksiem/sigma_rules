@@ -1,0 +1,14 @@
+id: 60de9b57-dc4d-48b9-a6a0-b39e0469f876
+name: Disabling Multi Factor Authentication
+level: 8
+size: '>0'
+active: true
+author:
+- Splunk Threat Research Team (original rule), Harjot Singh @cyb3rjy0t (sigma rule)
+group: m365
+tags:
+- attack.persistence
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1556.006
+rule: SELECT * FROM logs WHERE Operation ILIKE '%Disable Strong Authentication.%'

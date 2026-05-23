@@ -1,0 +1,14 @@
+id: 1c71e254-6655-42c1-b2d6-5e4718d7fc0a
+name: Azure Kubernetes CronJob
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.persistence
+- attack.t1053.003
+- attack.privilege-escalation
+- attack.execution
+rule: SELECT * FROM logs WHERE (operationName ILIKE 'MICROSOFT.KUBERNETES/CONNECTEDCLUSTERS/BATCH%' OR operationName ILIKE 'MICROSOFT.CONTAINERSERVICE/MANAGEDCLUSTERS/BATCH%') AND (operationName ILIKE '%/CRONJOBS/WRITE' OR operationName ILIKE '%/JOBS/WRITE')

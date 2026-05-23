@@ -1,0 +1,12 @@
+id: b59c98c6-95e8-4d65-93ee-f594dfb96b17
+name: F5 BIG-IP iControl Rest API Command Execution - Proxy
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Thurein Oo
+group: ''
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE `cs-method`='POST' AND `c-uri` ILIKE '%/mgmt/tm/util/bash'

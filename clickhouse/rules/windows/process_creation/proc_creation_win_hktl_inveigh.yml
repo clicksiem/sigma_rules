@@ -1,0 +1,12 @@
+id: b99a1518-1ad5-4f65-bc95-1ffff97a8fd0
+name: HackTool - Inveigh Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Inveigh.exe' OR (OriginalFileName IN ('\\Inveigh.exe', '\\Inveigh.dll')) OR Description='Inveigh' OR (CommandLine ILIKE '% -SpooferIP%' OR CommandLine ILIKE '% -ReplyToIPs %' OR CommandLine ILIKE '% -ReplyToDomains %' OR CommandLine ILIKE '% -ReplyToMACs %' OR CommandLine ILIKE '% -SnifferIP%')

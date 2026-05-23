@@ -1,0 +1,14 @@
+id: 65d506d3-fcfe-4071-b4b2-bcefe721bbbb
+name: Potential Persistence Via PlistBuddy
+level: 8
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1543.001
+- attack.t1543.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/PlistBuddy' AND (CommandLine ILIKE '%RunAtLoad%' AND CommandLine ILIKE '%true%') AND (CommandLine ILIKE '%LaunchAgents%' OR CommandLine ILIKE '%LaunchDaemons%')

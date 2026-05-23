@@ -1,0 +1,12 @@
+id: e30de276-68ec-435c-ab99-ef3befec6c61
+name: OpenCanary - SIP Request
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.collection
+- attack.t1123
+rule: SELECT * FROM logs WHERE logtype=15001

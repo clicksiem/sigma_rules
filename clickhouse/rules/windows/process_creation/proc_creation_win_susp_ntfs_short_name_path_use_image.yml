@@ -1,0 +1,12 @@
+id: a96970af-f126-420d-90e1-d37bf25e50e1
+name: Use Short Name Path in Image
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%~1\\%' OR Image ILIKE '%~2\\%') AND (NOT ((ParentImage IN ('C:\\Windows\\System32\\Dism.exe', 'C:\\Windows\\System32\\cleanmgr.exe')) OR ((Image ILIKE '%\\AppData\\%' AND Image ILIKE '%\\Temp\\%') OR (Image ILIKE '%~1\\unzip.exe' OR Image ILIKE '%~1\\7zG.exe')))) AND (NOT (ParentImage ILIKE '%\\WebEx\\WebexHost.exe' OR ParentImage ILIKE '%\\thor\\thor64.exe' OR (Product='InstallShield (R)' OR Description='InstallShield (R) Setup Engine' OR Company='InstallShield Software Corporation')))

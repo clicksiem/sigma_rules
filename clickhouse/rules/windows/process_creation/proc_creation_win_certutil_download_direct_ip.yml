@@ -1,0 +1,14 @@
+id: 13e6fe51-d478-4c7e-b0f2-6da9b400a829
+name: Suspicious File Downloaded From Direct IP Via Certutil.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\certutil.exe' OR OriginalFileName='CertUtil.exe') AND (CommandLine ILIKE '%urlcache %' OR CommandLine ILIKE '%verifyctl %' OR CommandLine ILIKE '%URL %') AND (CommandLine ILIKE '%://1%' OR CommandLine ILIKE '%://2%' OR CommandLine ILIKE '%://3%' OR CommandLine ILIKE '%://4%' OR CommandLine ILIKE '%://5%' OR CommandLine ILIKE '%://6%' OR CommandLine ILIKE '%://7%' OR CommandLine ILIKE '%://8%' OR CommandLine ILIKE '%://9%')) AND (NOT CommandLine ILIKE '%://7-%')

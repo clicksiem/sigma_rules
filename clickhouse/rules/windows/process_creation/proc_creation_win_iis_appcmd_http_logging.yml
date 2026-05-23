@@ -1,0 +1,12 @@
+id: e4ed6030-ffe5-4e6a-8a8a-ab3c1ab9d94e
+name: Disable Windows IIS HTTP Logging
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\appcmd.exe' OR OriginalFileName='appcmd.exe') AND (CommandLine ILIKE '%set%' AND CommandLine ILIKE '%config%' AND CommandLine ILIKE '%section:httplogging%' AND CommandLine ILIKE '%dontLog:true%')

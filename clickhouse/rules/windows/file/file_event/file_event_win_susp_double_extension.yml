@@ -1,0 +1,12 @@
+id: b4926b47-a9d7-434c-b3a0-adc3fa0bd13e
+name: Suspicious Double Extension Files
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.007
+rule: SELECT * FROM logs WHERE (((TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.iso' OR TargetFilename ILIKE '%.rar' OR TargetFilename ILIKE '%.svg' OR TargetFilename ILIKE '%.zip') AND (TargetFilename ILIKE '%.doc.%' OR TargetFilename ILIKE '%.docx.%' OR TargetFilename ILIKE '%.gif.%' OR TargetFilename ILIKE '%.jpeg.%' OR TargetFilename ILIKE '%.jpg.%' OR TargetFilename ILIKE '%.mp3.%' OR TargetFilename ILIKE '%.mp4.%' OR TargetFilename ILIKE '%.pdf.%' OR TargetFilename ILIKE '%.png.%' OR TargetFilename ILIKE '%.ppt.%' OR TargetFilename ILIKE '%.pptx.%' OR TargetFilename ILIKE '%.rtf.%' OR TargetFilename ILIKE '%.svg.%' OR TargetFilename ILIKE '%.txt.%' OR TargetFilename ILIKE '%.xls.%' OR TargetFilename ILIKE '%.xlsx.%')) OR (TargetFilename ILIKE '%.rar.exe' OR TargetFilename ILIKE '%.zip.exe')) AND (NOT TargetFilename ILIKE '/usr/share/icons/%')

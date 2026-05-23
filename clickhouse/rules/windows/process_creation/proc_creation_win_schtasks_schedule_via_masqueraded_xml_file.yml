@@ -1,0 +1,16 @@
+id: dd2a821e-3b07-4d3b-a9ac-929fe4c6ca0c
+name: Suspicious Scheduled Task Creation via Masqueraded XML File
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel, Elastic (idea)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.stealth
+- attack.t1036.005
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\schtasks.exe' OR OriginalFileName='schtasks.exe') AND (CommandLine ILIKE '%/create%' OR CommandLine ILIKE '%-create%') AND (CommandLine ILIKE '%/xml%' OR CommandLine ILIKE '%-xml%')) AND (NOT (CommandLine ILIKE '%.xml%' OR (IntegrityLevel IN ('System', 'S-1-16-16384')) OR (ParentImage ILIKE '%\\rundll32.exe' AND (ParentCommandLine ILIKE '%:\\WINDOWS\\Installer\\MSI%' AND ParentCommandLine ILIKE '%.tmp,zzzzInvokeManagedCustomActionOutOfProc%')))) AND (NOT (ParentImage ILIKE '%:\\ProgramData\\OEM\\UpgradeTool\\CareCenter\_%\\BUnzip\\Setup\_msi.exe' OR ParentImage ILIKE '%:\\Program Files\\Axis Communications\\AXIS Camera Station\\SetupActions.exe' OR ParentImage ILIKE '%:\\Program Files\\Axis Communications\\AXIS Device Manager\\AdmSetupActions.exe' OR ParentImage ILIKE '%:\\Program Files (x86)\\Zemana\\AntiMalware\\AntiMalware.exe' OR ParentImage ILIKE '%:\\Program Files\\Dell\\SupportAssist\\pcdrcui.exe'))

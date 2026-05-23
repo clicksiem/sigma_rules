@@ -1,0 +1,12 @@
+id: a3f55ebd-0c01-4ed6-adc0-8fb76d8cd3cd
+name: Malicious IP Address Sign-In Failure Rate
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.t1090
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE riskEventType='maliciousIPAddress'

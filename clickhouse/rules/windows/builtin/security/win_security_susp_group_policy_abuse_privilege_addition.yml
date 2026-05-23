@@ -1,0 +1,13 @@
+id: 1c480e10-7ee1-46d4-8ed2-85f9789e3ce4
+name: Group Policy Abuse for Privilege Addition
+level: 5
+size: '>0'
+active: true
+author:
+- Elastic, Josh Nickels, Marius Rothenbücher
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1484.001
+rule: SELECT * FROM logs WHERE EventID=5136 AND AttributeLDAPDisplayName='gPCMachineExtensionNames' AND (AttributeValue ILIKE '%827D319E-6EAC-11D2-A4EA-00C04F79F83A%' OR AttributeValue ILIKE '%803E14A0-B4FB-11D0-A0D0-00A0C90F574B%')

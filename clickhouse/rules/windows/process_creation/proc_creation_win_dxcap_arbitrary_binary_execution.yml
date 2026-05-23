@@ -1,0 +1,12 @@
+id: 60f16a96-db70-42eb-8f76-16763e333590
+name: New Capture Session Launched Via DXCap.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\DXCap.exe' OR OriginalFileName='DXCap.exe') AND CommandLine ILIKE '% -c %'

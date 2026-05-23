@@ -1,0 +1,13 @@
+id: 0c46d4f4-a2bf-4104-9597-8d653fc2bb55
+name: GitHub Repository Pages Site Changed to Public
+level: 3
+size: '>0'
+active: true
+author:
+- Ivan Saakov
+group: github
+tags:
+- attack.collection
+- attack.exfiltration
+- attack.t1567.001
+rule: SELECT * FROM logs WHERE action ILIKE 'repo.pages\_public'

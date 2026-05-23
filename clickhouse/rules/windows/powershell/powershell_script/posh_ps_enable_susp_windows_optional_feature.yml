@@ -1,0 +1,11 @@
+id: 55c925c1-7195-426b-a136-a9396800e29b
+name: Potential Suspicious Windows Feature Enabled
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Enable-WindowsOptionalFeature%' AND ScriptBlockText ILIKE '%-Online%' AND ScriptBlockText ILIKE '%-FeatureName%') AND (ScriptBlockText ILIKE '%TelnetServer%' OR ScriptBlockText ILIKE '%Internet-Explorer-Optional-amd64%' OR ScriptBlockText ILIKE '%TFTP%' OR ScriptBlockText ILIKE '%SMB1Protocol%' OR ScriptBlockText ILIKE '%Client-ProjFS%' OR ScriptBlockText ILIKE '%Microsoft-Windows-Subsystem-Linux%')

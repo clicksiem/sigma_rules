@@ -1,0 +1,15 @@
+id: 98c5aeef-32d5-492f-b174-64a691896d25
+name: Service Security Descriptor Tampering Via Sc.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' OR OriginalFileName='sc.exe') AND CommandLine ILIKE '%sdset%'

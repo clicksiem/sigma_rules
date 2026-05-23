@@ -1,0 +1,12 @@
+id: bdc64095-d59a-42a2-8588-71fd9c9d9abc
+name: Suspicious Unsigned Dbghelp/Dbgcore DLL Loaded
+level: 8
+size: '>0'
+active: true
+author:
+- Perez Diego (@darkquassar), oscd.community, Ecco
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\dbghelp.dll' OR ImageLoaded ILIKE '%\\dbgcore.dll') AND Signed='false'

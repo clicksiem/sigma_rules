@@ -1,0 +1,12 @@
+id: 2a0bb2dd-eb5f-4517-8cb9-404f8ba764a5
+name: Google Workspace Out Of Domain Email Forwarding
+level: 5
+size: '>0'
+active: true
+author:
+- Tom kluter
+group: gcp
+tags:
+- attack.t1114.003
+- attack.collection
+rule: SELECT * FROM logs WHERE `protoPayload.serviceName`='login.googleapis.com' AND `protoPayload.metadata.event.eventName` ILIKE 'email\_forwarding\_out\_of\_domain'

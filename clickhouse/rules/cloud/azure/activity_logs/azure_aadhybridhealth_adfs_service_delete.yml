@@ -1,0 +1,12 @@
+id: 48739819-8230-4ee3-a8ea-e0289d1fb0ff
+name: Azure Active Directory Hybrid Health AD FS Service Delete
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: azure
+tags:
+- attack.defense-impairment
+- attack.t1578.003
+rule: SELECT * FROM logs WHERE CategoryValue='Administrative' AND ResourceProviderValue='Microsoft.ADHybridHealthService' AND ResourceId ILIKE '%AdFederationService%' AND OperationNameValue='Microsoft.ADHybridHealthService/services/delete'

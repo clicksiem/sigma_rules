@@ -1,0 +1,12 @@
+id: 69ca006d-b9a9-47f5-80ff-ecd4d25d481a
+name: HackTool - TruffleSnout Execution
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1482
+rule: SELECT * FROM logs WHERE OriginalFileName='TruffleSnout.exe' OR Image ILIKE '%\\TruffleSnout.exe'

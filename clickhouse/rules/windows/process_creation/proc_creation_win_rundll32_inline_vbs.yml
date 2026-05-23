@@ -1,0 +1,13 @@
+id: 1cc50f3f-1fc8-4acf-b2e9-6f172e1fdebd
+name: Suspicious Rundll32 Invoking Inline VBScript
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%rundll32.exe%' AND CommandLine ILIKE '%Execute%' AND CommandLine ILIKE '%RegRead%' AND CommandLine ILIKE '%window.close%'

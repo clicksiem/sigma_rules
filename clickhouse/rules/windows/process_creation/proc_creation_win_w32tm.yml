@@ -1,0 +1,12 @@
+id: 6da2c9f5-7c53-401b-aacb-92c040ce1215
+name: Use of W32tm as Timer
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1124
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\w32tm.exe' OR OriginalFileName='w32time.dll') AND (CommandLine ILIKE '%/stripchart%' AND CommandLine ILIKE '%/computer:%' AND CommandLine ILIKE '%/period:%' AND CommandLine ILIKE '%/dataonly%' AND CommandLine ILIKE '%/samples:%')

@@ -1,0 +1,15 @@
+id: 98a96a5a-64a0-4c42-92c5-489da3866cb0
+name: DNS Exfiltration and Tunneling Tools Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048.001
+- attack.command-and-control
+- attack.t1071.004
+- attack.t1132.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\iodine.exe' OR Image ILIKE '%\\dnscat2%'

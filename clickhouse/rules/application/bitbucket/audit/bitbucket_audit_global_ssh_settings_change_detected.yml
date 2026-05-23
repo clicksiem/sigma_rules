@@ -1,0 +1,14 @@
+id: 16ab6143-510a-44e2-a615-bdb80b8317fc
+name: Bitbucket Global SSH Settings Changed
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.lateral-movement
+- attack.defense-impairment
+- attack.t1685
+- attack.t1021.004
+rule: SELECT * FROM logs WHERE `auditType.category`='Global administration' AND `auditType.action`='SSH settings changed'

@@ -1,0 +1,12 @@
+id: a7ee1722-c3c5-aeff-3212-c777e4733217
+name: Disable Windows Defender AV Security Monitoring
+level: 8
+size: '>0'
+active: true
+author:
+- ok @securonix invrep-de, oscd.community, frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%-DisableBehaviorMonitoring $true%' OR CommandLine ILIKE '%-DisableRuntimeMonitoring $true%')) OR ((Image ILIKE '%\\sc.exe' OR OriginalFileName='sc.exe') AND ((CommandLine ILIKE '%stop%' AND CommandLine ILIKE '%WinDefend%') OR (CommandLine ILIKE '%delete%' AND CommandLine ILIKE '%WinDefend%') OR (CommandLine ILIKE '%config%' AND CommandLine ILIKE '%WinDefend%' AND CommandLine ILIKE '%start=disabled%')))

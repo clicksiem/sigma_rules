@@ -1,0 +1,14 @@
+id: 22777c9e-873a-4b49-855f-6072ab861a52
+name: OpenCanary - SMB File Open Request
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.lateral-movement
+- attack.collection
+- attack.t1021
+- attack.t1005
+rule: SELECT * FROM logs WHERE logtype=5000

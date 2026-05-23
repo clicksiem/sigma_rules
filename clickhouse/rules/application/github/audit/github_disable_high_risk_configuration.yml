@@ -1,0 +1,14 @@
+id: 8622c92d-c00e-463c-b09d-fd06166f6794
+name: Github High Risk Configuration Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: github
+tags:
+- attack.credential-access
+- attack.persistence
+- attack.defense-impairment
+- attack.t1556
+rule: SELECT * FROM logs WHERE action IN ('business\_advanced\_security.disabled\_for\_new\_repos', 'business\_advanced\_security.disabled\_for\_new\_user\_namespace\_repos', 'business\_advanced\_security.disabled', 'business\_advanced\_security.user\_namespace\_repos\_disabled', 'org.advanced\_security\_disabled\_for\_new\_repos', 'org.advanced\_security\_disabled\_on\_all\_repos', 'org.advanced\_security\_policy\_selected\_member\_disabled', 'org.disable\_oauth\_app\_restrictions', 'org.disable\_two\_factor\_requirement', 'repo.advanced\_security\_disabled')

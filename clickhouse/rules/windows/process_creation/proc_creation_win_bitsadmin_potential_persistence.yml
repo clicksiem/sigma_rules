@@ -1,0 +1,14 @@
+id: b9cbbc17-d00d-4e3d-a827-b06d03d2380d
+name: Monitoring For Persistence Via BITS
+level: 5
+size: '>0'
+active: true
+author:
+- Sreeman
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\bitsadmin.exe' OR OriginalFileName='bitsadmin.exe') AND ((CommandLine ILIKE '%/SetNotifyCmdLine%' AND (CommandLine ILIKE '%\%COMSPEC\%%' OR CommandLine ILIKE '%cmd.exe%' OR CommandLine ILIKE '%regsvr32.exe%')) OR (CommandLine ILIKE '%/Addfile%' AND (CommandLine ILIKE '%http:%' OR CommandLine ILIKE '%https:%' OR CommandLine ILIKE '%ftp:%' OR CommandLine ILIKE '%ftps:%')))

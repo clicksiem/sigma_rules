@@ -1,0 +1,14 @@
+id: 3940b5f1-3f46-44aa-b746-ebe615b879e0
+name: AWS Route 53 Domain Transfer Lock Disabled
+level: 3
+size: '>0'
+active: true
+author:
+- Elastic, Austin Songer @austinsonger
+group: aws
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.credential-access
+- attack.t1098
+rule: SELECT * FROM logs WHERE eventSource='route53.amazonaws.com' AND eventName='DisableDomainTransferLock'

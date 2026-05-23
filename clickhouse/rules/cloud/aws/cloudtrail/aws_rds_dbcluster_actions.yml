@@ -1,0 +1,12 @@
+id: 457cc9ac-d8e6-4d1d-8c0e-251d0f11a74c
+name: Modification or Deletion of an AWS RDS Cluster
+level: 8
+size: '>0'
+active: true
+author:
+- Ivan Saakov
+group: aws
+tags:
+- attack.exfiltration
+- attack.t1020
+rule: SELECT * FROM logs WHERE eventSource='rds.amazonaws.com' AND (eventName IN ('ModifyDBCluster', 'DeleteDBCluster'))

@@ -1,0 +1,12 @@
+id: cbb56d62-4060-40f7-9466-d8aaf3123f83
+name: Python Image Load By Non-Python Process
+level: 3
+size: '>0'
+active: true
+author:
+- Patrick St. John, OTR (Open Threat Research)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.002
+rule: SELECT * FROM logs WHERE Description='Python Core' AND (NOT (Image ILIKE '%Python%' OR (Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\ProgramData\\Anaconda3\\%'))) AND (NOT isNull(Image))

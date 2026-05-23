@@ -1,0 +1,13 @@
+id: 6938366d-8954-4ddc-baff-c830b3ba8fcd
+name: HackTool - Certipy Execution
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems), Sittikorn Sangrattanapitak
+group: windows
+tags:
+- attack.discovery
+- attack.credential-access
+- attack.t1649
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\Certipy.exe' OR OriginalFileName='Certipy.exe' OR Description ILIKE '%Certipy%') OR ((CommandLine ILIKE '% account %' OR CommandLine ILIKE '% auth %' OR CommandLine ILIKE '% cert %' OR CommandLine ILIKE '% find %' OR CommandLine ILIKE '% forge %' OR CommandLine ILIKE '% ptt %' OR CommandLine ILIKE '% relay %' OR CommandLine ILIKE '% req %' OR CommandLine ILIKE '% shadow %' OR CommandLine ILIKE '% template %') AND (CommandLine ILIKE '% -bloodhound%' OR CommandLine ILIKE '% -ca-pfx %' OR CommandLine ILIKE '% -dc-ip %' OR CommandLine ILIKE '% -kirbi%' OR CommandLine ILIKE '% -old-bloodhound%' OR CommandLine ILIKE '% -pfx %' OR CommandLine ILIKE '% -target%' OR CommandLine ILIKE '% -template%' OR CommandLine ILIKE '% -username %' OR CommandLine ILIKE '% -vulnerable%' OR CommandLine ILIKE '%auth -pfx%' OR CommandLine ILIKE '%shadow auto%' OR CommandLine ILIKE '%shadow list%'))

@@ -1,0 +1,12 @@
+id: 8c1a5675-cb85-452f-a298-b01b22a51856
+name: Suspicious Invocation of Shell via AWK - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/awk' OR Image ILIKE '%/gawk' OR Image ILIKE '%/mawk' OR Image ILIKE '%/nawk') AND CommandLine ILIKE '%BEGIN {system%') AND (CommandLine ILIKE '%/bin/bash%' OR CommandLine ILIKE '%/bin/dash%' OR CommandLine ILIKE '%/bin/fish%' OR CommandLine ILIKE '%/bin/sh%' OR CommandLine ILIKE '%/bin/zsh%')

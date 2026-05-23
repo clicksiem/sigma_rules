@@ -1,0 +1,13 @@
+id: 9f6a34b4-2688-4eb7-a7f5-e39fef573d0e
+name: Suspicious Windows Strings In URI
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: ''
+tags:
+- attack.persistence
+- attack.exfiltration
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE `cs-uri-query` ILIKE '%=C:/Users%' OR `cs-uri-query` ILIKE '%=C:/Program\%20Files%' OR `cs-uri-query` ILIKE '%=C:/Windows%' OR `cs-uri-query` ILIKE '%=C\%3A\%5CUsers%' OR `cs-uri-query` ILIKE '%=C\%3A\%5CProgram\%20Files%' OR `cs-uri-query` ILIKE '%=C\%3A\%5CWindows%'

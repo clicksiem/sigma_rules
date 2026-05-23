@@ -1,0 +1,12 @@
+id: 3dfd06d2-eaf4-4532-9555-68aca59f57c4
+name: Process Execution From A Potentially Suspicious Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Tim Shelton
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\Perflogs\\%' OR Image ILIKE '%:\\Users\\All Users\\%' OR Image ILIKE '%:\\Users\\Default\\%' OR Image ILIKE '%:\\Users\\NetworkService\\%' OR Image ILIKE '%:\\Windows\\addins\\%' OR Image ILIKE '%:\\Windows\\debug\\%' OR Image ILIKE '%:\\Windows\\Fonts\\%' OR Image ILIKE '%:\\Windows\\Help\\%' OR Image ILIKE '%:\\Windows\\IME\\%' OR Image ILIKE '%:\\Windows\\Media\\%' OR Image ILIKE '%:\\Windows\\repair\\%' OR Image ILIKE '%:\\Windows\\security\\%' OR Image ILIKE '%:\\Windows\\System32\\Tasks\\%' OR Image ILIKE '%:\\Windows\\Tasks\\%' OR Image ILIKE '%$Recycle.bin%' OR Image ILIKE '%\\config\\systemprofile\\%' OR Image ILIKE '%\\Intel\\Logs\\%' OR Image ILIKE '%\\RSA\\MachineKeys\\%') AND (NOT (Image ILIKE 'C:\\Users\\Public\\IBM\\ClientSolutions\\Start\_Programs\\%' OR (Image ILIKE 'C:\\Windows\\SysWOW64\\config\\systemprofile\\Citrix\\UpdaterBinaries\\%' AND Image ILIKE '%\\CitrixReceiverUpdater.exe')))

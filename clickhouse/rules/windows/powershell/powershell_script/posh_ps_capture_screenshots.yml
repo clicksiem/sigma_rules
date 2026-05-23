@@ -1,0 +1,12 @@
+id: d4a11f63-2390-411c-9adf-d791fd152830
+name: Windows Screen Capture with CopyFromScreen
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1113
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%.CopyFromScreen%'

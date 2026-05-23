@@ -1,0 +1,12 @@
+id: d27ab432-2199-483f-a297-03633c05bae6
+name: OS Architecture Discovery Via Grep
+level: 3
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE Image ILIKE '%/grep' AND (CommandLine ILIKE '%aarch64' OR CommandLine ILIKE '%arm' OR CommandLine ILIKE '%i386' OR CommandLine ILIKE '%i686' OR CommandLine ILIKE '%mips' OR CommandLine ILIKE '%x86\_64')

@@ -1,0 +1,12 @@
+id: 7cded4b3-f09e-405a-b96f-24248433ba44
+name: OpenCanary - NTP Monlist Request
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.impact
+- attack.t1498
+rule: SELECT * FROM logs WHERE logtype=11001

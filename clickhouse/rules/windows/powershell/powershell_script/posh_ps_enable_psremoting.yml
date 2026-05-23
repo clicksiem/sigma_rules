@@ -1,0 +1,12 @@
+id: 991a9744-f2f0-44f2-bd33-9092eba17dc3
+name: Enable Windows Remote Management
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.006
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Enable-PSRemoting %'

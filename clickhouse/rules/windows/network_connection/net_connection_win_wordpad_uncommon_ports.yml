@@ -1,0 +1,12 @@
+id: 786cdae8-fefb-4eb2-9227-04e34060db01
+name: Suspicious Wordpad Outbound Connections
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Initiated='true' AND Image ILIKE '%\\wordpad.exe') AND (NOT (DestinationPort IN (80, 139, 443, 445, 465, 587, 993, 995)))

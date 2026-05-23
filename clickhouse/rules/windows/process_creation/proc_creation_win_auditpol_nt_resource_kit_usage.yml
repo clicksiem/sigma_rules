@@ -1,0 +1,12 @@
+id: c6c56ada-612b-42d1-9a29-adad3c5c2c1e
+name: Audit Policy Tampering Via NT Resource Kit Auditpol
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%/logon:none%' OR CommandLine ILIKE '%/system:none%' OR CommandLine ILIKE '%/sam:none%' OR CommandLine ILIKE '%/privilege:none%' OR CommandLine ILIKE '%/object:none%' OR CommandLine ILIKE '%/process:none%' OR CommandLine ILIKE '%/policy:none%'

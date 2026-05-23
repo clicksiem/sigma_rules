@@ -1,0 +1,14 @@
+id: 63bf8794-9917-45bc-88dd-e1b5abc0ecfd
+name: Powershell Install a DLL in System Directory
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1556.002
+rule: SELECT * FROM logs WHERE match(ScriptBlockText, '(Copy-Item|cpi) .{2,128} -Destination .{1,32}\\Windows\\(System32|SysWOW64)')

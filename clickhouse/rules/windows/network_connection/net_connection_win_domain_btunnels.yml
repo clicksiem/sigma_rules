@@ -1,0 +1,14 @@
+id: 9e02c8ec-02b9-43e8-81eb-34a475ba7965
+name: Network Connection Initiated To BTunnels Domains
+level: 5
+size: '>0'
+active: true
+author:
+- Kamran Saifullah
+group: windows
+tags:
+- attack.exfiltration
+- attack.command-and-control
+- attack.t1567
+- attack.t1572
+rule: SELECT * FROM logs WHERE Initiated='true' AND DestinationHostname ILIKE '%.btunnel.co.in'

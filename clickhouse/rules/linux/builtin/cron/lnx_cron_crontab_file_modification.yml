@@ -1,0 +1,14 @@
+id: af202fd3-7bff-4212-a25a-fb34606cfcbe
+name: Modifying Crontab
+level: 5
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.003
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'REPLACE')

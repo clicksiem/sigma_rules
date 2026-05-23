@@ -1,0 +1,12 @@
+id: fd435618-981e-4a7c-81f8-f78ce480d616
+name: Django Framework Exceptions
+level: 5
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: django
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'SuspiciousOperation') OR hasToken(full_log, 'DisallowedHost') OR hasToken(full_log, 'DisallowedModelAdminLookup') OR hasToken(full_log, 'DisallowedModelAdminToField') OR hasToken(full_log, 'DisallowedRedirect') OR hasToken(full_log, 'InvalidSessionKey') OR hasToken(full_log, 'RequestDataTooBig') OR hasToken(full_log, 'SuspiciousFileOperation') OR hasToken(full_log, 'SuspiciousMultipartForm') OR hasToken(full_log, 'SuspiciousSession') OR hasToken(full_log, 'TooManyFieldsSent') OR hasToken(full_log, 'PermissionDenied')

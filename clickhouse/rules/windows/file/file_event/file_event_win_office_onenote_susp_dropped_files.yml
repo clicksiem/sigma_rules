@@ -1,0 +1,11 @@
+id: fcc6d700-68d9-4241-9a1a-06874d621b06
+name: Suspicious File Created Via OneNote Application
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\onenote.exe' OR Image ILIKE '%\\onenotem.exe' OR Image ILIKE '%\\onenoteim.exe') AND TargetFilename ILIKE '%\\AppData\\Local\\Temp\\OneNote\\%' AND (TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.chm' OR TargetFilename ILIKE '%.cmd' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.htm' OR TargetFilename ILIKE '%.html' OR TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.lnk' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.wsf')

@@ -1,0 +1,15 @@
+id: 598290cf-5932-45cd-9123-be1e05ab4f2e
+name: OpenCanary - RDP New Connection Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM)
+group: opencanary
+tags:
+- attack.initial-access
+- attack.lateral-movement
+- attack.persistence
+- attack.t1133
+- attack.t1021.001
+rule: SELECT * FROM logs WHERE logtype=14001

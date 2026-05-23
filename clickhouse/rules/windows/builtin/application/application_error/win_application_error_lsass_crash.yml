@@ -1,0 +1,12 @@
+id: a18e0862-127b-43ca-be12-1a542c75c7c5
+name: LSASS Process Crashed - Application
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE Provider_Name='Application Error' AND EventID=1000 AND AppName='lsass.exe' AND ExceptionCode='c0000001'

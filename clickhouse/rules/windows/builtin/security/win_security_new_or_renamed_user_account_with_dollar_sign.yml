@@ -1,0 +1,12 @@
+id: cfeed607-6aa4-4bbd-9627-b637deb723c8
+name: New or Renamed User Account with '$' Character
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE ((EventID=4720 AND SamAccountName ILIKE '%$%') OR (EventID=4781 AND NewTargetUserName ILIKE '%$%')) AND (NOT (EventID=4720 AND TargetUserName='HomeGroupUser$'))

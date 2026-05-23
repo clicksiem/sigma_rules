@@ -1,0 +1,11 @@
+id: acfa2210-0d71-4eeb-b477-afab494d596c
+name: Windows Service Terminated With Error
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7023

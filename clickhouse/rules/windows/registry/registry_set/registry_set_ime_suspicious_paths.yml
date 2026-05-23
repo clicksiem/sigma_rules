@@ -1,0 +1,12 @@
+id: 9d8f9bb8-01af-4e15-a3a2-349071530530
+name: Suspicious Path In Keyboard Layout IME File Registry Value
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Control\\Keyboard Layouts\\%' AND TargetObject ILIKE '%Ime File%') AND ((Details ILIKE '%:\\Perflogs\\%' OR Details ILIKE '%:\\Users\\Public\\%' OR Details ILIKE '%:\\Windows\\Temp\\%' OR Details ILIKE '%\\AppData\\Local\\Temp\\%' OR Details ILIKE '%\\AppData\\Roaming\\%' OR Details ILIKE '%\\Temporary Internet%') OR ((Details ILIKE '%:\\Users\\%' AND Details ILIKE '%\\Favorites\\%') OR (Details ILIKE '%:\\Users\\%' AND Details ILIKE '%\\Favourites\\%') OR (Details ILIKE '%:\\Users\\%' AND Details ILIKE '%\\Contacts\\%')))

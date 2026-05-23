@@ -1,0 +1,11 @@
+id: 13f08f54-e705-4498-91fd-cce9d9cee9f1
+name: Potentially Suspicious Shell Script Creation in Profile Folder
+level: 3
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%/etc/profile.d/%' AND (TargetFilename ILIKE '%.csh' OR TargetFilename ILIKE '%.sh')

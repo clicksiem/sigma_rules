@@ -1,0 +1,11 @@
+id: d6b5520d-3934-48b4-928c-2aa3f92d6963
+name: Important Windows Service Terminated With Error
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7023) AND ((param1 ILIKE '% Antivirus%' OR param1 ILIKE '% Firewall%' OR param1 ILIKE '%Application Guard%' OR param1 ILIKE '%BitLocker Drive Encryption Service%' OR param1 ILIKE '%Encrypting File System%' OR param1 ILIKE '%Microsoft Defender%' OR param1 ILIKE '%Threat Protection%' OR param1 ILIKE '%Windows Event Log%') OR (Binary ILIKE '%770069006e0064006500660065006e006400%' OR Binary ILIKE '%4500760065006e0074004c006f006700%' OR Binary ILIKE '%6d0070007300730076006300%' OR Binary ILIKE '%530065006e0073006500%' OR Binary ILIKE '%450046005300%' OR Binary ILIKE '%420044004500530056004300%'))

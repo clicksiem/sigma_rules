@@ -1,0 +1,12 @@
+id: af4c4609-5755-42fe-8075-4effb49f5d44
+name: Microsoft Excel Add-In Loaded From Uncommon Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\excel.exe' AND (ImageLoaded ILIKE '%\\Desktop\\%' OR ImageLoaded ILIKE '%\\Downloads\\%' OR ImageLoaded ILIKE '%\\Perflogs\\%' OR ImageLoaded ILIKE '%\\Temp\\%' OR ImageLoaded ILIKE '%\\Users\\Public\\%' OR ImageLoaded ILIKE '%\\Windows\\Tasks\\%') AND ImageLoaded ILIKE '%.xll'

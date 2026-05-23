@@ -1,0 +1,17 @@
+id: e61e8a88-59a9-451c-874e-70fcc9740d67
+name: New DNS ServerLevelPluginDll Installed
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.defense-impairment
+- attack.t1574.001
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\services\\DNS\\Parameters\\ServerLevelPluginDll'

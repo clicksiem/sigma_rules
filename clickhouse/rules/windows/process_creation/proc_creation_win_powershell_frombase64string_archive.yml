@@ -1,0 +1,12 @@
+id: d75d6b6b-adb9-48f7-824b-ac2e786efe1f
+name: Suspicious FromBase64String Usage On Gzip Archive - Process Creation
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1132.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%FromBase64String%' AND CommandLine ILIKE '%MemoryStream%' AND CommandLine ILIKE '%H4sI%'

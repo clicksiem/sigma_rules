@@ -1,0 +1,12 @@
+id: 295a59c1-7b79-4b47-a930-df12c15fc9c2
+name: Windows Registry Trust Record Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Antonlovesdnb, Trent Liffick (@tliffick)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1566.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Security\\Trusted Documents\\TrustRecords%'

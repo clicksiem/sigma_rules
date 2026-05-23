@@ -1,0 +1,15 @@
+id: 98b53e78-ebaf-46f8-be06-421aafd176d9
+name: HackTool - winPEAS Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Georg Lauenstein (sure[secure])
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.discovery
+- attack.t1082
+- attack.t1087
+- attack.t1046
+rule: SELECT * FROM logs WHERE (OriginalFileName='winPEAS.exe' OR (Image ILIKE '%\\winPEASany\_ofs.exe' OR Image ILIKE '%\\winPEASany.exe' OR Image ILIKE '%\\winPEASx64\_ofs.exe' OR Image ILIKE '%\\winPEASx64.exe' OR Image ILIKE '%\\winPEASx86\_ofs.exe' OR Image ILIKE '%\\winPEASx86.exe')) OR (CommandLine ILIKE '% applicationsinfo%' OR CommandLine ILIKE '% browserinfo%' OR CommandLine ILIKE '% eventsinfo%' OR CommandLine ILIKE '% fileanalysis%' OR CommandLine ILIKE '% filesinfo%' OR CommandLine ILIKE '% processinfo%' OR CommandLine ILIKE '% servicesinfo%' OR CommandLine ILIKE '% windowscreds%') OR CommandLine ILIKE '%https://github.com/carlospolop/PEASS-ng/releases/latest/download/%' OR (ParentCommandLine ILIKE '% -linpeas' OR CommandLine ILIKE '% -linpeas')

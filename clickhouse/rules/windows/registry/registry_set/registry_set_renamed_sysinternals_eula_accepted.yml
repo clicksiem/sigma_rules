@@ -1,0 +1,12 @@
+id: 8023f872-3f1d-4301-a384-801889917ab4
+name: Usage of Renamed Sysinternals Tools - RegistrySet
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.resource-development
+- attack.t1588.002
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%\\PsExec%' OR TargetObject ILIKE '%\\ProcDump%' OR TargetObject ILIKE '%\\Handle%' OR TargetObject ILIKE '%\\LiveKd%' OR TargetObject ILIKE '%\\Process Explorer%' OR TargetObject ILIKE '%\\PsLoglist%' OR TargetObject ILIKE '%\\PsPasswd%' OR TargetObject ILIKE '%\\Active Directory Explorer%') AND TargetObject ILIKE '%\\EulaAccepted') AND (NOT (Image ILIKE '%\\PsExec.exe' OR Image ILIKE '%\\PsExec64.exe' OR Image ILIKE '%\\procdump.exe' OR Image ILIKE '%\\procdump64.exe' OR Image ILIKE '%\\handle.exe' OR Image ILIKE '%\\handle64.exe' OR Image ILIKE '%\\livekd.exe' OR Image ILIKE '%\\livekd64.exe' OR Image ILIKE '%\\procexp.exe' OR Image ILIKE '%\\procexp64.exe' OR Image ILIKE '%\\psloglist.exe' OR Image ILIKE '%\\psloglist64.exe' OR Image ILIKE '%\\pspasswd.exe' OR Image ILIKE '%\\pspasswd64.exe' OR Image ILIKE '%\\ADExplorer.exe' OR Image ILIKE '%\\ADExplorer64.exe')) AND (NOT isNull(Image))

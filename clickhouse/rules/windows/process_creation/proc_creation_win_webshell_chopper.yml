@@ -1,0 +1,16 @@
+id: fa3c117a-bc0d-416e-a31b-0c0e80653efb
+name: Chopper Webshell Process Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), MSTI (query)
+group: windows
+tags:
+- attack.persistence
+- attack.discovery
+- attack.t1505.003
+- attack.t1018
+- attack.t1033
+- attack.t1087
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\w3wp.exe' OR ParentImage ILIKE '%\\w3wp.exe') AND (CommandLine ILIKE '%&ipconfig&echo%' OR CommandLine ILIKE '%&quser&echo%' OR CommandLine ILIKE '%&whoami&echo%' OR CommandLine ILIKE '%&c:&echo%' OR CommandLine ILIKE '%&cd&echo%' OR CommandLine ILIKE '%&dir&echo%' OR CommandLine ILIKE '%&echo [E]%' OR CommandLine ILIKE '%&echo [S]%')

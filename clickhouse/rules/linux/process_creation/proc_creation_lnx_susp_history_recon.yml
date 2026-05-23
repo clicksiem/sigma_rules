@@ -1,0 +1,12 @@
+id: d7821ff1-4527-4e33-9f84-d0d57fa2fb66
+name: Print History File Contents
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.reconnaissance
+- attack.t1592.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/cat' OR Image ILIKE '%/head' OR Image ILIKE '%/tail' OR Image ILIKE '%/more') AND ((CommandLine ILIKE '%/.bash\_history%' OR CommandLine ILIKE '%/.zsh\_history%') OR (CommandLine ILIKE '%\_history' OR CommandLine ILIKE '%.history' OR CommandLine ILIKE '%zhistory'))

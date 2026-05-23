@@ -1,0 +1,15 @@
+id: fecfd1a1-cc78-4313-a1ea-2ee2e8ec27a7
+name: PowerShell Logging Disabled Via Registry Key Tampering
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.defense-impairment
+- attack.t1564.001
+- attack.t1112
+- attack.persistence
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Microsoft\\Windows\\PowerShell\\%' OR TargetObject ILIKE '%\\Microsoft\\PowerShellCore\\%') AND (TargetObject ILIKE '%\\ModuleLogging\\EnableModuleLogging' OR TargetObject ILIKE '%\\ScriptBlockLogging\\EnableScriptBlockLogging' OR TargetObject ILIKE '%\\ScriptBlockLogging\\EnableScriptBlockInvocationLogging' OR TargetObject ILIKE '%\\Transcription\\EnableTranscripting' OR TargetObject ILIKE '%\\Transcription\\EnableInvocationHeader' OR TargetObject ILIKE '%\\EnableScripts') AND Details='DWORD (0x00000000)'

@@ -1,0 +1,12 @@
+id: 902cedee-0398-4e3a-8183-6f3a89773a96
+name: Suspicious Invoke-Item From Mount-DiskImage
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553.005
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Mount-DiskImage %' AND ScriptBlockText ILIKE '%-ImagePath %' AND ScriptBlockText ILIKE '%Get-Volume%' AND ScriptBlockText ILIKE '%.DriveLetter%' AND ScriptBlockText ILIKE '%invoke-item %' AND ScriptBlockText ILIKE '%):\\%'

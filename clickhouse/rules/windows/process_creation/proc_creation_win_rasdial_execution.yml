@@ -1,0 +1,12 @@
+id: 6bba49bf-7f8c-47d6-a1bb-6b4dece4640e
+name: Suspicious RASdial Activity
+level: 5
+size: '>0'
+active: true
+author:
+- juju4
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE Image ILIKE '%rasdial.exe'

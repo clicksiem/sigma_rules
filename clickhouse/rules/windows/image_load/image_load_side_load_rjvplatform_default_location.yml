@@ -1,0 +1,15 @@
+id: 259dda31-b7a3-444f-b7d8-17f96e8a7d0d
+name: Potential RjvPlatform.DLL Sideloading From Default Location
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE Image ILIKE 'C:\\Windows\\System32\\SystemResetPlatform\\SystemResetPlatform.exe' AND ImageLoaded ILIKE 'C:\\$SysReset\\Framework\\Stack\\RjvPlatform.dll'

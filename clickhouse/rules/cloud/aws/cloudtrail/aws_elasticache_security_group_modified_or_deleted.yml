@@ -1,0 +1,12 @@
+id: 7c797da2-9cf2-4523-ba64-33b06339f0cc
+name: AWS ElastiCache Security Group Modified or Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: aws
+tags:
+- attack.impact
+- attack.t1531
+rule: SELECT * FROM logs WHERE eventSource='elasticache.amazonaws.com' AND (eventName IN ('DeleteCacheSecurityGroup', 'AuthorizeCacheSecurityGroupIngress', 'RevokeCacheSecurityGroupIngress', 'AuthorizeCacheSecurityGroupEgress', 'RevokeCacheSecurityGroupEgress'))

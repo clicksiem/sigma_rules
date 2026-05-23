@@ -1,0 +1,13 @@
+id: a39d7fa7-3fbd-4dc2-97e1-d87f546b1bbc
+name: Program Executions in Suspicious Folders
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.t1587
+- attack.t1584
+- attack.resource-development
+rule: SELECT * FROM logs WHERE type='SYSCALL' AND (exe ILIKE '/tmp/%' OR exe ILIKE '/var/www/%' OR exe ILIKE '/home/%/public\_html/%' OR exe ILIKE '/usr/local/apache2/%' OR exe ILIKE '/usr/local/httpd/%' OR exe ILIKE '/var/apache/%' OR exe ILIKE '/srv/www/%' OR exe ILIKE '/home/httpd/html/%' OR exe ILIKE '/srv/http/%' OR exe ILIKE '/usr/share/nginx/html/%' OR exe ILIKE '/var/lib/pgsql/data/%' OR exe ILIKE '/usr/local/mysql/data/%' OR exe ILIKE '/var/lib/mysql/%' OR exe ILIKE '/var/vsftpd/%' OR exe ILIKE '/etc/bind/%' OR exe ILIKE '/var/named/%')

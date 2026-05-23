@@ -1,0 +1,14 @@
+id: c7d33b50-f690-4b51-8cfb-0fb912a31e57
+name: HackTool - SharpDPAPI Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134.001
+- attack.t1134.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\SharpDPAPI.exe' OR OriginalFileName='SharpDPAPI.exe') OR ((CommandLine ILIKE '% backupkey %' OR CommandLine ILIKE '% blob %' OR CommandLine ILIKE '% certificates %' OR CommandLine ILIKE '% credentials %' OR CommandLine ILIKE '% keepass %' OR CommandLine ILIKE '% masterkeys %' OR CommandLine ILIKE '% rdg %' OR CommandLine ILIKE '% vaults %') AND ((CommandLine ILIKE '% {%' AND CommandLine ILIKE '%}:%') OR (CommandLine ILIKE '% /file:%' OR CommandLine ILIKE '% /machine%' OR CommandLine ILIKE '% /mkfile:%' OR CommandLine ILIKE '% /password:%' OR CommandLine ILIKE '% /pvk:%' OR CommandLine ILIKE '% /server:%' OR CommandLine ILIKE '% /target:%' OR CommandLine ILIKE '% /unprotect%')))

@@ -1,0 +1,15 @@
+id: 28208707-fe31-437f-9a7f-4b1108b94d2e
+name: Suspicious Startup Folder Persistence
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.t1204.002
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Windows\\Start Menu\\Programs\\Startup\\%' AND (TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.cmd' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.jar' OR TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.jse' OR TargetFilename ILIKE '%.msi' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.psd1' OR TargetFilename ILIKE '%.psm1' OR TargetFilename ILIKE '%.scr' OR TargetFilename ILIKE '%.url' OR TargetFilename ILIKE '%.vba' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.wsf')

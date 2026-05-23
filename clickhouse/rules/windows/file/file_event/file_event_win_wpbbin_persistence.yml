@@ -1,0 +1,13 @@
+id: e94b9ddc-eec5-4bb8-8a58-b9dc5f4e185f
+name: UEFI Persistence Via Wpbbin - FileCreation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.stealth
+- attack.t1542.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\wpbbin.exe'

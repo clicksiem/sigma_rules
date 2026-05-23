@@ -1,0 +1,12 @@
+id: 13c02350-4177-4e45-ac17-cf7ca628ff5e
+name: Files With System DLL Name In Unsuspected Locations
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\secur32.dll' OR TargetFilename ILIKE '%\\tdh.dll') AND (NOT (TargetFilename ILIKE '%C:\\$WINDOWS.~BT\\%' OR TargetFilename ILIKE '%C:\\$WinREAgent\\%' OR TargetFilename ILIKE '%C:\\Windows\\SoftwareDistribution\\%' OR TargetFilename ILIKE '%C:\\Windows\\System32\\%' OR TargetFilename ILIKE '%C:\\Windows\\SysWOW64\\%' OR TargetFilename ILIKE '%C:\\Windows\\WinSxS\\%' OR TargetFilename ILIKE '%C:\\Windows\\uus\\%'))

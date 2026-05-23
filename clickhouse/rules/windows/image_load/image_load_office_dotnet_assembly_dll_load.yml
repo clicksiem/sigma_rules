@@ -1,0 +1,12 @@
+id: ff0f2b05-09db-4095-b96d-1b75ca24894a
+name: DotNET Assembly DLL Loaded Via Office Application
+level: 5
+size: '>0'
+active: true
+author:
+- Antonlovesdnb
+group: windows
+tags:
+- attack.execution
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\excel.exe' OR Image ILIKE '%\\mspub.exe' OR Image ILIKE '%\\onenote.exe' OR Image ILIKE '%\\onenoteim.exe' OR Image ILIKE '%\\outlook.exe' OR Image ILIKE '%\\powerpnt.exe' OR Image ILIKE '%\\winword.exe') AND ImageLoaded ILIKE 'C:\\Windows\\assembly\\%'

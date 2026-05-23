@@ -1,0 +1,12 @@
+id: 025bd229-fd1f-4fdb-97ab-20006e1a5368
+name: Unusual File Download from Direct IP Address
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE match(Contents, 'http[s]?://[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') AND (TargetFilename ILIKE '%.ps1:Zone%' OR TargetFilename ILIKE '%.bat:Zone%' OR TargetFilename ILIKE '%.exe:Zone%' OR TargetFilename ILIKE '%.vbe:Zone%' OR TargetFilename ILIKE '%.vbs:Zone%' OR TargetFilename ILIKE '%.dll:Zone%' OR TargetFilename ILIKE '%.one:Zone%' OR TargetFilename ILIKE '%.cmd:Zone%' OR TargetFilename ILIKE '%.hta:Zone%' OR TargetFilename ILIKE '%.xll:Zone%' OR TargetFilename ILIKE '%.lnk:Zone%')

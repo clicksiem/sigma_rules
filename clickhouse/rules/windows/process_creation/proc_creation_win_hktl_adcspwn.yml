@@ -1,0 +1,13 @@
+id: cd8c163e-a19b-402e-bdd5-419ff5859f12
+name: HackTool - ADCSPwn Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1557.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% --adcs %' AND CommandLine ILIKE '% --port %'

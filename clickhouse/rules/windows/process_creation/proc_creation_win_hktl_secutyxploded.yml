@@ -1,0 +1,12 @@
+id: 7679d464-4f74-45e2-9e01-ac66c5eb041a
+name: HackTool - SecurityXploded Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555
+rule: SELECT * FROM logs WHERE Company='SecurityXploded' OR Image ILIKE '%PasswordDump.exe' OR OriginalFileName ILIKE '%PasswordDump.exe'

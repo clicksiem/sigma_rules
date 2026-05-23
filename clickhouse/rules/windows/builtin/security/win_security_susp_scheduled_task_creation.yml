@@ -1,0 +1,14 @@
+id: 3a734d25-df5c-4b99-8034-af1ddb5883a4
+name: Suspicious Scheduled Task Creation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE EventID=4698 AND (TaskContent ILIKE '%\\AppData\\Local\\Temp\\%' OR TaskContent ILIKE '%\\AppData\\Roaming\\%' OR TaskContent ILIKE '%\\Users\\Public\\%' OR TaskContent ILIKE '%\\WINDOWS\\Temp\\%' OR TaskContent ILIKE '%C:\\Temp\\%' OR TaskContent ILIKE '%\\Desktop\\%' OR TaskContent ILIKE '%\\Downloads\\%' OR TaskContent ILIKE '%\\Temporary Internet%' OR TaskContent ILIKE '%C:\\ProgramData\\%' OR TaskContent ILIKE '%C:\\Perflogs\\%') AND (TaskContent ILIKE '%regsvr32%' OR TaskContent ILIKE '%rundll32%' OR TaskContent ILIKE '%cmd.exe</Command>%' OR TaskContent ILIKE '%cmd</Command>%' OR TaskContent ILIKE '%<Arguments>/c %' OR TaskContent ILIKE '%<Arguments>/k %' OR TaskContent ILIKE '%<Arguments>/r %' OR TaskContent ILIKE '%powershell%' OR TaskContent ILIKE '%pwsh%' OR TaskContent ILIKE '%mshta%' OR TaskContent ILIKE '%wscript%' OR TaskContent ILIKE '%cscript%' OR TaskContent ILIKE '%certutil%' OR TaskContent ILIKE '%bitsadmin%' OR TaskContent ILIKE '%bash.exe%' OR TaskContent ILIKE '%bash %' OR TaskContent ILIKE '%scrcons%' OR TaskContent ILIKE '%wmic %' OR TaskContent ILIKE '%wmic.exe%' OR TaskContent ILIKE '%forfiles%' OR TaskContent ILIKE '%scriptrunner%' OR TaskContent ILIKE '%hh.exe%')

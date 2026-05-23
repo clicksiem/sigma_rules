@@ -1,0 +1,12 @@
+id: 146aace8-9bd6-42ba-be7a-0070d8027b76
+name: Potentially Suspicious Child Process Of WinRAR.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1203
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\WinRAR.exe' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wscript.exe') OR (OriginalFileName IN ('Cmd.Exe', 'cscript.exe', 'mshta.exe', 'PowerShell.EXE', 'pwsh.dll', 'regsvr32.exe', 'RUNDLL32.EXE', 'wscript.exe')))

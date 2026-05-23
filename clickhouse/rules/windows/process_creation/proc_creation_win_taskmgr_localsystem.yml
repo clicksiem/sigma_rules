@@ -1,0 +1,12 @@
+id: 9fff585c-c33e-4a86-b3cd-39312079a65f
+name: Taskmgr as LOCAL_SYSTEM
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') AND Image ILIKE '%\\taskmgr.exe'

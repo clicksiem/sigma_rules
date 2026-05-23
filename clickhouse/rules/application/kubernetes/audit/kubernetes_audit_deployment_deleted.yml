@@ -1,0 +1,12 @@
+id: 40967487-139b-4811-81d9-c9767a92aa5a
+name: Deployment Deleted From Kubernetes Cluster
+level: 3
+size: '>0'
+active: true
+author:
+- Leo Tsaousis (@laripping)
+group: kubernetes
+tags:
+- attack.t1498
+- attack.impact
+rule: SELECT * FROM logs WHERE verb='delete' AND `objectRef.resource`='deployments'

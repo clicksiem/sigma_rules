@@ -1,0 +1,16 @@
+id: ebbeb024-5b1d-4e16-9c0c-917f86c708a7
+name: User Added to an Administrator's Azure AD Role
+level: 5
+size: '>0'
+active: true
+author:
+- Raphaël CALVET, @MetallicHack
+group: azure
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1098.003
+- attack.t1078
+rule: SELECT * FROM logs WHERE Operation='Add member to role.' AND Workload='AzureActiveDirectory' AND (`ModifiedProperties{}.NewValue` ILIKE '%Admins' OR `ModifiedProperties{}.NewValue` ILIKE '%Administrator')

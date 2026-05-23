@@ -1,0 +1,15 @@
+id: 961d0ba2-3eea-4303-a930-2cf78bbfcc5e
+name: HackTool - Credential Dumping Tools Named Pipe Created
+level: 10
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.t1003.002
+- attack.t1003.004
+- attack.t1003.005
+rule: SELECT * FROM logs WHERE PipeName ILIKE '%\\cachedump%' OR PipeName ILIKE '%\\lsadump%' OR PipeName ILIKE '%\\wceservicepipe%'

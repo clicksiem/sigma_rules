@@ -1,0 +1,15 @@
+id: 6fb63b40-e02a-403e-9ffd-3bcc1d749442
+name: Metasploit Or Impacket Service Installation Via SMB PsExec
+level: 8
+size: '>0'
+active: true
+author:
+- Bartlomiej Czyz, Relativity
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+- attack.t1570
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE (EventID=4697 AND match(ServiceFileName, '^%systemroot%\\[a-zA-Z]{8}\.exe$') AND match(ServiceName, '(^[a-zA-Z]{4}$)|(^[a-zA-Z]{8}$)|(^[a-zA-Z]{16}$)') AND ServiceStartType=3 AND ServiceType='0x10') AND (NOT ServiceName='PSEXESVC')

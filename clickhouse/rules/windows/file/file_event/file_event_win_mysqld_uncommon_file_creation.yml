@@ -1,0 +1,11 @@
+id: c61daa90-3c1e-4f18-af62-8f288b5c9aaf
+name: Uncommon File Creation By Mysql Daemon Process
+level: 8
+size: '>0'
+active: true
+author:
+- Joseph Kamau
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mysqld.exe' OR Image ILIKE '%\\mysqld-nt.exe') AND (TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.dat' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.psm1' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs')

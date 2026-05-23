@@ -1,0 +1,11 @@
+id: 91c49341-e2ef-40c0-ac45-49ec5c3fe26c
+name: RTCore Suspicious Service Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND ServiceName='RTCore64'

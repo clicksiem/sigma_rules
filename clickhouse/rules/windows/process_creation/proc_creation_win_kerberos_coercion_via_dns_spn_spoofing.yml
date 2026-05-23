@@ -1,0 +1,16 @@
+id: 0ed99dda-6a35-11ef-8c99-0242ac120002
+name: Attempts of Kerberos Coercion Via DNS SPN Spoofing
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.credential-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1557.001
+- attack.t1187
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%UWhRCA%' AND CommandLine ILIKE '%BAAAA%'

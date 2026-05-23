@@ -1,0 +1,11 @@
+id: d4e2745c-f0c6-4bde-a3ab-b553b3f693cc
+name: Persistence Via Disk Cleanup Handler - Autorun
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VolumeCaches\\%' AND ((TargetObject ILIKE '%\\Autorun%' AND Details='DWORD (0x00000001)') OR ((TargetObject ILIKE '%\\CleanupString%' OR TargetObject ILIKE '%\\PreCleanupString%') AND (Details ILIKE '%cmd%' OR Details ILIKE '%powershell%' OR Details ILIKE '%rundll32%' OR Details ILIKE '%mshta%' OR Details ILIKE '%cscript%' OR Details ILIKE '%wscript%' OR Details ILIKE '%wsl%' OR Details ILIKE '%\\Users\\Public\\%' OR Details ILIKE '%\\Windows\\TEMP\\%' OR Details ILIKE '%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\%')))

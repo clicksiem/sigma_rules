@@ -1,0 +1,14 @@
+id: 7610a4ea-c06d-495f-a2ac-0a696abcfd3b
+name: Outbound Network Connection To Public IP Via Winlogon
+level: 5
+size: '>0'
+active: true
+author:
+- Christopher Peacock @securepeacock, SCYTHE @scythe_io
+group: windows
+tags:
+- attack.execution
+- attack.command-and-control
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\winlogon.exe' AND Initiated='true') AND (NOT (isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')))

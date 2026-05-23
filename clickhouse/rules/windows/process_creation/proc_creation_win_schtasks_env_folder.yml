@@ -1,0 +1,14 @@
+id: 81325ce1-be01-4250-944f-b4789644556f
+name: Schedule Task Creation From Env Variable Or Potentially Suspicious Path Via Schtasks.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '% -create %' OR CommandLine ILIKE '% /create %' OR CommandLine ILIKE '% –create %' OR CommandLine ILIKE '% —create %' OR CommandLine ILIKE '% ―create %')) AND (CommandLine ILIKE '%:\\Perflogs%' OR CommandLine ILIKE '%:\\Users\\All Users\\%' OR CommandLine ILIKE '%:\\Users\\Default\\%' OR CommandLine ILIKE '%:\\Users\\Public%' OR CommandLine ILIKE '%:\\Windows\\Temp%' OR CommandLine ILIKE '%\\AppData\\Local\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\%AppData\%%' OR CommandLine ILIKE '%\%Public\%%')) OR (ParentCommandLine ILIKE '%\\svchost.exe -k netsvcs -p -s Schedule' AND (CommandLine ILIKE '%:\\Perflogs%' OR CommandLine ILIKE '%:\\Windows\\Temp%' OR CommandLine ILIKE '%\\Users\\Public%' OR CommandLine ILIKE '%\%Public\%%'))) AND (NOT ((ParentCommandLine ILIKE '%unattended.ini%' OR CommandLine ILIKE '%update\_task.xml%') OR CommandLine ILIKE '%/Create /TN TVInstallRestore /TR%' OR (CommandLine ILIKE '%/Create /Xml %' AND CommandLine ILIKE '%\\Temp\\.CR.%' AND CommandLine ILIKE '%\\Avira\_Security\_Installation.xml%') OR ((CommandLine ILIKE '%/Create /F /TN%' AND CommandLine ILIKE '%/Xml %' AND CommandLine ILIKE '%\\Temp\\%' AND CommandLine ILIKE '%Avira\_%') AND (CommandLine ILIKE '%.tmp\\UpdateFallbackTask.xml%' OR CommandLine ILIKE '%.tmp\\WatchdogServiceControlManagerTimeout.xml%' OR CommandLine ILIKE '%.tmp\\SystrayAutostart.xml%' OR CommandLine ILIKE '%.tmp\\MaintenanceTask.xml%')) OR (CommandLine ILIKE '%\\Temp\\%' AND CommandLine ILIKE '%/Create /TN "klcp\_update" /XML %' AND CommandLine ILIKE '%\\klcp\_update\_task.xml%')))

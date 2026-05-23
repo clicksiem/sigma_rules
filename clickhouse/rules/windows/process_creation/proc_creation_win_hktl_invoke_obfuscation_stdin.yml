@@ -1,0 +1,14 @@
+id: 6c96fc76-0eb1-11eb-adc1-0242ac120002
+name: Invoke-Obfuscation STDIN+ Launcher
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(CommandLine, 'cmd.{0,5}(?:/c|/r).+powershell.+(?:\$\{?input\}?|noexit).+\"')

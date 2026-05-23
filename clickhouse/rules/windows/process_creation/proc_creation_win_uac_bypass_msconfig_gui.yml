@@ -1,0 +1,12 @@
+id: ad92e3f9-7eb6-460e-96b1-582b0ccbb980
+name: UAC Bypass Using MSConfig Token Modification - Process
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (IntegrityLevel IN ('High', 'System', 'S-1-16-16384', 'S-1-16-12288')) AND ParentImage ILIKE '%\\AppData\\Local\\Temp\\pkgmgr.exe' AND CommandLine ILIKE '"C:\\Windows\\system32\\msconfig.exe" -5'

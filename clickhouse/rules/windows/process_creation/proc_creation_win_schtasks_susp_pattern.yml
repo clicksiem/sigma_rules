@@ -1,0 +1,14 @@
+id: f2c64357-b1d2-41b7-849f-34d2682c0fad
+name: Suspicious Command Patterns In Scheduled Task Creation
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' AND CommandLine ILIKE '%/Create %') AND (((CommandLine ILIKE '%/sc minute %' OR CommandLine ILIKE '%/ru system %') AND (CommandLine ILIKE '%cmd /c%' OR CommandLine ILIKE '%cmd /k%' OR CommandLine ILIKE '%cmd /r%' OR CommandLine ILIKE '%cmd.exe /c %' OR CommandLine ILIKE '%cmd.exe /k %' OR CommandLine ILIKE '%cmd.exe /r %')) OR (CommandLine ILIKE '% -decode %' OR CommandLine ILIKE '% -enc %' OR CommandLine ILIKE '% -w hidden %' OR CommandLine ILIKE '% bypass %' OR CommandLine ILIKE '% IEX%' OR CommandLine ILIKE '%.DownloadData%' OR CommandLine ILIKE '%.DownloadFile%' OR CommandLine ILIKE '%.DownloadString%' OR CommandLine ILIKE '%/c start /min %' OR CommandLine ILIKE '%FromBase64String%' OR CommandLine ILIKE '%mshta http%' OR CommandLine ILIKE '%mshta.exe http%') OR ((CommandLine ILIKE '%:\\ProgramData\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Tmp\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\%' OR CommandLine ILIKE '%\%AppData\%%' OR CommandLine ILIKE '%\%Temp\%%' OR CommandLine ILIKE '%\%tmp\%%') AND (CommandLine ILIKE '%cscript%' OR CommandLine ILIKE '%curl%' OR CommandLine ILIKE '%wscript%')))

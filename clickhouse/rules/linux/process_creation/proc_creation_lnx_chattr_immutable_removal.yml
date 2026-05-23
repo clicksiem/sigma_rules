@@ -1,0 +1,12 @@
+id: 34979410-e4b5-4e5d-8cfb-389fdff05c12
+name: Remove Immutable File Attribute
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1222.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%/chattr' AND CommandLine ILIKE '% -i %'

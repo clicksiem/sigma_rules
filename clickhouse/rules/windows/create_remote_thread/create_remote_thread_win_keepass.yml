@@ -1,0 +1,12 @@
+id: 77564cc2-7382-438b-a7f6-395c2ae53b9a
+name: Remote Thread Created In KeePass.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Timon Hackenjos
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555.005
+rule: SELECT * FROM logs WHERE TargetImage ILIKE '%\\KeePass.exe'

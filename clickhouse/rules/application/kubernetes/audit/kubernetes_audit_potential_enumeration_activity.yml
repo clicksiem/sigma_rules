@@ -1,0 +1,14 @@
+id: 597a7e84-187d-458b-9e4f-2f5a0e676711
+name: Kubernetes Potential Enumeration Activity
+level: 5
+size: '>0'
+active: true
+author:
+- uniqu3-us3r
+group: kubernetes
+tags:
+- attack.execution
+- attack.discovery
+- attack.t1609
+- attack.t1613
+rule: SELECT * FROM logs WHERE `responseStatus.code`='ALLOW' AND ((requestURI ILIKE '%\%2fbin\%2fash%' OR requestURI ILIKE '%\%2fbin\%2fbash%' OR requestURI ILIKE '%\%2fbin\%2fbusybox%' OR requestURI ILIKE '%\%2fbin\%2fdash%' OR requestURI ILIKE '%\%2fbin\%2fsh%' OR requestURI ILIKE '%\%2fbin\%2fzsh%' OR requestURI ILIKE '%/bin/ash%' OR requestURI ILIKE '%/bin/bash%' OR requestURI ILIKE '%/bin/busybox%' OR requestURI ILIKE '%/bin/dash%' OR requestURI ILIKE '%/bin/sh%' OR requestURI ILIKE '%/bin/zsh%' OR requestURI ILIKE '%\%2fusr\%2fbin\%2fcurl%' OR requestURI ILIKE '%\%2fusr\%2fbin\%2fkubectl%' OR requestURI ILIKE '%\%2fusr\%2fbin\%2fperl%' OR requestURI ILIKE '%\%2fusr\%2fbin\%2fpython%' OR requestURI ILIKE '%\%2fusr\%2fbin\%2fwget%' OR requestURI ILIKE '%/usr/bin/curl%' OR requestURI ILIKE '%/usr/bin/kubectl%' OR requestURI ILIKE '%/usr/bin/perl%' OR requestURI ILIKE '%/usr/bin/python%' OR requestURI ILIKE '%/usr/bin/wget%') OR (userAgent ILIKE '%access\_matrix%' OR userAgent ILIKE '%trufflehog%' OR userAgent ILIKE '%azurehound%' OR userAgent ILIKE '%micro-scanner%'))

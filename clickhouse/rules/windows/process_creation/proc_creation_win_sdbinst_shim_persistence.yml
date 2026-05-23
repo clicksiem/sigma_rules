@@ -1,0 +1,13 @@
+id: 517490a7-115a-48c6-8862-1a481504d5a8
+name: Potential Shim Database Persistence via Sdbinst.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Markus Neis
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.011
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\sdbinst.exe' OR OriginalFileName='sdbinst.exe') AND CommandLine ILIKE '%.sdb%') AND (NOT (ParentImage ILIKE '%\\msiexec.exe' AND (CommandLine ILIKE '%:\\Program Files (x86)\\IIS Express\\iisexpressshim.sdb%' OR CommandLine ILIKE '%:\\Program Files\\IIS Express\\iisexpressshim.sdb%')))

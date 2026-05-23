@@ -1,0 +1,14 @@
+id: b48492dc-c5ef-4572-8dff-32bc241c15c8
+name: Load Of RstrtMgr.DLL By A Suspicious Process
+level: 8
+size: '>0'
+active: true
+author:
+- Luc Génaux
+group: windows
+tags:
+- attack.impact
+- attack.defense-impairment
+- attack.t1486
+- attack.t1685
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\RstrtMgr.dll' OR OriginalFileName='RstrtMgr.dll') AND ((Image ILIKE '%:\\Perflogs\\%' OR Image ILIKE '%:\\Users\\Public\\%' OR Image ILIKE '%\\Temporary Internet%') OR ((Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\Favorites\\%') OR (Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\Favourites\\%') OR (Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\Contacts\\%')))

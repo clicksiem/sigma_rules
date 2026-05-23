@@ -1,0 +1,14 @@
+id: 80b708f3-d034-40e4-a6c8-d23b7a7db3d1
+name: Invoke-Obfuscation Via Stdin - Security
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ServiceFileName ILIKE '%set%' AND ServiceFileName ILIKE '%&&%') AND (ServiceFileName ILIKE '%environment%' OR ServiceFileName ILIKE '%invoke%' OR ServiceFileName ILIKE '%${input)%')

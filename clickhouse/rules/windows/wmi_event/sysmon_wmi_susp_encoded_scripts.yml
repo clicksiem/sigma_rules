@@ -1,0 +1,15 @@
+id: 83844185-1c5b-45bc-bcf3-b5bf3084ca5b
+name: Suspicious Encoded Scripts in a WMI Consumer
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.t1047
+- attack.persistence
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE Destination ILIKE '%V3JpdGVQcm9jZXNzTWVtb3J5%' OR Destination ILIKE '%dyaXRlUHJvY2Vzc01lbW9ye%' OR Destination ILIKE '%Xcml0ZVByb2Nlc3NNZW1vcn%' OR Destination ILIKE '%VGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1vZG%' OR Destination ILIKE '%RoaXMgcHJvZ3JhbSBjYW5ub3QgYmUgcnVuIGluIERPUyBtb2Rl%' OR Destination ILIKE '%UaGlzIHByb2dyYW0gY2Fubm90IGJlIHJ1biBpbiBET1MgbW9kZ%' OR Destination ILIKE '%VGhpcyBwcm9ncmFtIG11c3QgYmUgcnVuIHVuZGVyIFdpbjMy%' OR Destination ILIKE '%RoaXMgcHJvZ3JhbSBtdXN0IGJlIHJ1biB1bmRlciBXaW4zM%' OR Destination ILIKE '%UaGlzIHByb2dyYW0gbXVzdCBiZSBydW4gdW5kZXIgV2luMz%'

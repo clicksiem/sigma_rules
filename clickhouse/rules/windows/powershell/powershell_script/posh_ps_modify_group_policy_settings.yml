@@ -1,0 +1,13 @@
+id: b7216a7d-687e-4c8d-82b1-3080b2ad961f
+name: Modify Group Policy Settings - ScriptBlockLogging
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1484.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\Windows\\System%' AND (ScriptBlockText ILIKE '%GroupPolicyRefreshTimeDC%' OR ScriptBlockText ILIKE '%GroupPolicyRefreshTimeOffsetDC%' OR ScriptBlockText ILIKE '%GroupPolicyRefreshTime%' OR ScriptBlockText ILIKE '%GroupPolicyRefreshTimeOffset%' OR ScriptBlockText ILIKE '%EnableSmartScreen%' OR ScriptBlockText ILIKE '%ShellSmartScreenLevel%')

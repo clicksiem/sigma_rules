@@ -1,0 +1,13 @@
+id: 1de68c67-af5c-4097-9c85-fe5578e09e67
+name: WCE wceaux.dll Access
+level: 10
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+- attack.s0005
+rule: SELECT * FROM logs WHERE (EventID IN (4656, 4663)) AND ObjectName ILIKE '%\\wceaux.dll'

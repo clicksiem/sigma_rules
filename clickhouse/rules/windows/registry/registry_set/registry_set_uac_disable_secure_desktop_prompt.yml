@@ -1,0 +1,12 @@
+id: 0d7ceeef-3539-4392-8953-3dc664912714
+name: UAC Secure Desktop Prompt Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\PromptOnSecureDesktop%' AND Details='DWORD (0x00000000)'

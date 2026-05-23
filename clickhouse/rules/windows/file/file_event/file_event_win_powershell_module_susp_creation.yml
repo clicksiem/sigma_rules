@@ -1,0 +1,11 @@
+id: e8a52bbd-bced-459f-bd93-64db45ce7657
+name: Potential Suspicious PowerShell Module File Created
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\WindowsPowerShell\\Modules\\%\\.ps' OR TargetFilename ILIKE '%\\WindowsPowerShell\\Modules\\%\\.dll'

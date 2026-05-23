@@ -1,0 +1,14 @@
+id: 3a716279-c18c-4488-83be-f9ececbfb9fc
+name: Linux Setgid Capability Set on a Binary via Setcap Utility
+level: 3
+size: '>0'
+active: true
+author:
+- Luc Génaux
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1548
+- attack.t1554
+rule: SELECT * FROM logs WHERE Image ILIKE '%/setcap' AND CommandLine ILIKE '%cap\_setgid%'

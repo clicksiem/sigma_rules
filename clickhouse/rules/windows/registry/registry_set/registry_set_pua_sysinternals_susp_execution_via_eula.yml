@@ -1,0 +1,12 @@
+id: c7da8edc-49ae-45a2-9e61-9fd860e4e73d
+name: PUA - Sysinternals Tools Execution - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.resource-development
+- attack.t1588.002
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Active Directory Explorer%' OR TargetObject ILIKE '%\\Handle%' OR TargetObject ILIKE '%\\LiveKd%' OR TargetObject ILIKE '%\\Process Explorer%' OR TargetObject ILIKE '%\\ProcDump%' OR TargetObject ILIKE '%\\PsExec%' OR TargetObject ILIKE '%\\PsLoglist%' OR TargetObject ILIKE '%\\PsPasswd%' OR TargetObject ILIKE '%\\SDelete%' OR TargetObject ILIKE '%\\Sysinternals%') AND TargetObject ILIKE '%\\EulaAccepted'

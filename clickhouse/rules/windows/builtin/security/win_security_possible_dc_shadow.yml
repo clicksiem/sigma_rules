@@ -1,0 +1,13 @@
+id: 32e19d25-4aed-4860-a55a-be99cb0bf7ed
+name: Possible DC Shadow Attack
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, oscd.community, Chakib Gzenayi (@Chak092), Hosni Mribah
+group: windows
+tags:
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1207
+rule: SELECT * FROM logs WHERE (EventID=4742 AND ServicePrincipalNames ILIKE '%GC/%') OR (EventID=5136 AND AttributeLDAPDisplayName='servicePrincipalName' AND AttributeValue ILIKE 'GC/%')

@@ -1,0 +1,12 @@
+id: 6f1a11aa-4b8a-4b7f-9e13-4d3e4ff0e0d4
+name: WSL Kali-Linux Usage
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\packages\\KaliLinux%') OR (Image ILIKE '%:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\Microsoft\\WindowsApps\\kali.exe%')) OR (Image ILIKE '%:\\Program Files\\WindowsApps\\KaliLinux.%' AND Image ILIKE '%\\kali.exe')) OR (((ParentImage ILIKE '%\\wsl.exe' OR ParentImage ILIKE '%\\wslhost.exe') AND ((Image ILIKE '%\\kali.exe%' OR Image ILIKE '%\\KaliLinux%') OR (CommandLine ILIKE '%Kali.exe%' OR CommandLine ILIKE '%Kali-linux%' OR CommandLine ILIKE '%kalilinux%'))) AND (NOT (CommandLine ILIKE '% -i %' OR CommandLine ILIKE '% --install %' OR CommandLine ILIKE '% --unregister %')))

@@ -1,0 +1,14 @@
+id: c0514f28-fdae-42df-b886-06e2b2bc5b37
+name: Service Startup Type Change Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1047
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WMIC.exe' OR OriginalFileName='wmic.exe') AND ((CommandLine ILIKE '% service %' AND CommandLine ILIKE '%ChangeStartMode%') AND (CommandLine ILIKE '%Manual%' OR CommandLine ILIKE '%Disabled%'))

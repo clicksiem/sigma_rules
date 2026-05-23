@@ -1,0 +1,18 @@
+id: 39a80702-d7ca-4a83-b776-525b1f86a36d
+name: Potential Secure Deletion with SDelete
+level: 5
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.impact
+- attack.stealth
+- attack.defense-impairment
+- attack.t1070.004
+- attack.t1027.005
+- attack.t1485
+- attack.t1553.002
+- attack.s0195
+rule: SELECT * FROM logs WHERE (EventID IN (4656, 4663, 4658)) AND (ObjectName ILIKE '%.AAA' OR ObjectName ILIKE '%.ZZZ')

@@ -1,0 +1,13 @@
+id: 1bac86ba-41aa-4f62-9d6b-405eac99b485
+name: Systemd Service Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1543.002
+rule: SELECT * FROM logs WHERE (type='PATH' AND nametype='CREATE') AND ((name ILIKE '/usr/lib/systemd/system/%' OR name ILIKE '/etc/systemd/system/%') OR name ILIKE '%/.config/systemd/user/%')

@@ -1,0 +1,12 @@
+id: 6ddab845-b1b8-49c2-bbf7-1a11967f64bc
+name: File Deleted Via Sysinternals SDelete
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%.AAA' OR TargetFilename ILIKE '%.ZZZ') AND (NOT TargetFilename ILIKE '%\\Wireshark\\radius\\dictionary.alcatel-lucent.aaa')

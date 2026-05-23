@@ -1,0 +1,13 @@
+id: d2656e78-c069-4571-8220-9e0ab5913f19
+name: AWS GuardDuty Detector Deleted Or Updated
+level: 8
+size: '>0'
+active: true
+author:
+- suktech24
+group: aws
+tags:
+- attack.defense-impairment
+- attack.t1685
+- attack.t1685.002
+rule: SELECT * FROM logs WHERE eventSource='guardduty.amazonaws.com' AND (eventName='DeleteDetector' OR (eventName='UpdateDetector' AND `requestParameters.enable`='false')) AND (errorCode='Success' OR isNull(errorCode))

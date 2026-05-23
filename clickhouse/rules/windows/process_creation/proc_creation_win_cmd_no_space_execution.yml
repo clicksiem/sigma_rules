@@ -1,0 +1,12 @@
+id: a16980c2-0c56-4de0-9a79-17971979efdd
+name: Cmd.EXE Missing Space Characters Execution Anomaly
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%cmd.exe/c%' OR CommandLine ILIKE '%\\cmd/c%' OR CommandLine ILIKE '%"cmd/c%' OR CommandLine ILIKE '%cmd.exe/k%' OR CommandLine ILIKE '%\\cmd/k%' OR CommandLine ILIKE '%"cmd/k%' OR CommandLine ILIKE '%cmd.exe/r%' OR CommandLine ILIKE '%\\cmd/r%' OR CommandLine ILIKE '%"cmd/r%') OR (CommandLine ILIKE '%/cwhoami%' OR CommandLine ILIKE '%/cpowershell%' OR CommandLine ILIKE '%/cschtasks%' OR CommandLine ILIKE '%/cbitsadmin%' OR CommandLine ILIKE '%/ccertutil%' OR CommandLine ILIKE '%/kwhoami%' OR CommandLine ILIKE '%/kpowershell%' OR CommandLine ILIKE '%/kschtasks%' OR CommandLine ILIKE '%/kbitsadmin%' OR CommandLine ILIKE '%/kcertutil%') OR (CommandLine ILIKE '%cmd.exe /c%' OR CommandLine ILIKE '%cmd /c%' OR CommandLine ILIKE '%cmd.exe /k%' OR CommandLine ILIKE '%cmd /k%' OR CommandLine ILIKE '%cmd.exe /r%' OR CommandLine ILIKE '%cmd /r%')) AND (NOT ((CommandLine ILIKE '%cmd.exe /c %' OR CommandLine ILIKE '%cmd /c %' OR CommandLine ILIKE '%cmd.exe /k %' OR CommandLine ILIKE '%cmd /k %' OR CommandLine ILIKE '%cmd.exe /r %' OR CommandLine ILIKE '%cmd /r %') OR (CommandLine ILIKE '%AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\node\_modules%' OR CommandLine ILIKE '%cmd.exe/c .' OR CommandLine='cmd.exe /c')))

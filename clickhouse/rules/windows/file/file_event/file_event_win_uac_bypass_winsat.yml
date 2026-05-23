@@ -1,0 +1,12 @@
+id: 155dbf56-e0a4-4dd0-8905-8a98705045e8
+name: UAC Bypass Abusing Winsat Path Parsing - File
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Users\\%' AND (TargetFilename ILIKE '%\\AppData\\Local\\Temp\\system32\\winsat.exe' OR TargetFilename ILIKE '%\\AppData\\Local\\Temp\\system32\\winmm.dll')

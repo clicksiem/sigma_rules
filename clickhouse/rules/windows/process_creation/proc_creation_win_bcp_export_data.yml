@@ -1,0 +1,13 @@
+id: c615d676-f655-46b9-b913-78729021e5d7
+name: Data Export From MSSQL Table Via BCP.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Omar Khaled (@beacon_exe), MahirAli Khan (in/mahiralikhan), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.exfiltration
+- attack.t1048
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\bcp.exe' OR OriginalFileName='BCP.exe') AND (CommandLine ILIKE '% out %' OR CommandLine ILIKE '% queryout %')

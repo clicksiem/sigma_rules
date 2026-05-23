@@ -1,0 +1,12 @@
+id: ac8866c7-ce44-46fd-8c17-b24acff96ca8
+name: HybridConnectionManager Service Installation - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.resource-development
+- attack.t1608
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Services\\HybridConnectionManager%' OR (EventType='SetValue' AND Details ILIKE '%Microsoft.HybridConnectionManager.Listener.exe%')

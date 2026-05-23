@@ -1,0 +1,12 @@
+id: 98767d61-b2e8-4d71-b661-e36783ee24c1
+name: Gzip Archive Decode Via PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Hieu Tran
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1132.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%GZipStream%' AND CommandLine ILIKE '%::Decompress%'

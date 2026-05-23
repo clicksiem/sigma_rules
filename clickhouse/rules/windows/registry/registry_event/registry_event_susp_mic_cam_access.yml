@@ -1,0 +1,13 @@
+id: 62120148-6b7a-42be-8b91-271c04e281a3
+name: Suspicious Camera and Microphone Access
+level: 8
+size: '>0'
+active: true
+author:
+- Den Iuzvyk
+group: windows
+tags:
+- attack.collection
+- attack.t1125
+- attack.t1123
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\%' AND TargetObject ILIKE '%\\NonPackaged%') AND (TargetObject ILIKE '%microphone%' OR TargetObject ILIKE '%webcam%') AND (TargetObject ILIKE '%:#Windows#Temp#%' OR TargetObject ILIKE '%:#$Recycle.bin#%' OR TargetObject ILIKE '%:#Temp#%' OR TargetObject ILIKE '%:#Users#Public#%' OR TargetObject ILIKE '%:#Users#Default#%' OR TargetObject ILIKE '%:#Users#Desktop#%')

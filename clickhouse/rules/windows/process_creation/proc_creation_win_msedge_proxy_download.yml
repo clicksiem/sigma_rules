@@ -1,0 +1,13 @@
+id: e84d89c4-f544-41ca-a6af-4b92fd38b023
+name: Arbitrary File Download Via MSEDGE_PROXY.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\msedge\_proxy.exe' OR OriginalFileName ILIKE 'msedge\_proxy.exe') AND (CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

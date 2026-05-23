@@ -1,0 +1,12 @@
+id: 6c220477-0b5b-4b25-bb90-66183b4089e8
+name: Suspicious Inbox Forwarding
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: m365
+tags:
+- attack.exfiltration
+- attack.t1020
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Suspicious inbox forwarding' AND status='success'

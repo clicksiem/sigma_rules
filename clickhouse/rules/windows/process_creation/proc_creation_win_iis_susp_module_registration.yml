@@ -1,0 +1,12 @@
+id: 043c4b8b-3a54-4780-9682-081cb6b8185c
+name: Suspicious IIS Module Registration
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Microsoft (idea)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.004
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\w3wp.exe' AND (CommandLine ILIKE '%appcmd.exe add module%' OR (CommandLine ILIKE '% system.enterpriseservices.internal.publish%' AND Image ILIKE '%\\powershell.exe') OR (CommandLine ILIKE '%gacutil%' AND CommandLine ILIKE '% /I%'))

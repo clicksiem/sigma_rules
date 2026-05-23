@@ -1,0 +1,15 @@
+id: b5c7395f-e501-4a08-94d4-57fe7a9da9d2
+name: Potential Binary Proxy Execution Via Cdb.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1106
+- attack.t1218
+- attack.t1127
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cdb.exe' OR OriginalFileName='CDB.Exe') AND (CommandLine ILIKE '% -c %' OR CommandLine ILIKE '% -cf %')

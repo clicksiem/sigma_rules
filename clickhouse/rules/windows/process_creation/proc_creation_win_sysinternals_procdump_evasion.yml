@@ -1,0 +1,14 @@
+id: 79b06761-465f-4f88-9ef2-150e24d3d737
+name: Potential SysInternals ProcDump Evasion
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1003.001
+- attack.credential-access
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%copy procdump%' OR CommandLine ILIKE '%move procdump%') OR ((CommandLine ILIKE '%copy %' AND CommandLine ILIKE '%.dmp %') AND (CommandLine ILIKE '%2.dmp%' OR CommandLine ILIKE '%lsass%' OR CommandLine ILIKE '%out.dmp%')) OR (CommandLine ILIKE '%copy lsass.exe\_%' OR CommandLine ILIKE '%move lsass.exe\_%')

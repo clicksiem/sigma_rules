@@ -1,0 +1,12 @@
+id: 2b7d6fc0-71ac-4cf7-8ed1-b5788ee5257a
+name: Account Lockout
+level: 5
+size: '>0'
+active: true
+author:
+- AlertIQ
+group: azure
+tags:
+- attack.credential-access
+- attack.t1110
+rule: SELECT * FROM logs WHERE ResultType=50053

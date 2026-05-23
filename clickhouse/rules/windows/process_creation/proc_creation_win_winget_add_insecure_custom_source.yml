@@ -1,0 +1,12 @@
+id: 81a0ecb5-0a41-4ba1-b2ba-c944eb92bfa2
+name: Add Insecure Download Source To Winget
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\winget.exe' OR OriginalFileName='winget.exe') AND (CommandLine ILIKE '%source %' AND CommandLine ILIKE '%add %' AND CommandLine ILIKE '%http://%')

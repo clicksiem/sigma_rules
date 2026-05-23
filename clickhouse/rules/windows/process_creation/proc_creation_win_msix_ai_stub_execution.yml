@@ -1,0 +1,16 @@
+id: af5732ed-764e-489d-826d-0447c8b36242
+name: Windows MSIX Package Support Framework AI_STUBS Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Michael Haag, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.defense-impairment
+- attack.t1218
+- attack.t1553.005
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\AI\_STUBS\\AiStubX64Elevated.exe' OR Image ILIKE '%\\AI\_STUBS\\AiStubX86Elevated.exe' OR Image ILIKE '%\\AI\_STUBS\\AiStubX64.exe' OR Image ILIKE '%\\AI\_STUBS\\AiStubX86.exe') AND OriginalFileName='popupwrapper.exe'

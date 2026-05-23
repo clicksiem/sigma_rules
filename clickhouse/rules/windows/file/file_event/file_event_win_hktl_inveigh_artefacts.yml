@@ -1,0 +1,12 @@
+id: bb09dd3e-2b78-4819-8e35-a7c1b874e449
+name: HackTool - Inveigh Execution Artefacts
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Inveigh-Log.txt' OR TargetFilename ILIKE '%\\Inveigh-Cleartext.txt' OR TargetFilename ILIKE '%\\Inveigh-NTLMv1Users.txt' OR TargetFilename ILIKE '%\\Inveigh-NTLMv2Users.txt' OR TargetFilename ILIKE '%\\Inveigh-NTLMv1.txt' OR TargetFilename ILIKE '%\\Inveigh-NTLMv2.txt' OR TargetFilename ILIKE '%\\Inveigh-FormInput.txt' OR TargetFilename ILIKE '%\\Inveigh.dll' OR TargetFilename ILIKE '%\\Inveigh.exe' OR TargetFilename ILIKE '%\\Inveigh.ps1' OR TargetFilename ILIKE '%\\Inveigh-Relay.ps1'

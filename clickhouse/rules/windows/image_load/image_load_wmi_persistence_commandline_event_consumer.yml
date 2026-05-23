@@ -1,0 +1,13 @@
+id: 05936ce2-ee05-4dae-9d03-9a391cf2d2c6
+name: WMI Persistence - Command Line Event Consumer
+level: 8
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1546.003
+- attack.persistence
+rule: SELECT * FROM logs WHERE Image ILIKE 'C:\\Windows\\System32\\wbem\\WmiPrvSE.exe' AND ImageLoaded ILIKE '%\\wbemcons.dll'

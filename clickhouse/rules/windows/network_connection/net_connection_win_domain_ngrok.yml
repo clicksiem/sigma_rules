@@ -1,0 +1,15 @@
+id: 18249279-932f-45e2-b37a-8925f2597670
+name: Process Initiated Network Connection To Ngrok Domain
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+- attack.command-and-control
+- attack.t1567
+- attack.t1572
+- attack.t1102
+rule: SELECT * FROM logs WHERE Initiated='true' AND (DestinationHostname ILIKE '%.ngrok-free.app' OR DestinationHostname ILIKE '%.ngrok-free.dev' OR DestinationHostname ILIKE '%.ngrok.app' OR DestinationHostname ILIKE '%.ngrok.dev' OR DestinationHostname ILIKE '%.ngrok.io')

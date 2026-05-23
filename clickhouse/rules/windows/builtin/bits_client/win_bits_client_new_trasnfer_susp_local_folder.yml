@@ -1,0 +1,14 @@
+id: f8a56cb7-a363-44ed-a82f-5926bb44cd05
+name: BITS Transfer Job Download To Potential Suspicious Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+rule: SELECT * FROM logs WHERE EventID=16403 AND (LocalName ILIKE '%\\Desktop\\%' OR LocalName ILIKE '%C:\\Users\\Public\\%' OR LocalName ILIKE '%C:\\PerfLogs\\%')

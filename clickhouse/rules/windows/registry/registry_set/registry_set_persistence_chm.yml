@@ -1,0 +1,11 @@
+id: 976dd1f2-a484-45ec-aa1d-0e87e882262b
+name: Potential Persistence Via CHM Helper DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\HtmlHelp Author\\Location%' OR TargetObject ILIKE '%\\Software\\WOW6432Node\\Microsoft\\HtmlHelp Author\\Location%'

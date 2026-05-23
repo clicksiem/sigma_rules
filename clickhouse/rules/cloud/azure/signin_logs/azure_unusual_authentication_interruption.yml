@@ -1,0 +1,15 @@
+id: 8366030e-7216-476b-9927-271d79f13cf3
+name: Azure Unusual Authentication Interruption
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE (ResultType=50097 AND ResultDescription='Device authentication is required') OR (ResultType=50155 AND ResultDescription='DeviceAuthenticationFailed') OR (ResultType=50158 AND ResultDescription='ExternalSecurityChallenge - External security challenge was not satisfied')

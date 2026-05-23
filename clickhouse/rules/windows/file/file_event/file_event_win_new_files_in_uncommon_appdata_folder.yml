@@ -1,0 +1,12 @@
+id: d7b50671-d1ad-4871-aa60-5aa5b331fe04
+name: Suspicious File Creation In Uncommon AppData Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE 'C:\\Users\\%' AND TargetFilename ILIKE '%\\AppData\\%' AND (TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.cmd' OR TargetFilename ILIKE '%.cpl' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.iso' OR TargetFilename ILIKE '%.lnk' OR TargetFilename ILIKE '%.msi' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.psm1' OR TargetFilename ILIKE '%.scr' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs')) AND (NOT (TargetFilename ILIKE 'C:\\Users\\%' AND (TargetFilename ILIKE '%\\AppData\\Local\\%' OR TargetFilename ILIKE '%\\AppData\\LocalLow\\%' OR TargetFilename ILIKE '%\\AppData\\Roaming\\%')))

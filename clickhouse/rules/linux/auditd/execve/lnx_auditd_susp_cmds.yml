@@ -1,0 +1,12 @@
+id: 1543ae20-cbdf-4ec1-8d12-7664d667a825
+name: Suspicious Commands Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND a0='chmod' AND a1=777) OR (type='EXECVE' AND a0='chmod' AND a1='u+s') OR (type='EXECVE' AND a0='cp' AND a1='/bin/ksh') OR (type='EXECVE' AND a0='cp' AND a1='/bin/sh')

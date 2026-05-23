@@ -1,0 +1,12 @@
+id: ddbbe845-1d74-43a8-8231-2156d180234d
+name: FortiGate - New Local User Created
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi @pedrinazziM (InTheCyber)
+group: fortigate
+tags:
+- attack.persistence
+- attack.t1136.001
+rule: SELECT * FROM logs WHERE action='Add' AND cfgpath='user.local'

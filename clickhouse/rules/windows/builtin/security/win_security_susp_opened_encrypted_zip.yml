@@ -1,0 +1,12 @@
+id: 00ba9da1-b510-4f6b-b258-8d338836180f
+name: Password Protected ZIP File Opened
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE (EventID=5379 AND TargetName ILIKE '%Microsoft\_Windows\_Shell\_ZipFolder:filename%') AND (NOT TargetName ILIKE '%\\Temporary Internet Files\\Content.Outlook%')

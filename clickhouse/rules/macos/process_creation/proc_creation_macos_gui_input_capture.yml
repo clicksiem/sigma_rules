@@ -1,0 +1,13 @@
+id: 60f1ce20-484e-41bd-85f4-ac4afec2c541
+name: GUI Input Capture - macOS
+level: 3
+size: '>0'
+active: true
+author:
+- remotephone, oscd.community
+group: macos
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1056.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%/osascript' AND (CommandLine ILIKE '%-e%' AND CommandLine ILIKE '%display%' AND CommandLine ILIKE '%dialog%' AND CommandLine ILIKE '%answer%') AND (CommandLine ILIKE '%admin%' OR CommandLine ILIKE '%administrator%' OR CommandLine ILIKE '%authenticate%' OR CommandLine ILIKE '%authentication%' OR CommandLine ILIKE '%credentials%' OR CommandLine ILIKE '%pass%' OR CommandLine ILIKE '%password%' OR CommandLine ILIKE '%unlock%')

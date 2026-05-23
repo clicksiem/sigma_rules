@@ -1,0 +1,13 @@
+id: aac6c4f4-87c7-4961-96ac-c3fd3a42c310
+name: Bitbucket Global Permission Changed
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1098
+rule: SELECT * FROM logs WHERE `auditType.category`='Permissions' AND (`auditType.action` IN ('Global permission remove request', 'Global permission removed', 'Global permission granted', 'Global permission requested'))

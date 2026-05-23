@@ -1,0 +1,12 @@
+id: 40b6e656-4e11-4c0c-8772-c1cc6dae34ce
+name: ScreenSaver Registry Key Set
+level: 5
+size: '>0'
+active: true
+author:
+- Jose Luis Sanchez Martinez (@Joseliyo_Jstnk)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\rundll32.exe' AND (TargetObject ILIKE '%\\Control Panel\\Desktop\\SCRNSAVE.EXE%' AND Details ILIKE '%.scr') AND (NOT (Details ILIKE '%C:\\Windows\\System32\\%' OR Details ILIKE '%C:\\Windows\\SysWOW64\\%'))

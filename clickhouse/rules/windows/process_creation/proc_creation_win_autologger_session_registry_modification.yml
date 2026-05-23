@@ -1,0 +1,12 @@
+id: d7b81144-b866-48a4-9bcc-275dc69d870e
+name: Windows EventLog Autologger Session Registry Modification Via CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('reg.exe', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%add %' OR CommandLine ILIKE '%Set-ItemProperty%' OR CommandLine ILIKE '%New-ItemProperty%' OR CommandLine ILIKE '%si %') AND CommandLine ILIKE '%\\Control\\WMI\\Autologger\\%' AND (CommandLine ILIKE '%Start%' OR CommandLine ILIKE '%Enabled%')

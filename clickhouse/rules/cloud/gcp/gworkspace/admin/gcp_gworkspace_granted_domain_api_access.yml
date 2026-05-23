@@ -1,0 +1,13 @@
+id: 04e2a23a-9b29-4a5c-be3a-3542e3f982ba
+name: Google Workspace Granted Domain API Access
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: gcp
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE eventService='admin.googleapis.com' AND eventName ILIKE 'AUTHORIZE\_API\_CLIENT\_ACCESS'

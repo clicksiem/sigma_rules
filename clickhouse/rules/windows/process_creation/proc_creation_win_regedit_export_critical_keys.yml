@@ -1,0 +1,13 @@
+id: 82880171-b475-4201-b811-e9c826cd5eaa
+name: Exports Critical Registry Keys To a File
+level: 8
+size: '>0'
+active: true
+author:
+- Oddvar Moe, Sander Wiebing, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.discovery
+- attack.t1012
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regedit.exe' OR OriginalFileName='REGEDIT.EXE') AND (CommandLine ILIKE '% -E %' OR CommandLine ILIKE '% /E %' OR CommandLine ILIKE '% –E %' OR CommandLine ILIKE '% —E %' OR CommandLine ILIKE '% ―E %') AND (CommandLine ILIKE '%hklm%' OR CommandLine ILIKE '%hkey\_local\_machine%') AND (CommandLine ILIKE '%\\system' OR CommandLine ILIKE '%\\sam' OR CommandLine ILIKE '%\\security')

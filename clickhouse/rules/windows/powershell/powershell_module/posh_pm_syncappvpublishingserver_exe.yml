@@ -1,0 +1,12 @@
+id: fe5ce7eb-dad8-467c-84a9-31ec23bd644a
+name: SyncAppvPublishingServer Bypass Powershell Restriction - PS Module
+level: 5
+size: '>0'
+active: true
+author:
+- Ensar Şamil, @sblmsrsn, OSCD Community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ContextInfo ILIKE '%SyncAppvPublishingServer.exe%'

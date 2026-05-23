@@ -1,0 +1,13 @@
+id: a24e5861-c6ca-4fde-a93c-ba9256feddf0
+name: Uncommon Process Access Rights For Target Image
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.011
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%\\calc.exe' OR TargetImage ILIKE '%\\calculator.exe' OR TargetImage ILIKE '%\\mspaint.exe' OR TargetImage ILIKE '%\\notepad.exe' OR TargetImage ILIKE '%\\ping.exe' OR TargetImage ILIKE '%\\wordpad.exe' OR TargetImage ILIKE '%\\write.exe') AND GrantedAccess='0x1FFFFF'

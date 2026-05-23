@@ -1,0 +1,12 @@
+id: f64e5c19-879c-4bae-b471-6d84c8339677
+name: Webshell Tool Reconnaissance Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Cian Heasley, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\caddy.exe' OR ParentImage ILIKE '%\\httpd.exe' OR ParentImage ILIKE '%\\nginx.exe' OR ParentImage ILIKE '%\\php-cgi.exe' OR ParentImage ILIKE '%\\w3wp.exe' OR ParentImage ILIKE '%\\ws\_tomcatservice.exe') OR ((ParentImage ILIKE '%\\java.exe' OR ParentImage ILIKE '%\\javaw.exe') AND (ParentImage ILIKE '%-tomcat-%' OR ParentImage ILIKE '%\\tomcat%')) OR ((ParentImage ILIKE '%\\java.exe' OR ParentImage ILIKE '%\\javaw.exe') AND (CommandLine ILIKE '%CATALINA\_HOME%' OR CommandLine ILIKE '%catalina.jar%'))) AND (CommandLine ILIKE '%perl --help%' OR CommandLine ILIKE '%perl -h%' OR CommandLine ILIKE '%python --help%' OR CommandLine ILIKE '%python -h%' OR CommandLine ILIKE '%python3 --help%' OR CommandLine ILIKE '%python3 -h%' OR CommandLine ILIKE '%wget --help%')

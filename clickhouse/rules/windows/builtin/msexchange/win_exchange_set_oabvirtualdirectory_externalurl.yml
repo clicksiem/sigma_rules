@@ -1,0 +1,12 @@
+id: 9db37458-4df2-46a5-95ab-307e7f29e675
+name: Exchange Set OabVirtualDirectory ExternalUrl Property
+level: 8
+size: '>0'
+active: true
+author:
+- Jose Rodriguez @Cyb3rPandaH
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'Set-OabVirtualDirectory') AND hasToken(full_log, 'ExternalUrl') AND hasToken(full_log, 'Page\_Load') AND hasToken(full_log, 'script')

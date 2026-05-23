@@ -1,0 +1,12 @@
+id: dddfebae-c46f-439c-af7a-fdb6bde90218
+name: SyncAppvPublishingServer Execution to Bypass Powershell Restriction
+level: 5
+size: '>0'
+active: true
+author:
+- Ensar Şamil, @sblmsrsn, OSCD Community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%SyncAppvPublishingServer.exe%'

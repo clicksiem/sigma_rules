@@ -1,0 +1,12 @@
+id: ab6bffca-beff-4baa-af11-6733f296d57a
+name: Potential AD User Enumeration From Non-Machine Account
+level: 5
+size: '>0'
+active: true
+author:
+- Maxime Thiebaut (@0xThiebaut)
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.002
+rule: SELECT * FROM logs WHERE (EventID=4662 AND ObjectType ILIKE '%bf967aba-0de6-11d0-a285-00aa003049e2%' AND (AccessMask ILIKE '%1_' OR AccessMask ILIKE '%3_' OR AccessMask ILIKE '%4_' OR AccessMask ILIKE '%7_' OR AccessMask ILIKE '%9_' OR AccessMask ILIKE '%B_' OR AccessMask ILIKE '%D_' OR AccessMask ILIKE '%F_')) AND (NOT (SubjectUserName ILIKE '%$' OR SubjectUserName ILIKE 'MSOL\_%'))

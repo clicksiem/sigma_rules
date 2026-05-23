@@ -1,0 +1,14 @@
+id: 07743f65-7ec9-404a-a519-913db7118a8d
+name: COM Hijack via Sdclt
+level: 8
+size: '>0'
+active: true
+author:
+- Omkar Gudhate
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546
+- attack.t1548
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Classes\\Folder\\shell\\open\\command\\DelegateExecute%'

@@ -1,0 +1,12 @@
+id: 731231b9-0b5d-4219-94dd-abb6959aa7ea
+name: Suspicious Rundll32 Activity Invoking Sys File
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%rundll32.exe%' AND (CommandLine ILIKE '%.sys,%' OR CommandLine ILIKE '%.sys %')

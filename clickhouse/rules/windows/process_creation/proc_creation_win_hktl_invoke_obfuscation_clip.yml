@@ -1,0 +1,14 @@
+id: b222df08-0e07-11eb-adc1-0242ac120002
+name: Invoke-Obfuscation CLIP+ Launcher
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%cmd%' AND CommandLine ILIKE '%&&%' AND CommandLine ILIKE '%clipboard]::%' AND CommandLine ILIKE '%-f%') AND (CommandLine ILIKE '%/c%' OR CommandLine ILIKE '%/r%')

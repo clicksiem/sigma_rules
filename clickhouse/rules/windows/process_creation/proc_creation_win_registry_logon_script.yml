@@ -1,0 +1,13 @@
+id: 21d856f9-9281-4ded-9377-51a1a6e2a432
+name: Potential Persistence Via Logon Scripts - CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Tom Ueltschi (@c_APT_ure)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1037.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%UserInitMprLogonScript%'

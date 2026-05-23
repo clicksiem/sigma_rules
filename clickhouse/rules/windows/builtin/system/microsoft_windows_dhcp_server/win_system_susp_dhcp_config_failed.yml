@@ -1,0 +1,15 @@
+id: 75edd3fd-7146-48e5-9848-3013d7f0282c
+name: DHCP Server Error Failed Loading the CallOut DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Dimitrios Slamaris, @atc_project (fix)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (EventID IN (1031, 1032, 1034)) AND Provider_Name='Microsoft-Windows-DHCP-Server'

@@ -1,0 +1,15 @@
+id: 0c92f2e6-f08f-4b73-9216-ecb0ca634689
+name: PUA - Potential PE Metadata Tamper Using Rcedit
+level: 5
+size: '>0'
+active: true
+author:
+- Micah Babinski
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+- attack.t1036
+- attack.t1027.005
+- attack.t1027
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\rcedit-x64.exe' OR Image ILIKE '%\\rcedit-x86.exe') OR Description='Edit resources of exe' OR Product='rcedit') AND CommandLine ILIKE '%--set-%' AND (CommandLine ILIKE '%OriginalFileName%' OR CommandLine ILIKE '%CompanyName%' OR CommandLine ILIKE '%FileDescription%' OR CommandLine ILIKE '%ProductName%' OR CommandLine ILIKE '%ProductVersion%' OR CommandLine ILIKE '%LegalCopyright%')

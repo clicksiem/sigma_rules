@@ -1,0 +1,15 @@
+id: b2572bf9-e20a-4594-b528-40bde666525a
+name: Impossible Travel
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+rule: SELECT * FROM logs WHERE riskEventType='impossibleTravel'

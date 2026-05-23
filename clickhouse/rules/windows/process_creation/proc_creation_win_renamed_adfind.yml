@@ -1,0 +1,15 @@
+id: df55196f-f105-44d3-a675-e9dfb6cc2f2b
+name: Renamed AdFind Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1018
+- attack.t1087.002
+- attack.t1482
+- attack.t1069.002
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%domainlist%' OR CommandLine ILIKE '%trustdmp%' OR CommandLine ILIKE '%dcmodes%' OR CommandLine ILIKE '%adinfo%' OR CommandLine ILIKE '% dclist %' OR CommandLine ILIKE '%computer\_pwdnotreqd%' OR CommandLine ILIKE '%objectcategory=%' OR CommandLine ILIKE '%-subnets -f%' OR CommandLine ILIKE '%name="Domain Admins"%' OR CommandLine ILIKE '%-sc u:%' OR CommandLine ILIKE '%domainncs%' OR CommandLine ILIKE '%dompol%' OR CommandLine ILIKE '% oudmp %' OR CommandLine ILIKE '%subnetdmp%' OR CommandLine ILIKE '%gpodmp%' OR CommandLine ILIKE '%fspdmp%' OR CommandLine ILIKE '%users\_noexpire%' OR CommandLine ILIKE '%computers\_active%' OR CommandLine ILIKE '%computers\_pwdnotreqd%') OR (Hashes ILIKE '%IMPHASH=BCA5675746D13A1F246E2DA3C2217492%' OR Hashes ILIKE '%IMPHASH=53E117A96057EAF19C41380D0E87F1C2%' OR Hashes ILIKE '%IMPHASH=d144de8117df2beceaba2201ad304764%' OR Hashes ILIKE '%IMPHASH=12ce1c0f3f5837ecc18a3782408fa975%' OR Hashes ILIKE '%IMPHASH=4fbf3f084fbbb2470b80b2013134df35%' OR Hashes ILIKE '%IMPHASH=49b639b4acbecc49d72a01f357aa4930%' OR Hashes ILIKE '%IMPHASH=680dad9e300346e05a85023965867201%' OR Hashes ILIKE '%IMPHASH=21aa085d54992511b9f115355e468782%') OR OriginalFileName='AdFind.exe') AND (NOT Image ILIKE '%\\AdFind.exe')

@@ -1,0 +1,15 @@
+id: 9691f58d-92c1-4416-8bf3-2edd753ec9cf
+name: ESXi Admin Permission Assigned To Account Via ESXCLI
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.persistence
+- attack.execution
+- attack.privilege-escalation
+- attack.t1059.012
+- attack.t1098
+rule: SELECT * FROM logs WHERE Image ILIKE '%/esxcli' AND CommandLine ILIKE '%system%' AND (CommandLine ILIKE '% permission %' AND CommandLine ILIKE '% set%' AND CommandLine ILIKE '%Admin%')

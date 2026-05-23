@@ -1,0 +1,13 @@
+id: f033f3f3-fd24-4995-97d8-a3bb17550a88
+name: WMI Persistence - Security
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Gleb Sukhodolskiy, Timur Zinniatullin oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE EventID=4662 AND ObjectType='WMI Namespace' AND ObjectName ILIKE '%subscription%'

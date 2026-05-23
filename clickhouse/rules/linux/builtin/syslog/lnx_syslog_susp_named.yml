@@ -1,0 +1,12 @@
+id: c8e35e96-19ce-4f16-aeb6-fd5588dc5365
+name: Suspicious Named Error
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, ' dropping source port zero packet from ') OR hasToken(full_log, ' denied AXFR from ') OR hasToken(full_log, ' exiting (due to fatal error)')

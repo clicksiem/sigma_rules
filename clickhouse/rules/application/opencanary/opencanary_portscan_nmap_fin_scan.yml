@@ -1,0 +1,12 @@
+id: eae8c0c8-e5da-450a-9d7d-66aa56cd26b6
+name: OpenCanary - NMAP FIN Scan
+level: 8
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM)
+group: opencanary
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE logtype=5005

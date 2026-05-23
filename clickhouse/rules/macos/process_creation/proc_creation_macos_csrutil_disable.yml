@@ -1,0 +1,12 @@
+id: 3603f18a-ec15-43a1-9af2-d196c8a7fec6
+name: System Integrity Protection (SIP) Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: macos
+tags:
+- attack.discovery
+- attack.t1518.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%/csrutil' AND CommandLine ILIKE '%disable%'

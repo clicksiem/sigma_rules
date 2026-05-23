@@ -1,0 +1,15 @@
+id: 24c77512-782b-448a-8950-eddb0785fc71
+name: SQLite Chromium Profile Data DB Access
+level: 8
+size: '>0'
+active: true
+author:
+- TropChaud
+group: windows
+tags:
+- attack.credential-access
+- attack.t1539
+- attack.t1555.003
+- attack.collection
+- attack.t1005
+rule: SELECT * FROM logs WHERE (Product='SQLite' OR (Image ILIKE '%\\sqlite.exe' OR Image ILIKE '%\\sqlite3.exe')) AND (CommandLine ILIKE '%\\User Data\\%' OR CommandLine ILIKE '%\\Opera Software\\%' OR CommandLine ILIKE '%\\ChromiumViewer\\%') AND (CommandLine ILIKE '%Login Data%' OR CommandLine ILIKE '%Cookies%' OR CommandLine ILIKE '%Web Data%' OR CommandLine ILIKE '%History%' OR CommandLine ILIKE '%Bookmarks%')

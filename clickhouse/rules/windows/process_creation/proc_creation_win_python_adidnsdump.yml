@@ -1,0 +1,12 @@
+id: 26d3f0a2-f514-4a3f-a8a7-e7e48a8d9160
+name: PUA - Adidnsdump Execution
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1018
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\python.exe' AND CommandLine ILIKE '%adidnsdump%'

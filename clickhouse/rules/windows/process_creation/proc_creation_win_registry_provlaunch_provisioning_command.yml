@@ -1,0 +1,12 @@
+id: 2a4b3e61-9d22-4e4a-b60f-6e8f0cde6f25
+name: Potential Provisioning Registry Key Abuse For Binary Proxy Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%SOFTWARE\\Microsoft\\Provisioning\\Commands\\%'

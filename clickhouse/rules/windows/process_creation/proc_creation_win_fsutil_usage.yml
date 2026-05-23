@@ -1,0 +1,14 @@
+id: add64136-62e5-48ea-807e-88638d02df1e
+name: Fsutil Suspicious Invocation
+level: 8
+size: '>0'
+active: true
+author:
+- Ecco, E.M. Anhaus, oscd.community
+group: windows
+tags:
+- attack.impact
+- attack.stealth
+- attack.t1070
+- attack.t1485
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\fsutil.exe' OR OriginalFileName='fsutil.exe') AND (CommandLine ILIKE '%deletejournal%' OR CommandLine ILIKE '%createjournal%' OR CommandLine ILIKE '%setZeroData%')

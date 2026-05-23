@@ -1,0 +1,13 @@
+id: e5ac86dd-2da1-454b-be74-05d26c769d7d
+name: Windows Default Domain GPO Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1484.001
+rule: SELECT * FROM logs WHERE EventID=5136 AND ObjectClass='groupPolicyContainer' AND (ObjectDN ILIKE 'CN={31B2F340-016D-11D2-945F-00C04FB984F9},CN=POLICIES,CN=SYSTEM%' OR ObjectDN ILIKE 'CN={6AC1786C-016F-11D2-945F-00C04FB984F9},CN=POLICIES,CN=SYSTEM%')

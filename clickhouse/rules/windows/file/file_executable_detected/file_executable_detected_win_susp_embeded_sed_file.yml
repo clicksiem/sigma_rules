@@ -1,0 +1,12 @@
+id: ab90dab8-c7da-4010-9193-563528cfa347
+name: Potentially Suspicious Self Extraction Directive File Created
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.sed'

@@ -1,0 +1,15 @@
+id: 5f521e4b-0105-4b72-845b-2198a54487b9
+name: Users Authenticating To Other Azure AD Tenants
+level: 5
+size: '>0'
+active: true
+author:
+- MikeDuddington, '@dudders1'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE (Status='Success' AND HomeTenantId='HomeTenantID') AND (NOT ResourceTenantId ILIKE '%HomeTenantID%')

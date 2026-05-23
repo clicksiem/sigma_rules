@@ -1,0 +1,12 @@
+id: 72af37e2-ec32-47dc-992b-bc288a2708cb
+name: Azure New CloudShell Created
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: azure
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE operationName='MICROSOFT.PORTAL/CONSOLES/WRITE'

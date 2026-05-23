@@ -1,0 +1,12 @@
+id: 114e7f1c-f137-48c8-8f54-3088c24ce4b9
+name: Remote Access Tool - AnyDesk Silent Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Ján Trenčanský
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%--install%' AND CommandLine ILIKE '%--start-with-win%' AND CommandLine ILIKE '%--silent%'

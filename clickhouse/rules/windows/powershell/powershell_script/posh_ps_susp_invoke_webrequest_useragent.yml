@@ -1,0 +1,12 @@
+id: d4488827-73af-4f8d-9244-7b7662ef046e
+name: Change User Agents with WebRequest
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Invoke-WebRequest%' OR ScriptBlockText ILIKE '%Invoke-RestMethod%' OR ScriptBlockText ILIKE '% irm %' OR ScriptBlockText ILIKE '%iwr %') AND ScriptBlockText ILIKE '%-UserAgent %'

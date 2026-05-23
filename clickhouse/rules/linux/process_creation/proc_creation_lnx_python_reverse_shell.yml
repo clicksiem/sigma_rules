@@ -1,0 +1,11 @@
+id: 32e62bc7-3de0-4bb1-90af-532978fe42c0
+name: Python Reverse Shell Execution Via PTY And Socket Modules
+level: 8
+size: '>0'
+active: true
+author:
+- '@d4ns4n_, Nasreddine Bencherchali (Nextron Systems)'
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%python%' AND (CommandLine ILIKE '% -c %' AND CommandLine ILIKE '%import%' AND CommandLine ILIKE '%pty%' AND CommandLine ILIKE '%socket%' AND CommandLine ILIKE '%spawn%' AND CommandLine ILIKE '%.connect%')

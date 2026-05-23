@@ -1,0 +1,12 @@
+id: 7773b877-5abb-4a3e-b9c9-fd0369b59b00
+name: WMIC Remote Command Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\WMIC.exe' OR OriginalFileName='wmic.exe') AND (CommandLine ILIKE '%-node:%' OR CommandLine ILIKE '%/node:%' OR CommandLine ILIKE '%–node:%' OR CommandLine ILIKE '%—node:%' OR CommandLine ILIKE '%―node:%')) AND (NOT (CommandLine ILIKE '%localhost%' OR CommandLine ILIKE '%127.0.0.1%'))

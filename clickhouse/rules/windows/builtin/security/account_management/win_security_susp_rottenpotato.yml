@@ -1,0 +1,14 @@
+id: 16f5d8ca-44bd-47c8-acbe-6fc95a16c12f
+name: RottenPotato Like Attack Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- '@SBousseaden, Florian Roth'
+group: windows
+tags:
+- attack.collection
+- attack.privilege-escalation
+- attack.credential-access
+- attack.t1557.001
+rule: SELECT * FROM logs WHERE EventID=4624 AND LogonType=3 AND TargetUserName='ANONYMOUS LOGON' AND WorkstationName='-' AND (IpAddress IN ('127.0.0.1', '::1'))

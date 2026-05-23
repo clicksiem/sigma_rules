@@ -1,0 +1,12 @@
+id: f426547a-e0f7-441a-b63e-854ac5bdf54d
+name: Perl Inline Command Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\perl.exe' OR OriginalFileName='perl.exe') AND CommandLine ILIKE '% -e%'

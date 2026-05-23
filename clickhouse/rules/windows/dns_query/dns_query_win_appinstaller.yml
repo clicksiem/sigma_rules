@@ -1,0 +1,12 @@
+id: 7cff77e1-9663-46a3-8260-17f2e1aa9d0a
+name: AppX Package Installation Attempts Via AppInstaller.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE 'C:\\Program Files\\WindowsApps\\Microsoft.DesktopAppInstaller\_%' AND Image ILIKE '%\\AppInstaller.exe'

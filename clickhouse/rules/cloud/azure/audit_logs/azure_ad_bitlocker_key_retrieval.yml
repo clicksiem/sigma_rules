@@ -1,0 +1,15 @@
+id: a0413867-daf3-43dd-9245-734b3a787942
+name: Bitlocker Key Retrieval
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Epping, '@mepples21'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE Category='KeyManagement' AND OperationName='Read BitLocker key'

@@ -1,0 +1,14 @@
+id: 2782fbd8-b662-4eb5-9962-5bfbfb671e7b
+name: Suspicious Usage of For Loop with Recursive Directory Search in CMD
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.003
+- attack.t1027.010
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%for /f%' AND CommandLine ILIKE '%tokens=%' AND CommandLine ILIKE '%in (%' AND CommandLine ILIKE '%dir%') OR (ParentCommandLine ILIKE '%for /f%' AND ParentCommandLine ILIKE '%tokens=%' AND ParentCommandLine ILIKE '%in (%' AND ParentCommandLine ILIKE '%dir%')

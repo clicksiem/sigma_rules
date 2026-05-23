@@ -1,0 +1,13 @@
+id: 85254a62-22be-4239-b79c-2ec17e566c37
+name: F5 BIG-IP iControl Rest API Command Execution - Webserver
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Thurein Oo
+group: ''
+tags:
+- attack.execution
+- attack.t1190
+- attack.initial-access
+rule: SELECT * FROM logs WHERE `cs-method`='POST' AND `cs-uri-query` ILIKE '%/mgmt/tm/util/bash'

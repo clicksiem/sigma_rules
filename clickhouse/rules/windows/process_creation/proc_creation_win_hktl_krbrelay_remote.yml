@@ -1,0 +1,12 @@
+id: a7664b14-75fb-4a50-a223-cb9bc0afbacf
+name: HackTool - RemoteKrbRelay Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\RemoteKrbRelay.exe' OR OriginalFileName='RemoteKrbRelay.exe') OR (CommandLine ILIKE '% -clsid %' AND CommandLine ILIKE '% -target %' AND CommandLine ILIKE '% -victim %') OR (CommandLine ILIKE '%-rbcd %' AND (CommandLine ILIKE '%-cn %' OR CommandLine ILIKE '%--computername %')) OR (CommandLine ILIKE '%-chp %' AND (CommandLine ILIKE '%-chpPass %' AND CommandLine ILIKE '%-chpUser %')) OR (CommandLine ILIKE '%-addgroupmember %' AND CommandLine ILIKE '%-group %' AND CommandLine ILIKE '%-groupuser %') OR ((CommandLine ILIKE '%-smb %' AND CommandLine ILIKE '%--smbkeyword %') AND (CommandLine ILIKE '%interactive%' OR CommandLine ILIKE '%secrets%' OR CommandLine ILIKE '%service-add%'))

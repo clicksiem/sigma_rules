@@ -1,0 +1,12 @@
+id: 0a13e132-651d-11eb-ae93-0242ac130002
+name: Audit Policy Tampering Via Auditpol
+level: 8
+size: '>0'
+active: true
+author:
+- Janantha Marasinghe (https://github.com/blueteam0ps)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\auditpol.exe' OR OriginalFileName='AUDITPOL.EXE') AND (CommandLine ILIKE '%disable%' OR CommandLine ILIKE '%clear%' OR CommandLine ILIKE '%remove%' OR CommandLine ILIKE '%restore%')

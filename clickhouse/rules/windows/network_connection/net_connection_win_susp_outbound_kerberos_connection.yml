@@ -1,0 +1,14 @@
+id: e54979bd-c5f9-4d6c-967b-a04b19ac4c74
+name: Uncommon Outbound Kerberos Connection
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558
+- attack.lateral-movement
+- attack.t1550.003
+rule: SELECT * FROM logs WHERE (DestinationPort=88 AND Initiated='true') AND (NOT Image ILIKE 'C:\\Windows\\System32\\lsass.exe') AND (NOT ((Image IN ('C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe', 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')) OR (Image IN ('C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe', 'C:\\Program Files\\Mozilla Firefox\\firefox.exe')) OR Image ILIKE '%\\tomcat\\bin\\tomcat8.exe'))

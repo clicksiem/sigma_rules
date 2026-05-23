@@ -1,0 +1,15 @@
+id: 5f699bc5-5446-4a4a-a0b7-5ef2885a3eb4
+name: RDP Over Reverse SSH Tunnel
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1572
+- attack.lateral-movement
+- attack.t1021.001
+- car.2013-07-002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\svchost.exe' AND Initiated='true' AND SourcePort=3389) AND (isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '::1/128'))

@@ -1,0 +1,13 @@
+id: 762f2482-ff21-4970-8939-0aa317a886bb
+name: HackTool - Certify Execution
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.credential-access
+- attack.t1649
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\Certify.exe' OR OriginalFileName='Certify.exe' OR Description ILIKE '%Certify%') OR ((CommandLine ILIKE '%.exe cas %' OR CommandLine ILIKE '%.exe find %' OR CommandLine ILIKE '%.exe pkiobjects %' OR CommandLine ILIKE '%.exe request %' OR CommandLine ILIKE '%.exe download %') AND (CommandLine ILIKE '% /vulnerable%' OR CommandLine ILIKE '% /template:%' OR CommandLine ILIKE '% /altname:%' OR CommandLine ILIKE '% /domain:%' OR CommandLine ILIKE '% /path:%' OR CommandLine ILIKE '% /ca:%'))

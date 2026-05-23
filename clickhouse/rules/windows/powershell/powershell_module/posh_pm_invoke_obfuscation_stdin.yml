@@ -1,0 +1,14 @@
+id: 9ac8b09b-45de-4a07-9da1-0de8c09304a3
+name: Invoke-Obfuscation STDIN+ Launcher - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(Payload, 'cmd.{0,5}(?:/c|/r).+powershell.+(?:\$\{?input\}?|noexit).+"')

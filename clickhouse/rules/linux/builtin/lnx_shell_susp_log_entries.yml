@@ -1,0 +1,11 @@
+id: f64b6e9a-5d9d-48a5-8289-e1dd2b3876e1
+name: Suspicious Log Entries
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'entered promiscuous mode') OR hasToken(full_log, 'Deactivating service') OR hasToken(full_log, 'Oversized packet received from') OR hasToken(full_log, 'imuxsock begins to drop messages')

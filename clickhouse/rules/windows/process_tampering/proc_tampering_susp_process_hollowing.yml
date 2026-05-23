@@ -1,0 +1,13 @@
+id: c4b890e5-8d8c-4496-8c66-c805753817cd
+name: Potential Process Hollowing Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Christopher Peacock '@securepeacock', SCYTHE '@scythe_io', Sittikorn S
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.012
+rule: SELECT * FROM logs WHERE Type='Image is replaced' AND (NOT (Image ILIKE '%:\\Program Files (x86)%' OR Image ILIKE '%:\\Program Files\\%' OR Image ILIKE '%:\\Windows\\System32\\wbem\\WMIADAP.exe%' OR Image ILIKE '%:\\Windows\\SysWOW64\\wbem\\WMIADAP.exe%')) AND (NOT ((Image ILIKE '%\\AppData\\Local\\Programs\\Opera\\%' AND Image ILIKE '%\\opera.exe') OR Image ILIKE '%\\WindowsApps\\MicrosoftEdge.exe'))

@@ -1,0 +1,12 @@
+id: b697e69c-746f-4a86-9f59-7bfff8eab881
+name: UAC Bypass Using Disk Cleanup
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%"\\system32\\cleanmgr.exe /autoclean /d C:' AND ParentCommandLine ILIKE 'C:\\Windows\\system32\\svchost.exe -k netsvcs -p -s Schedule' AND (IntegrityLevel IN ('High', 'System', 'S-1-16-16384', 'S-1-16-12288'))

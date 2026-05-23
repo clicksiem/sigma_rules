@@ -1,0 +1,12 @@
+id: 8737b7f6-8df3-4bb7-b1da-06019b99b687
+name: Shell Invocation Via Ssh - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/ssh' AND (CommandLine ILIKE '%ProxyCommand=;%' OR CommandLine ILIKE '%permitlocalcommand=yes%' OR CommandLine ILIKE '%localhost%')) AND (CommandLine ILIKE '%/bin/bash%' OR CommandLine ILIKE '%/bin/dash%' OR CommandLine ILIKE '%/bin/fish%' OR CommandLine ILIKE '%/bin/sh%' OR CommandLine ILIKE '%/bin/zsh%' OR CommandLine ILIKE '%sh 0<&2 1>&2%' OR CommandLine ILIKE '%sh 1>&2 0<&2%')

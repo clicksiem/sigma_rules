@@ -1,0 +1,12 @@
+id: 504d63cb-0dba-4d02-8531-e72981aace2c
+name: Suspicious X509Enrollment - Ps Script
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553.004
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%X509Enrollment.CBinaryConverter%' OR ScriptBlockText ILIKE '%884e2002-217d-11da-b2a4-000e7bbb2b09%'

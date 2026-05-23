@@ -1,0 +1,13 @@
+id: eca91c7c-9214-47b9-b4c5-cb1d7e4f2350
+name: Uncommon Outbound Kerberos Connection - Security
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, oscd.community
+group: windows
+tags:
+- attack.lateral-movement
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE (EventID=5156 AND DestPort=88) AND (NOT ((Application ILIKE '\\device\\harddiskvolume%' OR Application ILIKE 'C:%') AND Application ILIKE '%\\Windows\\System32\\lsass.exe')) AND (NOT (((Application ILIKE '\\device\\harddiskvolume%' OR Application ILIKE 'C:%') AND (Application ILIKE '%\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe' OR Application ILIKE '%\\Program Files\\Google\\Chrome\\Application\\chrome.exe')) OR ((Application ILIKE '\\device\\harddiskvolume%' OR Application ILIKE 'C:%') AND (Application ILIKE '%\\Program Files (x86)\\Mozilla Firefox\\firefox.exe' OR Application ILIKE '%\\Program Files\\Mozilla Firefox\\firefox.exe')) OR Application ILIKE '%\\tomcat\\bin\\tomcat8.exe'))

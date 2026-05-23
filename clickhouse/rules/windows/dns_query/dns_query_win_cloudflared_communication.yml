@@ -1,0 +1,13 @@
+id: a1d9eec5-33b2-4177-8d24-27fe754d0812
+name: Cloudflared Tunnels Related DNS Requests
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+- attack.t1572
+rule: SELECT * FROM logs WHERE QueryName ILIKE '%.v2.argotunnel.com' OR QueryName ILIKE '%protocol-v2.argotunnel.com' OR QueryName ILIKE '%trycloudflare.com' OR QueryName ILIKE '%update.argotunnel.com'

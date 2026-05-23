@@ -1,0 +1,12 @@
+id: 087790e3-3287-436c-bccf-cbd0184a7db1
+name: Potential CommandLine Path Traversal Via Cmd.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- xknow @xknow_infosec, Tim Shelton
+group: windows
+tags:
+- attack.execution
+- attack.t1059.003
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cmd.exe' OR OriginalFileName='cmd.exe') AND ((ParentCommandLine ILIKE '%/c%' OR ParentCommandLine ILIKE '%/k%' OR ParentCommandLine ILIKE '%/r%') OR (CommandLine ILIKE '%/c%' OR CommandLine ILIKE '%/k%' OR CommandLine ILIKE '%/r%')) AND (ParentCommandLine='/../../' OR CommandLine ILIKE '%/../../%')) AND (NOT CommandLine ILIKE '%\\Tasktop\\keycloak\\bin\\/../../jre\\bin\\java%')

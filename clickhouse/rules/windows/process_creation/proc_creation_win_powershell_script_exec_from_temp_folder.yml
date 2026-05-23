@@ -1,0 +1,12 @@
+id: a6a39bdb-935c-4f0a-ab77-35f4bbf44d33
+name: Potentially Suspicious Powershell Script Execution From Temp Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Max Altgelt (Nextron Systems), Tim Shelton
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%\\Windows\\Temp%' OR CommandLine ILIKE '%\\Temporary Internet%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp%' OR CommandLine ILIKE '%\\AppData\\Roaming\\Temp%' OR CommandLine ILIKE '%\%TEMP\%%' OR CommandLine ILIKE '%\%TMP\%%' OR CommandLine ILIKE '%\%LocalAppData\%\\Temp%')) AND (NOT (CommandLine ILIKE '%-WindowStyle hidden -Verb runAs%' OR CommandLine ILIKE '%\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Temp\\Amazon\\EC2-Windows\\%' OR (CommandLine ILIKE '% >%' OR CommandLine ILIKE '%Out-File%' OR CommandLine ILIKE '%ConvertTo-Json%') OR ((ParentImage IN ('C:\\Windows\\System32\\Msiexec.exe', 'C:\\Windows\\SysWOW64\\Msiexec.exe')) AND Image ILIKE '%\\powershell.exe' AND (CommandLine ILIKE '%-NoProfile -ExecutionPolicy Bypass -Command%' AND CommandLine ILIKE '%AppData\\Local\\Temp\\%' AND CommandLine ILIKE '%Install-Chocolatey.ps1%'))))

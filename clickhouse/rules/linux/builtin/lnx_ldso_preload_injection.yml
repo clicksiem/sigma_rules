@@ -1,0 +1,15 @@
+id: 7e3c4651-c347-40c4-b1d4-d48590fdf684
+name: Code Injection by ld.so Preload
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: linux
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.006
+rule: SELECT * FROM logs WHERE hasToken(full_log, '/etc/ld.so.preload')

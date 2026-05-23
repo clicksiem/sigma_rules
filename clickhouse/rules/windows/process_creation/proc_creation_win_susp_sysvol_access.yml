@@ -1,0 +1,12 @@
+id: 05f3c945-dcc8-4393-9f3d-af65077a8f86
+name: Suspicious SYSVOL Domain Group Policy Access
+level: 5
+size: '>0'
+active: true
+author:
+- Markus Neis, Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.006
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\SYSVOL\\%' AND CommandLine ILIKE '%\\policies\\%'

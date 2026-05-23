@@ -1,0 +1,12 @@
+id: 6597be7b-ac61-4ac8-bef4-d3ec88174853
+name: UAC Bypass Abusing Winsat Path Parsing - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Root\\InventoryApplicationFile\\winsat.exe|%' AND TargetObject ILIKE '%\\LowerCaseLongPath' AND Details ILIKE 'c:\\users\\%' AND Details ILIKE '%\\appdata\\local\\temp\\system32\\winsat.exe'

@@ -1,0 +1,12 @@
+id: 30aed7b6-d2c1-4eaf-9382-b6bc43e50c57
+name: File Deletion
+level: 1
+size: '>0'
+active: true
+author:
+- Ömer Günal, oscd.community
+group: linux
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/rm' OR Image ILIKE '%/shred' OR Image ILIKE '%/unlink'

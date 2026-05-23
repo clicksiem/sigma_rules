@@ -1,0 +1,13 @@
+id: a01b8329-5953-4f73-ae2d-aa01e1f35f00
+name: AspNetCompiler Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework64\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm64\\%') AND Image ILIKE '%\\aspnet\_compiler.exe'

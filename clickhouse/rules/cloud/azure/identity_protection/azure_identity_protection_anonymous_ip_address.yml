@@ -1,0 +1,12 @@
+id: 53acd925-2003-440d-a1f3-71a5253fe237
+name: Anonymous IP Address
+level: 8
+size: '>0'
+active: true
+author:
+- Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.t1528
+- attack.credential-access
+rule: SELECT * FROM logs WHERE riskEventType='anonymizedIPAddress'

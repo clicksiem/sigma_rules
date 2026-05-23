@@ -1,0 +1,13 @@
+id: f663a6d9-9d1b-49b8-b2b1-0637914d199a
+name: Narrator's Feedback-Hub Persistence
+level: 8
+size: '>0'
+active: true
+author:
+- Dmitriy Lifanov, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (EventType='DeleteValue' AND TargetObject ILIKE '%\\AppXypsaf9f1qserqevf0sws76dx4k9a5206\\Shell\\open\\command\\DelegateExecute') OR TargetObject ILIKE '%\\AppXypsaf9f1qserqevf0sws76dx4k9a5206\\Shell\\open\\command\\(Default)'

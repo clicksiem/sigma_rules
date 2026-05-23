@@ -1,0 +1,17 @@
+id: 70ed1d26-0050-4b38-a599-92c53d57d45a
+name: Bitbucket User Login Failure
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.credential-access
+- attack.stealth
+- attack.t1078.004
+- attack.t1110
+rule: SELECT * FROM logs WHERE `auditType.category`='Authentication' AND `auditType.action`='User login failed'

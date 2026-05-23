@@ -1,0 +1,15 @@
+id: be4d9c86-d702-4030-b52e-c7859110e5e8
+name: Activity From Anonymous IP Address
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+rule: SELECT * FROM logs WHERE riskEventType='riskyIPAddress'

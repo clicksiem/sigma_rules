@@ -1,0 +1,12 @@
+id: 75180c5f-4ea1-461a-a4f6-6e4700c065d4
+name: Windows Recall Feature Enabled - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Sajid Nawaz Khan
+group: windows
+tags:
+- attack.collection
+- attack.t1113
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Policies\\Microsoft\\Windows\\WindowsAI\\DisableAIDataAnalysis' AND Details='DWORD (0x00000000)'

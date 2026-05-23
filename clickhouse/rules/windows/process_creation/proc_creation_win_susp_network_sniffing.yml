@@ -1,0 +1,13 @@
+id: ba1f7802-adc7-48b4-9ecb-81e227fddfd5
+name: Potential Network Sniffing Activity Using Network Tools
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.discovery
+- attack.t1040
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\tshark.exe' AND CommandLine ILIKE '%-i%') OR Image ILIKE '%\\windump.exe'

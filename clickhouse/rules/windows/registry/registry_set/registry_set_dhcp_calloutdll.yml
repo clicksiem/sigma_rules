@@ -1,0 +1,17 @@
+id: 9d3436ef-9476-4c43-acca-90ce06bdf33a
+name: DHCP Callout DLL Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Dimitrios Slamaris
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.defense-impairment
+- attack.t1574.001
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Services\\DHCPServer\\Parameters\\CalloutDlls' OR TargetObject ILIKE '%\\Services\\DHCPServer\\Parameters\\CalloutEnabled'

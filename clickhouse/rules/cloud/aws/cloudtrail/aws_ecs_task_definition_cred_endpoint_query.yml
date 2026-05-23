@@ -1,0 +1,12 @@
+id: b94bf91e-c2bf-4047-9c43-c6810f43baad
+name: AWS ECS Task Definition That Queries The Credential Endpoint
+level: 5
+size: '>0'
+active: true
+author:
+- Darin Smith
+group: aws
+tags:
+- attack.persistence
+- attack.t1525
+rule: SELECT * FROM logs WHERE eventSource='ecs.amazonaws.com' AND (eventName IN ('DescribeTaskDefinition', 'RegisterTaskDefinition', 'RunTask')) AND `requestParameters.containerDefinitions.command` ILIKE '%$AWS\_CONTAINER\_CREDENTIALS\_RELATIVE\_URI%'

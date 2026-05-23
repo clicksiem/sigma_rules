@@ -1,0 +1,13 @@
+id: 148431ce-4b70-403d-8525-fcc2993f29ea
+name: Potential DLL Injection Or Execution Using Tracker.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Avneet Singh @v3t0_, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\tracker.exe' OR Description='Tracker') AND (CommandLine ILIKE '% /d %' OR CommandLine ILIKE '% /c %')) AND (NOT (CommandLine ILIKE '% /ERRORREPORT:PROMPT %' OR (ParentImage ILIKE '%\\Msbuild\\Current\\Bin\\MSBuild.exe' OR ParentImage ILIKE '%\\Msbuild\\Current\\Bin\\amd64\\MSBuild.exe')))

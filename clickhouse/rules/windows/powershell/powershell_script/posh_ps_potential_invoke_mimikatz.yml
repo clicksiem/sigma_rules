@@ -1,0 +1,12 @@
+id: 189e3b02-82b2-4b90-9662-411eb64486d4
+name: Potential Invoke-Mimikatz PowerShell Script
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%DumpCreds%' AND ScriptBlockText ILIKE '%DumpCerts%') OR ScriptBlockText ILIKE '%sekurlsa::logonpasswords%' OR (ScriptBlockText ILIKE '%crypto::certificates%' AND ScriptBlockText ILIKE '%CERT\_SYSTEM\_STORE\_LOCAL\_MACHINE%')

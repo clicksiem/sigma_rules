@@ -1,0 +1,12 @@
+id: 8d91f6e4-9f3b-4c21-ae41-2c5b7d9f7a12
+name: Unsigned or Unencrypted SMB Connection to Share Established
+level: 5
+size: '>0'
+active: true
+author:
+- Mohamed Abdelghani
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE ((EventID=4000 AND (ShareName ILIKE '%IPC$%' OR ShareName ILIKE '%ADMIN$%' OR ShareName ILIKE '%C$%')) AND (SigningUsed='false' OR EncyptionUsed='false')) AND (NOT ((isIPAddressInRange(ClientAddress, '127.0.0.0/8') OR isIPAddressInRange(ClientAddress, '169.254.0.0/16') OR isIPAddressInRange(ClientAddress, '::1/128') OR isIPAddressInRange(ClientAddress, 'fe80::/10') OR isIPAddressInRange(ClientAddress, 'fc00::/7')) OR (ClientAddress ILIKE '%00000000000000000000000000000001%' OR ClientAddress ILIKE '%FE80000000000000%' OR ClientAddress ILIKE '%FC00000000000000%' OR ClientAddress ILIKE '%0200____7F%' OR ClientAddress ILIKE '%0200____A9FE%')))

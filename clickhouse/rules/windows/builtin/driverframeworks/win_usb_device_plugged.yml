@@ -1,0 +1,12 @@
+id: 1a4bd6e3-4c6e-405d-a9a3-53a116e341d4
+name: USB Device Plugged
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1200
+rule: SELECT * FROM logs WHERE EventID IN (2003, 2100, 2102)

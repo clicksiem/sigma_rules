@@ -1,0 +1,12 @@
+id: a80d927d-ac6e-443f-a867-e8d6e3897318
+name: Creation Of Pod In System Namespace
+level: 5
+size: '>0'
+active: true
+author:
+- Leo Tsaousis (@laripping)
+group: kubernetes
+tags:
+- attack.stealth
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE verb='create' AND `objectRef.resource`='pods' AND `objectRef.namespace`='kube-system'

@@ -1,0 +1,14 @@
+id: c79da740-5030-45ec-a2e0-479e824a562c
+name: System Disk And Volume Reconnaissance Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Stephen Lincoln '@slincoln-aiq' (AttackIQ)
+group: windows
+tags:
+- attack.execution
+- attack.discovery
+- attack.t1047
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WMIC.exe' OR OriginalFileName='wmic.exe') AND ((CommandLine ILIKE '% volumename%' OR CommandLine ILIKE '% logicaldisk%') OR (CommandLine ILIKE '%path%' AND CommandLine ILIKE '%win32\_logicaldisk%') OR (CommandLine ILIKE '% volume%' AND CommandLine ILIKE '% list %'))

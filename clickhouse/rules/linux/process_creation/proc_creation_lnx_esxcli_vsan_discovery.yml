@@ -1,0 +1,15 @@
+id: d54c2f06-aca9-4e2b-81c9-5317858f4b79
+name: ESXi VSAN Information Discovery Via ESXCLI
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Cedric Maurugeon
+group: linux
+tags:
+- attack.discovery
+- attack.execution
+- attack.t1033
+- attack.t1007
+- attack.t1059.012
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/esxcli' AND CommandLine ILIKE '%vsan%') AND (CommandLine ILIKE '% get%' OR CommandLine ILIKE '% list%')

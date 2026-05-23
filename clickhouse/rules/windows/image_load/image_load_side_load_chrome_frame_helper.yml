@@ -1,0 +1,15 @@
+id: 72ca7c75-bf85-45cd-aca7-255d360e423c
+name: Potential Chrome Frame Helper DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Wietze Beukema (project and research)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\chrome\_frame\_helper.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files\\Google\\Chrome\\Application\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\%')) AND (NOT ImageLoaded ILIKE '%\\AppData\\local\\Google\\Chrome\\Application\\%')

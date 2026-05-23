@@ -1,0 +1,12 @@
+id: 402e1e1d-ad59-47b6-bf80-1ee44985b3a7
+name: Malicious ShellIntel PowerShell Commandlets
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems), Tobias Michalski (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Invoke-SMBAutoBrute%' OR ScriptBlockText ILIKE '%Invoke-GPOLinks%' OR ScriptBlockText ILIKE '%Invoke-Potato%'

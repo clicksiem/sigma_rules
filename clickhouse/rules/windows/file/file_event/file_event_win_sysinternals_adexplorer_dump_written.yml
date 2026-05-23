@@ -1,0 +1,14 @@
+id: 0a1255c5-d732-4b62-ac02-b5152d34fb83
+name: ADExplorer Writing Complete AD Snapshot Into .dat File
+level: 5
+size: '>0'
+active: true
+author:
+- Arnim Rupp (Nextron Systems), Thomas Patzke
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.002
+- attack.t1069.002
+- attack.t1482
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\ADExp.exe' OR Image ILIKE '%\\ADExplorer.exe' OR Image ILIKE '%\\ADExplorer64.exe' OR Image ILIKE '%\\ADExplorer64a.exe') AND TargetFilename ILIKE '%.dat'

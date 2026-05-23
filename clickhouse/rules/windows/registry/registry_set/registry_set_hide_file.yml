@@ -1,0 +1,12 @@
+id: 5a5152f1-463f-436b-b2f5-8eceb3964b42
+name: Displaying Hidden Files Feature Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\ShowSuperHidden' OR TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\Hidden') AND Details='DWORD (0x00000000)'

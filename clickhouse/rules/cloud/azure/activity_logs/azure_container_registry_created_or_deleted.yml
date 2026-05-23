@@ -1,0 +1,14 @@
+id: 93e0ef48-37c8-49ed-a02c-038aab23628e
+name: Azure Container Registry Created or Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+- attack.t1485
+- attack.t1496
+- attack.t1489
+rule: SELECT * FROM logs WHERE operationName IN ('MICROSOFT.CONTAINERREGISTRY/REGISTRIES/WRITE', 'MICROSOFT.CONTAINERREGISTRY/REGISTRIES/DELETE')

@@ -1,0 +1,14 @@
+id: 51cbac1e-eee3-4a90-b1b7-358efb81fa0a
+name: Potential Windows Defender Tampering Via Wmic.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1047
+- attack.t1685
+rule: SELECT * FROM logs WHERE (OriginalFileName='wmic.exe' OR Image ILIKE '%\\WMIC.exe') AND CommandLine ILIKE '%/Namespace:\\\\root\\Microsoft\\Windows\\Defender%'

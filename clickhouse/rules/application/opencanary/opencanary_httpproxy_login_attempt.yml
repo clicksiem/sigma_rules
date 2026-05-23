@@ -1,0 +1,13 @@
+id: 5498fc09-adc6-4804-b9d9-5cca1f0b8760
+name: OpenCanary - HTTPPROXY Login Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.initial-access
+- attack.command-and-control
+- attack.t1090
+rule: SELECT * FROM logs WHERE logtype=7001

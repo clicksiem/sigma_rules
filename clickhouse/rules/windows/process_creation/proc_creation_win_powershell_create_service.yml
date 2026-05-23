@@ -1,0 +1,13 @@
+id: c02e96b7-c63a-4c47-bd83-4a9f74afcfb2
+name: New Service Creation Using PowerShell
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%New-Service%' AND CommandLine ILIKE '%-BinaryPathName%'

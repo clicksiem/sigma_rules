@@ -1,0 +1,11 @@
+id: cb5a2333-56cf-4562-8fcb-22ba1bca728d
+name: Obfuscated IP Download Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Invoke-WebRequest%' OR CommandLine ILIKE '%iwr %' OR CommandLine ILIKE '%Invoke-RestMethod%' OR CommandLine ILIKE '%irm %' OR CommandLine ILIKE '%wget %' OR CommandLine ILIKE '%curl %' OR CommandLine ILIKE '%DownloadFile%' OR CommandLine ILIKE '%DownloadString%') AND ((CommandLine ILIKE '% 0x%' OR CommandLine ILIKE '%//0x%' OR CommandLine ILIKE '%.0x%' OR CommandLine ILIKE '%.00x%') OR (CommandLine ILIKE '%http://\%%' AND CommandLine ILIKE '%\%2e%') OR (match(CommandLine, 'https?://[0-9]{1,3}\.[0-9]{1,3}\.0[0-9]{3,4}') OR match(CommandLine, 'https?://[0-9]{1,3}\.0[0-9]{3,7}') OR match(CommandLine, 'https?://0[0-9]{3,11}') OR match(CommandLine, 'https?://(?:0[0-9]{1,11}\.){3}0[0-9]{1,11}') OR match(CommandLine, 'https?://0[0-9]{1,11}') OR match(CommandLine, ' [0-7]{7,13}'))) AND (NOT match(CommandLine, 'https?://(?:(?:25[0-5]|(?:2[0-4]|1\d|[1-9])?\d)(?:\.|\b)){4}'))

@@ -1,0 +1,15 @@
+id: 2092cacb-d77b-4f98-ab0d-32b32f99a054
+name: Potential Vivaldi_elf.DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\vivaldi\_elf.dll' AND (NOT (Image ILIKE '%\\Vivaldi\\Application\\vivaldi.exe' AND ImageLoaded ILIKE '%\\Vivaldi\\Application\\%'))

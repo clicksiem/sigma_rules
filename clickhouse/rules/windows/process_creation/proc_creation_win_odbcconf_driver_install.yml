@@ -1,0 +1,12 @@
+id: 3f5491e2-8db8-496b-9e95-1029fce852d4
+name: Driver/DLL Installation Via Odbcconf.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.008
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\odbcconf.exe' OR OriginalFileName='odbcconf.exe') AND (CommandLine ILIKE '%INSTALLDRIVER %' AND CommandLine ILIKE '%.dll%')

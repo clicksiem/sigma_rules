@@ -1,0 +1,12 @@
+id: 323ff3f5-0013-4847-bbd4-250b5edb62cc
+name: Modify System Firewall
+level: 5
+size: '>0'
+active: true
+author:
+- IAI
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1686
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND a0='iptables' AND a1 ILIKE '%DROP%') OR (type='EXECVE' AND a0='firewall-cmd' AND a1 ILIKE '%remove%') OR (type='EXECVE' AND a0='ufw' AND a1 ILIKE '%delete%') OR (type='EXECVE' AND a0='nft' AND (a1 ILIKE '%delete%' OR a1 ILIKE '%flush%'))

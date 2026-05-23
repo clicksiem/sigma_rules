@@ -1,0 +1,12 @@
+id: c649a6c7-cd8c-4a78-9c04-000fc76df954
+name: Potentially Suspicious Wuauclt Network Connection
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%wuauclt%' AND CommandLine ILIKE '% /RunHandlerComServer%') AND (NOT ((isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')) OR (isIPAddressInRange(DestinationIp, '20.184.0.0/13') OR isIPAddressInRange(DestinationIp, '20.192.0.0/10') OR isIPAddressInRange(DestinationIp, '23.79.0.0/16') OR isIPAddressInRange(DestinationIp, '51.10.0.0/15') OR isIPAddressInRange(DestinationIp, '51.103.0.0/16') OR isIPAddressInRange(DestinationIp, '51.104.0.0/15') OR isIPAddressInRange(DestinationIp, '52.224.0.0/11')) OR (CommandLine ILIKE '%:\\Windows\\UUS\\Packages\\Preview\\amd64\\updatedeploy.dll /ClassId%' OR CommandLine ILIKE '%:\\Windows\\UUS\\amd64\\UpdateDeploy.dll /ClassId%') OR (CommandLine ILIKE '%:\\Windows\\WinSxS\\%' AND CommandLine ILIKE '%\\UpdateDeploy.dll /ClassId %') OR isNull(CommandLine) OR CommandLine=''))

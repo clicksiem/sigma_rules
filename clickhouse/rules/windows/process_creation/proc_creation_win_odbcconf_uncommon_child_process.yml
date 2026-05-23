@@ -1,0 +1,12 @@
+id: 8e3c7994-131e-4ba5-b6ea-804d49113a26
+name: Uncommon Child Process Spawned By Odbcconf.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Harjot Singh @cyb3rjy0t
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.008
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\odbcconf.exe'

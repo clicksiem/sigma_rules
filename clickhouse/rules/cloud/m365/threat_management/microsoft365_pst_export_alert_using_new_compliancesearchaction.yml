@@ -1,0 +1,12 @@
+id: 6897cd82-6664-11ed-9022-0242ac120002
+name: PST Export Alert Using New-ComplianceSearchAction
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Khalimonenkov
+group: m365
+tags:
+- attack.collection
+- attack.t1114
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND (Payload ILIKE '%New-ComplianceSearchAction%' AND Payload ILIKE '%Export%' AND Payload ILIKE '%pst%')

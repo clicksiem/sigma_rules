@@ -1,0 +1,12 @@
+id: 4e762605-34a8-406d-b72e-c1a089313320
+name: Potential Fake Instance Of Hxtsr.EXE Executed
+level: 5
+size: '>0'
+active: true
+author:
+- Sreeman
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\hxtsr.exe' AND (NOT (Image ILIKE '%:\\program files\\windowsapps\\microsoft.windowscommunicationsapps\_%' AND Image ILIKE '%\\hxtsr.exe'))

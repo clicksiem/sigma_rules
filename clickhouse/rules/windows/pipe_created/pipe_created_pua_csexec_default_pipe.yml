@@ -1,0 +1,14 @@
+id: f318b911-ea88-43f4-9281-0de23ede628e
+name: PUA - CSExec Default Named Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE PipeName ILIKE '%\\csexecsvc%'

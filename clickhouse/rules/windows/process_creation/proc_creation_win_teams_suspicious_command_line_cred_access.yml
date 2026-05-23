@@ -1,0 +1,12 @@
+id: d2eb17db-1d39-41dc-b57f-301f6512fa75
+name: Potentially Suspicious Command Targeting Teams Sensitive Files
+level: 5
+size: '>0'
+active: true
+author:
+- '@SerkinValery'
+group: windows
+tags:
+- attack.credential-access
+- attack.t1528
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\Microsoft\\Teams\\Cookies%' OR CommandLine ILIKE '%\\Microsoft\\Teams\\Local Storage\\leveldb%') AND (NOT Image ILIKE '%\\Microsoft\\Teams\\current\\Teams.exe')

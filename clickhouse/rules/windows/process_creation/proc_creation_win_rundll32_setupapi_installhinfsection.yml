@@ -1,0 +1,12 @@
+id: 285b85b1-a555-4095-8652-a8a4106af63f
+name: Suspicious Rundll32 Setupapi.dll Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Konstantin Grishchenko, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\runonce.exe' AND ParentImage ILIKE '%\\rundll32.exe' AND (ParentCommandLine ILIKE '%setupapi.dll%' AND ParentCommandLine ILIKE '%InstallHinfSection%')

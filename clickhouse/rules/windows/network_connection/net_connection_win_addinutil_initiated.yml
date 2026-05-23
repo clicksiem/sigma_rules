@@ -1,0 +1,12 @@
+id: 5205613d-2a63-4412-a895-3a2458b587b3
+name: Network Connection Initiated By AddinUtil.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Michael McKinley (@McKinleyMike), Tony Latteri (@TheLatteri)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE Initiated='true' AND Image ILIKE '%\\addinutil.exe'

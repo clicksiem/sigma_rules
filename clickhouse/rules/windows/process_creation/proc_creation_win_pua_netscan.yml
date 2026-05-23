@@ -1,0 +1,12 @@
+id: ca387a8e-1c84-4da3-9993-028b45342d30
+name: PUA - SoftPerfect Netscan Execution
+level: 5
+size: '>0'
+active: true
+author:
+- '@d4ns4n_ (Wuerth-Phoenix)'
+group: windows
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\netscan.exe' OR Product='Network Scanner' OR Description='Application for scanning networks'

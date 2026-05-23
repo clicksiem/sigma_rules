@@ -1,0 +1,14 @@
+id: f241cf1b-3a6b-4e1a-b4f9-133c00dd95ca
+name: Invoke-Obfuscation RUNDLL LAUNCHER - Security
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ServiceFileName ILIKE '%rundll32.exe%' AND ServiceFileName ILIKE '%shell32.dll%' AND ServiceFileName ILIKE '%shellexec\_rundll%' AND ServiceFileName ILIKE '%powershell%')

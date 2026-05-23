@@ -1,0 +1,14 @@
+id: 9f38c1db-e2ae-40bf-81d0-5b68f73fb512
+name: Suspicious BitLocker Access Agent Update Utility Execution
+level: 8
+size: '>0'
+active: true
+author:
+- andrewdanis, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.lateral-movement
+- attack.t1021.003
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\baaupdate.exe' AND (Image ILIKE '%\\bitsadmin.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe')

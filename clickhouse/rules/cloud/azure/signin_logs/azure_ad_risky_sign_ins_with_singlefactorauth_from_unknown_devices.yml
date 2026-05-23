@@ -1,0 +1,15 @@
+id: 572b12d4-9062-11ed-a1eb-0242ac120002
+name: Suspicious SignIns From A Non Registered Device
+level: 8
+size: '>0'
+active: true
+author:
+- Harjot Singh, '@cyb3rjy0t'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE (Status='Success' AND AuthenticationRequirement='singleFactorAuthentication' AND RiskState='atRisk') AND (`DeviceDetail.trusttype`='' OR isNull(`DeviceDetail.trusttype`))

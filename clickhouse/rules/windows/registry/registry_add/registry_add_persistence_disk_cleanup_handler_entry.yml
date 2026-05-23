@@ -1,0 +1,11 @@
+id: d4f4e0be-cf12-439f-9e25-4e2cdcf7df5a
+name: Potential Persistence Via Disk Cleanup Handler - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (EventType='CreateKey' AND TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VolumeCaches\\%') AND (NOT (TargetObject ILIKE '%\\Active Setup Temp Folders' OR TargetObject ILIKE '%\\BranchCache' OR TargetObject ILIKE '%\\Content Indexer Cleaner' OR TargetObject ILIKE '%\\D3D Shader Cache' OR TargetObject ILIKE '%\\Delivery Optimization Files' OR TargetObject ILIKE '%\\Device Driver Packages' OR TargetObject ILIKE '%\\Diagnostic Data Viewer database files' OR TargetObject ILIKE '%\\Downloaded Program Files' OR TargetObject ILIKE '%\\DownloadsFolder' OR TargetObject ILIKE '%\\Feedback Hub Archive log files' OR TargetObject ILIKE '%\\Internet Cache Files' OR TargetObject ILIKE '%\\Language Pack' OR TargetObject ILIKE '%\\Microsoft Office Temp Files' OR TargetObject ILIKE '%\\Offline Pages Files' OR TargetObject ILIKE '%\\Old ChkDsk Files' OR TargetObject ILIKE '%\\Previous Installations' OR TargetObject ILIKE '%\\Recycle Bin' OR TargetObject ILIKE '%\\RetailDemo Offline Content' OR TargetObject ILIKE '%\\Setup Log Files' OR TargetObject ILIKE '%\\System error memory dump files' OR TargetObject ILIKE '%\\System error minidump files' OR TargetObject ILIKE '%\\Temporary Files' OR TargetObject ILIKE '%\\Temporary Setup Files' OR TargetObject ILIKE '%\\Temporary Sync Files' OR TargetObject ILIKE '%\\Thumbnail Cache' OR TargetObject ILIKE '%\\Update Cleanup' OR TargetObject ILIKE '%\\Upgrade Discarded Files' OR TargetObject ILIKE '%\\User file versions' OR TargetObject ILIKE '%\\Windows Defender' OR TargetObject ILIKE '%\\Windows Error Reporting Files' OR TargetObject ILIKE '%\\Windows ESD installation files' OR TargetObject ILIKE '%\\Windows Upgrade Log Files'))

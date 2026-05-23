@@ -1,0 +1,13 @@
+id: dfe8b941-4e54-4242-b674-6b613d521962
+name: Startup Item File Created - MacOS
+level: 3
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: macos
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1037.005
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '/Library/StartupItems/%' OR TargetFilename ILIKE '/System/Library/StartupItems%') AND TargetFilename ILIKE '%.plist'

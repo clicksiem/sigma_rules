@@ -1,0 +1,12 @@
+id: 7195a772-4b3f-43a4-a210-6a003d65caa1
+name: Suspicious User Agent
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE ((`c-useragent` ILIKE 'user-agent%' OR `c-useragent` ILIKE 'Mozilla/3.0 %' OR `c-useragent` ILIKE 'Mozilla/2.0 %' OR `c-useragent` ILIKE 'Mozilla/1.0 %' OR `c-useragent` ILIKE 'Mozilla %' OR `c-useragent` ILIKE ' Mozilla/%' OR `c-useragent` ILIKE 'Mozila/%' OR `c-useragent` ILIKE 'Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol%') OR (`c-useragent` ILIKE '% (compatible;MSIE %' OR `c-useragent` ILIKE '%.0;Windows NT %' OR `c-useragent` ILIKE '%loader%') OR (`c-useragent` IN ('\_', 'CertUtil URL Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0)', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0', 'HTTPS', 'Erbium-UA-4ce7c27cb4be9d32e333bf032c88235a', 'x', 'xxx'))) AND (NOT (`c-useragent` ILIKE 'Mozilla/3.0 % Acrobat %' OR (`cs-host` ILIKE '%.acrobat.com' OR `cs-host` ILIKE '%.adobe.com' OR `cs-host` ILIKE '%.adobe.io')))

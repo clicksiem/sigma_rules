@@ -1,0 +1,15 @@
+id: e49b5745-1064-4ac1-9a2e-f687bc2dd37e
+name: Potential DLL Sideloading Of Libcurl.DLL Via GUP.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\gup.exe' AND ImageLoaded ILIKE '%\\libcurl.dll') AND (NOT Image ILIKE '%\\Notepad++\\updater\\GUP.exe')

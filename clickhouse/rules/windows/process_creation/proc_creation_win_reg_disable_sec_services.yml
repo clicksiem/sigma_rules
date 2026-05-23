@@ -1,0 +1,12 @@
+id: 5e95028c-5229-4214-afae-d653d573d0ec
+name: Security Service Disabled Via Reg.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), John Lambert (idea), elhoim
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%reg%' AND CommandLine ILIKE '%add%') AND ((CommandLine ILIKE '%d 4%' AND CommandLine ILIKE '%v Start%') AND (CommandLine ILIKE '%\\AppIDSvc%' OR CommandLine ILIKE '%\\MsMpSvc%' OR CommandLine ILIKE '%\\NisSrv%' OR CommandLine ILIKE '%\\SecurityHealthService%' OR CommandLine ILIKE '%\\Sense%' OR CommandLine ILIKE '%\\UsoSvc%' OR CommandLine ILIKE '%\\WdBoot%' OR CommandLine ILIKE '%\\WdFilter%' OR CommandLine ILIKE '%\\WdNisDrv%' OR CommandLine ILIKE '%\\WdNisSvc%' OR CommandLine ILIKE '%\\WinDefend%' OR CommandLine ILIKE '%\\wscsvc%' OR CommandLine ILIKE '%\\wuauserv%'))

@@ -1,0 +1,12 @@
+id: cb39d16b-b3b6-4a7a-8222-1cf24b686ffc
+name: Data Exfiltration with Wget
+level: 5
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.exfiltration
+- attack.t1048.003
+rule: SELECT * FROM logs WHERE type='EXECVE' AND a0='wget' AND a1 ILIKE '--post-file=%'

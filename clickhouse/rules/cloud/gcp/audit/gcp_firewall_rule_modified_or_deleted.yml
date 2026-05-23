@@ -1,0 +1,12 @@
+id: fe513c69-734c-4d4a-8548-ac5f609be82b
+name: Google Cloud Firewall Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` ILIKE 'v%.Compute.Firewalls.Delete' OR `gcp.audit.method_name` ILIKE 'v%.Compute.Firewalls.Patch' OR `gcp.audit.method_name` ILIKE 'v%.Compute.Firewalls.Update' OR `gcp.audit.method_name` ILIKE 'v%.Compute.Firewalls.Insert'

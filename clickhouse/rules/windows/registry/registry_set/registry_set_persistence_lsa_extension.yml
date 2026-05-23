@@ -1,0 +1,11 @@
+id: 41f6531d-af6e-4c6e-918f-b946f2b85a36
+name: Potential Persistence Via LSA Extensions
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SYSTEM\\CurrentControlSet\\Control\\LsaExtensionConfig\\LsaSrv\\Extensions%'

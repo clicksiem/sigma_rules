@@ -1,0 +1,13 @@
+id: f1408a58-0e94-4165-b80a-da9f96cf6fc3
+name: JXA In-memory Execution Via OSAScript
+level: 8
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.t1059.002
+- attack.t1059.007
+- attack.execution
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%osascript%' AND CommandLine ILIKE '% -e %' AND CommandLine ILIKE '%eval%' AND CommandLine ILIKE '%NSData.dataWithContentsOfURL%') AND ((CommandLine ILIKE '% -l %' AND CommandLine ILIKE '%JavaScript%') OR CommandLine ILIKE '%.js%')

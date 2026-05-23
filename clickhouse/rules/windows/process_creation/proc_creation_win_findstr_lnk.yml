@@ -1,0 +1,14 @@
+id: 33339be3-148b-4e16-af56-ad16ec6c7e7b
+name: Findstr Launching .lnk File
+level: 5
+size: '>0'
+active: true
+author:
+- Trent Liffick
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1202
+- attack.t1027.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\find.exe' OR Image ILIKE '%\\findstr.exe') OR (OriginalFileName IN ('FIND.EXE', 'FINDSTR.EXE'))) AND (CommandLine ILIKE '%.lnk' OR CommandLine ILIKE '%.lnk"' OR CommandLine ILIKE '%.lnk''')

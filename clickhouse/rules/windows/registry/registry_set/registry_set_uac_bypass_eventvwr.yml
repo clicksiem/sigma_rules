@@ -1,0 +1,13 @@
+id: 7c81fec3-1c1d-43b0-996a-46753041b1b6
+name: UAC Bypass via Event Viewer
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+- car.2019-04-001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\mscfile\\shell\\open\\command'

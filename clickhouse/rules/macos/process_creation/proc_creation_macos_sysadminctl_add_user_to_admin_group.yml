@@ -1,0 +1,15 @@
+id: 652c098d-dc11-4ba6-8566-c20e89042f2b
+name: User Added To Admin Group Via Sysadminctl
+level: 5
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%/sysadminctl' AND (CommandLine ILIKE '% -addUser %' AND CommandLine ILIKE '% -admin %')

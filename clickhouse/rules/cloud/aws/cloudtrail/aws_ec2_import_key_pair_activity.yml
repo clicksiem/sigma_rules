@@ -1,0 +1,15 @@
+id: 92f84194-8d9a-4ee0-8699-c30bfac59780
+name: AWS Key Pair Import Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Ivan Saakov
+group: aws
+tags:
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE eventSource='ec2.amazonaws.com' AND eventName='ImportKeyPair'

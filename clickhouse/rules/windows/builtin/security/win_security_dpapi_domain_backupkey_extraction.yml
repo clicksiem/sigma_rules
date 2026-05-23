@@ -1,0 +1,12 @@
+id: 4ac1f50b-3bd0-4968-902d-868b4647937e
+name: DPAPI Domain Backup Key Extraction
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.004
+rule: SELECT * FROM logs WHERE EventID=4662 AND ObjectType='SecretObject' AND AccessMask='0x2' AND ObjectName ILIKE '%BCKUPKEY%'

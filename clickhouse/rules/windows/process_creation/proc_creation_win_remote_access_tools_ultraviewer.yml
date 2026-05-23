@@ -1,0 +1,12 @@
+id: 88656cec-6c3b-487c-82c0-f73ebb805503
+name: Remote Access Tool - UltraViewer Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Product='UltraViewer' OR Company='DucFabulous Co,ltd' OR OriginalFileName ILIKE 'UltraViewer\_Desktop.exe'

@@ -1,0 +1,12 @@
+id: 4a6713f6-3331-11ed-a261-0242ac120002
+name: Taskkill Symantec Endpoint Protection
+level: 8
+size: '>0'
+active: true
+author:
+- Ilya Krestinichev, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%taskkill%' AND CommandLine ILIKE '% /F %' AND CommandLine ILIKE '% /IM %' AND CommandLine ILIKE '%ccSvcHst.exe%'

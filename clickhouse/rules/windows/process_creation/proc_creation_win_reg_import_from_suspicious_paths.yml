@@ -1,0 +1,13 @@
+id: 62e0298b-e994-4189-bc87-bc699aa62d97
+name: Potential Suspicious Registry File Imported Via Reg.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND CommandLine ILIKE '% import %' AND (CommandLine ILIKE '%C:\\Users\\%' OR CommandLine ILIKE '%\%temp\%%' OR CommandLine ILIKE '%\%tmp\%%' OR CommandLine ILIKE '%\%appdata\%%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%C:\\Windows\\Temp\\%' OR CommandLine ILIKE '%C:\\ProgramData\\%')

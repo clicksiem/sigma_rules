@@ -1,0 +1,12 @@
+id: 098d7118-55bc-4912-a836-dc6483a8d150
+name: Access To ADMIN$ Network Share
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE (EventID=5140 AND ShareName='Admin$') AND (NOT SubjectUserName ILIKE '%$')

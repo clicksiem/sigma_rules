@@ -1,0 +1,12 @@
+id: 3bf1d859-3a7e-44cb-8809-a99e066d3478
+name: PowerShell Set-Acl On Windows Folder - PsScript
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1222
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Set-Acl %' AND ScriptBlockText ILIKE '%-AclObject %') AND (ScriptBlockText ILIKE '%-Path "C:\\Windows%' OR ScriptBlockText ILIKE '%-Path "C:/Windows%' OR ScriptBlockText ILIKE '%-Path ''C:\\Windows%' OR ScriptBlockText ILIKE '%-Path ''C:/Windows%' OR ScriptBlockText ILIKE '%-Path C:\\Windows%' OR ScriptBlockText ILIKE '%-Path C:/Windows%' OR ScriptBlockText ILIKE '%-Path $env:windir%' OR ScriptBlockText ILIKE '%-Path "$env:windir%' OR ScriptBlockText ILIKE '%-Path ''$env:windir%') AND (ScriptBlockText ILIKE '%FullControl%' OR ScriptBlockText ILIKE '%Allow%')

@@ -1,0 +1,12 @@
+id: 241e802a-b65e-484f-88cd-c2dc10f9206d
+name: Read Contents From Stdin Via Cmd.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.003
+rule: SELECT * FROM logs WHERE (OriginalFileName='Cmd.Exe' OR Image ILIKE '%\\cmd.exe') AND CommandLine ILIKE '%<%'

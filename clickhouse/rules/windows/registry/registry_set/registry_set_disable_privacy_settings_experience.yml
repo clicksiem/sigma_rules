@@ -1,0 +1,12 @@
+id: 0372e1f9-0fd2-40f7-be1b-a7b2b848fa7b
+name: Disable Privacy Settings Experience in Registry
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\Windows\\OOBE\\DisablePrivacyExperience' AND Details='DWORD (0x00000000)'

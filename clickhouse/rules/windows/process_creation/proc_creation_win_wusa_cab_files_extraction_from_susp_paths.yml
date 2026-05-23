@@ -1,0 +1,11 @@
+id: c74c0390-3e20-41fd-a69a-128f0275a5ea
+name: Cab File Extraction Via Wusa.EXE From Potentially Suspicious Paths
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wusa.exe' AND CommandLine ILIKE '%/extract:%') AND (CommandLine ILIKE '%:\\PerfLogs\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\Appdata\\Local\\Temp\\%')

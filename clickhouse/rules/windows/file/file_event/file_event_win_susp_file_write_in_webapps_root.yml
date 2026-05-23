@@ -1,0 +1,14 @@
+id: 89c42960-f244-4dad-9151-ae9b1a3287a2
+name: Suspicious File Write to Webapps Root Directory
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dotnet.exe' OR Image ILIKE '%\\w3wp.exe' OR Image ILIKE '%\\java.exe') AND (TargetFilename ILIKE '%\\apache%' OR TargetFilename ILIKE '%\\tomcat%') AND TargetFilename ILIKE '%\\webapps\\ROOT\\%' AND TargetFilename ILIKE '%.jsp'

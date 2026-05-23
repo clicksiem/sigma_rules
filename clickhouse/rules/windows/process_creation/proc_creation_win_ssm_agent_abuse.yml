@@ -1,0 +1,13 @@
+id: d20ee2f4-822c-4827-9e15-41500b1fff10
+name: Potential Amazon SSM Agent Hijacking
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal
+group: windows
+tags:
+- attack.command-and-control
+- attack.persistence
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\amazon-ssm-agent.exe' AND (CommandLine ILIKE '%-register %' AND CommandLine ILIKE '%-code %' AND CommandLine ILIKE '%-id %' AND CommandLine ILIKE '%-region %')

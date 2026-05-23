@@ -1,0 +1,11 @@
+id: b6ea3cc7-542f-43ef-bbe4-980fbed444c7
+name: Remote Server Service Abuse
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.lateral-movement
+rule: SELECT * FROM logs WHERE EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='4b324fc8-1670-01d3-1278-5a47bf6ee188'

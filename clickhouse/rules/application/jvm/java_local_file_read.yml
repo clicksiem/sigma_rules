@@ -1,0 +1,12 @@
+id: e032f5bc-4563-4096-ae3b-064bab588685
+name: Potential Local File Read Vulnerability In JVM Based Application
+level: 8
+size: '>0'
+active: true
+author:
+- Moti Harmats
+group: jvm
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'FileNotFoundException') AND hasToken(full_log, '/../../..')

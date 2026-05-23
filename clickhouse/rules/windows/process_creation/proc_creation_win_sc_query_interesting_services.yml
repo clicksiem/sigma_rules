@@ -1,0 +1,12 @@
+id: e83e8899-c9b2-483b-b355-5decc942b959
+name: Interesting Service Enumeration Via Sc.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.t1003
+- attack.credential-access
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' OR OriginalFileName='sc.exe') AND CommandLine ILIKE '%query%' AND CommandLine ILIKE '%termservice%'

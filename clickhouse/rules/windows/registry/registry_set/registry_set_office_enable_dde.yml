@@ -1,0 +1,12 @@
+id: 63647769-326d-4dde-a419-b925cc0caf42
+name: Enable Microsoft Dynamic Data Exchange
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1559.002
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Word\\Security\\AllowDDE' AND (Details IN ('DWORD (0x00000001)', 'DWORD (0x00000002)'))) OR ((TargetObject ILIKE '%\\Excel\\Security\\DisableDDEServerLaunch' OR TargetObject ILIKE '%\\Excel\\Security\\DisableDDEServerLookup') AND Details='DWORD (0x00000000)')

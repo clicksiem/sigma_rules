@@ -1,0 +1,12 @@
+id: 75d0a94e-6252-448d-a7be-d953dff527bb
+name: Remote XSL Execution Via Msxsl.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.stealth
+- attack.t1220
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\msxsl.exe' AND CommandLine ILIKE '%http%'

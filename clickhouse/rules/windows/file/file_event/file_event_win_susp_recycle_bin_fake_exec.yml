@@ -1,0 +1,12 @@
+id: cd8b36ac-8e4a-4c2f-a402-a29b8fbd5bca
+name: Suspicious File Creation Activity From Fake Recycle.Bin Folder
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%RECYCLERS.BIN\\%' OR Image ILIKE '%RECYCLER.BIN\\%') OR (TargetFilename ILIKE '%RECYCLERS.BIN\\%' OR TargetFilename ILIKE '%RECYCLER.BIN\\%')

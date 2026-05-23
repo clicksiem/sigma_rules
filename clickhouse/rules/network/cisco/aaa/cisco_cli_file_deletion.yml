@@ -1,0 +1,15 @@
+id: 71d65515-c436-43c0-841b-236b1f32c21e
+name: Cisco File Deletion
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.impact
+- attack.stealth
+- attack.t1070.004
+- attack.t1561.001
+- attack.t1561.002
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'erase') OR hasToken(full_log, 'delete') OR hasToken(full_log, 'format')

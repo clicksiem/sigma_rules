@@ -1,0 +1,14 @@
+id: 38e7f511-3f74-41d4-836e-f57dfa18eead
+name: Potential Malicious Usage of CloudTrail System Manager
+level: 8
+size: '>0'
+active: true
+author:
+- jamesc-grafana
+group: aws
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.t1566
+- attack.t1566.002
+rule: SELECT * FROM logs WHERE (eventName='SendCommand' AND eventSource='ssm.amazonaws.com') AND (errorCode='Success' OR isNull(errorCode))

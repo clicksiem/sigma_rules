@@ -1,0 +1,12 @@
+id: 5de06a6f-673a-4fc0-8d48-bcfe3837b033
+name: System Information Discovery Using sw_vers
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: macos
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE Image ILIKE '%/sw\_vers' AND (CommandLine ILIKE '%-buildVersion%' OR CommandLine ILIKE '%-productName%' OR CommandLine ILIKE '%-productVersion%')

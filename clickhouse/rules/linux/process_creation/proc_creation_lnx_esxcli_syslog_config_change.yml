@@ -1,0 +1,15 @@
+id: 38eb1dbb-011f-40b1-a126-cf03a0210563
+name: ESXi Syslog Configuration Change Via ESXCLI
+level: 5
+size: '>0'
+active: true
+author:
+- Cedric Maurugeon
+group: linux
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1685
+- attack.t1690
+- attack.t1059.012
+rule: SELECT * FROM logs WHERE Image ILIKE '%/esxcli' AND (CommandLine ILIKE '%system%' AND CommandLine ILIKE '%syslog%' AND CommandLine ILIKE '%config%') AND CommandLine ILIKE '% set%'

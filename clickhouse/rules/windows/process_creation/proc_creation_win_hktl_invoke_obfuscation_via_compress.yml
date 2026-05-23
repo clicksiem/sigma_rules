@@ -1,0 +1,14 @@
+id: 7eedcc9d-9fdb-4d94-9c54-474e8affc0c7
+name: Invoke-Obfuscation COMPRESS OBFUSCATION
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%new-object%' AND CommandLine ILIKE '%text.encoding]::ascii%') AND (CommandLine ILIKE '%system.io.compression.deflatestream%' OR CommandLine ILIKE '%system.io.streamreader%' OR CommandLine ILIKE '%readtoend(%')

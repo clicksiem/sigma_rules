@@ -1,0 +1,12 @@
+id: d00a9a72-2c09-4459-ad03-5e0a23351e36
+name: Suspicious LDAP-Attributes Used
+level: 8
+size: '>0'
+active: true
+author:
+- xknow @xknow_infosec
+group: windows
+tags:
+- attack.t1001.003
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE EventID=5136 AND AttributeValue ILIKE '%' AND (AttributeLDAPDisplayName IN ('primaryInternationalISDNNumber', 'otherFacsimileTelephoneNumber', 'primaryTelexNumber'))

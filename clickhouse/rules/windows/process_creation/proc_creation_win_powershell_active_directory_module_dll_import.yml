@@ -1,0 +1,13 @@
+id: 70bc5215-526f-4477-963c-a47a5c9ebd12
+name: Potential Active Directory Enumeration Using AD Module - ProcCreation
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.reconnaissance
+- attack.discovery
+- attack.impact
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%Import-Module %' OR CommandLine ILIKE '%ipmo %') AND CommandLine ILIKE '%Microsoft.ActiveDirectory.Management.dll%'

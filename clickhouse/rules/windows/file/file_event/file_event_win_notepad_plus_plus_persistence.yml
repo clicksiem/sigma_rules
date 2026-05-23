@@ -1,0 +1,11 @@
+id: 54127bd4-f541-4ac3-afdb-ea073f63f692
+name: Potential Persistence Via Notepad++ Plugins
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\Notepad++\\plugins\\%' AND TargetFilename ILIKE '%.dll') AND (NOT (Image ILIKE '%\\Notepad++\\updater\\gup.exe' OR (Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\Temp\\%' AND (Image ILIKE '%\\target.exe' OR Image ILIKE '%Installer.x64.exe')) OR (Image ILIKE '%\\npp.%' AND Image ILIKE '%.exe' AND (TargetFilename IN ('C:\\Program Files\\Notepad++\\plugins\\NppExport\\NppExport.dll', 'C:\\Program Files\\Notepad++\\plugins\\mimeTools\\mimeTools.dll', 'C:\\Program Files\\Notepad++\\plugins\\NppConverter\\NppConverter.dll', 'C:\\Program Files\\Notepad++\\plugins\\Config\\nppPluginList.dll')))))

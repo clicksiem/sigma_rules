@@ -1,0 +1,11 @@
+id: b6c718dd-8f53-4b9f-98d8-93fdca966969
+name: New Okta User Created
+level: 1
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: okta
+tags:
+- attack.credential-access
+rule: SELECT * FROM logs WHERE eventType='user.lifecycle.create'

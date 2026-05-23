@@ -1,0 +1,13 @@
+id: 16c37b52-b141-42a5-a3ea-bbe098444397
+name: Suspect Svchost Activity
+level: 8
+size: '>0'
+active: true
+author:
+- David Burkett, @signalblur
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%svchost.exe' AND Image ILIKE '%\\svchost.exe') AND (NOT ((ParentImage ILIKE '%\\rpcnet.exe' OR ParentImage ILIKE '%\\rpcnetp.exe') OR isNull(CommandLine)))

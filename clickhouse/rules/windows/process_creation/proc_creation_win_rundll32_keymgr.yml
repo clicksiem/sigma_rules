@@ -1,0 +1,12 @@
+id: a4694263-59a8-4608-a3a0-6f8d3a51664c
+name: Suspicious Key Manager Access
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND (CommandLine ILIKE '%keymgr%' AND CommandLine ILIKE '%KRShowKeyMgr%')

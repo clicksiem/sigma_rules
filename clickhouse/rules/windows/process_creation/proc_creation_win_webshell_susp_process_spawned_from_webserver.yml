@@ -1,0 +1,14 @@
+id: 8202070f-edeb-4d31-a010-a26c72ac5600
+name: Suspicious Process By Web Server Process
+level: 8
+size: '>0'
+active: true
+author:
+- Thomas Patzke, Florian Roth (Nextron Systems), Zach Stanford @svch0st, Tim Shelton, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1505.003
+- attack.t1190
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\caddy.exe' OR ParentImage ILIKE '%\\httpd.exe' OR ParentImage ILIKE '%\\nginx.exe' OR ParentImage ILIKE '%\\php-cgi.exe' OR ParentImage ILIKE '%\\php.exe' OR ParentImage ILIKE '%\\tomcat.exe' OR ParentImage ILIKE '%\\UMWorkerProcess.exe' OR ParentImage ILIKE '%\\w3wp.exe' OR ParentImage ILIKE '%\\ws\_TomcatService.exe') OR ((ParentImage ILIKE '%\\java.exe' OR ParentImage ILIKE '%\\javaw.exe') AND (ParentImage ILIKE '%-tomcat-%' OR ParentImage ILIKE '%\\tomcat%')) OR ((ParentImage ILIKE '%\\java.exe' OR ParentImage ILIKE '%\\javaw.exe') AND (ParentCommandLine ILIKE '%CATALINA\_HOME%' OR ParentCommandLine ILIKE '%catalina.home%' OR ParentCommandLine ILIKE '%catalina.jar%'))) AND (Image ILIKE '%\\arp.exe' OR Image ILIKE '%\\at.exe' OR Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\bitsadmin.exe' OR Image ILIKE '%\\certutil.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\dsget.exe' OR Image ILIKE '%\\hostname.exe' OR Image ILIKE '%\\nbtstat.exe' OR Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe' OR Image ILIKE '%\\netdom.exe' OR Image ILIKE '%\\netsh.exe' OR Image ILIKE '%\\nltest.exe' OR Image ILIKE '%\\ntdsutil.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\qprocess.exe' OR Image ILIKE '%\\query.exe' OR Image ILIKE '%\\qwinsta.exe' OR Image ILIKE '%\\reg.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\sc.exe' OR Image ILIKE '%\\sh.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\wusa.exe') AND (NOT ((ParentImage ILIKE '%\\java.exe' AND CommandLine ILIKE '%Windows\\system32\\cmd.exe /c C:\\ManageEngine\\ADManager "Plus\\ES\\bin\\elasticsearch.bat -Enode.name=RMP-NODE1 -pelasticsearch-pid.txt') OR (ParentImage ILIKE '%\\java.exe' AND (CommandLine ILIKE '%sc query%' AND CommandLine ILIKE '%ADManager Plus%'))))

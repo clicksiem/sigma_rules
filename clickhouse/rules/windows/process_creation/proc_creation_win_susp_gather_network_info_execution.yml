@@ -1,0 +1,14 @@
+id: 07aa184a-870d-413d-893a-157f317f6f58
+name: Suspicious Reconnaissance Activity Via GatherNetworkInfo.VBS
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.execution
+- attack.t1615
+- attack.t1059.005
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%gatherNetworkInfo.vbs%' AND (NOT (Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\wscript.exe'))

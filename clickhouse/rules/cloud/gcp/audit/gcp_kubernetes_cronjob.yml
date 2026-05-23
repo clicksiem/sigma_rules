@@ -1,0 +1,13 @@
+id: cd3a808c-c7b7-4c50-a2f3-f4cfcd436435
+name: Google Cloud Kubernetes CronJob
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` ILIKE 'io.k8s.api.batch.v%.Job' OR `gcp.audit.method_name` ILIKE 'io.k8s.api.batch.v%.CronJob'

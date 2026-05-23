@@ -1,0 +1,12 @@
+id: aa1697b7-d611-4f9a-9cb2-5125b4ccfd5c
+name: Password Dumper Activity on LSASS
+level: 8
+size: '>0'
+active: true
+author:
+- sigma
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE EventID=4656 AND ProcessName ILIKE '%\\lsass.exe' AND AccessMask='0x705' AND ObjectType ILIKE 'SAM\_DOMAIN'

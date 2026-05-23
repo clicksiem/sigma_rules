@@ -1,0 +1,12 @@
+id: b094d9fb-b1ad-4650-9f1a-fb7be9f1d34b
+name: Cisco Show Commands Input
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.credential-access
+- attack.t1552.003
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'show history') OR hasToken(full_log, 'show history all') OR hasToken(full_log, 'show logging')

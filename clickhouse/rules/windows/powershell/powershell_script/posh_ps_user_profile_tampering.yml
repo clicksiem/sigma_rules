@@ -1,0 +1,13 @@
+id: 05b3e303-faf0-4f4a-9b30-46cc13e69152
+name: Potential Persistence Via PowerShell User Profile Using Add-Content
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.013
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Add-Content $profile%' AND (ScriptBlockText ILIKE '%-Value "IEX %' OR ScriptBlockText ILIKE '%-Value "Invoke-Expression%' OR ScriptBlockText ILIKE '%-Value "Invoke-WebRequest%' OR ScriptBlockText ILIKE '%-Value "Start-Process%' OR ScriptBlockText ILIKE '%-Value ''IEX %' OR ScriptBlockText ILIKE '%-Value ''Invoke-Expression%' OR ScriptBlockText ILIKE '%-Value ''Invoke-WebRequest%' OR ScriptBlockText ILIKE '%-Value ''Start-Process%')

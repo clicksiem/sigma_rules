@@ -1,0 +1,12 @@
+id: e13f668e-7f95-443d-98d2-1816a7648a7b
+name: Detected Windows Software Discovery
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.discovery
+- attack.t1518
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\reg.exe' AND (CommandLine ILIKE '%query%' AND CommandLine ILIKE '%\\software\\%' AND CommandLine ILIKE '%/v%' AND CommandLine ILIKE '%svcversion%')

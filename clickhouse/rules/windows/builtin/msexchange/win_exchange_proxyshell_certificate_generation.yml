@@ -1,0 +1,12 @@
+id: b7bc7038-638b-4ffd-880c-292c692209ef
+name: Certificate Request Export to Exchange Webserver
+level: 10
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE (hasToken(full_log, 'New-ExchangeCertificate') AND hasToken(full_log, ' -GenerateRequest') AND hasToken(full_log, ' -BinaryEncoded') AND hasToken(full_log, ' -RequestFile')) AND (hasToken(full_log, '\\\\localhost\\C$') OR hasToken(full_log, '\\\\127.0.0.1\\C$') OR hasToken(full_log, 'C:\\inetpub') OR hasToken(full_log, '.aspx'))

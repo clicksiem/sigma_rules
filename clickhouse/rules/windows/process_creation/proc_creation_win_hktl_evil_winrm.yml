@@ -1,0 +1,12 @@
+id: a197e378-d31b-41c0-9635-cfdf1c1bb423
+name: HackTool - WinRM Access Via Evil-WinRM
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.006
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\ruby.exe' AND (CommandLine ILIKE '%-i %' AND CommandLine ILIKE '%-u %' AND CommandLine ILIKE '%-p %')

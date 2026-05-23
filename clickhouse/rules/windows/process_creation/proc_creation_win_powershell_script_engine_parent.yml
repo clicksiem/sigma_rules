@@ -1,0 +1,12 @@
+id: 95eadcb2-92e4-4ed1-9031-92547773a6db
+name: Suspicious PowerShell Invocation From Script Engines
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\wscript.exe' OR ParentImage ILIKE '%\\cscript.exe') AND (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe')) AND (NOT CurrentDirectory ILIKE '%\\Health Service State\\%')

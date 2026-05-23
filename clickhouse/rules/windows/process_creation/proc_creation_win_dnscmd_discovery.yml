@@ -1,0 +1,12 @@
+id: b6457d63-d2a2-4e29-859d-4e7affc153d1
+name: Potential Discovery Activity Via Dnscmd.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- '@gott_cyber'
+group: windows
+tags:
+- attack.discovery
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\dnscmd.exe' AND (CommandLine ILIKE '%/enumrecords%' OR CommandLine ILIKE '%/enumzones%' OR CommandLine ILIKE '%/ZonePrint%' OR CommandLine ILIKE '%/info%')

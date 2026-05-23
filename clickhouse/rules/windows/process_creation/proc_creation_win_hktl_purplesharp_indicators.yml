@@ -1,0 +1,12 @@
+id: ff23ffbc-3378-435e-992f-0624dcf93ab4
+name: HackTool - PurpleSharp Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.t1587
+- attack.resource-development
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\purplesharp%' OR OriginalFileName='PurpleSharp.exe') OR (CommandLine ILIKE '%xyz123456.exe%' OR CommandLine ILIKE '%PurpleSharp%')

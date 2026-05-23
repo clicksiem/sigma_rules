@@ -1,0 +1,11 @@
+id: 4c7f49ee-2638-43bb-b85b-ce676c30b260
+name: Assembly DLL Creation Via AspNetCompiler
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\aspnet\_compiler.exe' AND (TargetFilename ILIKE '%\\Temporary ASP.NET Files\\%' AND TargetFilename ILIKE '%\\assembly\\tmp\\%' AND TargetFilename ILIKE '%.dll%')

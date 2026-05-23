@@ -1,0 +1,13 @@
+id: bb76d96b-821c-47cf-944b-7ce377864492
+name: Suspicious NTLM Authentication on the Printer Spooler Service
+level: 8
+size: '>0'
+active: true
+author:
+- Elastic (idea), Tobias Michalski (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.credential-access
+- attack.t1212
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND ((CommandLine ILIKE '%C:\\windows\\system32\\davclnt.dll,DavSetCookie%' AND CommandLine ILIKE '%http%') AND (CommandLine ILIKE '%spoolss%' OR CommandLine ILIKE '%srvsvc%' OR CommandLine ILIKE '%/print/pipe/%'))

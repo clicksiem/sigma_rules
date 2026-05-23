@@ -1,0 +1,13 @@
+id: 0b80ade5-6997-4b1d-99a1-71701778ea61
+name: Imports Registry Key From an ADS
+level: 8
+size: '>0'
+active: true
+author:
+- Oddvar Moe, Sander Wiebing, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\regedit.exe' OR OriginalFileName='REGEDIT.EXE') AND ((CommandLine ILIKE '% /i %' OR CommandLine ILIKE '%.reg%') AND match(CommandLine, ':[^ \\]'))) AND (NOT (CommandLine ILIKE '% -e %' OR CommandLine ILIKE '% /e %' OR CommandLine ILIKE '% –e %' OR CommandLine ILIKE '% —e %' OR CommandLine ILIKE '% ―e %' OR CommandLine ILIKE '% -a %' OR CommandLine ILIKE '% /a %' OR CommandLine ILIKE '% –a %' OR CommandLine ILIKE '% —a %' OR CommandLine ILIKE '% ―a %' OR CommandLine ILIKE '% -c %' OR CommandLine ILIKE '% /c %' OR CommandLine ILIKE '% –c %' OR CommandLine ILIKE '% —c %' OR CommandLine ILIKE '% ―c %'))

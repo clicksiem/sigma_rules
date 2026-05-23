@@ -1,0 +1,15 @@
+id: e81528db-fc02-45e8-8e98-4e84aba1f10b
+name: Network Connection Initiated Via Notepad.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- EagleEye Team
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.command-and-control
+- attack.execution
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\notepad.exe' AND (NOT DestinationPort=9100)

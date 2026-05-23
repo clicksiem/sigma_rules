@@ -1,0 +1,12 @@
+id: f24ab7a8-f09a-4319-82c1-915586aa642b
+name: FortiGate - New Firewall Policy Added
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi @pedrinazziM (InTheCyber)
+group: fortigate
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE action='Add' AND cfgpath='firewall.policy'

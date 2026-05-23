@@ -1,0 +1,12 @@
+id: 06125661-3814-4e03-bfa2-1e4411c60ac3
+name: Backup Files Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wt.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\regsvr32.exe') AND (TargetFilename ILIKE '%.VHD' OR TargetFilename ILIKE '%.bac' OR TargetFilename ILIKE '%.bak' OR TargetFilename ILIKE '%.wbcat' OR TargetFilename ILIKE '%.bkf' OR TargetFilename ILIKE '%.set' OR TargetFilename ILIKE '%.win' OR TargetFilename ILIKE '%.dsk')

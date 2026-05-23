@@ -1,0 +1,13 @@
+id: b4c8da4a-1c12-46b0-8a2b-0a8521d03442
+name: Restricted Software Access By SRP
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.lateral-movement
+- attack.execution
+- attack.t1072
+rule: SELECT * FROM logs WHERE Provider_Name='Microsoft-Windows-SoftwareRestrictionPolicies' AND (EventID IN (865, 866, 867, 868, 882))

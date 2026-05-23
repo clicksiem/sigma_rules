@@ -1,0 +1,12 @@
+id: adf876b3-f1f8-4aa9-a4e4-a64106feec06
+name: Testing Usage of Uncommonly Used Port
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1571
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Test-NetConnection%' AND ScriptBlockText ILIKE '%-ComputerName %' AND ScriptBlockText ILIKE '%-port %') AND (NOT (ScriptBlockText ILIKE '% 443 %' OR ScriptBlockText ILIKE '% 80 %'))

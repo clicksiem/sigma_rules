@@ -1,0 +1,14 @@
+id: c947b146-0abc-4c87-9c64-b17e9d7274a2
+name: Shadow Copies Deletion Using Operating Systems Utilities
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Michael Haag, Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community, Andreas Hunkeler (@Karneades)
+group: windows
+tags:
+- attack.impact
+- attack.stealth
+- attack.t1070
+- attack.t1490
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\vssadmin.exe' OR Image ILIKE '%\\diskshadow.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll', 'wmic.exe', 'VSSADMIN.EXE', 'diskshadow.exe'))) AND (CommandLine ILIKE '%shadow%' AND CommandLine ILIKE '%delete%')) OR ((Image ILIKE '%\\wbadmin.exe' OR OriginalFileName='WBADMIN.EXE') AND (CommandLine ILIKE '%delete%' AND CommandLine ILIKE '%catalog%' AND CommandLine ILIKE '%quiet%')) OR ((Image ILIKE '%\\vssadmin.exe' OR OriginalFileName='VSSADMIN.EXE') AND ((CommandLine ILIKE '%resize%' AND CommandLine ILIKE '%shadowstorage%') AND (CommandLine ILIKE '%unbounded%' OR CommandLine ILIKE '%/MaxSize=%')))

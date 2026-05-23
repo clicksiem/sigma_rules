@@ -1,0 +1,12 @@
+id: 43e26eb5-cd58-48d1-8ce9-a273f5d298d8
+name: Potential Container Discovery Via Inodes Listing
+level: 3
+size: '>0'
+active: true
+author:
+- Seth Hanford
+group: linux
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE Image ILIKE '%/ls' AND (CommandLine ILIKE '% /' OR CommandLine ILIKE '% / %') AND match(CommandLine, '(?:\s-[^-\s]{0,20}i|\s--inode\s)') AND match(CommandLine, '(?:\s-[^-\s]{0,20}d|\s--directory\s)')

@@ -1,0 +1,12 @@
+id: 2c95fa8a-8b8d-4787-afce-7117ceb8e3da
+name: Time Machine Backup Disabled Via Tmutil - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Pratinav Chandra
+group: macos
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/tmutil' OR CommandLine ILIKE '%tmutil%') AND CommandLine ILIKE '%disable%'

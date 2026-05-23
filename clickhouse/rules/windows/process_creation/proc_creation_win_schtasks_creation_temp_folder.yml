@@ -1,0 +1,14 @@
+id: 39019a4e-317f-4ce3-ae63-309a8c6b53c5
+name: Suspicious Scheduled Task Creation Involving Temp Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '% /create %' AND CommandLine ILIKE '% /sc once %' AND CommandLine ILIKE '%\\Temp\\%')

@@ -1,0 +1,14 @@
+id: 277a4393-446c-449a-b0ed-7fdc7795244c
+name: Renamed FTP.EXE Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059
+- attack.t1202
+rule: SELECT * FROM logs WHERE OriginalFileName='ftp.exe' AND (NOT Image ILIKE '%\\ftp.exe')

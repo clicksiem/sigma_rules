@@ -1,0 +1,12 @@
+id: eca8ae39-5c3c-4321-b538-9e64fe25822e
+name: Installation of WSL Kali-Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wsl.exe' OR OriginalFileName='wsl') AND (CommandLine ILIKE '% --install %' OR CommandLine ILIKE '% -i %') AND CommandLine ILIKE '%kali%'

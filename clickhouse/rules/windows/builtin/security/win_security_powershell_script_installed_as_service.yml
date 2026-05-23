@@ -1,0 +1,12 @@
+id: 2a926e6a-4b81-4011-8a96-e36cc8c04302
+name: PowerShell Scripts Installed as Services - Security
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ServiceFileName ILIKE '%powershell%' OR ServiceFileName ILIKE '%pwsh%')

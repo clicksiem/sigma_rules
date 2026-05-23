@@ -1,0 +1,12 @@
+id: ded2b07a-d12f-4284-9b76-653e37b6c8b0
+name: Potentially Suspicious Ping/Copy Command Combination
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND (CommandLine ILIKE '%ping%' AND CommandLine ILIKE '%copy %') AND (CommandLine ILIKE '% -n %' OR CommandLine ILIKE '% /n %' OR CommandLine ILIKE '% –n %' OR CommandLine ILIKE '% —n %' OR CommandLine ILIKE '% ―n %') AND (CommandLine ILIKE '% -y %' OR CommandLine ILIKE '% /y %' OR CommandLine ILIKE '% –y %' OR CommandLine ILIKE '% —y %' OR CommandLine ILIKE '% ―y %')

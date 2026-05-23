@@ -1,0 +1,12 @@
+id: c8a180d6-47a3-4345-a609-53f9c3d834fc
+name: Suspicious Reconnaissance Activity Using Get-LocalGroupMember Cmdlet
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Get-LocalGroupMember %' AND (CommandLine ILIKE '%domain admins%' OR CommandLine ILIKE '% administrator%' OR CommandLine ILIKE '% administrateur%' OR CommandLine ILIKE '%enterprise admins%' OR CommandLine ILIKE '%Exchange Trusted Subsystem%' OR CommandLine ILIKE '%Remote Desktop Users%' OR CommandLine ILIKE '%Utilisateurs du Bureau à distance%' OR CommandLine ILIKE '%Usuarios de escritorio remoto%')

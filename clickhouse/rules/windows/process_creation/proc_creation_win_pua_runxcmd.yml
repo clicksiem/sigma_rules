@@ -1,0 +1,13 @@
+id: 93199800-b52a-4dec-b762-75212c196542
+name: PUA - RunXCmd Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% /account=system %' OR CommandLine ILIKE '% /account=ti %') AND CommandLine ILIKE '%/exec=%'

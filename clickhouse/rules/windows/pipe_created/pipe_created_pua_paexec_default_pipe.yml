@@ -1,0 +1,12 @@
+id: f6451de4-df0a-41fa-8d72-b39f54a08db5
+name: PUA - PAExec Default Named Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE PipeName ILIKE '\\PAExec%'

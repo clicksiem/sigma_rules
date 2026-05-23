@@ -1,0 +1,12 @@
+id: 49e5bc24-8b86-49f1-b743-535f332c2856
+name: Microsoft Defender Tamper Protection Trigger
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=5013 AND (Value ILIKE '%\\Windows Defender\\DisableAntiSpyware' OR Value ILIKE '%\\Windows Defender\\DisableAntiVirus' OR Value ILIKE '%\\Windows Defender\\Scan\\DisableArchiveScanning' OR Value ILIKE '%\\Windows Defender\\Scan\\DisableScanningNetworkFiles' OR Value ILIKE '%\\Real-Time Protection\\DisableRealtimeMonitoring' OR Value ILIKE '%\\Real-Time Protection\\DisableBehaviorMonitoring' OR Value ILIKE '%\\Real-Time Protection\\DisableIOAVProtection' OR Value ILIKE '%\\Real-Time Protection\\DisableScriptScanning')

@@ -1,0 +1,12 @@
+id: 29f171d7-aa47-42c7-9c7b-3c87938164d9
+name: DNS Query for Anonfiles.com Domain - DNS Client
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1567.002
+rule: SELECT * FROM logs WHERE EventID=3008 AND QueryName ILIKE '%.anonfiles.com%'

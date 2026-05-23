@@ -1,0 +1,11 @@
+id: 693a44e9-7f26-4cb6-b787-214867672d3a
+name: Sysmon File Executable Creation Detected
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE EventID=29

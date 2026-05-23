@@ -1,0 +1,11 @@
+id: e386b9b5-af12-450e-afff-761730fb8a98
+name: AWS VPC Flow Logs Deleted
+level: 8
+size: '>0'
+active: true
+author:
+- Ivan Saakov
+group: aws
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE eventName='DeleteFlowLogs' AND (errorCode='Success' OR isNull(errorCode))

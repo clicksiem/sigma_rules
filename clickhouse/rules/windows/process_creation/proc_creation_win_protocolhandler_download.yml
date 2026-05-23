@@ -1,0 +1,12 @@
+id: 104cdb48-a7a8-4ca7-a453-32942c6e5dcb
+name: File Download Using ProtocolHandler.exe
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\protocolhandler.exe' OR OriginalFileName='ProtocolHandler.exe') AND (CommandLine ILIKE '%ftp://%' OR CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

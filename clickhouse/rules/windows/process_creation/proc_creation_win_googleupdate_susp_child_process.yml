@@ -1,0 +1,11 @@
+id: 84b1ecf9-6eff-4004-bafb-bae5c0e251b2
+name: Potentially Suspicious GoogleUpdate Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\GoogleUpdate.exe' AND (NOT ((Image ILIKE '%\\Google%' OR (Image ILIKE '%\\setup.exe' OR Image ILIKE '%chrome\_updater.exe' OR Image ILIKE '%chrome\_installer.exe')) OR isNull(Image)))

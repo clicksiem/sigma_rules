@@ -1,0 +1,13 @@
+id: 2db93a3f-3249-4f73-9e68-0e77a0f8ae7e
+name: Remote Access Tool - TacticalRMM Agent Registration to Potentially Attacker-Controlled Server
+level: 5
+size: '>0'
+active: true
+author:
+- Ahmed Nosir (@egycondor)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\TacticalAgent\\tacticalrmm.exe%' AND (CommandLine ILIKE '%--api%' AND CommandLine ILIKE '%--auth%' AND CommandLine ILIKE '%--client-id%' AND CommandLine ILIKE '%--site-id%' AND CommandLine ILIKE '%--agent-type%')

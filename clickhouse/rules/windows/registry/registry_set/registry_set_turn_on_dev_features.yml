@@ -1,0 +1,11 @@
+id: b110ebaf-697f-4da1-afd5-b536fa27a2c1
+name: Potential Signing Bypass Via Windows Developer Features - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock%' OR TargetObject ILIKE '%\\Policies\\Microsoft\\Windows\\Appx\\%') AND (TargetObject ILIKE '%\\AllowAllTrustedApps' OR TargetObject ILIKE '%\\AllowDevelopmentWithoutDevLicense') AND Details='DWORD (0x00000001)'

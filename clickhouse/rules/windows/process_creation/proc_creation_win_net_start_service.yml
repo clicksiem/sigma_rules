@@ -1,0 +1,12 @@
+id: 2a072a96-a086-49fa-bcb5-15cc5a619093
+name: Start Windows Service Via Net.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND CommandLine ILIKE '% start %'

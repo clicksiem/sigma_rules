@@ -1,0 +1,15 @@
+id: 438025f9-5856-4663-83f7-52f878a70a50
+name: Suspicious Microsoft Office Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis, FPT.EagleEye Team, Vadim Khrykov, Cyb3rEng, Michael Haag, Christopher Peacock @securepeacock, @scythe_io
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1047
+- attack.t1204.002
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\EQNEDT32.EXE' OR ParentImage ILIKE '%\\EXCEL.EXE' OR ParentImage ILIKE '%\\MSACCESS.EXE' OR ParentImage ILIKE '%\\MSPUB.exe' OR ParentImage ILIKE '%\\ONENOTE.EXE' OR ParentImage ILIKE '%\\POWERPNT.exe' OR ParentImage ILIKE '%\\VISIO.exe' OR ParentImage ILIKE '%\\WINWORD.EXE' OR ParentImage ILIKE '%\\wordpad.exe' OR ParentImage ILIKE '%\\wordview.exe') AND (((OriginalFileName IN ('bitsadmin.exe', 'CertOC.exe', 'CertUtil.exe', 'Cmd.Exe', 'CMSTP.EXE', 'cscript.exe', 'curl.exe', 'HH.exe', 'IEExec.exe', 'InstallUtil.exe', 'javaw.exe', 'Microsoft.Workflow.Compiler.exe', 'msdt.exe', 'MSHTA.EXE', 'msiexec.exe', 'Msxsl.exe', 'odbcconf.exe', 'pcalua.exe', 'PowerShell.EXE', 'RegAsm.exe', 'RegSvcs.exe', 'REGSVR32.exe', 'RUNDLL32.exe', 'schtasks.exe', 'ScriptRunner.exe', 'wmic.exe', 'WorkFolders.exe', 'wscript.exe')) OR (Image ILIKE '%\\AppVLP.exe' OR Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\bitsadmin.exe' OR Image ILIKE '%\\certoc.exe' OR Image ILIKE '%\\certutil.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cmstp.exe' OR Image ILIKE '%\\control.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\curl.exe' OR Image ILIKE '%\\forfiles.exe' OR Image ILIKE '%\\hh.exe' OR Image ILIKE '%\\ieexec.exe' OR Image ILIKE '%\\installutil.exe' OR Image ILIKE '%\\javaw.exe' OR Image ILIKE '%\\mftrace.exe' OR Image ILIKE '%\\Microsoft.Workflow.Compiler.exe' OR Image ILIKE '%\\msbuild.exe' OR Image ILIKE '%\\msdt.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\msidb.exe' OR Image ILIKE '%\\msiexec.exe' OR Image ILIKE '%\\msxsl.exe' OR Image ILIKE '%\\odbcconf.exe' OR Image ILIKE '%\\pcalua.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regasm.exe' OR Image ILIKE '%\\regsvcs.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\scrcons.exe' OR Image ILIKE '%\\scriptrunner.exe' OR Image ILIKE '%\\sh.exe' OR Image ILIKE '%\\svchost.exe' OR Image ILIKE '%\\verclsid.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\workfolders.exe' OR Image ILIKE '%\\wscript.exe')) OR (Image ILIKE '%\\AppData\\%' OR Image ILIKE '%\\Users\\Public\\%' OR Image ILIKE '%\\ProgramData\\%' OR Image ILIKE '%\\Windows\\Tasks\\%' OR Image ILIKE '%\\Windows\\Temp\\%' OR Image ILIKE '%\\Windows\\System32\\Tasks\\%'))

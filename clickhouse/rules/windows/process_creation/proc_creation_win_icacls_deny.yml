@@ -1,0 +1,12 @@
+id: 4ae81040-fc1c-4249-bfa3-938d260214d9
+name: Use Icacls to Hide File to Everyone
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.001
+rule: SELECT * FROM logs WHERE (OriginalFileName='iCACLS.EXE' OR Image ILIKE '%\\icacls.exe') AND (CommandLine ILIKE '%/deny%' AND CommandLine ILIKE '%S-1-1-0:%')

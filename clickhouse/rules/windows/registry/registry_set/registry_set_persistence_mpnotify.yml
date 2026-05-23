@@ -1,0 +1,11 @@
+id: 92772523-d9c1-4c93-9547-b0ca500baba3
+name: Potential Persistence Via Mpnotify
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\mpnotify%'

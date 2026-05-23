@@ -1,0 +1,14 @@
+id: c9fbe8e9-119d-40a6-9b59-dd58a5d84429
+name: Potential Ransomware or Unauthorized MBR Tampering Via Bcdedit.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- '@neu5ron'
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+- attack.persistence
+- attack.t1542.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\bcdedit.exe' OR OriginalFileName='bcdedit.exe') AND (CommandLine ILIKE '%delete%' OR CommandLine ILIKE '%deletevalue%' OR CommandLine ILIKE '%import%' OR CommandLine ILIKE '%safeboot%' OR CommandLine ILIKE '%network%')

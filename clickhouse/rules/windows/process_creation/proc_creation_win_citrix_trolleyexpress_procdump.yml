@@ -1,0 +1,14 @@
+id: 4c0aaedc-154c-4427-ada0-d80ef9c9deb6
+name: Process Access via TrolleyExpress Exclusion
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\TrolleyExpress 7%' OR CommandLine ILIKE '%\\TrolleyExpress 8%' OR CommandLine ILIKE '%\\TrolleyExpress 9%' OR CommandLine ILIKE '%\\TrolleyExpress.exe 7%' OR CommandLine ILIKE '%\\TrolleyExpress.exe 8%' OR CommandLine ILIKE '%\\TrolleyExpress.exe 9%' OR CommandLine ILIKE '%\\TrolleyExpress.exe -ma %') OR (Image ILIKE '%\\TrolleyExpress.exe' AND (NOT (OriginalFileName ILIKE '%CtxInstall%' OR isNull(OriginalFileName))))

@@ -1,0 +1,14 @@
+id: 66e563f9-1cbd-4a22-a957-d8b7c0f44372
+name: HackTool - XORDump Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1003.001
+- attack.credential-access
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\xordump.exe' OR (CommandLine ILIKE '% -process lsass.exe %' OR CommandLine ILIKE '% -m comsvcs %' OR CommandLine ILIKE '% -m dbghelp %' OR CommandLine ILIKE '% -m dbgcore %')

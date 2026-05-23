@@ -1,0 +1,14 @@
+id: ac20ae82-8758-4f38-958e-b44a3140ca88
+name: Invoke-Obfuscation Via Use MSHTA
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%set%' AND CommandLine ILIKE '%&&%' AND CommandLine ILIKE '%mshta%' AND CommandLine ILIKE '%vbscript:createobject%' AND CommandLine ILIKE '%.run%' AND CommandLine ILIKE '%(window.close)%'

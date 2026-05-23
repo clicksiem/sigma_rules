@@ -1,0 +1,15 @@
+id: bb0e87ce-c89f-4857-84fa-095e4483e9cb
+name: Suspicious Child Process of Notepad++ Updater - GUP.Exe
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1195.002
+- attack.initial-access
+- attack.t1557
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\gup.exe' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\mshta.exe') OR (CommandLine ILIKE '%bitsadmin%' OR CommandLine ILIKE '%certutil%' OR CommandLine ILIKE '%curl%' OR CommandLine ILIKE '%finger%' OR CommandLine ILIKE '%forfiles%' OR CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%wget%'))

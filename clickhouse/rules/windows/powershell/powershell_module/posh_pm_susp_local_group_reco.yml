@@ -1,0 +1,12 @@
+id: cef24b90-dddc-4ae1-a09a-8764872f69fc
+name: Suspicious Get Local Groups Information
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE ((Payload ILIKE '%get-localgroup %' OR Payload ILIKE '%get-localgroupmember %') OR (ContextInfo ILIKE '%get-localgroup %' OR ContextInfo ILIKE '%get-localgroupmember %')) OR (((Payload ILIKE '%get-wmiobject %' OR Payload ILIKE '%gwmi %' OR Payload ILIKE '%get-ciminstance %' OR Payload ILIKE '%gcim %') OR (ContextInfo ILIKE '%get-wmiobject %' AND ContextInfo ILIKE '%gwmi %' AND ContextInfo ILIKE '%get-ciminstance %' AND ContextInfo ILIKE '%gcim %')) AND (Payload ILIKE '%win32\_group%' OR ContextInfo ILIKE '%win32\_group%'))

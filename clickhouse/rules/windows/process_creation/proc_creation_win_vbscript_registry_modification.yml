@@ -1,0 +1,15 @@
+id: 921aa10f-2e74-4cca-9498-98f9ca4d6fdf
+name: Registry Modification Attempt Via VBScript
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.defense-impairment
+- attack.t1112
+- attack.t1059.005
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%CreateObject%' AND CommandLine ILIKE '%Wscript.shell%' AND CommandLine ILIKE '%.RegWrite%'

@@ -1,0 +1,12 @@
+id: eca81e8d-09e1-4d04-8614-c91f44fd0519
+name: New Firewall Rule Added In Windows Firewall Exception List Via WmiPrvSE.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE (EventID IN (2004, 2071, 2097)) AND Action=3 AND ModifyingApplication ILIKE '%:\\Windows\\System32\\wbem\\WmiPrvSE.exe'

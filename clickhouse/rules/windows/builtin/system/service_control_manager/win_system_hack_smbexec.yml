@@ -1,0 +1,14 @@
+id: 52a85084-6989-40c3-8f32-091e12e13f09
+name: smbexec.py Service Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Omer Faruk Celik
+group: windows
+tags:
+- attack.lateral-movement
+- attack.execution
+- attack.t1021.002
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (ServiceName='BTOBTO' OR (ImagePath ILIKE '%.bat & del %' OR ImagePath ILIKE '%\_\_output 2^>^&1 >%'))

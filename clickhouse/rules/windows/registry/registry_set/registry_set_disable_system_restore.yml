@@ -1,0 +1,12 @@
+id: 5de03871-5d46-4539-a82d-3aa992a69a83
+name: Registry Disable System Restore
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Policies\\Microsoft\\Windows NT\\SystemRestore%' OR TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore%') AND (TargetObject ILIKE '%DisableConfig' OR TargetObject ILIKE '%DisableSR') AND Details='DWORD (0x00000001)'

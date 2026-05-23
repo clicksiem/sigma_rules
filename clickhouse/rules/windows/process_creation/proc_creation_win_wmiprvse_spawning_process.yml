@@ -1,0 +1,12 @@
+id: d21374ff-f574-44a7-9998-4a8c8bf33d7d
+name: WmiPrvSE Spawned A Process
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\WmiPrvSe.exe' AND (NOT ((LogonId IN ('0x3e7', 'null')) OR (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') OR Image ILIKE '%\\WmiPrvSE.exe' OR Image ILIKE '%\\WerFault.exe' OR isNull(LogonId)))

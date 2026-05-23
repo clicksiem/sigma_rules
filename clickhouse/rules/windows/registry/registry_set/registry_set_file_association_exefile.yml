@@ -1,0 +1,11 @@
+id: 44a22d59-b175-4f13-8c16-cbaef5b581ff
+name: New File Association Using Exefile
+level: 8
+size: '>0'
+active: true
+author:
+- Andreas Hunkeler (@Karneades)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Classes\\.%' AND Details='exefile'

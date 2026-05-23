@@ -1,0 +1,14 @@
+id: e6313acd-208c-44fc-a0ff-db85d572e90e
+name: Network Reconnaissance Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1087
+- attack.t1082
+- car.2016-03-001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%nslookup%' AND CommandLine ILIKE '%\_ldap.\_tcp.dc.\_msdcs.%'

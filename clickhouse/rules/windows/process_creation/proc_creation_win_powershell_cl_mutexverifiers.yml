@@ -1,0 +1,12 @@
+id: 1e0e1a81-e79b-44bc-935b-ddb9c8006b3d
+name: Potential Script Proxy Execution Via CL_Mutexverifiers.ps1
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), oscd.community, Natalia Shornikova, frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1216
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND Image ILIKE '%\\powershell.exe' AND CommandLine ILIKE '% -nologo -windowstyle minimized -file %') AND (CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\Windows\\Temp\\%')

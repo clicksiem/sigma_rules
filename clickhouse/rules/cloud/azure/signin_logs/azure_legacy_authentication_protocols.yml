@@ -1,0 +1,17 @@
+id: 60f6535a-760f-42a9-be3f-c9a0a025906e
+name: Use of Legacy Authentication Protocols
+level: 8
+size: '>0'
+active: true
+author:
+- Yochana Henderson, '@Yochana-H'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.credential-access
+- attack.stealth
+- attack.t1078.004
+- attack.t1110
+rule: SELECT * FROM logs WHERE ActivityDetails='Sign-ins' AND (ClientApp IN ('Other client', 'IMAP', 'POP3', 'MAPI', 'SMTP', 'Exchange ActiveSync', 'Exchange Web Services')) AND Username='UPN'

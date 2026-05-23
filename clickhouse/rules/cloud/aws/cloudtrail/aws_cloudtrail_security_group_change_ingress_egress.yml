@@ -1,0 +1,12 @@
+id: 6fb77778-040f-4015-9440-572aa9b6b580
+name: Ingress/Egress Security Group Modification
+level: 5
+size: '>0'
+active: true
+author:
+- jamesc-grafana
+group: aws
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE eventSource='ec2.amazonaws.com' AND (eventName IN ('AuthorizeSecurityGroupEgress', 'AuthorizeSecurityGroupIngress', 'RevokeSecurityGroupEgress', 'RevokeSecurityGroupIngress'))

@@ -1,0 +1,12 @@
+id: ada3bc4f-f0fd-42b9-ba91-e105e8af7342
+name: Server Side Template Injection Strings
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: ''
+tags:
+- attack.stealth
+- attack.t1221
+rule: SELECT * FROM logs WHERE `cs-method`='GET' AND (hasToken(full_log, '={{') OR hasToken(full_log, '=\%7B\%7B') OR hasToken(full_log, '=${') OR hasToken(full_log, '=$\%7B') OR hasToken(full_log, '=<\%=') OR hasToken(full_log, '=\%3C\%25=') OR hasToken(full_log, '=@(') OR hasToken(full_log, 'freemarker.template.utility.Execute') OR hasToken(full_log, '.getClass().forName(''javax.script.ScriptEngineManager'')') OR hasToken(full_log, 'T(org.apache.commons.io.IOUtils)')) AND (NOT `sc-status`=404)

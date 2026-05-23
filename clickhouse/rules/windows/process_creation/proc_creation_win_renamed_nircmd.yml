@@ -1,0 +1,14 @@
+id: 264982dc-dbad-4dce-b707-1e0d3e0f73d9
+name: Renamed NirCmd.EXE Execution
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059
+- attack.t1202
+rule: SELECT * FROM logs WHERE OriginalFileName='NirCmd.exe' AND (NOT (Image ILIKE '%\\nircmd.exe' OR Image ILIKE '%\\nircmdc.exe'))

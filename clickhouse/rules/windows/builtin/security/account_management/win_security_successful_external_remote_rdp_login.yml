@@ -1,0 +1,18 @@
+id: 259a9cdf-c4dd-4fa2-b243-2269e5ab18a2
+name: External Remote RDP Logon from Public IP
+level: 5
+size: '>0'
+active: true
+author:
+- Micah Babinski (@micahbabinski), Zach Mathis (@yamatosecurity)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.credential-access
+- attack.stealth
+- attack.t1133
+- attack.t1078
+- attack.t1110
+rule: SELECT * FROM logs WHERE (EventID=4624 AND LogonType=10) AND (NOT ((isIPAddressInRange(IpAddress, '::1/128') OR isIPAddressInRange(IpAddress, '10.0.0.0/8') OR isIPAddressInRange(IpAddress, '127.0.0.0/8') OR isIPAddressInRange(IpAddress, '172.16.0.0/12') OR isIPAddressInRange(IpAddress, '192.168.0.0/16') OR isIPAddressInRange(IpAddress, '169.254.0.0/16') OR isIPAddressInRange(IpAddress, 'fc00::/7') OR isIPAddressInRange(IpAddress, 'fe80::/10')) OR IpAddress='-'))

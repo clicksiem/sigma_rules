@@ -1,0 +1,13 @@
+id: 92fa78e7-4d39-45f1-91a3-8b23f3f1088d
+name: Potential Startup Shortcut Persistence Via PowerShell.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Christopher Peacock '@securepeacock', SCYTHE
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND TargetFilename ILIKE '%\\start menu\\programs\\startup\\%' AND TargetFilename ILIKE '%.lnk'

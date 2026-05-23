@@ -1,0 +1,12 @@
+id: c70e019b-1479-4b65-b0cc-cd0c6093a599
+name: PowerShell Called from an Executable Version Mismatch
+level: 8
+size: '>0'
+active: true
+author:
+- Sean Metcalf (source), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (Data ILIKE '%EngineVersion=2.%' OR Data ILIKE '%EngineVersion=4.%' OR Data ILIKE '%EngineVersion=5.%') AND Data ILIKE '%HostVersion=3.%'

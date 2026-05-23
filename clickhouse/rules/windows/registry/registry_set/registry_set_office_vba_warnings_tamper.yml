@@ -1,0 +1,13 @@
+id: 91239011-fe3c-4b54-9f24-15c86bb65913
+name: Office Macros Warning Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Trent Liffick (@tliffick), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Security\\VBAWarnings' AND Details='DWORD (0x00000001)'

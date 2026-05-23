@@ -1,0 +1,12 @@
+id: caa06de8-fdef-4c91-826a-7f9e163eef4b
+name: RunDLL32 Spawning Explorer
+level: 8
+size: '>0'
+active: true
+author:
+- elhoim, CD_ROM_
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\rundll32.exe' AND Image ILIKE '%\\explorer.exe') AND (NOT ParentCommandLine ILIKE '%\\shell32.dll,Control\_RunDLL%')

@@ -1,0 +1,14 @@
+id: 547dfc53-ebf6-4afe-8d2e-793d9574975d
+name: OpenCanary - REDIS Action Command Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.credential-access
+- attack.collection
+- attack.t1003
+- attack.t1213
+rule: SELECT * FROM logs WHERE logtype=17001

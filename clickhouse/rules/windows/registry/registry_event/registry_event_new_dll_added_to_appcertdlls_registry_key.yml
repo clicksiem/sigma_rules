@@ -1,0 +1,13 @@
+id: 6aa1d992-5925-4e9f-a49b-845e51d1de01
+name: New DLL Added to AppCertDlls Registry Key
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.009
+rule: SELECT * FROM logs WHERE TargetObject ILIKE 'HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\AppCertDlls' OR NewName ILIKE 'HKLM\\SYSTEM\\CurentControlSet\\Control\\Session Manager\\AppCertDlls'

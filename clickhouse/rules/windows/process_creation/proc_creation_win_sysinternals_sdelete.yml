@@ -1,0 +1,12 @@
+id: a4824fca-976f-4964-b334-0621379e84c4
+name: Potential File Overwrite Via Sysinternals SDelete
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE OriginalFileName='sdelete.exe' AND (NOT (CommandLine ILIKE '% -h%' OR CommandLine ILIKE '% -c%' OR CommandLine ILIKE '% -z%' OR CommandLine ILIKE '% /?%'))

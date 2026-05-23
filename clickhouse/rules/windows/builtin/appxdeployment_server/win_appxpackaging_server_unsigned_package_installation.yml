@@ -1,0 +1,14 @@
+id: 9a025188-6f2d-42f8-bb2f-d3a83d24a5af
+name: Windows AppX Deployment Unsigned Package Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Haag, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1204.002
+- attack.t1553.005
+rule: SELECT * FROM logs WHERE EventID=603 AND Flags='8388608'

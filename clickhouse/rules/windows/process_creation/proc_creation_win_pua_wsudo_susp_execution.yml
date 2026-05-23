@@ -1,0 +1,13 @@
+id: bdeeabc9-ff2a-4a51-be59-bb253aac7891
+name: PUA - Wsudo Suspicious Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wsudo.exe' OR OriginalFileName='wsudo.exe' OR Description='Windows sudo utility' OR ParentImage ILIKE '%\\wsudo-bridge.exe') OR (CommandLine ILIKE '%-u System%' OR CommandLine ILIKE '%-uSystem%' OR CommandLine ILIKE '%-u TrustedInstaller%' OR CommandLine ILIKE '%-uTrustedInstaller%' OR CommandLine ILIKE '% --ti %')

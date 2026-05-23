@@ -1,0 +1,12 @@
+id: 059c5af9-5131-4d8d-92b2-de4ad6146712
+name: LiveKD Driver Creation By Uncommon Process
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\drivers\\LiveKdD.SYS' AND (NOT (Image ILIKE '%\\livekd.exe' OR Image ILIKE '%\\livek64.exe'))

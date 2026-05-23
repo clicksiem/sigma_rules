@@ -1,0 +1,16 @@
+id: dd3ee8cc-f751-41c9-ba53-5a32ed47e563
+name: Registry Modification of MS-settings Protocol Handler
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.defense-impairment
+- attack.t1548.002
+- attack.t1546.001
+- attack.t1112
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND CommandLine ILIKE '%add%') OR (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('powershell.exe', 'pwsh.dll'))) AND (CommandLine ILIKE '%New-ItemProperty%' OR CommandLine ILIKE '%Set-ItemProperty%' OR CommandLine ILIKE '%ni %' OR CommandLine ILIKE '%sp %'))) AND CommandLine ILIKE '%\\ms-settings\\shell\\open\\command%'

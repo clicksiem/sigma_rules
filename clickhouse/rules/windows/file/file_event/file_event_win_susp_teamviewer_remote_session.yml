@@ -1,0 +1,12 @@
+id: 162ab1e4-6874-4564-853c-53ec3ab8be01
+name: TeamViewer Remote Session
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\TeamViewer\\RemotePrinting\\tvprint.db' OR TargetFilename ILIKE '%\\TeamViewer\\TVNetwork.log') OR (TargetFilename ILIKE '%\\TeamViewer%' AND TargetFilename ILIKE '%\_Logfile.log%')

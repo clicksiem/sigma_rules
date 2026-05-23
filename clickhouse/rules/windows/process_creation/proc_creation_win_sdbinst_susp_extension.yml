@@ -1,0 +1,13 @@
+id: 18ee686c-38a3-4f65-9f44-48a077141f42
+name: Uncommon Extension Shim Database Installation Via Sdbinst.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sdbinst.exe' OR OriginalFileName='sdbinst.exe') AND (NOT (CommandLine ILIKE '%.sdb%' OR ((CommandLine ILIKE '% -c' OR CommandLine ILIKE '% -f' OR CommandLine ILIKE '% -mm' OR CommandLine ILIKE '% -t') OR CommandLine ILIKE '% -m -bg%') OR isNull(CommandLine) OR CommandLine=''))

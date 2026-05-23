@@ -1,0 +1,12 @@
+id: e22a6eb2-f8a5-44b5-8b44-a2dbd47b1144
+name: Potential MsiExec Masquerading
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\msiexec.exe' OR OriginalFileName ILIKE '\\msiexec.exe') AND (NOT (Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%' OR Image ILIKE 'C:\\Windows\\WinSxS\\%'))

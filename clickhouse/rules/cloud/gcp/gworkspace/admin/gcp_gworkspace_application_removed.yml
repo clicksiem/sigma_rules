@@ -1,0 +1,11 @@
+id: ee2803f0-71c8-4831-b48b-a1fc57601ee4
+name: Google Workspace Application Removed
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventService='admin.googleapis.com' AND (eventName IN ('REMOVE\_APPLICATION', 'REMOVE\_APPLICATION\_FROM\_WHITELIST'))

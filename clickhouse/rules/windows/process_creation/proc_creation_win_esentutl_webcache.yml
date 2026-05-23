@@ -1,0 +1,12 @@
+id: 6a69f62d-ce75-4b57-8dce-6351eb55b362
+name: Esentutl Steals Browser Information
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\esentutl.exe' OR OriginalFileName='esentutl.exe') AND (CommandLine ILIKE '%-r%' OR CommandLine ILIKE '%/r%' OR CommandLine ILIKE '%–r%' OR CommandLine ILIKE '%—r%' OR CommandLine ILIKE '%―r%') AND CommandLine ILIKE '%\\Windows\\WebCache%'

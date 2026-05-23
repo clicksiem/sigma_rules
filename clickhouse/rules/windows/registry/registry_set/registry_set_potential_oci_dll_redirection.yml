@@ -1,0 +1,17 @@
+id: c0e0bdec-3e3d-47aa-9974-05539c999c89
+name: Registry Modification for OCI DLL Redirection
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.defense-impairment
+- attack.t1112
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\MSDTC\\MTxOCI\\OracleOciLib' AND (NOT Details ILIKE '%oci.dll%')) OR (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\MSDTC\\MTxOCI\\OracleOciLibPath' AND (NOT Details ILIKE '%\%SystemRoot\%\\System32\\%'))

@@ -1,0 +1,14 @@
+id: e8ebd53a-30c2-45bd-81bb-74befba07bdb
+name: HTTP Logging Disabled On IIS Server
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1685.001
+- attack.t1505.004
+rule: SELECT * FROM logs WHERE EventID=29 AND Configuration='/system.webServer/httpLogging/@dontLog' AND NewValue='true'

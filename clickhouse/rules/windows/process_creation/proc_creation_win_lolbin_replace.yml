@@ -1,0 +1,12 @@
+id: 9292293b-8496-4715-9db6-37028dcda4b3
+name: Replace.exe Usage
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\replace.exe' AND (CommandLine ILIKE '%-a%' OR CommandLine ILIKE '%/a%' OR CommandLine ILIKE '%–a%' OR CommandLine ILIKE '%—a%' OR CommandLine ILIKE '%―a%')

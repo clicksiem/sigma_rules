@@ -1,0 +1,12 @@
+id: f4264e47-f522-4c38-a420-04525d5b880f
+name: Renamed AutoIt Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '% /AutoIt3ExecuteScript%' OR CommandLine ILIKE '% /ErrorStdOut%') OR (Hashes ILIKE '%IMPHASH=FDC554B3A8683918D731685855683DDF%' OR Hashes ILIKE '%IMPHASH=CD30A61B60B3D60CECDB034C8C83C290%' OR Hashes ILIKE '%IMPHASH=F8A00C72F2D667D2EDBB234D0C0AE000%') OR (OriginalFileName IN ('AutoIt3.exe', 'AutoIt2.exe', 'AutoIt.exe'))) AND (NOT (Image ILIKE '%\\AutoIt.exe' OR Image ILIKE '%\\AutoIt2.exe' OR Image ILIKE '%\\AutoIt3\_x64.exe' OR Image ILIKE '%\\AutoIt3.exe'))

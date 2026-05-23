@@ -1,0 +1,12 @@
+id: a8322756-015c-42e7-afb1-436e85ed3ff5
+name: DNS TOR Proxies
+level: 5
+size: '>0'
+active: true
+author:
+- Saw Winn Naung , Azure-Sentinel
+group: zeek
+tags:
+- attack.exfiltration
+- attack.t1048
+rule: SELECT * FROM logs WHERE query ILIKE '%.hiddenservice.net' OR query ILIKE '%.onion.ca' OR query ILIKE '%.onion.cab' OR query ILIKE '%.onion.casa' OR query ILIKE '%.onion.city' OR query ILIKE '%.onion.direct' OR query ILIKE '%.onion.dog' OR query ILIKE '%.onion.glass' OR query ILIKE '%.onion.gq' OR query ILIKE '%.onion.guide' OR query ILIKE '%.onion.in.net' OR query ILIKE '%.onion.ink' OR query ILIKE '%.onion.it' OR query ILIKE '%.onion.link' OR query ILIKE '%.onion.lt' OR query ILIKE '%.onion.lu' OR query ILIKE '%.onion.ly' OR query ILIKE '%.onion.mn' OR query ILIKE '%.onion.network' OR query ILIKE '%.onion.nu' OR query ILIKE '%.onion.pet' OR query ILIKE '%.onion.plus' OR query ILIKE '%.onion.pt' OR query ILIKE '%.onion.pw' OR query ILIKE '%.onion.rip' OR query ILIKE '%.onion.sh' OR query ILIKE '%.onion.si' OR query ILIKE '%.onion.to' OR query ILIKE '%.onion.top' OR query ILIKE '%.onion.ws' OR query ILIKE '%.onion' OR query ILIKE '%.s1.tor-gateways.de' OR query ILIKE '%.s2.tor-gateways.de' OR query ILIKE '%.s3.tor-gateways.de' OR query ILIKE '%.s4.tor-gateways.de' OR query ILIKE '%.s5.tor-gateways.de' OR query ILIKE '%.t2w.pw' OR query ILIKE '%.tor2web.ae.org' OR query ILIKE '%.tor2web.blutmagie.de' OR query ILIKE '%.tor2web.com' OR query ILIKE '%.tor2web.fi' OR query ILIKE '%.tor2web.io' OR query ILIKE '%.tor2web.org' OR query ILIKE '%.tor2web.xyz' OR query ILIKE '%.torlink.co'

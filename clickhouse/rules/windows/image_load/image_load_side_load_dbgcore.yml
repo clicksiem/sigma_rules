@@ -1,0 +1,15 @@
+id: 9ca2bf31-0570-44d8-a543-534c47c33ed7
+name: Potential DLL Sideloading Of DBGCORE.DLL
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Wietze Beukema (project and research)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\dbgcore.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files (x86)\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SoftwareDistribution\\%' OR ImageLoaded ILIKE 'C:\\Windows\\System32\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SystemTemp\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SysWOW64\\%' OR ImageLoaded ILIKE 'C:\\Windows\\WinSxS\\%')) AND (NOT (ImageLoaded ILIKE '%\\Steam\\bin\\cef\\cef.win7x64\\dbgcore.dll' OR (ImageLoaded ILIKE '%opera\\Opera Installer Temp\\opera\_package%' AND ImageLoaded ILIKE '%\\assistant\\dbgcore.dll')))

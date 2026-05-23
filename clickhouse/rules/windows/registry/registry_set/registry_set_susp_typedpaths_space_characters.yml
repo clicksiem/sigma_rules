@@ -1,0 +1,14 @@
+id: 8f2a5c3d-9e4b-4a7c-8d1f-2e5a6b9c3d7e
+name: Suspicious Space Characters in TypedPaths Registry Path - FileFix
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1204.004
+- attack.t1027.010
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\TypedPaths\\url1' AND Details ILIKE '%#%') AND (Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %' OR Details ILIKE '%            %')

@@ -1,0 +1,15 @@
+id: 99c8be4f-3087-4f9f-9c24-8c7e257b442e
+name: Setup16.EXE Execution With Custom .Lst File
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.005
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE 'C:\\Windows\\SysWOW64\\setup16.exe' AND ParentCommandLine ILIKE '% -m %') AND (NOT Image ILIKE 'C:\\~MSSETUP.T\\%')

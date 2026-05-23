@@ -1,0 +1,13 @@
+id: cd277474-5c52-4423-a52b-ac2d7969902f
+name: New BgInfo.EXE Custom WMI Query Registry Configuration
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Winternals\\BGInfo\\UserFields\\%' AND Details ILIKE '6%'

@@ -1,0 +1,12 @@
+id: 8ae51330-899c-4641-8125-e39f2e07da72
+name: DNS TXT Answer with Possible Execution Strings
+level: 8
+size: '>0'
+active: true
+author:
+- Markus Neis
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.004
+rule: SELECT * FROM logs WHERE record_type='TXT' AND (answer ILIKE '%IEX%' OR answer ILIKE '%Invoke-Expression%' OR answer ILIKE '%cmd.exe%')

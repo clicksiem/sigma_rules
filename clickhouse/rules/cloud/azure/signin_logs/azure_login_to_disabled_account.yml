@@ -1,0 +1,15 @@
+id: 908655e0-25cf-4ae1-b775-1c8ce9cf43d8
+name: Login to Disabled Account
+level: 5
+size: '>0'
+active: true
+author:
+- AlertIQ
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE ResultType=50057 AND ResultDescription='User account is disabled. The account has been disabled by an administrator.'

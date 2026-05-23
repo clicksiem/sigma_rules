@@ -1,0 +1,15 @@
+id: 2fdefcb3-dbda-401e-ae23-f0db027628bc
+name: Sticky Key Like Backdoor Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), @twjackomo, Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.008
+- car.2014-11-003
+- car.2014-11-008
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\winlogon.exe' AND (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\wt.exe') AND (CommandLine ILIKE '%sethc.exe%' OR CommandLine ILIKE '%utilman.exe%' OR CommandLine ILIKE '%osk.exe%' OR CommandLine ILIKE '%Magnify.exe%' OR CommandLine ILIKE '%Narrator.exe%' OR CommandLine ILIKE '%DisplaySwitch.exe%')

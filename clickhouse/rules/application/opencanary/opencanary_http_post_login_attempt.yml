@@ -1,0 +1,12 @@
+id: af1ac430-df6b-4b38-b976-0b52f07a0252
+name: OpenCanary - HTTP POST Login Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE logtype=3001

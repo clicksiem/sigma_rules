@@ -1,0 +1,12 @@
+id: 7091372f-623c-4293-bc37-20c32b3492be
+name: End User Consent Blocked
+level: 5
+size: '>0'
+active: true
+author:
+- Bailey Bercik '@baileybercik', Mark Morowczynski '@markmorow'
+group: azure
+tags:
+- attack.credential-access
+- attack.t1528
+rule: SELECT * FROM logs WHERE failure_status_reason='Microsoft.online.Security.userConsentBlockedForRiskyAppsExceptions'

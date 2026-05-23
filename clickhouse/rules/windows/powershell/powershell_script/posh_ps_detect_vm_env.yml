@@ -1,0 +1,13 @@
+id: d93129cd-1ee0-479f-bc03-ca6f129882e3
+name: Powershell Detect Virtualization Environment
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Duc.Le-GTSC
+group: windows
+tags:
+- attack.discovery
+- attack.stealth
+- attack.t1497.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Get-WmiObject%' OR ScriptBlockText ILIKE '%gwmi%') AND (ScriptBlockText ILIKE '%MSAcpi\_ThermalZoneTemperature%' OR ScriptBlockText ILIKE '%Win32\_ComputerSystem%')

@@ -1,0 +1,14 @@
+id: 34d81081-03c9-4a7f-91c9-5e46af625cde
+name: Bitbucket Unauthorized Full Data Export Triggered
+level: 10
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.collection
+- attack.resource-development
+- attack.t1213.003
+- attack.t1586
+rule: SELECT * FROM logs WHERE `auditType.category`='Data pipeline' AND `auditType.action`='Unauthorized full data export triggered'

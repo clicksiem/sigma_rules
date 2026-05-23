@@ -1,0 +1,12 @@
+id: e1f7febb-7b94-4234-b5c6-00fb8500f5dd
+name: New Network ACL Entry Added
+level: 3
+size: '>0'
+active: true
+author:
+- jamesc-grafana
+group: aws
+tags:
+- attack.defense-impairment
+- attack.t1686.001
+rule: SELECT * FROM logs WHERE eventSource='ec2.amazonaws.com' AND eventName='CreateNetworkAclEntry'

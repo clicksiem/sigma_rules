@@ -1,0 +1,16 @@
+id: 99c840f2-2012-46fd-9141-c761987550ef
+name: Suspicious Download From Direct IP Via Bitsadmin
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+- attack.s0190
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\bitsadmin.exe' OR OriginalFileName='bitsadmin.exe') AND (CommandLine ILIKE '% /transfer %' OR CommandLine ILIKE '% /create %' OR CommandLine ILIKE '% /addfile %') AND (CommandLine ILIKE '%://1%' OR CommandLine ILIKE '%://2%' OR CommandLine ILIKE '%://3%' OR CommandLine ILIKE '%://4%' OR CommandLine ILIKE '%://5%' OR CommandLine ILIKE '%://6%' OR CommandLine ILIKE '%://7%' OR CommandLine ILIKE '%://8%' OR CommandLine ILIKE '%://9%')) AND (NOT CommandLine ILIKE '%://7-%')

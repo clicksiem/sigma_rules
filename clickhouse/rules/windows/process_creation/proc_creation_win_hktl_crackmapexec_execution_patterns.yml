@@ -1,0 +1,18 @@
+id: 058f4380-962d-40a5-afce-50207d36d7e2
+name: HackTool - CrackMapExec Execution Patterns
+level: 8
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1047
+- attack.t1053
+- attack.t1059.003
+- attack.t1059.001
+- attack.s0106
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%cmd.exe /Q /c % 1> \\\\%\\%\\% 2>&1%' OR CommandLine ILIKE '%cmd.exe /C % > \\\\%\\%\\% 2>&1%' OR CommandLine ILIKE '%cmd.exe /C % > %\\Temp\\% 2>&1%' OR CommandLine ILIKE '%powershell.exe -exec bypass -noni -nop -w 1 -C "%' OR CommandLine ILIKE '%powershell.exe -noni -nop -w 1 -enc %'

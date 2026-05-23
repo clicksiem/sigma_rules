@@ -1,0 +1,13 @@
+id: 3b3c7f55-f771-4dd6-8a6e-08d057a17caf
+name: Arbitrary File Download Via MSPUB.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\MSPUB.exe' OR OriginalFileName='MSPUB.exe') AND (CommandLine ILIKE '%ftp://%' OR CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

@@ -1,0 +1,13 @@
+id: 863218bd-c7d0-4c52-80cd-0a96c09f54af
+name: Arbitrary File Download Via IMEWDBLD.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\IMEWDBLD.exe' OR OriginalFileName='imewdbld.exe') AND (CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

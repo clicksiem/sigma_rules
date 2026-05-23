@@ -1,0 +1,13 @@
+id: 729ce0ea-5d8f-4769-9762-e35de441586d
+name: MpiExec Lolbin
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mpiexec.exe' OR Hashes ILIKE '%IMPHASH=d8b52ef6aaa3a81501bdfff9dbb96217%') AND (CommandLine ILIKE '% /n 1 %' OR CommandLine ILIKE '% -n 1 %')

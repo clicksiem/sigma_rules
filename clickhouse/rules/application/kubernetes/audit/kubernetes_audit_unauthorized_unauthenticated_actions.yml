@@ -1,0 +1,11 @@
+id: 0d933542-1f1f-420d-97d4-21b2c3c492d9
+name: Kubernetes Unauthorized or Unauthenticated Access
+level: 3
+size: '>0'
+active: true
+author:
+- kelnage
+group: kubernetes
+tags:
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE `responseStatus.code` IN (401, 403)

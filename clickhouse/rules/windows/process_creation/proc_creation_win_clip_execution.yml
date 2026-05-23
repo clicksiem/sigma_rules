@@ -1,0 +1,12 @@
+id: ddeff553-5233-4ae9-bbab-d64d2bd634be
+name: Data Copied To Clipboard Via Clip.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1115
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\clip.exe' OR OriginalFileName='clip.exe'

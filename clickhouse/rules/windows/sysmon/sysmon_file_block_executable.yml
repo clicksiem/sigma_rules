@@ -1,0 +1,11 @@
+id: 23b71bc5-953e-4971-be4c-c896cda73fc2
+name: Sysmon Blocked Executable
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE EventID=27

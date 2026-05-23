@@ -1,0 +1,12 @@
+id: 503fe26e-b5f2-4944-a126-eab405cc06e5
+name: Kerberos Network Traffic RC4 Ticket Encryption
+level: 5
+size: '>0'
+active: true
+author:
+- sigma
+group: zeek
+tags:
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE (request_type='TGS' AND cipher='rc4-hmac') AND (NOT service ILIKE '$%')

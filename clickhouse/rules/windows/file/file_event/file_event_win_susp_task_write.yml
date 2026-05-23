@@ -1,0 +1,14 @@
+id: 80e1f67a-4596-4351-98f5-a9c3efabac95
+name: Suspicious Scheduled Task Write to System32 Tasks
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Windows\\System32\\Tasks%' AND (Image ILIKE '%\\AppData\\%' OR Image ILIKE '%C:\\PerfLogs%' OR Image ILIKE '%\\Windows\\System32\\config\\systemprofile%')

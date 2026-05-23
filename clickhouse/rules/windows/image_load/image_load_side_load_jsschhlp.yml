@@ -1,0 +1,15 @@
+id: 68654bf0-4412-43d5-bfe8-5eaa393cd939
+name: Potential DLL Sideloading Via JsSchHlp
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\JSESPR.dll' AND (NOT ImageLoaded ILIKE 'C:\\Program Files\\Common Files\\Justsystem\\JsSchHlp\\%')

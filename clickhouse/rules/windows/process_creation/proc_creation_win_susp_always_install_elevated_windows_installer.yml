@@ -1,0 +1,12 @@
+id: cd951fdc-4b2f-47f5-ba99-a33bf61e3770
+name: Always Install Elevated Windows Installer
+level: 5
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov (idea), Mangatas Tondang (rule), oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\Windows\\Installer\\%' AND Image ILIKE '%msi%') AND Image ILIKE '%tmp') OR (Image ILIKE '%\\msiexec.exe' AND (IntegrityLevel IN ('System', 'S-1-16-16384')))) AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') AND (NOT (ParentImage ILIKE 'C:\\Windows\\System32\\services.exe' OR (CommandLine ILIKE '%\\system32\\msiexec.exe /V' OR ParentCommandLine ILIKE '%\\system32\\msiexec.exe /V') OR ParentImage ILIKE 'C:\\ProgramData\\Sophos\\%' OR ParentImage ILIKE 'C:\\ProgramData\\Avira\\%' OR (ParentImage ILIKE 'C:\\Program Files\\Avast Software\\%' OR ParentImage ILIKE 'C:\\Program Files (x86)\\Avast Software\\%') OR (ParentImage ILIKE 'C:\\Program Files\\Google\\Update\\%' OR ParentImage ILIKE 'C:\\Program Files (x86)\\Google\\Update\\%')))

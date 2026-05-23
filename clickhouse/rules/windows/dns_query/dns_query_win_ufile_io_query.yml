@@ -1,0 +1,12 @@
+id: 1cbbeaaf-3c8c-4e4c-9d72-49485b6a176b
+name: DNS Query To Ufile.io
+level: 3
+size: '>0'
+active: true
+author:
+- yatinwad, TheDFIRReport
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1567.002
+rule: SELECT * FROM logs WHERE QueryName ILIKE '%ufile.io%'

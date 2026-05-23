@@ -1,0 +1,12 @@
+id: 727454c0-d851-48b0-8b89-385611ab0704
+name: Lolbin Unregmp2.exe Use As Proxy
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\unregmp2.exe' OR OriginalFileName='unregmp2.exe') AND (CommandLine ILIKE '% -HideWMP%' OR CommandLine ILIKE '% /HideWMP%' OR CommandLine ILIKE '% –HideWMP%' OR CommandLine ILIKE '% —HideWMP%' OR CommandLine ILIKE '% ―HideWMP%')

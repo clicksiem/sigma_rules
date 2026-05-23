@@ -1,0 +1,14 @@
+id: 9212f354-7775-4e28-9c9f-8f0a4544e664
+name: Active Directory Database Snapshot Via ADExplorer
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.002
+- attack.t1069.002
+- attack.t1482
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\ADExp.exe' OR Image ILIKE '%\\ADExplorer.exe' OR Image ILIKE '%\\ADExplorer64.exe' OR Image ILIKE '%\\ADExplorer64a.exe') OR OriginalFileName='AdExp' OR Description='Active Directory Editor' OR Product='Sysinternals ADExplorer') AND CommandLine ILIKE '%snapshot%'

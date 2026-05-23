@@ -1,0 +1,13 @@
+id: 992dd79f-dde8-4bb0-9085-6350ba97cfb3
+name: New BgInfo.EXE Custom VBScript Registry Configuration
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Winternals\\BGInfo\\UserFields\\%' AND Details ILIKE '4%'

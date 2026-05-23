@@ -1,0 +1,12 @@
+id: c3d76afc-93df-461e-8e67-9b2bad3f2ac4
+name: File Explorer Folder Opened Using Explorer Folder Shortcut Via Shell
+level: 8
+size: '>0'
+active: true
+author:
+- '@Kostastsale'
+group: windows
+tags:
+- attack.discovery
+- attack.t1135
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND Image ILIKE '%\\explorer.exe' AND CommandLine ILIKE '%shell:mycomputerfolder%'

@@ -1,0 +1,14 @@
+id: 1816994b-42e1-4fb1-afd2-134d88184f71
+name: PowerShell Base64 Encoded WMI Classes
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1027
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND ((CommandLine ILIKE '%VwBpAG4AMwAyAF8AUwBoAGEAZABvAHcAYwBvAHAAeQ%' OR CommandLine ILIKE '%cAaQBuADMAMgBfAFMAaABhAGQAbwB3AGMAbwBwAHkA%' OR CommandLine ILIKE '%XAGkAbgAzADIAXwBTAGgAYQBkAG8AdwBjAG8AcAB5A%' OR CommandLine ILIKE '%V2luMzJfU2hhZG93Y29we%' OR CommandLine ILIKE '%dpbjMyX1NoYWRvd2NvcH%' OR CommandLine ILIKE '%XaW4zMl9TaGFkb3djb3B5%') OR (CommandLine ILIKE '%VwBpAG4AMwAyAF8AUwBjAGgAZQBkAHUAbABlAGQASgBvAGIA%' OR CommandLine ILIKE '%cAaQBuADMAMgBfAFMAYwBoAGUAZAB1AGwAZQBkAEoAbwBiA%' OR CommandLine ILIKE '%XAGkAbgAzADIAXwBTAGMAaABlAGQAdQBsAGUAZABKAG8AYg%' OR CommandLine ILIKE '%V2luMzJfU2NoZWR1bGVkSm9i%' OR CommandLine ILIKE '%dpbjMyX1NjaGVkdWxlZEpvY%' OR CommandLine ILIKE '%XaW4zMl9TY2hlZHVsZWRKb2%') OR (CommandLine ILIKE '%VwBpAG4AMwAyAF8AUAByAG8AYwBlAHMAcw%' OR CommandLine ILIKE '%cAaQBuADMAMgBfAFAAcgBvAGMAZQBzAHMA%' OR CommandLine ILIKE '%XAGkAbgAzADIAXwBQAHIAbwBjAGUAcwBzA%' OR CommandLine ILIKE '%V2luMzJfUHJvY2Vzc%' OR CommandLine ILIKE '%dpbjMyX1Byb2Nlc3%' OR CommandLine ILIKE '%XaW4zMl9Qcm9jZXNz%') OR (CommandLine ILIKE '%VwBpAG4AMwAyAF8AVQBzAGUAcgBBAGMAYwBvAHUAbgB0A%' OR CommandLine ILIKE '%cAaQBuADMAMgBfAFUAcwBlAHIAQQBjAGMAbwB1AG4AdA%' OR CommandLine ILIKE '%XAGkAbgAzADIAXwBVAHMAZQByAEEAYwBjAG8AdQBuAHQA%' OR CommandLine ILIKE '%V2luMzJfVXNlckFjY291bn%' OR CommandLine ILIKE '%dpbjMyX1VzZXJBY2NvdW50%' OR CommandLine ILIKE '%XaW4zMl9Vc2VyQWNjb3Vud%') OR (CommandLine ILIKE '%VwBpAG4AMwAyAF8ATABvAGcAZwBlAGQATwBuAFUAcwBlAHIA%' OR CommandLine ILIKE '%cAaQBuADMAMgBfAEwAbwBnAGcAZQBkAE8AbgBVAHMAZQByA%' OR CommandLine ILIKE '%XAGkAbgAzADIAXwBMAG8AZwBnAGUAZABPAG4AVQBzAGUAcg%' OR CommandLine ILIKE '%V2luMzJfTG9nZ2VkT25Vc2Vy%' OR CommandLine ILIKE '%dpbjMyX0xvZ2dlZE9uVXNlc%' OR CommandLine ILIKE '%XaW4zMl9Mb2dnZWRPblVzZX%'))

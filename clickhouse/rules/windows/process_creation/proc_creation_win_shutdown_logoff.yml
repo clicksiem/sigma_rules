@@ -1,0 +1,12 @@
+id: ec290c06-9b6b-4338-8b6b-095c0f284f10
+name: Suspicious Execution of Shutdown to Log Out
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1529
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\shutdown.exe' AND CommandLine ILIKE '%/l%'

@@ -1,0 +1,12 @@
+id: e15b518d-b4ce-4410-a9cd-501f23ce4a18
+name: Suspicious Creation with Colorcpl
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\colorcpl.exe' AND (NOT (TargetFilename ILIKE '%.icm' OR TargetFilename ILIKE '%.gmmp' OR TargetFilename ILIKE '%.cdmp' OR TargetFilename ILIKE '%.camp'))

@@ -1,0 +1,13 @@
+id: e7b18879-676e-4a0e-ae18-27039185a8e7
+name: New Netsh Helper DLL Registered From A Suspicious Location
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.007
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\NetSh%' AND ((Details ILIKE '%:\\Perflogs\\%' OR Details ILIKE '%:\\Users\\Public\\%' OR Details ILIKE '%:\\Windows\\Temp\\%' OR Details ILIKE '%\\AppData\\Local\\Temp\\%' OR Details ILIKE '%\\Temporary Internet%') OR ((Details ILIKE '%:\\Users\\%' AND Details ILIKE '%\\Favorites\\%') OR (Details ILIKE '%:\\Users\\%' AND Details ILIKE '%\\Favourites\\%') OR (Details ILIKE '%:\\Users\\%' AND Details ILIKE '%\\Contacts\\%') OR (Details ILIKE '%:\\Users\\%' AND Details ILIKE '%\\Pictures\\%')))

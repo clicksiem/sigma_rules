@@ -1,0 +1,11 @@
+id: 34746e8c-5fb8-415a-b135-0abc167e912a
+name: WinSxS Executable File Creation By Non-System Process
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE 'C:\\Windows\\WinSxS\\%' AND TargetFilename ILIKE '%.exe') AND (NOT (Image ILIKE 'C:\\Windows\\Systems32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%' OR Image ILIKE 'C:\\Windows\\WinSxS\\%'))

@@ -1,0 +1,16 @@
+id: 396ae3eb-4174-4b9b-880e-dc0364d78a19
+name: Potential Persistence Via Outlook LoadMacroProviderOnBoot Setting
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.command-and-control
+- attack.t1137
+- attack.t1008
+- attack.t1546
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Outlook\\LoadMacroProviderOnBoot' AND Details ILIKE '%0x00000001%'

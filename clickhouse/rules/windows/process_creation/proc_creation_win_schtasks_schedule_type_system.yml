@@ -1,0 +1,14 @@
+id: 7a02e22e-b885-4404-b38b-1ddc7e65258a
+name: Suspicious Schtasks Schedule Type With High Privileges
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' OR OriginalFileName='schtasks.exe') AND (CommandLine ILIKE '% ONLOGON %' OR CommandLine ILIKE '% ONSTART %' OR CommandLine ILIKE '% ONCE %' OR CommandLine ILIKE '% ONIDLE %') AND (CommandLine ILIKE '%NT AUT%' OR CommandLine ILIKE '% SYSTEM%' OR CommandLine ILIKE '%HIGHEST%')

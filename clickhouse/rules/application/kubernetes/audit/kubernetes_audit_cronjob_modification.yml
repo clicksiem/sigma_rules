@@ -1,0 +1,13 @@
+id: 0c9b3bda-41a6-4442-9345-356ae86343dc
+name: Kubernetes CronJob/Job Modification
+level: 5
+size: '>0'
+active: true
+author:
+- kelnage
+group: kubernetes
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+rule: SELECT * FROM logs WHERE `objectRef.apiGroup`='batch' AND (`objectRef.resource` IN ('cronjobs', 'jobs')) AND (verb IN ('create', 'delete', 'patch', 'replace', 'update'))

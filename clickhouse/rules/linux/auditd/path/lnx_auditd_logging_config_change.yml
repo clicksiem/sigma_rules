@@ -1,0 +1,12 @@
+id: c830f15d-6f6e-430f-8074-6f73d6807841
+name: Logging Configuration Changes on Linux Host
+level: 8
+size: '>0'
+active: true
+author:
+- Mikhail Larin, oscd.community
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE type='PATH' AND (name IN ('/etc/syslog.conf', '/etc/rsyslog.conf', '/etc/syslog-ng/syslog-ng.conf'))

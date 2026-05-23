@@ -1,0 +1,15 @@
+id: 0b0ea3cc-99c8-4730-9c53-45deee2a4c86
+name: Microsoft Defender Blocked from Loading Unsigned DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (EventID IN (11, 12)) AND (ProcessPath ILIKE '%\\MpCmdRun.exe' OR ProcessPath ILIKE '%\\NisSrv.exe')

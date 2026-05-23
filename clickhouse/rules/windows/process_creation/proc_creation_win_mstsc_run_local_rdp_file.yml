@@ -1,0 +1,12 @@
+id: 5fdce3ac-e7f9-4ecd-a3aa-a4d78ebbf0af
+name: Mstsc.EXE Execution With Local RDP File
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Christopher Peacock @securepeacock
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\mstsc.exe' OR OriginalFileName='mstsc.exe') AND (CommandLine ILIKE '%.rdp' OR CommandLine ILIKE '%.rdp"')) AND (NOT (ParentImage ILIKE 'C:\\Windows\\System32\\lxss\\wslhost.exe' AND CommandLine ILIKE '%C:\\ProgramData\\Microsoft\\WSL\\wslg.rdp%'))

@@ -1,0 +1,15 @@
+id: d937b75f-a665-4480-88a5-2f20e9f9b22a
+name: Possible Privilege Escalation via Weak Service Permissions
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' AND (IntegrityLevel IN ('Medium', 'S-1-16-8192'))) AND ((CommandLine ILIKE '%config%' AND CommandLine ILIKE '%binPath%') OR (CommandLine ILIKE '%failure%' AND CommandLine ILIKE '%command%'))

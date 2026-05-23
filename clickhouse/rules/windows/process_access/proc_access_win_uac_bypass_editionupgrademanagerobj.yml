@@ -1,0 +1,12 @@
+id: fb3722e4-1a06-46b6-b772-253e2e7db933
+name: Function Call From Undocumented COM Interface EditionUpgradeManager
+level: 5
+size: '>0'
+active: true
+author:
+- oscd.community, Dmitry Uchakin
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE CallTrace ILIKE '%editionupgrademanagerobj.dll%'

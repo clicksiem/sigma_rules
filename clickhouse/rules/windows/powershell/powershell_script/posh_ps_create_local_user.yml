@@ -1,0 +1,14 @@
+id: 243de76f-4725-4f2e-8225-a8a69b15ad61
+name: PowerShell Create Local User
+level: 5
+size: '>0'
+active: true
+author:
+- '@ROxPinTeddy'
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.persistence
+- attack.t1136.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-LocalUser%'

@@ -1,0 +1,12 @@
+id: 9a4ccd1a-3526-4d99-b980-9f9c5d3a6ff3
+name: Potential Credential Dumping Via WER
+level: 8
+size: '>0'
+active: true
+author:
+- '@pbssubhash , Nasreddine Bencherchali'
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\Werfault.exe' OR OriginalFileName='WerFault.exe') AND ((ParentUser ILIKE '%AUTHORI%' OR ParentUser ILIKE '%AUTORI%') AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') AND (CommandLine ILIKE '% -u -p %' AND CommandLine ILIKE '% -ip %' AND CommandLine ILIKE '% -s %'))) AND (NOT ParentImage ILIKE 'C:\\Windows\\System32\\lsass.exe')

@@ -1,0 +1,15 @@
+id: e1693bc8-7168-4eab-8718-cdcaa68a1738
+name: Suspicious WMIC Execution Via Office Process
+level: 8
+size: '>0'
+active: true
+author:
+- Vadim Khrykov, Cyb3rEng
+group: windows
+tags:
+- attack.stealth
+- attack.t1204.002
+- attack.t1047
+- attack.t1218.010
+- attack.execution
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\WINWORD.EXE' OR ParentImage ILIKE '%\\EXCEL.EXE' OR ParentImage ILIKE '%\\POWERPNT.exe' OR ParentImage ILIKE '%\\MSPUB.exe' OR ParentImage ILIKE '%\\VISIO.exe' OR ParentImage ILIKE '%\\MSACCESS.EXE' OR ParentImage ILIKE '%\\EQNEDT32.EXE' OR ParentImage ILIKE '%\\ONENOTE.EXE' OR ParentImage ILIKE '%\\wordpad.exe' OR ParentImage ILIKE '%\\wordview.exe') AND (Image ILIKE '%\\wbem\\WMIC.exe' OR OriginalFileName='wmic.exe') AND ((CommandLine ILIKE '%process%' AND CommandLine ILIKE '%create%' AND CommandLine ILIKE '%call%') AND (CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%msiexec%' OR CommandLine ILIKE '%mshta%' OR CommandLine ILIKE '%verclsid%' OR CommandLine ILIKE '%wscript%' OR CommandLine ILIKE '%cscript%'))

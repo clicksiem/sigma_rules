@@ -1,0 +1,12 @@
+id: 3d27f6dd-1c74-4687-b4fa-ca849d128d1c
+name: Office Application Startup - Office Test
+level: 5
+size: '>0'
+active: true
+author:
+- omkar72
+group: windows
+tags:
+- attack.persistence
+- attack.t1137.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\Office test\\Special\\Perf%'

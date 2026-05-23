@@ -1,0 +1,12 @@
+id: f34047d9-20d3-4e8b-8672-0a35cc50dc71
+name: System Information Discovery - Auditd
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE (type='PATH' AND (name IN ('/etc/lsb-release', '/etc/redhat-release', '/etc/issue'))) OR (type='EXECVE' AND (a0 IN ('uname', 'uptime', 'lsmod', 'hostname', 'env'))) OR (type='EXECVE' AND a0='grep' AND (a1 ILIKE '%vbox%' OR a1 ILIKE '%vm%' OR a1 ILIKE '%xen%' OR a1 ILIKE '%virtio%' OR a1 ILIKE '%hv%')) OR (type='EXECVE' AND a0='kmod' AND a1='list')

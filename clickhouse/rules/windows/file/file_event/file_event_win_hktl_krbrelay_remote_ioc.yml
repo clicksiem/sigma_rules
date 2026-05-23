@@ -1,0 +1,12 @@
+id: 3ab79e90-9fab-4cdf-a7b2-6522bc742adb
+name: HackTool - RemoteKrbRelay SMB Relay Secrets Dump Module Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\windows\\temp\\sam.tmp' OR TargetFilename ILIKE '%:\\windows\\temp\\sec.tmp' OR TargetFilename ILIKE '%:\\windows\\temp\\sys.tmp'

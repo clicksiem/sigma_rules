@@ -1,0 +1,13 @@
+id: 707e097c-e20f-4f67-8807-1f72ff4500d6
+name: Potential Persistence Via App Paths Default Property
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.012
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths%' AND (TargetObject ILIKE '%(Default)' OR TargetObject ILIKE '%Path') AND (Details ILIKE '%\\Users\\Public%' OR Details ILIKE '%\\AppData\\Local\\Temp\\%' OR Details ILIKE '%\\Windows\\Temp\\%' OR Details ILIKE '%\\Desktop\\%' OR Details ILIKE '%\\Downloads\\%' OR Details ILIKE '%\%temp\%%' OR Details ILIKE '%\%tmp\%%' OR Details ILIKE '%iex%' OR Details ILIKE '%Invoke-%' OR Details ILIKE '%rundll32%' OR Details ILIKE '%regsvr32%' OR Details ILIKE '%mshta%' OR Details ILIKE '%cscript%' OR Details ILIKE '%wscript%' OR Details ILIKE '%.bat%' OR Details ILIKE '%.hta%' OR Details ILIKE '%.dll%' OR Details ILIKE '%.ps1%')

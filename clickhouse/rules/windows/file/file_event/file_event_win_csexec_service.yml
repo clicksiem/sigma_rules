@@ -1,0 +1,13 @@
+id: f0e2b768-5220-47dd-b891-d57b96fc0ec1
+name: CSExec Service File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\csexecsvc.exe'

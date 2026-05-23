@@ -1,0 +1,12 @@
+id: 57b649ef-ff42-4fb0-8bf6-62da243a1708
+name: Windows Defender Threat Detected
+level: 8
+size: '>0'
+active: true
+author:
+- Ján Trenčanský
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE EventID IN (1006, 1015, 1116, 1117)

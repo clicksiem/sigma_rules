@@ -1,0 +1,12 @@
+id: edd595d7-7895-4fa7-acb3-85a18a8772ca
+name: Steganography Unzip Hidden Information From Picture File
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.stealth
+- attack.t1027.003
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND a0='unzip') AND (a1 ILIKE '%.jpg' OR a1 ILIKE '%.png')

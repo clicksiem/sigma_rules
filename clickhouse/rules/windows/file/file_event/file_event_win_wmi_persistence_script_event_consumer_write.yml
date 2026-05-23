@@ -1,0 +1,13 @@
+id: 33f41cdd-35ac-4ba8-814b-c6a4244a1ad4
+name: WMI Persistence - Script Event Consumer File Write
+level: 8
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1546.003
+- attack.persistence
+rule: SELECT * FROM logs WHERE Image ILIKE 'C:\\WINDOWS\\system32\\wbem\\scrcons.exe'

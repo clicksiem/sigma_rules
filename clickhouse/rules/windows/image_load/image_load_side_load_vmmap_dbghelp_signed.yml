@@ -1,0 +1,15 @@
+id: 98ffaed4-aec2-4e04-9b07-31492fe68b3d
+name: VMMap Signed Dbghelp.DLL Potential Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%C:\\Debuggers\\dbghelp.dll%' AND (Image ILIKE '%\\vmmap.exe' OR Image ILIKE '%\\vmmap64.exe') AND Signed='true'

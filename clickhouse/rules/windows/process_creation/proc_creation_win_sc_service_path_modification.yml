@@ -1,0 +1,13 @@
+id: 138d3531-8793-4f50-a2cd-f291b2863d78
+name: Suspicious Service Path Modification
+level: 8
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\sc.exe' AND (CommandLine ILIKE '%config%' AND CommandLine ILIKE '%binPath%') AND (CommandLine ILIKE '%powershell%' OR CommandLine ILIKE '%cmd %' OR CommandLine ILIKE '%mshta%' OR CommandLine ILIKE '%wscript%' OR CommandLine ILIKE '%cscript%' OR CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%svchost%' OR CommandLine ILIKE '%dllhost%' OR CommandLine ILIKE '%cmd.exe /c%' OR CommandLine ILIKE '%cmd.exe /k%' OR CommandLine ILIKE '%cmd.exe /r%' OR CommandLine ILIKE '%cmd /c%' OR CommandLine ILIKE '%cmd /k%' OR CommandLine ILIKE '%cmd /r%' OR CommandLine ILIKE '%C:\\Users\\Public%' OR CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\%' OR CommandLine ILIKE '%C:\\Windows\\TEMP\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp%')

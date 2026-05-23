@@ -1,0 +1,12 @@
+id: 1fb76ab8-fa60-4b01-bddd-71e89bf555da
+name: Pubprn.vbs Proxy Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1216.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\pubprn.vbs%' AND CommandLine ILIKE '%script:%'

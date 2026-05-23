@@ -1,0 +1,11 @@
+id: ce7066a6-508a-42d3-995b-2952c65dc2ce
+name: Drop Binaries Into Spool Drivers Color Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\spool\\drivers\\color\\%' AND (TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.sys')

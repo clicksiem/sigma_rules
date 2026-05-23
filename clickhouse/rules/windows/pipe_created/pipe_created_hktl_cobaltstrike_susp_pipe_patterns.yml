@@ -1,0 +1,14 @@
+id: 85adeb13-4fc9-4e68-8a4a-c7cb2c336eb7
+name: CobaltStrike Named Pipe Patterns
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- stp.1k
+rule: SELECT * FROM logs WHERE (((PipeName ILIKE '\\DserNamePipe%' OR PipeName ILIKE '\\f4c3%' OR PipeName ILIKE '\\f53f%' OR PipeName ILIKE '\\fullduplex\_%' OR PipeName ILIKE '\\mojo.5688.8052.183894939787088877%' OR PipeName ILIKE '\\mojo.5688.8052.35780273329370473%' OR PipeName ILIKE '\\MsFteWds%' OR PipeName ILIKE '\\msrpc\_%' OR PipeName ILIKE '\\mypipe-f%' OR PipeName ILIKE '\\mypipe-h%' OR PipeName ILIKE '\\ntsvcs%' OR PipeName ILIKE '\\PGMessagePipe%' OR PipeName ILIKE '\\rpc\_%' OR PipeName ILIKE '\\scerpc%' OR PipeName ILIKE '\\SearchTextHarvester%' OR PipeName ILIKE '\\spoolss%' OR PipeName ILIKE '\\win\_svc%' OR PipeName ILIKE '\\win\\msrpc\_%' OR PipeName ILIKE '\\windows.update.manager%' OR PipeName ILIKE '\\wkssvc%') OR (PipeName IN ('\\demoagent\_11', '\\demoagent\_22'))) OR (PipeName ILIKE '\\Winsock2\\CatalogChangeListener-%' AND PipeName ILIKE '%-0,')) AND (NOT (PipeName IN ('\\wkssvc', '\\spoolss', '\\scerpc', '\\ntsvcs', '\\SearchTextHarvester', '\\PGMessagePipe', '\\MsFteWds'))) AND (NOT ((Image ILIKE '%:\\Program Files\\Websense\\%' OR Image ILIKE '%:\\Program Files (x86)\\Websense\\%') AND (PipeName ILIKE '\\DserNamePipeR%' OR PipeName ILIKE '\\DserNamePipeW%')))

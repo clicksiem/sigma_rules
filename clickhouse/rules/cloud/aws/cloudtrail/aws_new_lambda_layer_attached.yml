@@ -1,0 +1,11 @@
+id: 97fbabf8-8e1b-47a2-b7d5-a418d2b95e3d
+name: AWS New Lambda Layer Attached
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: aws
+tags:
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE eventSource='lambda.amazonaws.com' AND eventName ILIKE 'UpdateFunctionConfiguration%' AND `requestParameters.layers` ILIKE '%'

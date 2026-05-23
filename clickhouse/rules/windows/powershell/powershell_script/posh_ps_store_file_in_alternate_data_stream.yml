@@ -1,0 +1,12 @@
+id: a699b30e-d010-46c8-bbd1-ee2e26765fe9
+name: Powershell Store File In Alternate Data Stream
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Start-Process%' AND ScriptBlockText ILIKE '%-FilePath "$env:comspec" %' AND ScriptBlockText ILIKE '%-ArgumentList %' AND ScriptBlockText ILIKE '%>%'

@@ -1,0 +1,18 @@
+id: e890acee-d488-420e-8f20-d9b19b3c3d43
+name: Suspicious File Created by ArcSOC.exe
+level: 8
+size: '>0'
+active: true
+author:
+- Micah Babinski
+group: windows
+tags:
+- attack.command-and-control
+- attack.persistence
+- attack.initial-access
+- attack.execution
+- attack.stealth
+- attack.t1127
+- attack.t1105
+- attack.t1133
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\ArcSOC.exe' AND (TargetFilename ILIKE '%.ahk' OR TargetFilename ILIKE '%.aspx' OR TargetFilename ILIKE '%.au3' OR TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.cmd' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.py' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.wsf')

@@ -1,0 +1,18 @@
+id: 6ad91e31-53df-4826-bd27-0166171c8040
+name: Google Cloud Kubernetes Admission Controller
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.persistence
+- attack.stealth
+- attack.t1078
+- attack.credential-access
+- attack.t1552
+- attack.t1552.007
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` ILIKE 'admissionregistration.k8s.io.v%' AND (`gcp.audit.method_name` ILIKE '%.mutatingwebhookconfigurations.%' OR `gcp.audit.method_name` ILIKE '%.validatingwebhookconfigurations.%') AND (`gcp.audit.method_name` ILIKE '%create' OR `gcp.audit.method_name` ILIKE '%patch' OR `gcp.audit.method_name` ILIKE '%replace')

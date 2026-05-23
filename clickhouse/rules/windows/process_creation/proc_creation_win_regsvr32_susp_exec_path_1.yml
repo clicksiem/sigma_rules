@@ -1,0 +1,12 @@
+id: 9525dc73-0327-438c-8c04-13c0e037e9da
+name: Regsvr32 Execution From Potential Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regsvr32.exe' OR OriginalFileName='REGSVR32.EXE') AND (CommandLine ILIKE '%:\\ProgramData\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%')

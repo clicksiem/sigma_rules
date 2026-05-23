@@ -1,0 +1,12 @@
+id: 16fe46bb-4f64-46aa-817d-ff7bec4a2352
+name: LiveKD Driver Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\drivers\\LiveKdD.SYS' AND (Image ILIKE '%\\livekd.exe' OR Image ILIKE '%\\livek64.exe')

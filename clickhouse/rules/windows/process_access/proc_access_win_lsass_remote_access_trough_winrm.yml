@@ -1,0 +1,17 @@
+id: aa35a627-33fb-4d04-a165-d33b4afca3e8
+name: Remote LSASS Process Access Through Windows Remote Management
+level: 8
+size: '>0'
+active: true
+author:
+- Patryk Prauze - ING Tech
+group: windows
+tags:
+- attack.credential-access
+- attack.execution
+- attack.t1003.001
+- attack.t1059.001
+- attack.lateral-movement
+- attack.t1021.006
+- attack.s0002
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%\\lsass.exe' AND SourceImage ILIKE '%:\\Windows\\system32\\wsmprovhost.exe') AND (NOT GrantedAccess='0x80000000')

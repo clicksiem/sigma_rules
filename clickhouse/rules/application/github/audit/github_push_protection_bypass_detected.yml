@@ -1,0 +1,12 @@
+id: 02cf536a-cf21-4876-8842-4159c8aee3cc
+name: Github Push Protection Bypass Detected
+level: 3
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: github
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE action ILIKE '%secret\_scanning\_push\_protection.bypass%'

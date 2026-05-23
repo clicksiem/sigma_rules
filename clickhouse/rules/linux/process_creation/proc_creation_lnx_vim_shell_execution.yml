@@ -1,0 +1,12 @@
+id: 7ab8f73a-fcff-428b-84aa-6a5ff7877dea
+name: Vim GTFOBin Abuse - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/rvim' OR Image ILIKE '%/vim' OR Image ILIKE '%/vimdiff') AND (CommandLine ILIKE '% --cmd%' OR CommandLine ILIKE '% -c %')) AND (CommandLine ILIKE '%:!/%' OR CommandLine ILIKE '%:lua %' OR CommandLine ILIKE '%:py %' OR CommandLine ILIKE '%/bin/bash%' OR CommandLine ILIKE '%/bin/dash%' OR CommandLine ILIKE '%/bin/fish%' OR CommandLine ILIKE '%/bin/sh%' OR CommandLine ILIKE '%/bin/zsh%')

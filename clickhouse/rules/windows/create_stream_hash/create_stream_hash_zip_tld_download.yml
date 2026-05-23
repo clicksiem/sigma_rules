@@ -1,0 +1,11 @@
+id: 0bb4bbeb-fe52-4044-b40c-430a04577ebe
+name: Potentially Suspicious File Download From ZIP TLD
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE Contents ILIKE '%.zip/%' AND (TargetFilename ILIKE '%.bat:Zone%' OR TargetFilename ILIKE '%.dat:Zone%' OR TargetFilename ILIKE '%.dll:Zone%' OR TargetFilename ILIKE '%.doc:Zone%' OR TargetFilename ILIKE '%.docm:Zone%' OR TargetFilename ILIKE '%.exe:Zone%' OR TargetFilename ILIKE '%.hta:Zone%' OR TargetFilename ILIKE '%.pptm:Zone%' OR TargetFilename ILIKE '%.ps1:Zone%' OR TargetFilename ILIKE '%.rar:Zone%' OR TargetFilename ILIKE '%.rtf:Zone%' OR TargetFilename ILIKE '%.sct:Zone%' OR TargetFilename ILIKE '%.vbe:Zone%' OR TargetFilename ILIKE '%.vbs:Zone%' OR TargetFilename ILIKE '%.ws:Zone%' OR TargetFilename ILIKE '%.wsf:Zone%' OR TargetFilename ILIKE '%.xll:Zone%' OR TargetFilename ILIKE '%.xls:Zone%' OR TargetFilename ILIKE '%.xlsm:Zone%' OR TargetFilename ILIKE '%.zip:Zone%')

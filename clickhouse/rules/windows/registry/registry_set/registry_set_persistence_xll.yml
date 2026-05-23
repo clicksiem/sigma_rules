@@ -1,0 +1,12 @@
+id: 961e33d1-4f86-4fcf-80ab-930a708b2f82
+name: Potential Persistence Via Excel Add-in - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.t1137.006
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Software\\Microsoft\\Office\\%' AND TargetObject ILIKE '%\\Excel\\Options' AND Details ILIKE '/R %' AND Details ILIKE '%.xll'

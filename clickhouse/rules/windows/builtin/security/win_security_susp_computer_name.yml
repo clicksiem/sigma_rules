@@ -1,0 +1,17 @@
+id: 39698b3f-da92-4bc6-bfb5-645a98386e45
+name: Win Susp Computer Name Containing Samtheadmin
+level: 10
+size: '>0'
+active: true
+author:
+- elhoim
+group: windows
+tags:
+- attack.initial-access
+- cve.2021-42278
+- cve.2021-42287
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE (SamAccountName ILIKE 'SAMTHEADMIN-%' AND SamAccountName ILIKE '%$') OR (TargetUserName ILIKE 'SAMTHEADMIN-%' AND TargetUserName ILIKE '%$')

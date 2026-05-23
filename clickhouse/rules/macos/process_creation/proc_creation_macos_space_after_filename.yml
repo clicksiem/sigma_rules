@@ -1,0 +1,12 @@
+id: b6e2a2e3-2d30-43b1-a4ea-071e36595690
+name: Space After Filename - macOS
+level: 3
+size: '>0'
+active: true
+author:
+- remotephone
+group: macos
+tags:
+- attack.stealth
+- attack.t1036.006
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% ' OR Image ILIKE '% '

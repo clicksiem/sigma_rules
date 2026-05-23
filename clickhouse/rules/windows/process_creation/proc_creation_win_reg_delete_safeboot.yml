@@ -1,0 +1,12 @@
+id: fc0e89b5-adb0-43c1-b749-c12a10ec37de
+name: SafeBoot Registry Key Deleted Via Reg.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Tim Shelton
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '% delete %' AND CommandLine ILIKE '%\\SYSTEM\\CurrentControlSet\\Control\\SafeBoot%')

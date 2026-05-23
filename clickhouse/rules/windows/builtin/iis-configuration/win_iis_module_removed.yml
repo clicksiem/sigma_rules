@@ -1,0 +1,14 @@
+id: 9e1a1fdf-ee58-40ce-8e15-b66ca5a80e1f
+name: Previously Installed IIS Module Was Removed
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1685.001
+- attack.t1505.004
+rule: SELECT * FROM logs WHERE EventID=29 AND Configuration ILIKE '%/system.webServer/modules/remove%'

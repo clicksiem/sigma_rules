@@ -1,0 +1,12 @@
+id: 8b0e12da-d3c3-49db-bb4f-256703f380e5
+name: PUA - Chisel Tunneling Tool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1090.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\chisel.exe' OR ((CommandLine ILIKE '%exe client %' OR CommandLine ILIKE '%exe server %') AND (CommandLine ILIKE '%-socks5%' OR CommandLine ILIKE '%-reverse%' OR CommandLine ILIKE '% r:%' OR CommandLine ILIKE '%:127.0.0.1:%' OR CommandLine ILIKE '%-tls-skip-verify %' OR CommandLine ILIKE '%:socks%'))

@@ -1,0 +1,16 @@
+id: d2b749ee-4225-417e-b20e-a8d2193cbb84
+name: PUA - AdvancedRun Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1564.003
+- attack.t1134.002
+- attack.t1059.003
+rule: SELECT * FROM logs WHERE OriginalFileName='AdvancedRun.exe' OR (CommandLine ILIKE '% /EXEFilename %' AND CommandLine ILIKE '% /Run%') OR (CommandLine ILIKE '% /WindowState 0%' AND CommandLine ILIKE '% /RunAs %' AND CommandLine ILIKE '% /CommandLine %')

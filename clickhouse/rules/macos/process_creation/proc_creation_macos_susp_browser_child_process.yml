@@ -1,0 +1,15 @@
+id: 0250638a-2b28-4541-86fc-ea4c558fa0c6
+name: Suspicious Browser Child Process - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.initial-access
+- attack.execution
+- attack.t1189
+- attack.t1203
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%com.apple.WebKit.WebContent%' OR ParentImage ILIKE '%firefox%' OR ParentImage ILIKE '%Google Chrome Helper%' OR ParentImage ILIKE '%Google Chrome%' OR ParentImage ILIKE '%Microsoft Edge%' OR ParentImage ILIKE '%Opera%' OR ParentImage ILIKE '%Safari%' OR ParentImage ILIKE '%Tor Browser%') AND (Image ILIKE '%/bash' OR Image ILIKE '%/curl' OR Image ILIKE '%/dash' OR Image ILIKE '%/ksh' OR Image ILIKE '%/osascript' OR Image ILIKE '%/perl' OR Image ILIKE '%/php' OR Image ILIKE '%/pwsh' OR Image ILIKE '%/python' OR Image ILIKE '%/sh' OR Image ILIKE '%/tcsh' OR Image ILIKE '%/wget' OR Image ILIKE '%/zsh')) AND (NOT (CommandLine ILIKE '%--defaults-torrc%' OR CommandLine ILIKE '%/Library/Application Support/Microsoft/MAU%/Microsoft AutoUpdate.app/Contents/MacOS/msupdate%' OR ((ParentImage ILIKE '%Google Chrome Helper%' OR ParentImage ILIKE '%Google Chrome%') AND (CommandLine ILIKE '%/Volumes/Google Chrome/Google Chrome.app/Contents/Frameworks/%/Resources/install.sh%' OR CommandLine ILIKE '%/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/%/Resources/keystone\_promote\_preflight.sh%' OR CommandLine ILIKE '%/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/%/Resources/keystone\_promote\_postflight.sh%')) OR (ParentImage ILIKE '%Microsoft Edge%' AND (CommandLine ILIKE '%IOPlatformExpertDevice%' OR CommandLine ILIKE '%hw.model%')) OR ((ParentImage ILIKE '%Google Chrome Helper%' OR ParentImage ILIKE '%Google Chrome%') AND (CommandLine ILIKE '%/Users/%' AND CommandLine ILIKE '%/Library/Application Support/Google/Chrome/recovery/%' AND CommandLine ILIKE '%/ChromeRecovery%')))) AND (NOT (isNull(CommandLine) OR CommandLine=''))

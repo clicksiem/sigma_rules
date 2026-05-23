@@ -1,0 +1,15 @@
+id: 1fbc0671-5596-4e17-8682-f020a0b995dc
+name: Potential CCleanerDU.DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\CCleanerDU.dll' AND (NOT ((Image ILIKE 'C:\\Program Files\\CCleaner\\%' OR Image ILIKE 'C:\\Program Files (x86)\\CCleaner\\%') AND (Image ILIKE '%\\CCleaner.exe' OR Image ILIKE '%\\CCleaner64.exe')))

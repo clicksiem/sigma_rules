@@ -1,0 +1,12 @@
+id: 0fadd880-6af3-4610-b1e5-008dc3a11b8a
+name: Potential Suspicious BPF Activity - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Red Canary (idea), Nasreddine Bencherchali
+group: linux
+tags:
+- attack.persistence
+- attack.stealth
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'bpf\_probe\_write\_user')

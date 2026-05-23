@@ -1,0 +1,14 @@
+id: 18988e1b-9087-4f8a-82fe-0414dce49878
+name: Execute Code with Pester.bat as Parent
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1216
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND ParentCommandLine ILIKE '%\\WindowsPowerShell\\Modules\\Pester\\%') AND (ParentCommandLine ILIKE '%{ Invoke-Pester -EnableExit ;%' OR ParentCommandLine ILIKE '%{ Get-Help "%')

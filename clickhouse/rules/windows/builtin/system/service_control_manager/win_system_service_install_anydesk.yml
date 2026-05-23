@@ -1,0 +1,11 @@
+id: 530a6faa-ff3d-4022-b315-50828e77eef5
+name: Anydesk Remote Access Software Service Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND ((ServiceName ILIKE '%AnyDesk%' AND ServiceName ILIKE '%Service%') OR ImagePath ILIKE '%AnyDesk%')

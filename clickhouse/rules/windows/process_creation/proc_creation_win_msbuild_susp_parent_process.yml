@@ -1,0 +1,11 @@
+id: 33be4333-2c6b-44f4-ae28-102cdbde0a31
+name: Suspicious Msbuild Execution By Uncommon Parent Process
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\MSBuild.exe' OR OriginalFileName='MSBuild.exe') AND (NOT (ParentImage ILIKE '%\\devenv.exe' OR ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\msbuild.exe' OR ParentImage ILIKE '%\\python.exe' OR ParentImage ILIKE '%\\explorer.exe' OR ParentImage ILIKE '%\\nuget.exe'))

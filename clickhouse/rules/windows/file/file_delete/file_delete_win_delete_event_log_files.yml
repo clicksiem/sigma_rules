@@ -1,0 +1,12 @@
+id: 63c779ba-f638-40a0-a593-ddd45e8b1ddc
+name: EventLog EVTX File Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\winevt\\Logs\\%' AND TargetFilename ILIKE '%.evtx'

@@ -1,0 +1,11 @@
+id: 1cf98dc2-fcb0-47c9-8aea-654c9284d1ae
+name: Disk Image Creation Via Hdiutil - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Omar Khaled (@beacon_exe)
+group: macos
+tags:
+- attack.exfiltration
+rule: SELECT * FROM logs WHERE Image ILIKE '%/hdiutil' AND CommandLine ILIKE '%create%'

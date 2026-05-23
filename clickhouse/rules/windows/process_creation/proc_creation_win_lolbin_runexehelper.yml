@@ -1,0 +1,12 @@
+id: cd71385d-fd9b-4691-9b98-2b1f7e508714
+name: Lolbin Runexehelper Use As Proxy
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\runexehelper.exe'

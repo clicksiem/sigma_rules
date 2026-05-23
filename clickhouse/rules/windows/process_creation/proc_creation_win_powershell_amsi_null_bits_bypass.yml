@@ -1,0 +1,12 @@
+id: 92a974db-ab84-457f-9ec0-55db83d7a825
+name: Potential AMSI Bypass Using NULL Bits
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%if(0){{{0}}}'' -f $(0 -as [char]) +%' OR CommandLine ILIKE '%#<NULL>%'

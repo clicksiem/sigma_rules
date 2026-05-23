@@ -1,0 +1,12 @@
+id: 68c8acb4-1b60-4890-8e82-3ddf7a6dba84
+name: HH.EXE Execution
+level: 3
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Dan Beavin), oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.001
+rule: SELECT * FROM logs WHERE (OriginalFileName='HH.exe' OR Image ILIKE '%\\hh.exe') AND CommandLine ILIKE '%.chm%'

@@ -1,0 +1,14 @@
+id: 8a8379b8-780b-4dbf-b1e9-31c8d112fefb
+name: Schtasks From Suspicious Folders
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' OR OriginalFileName='schtasks.exe') AND CommandLine ILIKE '% /create %' AND (CommandLine ILIKE '%powershell%' OR CommandLine ILIKE '%pwsh%' OR CommandLine ILIKE '%cmd /c %' OR CommandLine ILIKE '%cmd /k %' OR CommandLine ILIKE '%cmd /r %' OR CommandLine ILIKE '%cmd.exe /c %' OR CommandLine ILIKE '%cmd.exe /k %' OR CommandLine ILIKE '%cmd.exe /r %') AND (CommandLine ILIKE '%C:\\ProgramData\\%' OR CommandLine ILIKE '%\%ProgramData\%%')

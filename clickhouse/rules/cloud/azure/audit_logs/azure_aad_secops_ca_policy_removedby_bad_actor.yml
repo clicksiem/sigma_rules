@@ -1,0 +1,16 @@
+id: 26e7c5e2-6545-481e-b7e6-050143459635
+name: CA Policy Removed by Non Approved Actor
+level: 5
+size: '>0'
+active: true
+author:
+- Corissa Koopmans, '@corissalea'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.credential-access
+- attack.persistence
+- attack.defense-impairment
+- attack.t1548
+- attack.t1556
+rule: SELECT * FROM logs WHERE `properties.message`='Delete conditional access policy'

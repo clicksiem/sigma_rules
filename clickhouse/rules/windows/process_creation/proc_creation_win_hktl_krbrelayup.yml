@@ -1,0 +1,14 @@
+id: 12827a56-61a4-476a-a9cb-f3068f191073
+name: HackTool - KrbRelayUp Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558.003
+- attack.lateral-movement
+- attack.t1550.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\KrbRelayUp.exe' OR OriginalFileName='KrbRelayUp.exe') OR (CommandLine ILIKE '% relay %' AND CommandLine ILIKE '% -Domain %' AND CommandLine ILIKE '% -ComputerName %') OR (CommandLine ILIKE '% krbscm %' AND CommandLine ILIKE '% -sc %') OR (CommandLine ILIKE '% spawn %' AND CommandLine ILIKE '% -d %' AND CommandLine ILIKE '% -cn %' AND CommandLine ILIKE '% -cp %')

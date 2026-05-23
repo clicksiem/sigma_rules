@@ -1,0 +1,15 @@
+id: 829a3bdf-34da-4051-9cf4-8ed221a8ae4f
+name: Microsoft Office DLL Sideload
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Wietze Beukema (project and research)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\outllib.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files\\Microsoft Office\\OFFICE%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\Microsoft Office\\OFFICE%' OR ImageLoaded ILIKE 'C:\\Program Files\\Microsoft Office\\Root\\OFFICE%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\Microsoft Office\\Root\\OFFICE%'))

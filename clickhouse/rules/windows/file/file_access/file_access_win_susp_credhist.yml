@@ -1,0 +1,12 @@
+id: 7a2a22ea-a203-4cd3-9abf-20eb1c5c6cd2
+name: Access To Windows Credential History File By Uncommon Applications
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555.004
+rule: SELECT * FROM logs WHERE FileName ILIKE '%\\Microsoft\\Protect\\CREDHIST' AND (NOT ((Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Windows\\system32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%') OR Image ILIKE 'C:\\Windows\\explorer.exe'))

@@ -1,0 +1,18 @@
+id: 304afd73-55a5-4bb9-8c21-0b1fc84ea9e4
+name: PSEXEC Remote Execution File Artefact
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1136.002
+- attack.t1543.003
+- attack.t1570
+- attack.s0029
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\PSEXEC-%' AND TargetFilename ILIKE '%.key'

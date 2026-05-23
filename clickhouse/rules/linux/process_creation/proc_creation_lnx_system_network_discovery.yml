@@ -1,0 +1,12 @@
+id: e7bd1cfa-b446-4c88-8afb-403bcd79e3fa
+name: System Network Discovery - Linux
+level: 1
+size: '>0'
+active: true
+author:
+- Ömer Günal and remotephone, oscd.community
+group: linux
+tags:
+- attack.discovery
+- attack.t1016
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/firewall-cmd' OR Image ILIKE '%/ufw' OR Image ILIKE '%/iptables' OR Image ILIKE '%/netstat' OR Image ILIKE '%/ss' OR Image ILIKE '%/ip' OR Image ILIKE '%/ifconfig' OR Image ILIKE '%/systemd-resolve' OR Image ILIKE '%/route') OR CommandLine ILIKE '%/etc/resolv.conf%'

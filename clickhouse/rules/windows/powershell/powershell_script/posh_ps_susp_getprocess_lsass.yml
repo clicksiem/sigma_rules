@@ -1,0 +1,12 @@
+id: 84c174ab-d3ef-481f-9c86-a50d0b8e3edb
+name: PowerShell Get-Process LSASS in ScriptBlock
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-Process lsass%'

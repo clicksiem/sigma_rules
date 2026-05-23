@@ -1,0 +1,11 @@
+id: a20def93-0709-4eae-9bd2-31206e21e6b2
+name: DriverQuery.EXE Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+rule: SELECT * FROM logs WHERE (Image ILIKE '%driverquery.exe' OR OriginalFileName='drvqry.exe') AND (NOT ((ParentImage ILIKE '%\\cscript.exe' OR ParentImage ILIKE '%\\mshta.exe' OR ParentImage ILIKE '%\\regsvr32.exe' OR ParentImage ILIKE '%\\rundll32.exe' OR ParentImage ILIKE '%\\wscript.exe') OR (ParentImage ILIKE '%\\AppData\\Local\\%' OR ParentImage ILIKE '%\\Users\\Public\\%' OR ParentImage ILIKE '%\\Windows\\Temp\\%')))

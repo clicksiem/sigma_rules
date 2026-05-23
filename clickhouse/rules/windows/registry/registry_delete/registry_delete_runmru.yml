@@ -1,0 +1,12 @@
+id: 3a9b8c1e-5b2e-4f7a-9d1c-2a7f3b6e1c55
+name: RunMRU Registry Key Deletion - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU'

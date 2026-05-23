@@ -1,0 +1,12 @@
+id: 312b42b1-bded-4441-8b58-163a3af58775
+name: Potentially Suspicious Execution From Tmp Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE Image ILIKE '/tmp/%' AND (NOT Image ILIKE '%/usr/bin/nextcloud')

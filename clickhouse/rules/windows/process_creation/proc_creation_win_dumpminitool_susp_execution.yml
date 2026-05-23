@@ -1,0 +1,14 @@
+id: eb1c4225-1c23-4241-8dd4-051389fde4ce
+name: Suspicious DumpMinitool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.stealth
+- attack.t1036
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\DumpMinitool.exe' OR Image ILIKE '%\\DumpMinitool.x86.exe' OR Image ILIKE '%\\DumpMinitool.arm64.exe') OR (OriginalFileName IN ('DumpMinitool.exe', 'DumpMinitool.x86.exe', 'DumpMinitool.arm64.exe'))) AND ((NOT (Image ILIKE '%\\Microsoft Visual Studio\\%' OR Image ILIKE '%\\Extensions\\%')) OR CommandLine ILIKE '%.txt%' OR ((CommandLine ILIKE '% Full%' OR CommandLine ILIKE '% Mini%' OR CommandLine ILIKE '% WithHeap%') AND (NOT CommandLine ILIKE '%--dumpType%')))

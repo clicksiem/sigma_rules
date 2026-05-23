@@ -1,0 +1,12 @@
+id: 9847f263-4a81-424f-970c-875dab15b79b
+name: Suspicious TSCON Start as SYSTEM
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') AND Image ILIKE '%\\tscon.exe'

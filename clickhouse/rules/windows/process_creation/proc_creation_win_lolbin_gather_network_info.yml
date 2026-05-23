@@ -1,0 +1,14 @@
+id: 575dce0c-8139-4e30-9295-1ee75969f7fe
+name: Potential Reconnaissance Activity Via GatherNetworkInfo.VBS
+level: 5
+size: '>0'
+active: true
+author:
+- blueteamer8699
+group: windows
+tags:
+- attack.discovery
+- attack.execution
+- attack.t1615
+- attack.t1059.005
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\wscript.exe') OR (OriginalFileName IN ('cscript.exe', 'wscript.exe'))) AND CommandLine ILIKE '%gatherNetworkInfo.vbs%'

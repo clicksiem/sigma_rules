@@ -1,0 +1,12 @@
+id: a0edd39f-a0c6-4c17-8141-261f958e8d8f
+name: PowerShell Remote Session Creation
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-PSSession%' AND ScriptBlockText ILIKE '%-ComputerName %'

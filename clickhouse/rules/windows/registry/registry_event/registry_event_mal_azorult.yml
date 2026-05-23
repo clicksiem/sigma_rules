@@ -1,0 +1,14 @@
+id: f7f9ab88-7557-4a69-b30e-0a8f91b3a0e7
+name: Registry Entries For Azorult Malware
+level: 10
+size: '>0'
+active: true
+author:
+- Trent Liffick
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (EventID IN (12, 13)) AND TargetObject ILIKE '%SYSTEM\\%' AND TargetObject ILIKE '%\\services\\localNETService'

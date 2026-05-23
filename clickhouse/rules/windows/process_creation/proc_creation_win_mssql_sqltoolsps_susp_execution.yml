@@ -1,0 +1,14 @@
+id: a746c9b8-a2fb-4ee5-a428-92bee9e99060
+name: SQL Client Tools PowerShell Session Detection
+level: 5
+size: '>0'
+active: true
+author:
+- Agro (@agro_sev) oscd.communitly
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1127
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sqltoolsps.exe' OR ParentImage ILIKE '%\\sqltoolsps.exe' OR OriginalFileName ILIKE '\\sqltoolsps.exe') AND (NOT ParentImage ILIKE '%\\smss.exe')

@@ -1,0 +1,12 @@
+id: 12f6b752-042d-483e-bf9c-915a6d06ad75
+name: Windows Firewall Disabled via PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\powershell\_ise.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%Set-NetFirewallProfile %' AND CommandLine ILIKE '% -Enabled %' AND CommandLine ILIKE '% False%') AND (CommandLine ILIKE '% -All %' OR CommandLine ILIKE '%Public%' OR CommandLine ILIKE '%Domain%' OR CommandLine ILIKE '%Private%')

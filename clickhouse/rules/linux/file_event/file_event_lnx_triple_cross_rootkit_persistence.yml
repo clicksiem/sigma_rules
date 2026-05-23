@@ -1,0 +1,14 @@
+id: 1a2ea919-d11d-4d1e-8535-06cda13be20f
+name: Triple Cross eBPF Rootkit Default Persistence
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.003
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%ebpfbackdoor'

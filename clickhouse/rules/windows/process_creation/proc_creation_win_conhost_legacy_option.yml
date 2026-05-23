@@ -1,0 +1,12 @@
+id: 3037d961-21e9-4732-b27a-637bcc7bf539
+name: Suspicious High IntegrityLevel Conhost Legacy Option
+level: 1
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE (IntegrityLevel IN ('High', 'S-1-16-12288')) AND (CommandLine ILIKE '%conhost.exe%' AND CommandLine ILIKE '%0xffffffff%' AND CommandLine ILIKE '%-ForceV1%')

@@ -1,0 +1,15 @@
+id: 7b6a7418-3afc-11f0-aff4-000d3abf478c
+name: Obfuscated PowerShell MSI Install via WindowsInstaller COM
+level: 8
+size: '>0'
+active: true
+author:
+- Meroujan Antonyan (vx3r)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.010
+- attack.t1218.007
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell\_ISE.EXE', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%-ComObject%' AND CommandLine ILIKE '%InstallProduct(%' AND CommandLine ILIKE '%.Insert(%' AND CommandLine ILIKE '%UILevel%')

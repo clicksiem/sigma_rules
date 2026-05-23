@@ -1,0 +1,12 @@
+id: 7021255e-5db3-4946-a8b9-0ba7a4644a69
+name: Potential Provisioning Registry Key Abuse For Binary Proxy Execution - REG
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Provisioning\\Commands\\%'

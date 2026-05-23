@@ -1,0 +1,14 @@
+id: 3ae9974a-eb09-4044-8e70-8980a50c12c8
+name: Suspicious Explorer Process with Whitespace Padding - ClickFix/FileFix
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1204.004
+- attack.t1027.010
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\explorer.exe' AND CommandLine ILIKE '%#%') AND (CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %' OR CommandLine ILIKE '%            %')

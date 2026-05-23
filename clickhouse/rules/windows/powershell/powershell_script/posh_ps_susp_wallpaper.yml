@@ -1,0 +1,12 @@
+id: c5ac6a1e-9407-45f5-a0ce-ca9a0806a287
+name: Replace Desktop Wallpaper by Powershell
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1491.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Get-ItemProperty%' AND ScriptBlockText ILIKE '%Registry::%' AND ScriptBlockText ILIKE '%HKEY\_CURRENT\_USER\\Control Panel\\Desktop\\%' AND ScriptBlockText ILIKE '%WallPaper%') OR ScriptBlockText ILIKE '%SystemParametersInfo(20,0,%,3)%'

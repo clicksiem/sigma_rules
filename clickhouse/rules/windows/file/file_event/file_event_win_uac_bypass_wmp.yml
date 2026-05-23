@@ -1,0 +1,12 @@
+id: 68578b43-65df-4f81-9a9b-92f32711a951
+name: UAC Bypass Using Windows Media Player - File
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE 'C:\\Users\\%' AND TargetFilename ILIKE '%\\AppData\\Local\\Temp\\OskSupport.dll') OR (Image ILIKE 'C:\\Windows\\system32\\DllHost.exe' AND TargetFilename ILIKE 'C:\\Program Files\\Windows Media Player\\osk.exe')

@@ -1,0 +1,19 @@
+id: a557ffe6-ac54-43d2-ae69-158027082350
+name: Huawei BGP Authentication Failures
+level: 3
+size: '>0'
+active: true
+author:
+- Tim Brown
+group: huawei
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.credential-access
+- attack.collection
+- attack.stealth
+- attack.t1078
+- attack.t1110
+- attack.t1557
+rule: SELECT * FROM logs WHERE hasToken(full_log, ':179') AND hasToken(full_log, 'BGP\_AUTH\_FAILED')

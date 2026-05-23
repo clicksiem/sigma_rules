@@ -1,0 +1,16 @@
+id: cd072b25-a418-4f98-8ebc-5093fb38fe1a
+name: Cisco Collect Data
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.discovery
+- attack.credential-access
+- attack.collection
+- attack.t1087.001
+- attack.t1552.001
+- attack.t1005
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'show running-config') OR hasToken(full_log, 'show startup-config') OR hasToken(full_log, 'show archive config') OR hasToken(full_log, 'more')

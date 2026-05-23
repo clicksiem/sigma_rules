@@ -1,0 +1,12 @@
+id: 7f43c430-5001-4f8b-aaa9-c3b88f18fa5c
+name: Execute From Alternate Data Streams
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%txt:%' AND ((CommandLine ILIKE '%type %' AND CommandLine ILIKE '% > %') OR (CommandLine ILIKE '%makecab %' AND CommandLine ILIKE '%.cab%') OR (CommandLine ILIKE '%reg %' AND CommandLine ILIKE '% export %') OR (CommandLine ILIKE '%regedit %' AND CommandLine ILIKE '% /E %') OR (CommandLine ILIKE '%esentutl %' AND CommandLine ILIKE '% /y %' AND CommandLine ILIKE '% /d %' AND CommandLine ILIKE '% /o %'))

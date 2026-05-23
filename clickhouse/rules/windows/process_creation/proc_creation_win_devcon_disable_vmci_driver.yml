@@ -1,0 +1,15 @@
+id: 85f520e7-6f5e-43ca-874c-222e5bf9c0de
+name: Devcon Execution Disabling VMware VMCI Device
+level: 8
+size: '>0'
+active: true
+author:
+- Matt Anderson, Dray Agha, Anna Pham (Huntress)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1543.003
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\devcon.exe' OR OriginalFileName='DevCon.exe') AND CommandLine ILIKE '% disable %' AND (CommandLine ILIKE '%15AD&DEV\_0740%' OR CommandLine ILIKE '%VMWVMCIHOSTDEV%')

@@ -1,0 +1,12 @@
+id: eb2d07d4-49cb-4523-801a-da002df36602
+name: HackTool - EDRSilencer Execution
+level: 8
+size: '>0'
+active: true
+author:
+- '@gott_cyber'
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\EDRSilencer.exe' OR OriginalFileName='EDRSilencer.exe' OR Description ILIKE '%EDRSilencer%'

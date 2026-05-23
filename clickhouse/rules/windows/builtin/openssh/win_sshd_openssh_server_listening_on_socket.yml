@@ -1,0 +1,12 @@
+id: 3ce8e9a4-bc61-4c9b-8e69-d7e2492a8781
+name: OpenSSH Server Listening On Socket
+level: 5
+size: '>0'
+active: true
+author:
+- mdecrevoisier
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.004
+rule: SELECT * FROM logs WHERE EventID=4 AND process='sshd' AND payload ILIKE 'Server listening on %'

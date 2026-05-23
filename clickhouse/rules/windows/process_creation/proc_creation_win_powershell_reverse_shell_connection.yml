@@ -1,0 +1,12 @@
+id: edc2f8ae-2412-4dfd-b9d5-0c57727e70be
+name: Potential Powershell ReverseShell Connection
+level: 8
+size: '>0'
+active: true
+author:
+- FPT.EagleEye, wagga, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll')) OR (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe')) AND (CommandLine ILIKE '% Net.Sockets.TCPClient%' AND CommandLine ILIKE '%.GetStream(%' AND CommandLine ILIKE '%.Write(%')

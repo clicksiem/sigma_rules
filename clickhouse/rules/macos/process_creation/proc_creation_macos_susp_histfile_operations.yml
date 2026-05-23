@@ -1,0 +1,12 @@
+id: 508a9374-ad52-4789-b568-fc358def2c65
+name: Suspicious History File Operations
+level: 5
+size: '>0'
+active: true
+author:
+- Mikhail Larin, oscd.community
+group: macos
+tags:
+- attack.credential-access
+- attack.t1552.003
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%.bash\_history%' OR CommandLine ILIKE '%.zsh\_history%' OR CommandLine ILIKE '%.zhistory%' OR CommandLine ILIKE '%.history%' OR CommandLine ILIKE '%.sh\_history%' OR CommandLine ILIKE '%fish\_history%'

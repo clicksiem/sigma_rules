@@ -1,0 +1,16 @@
+id: ea61bb82-a5e0-42e6-8537-91d29500f1b9
+name: Potential Abuse of Linux Magic System Request Key
+level: 5
+size: '>0'
+active: true
+author:
+- Milad Cheraghi
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+- attack.impact
+- attack.t1529
+- attack.t1489
+- attack.t1499
+rule: SELECT * FROM logs WHERE type='PATH' AND (name ILIKE '%/sysrq' OR name ILIKE '%/sysctl.conf' OR name ILIKE '%/sysrq-trigger')

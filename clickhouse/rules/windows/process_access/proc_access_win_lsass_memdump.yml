@@ -1,0 +1,13 @@
+id: 5ef9853e-4d0e-4a70-846f-a9ca37d876da
+name: Potential Credential Dumping Activity Via LSASS
+level: 5
+size: '>0'
+active: true
+author:
+- Samir Bousseaden, Michael Haag
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.s0002
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%\\lsass.exe' AND (GrantedAccess ILIKE '%0x1038%' OR GrantedAccess ILIKE '%0x1438%' OR GrantedAccess ILIKE '%0x143a%' OR GrantedAccess ILIKE '%0x1fffff%') AND (CallTrace ILIKE '%dbgcore.dll%' OR CallTrace ILIKE '%dbghelp.dll%' OR CallTrace ILIKE '%kernel32.dll%' OR CallTrace ILIKE '%kernelbase.dll%' OR CallTrace ILIKE '%ntdll.dll%')) AND (NOT (SourceUser ILIKE '%AUTHORI%' OR SourceUser ILIKE '%AUTORI%')) AND (NOT (((CallTrace ILIKE '%:\\Windows\\Temp\\asgard2-agent\\%' AND CallTrace ILIKE '%\\thor\\thor64.exe+%' AND CallTrace ILIKE '%|UNKNOWN(%') AND GrantedAccess='0x103800') OR SourceImage ILIKE '%:\\Windows\\Sysmon64.exe'))

@@ -1,0 +1,14 @@
+id: 26488ad0-f9fd-4536-876f-52fea846a2e4
+name: HackTool - SharPersist Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\SharPersist.exe' OR Product='SharPersist') OR (CommandLine ILIKE '% -t schtask -c %' OR CommandLine ILIKE '% -t startupfolder -c %') OR (CommandLine ILIKE '% -t reg -c %' AND CommandLine ILIKE '% -m add%') OR (CommandLine ILIKE '% -t service -c %' AND CommandLine ILIKE '% -m add%') OR (CommandLine ILIKE '% -t schtask -c %' AND CommandLine ILIKE '% -m add%')

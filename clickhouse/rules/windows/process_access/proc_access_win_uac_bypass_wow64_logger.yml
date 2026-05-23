@@ -1,0 +1,12 @@
+id: 4f6c43e2-f989-4ea5-bcd8-843b49a0317c
+name: UAC Bypass Using WOW64 Logger DLL Hijack
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE SourceImage ILIKE '%:\\Windows\\SysWOW64\\%' AND GrantedAccess='0x1fffff' AND CallTrace ILIKE 'UNKNOWN(0000000000000000)|UNKNOWN(0000000000000000)|%'

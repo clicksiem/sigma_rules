@@ -1,0 +1,14 @@
+id: 9c0295ce-d60d-40bd-bd74-84673b7592b1
+name: Suspicious Encoded And Obfuscated Reflection Assembly Load Function Call
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1027
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%OgA6ACgAIgBMACIAKwAiAG8AYQBkACIAKQ%' OR CommandLine ILIKE '%oAOgAoACIATAAiACsAIgBvAGEAZAAiACkA%' OR CommandLine ILIKE '%6ADoAKAAiAEwAIgArACIAbwBhAGQAIgApA%' OR CommandLine ILIKE '%OgA6ACgAIgBMAG8AIgArACIAYQBkACIAKQ%' OR CommandLine ILIKE '%oAOgAoACIATABvACIAKwAiAGEAZAAiACkA%' OR CommandLine ILIKE '%6ADoAKAAiAEwAbwAiACsAIgBhAGQAIgApA%' OR CommandLine ILIKE '%OgA6ACgAIgBMAG8AYQAiACsAIgBkACIAKQ%' OR CommandLine ILIKE '%oAOgAoACIATABvAGEAIgArACIAZAAiACkA%' OR CommandLine ILIKE '%6ADoAKAAiAEwAbwBhACIAKwAiAGQAIgApA%' OR CommandLine ILIKE '%OgA6ACgAJwBMACcAKwAnAG8AYQBkACcAKQ%' OR CommandLine ILIKE '%oAOgAoACcATAAnACsAJwBvAGEAZAAnACkA%' OR CommandLine ILIKE '%6ADoAKAAnAEwAJwArACcAbwBhAGQAJwApA%' OR CommandLine ILIKE '%OgA6ACgAJwBMAG8AJwArACcAYQBkACcAKQ%' OR CommandLine ILIKE '%oAOgAoACcATABvACcAKwAnAGEAZAAnACkA%' OR CommandLine ILIKE '%6ADoAKAAnAEwAbwAnACsAJwBhAGQAJwApA%' OR CommandLine ILIKE '%OgA6ACgAJwBMAG8AYQAnACsAJwBkACcAKQ%' OR CommandLine ILIKE '%oAOgAoACcATABvAGEAJwArACcAZAAnACkA%' OR CommandLine ILIKE '%6ADoAKAAnAEwAbwBhACcAKwAnAGQAJwApA%'

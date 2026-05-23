@@ -1,0 +1,11 @@
+id: 993c2665-e6ef-40e3-a62a-e1a97686af79
+name: Certificate Use With No Strong Mapping
+level: 5
+size: '>0'
+active: true
+author:
+- '@br4dy5'
+group: windows
+tags:
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE (Provider_Name IN ('Kerberos-Key-Distribution-Center', 'Microsoft-Windows-Kerberos-Key-Distribution-Center')) AND (EventID IN (39, 41))

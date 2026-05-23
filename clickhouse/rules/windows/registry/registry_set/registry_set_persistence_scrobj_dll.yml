@@ -1,0 +1,13 @@
+id: fe20dda1-6f37-4379-bbe0-a98d400cae90
+name: Potential Persistence Via Scrobj.dll COM Hijacking
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.015
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%InprocServer32\\(Default)' AND Details ILIKE 'C:\\WINDOWS\\system32\\scrobj.dll'

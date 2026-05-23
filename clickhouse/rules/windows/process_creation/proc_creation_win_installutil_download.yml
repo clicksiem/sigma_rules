@@ -1,0 +1,12 @@
+id: 75edd216-1939-4c73-8d61-7f3a0d85b5cc
+name: File Download Via InstallUtil.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\InstallUtil.exe' OR OriginalFileName='InstallUtil.exe') AND (CommandLine ILIKE '%ftp://%' OR CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

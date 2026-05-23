@@ -1,0 +1,19 @@
+id: a7c0ae48-8df8-42bf-91bd-2ea57e2f9d43
+name: Juniper BGP Missing MD5
+level: 3
+size: '>0'
+active: true
+author:
+- Tim Brown
+group: juniper
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.credential-access
+- attack.collection
+- attack.stealth
+- attack.t1078
+- attack.t1110
+- attack.t1557
+rule: SELECT * FROM logs WHERE hasToken(full_log, ':179') AND hasToken(full_log, 'missing MD5 digest')

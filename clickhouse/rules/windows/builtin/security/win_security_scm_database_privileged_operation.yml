@@ -1,0 +1,12 @@
+id: dae8171c-5ec6-4396-b210-8466585b53e9
+name: SCM Database Privileged Operation
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g, Tim Shelton
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548
+rule: SELECT * FROM logs WHERE (EventID=4674 AND ObjectType ILIKE 'SC\_MANAGER OBJECT' AND ObjectName='servicesactive' AND PrivilegeList='SeTakeOwnershipPrivilege') AND (NOT (SubjectLogonId='0x3e4' AND ProcessName ILIKE '%:\\Windows\\System32\\services.exe'))

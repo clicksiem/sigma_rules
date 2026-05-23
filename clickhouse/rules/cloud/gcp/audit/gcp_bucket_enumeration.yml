@@ -1,0 +1,11 @@
+id: e2feb918-4e77-4608-9697-990a1aaf74c3
+name: Google Cloud Storage Buckets Enumeration
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.discovery
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` IN ('storage.buckets.list', 'storage.buckets.listChannels')

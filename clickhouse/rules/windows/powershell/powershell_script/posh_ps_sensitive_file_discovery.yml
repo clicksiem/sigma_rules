@@ -1,0 +1,12 @@
+id: 7d416556-6502-45b2-9bad-9d2f05f38997
+name: Powershell Sensitive File Discovery
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%ls%' OR ScriptBlockText ILIKE '%get-childitem%' OR ScriptBlockText ILIKE '%gci%') AND ScriptBlockText ILIKE '%-recurse%' AND (ScriptBlockText ILIKE '%.pass%' OR ScriptBlockText ILIKE '%.kdbx%' OR ScriptBlockText ILIKE '%.kdb%')

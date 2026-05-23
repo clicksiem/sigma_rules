@@ -1,0 +1,12 @@
+id: 58f50261-c53b-4c88-bd12-1d71f12eda4c
+name: Windows Credential Manager Access via VaultCmd
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\VaultCmd.exe' OR OriginalFileName='VAULTCMD.EXE') AND CommandLine ILIKE '%/listcreds:%'

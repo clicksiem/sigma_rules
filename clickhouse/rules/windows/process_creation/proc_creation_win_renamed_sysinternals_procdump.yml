@@ -1,0 +1,12 @@
+id: 4a0b2c7e-7cb2-495d-8b63-5f268e7bfd67
+name: Renamed ProcDump Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE (OriginalFileName='procdump' OR ((CommandLine ILIKE '% -ma %' OR CommandLine ILIKE '% /ma %' OR CommandLine ILIKE '% –ma %' OR CommandLine ILIKE '% —ma %' OR CommandLine ILIKE '% ―ma %' OR CommandLine ILIKE '% -mp %' OR CommandLine ILIKE '% /mp %' OR CommandLine ILIKE '% –mp %' OR CommandLine ILIKE '% —mp %' OR CommandLine ILIKE '% ―mp %') AND (CommandLine ILIKE '% -accepteula%' OR CommandLine ILIKE '% /accepteula%' OR CommandLine ILIKE '% –accepteula%' OR CommandLine ILIKE '% —accepteula%' OR CommandLine ILIKE '% ―accepteula%'))) AND (NOT (Image ILIKE '%\\procdump.exe' OR Image ILIKE '%\\procdump64.exe'))

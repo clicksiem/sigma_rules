@@ -1,0 +1,13 @@
+id: 692f0bec-83ba-4d04-af7e-e884a96059b6
+name: Potential WMI Lateral Movement WmiPrvSE Spawned PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Markus Neis @Karneades
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\WmiPrvSE.exe' AND ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll')))

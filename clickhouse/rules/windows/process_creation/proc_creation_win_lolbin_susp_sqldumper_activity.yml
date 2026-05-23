@@ -1,0 +1,12 @@
+id: 23ceaf5c-b6f1-4a32-8559-f2ff734be516
+name: Dumping Process via Sqldumper.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Kirill Kiryanov, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\sqldumper.exe' AND (CommandLine ILIKE '%0x0110%' OR CommandLine ILIKE '%0x01100:40%')

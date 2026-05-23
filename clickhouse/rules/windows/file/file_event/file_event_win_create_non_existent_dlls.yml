@@ -1,0 +1,15 @@
+id: df6ecb8b-7822-4f4b-b412-08f524b4576c
+name: Creation Of Non-Existent System DLL
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), fornotes
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%:\\Windows\\System32\\axeonoffhelper.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\cdpsgshims.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\oci.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\offdmpsvc.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\shellchromeapi.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\TSMSISrv.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\TSVIPSrv.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\wbem\\wbemcomn.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\WLBSCTRL.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\wow64log.dll' OR TargetFilename ILIKE '%:\\Windows\\System32\\WptsExtensions.dll' OR TargetFilename ILIKE '%\\SprintCSP.dll'

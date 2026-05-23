@@ -1,0 +1,12 @@
+id: cc368ed0-2411-45dc-a222-510ace303cb2
+name: Potentially Suspicious Execution Of Regasm/Regsvcs From Uncommon Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.009
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\Regsvcs.exe' OR Image ILIKE '%\\Regasm.exe') OR (OriginalFileName IN ('RegSvcs.exe', 'RegAsm.exe'))) AND (CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\%' OR CommandLine ILIKE '%\\PerfLogs\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\Windows\\Temp\\%')

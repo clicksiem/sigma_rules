@@ -1,0 +1,14 @@
+id: 1d61f71d-59d2-479e-9562-4ff5f4ead16b
+name: Suspicious Service Installation
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- car.2013-09-005
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND (ImagePath ILIKE '% -nop %' OR ImagePath ILIKE '% -sta %' OR ImagePath ILIKE '% -w hidden %' OR ImagePath ILIKE '%:\\Temp\\%' OR ImagePath ILIKE '%.downloadfile(%' OR ImagePath ILIKE '%.downloadstring(%' OR ImagePath ILIKE '%\\ADMIN$\\%' OR ImagePath ILIKE '%\\Perflogs\\%' OR ImagePath ILIKE '%&&%')

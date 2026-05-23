@@ -1,0 +1,12 @@
+id: a58353df-af43-4753-bad0-cd83ef35eef5
+name: Suspicious Usage Of Active Directory Diagnostic Tool (ntdsutil.exe)
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\ntdsutil.exe' OR OriginalFileName='ntdsutil.exe') AND ((CommandLine ILIKE '%snapshot%' AND CommandLine ILIKE '%mount %') OR (CommandLine ILIKE '%ac%' AND CommandLine ILIKE '% i%' AND CommandLine ILIKE '% ntds%'))

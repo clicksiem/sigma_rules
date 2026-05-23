@@ -1,0 +1,12 @@
+id: 3c89a1e8-0fba-449e-8f1b-8409d6267ec8
+name: Suspicious Process Created Via Wmic.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%process %' AND CommandLine ILIKE '%call %' AND CommandLine ILIKE '%create %') AND (CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%bitsadmin%' OR CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%cmd.exe /c %' OR CommandLine ILIKE '%cmd.exe /k %' OR CommandLine ILIKE '%cmd.exe /r %' OR CommandLine ILIKE '%cmd /c %' OR CommandLine ILIKE '%cmd /k %' OR CommandLine ILIKE '%cmd /r %' OR CommandLine ILIKE '%powershell%' OR CommandLine ILIKE '%pwsh%' OR CommandLine ILIKE '%certutil%' OR CommandLine ILIKE '%cscript%' OR CommandLine ILIKE '%wscript%' OR CommandLine ILIKE '%mshta%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Local\\%' OR CommandLine ILIKE '%\%temp\%%' OR CommandLine ILIKE '%\%tmp\%%' OR CommandLine ILIKE '%\%ProgramData\%%' OR CommandLine ILIKE '%\%appdata\%%' OR CommandLine ILIKE '%\%comspec\%%' OR CommandLine ILIKE '%\%localappdata\%%')

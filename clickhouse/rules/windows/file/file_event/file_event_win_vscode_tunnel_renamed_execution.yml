@@ -1,0 +1,11 @@
+id: d102b8f5-61dc-4e68-bd83-9a3187c67377
+name: Renamed VsCode Code Tunnel Execution - File Indicator
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\code\_tunnel.json' AND (NOT (Image ILIKE '%\\code-tunnel.exe' OR Image ILIKE '%\\code.exe'))

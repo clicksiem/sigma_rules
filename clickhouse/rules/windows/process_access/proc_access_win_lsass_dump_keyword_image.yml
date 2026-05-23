@@ -1,0 +1,13 @@
+id: 9bd012ee-0dff-44d7-84a0-aa698cfd87a3
+name: LSASS Memory Access by Tool With Dump Keyword In Name
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.s0002
+rule: SELECT * FROM logs WHERE TargetImage ILIKE '%\\lsass.exe' AND SourceImage ILIKE '%dump%' AND (GrantedAccess ILIKE '%10' OR GrantedAccess ILIKE '%30' OR GrantedAccess ILIKE '%50' OR GrantedAccess ILIKE '%70' OR GrantedAccess ILIKE '%90' OR GrantedAccess ILIKE '%B0' OR GrantedAccess ILIKE '%D0' OR GrantedAccess ILIKE '%F0' OR GrantedAccess ILIKE '%18' OR GrantedAccess ILIKE '%38' OR GrantedAccess ILIKE '%58' OR GrantedAccess ILIKE '%78' OR GrantedAccess ILIKE '%98' OR GrantedAccess ILIKE '%B8' OR GrantedAccess ILIKE '%D8' OR GrantedAccess ILIKE '%F8' OR GrantedAccess ILIKE '%1A' OR GrantedAccess ILIKE '%3A' OR GrantedAccess ILIKE '%5A' OR GrantedAccess ILIKE '%7A' OR GrantedAccess ILIKE '%9A' OR GrantedAccess ILIKE '%BA' OR GrantedAccess ILIKE '%DA' OR GrantedAccess ILIKE '%FA' OR GrantedAccess ILIKE '%0x14C2' OR GrantedAccess ILIKE '%FF')

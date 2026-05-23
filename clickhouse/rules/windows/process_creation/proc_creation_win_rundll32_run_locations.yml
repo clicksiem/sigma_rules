@@ -1,0 +1,13 @@
+id: 15b75071-74cc-47e0-b4c6-b43744a62a2b
+name: Suspicious Process Start Locations
+level: 5
+size: '>0'
+active: true
+author:
+- juju4, Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- car.2013-05-002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\RECYCLER\\%' OR Image ILIKE '%:\\SystemVolumeInformation\\%') OR (Image ILIKE 'C:\\Windows\\Tasks\\%' OR Image ILIKE 'C:\\Windows\\debug\\%' OR Image ILIKE 'C:\\Windows\\fonts\\%' OR Image ILIKE 'C:\\Windows\\help\\%' OR Image ILIKE 'C:\\Windows\\drivers\\%' OR Image ILIKE 'C:\\Windows\\addins\\%' OR Image ILIKE 'C:\\Windows\\cursors\\%' OR Image ILIKE 'C:\\Windows\\system32\\tasks\\%')

@@ -1,0 +1,12 @@
+id: d7c75059-2901-4578-b209-8837fd31c6a8
+name: Proxy Execution via Vshadow
+level: 5
+size: '>0'
+active: true
+author:
+- David Faiss
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\vshadow.exe' OR OriginalFileName='vshadow.exe') AND CommandLine ILIKE '%-exec%'

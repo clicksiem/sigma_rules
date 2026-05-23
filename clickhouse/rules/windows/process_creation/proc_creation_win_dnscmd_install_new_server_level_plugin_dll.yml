@@ -1,0 +1,17 @@
+id: f63b56ee-3f79-4b8a-97fb-5c48007e8573
+name: New DNS ServerLevelPluginDll Installed Via Dnscmd.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.defense-impairment
+- attack.t1574.001
+- attack.t1112
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\dnscmd.exe' AND (CommandLine ILIKE '%/config%' AND CommandLine ILIKE '%/serverlevelplugindll%')

@@ -1,0 +1,13 @@
+id: dfb5b4e8-91d0-4291-b40a-e3b0d3942c45
+name: Potential Persistence Via Shim Database Modification
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.011
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Custom\\%') AND (NOT (Details='' OR Details='(Empty)' OR isNull(Details)))

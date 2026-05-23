@@ -1,0 +1,15 @@
+id: 4f77e1d7-3982-4ee0-8489-abf2d6b75284
+name: Sign-ins from Non-Compliant Devices
+level: 8
+size: '>0'
+active: true
+author:
+- Michael Epping, '@mepples21'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE `DeviceDetail.isCompliant`='false'

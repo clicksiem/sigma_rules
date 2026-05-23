@@ -1,0 +1,12 @@
+id: 758ff488-18d5-4cbe-8ec4-02b6285a434f
+name: Remote Access Tool - NetSupport Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Description='NetSupport Client Configurator' OR Product='NetSupport Remote Control' OR Company='NetSupport Ltd' OR OriginalFileName='PCICFGUI.EXE'

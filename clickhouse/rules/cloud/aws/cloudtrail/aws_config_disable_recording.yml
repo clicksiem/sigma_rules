@@ -1,0 +1,12 @@
+id: 07330162-dba1-4746-8121-a9647d49d297
+name: AWS Config Disabling Channel/Recorder
+level: 8
+size: '>0'
+active: true
+author:
+- vitaliy0x1
+group: aws
+tags:
+- attack.defense-impairment
+- attack.t1685.002
+rule: SELECT * FROM logs WHERE eventSource='config.amazonaws.com' AND (eventName IN ('DeleteDeliveryChannel', 'StopConfigurationRecorder'))

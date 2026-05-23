@@ -1,0 +1,12 @@
+id: 54786ddc-5b8a-11ed-9b6a-0242ac120002
+name: Suspicious Ping/Del Command Combination
+level: 8
+size: '>0'
+active: true
+author:
+- Ilya Krestinichev
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% -n %' OR CommandLine ILIKE '% /n %' OR CommandLine ILIKE '% –n %' OR CommandLine ILIKE '% —n %' OR CommandLine ILIKE '% ―n %') AND CommandLine ILIKE '%Nul%' AND (CommandLine ILIKE '% -f %' OR CommandLine ILIKE '% /f %' OR CommandLine ILIKE '% –f %' OR CommandLine ILIKE '% —f %' OR CommandLine ILIKE '% ―f %' OR CommandLine ILIKE '% -q %' OR CommandLine ILIKE '% /q %' OR CommandLine ILIKE '% –q %' OR CommandLine ILIKE '% —q %' OR CommandLine ILIKE '% ―q %') AND (CommandLine ILIKE '%ping%' AND CommandLine ILIKE '%del %')

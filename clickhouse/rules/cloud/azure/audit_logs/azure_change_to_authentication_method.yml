@@ -1,0 +1,16 @@
+id: 4d78a000-ab52-4564-88a5-7ab5242b20c7
+name: Change to Authentication Method
+level: 5
+size: '>0'
+active: true
+author:
+- AlertIQ
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1556
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE LoggedByService='Authentication Methods' AND Category='UserManagement' AND OperationName='User registered security info'

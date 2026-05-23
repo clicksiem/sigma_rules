@@ -1,0 +1,13 @@
+id: 49be8799-7b4d-4fda-ad23-cafbefdebbc5
+name: Use of Wfc.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Christopher Peacock @SecurePeacock, SCYTHE @scythe_io
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\wfc.exe' OR OriginalFileName='wfc.exe'

@@ -1,0 +1,11 @@
+id: 9f308120-69ed-4506-abde-ac6da81f4310
+name: Okta Network Zone Deactivated or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: okta
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventType IN ('zone.deactivate', 'zone.delete')

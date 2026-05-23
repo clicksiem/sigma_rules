@@ -1,0 +1,11 @@
+id: 51ae86a2-e2e1-4097-ad85-c46cb6851de4
+name: Renamed PsExec Service Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE OriginalFileName='psexesvc.exe' AND (NOT Image ILIKE 'C:\\Windows\\PSEXESVC.exe')

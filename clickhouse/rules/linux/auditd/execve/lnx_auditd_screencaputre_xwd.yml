@@ -1,0 +1,12 @@
+id: e2f17c5d-b02a-442b-9052-6eb89c9fec9c
+name: Screen Capture with Xwd
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.collection
+- attack.t1113
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND a0='xwd') AND ((a1='-root' AND a2='-out' AND a3 ILIKE '%.xwd') OR (a1='-out' AND a2 ILIKE '%.xwd'))

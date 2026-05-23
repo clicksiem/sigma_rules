@@ -1,0 +1,12 @@
+id: f6d1dd2f-b8ce-40ca-bc23-062efb686b34
+name: Script Event Consumer Spawning Process
+level: 8
+size: '>0'
+active: true
+author:
+- Sittikorn S
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\scrcons.exe' AND (Image ILIKE '%\\svchost.exe' OR Image ILIKE '%\\dllhost.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\msiexec.exe' OR Image ILIKE '%\\msbuild.exe')

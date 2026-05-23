@@ -1,0 +1,13 @@
+id: a6976974-ea6f-4e97-818e-ea08625c52cb
+name: Potential RipZip Attack on Startup Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Greg (rule)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup%' AND TargetFilename ILIKE '%.lnk.{0AFACED1-E828-11D1-9187-B532F1E9575D}%') AND Image ILIKE '%\\explorer.exe'

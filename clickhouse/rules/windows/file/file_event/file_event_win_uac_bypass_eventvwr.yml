@@ -1,0 +1,12 @@
+id: 63e4f530-65dc-49cc-8f80-ccfa95c69d43
+name: UAC Bypass Using EventVwr
+level: 8
+size: '>0'
+active: true
+author:
+- Antonio Cocomazzi (idea), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\Microsoft\\Event Viewer\\RecentViews' OR TargetFilename ILIKE '%\\Microsoft\\EventV~1\\RecentViews') AND (NOT (Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%'))

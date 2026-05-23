@@ -1,0 +1,16 @@
+id: 4922a5dd-6743-4fc2-8e81-144374280997
+name: Flash Player Update from Suspicious Location
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.initial-access
+- attack.stealth
+- attack.t1189
+- attack.execution
+- attack.t1204.002
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE (`c-uri` ILIKE '%/flash\_install.php%' OR `c-uri` ILIKE '%/install\_flash\_player.exe') AND (NOT `cs-host` ILIKE '%.adobe.com')

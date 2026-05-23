@@ -1,0 +1,12 @@
+id: 4db60cc0-36fb-42b7-9b58-a5b53019fb74
+name: AWS CloudTrail Important Change
+level: 5
+size: '>0'
+active: true
+author:
+- vitaliy0x1
+group: aws
+tags:
+- attack.defense-impairment
+- attack.t1685.002
+rule: SELECT * FROM logs WHERE eventSource='cloudtrail.amazonaws.com' AND (eventName IN ('StopLogging', 'UpdateTrail', 'DeleteTrail'))

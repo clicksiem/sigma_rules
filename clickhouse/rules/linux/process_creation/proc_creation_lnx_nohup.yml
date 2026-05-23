@@ -1,0 +1,12 @@
+id: e4ffe466-6ff8-48d4-94bd-e32d1a6061e2
+name: Nohup Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Christopher Peacock @SecurePeacock, SCYTHE @scythe_io
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/nohup'

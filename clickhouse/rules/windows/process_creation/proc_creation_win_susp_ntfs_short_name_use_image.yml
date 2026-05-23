@@ -1,0 +1,12 @@
+id: 3ef5605c-9eb9-47b0-9a71-b727e6aa5c3b
+name: Use NTFS Short Name in Image
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%~1.bat%' OR Image ILIKE '%~1.dll%' OR Image ILIKE '%~1.exe%' OR Image ILIKE '%~1.hta%' OR Image ILIKE '%~1.js%' OR Image ILIKE '%~1.msi%' OR Image ILIKE '%~1.ps1%' OR Image ILIKE '%~1.tmp%' OR Image ILIKE '%~1.vbe%' OR Image ILIKE '%~1.vbs%' OR Image ILIKE '%~2.bat%' OR Image ILIKE '%~2.dll%' OR Image ILIKE '%~2.exe%' OR Image ILIKE '%~2.hta%' OR Image ILIKE '%~2.js%' OR Image ILIKE '%~2.msi%' OR Image ILIKE '%~2.ps1%' OR Image ILIKE '%~2.tmp%' OR Image ILIKE '%~2.vbe%' OR Image ILIKE '%~2.vbs%') AND (NOT ParentImage ILIKE 'C:\\Windows\\explorer.exe') AND (NOT (ParentImage ILIKE '%\\WebEx\\WebexHost.exe' OR ParentImage ILIKE '%\\thor\\thor64.exe' OR Image ILIKE 'C:\\PROGRA~1\\WinZip\\WZPREL~1.EXE' OR Image ILIKE '%\\VCREDI~1.EXE'))

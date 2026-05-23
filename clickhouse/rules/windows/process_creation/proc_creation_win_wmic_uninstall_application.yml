@@ -1,0 +1,12 @@
+id: b53317a0-8acf-4fd1-8de8-a5401e776b96
+name: Application Removed Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WMIC.exe' OR OriginalFileName='wmic.exe') AND (CommandLine ILIKE '%call%' AND CommandLine ILIKE '%uninstall%')

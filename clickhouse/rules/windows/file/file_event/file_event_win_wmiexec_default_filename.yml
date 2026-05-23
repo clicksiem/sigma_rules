@@ -1,0 +1,13 @@
+id: 8d5aca11-22b3-4f22-b7ba-90e60533e1fb
+name: Wmiexec Default Output File
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE match(TargetFilename, '\\Windows\\__1\d{9}\.\d{1,7}$') OR match(TargetFilename, 'C:\\__1\d{9}\.\d{1,7}$') OR match(TargetFilename, 'D:\\__1\d{9}\.\d{1,7}$')

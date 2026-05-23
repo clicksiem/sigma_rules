@@ -1,0 +1,15 @@
+id: 9eb99343-d336-4020-a3cd-67f3819e68ee
+name: Account Tampering - Suspicious Failed Logon Reasons
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE ((EventID IN (4625, 4776)) AND ((Status IN ('0xC0000072', '0xC000006F', '0xC0000070', '0xC0000413', '0xC000018C', '0xC000015B')) OR (SubStatus IN ('0xC0000072', '0xC000006F', '0xC0000070', '0xC0000413', '0xC000018C', '0xC000015B')))) AND (NOT SubjectUserSid='S-1-0-0')

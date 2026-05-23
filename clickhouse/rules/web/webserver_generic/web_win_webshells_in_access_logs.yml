@@ -1,0 +1,12 @@
+id: 7ff9db12-1b94-4a79-ba68-a2402c5d6729
+name: Windows Webshell Strings
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: ''
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE `cs-method`='GET' AND (hasToken(full_log, '=whoami') OR hasToken(full_log, '=net\%20user') OR hasToken(full_log, '=net+user') OR hasToken(full_log, '=net\%2Buser') OR hasToken(full_log, '=cmd\%20/c\%') OR hasToken(full_log, '=cmd+/c+') OR hasToken(full_log, '=cmd\%2B/c\%') OR hasToken(full_log, '=cmd\%20/r\%') OR hasToken(full_log, '=cmd+/r+') OR hasToken(full_log, '=cmd\%2B/r\%') OR hasToken(full_log, '=cmd\%20/k\%') OR hasToken(full_log, '=cmd+/k+') OR hasToken(full_log, '=cmd\%2B/k\%') OR hasToken(full_log, '=powershell\%') OR hasToken(full_log, '=powershell+') OR hasToken(full_log, '=tasklist\%') OR hasToken(full_log, '=tasklist+') OR hasToken(full_log, '=wmic\%') OR hasToken(full_log, '=wmic+') OR hasToken(full_log, '=ssh\%') OR hasToken(full_log, '=ssh+') OR hasToken(full_log, '=python\%') OR hasToken(full_log, '=python+') OR hasToken(full_log, '=python3\%') OR hasToken(full_log, '=python3+') OR hasToken(full_log, '=ipconfig') OR hasToken(full_log, '=wget\%') OR hasToken(full_log, '=wget+') OR hasToken(full_log, '=curl\%') OR hasToken(full_log, '=curl+') OR hasToken(full_log, '=certutil') OR hasToken(full_log, '=copy\%20\%5C\%5C') OR hasToken(full_log, '=dsquery\%') OR hasToken(full_log, '=dsquery+') OR hasToken(full_log, '=nltest\%') OR hasToken(full_log, '=nltest+'))

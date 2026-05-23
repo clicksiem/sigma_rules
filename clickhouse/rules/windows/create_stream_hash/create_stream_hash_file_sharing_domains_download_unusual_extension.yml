@@ -1,0 +1,13 @@
+id: ae02ed70-11aa-4a22-b397-c0d0e8f6ea99
+name: Unusual File Download From File Sharing Websites - File Stream
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.s0139
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE (Contents ILIKE '%.githubusercontent.com%' OR Contents ILIKE '%anonfiles.com%' OR Contents ILIKE '%cdn.discordapp.com%' OR Contents ILIKE '%ddns.net%' OR Contents ILIKE '%dl.dropboxusercontent.com%' OR Contents ILIKE '%ghostbin.co%' OR Contents ILIKE '%github.com%' OR Contents ILIKE '%glitch.me%' OR Contents ILIKE '%gofile.io%' OR Contents ILIKE '%hastebin.com%' OR Contents ILIKE '%mediafire.com%' OR Contents ILIKE '%mega.nz%' OR Contents ILIKE '%onrender.com%' OR Contents ILIKE '%pages.dev%' OR Contents ILIKE '%paste.ee%' OR Contents ILIKE '%pastebin.com%' OR Contents ILIKE '%pastebin.pl%' OR Contents ILIKE '%pastetext.net%' OR Contents ILIKE '%pixeldrain.com%' OR Contents ILIKE '%privatlab.com%' OR Contents ILIKE '%privatlab.net%' OR Contents ILIKE '%send.exploit.in%' OR Contents ILIKE '%sendspace.com%' OR Contents ILIKE '%storage.googleapis.com%' OR Contents ILIKE '%storjshare.io%' OR Contents ILIKE '%supabase.co%' OR Contents ILIKE '%temp.sh%' OR Contents ILIKE '%transfer.sh%' OR Contents ILIKE '%trycloudflare.com%' OR Contents ILIKE '%ufile.io%' OR Contents ILIKE '%w3spaces.com%' OR Contents ILIKE '%workers.dev%') AND (TargetFilename ILIKE '%.bat:Zone%' OR TargetFilename ILIKE '%.cmd:Zone%' OR TargetFilename ILIKE '%.ps1:Zone%')

@@ -1,0 +1,13 @@
+id: a4e3d776-f12e-42c2-8510-9e6ed1f43ec3
+name: Unusual Child Process of dns.exe
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1133
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\dns.exe' AND (NOT Image ILIKE '%\\conhost.exe')

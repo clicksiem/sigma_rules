@@ -1,0 +1,13 @@
+id: a62b37e0-45d3-48d9-a517-90c1a1b0186b
+name: Eventlog Cleared
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.005
+- car.2016-04-002
+rule: SELECT * FROM logs WHERE (EventID=104 AND Provider_Name='Microsoft-Windows-Eventlog') AND (NOT (Channel IN ('Microsoft-Windows-PowerShell/Operational', 'Microsoft-Windows-Sysmon/Operational', 'PowerShellCore/Operational', 'Security', 'System', 'Windows PowerShell')))

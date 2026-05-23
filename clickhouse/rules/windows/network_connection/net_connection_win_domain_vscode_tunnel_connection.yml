@@ -1,0 +1,14 @@
+id: 4b657234-038e-4ad5-997c-4be42340bce4
+name: Network Connection Initiated To Visual Studio Code Tunnels Domain
+level: 5
+size: '>0'
+active: true
+author:
+- Kamran Saifullah
+group: windows
+tags:
+- attack.exfiltration
+- attack.command-and-control
+- attack.t1567
+- attack.t1572
+rule: SELECT * FROM logs WHERE Initiated='true' AND DestinationHostname ILIKE '%.tunnels.api.visualstudio.com'

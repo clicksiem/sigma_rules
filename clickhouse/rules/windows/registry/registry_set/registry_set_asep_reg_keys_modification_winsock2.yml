@@ -1,0 +1,13 @@
+id: d6c2ce7e-afb5-4337-9ca4-4b5254ed0565
+name: WinSock2 Autorun Keys Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\System\\CurrentControlSet\\Services\\WinSock2\\Parameters%' AND (TargetObject ILIKE '%\\Protocol\_Catalog9\\Catalog\_Entries%' OR TargetObject ILIKE '%\\NameSpace\_Catalog5\\Catalog\_Entries%') AND (NOT (Details='(Empty)' OR Image ILIKE 'C:\\Windows\\System32\\MsiExec.exe' OR Image ILIKE 'C:\\Windows\\syswow64\\MsiExec.exe'))

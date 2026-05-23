@@ -1,0 +1,14 @@
+id: 1ab3c5ed-5baf-417b-bb6b-78ca33f6c3df
+name: AWS EC2 Startup Shell Script Change
+level: 8
+size: '>0'
+active: true
+author:
+- faloker
+group: aws
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.t1059.003
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE eventSource='ec2.amazonaws.com' AND `requestParameters.attribute`='userData' AND eventName='ModifyInstanceAttribute'

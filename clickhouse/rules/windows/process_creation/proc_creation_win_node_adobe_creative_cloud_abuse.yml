@@ -1,0 +1,14 @@
+id: df1f26d3-bea7-4700-9ea2-ad3e990cf90e
+name: Node Process Executions
+level: 5
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+- attack.t1059.007
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Adobe Creative Cloud Experience\\libs\\node.exe' AND (NOT CommandLine ILIKE '%Adobe Creative Cloud Experience\\js%')

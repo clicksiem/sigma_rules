@@ -1,0 +1,15 @@
+id: 418dc89a-9808-4b87-b1d7-e5ae0cb6effc
+name: Potential Mpclient.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\mpclient.dll' AND (Image ILIKE '%\\MpCmdRun.exe' OR Image ILIKE '%\\NisSrv.exe')) AND (NOT (Image ILIKE 'C:\\Program Files (x86)\\Windows Defender\\%' OR Image ILIKE 'C:\\Program Files\\Microsoft Security Client\\%' OR Image ILIKE 'C:\\Program Files\\Windows Defender\\%' OR Image ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' OR Image ILIKE 'C:\\Windows\\WinSxS\\%'))

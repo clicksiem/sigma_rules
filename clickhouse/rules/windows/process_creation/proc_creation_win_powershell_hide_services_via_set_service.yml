@@ -1,0 +1,15 @@
+id: 514e4c3a-c77d-4cde-a00f-046425e2301e
+name: Abuse of Service Permissions to Hide Services Via Set-Service
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\pwsh.exe' OR OriginalFileName='pwsh.dll') AND (CommandLine ILIKE '%Set-Service %' AND CommandLine ILIKE '%DCLCWPDTSD%') AND (CommandLine ILIKE '%-SecurityDescriptorSddl %' OR CommandLine ILIKE '%-sd %')

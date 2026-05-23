@@ -1,0 +1,11 @@
+id: ee77a5db-b0f3-4be2-bfd4-b58be1c6b15a
+name: Potential Attachment Manager Settings Attachments Tamper
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Attachments\\%' AND ((TargetObject ILIKE '%\\HideZoneInfoOnProperties' AND Details='DWORD (0x00000001)') OR (TargetObject ILIKE '%\\SaveZoneInformation' AND Details='DWORD (0x00000002)') OR (TargetObject ILIKE '%\\ScanWithAntiVirus' AND Details='DWORD (0x00000001)'))

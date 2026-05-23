@@ -1,0 +1,14 @@
+id: 6385697e-9f1b-40bd-8817-f4a91f40508e
+name: PowerShell Base64 Encoded Invoke Keyword
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems), Harjot Singh, @cyb3rjy0t
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1027
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND CommandLine ILIKE '% -e%' AND (CommandLine ILIKE '%SQBuAHYAbwBrAGUALQ%' OR CommandLine ILIKE '%kAbgB2AG8AawBlAC0A%' OR CommandLine ILIKE '%JAG4AdgBvAGsAZQAtA%' OR CommandLine ILIKE '%SW52b2tlL%' OR CommandLine ILIKE '%ludm9rZS%' OR CommandLine ILIKE '%JbnZva2Ut%')

@@ -1,0 +1,12 @@
+id: 88c0f9d8-30a8-4120-bb6b-ebb54abcf2a0
+name: File Time Attribute Change
+level: 5
+size: '>0'
+active: true
+author:
+- Igor Fits, Mikhail Larin, oscd.community
+group: macos
+tags:
+- attack.stealth
+- attack.t1070.006
+rule: SELECT * FROM logs WHERE Image ILIKE '%/touch' AND (CommandLine ILIKE '%-t%' OR CommandLine ILIKE '%-acmr%' OR CommandLine ILIKE '%-d%' OR CommandLine ILIKE '%-r%')

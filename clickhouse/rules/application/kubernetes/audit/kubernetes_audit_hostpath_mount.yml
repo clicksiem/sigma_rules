@@ -1,0 +1,12 @@
+id: 402b955c-8fe0-4a8c-b635-622b4ac5f902
+name: Container With A hostPath Mount Created
+level: 3
+size: '>0'
+active: true
+author:
+- Leo Tsaousis (@laripping)
+group: kubernetes
+tags:
+- attack.t1611
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE verb='create' AND `objectRef.resource`='pods' AND hostPath ILIKE '%'

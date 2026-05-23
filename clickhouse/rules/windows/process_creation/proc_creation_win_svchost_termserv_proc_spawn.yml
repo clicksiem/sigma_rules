@@ -1,0 +1,15 @@
+id: 1012f107-b8f1-4271-af30-5aed2de89b39
+name: Terminal Service Process Spawn
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1190
+- attack.lateral-movement
+- attack.t1210
+- car.2013-07-002
+rule: SELECT * FROM logs WHERE (ParentCommandLine ILIKE '%\\svchost.exe%' AND ParentCommandLine ILIKE '%termsvcs%') AND (NOT ((Image ILIKE '%\\rdpclip.exe' OR Image ILIKE '%:\\Windows\\System32\\csrss.exe' OR Image ILIKE '%:\\Windows\\System32\\wininit.exe' OR Image ILIKE '%:\\Windows\\System32\\winlogon.exe') OR isNull(Image)))

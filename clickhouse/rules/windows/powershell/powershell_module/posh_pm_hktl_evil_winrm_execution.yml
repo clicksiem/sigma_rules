@@ -1,0 +1,11 @@
+id: 9fe55ea2-4cd6-4491-8a54-dd6871651b51
+name: HackTool - Evil-WinRm Execution - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+rule: SELECT * FROM logs WHERE (ContextInfo ILIKE '%:\\Windows\\System32\\wsmprovhost.exe%' OR ContextInfo ILIKE '%:\\Windows\\SysWOW64\\wsmprovhost.exe%') AND ((Payload ILIKE '%value="(get-location).path%' OR Payload ILIKE '%value="(get-item%).length%' OR Payload ILIKE '%Invoke-Binary %' OR Payload ILIKE '%Donut-Loader -process\_id%-donutfile%' OR Payload ILIKE '%Bypass-4MSI%' OR Payload ILIKE '%IEX ([System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String($a))).replace(''___'','''')%') OR (Payload ILIKE '%$servicios = Get-ItemProperty "registry::HKLM\\System\\CurrentControlSet\\Services\\"%' AND Payload ILIKE '%Where-Object {$\_.imagepath -notmatch "system" -and $\_.imagepath -ne $null } | Select-Object pschildname,imagepath%') OR (Payload ILIKE '%$a +=  \\"$($\_.FullName.Replace(''\\'',''/''))/\\"}else{  $a += \\"$($\_.FullName.Replace(''\\'', ''/''))\\" }%' AND Payload ILIKE '%$a=@();$%'))

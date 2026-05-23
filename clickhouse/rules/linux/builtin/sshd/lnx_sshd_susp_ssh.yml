@@ -1,0 +1,12 @@
+id: e76b413a-83d0-4b94-8e4c-85db4a5b8bdc
+name: Suspicious OpenSSH Daemon Error
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.initial-access
+- attack.t1190
+rule: 'SELECT * FROM logs WHERE hasToken(full_log, ''unexpected internal error'') OR hasToken(full_log, ''unknown or unsupported key type'') OR hasToken(full_log, ''invalid certificate signing key'') OR hasToken(full_log, ''invalid elliptic curve value'') OR hasToken(full_log, ''incorrect signature'') OR hasToken(full_log, ''error in libcrypto'') OR hasToken(full_log, ''unexpected bytes remain after decoding'') OR hasToken(full_log, ''fatal: buffer\_get\_string: bad string'') OR hasToken(full_log, ''Local: crc32 compensation attack'') OR hasToken(full_log, ''bad client public DH value'') OR hasToken(full_log, ''Corrupted MAC on input'')'

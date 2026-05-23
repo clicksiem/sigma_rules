@@ -1,0 +1,12 @@
+id: 1da8ce0b-855d-4004-8860-7d64d42063b1
+name: Apache Segmentation Fault
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.impact
+- attack.t1499.004
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'exit signal Segmentation Fault')

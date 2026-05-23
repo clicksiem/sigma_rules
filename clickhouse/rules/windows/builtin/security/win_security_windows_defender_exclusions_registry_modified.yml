@@ -1,0 +1,12 @@
+id: 46a68649-f218-4f86-aea1-16a759d81820
+name: Windows Defender Exclusion List Modified
+level: 5
+size: '>0'
+active: true
+author:
+- '@BarryShooshooga'
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=4657 AND ObjectName ILIKE '%\\Microsoft\\Windows Defender\\Exclusions\\%'

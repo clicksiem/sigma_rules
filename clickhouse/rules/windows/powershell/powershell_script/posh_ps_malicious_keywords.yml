@@ -1,0 +1,12 @@
+id: f62176f3-8128-4faa-bf6c-83261322e5eb
+name: Malicious PowerShell Keywords
+level: 5
+size: '>0'
+active: true
+author:
+- Sean Metcalf (source), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%AdjustTokenPrivileges%' OR ScriptBlockText ILIKE '%IMAGE\_NT\_OPTIONAL\_HDR64\_MAGIC%' OR ScriptBlockText ILIKE '%Metasploit%' OR ScriptBlockText ILIKE '%Microsoft.Win32.UnsafeNativeMethods%' OR ScriptBlockText ILIKE '%Mimikatz%' OR ScriptBlockText ILIKE '%MiniDumpWriteDump%' OR ScriptBlockText ILIKE '%PAGE\_EXECUTE\_READ%' OR ScriptBlockText ILIKE '%ReadProcessMemory.Invoke%' OR ScriptBlockText ILIKE '%SE\_PRIVILEGE\_ENABLED%' OR ScriptBlockText ILIKE '%SECURITY\_DELEGATION%' OR ScriptBlockText ILIKE '%TOKEN\_ADJUST\_PRIVILEGES%' OR ScriptBlockText ILIKE '%TOKEN\_ALL\_ACCESS%' OR ScriptBlockText ILIKE '%TOKEN\_ASSIGN\_PRIMARY%' OR ScriptBlockText ILIKE '%TOKEN\_DUPLICATE%' OR ScriptBlockText ILIKE '%TOKEN\_ELEVATION%' OR ScriptBlockText ILIKE '%TOKEN\_IMPERSONATE%' OR ScriptBlockText ILIKE '%TOKEN\_INFORMATION\_CLASS%' OR ScriptBlockText ILIKE '%TOKEN\_PRIVILEGES%' OR ScriptBlockText ILIKE '%TOKEN\_QUERY%'

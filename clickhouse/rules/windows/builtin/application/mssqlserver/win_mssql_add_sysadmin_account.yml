@@ -1,0 +1,11 @@
+id: 08200f85-2678-463e-9c32-88dce2f073d1
+name: MSSQL Add Account To Sysadmin Role
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE Provider_Name ILIKE '%MSSQL%' AND EventID=33205 AND (Data ILIKE '%object\_name:sysadmin%' AND Data ILIKE '%statement:alter server role [sysadmin] add member %')

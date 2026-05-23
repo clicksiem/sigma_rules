@@ -1,0 +1,14 @@
+id: de25eeb8-3655-4643-ac3a-b662d3f26b6b
+name: Disable Or Stop Services
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/service' OR Image ILIKE '%/systemctl' OR Image ILIKE '%/chkconfig') AND (CommandLine ILIKE '% stop %' OR CommandLine ILIKE '% disable %')) AND (NOT ((Image ILIKE '%/systemctl' AND (CommandLine ILIKE '%--no-reload disable snap-snapd-%' OR CommandLine ILIKE '% stop snap-snapd-%')) OR (Image ILIKE '%/systemctl' AND ParentCommandLine ILIKE '%tmp.ci/preinst upgrade%' AND (CommandLine ILIKE '% stop %' AND CommandLine ILIKE '%ssh.%')) OR (ParentCommandLine ILIKE '%/dpkg/info/ubuntu-pro-client.prerm upgrade%' AND Image ILIKE '%/systemctl'))) AND (NOT (Image ILIKE '%/systemctl' AND CommandLine ILIKE '%snap.amazon-ssm-agent.amazon-ssm-agent.service'))

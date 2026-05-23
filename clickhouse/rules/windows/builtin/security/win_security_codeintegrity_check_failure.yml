@@ -1,0 +1,12 @@
+id: 470ec5fa-7b4e-4071-b200-4c753100f49b
+name: Failed Code Integrity Checks
+level: 1
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.001
+rule: SELECT * FROM logs WHERE (EventID IN (5038, 6281)) AND (NOT ((param1 ILIKE '%\\CSFalconServiceUninstallTool\_%' OR param1 ILIKE '%\\Program Files\\CrowdStrike\\%' OR param1 ILIKE '%\\System32\\drivers\\CrowdStrike\\%' OR param1 ILIKE '%\\Windows\\System32\\ScriptControl64\_%') OR param1 ILIKE '%\\Program Files\\Sophos\\%'))

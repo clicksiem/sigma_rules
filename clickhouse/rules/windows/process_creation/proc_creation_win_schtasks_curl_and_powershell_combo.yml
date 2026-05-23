@@ -1,0 +1,18 @@
+id: 1d174d38-8fda-4081-a9b6-56d9763c0cd8
+name: Scheduled Task Creation with Curl and PowerShell Execution Combo
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.stealth
+- attack.t1053.005
+- attack.t1218
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '% -create %' OR CommandLine ILIKE '% /create %' OR CommandLine ILIKE '% –create %' OR CommandLine ILIKE '% —create %' OR CommandLine ILIKE '% ―create %')) AND (CommandLine ILIKE '%curl %' AND CommandLine ILIKE '%http%' AND CommandLine ILIKE '%-o%') AND CommandLine ILIKE '%powershell%'

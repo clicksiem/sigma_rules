@@ -1,0 +1,11 @@
+id: e1e0b7d7-e10b-4ee4-ac49-a4bda05d320d
+name: File Encryption/Decryption Via Gpg4win From Suspicious Locations
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\gpg.exe' OR Image ILIKE '%\\gpg2.exe') OR Product='GNU Privacy Guard (GnuPG)' OR Description='GnuPG’s OpenPGP tool') AND CommandLine ILIKE '%-passphrase%' AND (CommandLine ILIKE '%:\\PerfLogs\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%')

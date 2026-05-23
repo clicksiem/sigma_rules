@@ -1,0 +1,11 @@
+id: 7f103213-a04e-4d59-8261-213dddf22314
+name: MSSQL XPCmdshell Suspicious Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Provider_Name ILIKE '%MSSQL%' AND EventID=33205 AND (Data ILIKE '%object\_name:xp\_cmdshell%' AND Data ILIKE '%statement:EXEC%')

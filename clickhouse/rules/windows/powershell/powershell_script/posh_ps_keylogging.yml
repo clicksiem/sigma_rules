@@ -1,0 +1,13 @@
+id: 34f90d3c-c297-49e9-b26d-911b05a4866c
+name: Powershell Keylogging
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.collection
+- attack.t1056.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-Keystrokes%' OR (ScriptBlockText ILIKE '%Get-ProcAddress user32.dll GetAsyncKeyState%' AND ScriptBlockText ILIKE '%Get-ProcAddress user32.dll GetForegroundWindow%')

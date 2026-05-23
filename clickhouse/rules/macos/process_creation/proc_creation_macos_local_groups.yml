@@ -1,0 +1,12 @@
+id: 89bb1f97-c7b9-40e8-b52b-7d6afbd67276
+name: Local Groups Discovery - MacOs
+level: 1
+size: '>0'
+active: true
+author:
+- Ömer Günal, Alejandro Ortuno, oscd.community
+group: macos
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/dscacheutil' AND (CommandLine ILIKE '%-q%' AND CommandLine ILIKE '%group%')) OR (Image ILIKE '%/cat' AND CommandLine ILIKE '%/etc/group%') OR (Image ILIKE '%/dscl' AND (CommandLine ILIKE '%-list%' AND CommandLine ILIKE '%/groups%'))

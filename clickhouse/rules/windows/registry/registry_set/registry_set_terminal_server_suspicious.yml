@@ -1,0 +1,13 @@
+id: a2863fbc-d5cb-48d5-83fb-d976d4b1743b
+name: RDP Sensitive Settings Changed to Zero
+level: 5
+size: '>0'
+active: true
+author:
+- Samir Bousseaden, David ANDRE, Roberto Rodriguez @Cyb3rWard0g, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\fDenyTSConnections' OR TargetObject ILIKE '%\\fSingleSessionPerUser' OR TargetObject ILIKE '%\\UserAuthentication') AND Details='DWORD (0x00000000)'

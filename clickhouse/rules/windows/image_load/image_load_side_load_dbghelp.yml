@@ -1,0 +1,15 @@
+id: 6414b5cd-b19d-447e-bb5e-9f03940b5784
+name: Potential DLL Sideloading Of DBGHELP.DLL
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Wietze Beukema (project and research)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\dbghelp.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files (x86)\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SoftwareDistribution\\%' OR ImageLoaded ILIKE 'C:\\Windows\\System32\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SystemTemp\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SysWOW64\\%' OR ImageLoaded ILIKE 'C:\\Windows\\WinSxS\\%')) AND (NOT ((ImageLoaded ILIKE '%\\Anaconda3\\Lib\\site-packages\\vtrace\\platforms\\windll\\amd64\\dbghelp.dll' OR ImageLoaded ILIKE '%\\Anaconda3\\Lib\\site-packages\\vtrace\\platforms\\windll\\i386\\dbghelp.dll') OR (ImageLoaded ILIKE '%\\Epic Games\\Launcher\\Engine\\Binaries\\ThirdParty\\DbgHelp\\dbghelp.dll' OR ImageLoaded ILIKE '%\\Epic Games\\MagicLegends\\x86\\dbghelp.dll') OR (ImageLoaded ILIKE '%opera\\Opera Installer Temp\\opera\_package%' AND ImageLoaded ILIKE '%\\assistant\\dbghelp.dll')))

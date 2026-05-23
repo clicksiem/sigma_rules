@@ -1,0 +1,11 @@
+id: 94dc4390-6b7c-4784-8ffc-335334404650
+name: Dump Ntds.dit To Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Provider_Name='ESENT' AND EventID=325 AND Data ILIKE '%ntds.dit%') AND (Data ILIKE '%:\\ntds.dit%' OR Data ILIKE '%\\Appdata\\%' OR Data ILIKE '%\\Desktop\\%' OR Data ILIKE '%\\Downloads\\%' OR Data ILIKE '%\\Perflogs\\%' OR Data ILIKE '%\\Temp\\%' OR Data ILIKE '%\\Users\\Public\\%')

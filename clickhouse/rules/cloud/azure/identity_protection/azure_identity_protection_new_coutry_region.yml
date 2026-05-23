@@ -1,0 +1,15 @@
+id: adf9f4d2-559e-4f5c-95be-c28dff0b1476
+name: New Country
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+rule: SELECT * FROM logs WHERE riskEventType='newCountry'

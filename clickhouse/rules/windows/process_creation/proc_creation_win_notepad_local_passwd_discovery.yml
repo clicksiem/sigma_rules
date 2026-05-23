@@ -1,0 +1,12 @@
+id: 3b4e950b-a3ea-44d3-877e-432071990709
+name: Notepad Password Files Discovery
+level: 3
+size: '>0'
+active: true
+author:
+- The DFIR Report
+group: windows
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\explorer.exe' AND Image ILIKE '%\\notepad.exe' AND (CommandLine ILIKE '%password%.txt' OR CommandLine ILIKE '%password%.csv' OR CommandLine ILIKE '%password%.doc' OR CommandLine ILIKE '%password%.xls')

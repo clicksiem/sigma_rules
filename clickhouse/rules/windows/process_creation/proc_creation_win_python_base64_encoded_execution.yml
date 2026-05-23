@@ -1,0 +1,14 @@
+id: 50a0aa3d-ab16-4594-a8aa-5145a6e6792b
+name: Python One-Liners with Base64 Decoding
+level: 8
+size: '>0'
+active: true
+author:
+- Hugh Ryan (HueCodes), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.006
+- attack.t1027.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\python%' OR OriginalFileName ILIKE '%python%') AND ((CommandLine ILIKE '%import%' AND CommandLine ILIKE '%base64%' AND CommandLine ILIKE '% -c%') AND (CommandLine ILIKE '%.decode%' OR CommandLine ILIKE '%b16decode%' OR CommandLine ILIKE '%b32decode%' OR CommandLine ILIKE '%b32hexdecode%' OR CommandLine ILIKE '%b64decode%' OR CommandLine ILIKE '%b85decode%' OR CommandLine ILIKE '%z85decode%'))

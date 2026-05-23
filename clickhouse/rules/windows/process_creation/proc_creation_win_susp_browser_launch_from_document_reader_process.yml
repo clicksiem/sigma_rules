@@ -1,0 +1,12 @@
+id: 1193d960-2369-499f-a158-7b50a31df682
+name: Potential Suspicious Browser Launch From Document Reader Process
+level: 5
+size: '>0'
+active: true
+author:
+- Joseph Kamau
+group: windows
+tags:
+- attack.execution
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%Acrobat Reader%' OR ParentImage ILIKE '%Microsoft Office%' OR ParentImage ILIKE '%PDF Reader%') AND (Image ILIKE '%\\brave.exe' OR Image ILIKE '%\\chrome.exe' OR Image ILIKE '%\\firefox.exe' OR Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\maxthon.exe' OR Image ILIKE '%\\seamonkey.exe' OR Image ILIKE '%\\vivaldi.exe') AND CommandLine ILIKE '%http%') AND (NOT CommandLine ILIKE '%https://go.microsoft.com/fwlink/%') AND (NOT (CommandLine ILIKE '%http://ad.foxitsoftware.com/adlog.php_%' OR CommandLine ILIKE '%https://globe-map.foxitservice.com/go.php_do=redirect%'))

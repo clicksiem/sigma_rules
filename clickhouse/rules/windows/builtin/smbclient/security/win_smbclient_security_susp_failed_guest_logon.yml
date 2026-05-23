@@ -1,0 +1,12 @@
+id: 71886b70-d7b4-4dbf-acce-87d2ca135262
+name: Suspicious Rejected SMB Guest Logon From IP
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), KevTheHermit, fuzzyf10w
+group: windows
+tags:
+- attack.credential-access
+- attack.t1110.001
+rule: SELECT * FROM logs WHERE EventID=31017 AND UserName='' AND ServerName ILIKE '\\1%'

@@ -1,0 +1,12 @@
+id: fdc88d25-96fb-4b7c-9633-c0e417fdbd4e
+name: Linux Command History Tampering
+level: 8
+size: '>0'
+active: true
+author:
+- Patrick Bareiss
+group: linux
+tags:
+- attack.stealth
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'cat /dev/null >%sh\_history') OR hasToken(full_log, 'cat /dev/zero >%sh\_history') OR hasToken(full_log, 'chattr +i%sh\_history') OR hasToken(full_log, 'echo "" >%sh\_history') OR hasToken(full_log, 'empty\_bash\_history') OR hasToken(full_log, 'export HISTFILESIZE=0') OR hasToken(full_log, 'history -c') OR hasToken(full_log, 'history -w') OR hasToken(full_log, 'ln -sf /dev/null %sh\_history') OR hasToken(full_log, 'ln -sf /dev/zero %sh\_history') OR hasToken(full_log, 'rm %sh\_history') OR hasToken(full_log, 'shopt -ou history') OR hasToken(full_log, 'shopt -uo history') OR hasToken(full_log, 'shred %sh\_history') OR hasToken(full_log, 'truncate -s0 %sh\_history')

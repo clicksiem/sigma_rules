@@ -1,0 +1,13 @@
+id: 4bc90587-e6ca-4b41-be0b-ed4d04e4ed0c
+name: Suspicious Velociraptor Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.persistence
+- attack.t1219
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\Velociraptor.exe' AND ((CommandLine ILIKE '%code.exe%' AND CommandLine ILIKE '%tunnel%' AND CommandLine ILIKE '%--accept-server-license-terms%') OR (CommandLine ILIKE '%msiexec%' AND CommandLine ILIKE '%/i%' AND CommandLine ILIKE '%http%') OR ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%Invoke-WebRequest %' OR CommandLine ILIKE '%IWR %' OR CommandLine ILIKE '%.DownloadFile%' OR CommandLine ILIKE '%.DownloadString%')))

@@ -1,0 +1,11 @@
+id: 4990c2e3-f4b8-45e3-bc3c-30b14ff0ed26
+name: AWS Glue Development Endpoint Activity
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: aws
+tags:
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE eventSource='glue.amazonaws.com' AND (eventName IN ('CreateDevEndpoint', 'DeleteDevEndpoint', 'UpdateDevEndpoint'))

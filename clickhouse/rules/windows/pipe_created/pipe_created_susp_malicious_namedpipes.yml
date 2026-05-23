@@ -1,0 +1,13 @@
+id: fe3ac066-98bb-432a-b1e7-a5229cb39d4a
+name: Malicious Named Pipe Created
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), blueteam0ps, elhoim
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE PipeName ILIKE '\\46a676ab7f179e511e30dd2dc41bd388' OR PipeName ILIKE '\\583da945-62af-10e8-4902-a8f205c72b2e' OR PipeName ILIKE '\\6e7645c4-32c5-4fe3-aabf-e94c2f4370e7' OR PipeName ILIKE '\\9f81f59bc58452127884ce513865ed20' OR PipeName ILIKE '\\adschemerpc' OR PipeName ILIKE '\\ahexec' OR PipeName ILIKE '\\AnonymousPipe' OR PipeName ILIKE '\\bc31a7' OR PipeName ILIKE '\\bc367' OR PipeName ILIKE '\\bizkaz' OR PipeName ILIKE '\\csexecsvc' OR PipeName ILIKE '\\dce\_3d' OR PipeName ILIKE '\\e710f28d59aa529d6792ca6ff0ca1b34' OR PipeName ILIKE '\\gruntsvc' OR PipeName ILIKE '\\isapi\_dg' OR PipeName ILIKE '\\isapi\_dg2' OR PipeName ILIKE '\\isapi\_http' OR PipeName ILIKE '\\jaccdpqnvbrrxlaf' OR PipeName ILIKE '\\lsassw' OR PipeName ILIKE '\\NamePipe\_MoreWindows' OR PipeName ILIKE '\\pcheap\_reuse' OR PipeName ILIKE '\\Posh%' OR PipeName ILIKE '\\rpchlp\_3' OR PipeName ILIKE '\\sdlrpc' OR PipeName ILIKE '\\svcctl' OR PipeName ILIKE '\\testPipe' OR PipeName ILIKE '\\winsession'

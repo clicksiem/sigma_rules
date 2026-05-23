@@ -1,0 +1,15 @@
+id: 7b4f794b-590a-4ad4-ba18-7964a2832205
+name: Renamed Vmnat.exe Execution
+level: 8
+size: '>0'
+active: true
+author:
+- elhoim
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE OriginalFileName='vmnat.exe' AND (NOT Image ILIKE '%vmnat.exe')

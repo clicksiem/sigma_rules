@@ -1,0 +1,15 @@
+id: e7be6119-fc37-43f0-ad4f-1f3f99be2f9f
+name: Copying Sensitive Files with Credential Data
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+- attack.t1003.003
+- car.2013-07-001
+- attack.s0404
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\esentutl.exe' OR OriginalFileName ILIKE '\\esentutl.exe') AND (CommandLine ILIKE '%vss%' OR CommandLine ILIKE '% -m %' OR CommandLine ILIKE '% /m %' OR CommandLine ILIKE '% –m %' OR CommandLine ILIKE '% —m %' OR CommandLine ILIKE '% ―m %' OR CommandLine ILIKE '% -y %' OR CommandLine ILIKE '% /y %' OR CommandLine ILIKE '% –y %' OR CommandLine ILIKE '% —y %' OR CommandLine ILIKE '% ―y %')) OR (CommandLine ILIKE '%\\config\\RegBack\\sam%' OR CommandLine ILIKE '%\\config\\RegBack\\security%' OR CommandLine ILIKE '%\\config\\RegBack\\system%' OR CommandLine ILIKE '%\\config\\sam%' OR CommandLine ILIKE '%\\config\\security%' OR CommandLine ILIKE '%\\config\\system %' OR CommandLine ILIKE '%\\repair\\sam%' OR CommandLine ILIKE '%\\repair\\security%' OR CommandLine ILIKE '%\\repair\\system%' OR CommandLine ILIKE '%\\windows\\ntds\\ntds.dit%')

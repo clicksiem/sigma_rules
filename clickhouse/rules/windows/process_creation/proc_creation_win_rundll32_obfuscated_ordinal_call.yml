@@ -1,0 +1,12 @@
+id: 43fa5350-db63-4b8f-9a01-789a427074e1
+name: Potential Obfuscated Ordinal Call Via Rundll32
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE' OR CommandLine ILIKE '%rundll32%') AND (CommandLine ILIKE '%#+%' OR CommandLine ILIKE '%#-%' OR CommandLine ILIKE '%#0%' OR CommandLine ILIKE '%#655%' OR CommandLine ILIKE '%#656%')

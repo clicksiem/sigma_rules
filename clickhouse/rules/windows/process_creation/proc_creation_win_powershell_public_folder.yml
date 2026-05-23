@@ -1,0 +1,12 @@
+id: fb9d3ff7-7348-46ab-af8c-b55f5fbf39b4
+name: Execution of Powershell Script in Public Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%-f C:\\Users\\Public%' OR CommandLine ILIKE '%-f "C:\\Users\\Public%' OR CommandLine ILIKE '%-f \%Public\%%' OR CommandLine ILIKE '%-fi C:\\Users\\Public%' OR CommandLine ILIKE '%-fi "C:\\Users\\Public%' OR CommandLine ILIKE '%-fi \%Public\%%' OR CommandLine ILIKE '%-fil C:\\Users\\Public%' OR CommandLine ILIKE '%-fil "C:\\Users\\Public%' OR CommandLine ILIKE '%-fil \%Public\%%' OR CommandLine ILIKE '%-file C:\\Users\\Public%' OR CommandLine ILIKE '%-file "C:\\Users\\Public%' OR CommandLine ILIKE '%-file \%Public\%%')

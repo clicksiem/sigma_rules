@@ -1,0 +1,12 @@
+id: ae48ab93-45f7-4051-9dfe-5d30a3f78e33
+name: Spring Framework Exceptions
+level: 5
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: spring
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'AccessDeniedException') OR hasToken(full_log, 'CsrfException') OR hasToken(full_log, 'InvalidCsrfTokenException') OR hasToken(full_log, 'MissingCsrfTokenException') OR hasToken(full_log, 'CookieTheftException') OR hasToken(full_log, 'InvalidCookieException') OR hasToken(full_log, 'RequestRejectedException')

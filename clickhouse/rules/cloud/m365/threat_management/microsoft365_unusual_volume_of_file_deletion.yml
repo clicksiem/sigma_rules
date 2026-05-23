@@ -1,0 +1,12 @@
+id: 78a34b67-3c39-4886-8fb4-61c46dc18ecd
+name: Microsoft 365 - Unusual Volume of File Deletion
+level: 5
+size: '>0'
+active: true
+author:
+- austinsonger
+group: m365
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Unusual volume of file deletion' AND status='success'

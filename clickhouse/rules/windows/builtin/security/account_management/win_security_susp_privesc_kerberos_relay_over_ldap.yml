@@ -1,0 +1,13 @@
+id: 749c9f5e-b353-4b90-a9c1-05243357ca4b
+name: Potential Privilege Escalation via Local Kerberos Relay over LDAP
+level: 8
+size: '>0'
+active: true
+author:
+- Elastic, @SBousseaden
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.credential-access
+- attack.t1548
+rule: SELECT * FROM logs WHERE (EventID=4624 AND LogonType=3 AND AuthenticationPackageName='Kerberos' AND IpAddress='127.0.0.1' AND TargetUserSid ILIKE 'S-1-5-21-%' AND TargetUserSid ILIKE '%-500') AND (NOT IpPort='0')

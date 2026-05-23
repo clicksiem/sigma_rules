@@ -1,0 +1,13 @@
+id: 258b6593-215d-4a26-a141-c8e31c1299a6
+name: Anomalous User Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.t1098
+- attack.persistence
+rule: SELECT * FROM logs WHERE riskEventType='anomalousUserActivity'

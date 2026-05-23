@@ -1,0 +1,12 @@
+id: ff992eac-6449-4c60-8c1d-91c9722a1d48
+name: New Root Certificate Installed Via CertMgr.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- oscd.community, @redcanary, Zach Stanford @svch0st
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\CertMgr.exe' OR OriginalFileName='CERTMGT.EXE') AND (CommandLine ILIKE '%/add%' AND CommandLine ILIKE '%root%')

@@ -1,0 +1,11 @@
+id: 999c3b12-0a8c-40b6-8e13-dd7d62b75c7a
+name: Potentially Suspicious Named Pipe Created Via Mkfifo
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%/mkfifo' AND CommandLine ILIKE '% /tmp/%'

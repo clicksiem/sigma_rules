@@ -1,0 +1,12 @@
+id: 8ec2c8b4-557a-4121-b87c-5dfb3a602fae
+name: JexBoss Command Sequence
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'bash -c /bin/bash') AND hasToken(full_log, '&/dev/tcp/')

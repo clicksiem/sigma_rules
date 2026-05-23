@@ -1,0 +1,12 @@
+id: 4ae3e30b-b03f-43aa-87e3-b622f4048eed
+name: Potential Arbitrary File Download Using Office Application
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Beyu Denis, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\EXCEL.EXE' OR Image ILIKE '%\\POWERPNT.EXE' OR Image ILIKE '%\\WINWORD.exe') OR (OriginalFileName IN ('Excel.exe', 'POWERPNT.EXE', 'WinWord.exe'))) AND (CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')

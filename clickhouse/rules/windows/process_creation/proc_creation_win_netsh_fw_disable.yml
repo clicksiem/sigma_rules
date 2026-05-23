@@ -1,0 +1,13 @@
+id: 57c4bf16-227f-4394-8ec7-1b745ee061c3
+name: Firewall Disabled via Netsh.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Fatih Sirin
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+- attack.s0108
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\netsh.exe' OR OriginalFileName='netsh.exe') AND ((CommandLine ILIKE '%firewall%' AND CommandLine ILIKE '%set%' AND CommandLine ILIKE '%opmode%' AND CommandLine ILIKE '%disable%') OR (CommandLine ILIKE '%advfirewall%' AND CommandLine ILIKE '%set%' AND CommandLine ILIKE '%state%' AND CommandLine ILIKE '%off%'))

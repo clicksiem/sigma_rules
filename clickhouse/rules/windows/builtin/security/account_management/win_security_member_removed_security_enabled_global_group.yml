@@ -1,0 +1,13 @@
+id: 02c39d30-02b5-45d2-b435-8aebfe5a8629
+name: A Member Was Removed From a Security-Enabled Global Group
+level: 3
+size: '>0'
+active: true
+author:
+- Alexandr Yampolskyi, SOC Prime
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE EventID IN (633, 4729)

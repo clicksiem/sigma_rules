@@ -1,0 +1,12 @@
+id: 8e1cb247-6cf6-42fa-b440-3f27d57e9936
+name: Potential Persistence Via Microsoft Office Add-In
+level: 8
+size: '>0'
+active: true
+author:
+- NVISO
+group: windows
+tags:
+- attack.persistence
+- attack.t1137.006
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\Microsoft\\Word\\Startup\\%' AND TargetFilename ILIKE '%.wll') OR (TargetFilename ILIKE '%\\Microsoft\\Excel\\Startup\\%' AND TargetFilename ILIKE '%.xll') OR (TargetFilename ILIKE '%Microsoft\\Excel\\XLSTART\\%' AND TargetFilename ILIKE '%.xlam') OR (TargetFilename ILIKE '%\\Microsoft\\Addins\\%' AND (TargetFilename ILIKE '%.xlam' OR TargetFilename ILIKE '%.xla' OR TargetFilename ILIKE '%.ppam'))

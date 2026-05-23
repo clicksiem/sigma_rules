@@ -1,0 +1,12 @@
+id: 5aad0995-46ab-41bd-a9ff-724f41114971
+name: Esentutl Volume Shadow Copy Service Keys
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%System\\CurrentControlSet\\Services\\VSS%' AND Image ILIKE '%esentutl.exe') AND (NOT TargetObject ILIKE '%System\\CurrentControlSet\\Services\\VSS\\Start%')

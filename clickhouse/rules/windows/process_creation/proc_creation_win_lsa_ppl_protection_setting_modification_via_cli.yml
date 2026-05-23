@@ -1,0 +1,12 @@
+id: 8c0eca51-0f88-4db2-9183-fdfb10c703f9
+name: LSA PPL Protection Setting Modification via CommandLine
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1689
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('reg.exe', 'powershell.exe', 'pwsh.dll'))) AND ((CommandLine ILIKE '%ControlSet%' AND CommandLine ILIKE '%\\Control\\Lsa%') AND (CommandLine ILIKE '%Set-ItemProperty%' OR CommandLine ILIKE '%New-ItemProperty%' OR CommandLine ILIKE '% add %')) AND (CommandLine ILIKE '%IsPplAutoEnabled%' OR CommandLine ILIKE '%RunAsPPL%' OR CommandLine ILIKE '%RunAsPPLBoot%')

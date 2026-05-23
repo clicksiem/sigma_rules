@@ -1,0 +1,14 @@
+id: e66779cc-383e-4224-a3a4-267eeb585c40
+name: Bypass UAC via CMSTP
+level: 8
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1548.002
+- attack.t1218.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmstp.exe' OR OriginalFileName='CMSTP.EXE') AND (CommandLine ILIKE '%/s%' OR CommandLine ILIKE '%-s%' OR CommandLine ILIKE '%/au%' OR CommandLine ILIKE '%-au%' OR CommandLine ILIKE '%/ni%' OR CommandLine ILIKE '%-ni%')

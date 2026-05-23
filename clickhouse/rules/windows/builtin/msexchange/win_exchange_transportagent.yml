@@ -1,0 +1,12 @@
+id: 4fe151c2-ecf9-4fae-95ae-b88ec9c2fca6
+name: MSExchange Transport Agent Installation - Builtin
+level: 5
+size: '>0'
+active: true
+author:
+- Tobias Michalski (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.002
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'Install-TransportAgent')

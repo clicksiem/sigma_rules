@@ -1,0 +1,12 @@
+id: a27e5fa9-c35e-4e3d-b7e0-1ce2af66ad12
+name: CSExec Service Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (ServiceName='csexecsvc' OR ImagePath ILIKE '%\\csexecsvc.exe')

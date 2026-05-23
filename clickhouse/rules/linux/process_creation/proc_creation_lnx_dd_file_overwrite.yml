@@ -1,0 +1,12 @@
+id: 2953194b-e33c-4859-b9e8-05948c167447
+name: DD File Overwrite
+level: 3
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: linux
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE (Image IN ('/bin/dd', '/usr/bin/dd')) AND CommandLine ILIKE '%of=%' AND (CommandLine ILIKE '%if=/dev/zero%' OR CommandLine ILIKE '%if=/dev/null%')

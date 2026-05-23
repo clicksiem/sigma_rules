@@ -1,0 +1,12 @@
+id: 79df3f68-dccb-48e9-9171-b75cbc37c51d
+name: Potential Lateral Movement via Windows Remote Shell
+level: 5
+size: '>0'
+active: true
+author:
+- Liran Ravich
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.006
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\winrshost.exe' AND (NOT Image ILIKE 'C:\\Windows\\System32\\conhost.exe')

@@ -1,0 +1,11 @@
+id: a1b1fd53-9c4a-444c-bae0-34a330fc7aa8
+name: Potential Persistence Via DLLPathOverride
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SYSTEM\\CurrentControlSet\\Control\\ContentIndex\\Language\\%' AND (TargetObject ILIKE '%\\StemmerDLLPathOverride%' OR TargetObject ILIKE '%\\WBDLLPathOverride%' OR TargetObject ILIKE '%\\StemmerClass%' OR TargetObject ILIKE '%\\WBreakerClass%')

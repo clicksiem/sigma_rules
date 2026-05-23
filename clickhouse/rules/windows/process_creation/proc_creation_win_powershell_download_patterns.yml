@@ -1,0 +1,12 @@
+id: 3b6ab547-8ec2-4991-b9d2-2b06702a48d7
+name: PowerShell Download Pattern
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community, Jonhnathan Ribeiro
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell\_ISE.EXE', 'PowerShell.EXE', 'pwsh.dll'))) AND ((CommandLine ILIKE '%new-object%' AND CommandLine ILIKE '%net.webclient).%' AND CommandLine ILIKE '%download%') AND (CommandLine ILIKE '%string(%' OR CommandLine ILIKE '%file(%'))

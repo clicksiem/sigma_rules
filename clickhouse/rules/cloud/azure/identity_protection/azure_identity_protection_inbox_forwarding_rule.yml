@@ -1,0 +1,12 @@
+id: 27e4f1d6-ae72-4ea0-8a67-77a73a289c3d
+name: Suspicious Inbox Forwarding Identity Protection
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.t1114.003
+- attack.collection
+rule: SELECT * FROM logs WHERE riskEventType='suspiciousInboxForwarding'

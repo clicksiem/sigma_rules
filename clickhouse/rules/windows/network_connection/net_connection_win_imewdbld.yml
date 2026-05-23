@@ -1,0 +1,12 @@
+id: 8d7e392e-9b28-49e1-831d-5949c6281228
+name: Network Connection Initiated By IMEWDBLD.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Initiated='true' AND Image ILIKE '%\\IMEWDBLD.exe'

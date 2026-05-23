@@ -1,0 +1,11 @@
+id: 20384606-a124-4fec-acbb-8bd373728613
+name: Suspicious Network Connection Binary No CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Initiated='true' AND (Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\dllhost.exe') AND (CommandLine ILIKE '%\\regsvr32.exe' OR CommandLine ILIKE '%\\rundll32.exe' OR CommandLine ILIKE '%\\dllhost.exe')) AND (NOT (CommandLine='' OR isNull(CommandLine)))

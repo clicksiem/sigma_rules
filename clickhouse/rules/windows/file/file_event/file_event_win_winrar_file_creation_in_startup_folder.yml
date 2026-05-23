@@ -1,0 +1,13 @@
+id: 74a2b37d-fea4-41e0-9ac7-c9fbcf1f60cc
+name: WinRAR Creating Files in Startup Locations
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WinRAR.exe' OR Image ILIKE '%\\Rar.exe') AND TargetFilename ILIKE '%\\Start Menu\\Programs\\Startup\\%'

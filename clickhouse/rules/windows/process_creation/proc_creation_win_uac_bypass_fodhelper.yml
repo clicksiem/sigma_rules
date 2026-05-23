@@ -1,0 +1,12 @@
+id: 7f741dcf-fc22-4759-87b4-9ae8376676a2
+name: Bypass UAC via Fodhelper.exe
+level: 8
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Tony Lambert), oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\fodhelper.exe'

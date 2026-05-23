@@ -1,0 +1,12 @@
+id: c4042d54-110d-45dd-a0e1-05c47822c937
+name: Python Spawning Pretty TTY Via PTY Module
+level: 5
+size: '>0'
+active: true
+author:
+- Nextron Systems
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/python' OR Image ILIKE '%/python2' OR Image ILIKE '%/python3') OR (Image ILIKE '%/python2.%' OR Image ILIKE '%/python3.%')) AND (CommandLine ILIKE '%import pty%' OR CommandLine ILIKE '%from pty %') AND CommandLine ILIKE '%spawn%'

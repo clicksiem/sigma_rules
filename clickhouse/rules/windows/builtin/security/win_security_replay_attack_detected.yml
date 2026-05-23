@@ -1,0 +1,12 @@
+id: 5a44727c-3b85-4713-8c44-4401d5499629
+name: Replay Attack Detected
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558
+rule: SELECT * FROM logs WHERE EventID=4649

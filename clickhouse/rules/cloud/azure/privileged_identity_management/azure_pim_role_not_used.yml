@@ -1,0 +1,15 @@
+id: 8c6ec464-4ae4-43ac-936a-291da66ed13d
+name: Roles Are Not Being Used
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE riskEventType='redundantAssignmentAlertIncident'

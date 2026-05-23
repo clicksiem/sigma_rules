@@ -1,0 +1,12 @@
+id: 00bb5bd5-1379-4fcf-a965-a5b6f7478064
+name: Windows Firewall Settings Have Been Changed
+level: 3
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE EventID IN (2002, 2083, 2003, 2082, 2008)

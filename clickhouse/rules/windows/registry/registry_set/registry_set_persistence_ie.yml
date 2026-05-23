@@ -1,0 +1,13 @@
+id: d88d0ab2-e696-4d40-a2ed-9790064e66b3
+name: Modification of IE Registry Settings
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings%' AND (NOT (Details ILIKE 'DWORD%' OR isNull(Details) OR (Details IN ('Cookie:', 'Visited:', '(Empty)')) OR (TargetObject ILIKE '%\\Cache%' OR TargetObject ILIKE '%\\ZoneMap%' OR TargetObject ILIKE '%\\WpadDecision%') OR Details='Binary Data')) AND (NOT TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Accepted Documents%')

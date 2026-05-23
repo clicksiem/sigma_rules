@@ -1,0 +1,12 @@
+id: afd3df04-948d-46f6-ae44-25966c44b97f
+name: PSAsyncShell - Asynchronous TCP Reverse Shell
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%PSAsyncShell%'

@@ -1,0 +1,15 @@
+id: ad89044a-8f49-4673-9a55-cbd88a1b374f
+name: Enabling COR Profiler Environment Variables
+level: 5
+size: '>0'
+active: true
+author:
+- Jose Rodriguez (@Cyb3rPandaH), OTR (Open Threat Research), Jimmy Bayne (@bohops)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.012
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\COR\_ENABLE\_PROFILING' OR TargetObject ILIKE '%\\COR\_PROFILER' OR TargetObject ILIKE '%\\CORECLR\_ENABLE\_PROFILING') OR TargetObject ILIKE '%\\CORECLR\_PROFILER\_PATH%'

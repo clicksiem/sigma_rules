@@ -1,0 +1,12 @@
+id: a34f79a3-8e5f-4cc3-b765-de00695452c2
+name: HackTool - PowerTool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\PowerTool.exe' OR Image ILIKE '%\\PowerTool64.exe') OR OriginalFileName='PowerTool.exe'

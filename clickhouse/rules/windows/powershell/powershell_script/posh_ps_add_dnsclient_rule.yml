@@ -1,0 +1,12 @@
+id: 4368354e-1797-463c-bc39-a309effbe8d7
+name: Powershell Add Name Resolution Policy Table Rule
+level: 8
+size: '>0'
+active: true
+author:
+- Borna Talebi
+group: windows
+tags:
+- attack.impact
+- attack.t1565
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Add-DnsClientNrptRule%' AND ScriptBlockText ILIKE '%-Namesp%' AND ScriptBlockText ILIKE '%-NameSe%'

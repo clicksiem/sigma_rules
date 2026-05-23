@@ -1,0 +1,12 @@
+id: 5e3cc4d8-3e68-43db-8656-eaaeefdec9cc
+name: Suspicious Invoke-WebRequest Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('powershell\_ise.EXE', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%curl %' OR CommandLine ILIKE '%Invoke-WebRequest%' OR CommandLine ILIKE '%iwr %' OR CommandLine ILIKE '%wget %') AND (CommandLine ILIKE '% -ur%' OR CommandLine ILIKE '% -o%') AND (CommandLine ILIKE '%\\AppData\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Temp\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\%AppData\%%' OR CommandLine ILIKE '%\%Public\%%' OR CommandLine ILIKE '%\%Temp\%%' OR CommandLine ILIKE '%\%tmp\%%' OR CommandLine ILIKE '%:\\Windows\\%')

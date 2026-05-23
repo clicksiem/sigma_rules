@@ -1,0 +1,12 @@
+id: 84f52741-8834-4a8c-a413-2eb2269aa6c8
+name: DllUnregisterServer Function Call Via Msiexec.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.007
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\msiexec.exe' OR OriginalFileName ILIKE '\\msiexec.exe') AND (CommandLine ILIKE '% -z %' OR CommandLine ILIKE '% /z %' OR CommandLine ILIKE '% –z %' OR CommandLine ILIKE '% —z %' OR CommandLine ILIKE '% ―z %') AND CommandLine ILIKE '%.dll%'

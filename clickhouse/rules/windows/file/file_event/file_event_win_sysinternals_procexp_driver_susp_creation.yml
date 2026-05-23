@@ -1,0 +1,13 @@
+id: de46c52b-0bf8-4936-a327-aace94f94ac6
+name: Process Explorer Driver Creation By Non-Sysinternals Binary
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1068
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\PROCEXP%' AND TargetFilename ILIKE '%.sys') AND (NOT (Image ILIKE '%\\procexp.exe' OR Image ILIKE '%\\procexp64.exe'))

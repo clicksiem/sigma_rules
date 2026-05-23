@@ -1,0 +1,12 @@
+id: 3be619f4-d9ec-4ea8-a173-18fdd01996ab
+name: Flush Iptables Ufw Chain
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1686
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/iptables' OR Image ILIKE '%/xtables-legacy-multi' OR Image ILIKE '%/iptables-legacy-multi' OR Image ILIKE '%/ip6tables' OR Image ILIKE '%/ip6tables-legacy-multi') AND (CommandLine ILIKE '%-F%' OR CommandLine ILIKE '%-Z%' OR CommandLine ILIKE '%-X%') AND (CommandLine ILIKE '%ufw-logging-deny%' OR CommandLine ILIKE '%ufw-logging-allow%' OR CommandLine ILIKE '%ufw6-logging-deny%' OR CommandLine ILIKE '%ufw6-logging-allow%')

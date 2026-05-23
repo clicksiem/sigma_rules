@@ -1,0 +1,13 @@
+id: a05baa88-e922-4001-bc4d-8738135f27de
+name: Process Monitor Driver Creation By Non-Sysinternals Binary
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1068
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\procmon%' AND TargetFilename ILIKE '%.sys') AND (NOT (Image ILIKE '%\\procmon.exe' OR Image ILIKE '%\\procmon64.exe'))

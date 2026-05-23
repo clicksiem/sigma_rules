@@ -1,0 +1,15 @@
+id: 2daa93a0-a5fb-41c5-8cd8-3c11294bfd1f
+name: Potential SSH Tunnel Persistence Install Using A Scheduled Task
+level: 8
+size: '>0'
+active: true
+author:
+- Rory Duncan
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053.005
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' OR OriginalFileName='schtasks.exe') AND ((CommandLine ILIKE '% /create %' AND CommandLine ILIKE '%sshd.exe%' AND CommandLine ILIKE '%-f%') OR (CommandLine ILIKE '% /create %' AND CommandLine ILIKE '%ssh.exe%' AND CommandLine ILIKE '%-i%'))

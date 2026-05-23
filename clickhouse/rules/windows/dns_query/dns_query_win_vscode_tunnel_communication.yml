@@ -1,0 +1,12 @@
+id: b3e6418f-7c7a-4fad-993a-93b65027a9f1
+name: DNS Query To Visual Studio Code Tunnels Domain
+level: 5
+size: '>0'
+active: true
+author:
+- citron_ninja
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE QueryName ILIKE '%.tunnels.api.visualstudio.com'

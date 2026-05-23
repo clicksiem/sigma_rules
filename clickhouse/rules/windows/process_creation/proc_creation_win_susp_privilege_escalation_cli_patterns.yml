@@ -1,0 +1,11 @@
+id: 50d66fb0-03f8-4da0-8add-84e77d12a020
+name: Suspicious RunAs-Like Flag Combination
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% -u system %' OR CommandLine ILIKE '% --user system %' OR CommandLine ILIKE '% -u NT%' OR CommandLine ILIKE '% -u "NT%' OR CommandLine ILIKE '% -u ''NT%' OR CommandLine ILIKE '% --system %' OR CommandLine ILIKE '% -u administrator %') AND (CommandLine ILIKE '% -c cmd%' OR CommandLine ILIKE '% -c "cmd%' OR CommandLine ILIKE '% -c powershell%' OR CommandLine ILIKE '% -c "powershell%' OR CommandLine ILIKE '% --command cmd%' OR CommandLine ILIKE '% --command powershell%' OR CommandLine ILIKE '% -c whoami%' OR CommandLine ILIKE '% -c wscript%' OR CommandLine ILIKE '% -c cscript%')

@@ -1,0 +1,12 @@
+id: ddcd88cb-7f62-4ce5-86f9-1704190feb0a
+name: Potential In-Memory Execution Using Reflection.Assembly
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1620
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%[Reflection.Assembly]::load%'

@@ -1,0 +1,13 @@
+id: 37e4024a-6c80-4d8f-b95d-2e7e94f3a8d1
+name: Outbound Network Connection Initiated By Microsoft Dialer
+level: 8
+size: '>0'
+active: true
+author:
+- CertainlyP
+group: windows
+tags:
+- attack.execution
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\Windows\\System32\\dialer.exe' AND Initiated='true') AND (NOT (isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')))

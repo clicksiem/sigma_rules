@@ -1,0 +1,15 @@
+id: 6c0ce3b6-85e2-49d4-9c3f-6e008ce9796e
+name: Suspicious Deno File Written from Remote Source
+level: 3
+size: '>0'
+active: true
+author:
+- Josh Nickels, Michael Taggart
+group: windows
+tags:
+- attack.execution
+- attack.t1204
+- attack.t1059.007
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\deno\\gen\\%' OR TargetFilename ILIKE '%\\deno\\remote\\https\\%') AND (TargetFilename ILIKE '%:\\Users\\%' AND TargetFilename ILIKE '%\\AppData\\%')

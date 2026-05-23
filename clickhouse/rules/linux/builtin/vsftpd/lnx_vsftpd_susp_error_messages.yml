@@ -1,0 +1,12 @@
+id: 377f33a1-4b36-4ee1-acee-1dbe4b43cfbe
+name: Suspicious VSFTPD Error Messages
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.initial-access
+- attack.t1190
+rule: 'SELECT * FROM logs WHERE hasToken(full_log, ''Connection refused: too many sessions for this address.'') OR hasToken(full_log, ''Connection refused: tcp\_wrappers denial.'') OR hasToken(full_log, ''Bad HTTP verb.'') OR hasToken(full_log, ''port and pasv both active'') OR hasToken(full_log, ''pasv and port both active'') OR hasToken(full_log, ''Transfer done (but failed to open directory).'') OR hasToken(full_log, ''Could not set file modification time.'') OR hasToken(full_log, ''bug: pid active in ptrace\_sandbox\_free'') OR hasToken(full_log, ''PTRACE\_SETOPTIONS failure'') OR hasToken(full_log, ''weird status:'') OR hasToken(full_log, ''couldn''''t handle sandbox event'') OR hasToken(full_log, ''syscall % out of bounds'') OR hasToken(full_log, ''syscall not permitted:'') OR hasToken(full_log, ''syscall validate failed:'') OR hasToken(full_log, ''Input line too long.'') OR hasToken(full_log, ''poor buffer accounting in str\_netfd\_alloc'') OR hasToken(full_log, ''vsf\_sysutil\_read\_loop'')'

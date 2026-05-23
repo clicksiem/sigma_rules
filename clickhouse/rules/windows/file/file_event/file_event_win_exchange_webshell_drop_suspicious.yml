@@ -1,0 +1,14 @@
+id: 6b269392-9eba-40b5-acb6-55c882b20ba6
+name: Suspicious File Drop by Exchange
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1190
+- attack.initial-access
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\w3wp.exe' AND CommandLine ILIKE '%MSExchange%') AND (TargetFilename ILIKE '%.aspx' OR TargetFilename ILIKE '%.asp' OR TargetFilename ILIKE '%.ashx' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.vbs')

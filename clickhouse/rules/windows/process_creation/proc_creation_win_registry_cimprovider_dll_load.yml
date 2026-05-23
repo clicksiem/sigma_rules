@@ -1,0 +1,15 @@
+id: a2910908-e86f-4687-aeba-76a5f996e652
+name: DLL Execution Via Register-cimprovider.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Ivan Dyachkov, Yulia Fomina, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\register-cimprovider.exe' AND (CommandLine ILIKE '%-path%' AND CommandLine ILIKE '%dll%')

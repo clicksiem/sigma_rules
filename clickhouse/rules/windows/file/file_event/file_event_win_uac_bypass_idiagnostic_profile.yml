@@ -1,0 +1,13 @@
+id: 48ea844d-19b1-4642-944e-fe39c2cc1fec
+name: UAC Bypass Using IDiagnostic Profile - File
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\DllHost.exe' AND TargetFilename ILIKE 'C:\\Windows\\System32\\%' AND TargetFilename ILIKE '%.dll'

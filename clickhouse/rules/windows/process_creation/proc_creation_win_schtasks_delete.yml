@@ -1,0 +1,12 @@
+id: dbc1f800-0fe0-4bc0-9c66-292c2abe3f78
+name: Delete Important Scheduled Task
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' OR OriginalFileName='schtasks.exe') AND (CommandLine ILIKE '%-delete%' OR CommandLine ILIKE '%/delete%' OR CommandLine ILIKE '%–delete%' OR CommandLine ILIKE '%—delete%' OR CommandLine ILIKE '%―delete%') AND (CommandLine ILIKE '%\\Windows\\BitLocker%' OR CommandLine ILIKE '%\\Windows\\ExploitGuard%' OR CommandLine ILIKE '%\\Windows\\SystemRestore\\SR%' OR CommandLine ILIKE '%\\Windows\\UpdateOrchestrator\\%' OR CommandLine ILIKE '%\\Windows\\Windows Defender\\%' OR CommandLine ILIKE '%\\Windows\\WindowsBackup\\%' OR CommandLine ILIKE '%\\Windows\\WindowsUpdate\\%')

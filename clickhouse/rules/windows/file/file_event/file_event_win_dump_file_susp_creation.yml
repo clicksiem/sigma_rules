@@ -1,0 +1,11 @@
+id: aba15bdd-657f-422a-bab3-ac2d2a0d6f1c
+name: Potentially Suspicious DMP/HDMP File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe') AND (TargetFilename ILIKE '%.dmp' OR TargetFilename ILIKE '%.dump' OR TargetFilename ILIKE '%.hdmp')

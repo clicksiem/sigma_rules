@@ -1,0 +1,13 @@
+id: f305fd62-beca-47da-ad95-7690a0620084
+name: Potential Bucket Enumeration on AWS
+level: 3
+size: '>0'
+active: true
+author:
+- Christopher Peacock @securepeacock, SCYTHE @scythe_io
+group: aws
+tags:
+- attack.discovery
+- attack.t1580
+- attack.t1619
+rule: SELECT * FROM logs WHERE (eventSource='s3.amazonaws.com' AND eventName='ListBuckets') AND (NOT `userIdentity.type`='AssumedRole')

@@ -1,0 +1,15 @@
+id: 24b6cf51-6122-469e-861a-22974e9c1e5b
+name: Potential SmadHook.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\SmadHook32c.dll' OR ImageLoaded ILIKE '%\\SmadHook64c.dll') AND (NOT ((Image IN ('C:\\Program Files (x86)\\SMADAV\\SmadavProtect32.exe', 'C:\\Program Files (x86)\\SMADAV\\SmadavProtect64.exe', 'C:\\Program Files\\SMADAV\\SmadavProtect32.exe', 'C:\\Program Files\\SMADAV\\SmadavProtect64.exe')) AND (ImageLoaded ILIKE 'C:\\Program Files (x86)\\SMADAV\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\SMADAV\\%')))

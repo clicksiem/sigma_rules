@@ -1,0 +1,15 @@
+id: b6d235fc-1d38-4b12-adbe-325f06728f37
+name: CMSTP Execution Registry Event
+level: 8
+size: '>0'
+active: true
+author:
+- Nik Seetharaman
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218.003
+- attack.g0069
+- car.2019-04-001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\cmmgr32.exe%'

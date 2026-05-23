@@ -1,0 +1,13 @@
+id: e97d9903-53b2-41fc-8cb9-889ed4093e80
+name: KrbRelayUp Service Installation
+level: 8
+size: '>0'
+active: true
+author:
+- Sittikorn S, Tim Shelton
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543
+rule: SELECT * FROM logs WHERE EventID=7045 AND ServiceName='KrbSCM'

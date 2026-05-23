@@ -1,0 +1,14 @@
+id: e6474a1b-5390-49cd-ab41-8d88655f7394
+name: Renamed Mavinject.EXE Execution
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.001
+- attack.t1218.013
+rule: SELECT * FROM logs WHERE (OriginalFileName IN ('mavinject32.exe', 'mavinject64.exe')) AND (NOT (Image ILIKE '%\\mavinject32.exe' OR Image ILIKE '%\\mavinject64.exe'))

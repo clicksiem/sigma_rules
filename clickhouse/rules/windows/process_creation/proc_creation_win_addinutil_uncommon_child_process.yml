@@ -1,0 +1,12 @@
+id: b5746143-59d6-4603-8d06-acbd60e166ee
+name: Uncommon Child Process Of AddinUtil.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Michael McKinley (@McKinleyMike), Tony Latteri (@TheLatteri)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\addinutil.exe' AND (NOT (Image ILIKE '%:\\Windows\\System32\\conhost.exe' OR Image ILIKE '%:\\Windows\\System32\\werfault.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\werfault.exe'))

@@ -1,0 +1,13 @@
+id: 6c8fbee5-dee8-49bc-851d-c3142d02aa47
+name: Allow Service Access Using Security Descriptor Tampering Via Sc.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\sc.exe' OR OriginalFileName='sc.exe') AND (CommandLine ILIKE '%sdset%' AND CommandLine ILIKE '%A;%') AND (CommandLine ILIKE '%;IU%' OR CommandLine ILIKE '%;SU%' OR CommandLine ILIKE '%;BA%' OR CommandLine ILIKE '%;SY%' OR CommandLine ILIKE '%;WD%')) AND (NOT ParentImage ILIKE 'C:\\Hexnode\\Hexnode Agent\\Current\\HexnodeAgent.exe')

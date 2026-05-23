@@ -1,0 +1,17 @@
+id: 92626ddd-662c-49e3-ac59-f6535f12d189
+name: Scheduled Task Creation Via Schtasks.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1053.005
+- attack.s0111
+- car.2013-08-001
+- stp.1u
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' AND CommandLine ILIKE '% /create %') AND (NOT (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%')) AND (NOT ((ParentImage IN ('C:\\Program Files\\Microsoft Office\\root\\integration\\integrator.exe', 'C:\\Program Files (x86)\\Microsoft Office\\root\\integration\\integrator.exe')) AND (Image IN ('C:\\Windows\\System32\\schtasks.exe', 'C:\\Windows\\SysWOW64\\schtasks.exe')) AND CommandLine ILIKE '%Microsoft\\Office\\Office Performance Monitor%'))

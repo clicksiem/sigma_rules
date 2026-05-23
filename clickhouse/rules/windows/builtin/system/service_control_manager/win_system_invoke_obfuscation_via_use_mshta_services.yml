@@ -1,0 +1,14 @@
+id: 7e9c7999-0f9b-4d4a-a6ed-af6d553d4af4
+name: Invoke-Obfuscation Via Use MSHTA - System
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND (ImagePath ILIKE '%mshta%' AND ImagePath ILIKE '%vbscript:createobject%')

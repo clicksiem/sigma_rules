@@ -1,0 +1,15 @@
+id: 882e858a-3233-4ba8-855e-2f3d3575803d
+name: DNS Query Request By QuickAssist.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: windows
+tags:
+- attack.command-and-control
+- attack.initial-access
+- attack.lateral-movement
+- attack.t1071.001
+- attack.t1210
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\QuickAssist.exe' AND QueryName ILIKE '%remoteassistance.support.services.microsoft.com'

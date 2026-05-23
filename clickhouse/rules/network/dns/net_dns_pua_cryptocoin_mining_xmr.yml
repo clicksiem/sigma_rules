@@ -1,0 +1,14 @@
+id: b593fd50-7335-4682-a36c-4edcb68e4641
+name: Monero Crypto Coin Mining Pool Lookup
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.impact
+- attack.t1496
+- attack.exfiltration
+- attack.t1567
+rule: SELECT * FROM logs WHERE query ILIKE '%pool.minexmr.com%' OR query ILIKE '%fr.minexmr.com%' OR query ILIKE '%de.minexmr.com%' OR query ILIKE '%sg.minexmr.com%' OR query ILIKE '%ca.minexmr.com%' OR query ILIKE '%us-west.minexmr.com%' OR query ILIKE '%pool.supportxmr.com%' OR query ILIKE '%mine.c3pool.com%' OR query ILIKE '%xmr-eu1.nanopool.org%' OR query ILIKE '%xmr-eu2.nanopool.org%' OR query ILIKE '%xmr-us-east1.nanopool.org%' OR query ILIKE '%xmr-us-west1.nanopool.org%' OR query ILIKE '%xmr-asia1.nanopool.org%' OR query ILIKE '%xmr-jp1.nanopool.org%' OR query ILIKE '%xmr-au1.nanopool.org%' OR query ILIKE '%xmr.2miners.com%' OR query ILIKE '%xmr.hashcity.org%' OR query ILIKE '%xmr.f2pool.com%' OR query ILIKE '%xmrpool.eu%' OR query ILIKE '%pool.hashvault.pro%'

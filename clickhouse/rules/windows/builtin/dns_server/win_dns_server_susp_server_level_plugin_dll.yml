@@ -1,0 +1,15 @@
+id: cbe51394-cd93-4473-b555-edf0144952d9
+name: DNS Server Error Failed Loading the ServerLevelPluginDLL
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE EventID IN (150, 770, 771)

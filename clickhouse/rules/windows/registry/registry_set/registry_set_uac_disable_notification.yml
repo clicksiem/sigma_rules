@@ -1,0 +1,12 @@
+id: c5f6a85d-b647-40f7-bbad-c10b66bab038
+name: UAC Notification Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Security Center\\UACDisableNotify%' AND Details='DWORD (0x00000001)'

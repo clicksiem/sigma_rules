@@ -1,0 +1,13 @@
+id: da34e323-1e65-42db-83be-a6725ac2caa3
+name: Potential Packet Capture Activity Via Start-NetEventSession - ScriptBlock
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.discovery
+- attack.t1040
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Start-NetEventSession%'

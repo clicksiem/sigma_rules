@@ -1,0 +1,12 @@
+id: cbb9e3d1-2386-4e59-912e-62f1484f7a89
+name: Conhost Spawned By Uncommon Parent Process
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\conhost.exe' AND (ParentImage ILIKE '%\\explorer.exe' OR ParentImage ILIKE '%\\lsass.exe' OR ParentImage ILIKE '%\\regsvr32.exe' OR ParentImage ILIKE '%\\rundll32.exe' OR ParentImage ILIKE '%\\services.exe' OR ParentImage ILIKE '%\\smss.exe' OR ParentImage ILIKE '%\\spoolsv.exe' OR ParentImage ILIKE '%\\svchost.exe' OR ParentImage ILIKE '%\\userinit.exe' OR ParentImage ILIKE '%\\wininit.exe' OR ParentImage ILIKE '%\\winlogon.exe')) AND (NOT (ParentCommandLine ILIKE '%-k apphost -s AppHostSvc%' OR ParentCommandLine ILIKE '%-k imgsvc%' OR ParentCommandLine ILIKE '%-k localService -p -s RemoteRegistry%' OR ParentCommandLine ILIKE '%-k LocalSystemNetworkRestricted -p -s NgcSvc%' OR ParentCommandLine ILIKE '%-k NetSvcs -p -s NcaSvc%' OR ParentCommandLine ILIKE '%-k netsvcs -p -s NetSetupSvc%' OR ParentCommandLine ILIKE '%-k netsvcs -p -s wlidsvc%' OR ParentCommandLine ILIKE '%-k NetworkService -p -s DoSvc%' OR ParentCommandLine ILIKE '%-k wsappx -p -s AppXSvc%' OR ParentCommandLine ILIKE '%-k wsappx -p -s ClipSVC%' OR ParentCommandLine ILIKE '%-k wusvcs -p -s WaaSMedicSvc%')) AND (NOT (ParentCommandLine ILIKE '%C:\\Program Files (x86)\\Dropbox\\Client\\%' OR ParentCommandLine ILIKE '%C:\\Program Files\\Dropbox\\Client\\%'))

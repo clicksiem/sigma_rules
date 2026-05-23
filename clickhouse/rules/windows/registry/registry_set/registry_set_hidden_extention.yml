@@ -1,0 +1,12 @@
+id: 5df86130-4e95-4a54-90f7-26541b40aec2
+name: Registry Modification to Hidden File Extension
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.t1137
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\HideFileExt' AND Details='DWORD (0x00000001)') OR (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\Hidden' AND Details='DWORD (0x00000002)')

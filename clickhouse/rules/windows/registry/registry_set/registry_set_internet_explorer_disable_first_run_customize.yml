@@ -1,0 +1,11 @@
+id: ab567429-1dfb-4674-b6d2-979fd2f9d125
+name: Internet Explorer DisableFirstRunCustomize Enabled
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Microsoft\\Internet Explorer\\Main\\DisableFirstRunCustomize' AND (Details IN ('DWORD (0x00000001)', 'DWORD (0x00000002)'))) AND (NOT (Image IN ('C:\\Windows\\explorer.exe', 'C:\\Windows\\System32\\ie4uinit.exe'))) AND (NOT (((Image ILIKE '%\\Temp\\%' AND Image ILIKE '%\\.cr\\avira\_%') AND Details ILIKE '%DWORD (0x00000001)%') OR ((Image IN ('C:\\Program Files (x86)\\Foxit Software\\Foxit PDF Reader\\FoxitPDFReader.exe', 'C:\\Program Files\\Foxit Software\\Foxit PDF Reader\\FoxitPDFReader.exe')) AND Details ILIKE '%DWORD (0x00000001)%')))

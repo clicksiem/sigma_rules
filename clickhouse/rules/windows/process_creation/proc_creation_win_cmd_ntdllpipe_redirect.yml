@@ -1,0 +1,11 @@
+id: bbc865e4-7fcd-45a6-8ff1-95ced28ec5b2
+name: NtdllPipe Like Activity Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%type \%windir\%\\system32\\ntdll.dll%' OR CommandLine ILIKE '%type \%systemroot\%\\system32\\ntdll.dll%' OR CommandLine ILIKE '%type c:\\windows\\system32\\ntdll.dll%' OR CommandLine ILIKE '%\\ntdll.dll > \\\\.\\pipe\\%'

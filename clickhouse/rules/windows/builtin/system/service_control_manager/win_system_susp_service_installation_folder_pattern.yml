@@ -1,0 +1,14 @@
+id: 1b2ae822-6fe1-43ba-aa7c-d1a3b3d1d5f2
+name: Service Installation with Suspicious Folder Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- car.2013-09-005
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (match(ImagePath, '^[Cc]:\\[Pp]rogram[Dd]ata\\.{1,9}\.exe') OR match(ImagePath, '^[Cc]:\\.{1,9}\.exe'))

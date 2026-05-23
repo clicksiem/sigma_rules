@@ -1,0 +1,13 @@
+id: 3a9fa2ec-30bc-4ebd-b49e-7c9cff225502
+name: VsCode Powershell Profile Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.013
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Microsoft.VSCode\_profile.ps1'

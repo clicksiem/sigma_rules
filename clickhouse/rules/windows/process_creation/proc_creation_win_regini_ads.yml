@@ -1,0 +1,13 @@
+id: 77946e79-97f1-45a2-84b4-f37b5c0d8682
+name: Suspicious Registry Modification From ADS Via Regini.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Eli Salem, Sander Wiebing, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regini.exe' OR OriginalFileName='REGINI.EXE') AND match(CommandLine, ':[^ \\]')

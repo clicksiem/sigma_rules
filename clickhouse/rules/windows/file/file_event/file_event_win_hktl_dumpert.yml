@@ -1,0 +1,12 @@
+id: 93d94efc-d7ad-4161-ad7d-1638c4f908d8
+name: HackTool - Dumpert Process Dumper Default File
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%dumpert.dmp'

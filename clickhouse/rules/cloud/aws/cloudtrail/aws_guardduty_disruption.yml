@@ -1,0 +1,12 @@
+id: 6e61ee20-ce00-4f8d-8aee-bedd8216f7e3
+name: AWS GuardDuty Important Change
+level: 8
+size: '>0'
+active: true
+author:
+- faloker
+group: aws
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE eventSource='guardduty.amazonaws.com' AND eventName='CreateIPSet'

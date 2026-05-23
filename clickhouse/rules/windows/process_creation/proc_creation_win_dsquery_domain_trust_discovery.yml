@@ -1,0 +1,12 @@
+id: 3bad990e-4848-4a78-9530-b427d854aac0
+name: Domain Trust Discovery Via Dsquery
+level: 5
+size: '>0'
+active: true
+author:
+- E.M. Anhaus, Tony Lambert, oscd.community, omkar72
+group: windows
+tags:
+- attack.discovery
+- attack.t1482
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dsquery.exe' OR OriginalFileName='dsquery.exe') AND CommandLine ILIKE '%trustedDomain%'

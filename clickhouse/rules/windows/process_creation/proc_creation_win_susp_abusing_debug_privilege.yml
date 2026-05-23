@@ -1,0 +1,12 @@
+id: d522eca2-2973-4391-a3e0-ef0374321dae
+name: Abused Debug Privilege by Arbitrary Parent Processes
+level: 8
+size: '>0'
+active: true
+author:
+- Semanur Guneysu @semanurtg, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548
+rule: SELECT * FROM logs WHERE (((ParentImage ILIKE '%\\winlogon.exe' OR ParentImage ILIKE '%\\services.exe' OR ParentImage ILIKE '%\\lsass.exe' OR ParentImage ILIKE '%\\csrss.exe' OR ParentImage ILIKE '%\\smss.exe' OR ParentImage ILIKE '%\\wininit.exe' OR ParentImage ILIKE '%\\spoolsv.exe' OR ParentImage ILIKE '%\\searchindexer.exe') AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%')) AND ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\cmd.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll', 'Cmd.Exe')))) AND (NOT (CommandLine ILIKE '% route %' AND CommandLine ILIKE '% ADD %'))

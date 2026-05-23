@@ -1,0 +1,12 @@
+id: b9d9cc83-380b-4ba3-8d8f-60c0e7e2930c
+name: Suspicious PowerShell Encoded Command Patterns
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.Exe', 'pwsh.dll'))) AND (CommandLine ILIKE '% -e %' OR CommandLine ILIKE '% -en %' OR CommandLine ILIKE '% -enc %' OR CommandLine ILIKE '% -enco%') AND (CommandLine ILIKE '% JAB%' OR CommandLine ILIKE '% SUVYI%' OR CommandLine ILIKE '% SQBFAFgA%' OR CommandLine ILIKE '% aWV4I%' OR CommandLine ILIKE '% IAB%' OR CommandLine ILIKE '% PAA%' OR CommandLine ILIKE '% aQBlAHgA%')) AND (NOT (ParentImage ILIKE '%C:\\Packages\\Plugins\\Microsoft.GuestConfiguration.ConfigurationforWindows\\%' OR ParentImage ILIKE '%\\gc\_worker.exe%'))

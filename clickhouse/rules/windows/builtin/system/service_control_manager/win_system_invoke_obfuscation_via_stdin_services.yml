@@ -1,0 +1,14 @@
+id: 487c7524-f892-4054-b263-8a0ace63fc25
+name: Invoke-Obfuscation Via Stdin - System
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND (ImagePath ILIKE '%set%' AND ImagePath ILIKE '%&&%') AND (ImagePath ILIKE '%environment%' OR ImagePath ILIKE '%invoke%' OR ImagePath ILIKE '%input%')

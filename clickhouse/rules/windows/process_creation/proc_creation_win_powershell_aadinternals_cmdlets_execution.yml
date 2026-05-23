@@ -1,0 +1,15 @@
+id: c86500e9-a645-4680-98d7-f882c70c1ea3
+name: AADInternals PowerShell Cmdlets Execution - ProccessCreation
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Songer (@austinsonger), Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.reconnaissance
+- attack.discovery
+- attack.credential-access
+- attack.impact
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.Exe', 'pwsh.dll'))) AND (CommandLine ILIKE '%Add-AADInt%' OR CommandLine ILIKE '%ConvertTo-AADInt%' OR CommandLine ILIKE '%Disable-AADInt%' OR CommandLine ILIKE '%Enable-AADInt%' OR CommandLine ILIKE '%Export-AADInt%' OR CommandLine ILIKE '%Find-AADInt%' OR CommandLine ILIKE '%Get-AADInt%' OR CommandLine ILIKE '%Grant-AADInt%' OR CommandLine ILIKE '%Initialize-AADInt%' OR CommandLine ILIKE '%Install-AADInt%' OR CommandLine ILIKE '%Invoke-AADInt%' OR CommandLine ILIKE '%Join-AADInt%' OR CommandLine ILIKE '%New-AADInt%' OR CommandLine ILIKE '%Open-AADInt%' OR CommandLine ILIKE '%Read-AADInt%' OR CommandLine ILIKE '%Register-AADInt%' OR CommandLine ILIKE '%Remove-AADInt%' OR CommandLine ILIKE '%Reset-AADInt%' OR CommandLine ILIKE '%Resolve-AADInt%' OR CommandLine ILIKE '%Restore-AADInt%' OR CommandLine ILIKE '%Save-AADInt%' OR CommandLine ILIKE '%Search-AADInt%' OR CommandLine ILIKE '%Send-AADInt%' OR CommandLine ILIKE '%Set-AADInt%' OR CommandLine ILIKE '%Start-AADInt%' OR CommandLine ILIKE '%Unprotect-AADInt%' OR CommandLine ILIKE '%Update-AADInt%')

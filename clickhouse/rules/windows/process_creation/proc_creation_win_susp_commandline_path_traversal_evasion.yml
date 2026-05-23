@@ -1,0 +1,12 @@
+id: 1327381e-6ab0-4f38-b583-4c1b8346a56b
+name: Potential Command Line Path Traversal Evasion Attempt
+level: 5
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\Windows\\%' AND (CommandLine ILIKE '%\\..\\Windows\\%' OR CommandLine ILIKE '%\\..\\System32\\%' OR CommandLine ILIKE '%\\..\\..\\%')) OR CommandLine ILIKE '%.exe\\..\\%') AND (NOT (CommandLine ILIKE '%\\Google\\Drive\\googledrivesync.exe\\..\\%' OR CommandLine ILIKE '%\\Citrix\\Virtual Smart Card\\Citrix.Authentication.VirtualSmartcard.Launcher.exe\\..\\%'))

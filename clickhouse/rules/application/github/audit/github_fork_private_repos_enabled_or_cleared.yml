@@ -1,0 +1,14 @@
+id: 69b3bd1e-b38a-462f-9a23-fbdbf63d2294
+name: Github Fork Private Repositories Setting Enabled/Cleared
+level: 5
+size: '>0'
+active: true
+author:
+- Romain Gaillard (@romain-gaillard)
+group: github
+tags:
+- attack.persistence
+- attack.exfiltration
+- attack.t1020
+- attack.t1537
+rule: SELECT * FROM logs WHERE action IN ('private\_repository\_forking.clear', 'private\_repository\_forking.enable')

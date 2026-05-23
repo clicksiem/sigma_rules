@@ -1,0 +1,12 @@
+id: b1ec66c6-f4d1-4b5c-96dd-af28ccae7727
+name: New Generic Credentials Added Via Cmdkey.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmdkey.exe' OR OriginalFileName='cmdkey.exe') AND (CommandLine ILIKE '% -g%' OR CommandLine ILIKE '% /g%' OR CommandLine ILIKE '% –g%' OR CommandLine ILIKE '% —g%' OR CommandLine ILIKE '% ―g%') AND (CommandLine ILIKE '% -u%' OR CommandLine ILIKE '% /u%' OR CommandLine ILIKE '% –u%' OR CommandLine ILIKE '% —u%' OR CommandLine ILIKE '% ―u%') AND (CommandLine ILIKE '% -p%' OR CommandLine ILIKE '% /p%' OR CommandLine ILIKE '% –p%' OR CommandLine ILIKE '% —p%' OR CommandLine ILIKE '% ―p%')

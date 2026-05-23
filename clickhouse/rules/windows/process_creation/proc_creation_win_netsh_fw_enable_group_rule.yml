@@ -1,0 +1,12 @@
+id: 347906f3-e207-4d18-ae5b-a9403d6bcdef
+name: Netsh Allow Group Policy on Microsoft Defender Firewall
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\netsh.exe' OR OriginalFileName='netsh.exe') AND (CommandLine ILIKE '%advfirewall%' AND CommandLine ILIKE '%firewall%' AND CommandLine ILIKE '%set%' AND CommandLine ILIKE '%rule%' AND CommandLine ILIKE '%group=%' AND CommandLine ILIKE '%new%' AND CommandLine ILIKE '%enable=Yes%')

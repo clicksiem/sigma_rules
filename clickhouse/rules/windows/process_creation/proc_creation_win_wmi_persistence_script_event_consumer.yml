@@ -1,0 +1,13 @@
+id: ec1d5e28-8f3b-4188-a6f8-6e8df81dc28e
+name: WMI Persistence - Script Event Consumer
+level: 5
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE Image ILIKE 'C:\\WINDOWS\\system32\\wbem\\scrcons.exe' AND ParentImage ILIKE 'C:\\Windows\\System32\\svchost.exe'

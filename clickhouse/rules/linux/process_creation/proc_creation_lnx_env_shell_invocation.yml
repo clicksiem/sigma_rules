@@ -1,0 +1,12 @@
+id: bed978f8-7f3a-432b-82c5-9286a9b3031a
+name: Shell Invocation via Env Command - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/env' AND (CommandLine ILIKE '%/bin/bash%' OR CommandLine ILIKE '%/bin/dash%' OR CommandLine ILIKE '%/bin/fish%' OR CommandLine ILIKE '%/bin/sh%' OR CommandLine ILIKE '%/bin/zsh%')

@@ -1,0 +1,12 @@
+id: e9edd087-89d8-48c9-b0b4-5b9bb10896b8
+name: Potential SpEL Injection In Spring Framework
+level: 8
+size: '>0'
+active: true
+author:
+- Moti Harmats
+group: spring
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'org.springframework.expression.ExpressionException')

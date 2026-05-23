@@ -1,0 +1,12 @@
+id: cec8e918-30f7-4e2d-9bfa-a59cc97ae60f
+name: OpenWith.exe Executes Specified Binary
+level: 8
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community (rule), @harr0ey (idea)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\OpenWith.exe' AND CommandLine ILIKE '%/c%'

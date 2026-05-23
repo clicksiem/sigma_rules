@@ -1,0 +1,12 @@
+id: caa9a802-8bd8-4b9e-a5cd-4d6221670219
+name: Suspicious Kerberos Ticket Request via CLI
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('powershell.exe', 'pwsh.dll'))) AND (CommandLine ILIKE '%System.IdentityModel.Tokens.KerberosRequestorSecurityToken%' AND CommandLine ILIKE '%.GetRequest()%')

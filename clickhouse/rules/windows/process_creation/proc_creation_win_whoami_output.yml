@@ -1,0 +1,13 @@
+id: c30fb093-1109-4dc8-88a8-b30d11c95a5d
+name: Whoami.EXE Execution With Output Option
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+- car.2016-03-001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\whoami.exe' OR OriginalFileName='whoami.exe') AND (CommandLine ILIKE '% /FO CSV%' OR CommandLine ILIKE '% -FO CSV%')) OR CommandLine ILIKE '%whoami%>%'

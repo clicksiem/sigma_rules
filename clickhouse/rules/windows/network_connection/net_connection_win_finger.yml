@@ -1,0 +1,14 @@
+id: 2fdaf50b-9fd5-449f-ba69-f17248119af6
+name: Network Connection Initiated via Finger.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.004
+- attack.execution
+- attack.t1059.003
+rule: SELECT * FROM logs WHERE Initiated='true' AND Image ILIKE '%\\finger.exe'

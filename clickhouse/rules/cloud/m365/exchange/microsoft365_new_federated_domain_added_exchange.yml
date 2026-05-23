@@ -1,0 +1,12 @@
+id: 42127bdd-9133-474f-a6f1-97b6c08a4339
+name: New Federated Domain Added - Exchange
+level: 5
+size: '>0'
+active: true
+author:
+- Splunk Threat Research Team (original rule), '@ionsor (rule)'
+group: m365
+tags:
+- attack.persistence
+- attack.t1136.003
+rule: SELECT * FROM logs WHERE eventSource='Exchange' AND eventName='Add-FederatedDomain' AND status='success'

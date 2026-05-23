@@ -1,0 +1,14 @@
+id: 734f8d9b-42b8-41b2-bcf5-abaf49d5a3c8
+name: Remote PowerShell Session Host Process (WinRM)
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.lateral-movement
+- attack.t1059.001
+- attack.t1021.006
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\wsmprovhost.exe' OR ParentImage ILIKE '%\\wsmprovhost.exe'

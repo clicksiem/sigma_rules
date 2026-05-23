@@ -1,0 +1,12 @@
+id: f38a82d2-fba3-4781-b549-525efbec8506
+name: PUA - 3Proxy Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1572
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\3proxy.exe' OR Description='3proxy - tiny proxy server' OR CommandLine ILIKE '%.exe -i127.0.0.1 -p%'

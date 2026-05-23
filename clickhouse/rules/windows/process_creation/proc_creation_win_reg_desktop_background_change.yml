@@ -1,0 +1,15 @@
+id: 8cbc9475-8d05-4e27-9c32-df960716c701
+name: Potentially Suspicious Desktop Background Change Using Reg.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Stephen Lincoln @slincoln-aiq (AttackIQ)
+group: windows
+tags:
+- attack.persistence
+- attack.impact
+- attack.defense-impairment
+- attack.t1112
+- attack.t1491.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND CommandLine ILIKE '%add%') AND (CommandLine ILIKE '%Control Panel\\Desktop%' OR CommandLine ILIKE '%CurrentVersion\\Policies\\ActiveDesktop%' OR CommandLine ILIKE '%CurrentVersion\\Policies\\System%') AND ((CommandLine ILIKE '%/v NoChangingWallpaper%' AND CommandLine ILIKE '%/d 1%') OR (CommandLine ILIKE '%/v Wallpaper%' AND CommandLine ILIKE '%/t REG\_SZ%') OR (CommandLine ILIKE '%/v WallpaperStyle%' AND CommandLine ILIKE '%/d 2%'))

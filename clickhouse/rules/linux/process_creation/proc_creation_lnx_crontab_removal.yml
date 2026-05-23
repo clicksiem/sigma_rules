@@ -1,0 +1,11 @@
+id: c2e234de-03a3-41e1-b39a-1e56dc17ba67
+name: Remove Scheduled Cron Task/Job
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE Image ILIKE '%crontab' AND CommandLine ILIKE '% -r%'

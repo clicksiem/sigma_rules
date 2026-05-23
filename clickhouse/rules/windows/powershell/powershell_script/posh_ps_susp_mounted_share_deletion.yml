@@ -1,0 +1,12 @@
+id: 66a4d409-451b-4151-94f4-a55d559c49b0
+name: PowerShell Deleted Mounted Share
+level: 5
+size: '>0'
+active: true
+author:
+- oscd.community, @redcanary, Zach Stanford @svch0st
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.005
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Remove-SmbShare%' OR ScriptBlockText ILIKE '%Remove-FileShare%') AND (NOT (ScriptBlockText ILIKE '%FileShare.cdxml%' AND ScriptBlockText ILIKE '%Microsoft.PowerShell.Core\\Export-ModuleMember%' AND ScriptBlockText ILIKE '%ROOT/Microsoft/Windows/Storage/MSFT\_FileShare%' AND ScriptBlockText ILIKE '%ObjectModelWrapper%' AND ScriptBlockText ILIKE '%Cmdletization.MethodParameter%'))

@@ -1,0 +1,15 @@
+id: 645fd80d-6c07-435b-9e06-7bc1b5656cba
+name: Roles Activated Too Frequently
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE riskEventType='sequentialActivationRenewalsAlertIncident'

@@ -1,0 +1,12 @@
+id: 6f0947a4-1c5e-4e0d-8ac7-53159b8f23ca
+name: Potentially Suspicious Child Process Of Regsvr32
+level: 8
+size: '>0'
+active: true
+author:
+- elhoim, Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\regsvr32.exe' AND (Image ILIKE '%\\calc.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\explorer.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe' OR Image ILIKE '%\\nltest.exe' OR Image ILIKE '%\\notepad.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\reg.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\werfault.exe' OR Image ILIKE '%\\wscript.exe')) AND (NOT (Image ILIKE '%\\werfault.exe' AND CommandLine ILIKE '% -u -p %'))

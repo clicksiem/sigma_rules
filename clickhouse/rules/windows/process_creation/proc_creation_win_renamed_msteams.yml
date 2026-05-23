@@ -1,0 +1,11 @@
+id: 88f46b67-14d4-4f45-ac2c-d66984f22191
+name: Renamed Microsoft Teams Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (OriginalFileName IN ('msteams.exe', 'teams.exe')) AND (NOT (Image ILIKE '%\\msteams.exe' OR Image ILIKE '%\\teams.exe'))

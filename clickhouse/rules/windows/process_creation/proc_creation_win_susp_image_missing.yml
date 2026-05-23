@@ -1,0 +1,11 @@
+id: 71158e3f-df67-472b-930e-7d287acaa3e1
+name: Execution Of Non-Existing File
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (NOT Image ILIKE '%\\%') AND (NOT (isNull(Image) OR (Image IN ('-', '')) OR ((Image IN ('System', 'Registry', 'MemCompression', 'vmmem')) OR (CommandLine IN ('Registry', 'MemCompression', 'vmmem')))))

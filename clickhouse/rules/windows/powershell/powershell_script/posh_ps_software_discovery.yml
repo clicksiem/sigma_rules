@@ -1,0 +1,12 @@
+id: 2650dd1a-eb2a-412d-ac36-83f06c4f2282
+name: Detected Windows Software Discovery - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.discovery
+- attack.t1518
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%get-itemProperty%' AND ScriptBlockText ILIKE '%\\software\\%' AND ScriptBlockText ILIKE '%select-object%' AND ScriptBlockText ILIKE '%format-table%'

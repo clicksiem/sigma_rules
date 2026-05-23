@@ -1,0 +1,13 @@
+id: 5f9c7f1a-7c21-4c39-b2f3-8d8006e0e51f
+name: PowerShell Web Access Installation - PsScript
+level: 8
+size: '>0'
+active: true
+author:
+- Michael Haag
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Install-WindowsFeature WindowsPowerShellWebAccess%' OR ScriptBlockText ILIKE '%Install-PswaWebApplication%' OR (ScriptBlockText ILIKE '%Add-PswaAuthorizationRule%' AND ScriptBlockText ILIKE '%-UserName %' AND ScriptBlockText ILIKE '%-ComputerName %')

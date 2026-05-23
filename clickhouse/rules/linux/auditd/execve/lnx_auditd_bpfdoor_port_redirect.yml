@@ -1,0 +1,12 @@
+id: 70b4156e-50fc-4523-aa50-c9dddf1993fc
+name: Bpfdoor TCP Ports Redirect
+level: 5
+size: '>0'
+active: true
+author:
+- Rafal Piasecki
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1686
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND a0 ILIKE '%iptables' AND a1='-t' AND a2='nat') AND (hasToken(full_log, '--to-ports 42') OR hasToken(full_log, '--to-ports 43'))

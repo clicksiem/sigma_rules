@@ -1,0 +1,12 @@
+id: f4a623c2-4ef5-4c33-b811-0642f702c9f1
+name: Visual Studio Code Tunnel Shell Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\servers\\Stable-%' AND ParentImage ILIKE '%\\server\\node.exe' AND ParentCommandLine ILIKE '%.vscode-server%') AND (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND CommandLine ILIKE '%\\terminal\\browser\\media\\shellIntegration.ps1%') OR (Image ILIKE '%\\wsl.exe' OR Image ILIKE '%\\bash.exe'))

@@ -1,0 +1,13 @@
+id: 180c7c5c-d64b-4a63-86e9-68910451bc8b
+name: Potential File Download Via MS-AppInstaller Protocol Handler
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%ms-appinstaller://_source=%' AND CommandLine ILIKE '%http%'

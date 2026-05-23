@@ -1,0 +1,15 @@
+id: 1908fcc1-1b92-4272-8214-0fbaf2fa5163
+name: Malicious DLL File Dropped in the Teams or OneDrive Folder
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%iphlpapi.dll%' AND TargetFilename ILIKE '%\\AppData\\Local\\Microsoft%'

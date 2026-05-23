@@ -1,0 +1,12 @@
+id: 41ca393d-538c-408a-ac27-cf1e038be80c
+name: Directory Removal Via Rmdir
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND CommandLine ILIKE '%rmdir%' AND (CommandLine ILIKE '%/s%' OR CommandLine ILIKE '%/q%')

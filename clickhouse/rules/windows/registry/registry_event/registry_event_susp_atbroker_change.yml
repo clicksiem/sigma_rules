@@ -1,0 +1,15 @@
+id: 9577edbb-851f-4243-8c91-1d5b50c1a39b
+name: Atbroker Registry Change
+level: 5
+size: '>0'
+active: true
+author:
+- Mateusz Wydra, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1218
+- attack.persistence
+- attack.t1547
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%Software\\Microsoft\\Windows NT\\CurrentVersion\\Accessibility\\ATs%' OR TargetObject ILIKE '%Software\\Microsoft\\Windows NT\\CurrentVersion\\Accessibility\\Configuration%') AND (NOT ((Image ILIKE 'C:\\Windows\\system32\\atbroker.exe' AND TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Accessibility\\Configuration%' AND Details='(Empty)') OR (Image ILIKE 'C:\\Windows\\Installer\\MSI%' AND TargetObject ILIKE '%Software\\Microsoft\\Windows NT\\CurrentVersion\\Accessibility\\ATs%')))

@@ -1,0 +1,13 @@
+id: 99b7460d-c9f1-40d7-a316-1f36f61d52ee
+name: Cscript/Wscript Uncommon Script Extension Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.005
+- attack.t1059.007
+rule: SELECT * FROM logs WHERE ((OriginalFileName IN ('wscript.exe', 'cscript.exe')) OR (Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe')) AND (CommandLine ILIKE '%.csv%' OR CommandLine ILIKE '%.dat%' OR CommandLine ILIKE '%.doc%' OR CommandLine ILIKE '%.gif%' OR CommandLine ILIKE '%.jpeg%' OR CommandLine ILIKE '%.jpg%' OR CommandLine ILIKE '%.png%' OR CommandLine ILIKE '%.ppt%' OR CommandLine ILIKE '%.txt%' OR CommandLine ILIKE '%.xls%' OR CommandLine ILIKE '%.xml%')

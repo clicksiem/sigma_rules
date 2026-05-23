@@ -1,0 +1,13 @@
+id: 40b19fa6-d835-400c-b301-41f3a2baacaf
+name: VolumeShadowCopy Symlink Creation Via Mklink
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%mklink%' AND CommandLine ILIKE '%HarddiskVolumeShadowCopy%'

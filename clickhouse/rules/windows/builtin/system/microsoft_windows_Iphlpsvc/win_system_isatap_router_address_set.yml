@@ -1,0 +1,18 @@
+id: d22df9cd-2aee-4089-93c7-9dc4eae77f2c
+name: ISATAP Router Address Was Set
+level: 5
+size: '>0'
+active: true
+author:
+- hamid
+group: windows
+tags:
+- attack.impact
+- attack.credential-access
+- attack.collection
+- attack.initial-access
+- attack.privilege-escalation
+- attack.execution
+- attack.t1557
+- attack.t1565.002
+rule: SELECT * FROM logs WHERE (EventID=4100 AND Provider_Name='Microsoft-Windows-Iphlpsvc') AND (NOT (IsatapRouter IN ('127.0.0.1', '::1'))) AND (NOT isNull(IsatapRouter))

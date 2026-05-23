@@ -1,0 +1,11 @@
+id: 145095eb-e273-443b-83d0-f9b519b7867b
+name: PDF File Created By RegEdit.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\regedit.exe' AND TargetFilename ILIKE '%.pdf'

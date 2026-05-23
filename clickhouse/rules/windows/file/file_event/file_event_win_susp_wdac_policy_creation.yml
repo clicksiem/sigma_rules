@@ -1,0 +1,11 @@
+id: 1d2de8a6-4803-4fde-b85b-f58f3aa7a705
+name: Potentially Suspicious WDAC Policy File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Windows\\System32\\CodeIntegrity\\%' AND (NOT ((Image ILIKE '%\\Microsoft.ConfigurationManagement.exe' OR Image ILIKE '%\\WDAC Wizard.exe' OR Image ILIKE '%C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe' OR Image ILIKE '%C:\\Program Files\\PowerShell\\7\\pwsh.exe' OR Image ILIKE '%C:\\Windows\\System32\\dllhost.exe' OR Image ILIKE '%C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell\_ise.exe' OR Image ILIKE '%C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' OR Image ILIKE '%C:\\Windows\\SysWOW64\\dllhost.exe' OR Image ILIKE '%C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell\_ise.exe' OR Image ILIKE '%C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe') OR ((CommandLine ILIKE '%ConvertFrom-CIPolicy -XmlFilePath%' AND CommandLine ILIKE '%-BinaryFilePath %') OR CommandLine ILIKE '%CiTool --update-policy%' OR (CommandLine ILIKE '%Copy-Item -Path%' AND CommandLine ILIKE '%-Destination%')) OR Image='System' OR (Image IN ('C:\\Windows\\System32\\wuauclt.exe', 'C:\\Windows\\UUS\\arm64\\wuaucltcore.exe'))))

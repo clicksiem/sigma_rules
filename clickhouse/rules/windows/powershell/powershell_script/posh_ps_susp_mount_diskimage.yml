@@ -1,0 +1,12 @@
+id: 29e1c216-6408-489d-8a06-ee9d151ef819
+name: Suspicious Mount-DiskImage
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553.005
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Mount-DiskImage %' AND ScriptBlockText ILIKE '%-ImagePath %'

@@ -1,0 +1,12 @@
+id: 5f87308a-0a5b-4623-ae15-d8fa1809bc60
+name: Suspicious Files in Default GPO Folder
+level: 5
+size: '>0'
+active: true
+author:
+- elhoim
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Policies\\{31B2F340-016D-11D2-945F-00C04FB984F9}\\%' AND (TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe')

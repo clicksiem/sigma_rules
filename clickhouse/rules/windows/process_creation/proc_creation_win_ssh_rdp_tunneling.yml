@@ -1,0 +1,12 @@
+id: f7d7ebd5-a016-46e2-9c54-f9932f2d386d
+name: Potential RDP Tunneling Via SSH
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1572
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\ssh.exe' AND CommandLine ILIKE '%:3389%'

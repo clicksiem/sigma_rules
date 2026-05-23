@@ -1,0 +1,12 @@
+id: 5947497f-1aa4-41dd-9693-c9848d58727d
+name: Suspicious Unblock-File
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553.005
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Unblock-File %' AND ScriptBlockText ILIKE '%-Path %'

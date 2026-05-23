@@ -1,0 +1,14 @@
+id: 8ca7004b-e620-4ecb-870e-86129b5b8e75
+name: Invoke-Obfuscation VAR+ Launcher - System
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND (ImagePath ILIKE '%cmd%' AND ImagePath ILIKE '%"set%' AND ImagePath ILIKE '%-f%') AND (ImagePath ILIKE '%/c%' OR ImagePath ILIKE '%/r%')

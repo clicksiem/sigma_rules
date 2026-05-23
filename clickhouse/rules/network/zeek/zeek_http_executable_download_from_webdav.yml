@@ -1,0 +1,12 @@
+id: aac2fd97-bcba-491b-ad66-a6edf89c71bf
+name: Executable from Webdav
+level: 5
+size: '>0'
+active: true
+author:
+- SOC Prime, Adam Swan
+group: zeek
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (`c-useragent` ILIKE '%WebDAV%' OR `c-uri` ILIKE '%webdav%') AND (resp_mime_types ILIKE '%dosexec%' OR `c-uri` ILIKE '%.exe')

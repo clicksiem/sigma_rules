@@ -1,0 +1,12 @@
+id: 4a5f5a5e-ac01-474b-9b4e-d61298c9df1d
+name: PowerShell as a Service in Registry
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Services\\%' AND TargetObject ILIKE '%\\ImagePath' AND (Details ILIKE '%powershell%' OR Details ILIKE '%pwsh%')

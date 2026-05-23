@@ -1,0 +1,14 @@
+id: 99b97608-3e21-4bfe-8217-2a127c396a0e
+name: Remote Thread Creation Via PowerShell In Uncommon Target
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218.011
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (SourceImage ILIKE '%\\powershell.exe' OR SourceImage ILIKE '%\\pwsh.exe') AND (TargetImage ILIKE '%\\rundll32.exe' OR TargetImage ILIKE '%\\regsvr32.exe')

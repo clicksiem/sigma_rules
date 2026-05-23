@@ -1,0 +1,12 @@
+id: a0459f02-ac51-4c09-b511-b8c9203fc429
+name: Potential Process Execution Proxy Via CL_Invocation.ps1
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.stealth
+- attack.t1216
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%SyncInvoke %'

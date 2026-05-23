@@ -1,0 +1,12 @@
+id: fe63010f-8823-4864-a96b-a7b4a0f7b929
+name: LSASS Process Reconnaissance Via Findstr.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.006
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\find.exe' OR Image ILIKE '%\\findstr.exe') OR (OriginalFileName IN ('FIND.EXE', 'FINDSTR.EXE'))) AND CommandLine ILIKE '%lsass%') OR (CommandLine ILIKE '% -i "lsass%' OR CommandLine ILIKE '% /i "lsass%' OR CommandLine ILIKE '% –i "lsass%' OR CommandLine ILIKE '% —i "lsass%' OR CommandLine ILIKE '% ―i "lsass%' OR CommandLine ILIKE '% -i lsass.exe%' OR CommandLine ILIKE '% /i lsass.exe%' OR CommandLine ILIKE '% –i lsass.exe%' OR CommandLine ILIKE '% —i lsass.exe%' OR CommandLine ILIKE '% ―i lsass.exe%' OR CommandLine ILIKE '%findstr "lsass%' OR CommandLine ILIKE '%findstr lsass%' OR CommandLine ILIKE '%findstr.exe "lsass%' OR CommandLine ILIKE '%findstr.exe lsass%')

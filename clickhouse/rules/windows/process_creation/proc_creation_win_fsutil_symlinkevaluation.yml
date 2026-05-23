@@ -1,0 +1,14 @@
+id: c0b2768a-dd06-4671-8339-b16ca8d1f27f
+name: Potentially Suspicious NTFS Symlink Behavior Modification
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, The DFIR Report
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1059
+- attack.t1222.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('Cmd.Exe', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%fsutil%' AND CommandLine ILIKE '%behavior%' AND CommandLine ILIKE '%set%' AND CommandLine ILIKE '%SymlinkEvaluation%') AND (CommandLine ILIKE '%R2L:1%' OR CommandLine ILIKE '%R2R:1%' OR CommandLine ILIKE '%L2L:1%')

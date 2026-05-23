@@ -1,0 +1,12 @@
+id: 82a6714f-4899-4f16-9c1e-9a333544d4c3
+name: File In Suspicious Location Encoded To Base64 Via Certutil.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certutil.exe' OR OriginalFileName='CertUtil.exe') AND (CommandLine ILIKE '%-encode%' OR CommandLine ILIKE '%/encode%' OR CommandLine ILIKE '%–encode%' OR CommandLine ILIKE '%—encode%' OR CommandLine ILIKE '%―encode%') AND (CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Local\\Temp\\%' OR CommandLine ILIKE '%\\PerfLogs\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\Windows\\Temp\\%' OR CommandLine ILIKE '%$Recycle.Bin%')

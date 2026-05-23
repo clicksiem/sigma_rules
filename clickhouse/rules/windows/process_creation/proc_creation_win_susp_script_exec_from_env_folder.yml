@@ -1,0 +1,12 @@
+id: 1228c958-e64e-4e71-92ad-7d429f4138ba
+name: Script Interpreter Execution From Suspicious Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\wscript.exe') OR (CommandLine ILIKE '% -ep bypass %' OR CommandLine ILIKE '% -ExecutionPolicy bypass %' OR CommandLine ILIKE '% -w hidden %' OR CommandLine ILIKE '%/e:javascript %' OR CommandLine ILIKE '%/e:Jscript %' OR CommandLine ILIKE '%/e:vbscript %') OR (OriginalFileName IN ('cscript.exe', 'mshta.exe', 'wscript.exe'))) AND ((CommandLine ILIKE '%:\\Perflogs\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%\\\%Public\%%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp%' OR CommandLine ILIKE '%\\AppData\\Roaming\\Temp%' OR CommandLine ILIKE '%\\Temporary Internet%' OR CommandLine ILIKE '%\\Windows\\Temp%' OR CommandLine ILIKE '%\\Start Menu\\Programs\\Startup\\%' OR CommandLine ILIKE '%\%TEMP\%%' OR CommandLine ILIKE '%\%TMP\%%' OR CommandLine ILIKE '%\%LocalAppData\%\\Temp%') OR ((CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Favorites\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Favourites\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Contacts\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Documents\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Music\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Pictures\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Videos\\%'))) AND (NOT ((ParentImage IN ('C:\\Windows\\System32\\Msiexec.exe', 'C:\\Windows\\SysWOW64\\Msiexec.exe')) AND Image ILIKE '%\\powershell.exe' AND (CommandLine ILIKE '%-NoProfile -ExecutionPolicy Bypass -Command%' AND CommandLine ILIKE '%AppData\\Local\\Temp\\%' AND CommandLine ILIKE '%Install-Chocolatey.ps1%')))

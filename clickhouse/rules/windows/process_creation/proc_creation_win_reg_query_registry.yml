@@ -1,0 +1,13 @@
+id: 970007b7-ce32-49d0-a4a4-fbef016950bd
+name: Potential Configuration And Service Reconnaissance Via Reg.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.discovery
+- attack.t1012
+- attack.t1007
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND CommandLine ILIKE '%query%' AND (CommandLine ILIKE '%currentVersion\\windows%' OR CommandLine ILIKE '%winlogon\\%' OR CommandLine ILIKE '%currentVersion\\shellServiceObjectDelayLoad%' OR CommandLine ILIKE '%currentVersion\\run%' OR CommandLine ILIKE '%currentVersion\\policies\\explorer\\run%' OR CommandLine ILIKE '%currentcontrolset\\services%')

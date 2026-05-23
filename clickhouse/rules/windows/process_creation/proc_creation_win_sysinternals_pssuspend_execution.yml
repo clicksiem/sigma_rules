@@ -1,0 +1,14 @@
+id: 48bbc537-b652-4b4e-bd1d-281172df448f
+name: Sysinternals PsSuspend Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.discovery
+- attack.persistence
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE OriginalFileName='pssuspend.exe' OR (Image ILIKE '%\\pssuspend.exe' OR Image ILIKE '%\\pssuspend64.exe')

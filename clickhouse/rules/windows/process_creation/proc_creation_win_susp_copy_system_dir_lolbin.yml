@@ -1,0 +1,12 @@
+id: f5d19838-41b5-476c-98d8-ba8af4929ee2
+name: LOL-Binary Copied From System Directory
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cmd.exe' AND CommandLine ILIKE '%copy %') OR ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%copy-item%' OR CommandLine ILIKE '% copy %' OR CommandLine ILIKE '%cpi %' OR CommandLine ILIKE '% cp %')) OR ((Image ILIKE '%\\robocopy.exe' OR Image ILIKE '%\\xcopy.exe') OR (OriginalFileName IN ('robocopy.exe', 'XCOPY.EXE')))) AND ((CommandLine ILIKE '%\\System32%' OR CommandLine ILIKE '%\\SysWOW64%' OR CommandLine ILIKE '%\\WinSxS%') AND (CommandLine ILIKE '%\\bitsadmin.exe%' OR CommandLine ILIKE '%\\calc.exe%' OR CommandLine ILIKE '%\\certutil.exe%' OR CommandLine ILIKE '%\\cmdl32.exe%' OR CommandLine ILIKE '%\\cscript.exe%' OR CommandLine ILIKE '%\\mshta.exe%' OR CommandLine ILIKE '%\\rundll32.exe%' OR CommandLine ILIKE '%\\wscript.exe%' OR CommandLine ILIKE '%\\ie4uinit.exe%'))

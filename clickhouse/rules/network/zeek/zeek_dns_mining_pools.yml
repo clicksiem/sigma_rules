@@ -1,0 +1,14 @@
+id: bf74135c-18e8-4a72-a926-0e4f47888c19
+name: DNS Events Related To Mining Pools
+level: 3
+size: '>0'
+active: true
+author:
+- Saw Winn Naung, Azure-Sentinel, @neu5ron
+group: zeek
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.impact
+- attack.t1496
+rule: SELECT * FROM logs WHERE (query ILIKE '%monerohash.com' OR query ILIKE '%do-dear.com' OR query ILIKE '%xmrminerpro.com' OR query ILIKE '%secumine.net' OR query ILIKE '%xmrpool.com' OR query ILIKE '%minexmr.org' OR query ILIKE '%hashanywhere.com' OR query ILIKE '%xmrget.com' OR query ILIKE '%mininglottery.eu' OR query ILIKE '%minergate.com' OR query ILIKE '%moriaxmr.com' OR query ILIKE '%multipooler.com' OR query ILIKE '%moneropools.com' OR query ILIKE '%xmrpool.eu' OR query ILIKE '%coolmining.club' OR query ILIKE '%supportxmr.com' OR query ILIKE '%minexmr.com' OR query ILIKE '%hashvault.pro' OR query ILIKE '%xmrpool.net' OR query ILIKE '%crypto-pool.fr' OR query ILIKE '%xmr.pt' OR query ILIKE '%miner.rocks' OR query ILIKE '%walpool.com' OR query ILIKE '%herominers.com' OR query ILIKE '%gntl.co.uk' OR query ILIKE '%semipool.com' OR query ILIKE '%coinfoundry.org' OR query ILIKE '%cryptoknight.cc' OR query ILIKE '%fairhash.org' OR query ILIKE '%baikalmine.com' OR query ILIKE '%tubepool.xyz' OR query ILIKE '%fairpool.xyz' OR query ILIKE '%asiapool.io' OR query ILIKE '%coinpoolit.webhop.me' OR query ILIKE '%nanopool.org' OR query ILIKE '%moneropool.com' OR query ILIKE '%miner.center' OR query ILIKE '%prohash.net' OR query ILIKE '%poolto.be' OR query ILIKE '%cryptoescrow.eu' OR query ILIKE '%monerominers.net' OR query ILIKE '%cryptonotepool.org' OR query ILIKE '%extrmepool.org' OR query ILIKE '%webcoin.me' OR query ILIKE '%kippo.eu' OR query ILIKE '%hashinvest.ws' OR query ILIKE '%monero.farm' OR query ILIKE '%linux-repository-updates.com' OR query ILIKE '%1gh.com' OR query ILIKE '%dwarfpool.com' OR query ILIKE '%hash-to-coins.com' OR query ILIKE '%pool-proxy.com' OR query ILIKE '%hashfor.cash' OR query ILIKE '%fairpool.cloud' OR query ILIKE '%litecoinpool.org' OR query ILIKE '%mineshaft.ml' OR query ILIKE '%abcxyz.stream' OR query ILIKE '%moneropool.ru' OR query ILIKE '%cryptonotepool.org.uk' OR query ILIKE '%extremepool.org' OR query ILIKE '%extremehash.com' OR query ILIKE '%hashinvest.net' OR query ILIKE '%unipool.pro' OR query ILIKE '%crypto-pools.org' OR query ILIKE '%monero.net' OR query ILIKE '%backup-pool.com' OR query ILIKE '%mooo.com' OR query ILIKE '%freeyy.me' OR query ILIKE '%cryptonight.net' OR query ILIKE '%shscrypto.net') AND (NOT ((answers IN ('127.0.0.1', '0.0.0.0')) OR rejected='true'))

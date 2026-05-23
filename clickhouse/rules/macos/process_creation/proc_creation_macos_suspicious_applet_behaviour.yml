@@ -1,0 +1,12 @@
+id: a753a6af-3126-426d-8bd0-26ebbcb92254
+name: Osacompile Execution By Potentially Suspicious Applet/Osascript
+level: 5
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r), Red Canary (Idea)
+group: macos
+tags:
+- attack.execution
+- attack.t1059.002
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%/applet' OR ParentImage ILIKE '%/osascript') AND CommandLine ILIKE '%osacompile%'

@@ -1,0 +1,12 @@
+id: 5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d
+name: Cmd Launched with Hidden Start Flags to Suspicious Targets
+level: 5
+size: '>0'
+active: true
+author:
+- Vladan Sekulic, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND (CommandLine ILIKE '%start %' OR CommandLine ILIKE '%start/b%' OR CommandLine ILIKE '%start/min%') AND (CommandLine ILIKE '%-b %' OR CommandLine ILIKE '%/b %' OR CommandLine ILIKE '%–b %' OR CommandLine ILIKE '%—b %' OR CommandLine ILIKE '%―b %' OR CommandLine ILIKE '%-b"%' OR CommandLine ILIKE '%/b"%' OR CommandLine ILIKE '%–b"%' OR CommandLine ILIKE '%—b"%' OR CommandLine ILIKE '%―b"%' OR CommandLine ILIKE '%-min %' OR CommandLine ILIKE '%/min %' OR CommandLine ILIKE '%–min %' OR CommandLine ILIKE '%—min %' OR CommandLine ILIKE '%―min %' OR CommandLine ILIKE '%-min"%' OR CommandLine ILIKE '%/min"%' OR CommandLine ILIKE '%–min"%' OR CommandLine ILIKE '%—min"%' OR CommandLine ILIKE '%―min"%')) AND ((CommandLine ILIKE '%:\\Perflogs\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Users\\Default\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\\Contacts\\%' OR CommandLine ILIKE '%\\Documents\\%' OR CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Favorites\\%' OR CommandLine ILIKE '%\\Favourites\\%' OR CommandLine ILIKE '%\\inetpub\\%' OR CommandLine ILIKE '%\\Music\\%' OR CommandLine ILIKE '%\\Photos\\%' OR CommandLine ILIKE '%\\Temporary Internet\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\Videos\\%') OR (CommandLine ILIKE '%.bat%' OR CommandLine ILIKE '%.cmd%' OR CommandLine ILIKE '%.cpl%' OR CommandLine ILIKE '%.hta%' OR CommandLine ILIKE '%.js%' OR CommandLine ILIKE '%.ps1%' OR CommandLine ILIKE '%.scr%' OR CommandLine ILIKE '%.vbe%' OR CommandLine ILIKE '%.vbs%') OR (CommandLine ILIKE '% -nop %' OR CommandLine ILIKE '% -sta %' OR CommandLine ILIKE '%.downloadfile(%' OR CommandLine ILIKE '%.downloadstring(%' OR CommandLine ILIKE '%-noni %' OR CommandLine ILIKE '%-w hidden %'))

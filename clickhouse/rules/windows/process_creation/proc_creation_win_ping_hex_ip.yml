@@ -1,0 +1,13 @@
+id: 1a0d4aba-7668-4365-9ce4-6d79ab088dfd
+name: Ping Hex IP
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1140
+- attack.t1027
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\ping.exe' AND match(CommandLine, '0x[a-fA-F0-9]{8}')

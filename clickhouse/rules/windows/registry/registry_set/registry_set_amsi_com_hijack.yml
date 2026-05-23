@@ -1,0 +1,12 @@
+id: 160d2780-31f7-4922-8b3a-efce30e63e96
+name: Potential AMSI COM Server Hijacking
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\CLSID\\{fdb00e52-a214-4aa1-8fba-4357bb0072ec}\\InProcServer32\\(Default)' AND (NOT Details ILIKE '\%windir\%\\system32\\amsi.dll')

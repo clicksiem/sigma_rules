@@ -1,0 +1,11 @@
+id: 4a241dea-235b-4a7e-8d76-50d817b146c4
+name: Suspicious PowerShell Mailbox Export to Share - PS
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-MailboxExportRequest%' AND ScriptBlockText ILIKE '% -Mailbox %' AND ScriptBlockText ILIKE '% -FilePath \\\\%'

@@ -1,0 +1,13 @@
+id: e4d22291-f3d5-4b78-9a0c-a1fbaf32a6a4
+name: Potentially Suspicious ODBC Driver Registered
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.persistence
+- attack.t1003
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\ODBC\\ODBCINST.INI\\%' AND (TargetObject ILIKE '%\\Driver' OR TargetObject ILIKE '%\\Setup') AND (Details ILIKE '%:\\PerfLogs\\%' OR Details ILIKE '%:\\ProgramData\\%' OR Details ILIKE '%:\\Temp\\%' OR Details ILIKE '%:\\Users\\Public\\%' OR Details ILIKE '%:\\Windows\\Registration\\CRMLog%' OR Details ILIKE '%:\\Windows\\System32\\com\\dmp\\%' OR Details ILIKE '%:\\Windows\\System32\\FxsTmp\\%' OR Details ILIKE '%:\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys\\%' OR Details ILIKE '%:\\Windows\\System32\\spool\\drivers\\color\\%' OR Details ILIKE '%:\\Windows\\System32\\spool\\PRINTERS\\%' OR Details ILIKE '%:\\Windows\\System32\\spool\\SERVERS\\%' OR Details ILIKE '%:\\Windows\\System32\\Tasks\_Migrated\\%' OR Details ILIKE '%:\\Windows\\System32\\Tasks\\Microsoft\\Windows\\SyncCenter\\%' OR Details ILIKE '%:\\Windows\\SysWOW64\\com\\dmp\\%' OR Details ILIKE '%:\\Windows\\SysWOW64\\FxsTmp\\%' OR Details ILIKE '%:\\Windows\\SysWOW64\\Tasks\\Microsoft\\Windows\\PLA\\System\\%' OR Details ILIKE '%:\\Windows\\SysWOW64\\Tasks\\Microsoft\\Windows\\SyncCenter\\%' OR Details ILIKE '%:\\Windows\\Tasks\\%' OR Details ILIKE '%:\\Windows\\Temp\\%' OR Details ILIKE '%:\\Windows\\Tracing\\%' OR Details ILIKE '%\\AppData\\Local\\Temp\\%' OR Details ILIKE '%\\AppData\\Roaming\\%')

@@ -1,0 +1,13 @@
+id: 944e8941-f6f6-4ee8-ac05-1c224e923c0e
+name: Add Port Monitor Persistence in Registry
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.010
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Control\\Print\\Monitors\\%' AND Details ILIKE '%.dll') AND (NOT ((Image ILIKE 'C:\\Windows\\System32\\spoolsv.exe' AND TargetObject ILIKE '%\\Control\\Print\\Monitors\\CutePDF Writer Monitor v4.0\\Driver%' AND Details ILIKE 'cpwmon64\_v40.dll' AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%')) OR TargetObject ILIKE '%\\Control\\Print\\Monitors\\MONVNC\\Driver%' OR (TargetObject ILIKE '%Control\\Print\\Environments\\%' AND TargetObject ILIKE '%\\Drivers\\%' AND TargetObject ILIKE '%\\VNC Printer%')))

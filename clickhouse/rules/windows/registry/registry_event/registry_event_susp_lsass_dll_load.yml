@@ -1,0 +1,14 @@
+id: b3503044-60ce-4bf4-bbcb-e3db98788823
+name: DLL Load via LSASS
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1547.008
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\CurrentControlSet\\Services\\NTDS\\DirectoryServiceExtPt%' OR TargetObject ILIKE '%\\CurrentControlSet\\Services\\NTDS\\LsaDbExtPt%') AND (NOT (Image ILIKE 'C:\\Windows\\system32\\lsass.exe' AND (Details IN ('\%\%systemroot\%\%\\system32\\ntdsa.dll', '\%\%systemroot\%\%\\system32\\lsadb.dll'))))

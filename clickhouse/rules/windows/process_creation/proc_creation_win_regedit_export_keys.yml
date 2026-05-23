@@ -1,0 +1,13 @@
+id: f0e53e89-8d22-46ea-9db5-9d4796ee2f8a
+name: Exports Registry Key To a File
+level: 3
+size: '>0'
+active: true
+author:
+- Oddvar Moe, Sander Wiebing, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.discovery
+- attack.t1012
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\regedit.exe' OR OriginalFileName='REGEDIT.EXE') AND (CommandLine ILIKE '% -E %' OR CommandLine ILIKE '% /E %' OR CommandLine ILIKE '% –E %' OR CommandLine ILIKE '% —E %' OR CommandLine ILIKE '% ―E %')) AND (NOT ((CommandLine ILIKE '%hklm%' OR CommandLine ILIKE '%hkey\_local\_machine%') AND (CommandLine ILIKE '%\\system' OR CommandLine ILIKE '%\\sam' OR CommandLine ILIKE '%\\security')))

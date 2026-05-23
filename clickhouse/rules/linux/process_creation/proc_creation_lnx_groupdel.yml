@@ -1,0 +1,12 @@
+id: 8a46f16c-8c4c-82d1-b121-0fdd3ba70a84
+name: Group Has Been Deleted Via Groupdel
+level: 5
+size: '>0'
+active: true
+author:
+- Tuan Le (NCSGroup)
+group: linux
+tags:
+- attack.impact
+- attack.t1531
+rule: SELECT * FROM logs WHERE Image ILIKE '%/groupdel'

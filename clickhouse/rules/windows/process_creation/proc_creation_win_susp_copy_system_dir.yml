@@ -1,0 +1,12 @@
+id: fff9d2b7-e11c-4a69-93d3-40ef66189767
+name: Suspicious Copy From or To System Directory
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis, Tim Shelton (HAWK.IO), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cmd.exe' AND CommandLine ILIKE '%copy %') OR ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%copy-item%' OR CommandLine ILIKE '% copy %' OR CommandLine ILIKE '%cpi %' OR CommandLine ILIKE '% cp %')) OR ((Image ILIKE '%\\robocopy.exe' OR Image ILIKE '%\\xcopy.exe') OR (OriginalFileName IN ('robocopy.exe', 'XCOPY.EXE')))) AND match(CommandLine, '(?i)\s['"]?C:\\Windows\\(?:System32|SysWOW64|WinSxS)') AND (NOT (Image ILIKE '%\\cmd.exe' AND (CommandLine ILIKE '%/c copy%' AND CommandLine ILIKE '%\\Temp\\%' AND CommandLine ILIKE '%\\avira\_system\_speedup.exe%') AND (CommandLine ILIKE '%C:\\Program Files\\Avira\\%' OR CommandLine ILIKE '%C:\\Program Files (x86)\\Avira\\%')))

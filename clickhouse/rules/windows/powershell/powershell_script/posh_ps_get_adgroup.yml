@@ -1,0 +1,12 @@
+id: 8c3a6607-b7dc-4f0d-a646-ef38c00b76ee
+name: Active Directory Group Enumeration With Get-AdGroup
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.002
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-AdGroup %' AND ScriptBlockText ILIKE '%-Filter%'

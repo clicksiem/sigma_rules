@@ -1,0 +1,12 @@
+id: 85a8e5ba-bd03-4bfb-bbfa-a4409a8f8b98
+name: Folder Compress To Potentially Suspicious Output Via Compress-Archive Cmdlet
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1074.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Compress-Archive -Path%-DestinationPath $env:TEMP%' OR CommandLine ILIKE '%Compress-Archive -Path%-DestinationPath%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%Compress-Archive -Path%-DestinationPath%:\\Windows\\Temp\\%'

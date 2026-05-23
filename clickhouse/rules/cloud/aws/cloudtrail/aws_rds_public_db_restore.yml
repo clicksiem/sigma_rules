@@ -1,0 +1,12 @@
+id: c3f265c7-ff03-4056-8ab2-d486227b4599
+name: Restore Public AWS RDS Instance
+level: 8
+size: '>0'
+active: true
+author:
+- faloker
+group: aws
+tags:
+- attack.exfiltration
+- attack.t1020
+rule: SELECT * FROM logs WHERE eventSource='rds.amazonaws.com' AND `responseElements.publiclyAccessible`='true' AND eventName='RestoreDBInstanceFromDBSnapshot'

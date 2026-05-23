@@ -1,0 +1,11 @@
+id: 8fbe98a8-8f9d-44f8-aa71-8c572e29ef06
+name: Potential Persistence Via MyComputer Registry Keys
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer%' AND TargetObject ILIKE '%(Default)'

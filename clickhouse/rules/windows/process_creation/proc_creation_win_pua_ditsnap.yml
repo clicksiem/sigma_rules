@@ -1,0 +1,12 @@
+id: d3b70aad-097e-409c-9df2-450f80dc476b
+name: PUA - DIT Snapshot Viewer
+level: 8
+size: '>0'
+active: true
+author:
+- Furkan Caliskan (@caliskanfurkan_)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\ditsnap.exe' OR CommandLine ILIKE '%ditsnap.exe%'

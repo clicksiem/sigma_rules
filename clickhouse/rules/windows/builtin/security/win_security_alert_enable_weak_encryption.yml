@@ -1,0 +1,12 @@
+id: f6de9536-0441-4b3f-a646-f4e00f300ffd
+name: Weak Encryption Enabled and Kerberoast
+level: 8
+size: '>0'
+active: true
+author:
+- '@neu5ron'
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=4738 AND (((NewUacValue ILIKE '%8___' OR NewUacValue ILIKE '%9___' OR NewUacValue ILIKE '%A___' OR NewUacValue ILIKE '%B___' OR NewUacValue ILIKE '%C___' OR NewUacValue ILIKE '%D___' OR NewUacValue ILIKE '%E___' OR NewUacValue ILIKE '%F___') AND (NOT (OldUacValue ILIKE '%8___' OR OldUacValue ILIKE '%9___' OR OldUacValue ILIKE '%A___' OR OldUacValue ILIKE '%B___' OR OldUacValue ILIKE '%C___' OR OldUacValue ILIKE '%D___' OR OldUacValue ILIKE '%E___' OR OldUacValue ILIKE '%F___'))) OR ((NewUacValue ILIKE '%1____' OR NewUacValue ILIKE '%3____' OR NewUacValue ILIKE '%5____' OR NewUacValue ILIKE '%7____' OR NewUacValue ILIKE '%9____' OR NewUacValue ILIKE '%B____' OR NewUacValue ILIKE '%D____' OR NewUacValue ILIKE '%F____') AND (NOT (OldUacValue ILIKE '%1____' OR OldUacValue ILIKE '%3____' OR OldUacValue ILIKE '%5____' OR OldUacValue ILIKE '%7____' OR OldUacValue ILIKE '%9____' OR OldUacValue ILIKE '%B____' OR OldUacValue ILIKE '%D____' OR OldUacValue ILIKE '%F____'))) OR ((NewUacValue ILIKE '%8__' OR NewUacValue ILIKE '%9__' OR NewUacValue ILIKE '%A__' OR NewUacValue ILIKE '%B__' OR NewUacValue ILIKE '%C__' OR NewUacValue ILIKE '%D__' OR NewUacValue ILIKE '%E__' OR NewUacValue ILIKE '%F__') AND (NOT (OldUacValue ILIKE '%8__' OR OldUacValue ILIKE '%9__' OR OldUacValue ILIKE '%A__' OR OldUacValue ILIKE '%B__' OR OldUacValue ILIKE '%C__' OR OldUacValue ILIKE '%D__' OR OldUacValue ILIKE '%E__' OR OldUacValue ILIKE '%F__'))))

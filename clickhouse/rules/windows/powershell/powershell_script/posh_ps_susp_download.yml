@@ -1,0 +1,12 @@
+id: 403c2cc0-7f6b-4925-9423-bfa573bed7eb
+name: Suspicious PowerShell Download - Powershell Script
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%System.Net.WebClient%' AND (ScriptBlockText ILIKE '%.DownloadFile(%' OR ScriptBlockText ILIKE '%.DownloadFileAsync(%' OR ScriptBlockText ILIKE '%.DownloadString(%' OR ScriptBlockText ILIKE '%.DownloadStringAsync(%')

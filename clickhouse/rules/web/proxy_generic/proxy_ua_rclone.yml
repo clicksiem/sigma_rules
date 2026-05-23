@@ -1,0 +1,12 @@
+id: 2c03648b-e081-41a5-b9fb-7d854a915091
+name: Rclone Activity via Proxy
+level: 5
+size: '>0'
+active: true
+author:
+- Janantha Marasinghe
+group: ''
+tags:
+- attack.exfiltration
+- attack.t1567.002
+rule: SELECT * FROM logs WHERE `c-useragent` ILIKE 'rclone/v%'

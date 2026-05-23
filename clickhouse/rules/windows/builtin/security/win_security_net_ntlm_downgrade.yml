@@ -1,0 +1,14 @@
+id: d3abac66-f11c-4ed0-8acb-50cc29c97eed
+name: NetNTLM Downgrade Attack
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), wagga
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1685
+- attack.t1112
+rule: SELECT * FROM logs WHERE EventID=4657 AND (ObjectName ILIKE '%\\REGISTRY\\MACHINE\\SYSTEM%' AND ObjectName ILIKE '%ControlSet%' AND ObjectName ILIKE '%\\Control\\Lsa%') AND (ObjectValueName IN ('LmCompatibilityLevel', 'NtlmMinClientSec', 'RestrictSendingNTLMTraffic'))

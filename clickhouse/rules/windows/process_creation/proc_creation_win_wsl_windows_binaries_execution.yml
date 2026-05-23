@@ -1,0 +1,13 @@
+id: ed825c86-c009-4014-b413-b76003e33d35
+name: Windows Binary Executed From WSL
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE match(Image, '[a-zA-Z]:\\') AND CurrentDirectory ILIKE '%\\\\wsl.localhost%'

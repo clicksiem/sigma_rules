@@ -1,0 +1,12 @@
+id: ae9c6a7c-9521-42a6-915e-5aaa8689d529
+name: CobaltStrike Load by Rundll32
+level: 8
+size: '>0'
+active: true
+author:
+- Wojciech Lesicki
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE' OR (CommandLine ILIKE '%rundll32.exe%' OR CommandLine ILIKE '%rundll32 %')) AND (CommandLine ILIKE '%.dll%' AND (CommandLine ILIKE '% StartW' OR CommandLine ILIKE '%,StartW'))

@@ -1,0 +1,12 @@
+id: 18b042f0-2ecd-4b6e-9f8d-aa7a7e7de781
+name: Buffer Overflow Attempts
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.t1068
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'attempt to execute code on stack by') OR hasToken(full_log, '0bin0sh1') OR hasToken(full_log, 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') OR hasToken(full_log, 'stack smashing detected')

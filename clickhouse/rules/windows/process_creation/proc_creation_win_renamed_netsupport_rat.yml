@@ -1,0 +1,11 @@
+id: 0afbd410-de03-4078-8491-f132303cb67d
+name: Renamed NetSupport RAT Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Product ILIKE '%NetSupport Remote Control%' OR OriginalFileName ILIKE '%client32.exe%' OR Hashes ILIKE '%IMPHASH=A9D50692E95B79723F3E76FCF70D023E%') AND (NOT Image ILIKE '%\\client32.exe')

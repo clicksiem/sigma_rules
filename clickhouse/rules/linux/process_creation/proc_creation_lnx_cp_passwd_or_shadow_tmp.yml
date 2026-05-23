@@ -1,0 +1,12 @@
+id: fa4aaed5-4fe0-498d-bbc0-08e3346387ba
+name: Copy Passwd Or Shadow From TMP Path
+level: 8
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.credential-access
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%/cp' AND CommandLine ILIKE '%/tmp/%' AND (CommandLine ILIKE '%passwd%' OR CommandLine ILIKE '%shadow%')

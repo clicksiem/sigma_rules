@@ -1,0 +1,11 @@
+id: 83c161b6-ca67-4f33-8ad0-644a0737cf07
+name: Suspicious Application Installed
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (EventID=28115 AND (Name ILIKE '%Zenmap%' OR Name ILIKE '%AnyDesk%' OR Name ILIKE '%wireshark%' OR Name ILIKE '%openvpn%')) OR (EventID=28115 AND (AppID ILIKE '%zenmap.exe%' OR AppID ILIKE '%prokzult ad%' OR AppID ILIKE '%wireshark%' OR AppID ILIKE '%openvpn%'))

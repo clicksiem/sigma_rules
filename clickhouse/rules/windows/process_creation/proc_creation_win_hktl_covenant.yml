@@ -1,0 +1,14 @@
+id: c260b6db-48ba-4b4a-a76f-2f67644e99d2
+name: HackTool - Covenant PowerShell Launcher
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1564.003
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%-Sta%' AND CommandLine ILIKE '%-Nop%' AND CommandLine ILIKE '%-Window%' AND CommandLine ILIKE '%Hidden%') AND (CommandLine ILIKE '%-Command%' OR CommandLine ILIKE '%-EncodedCommand%')) OR (CommandLine ILIKE '%sv o (New-Object IO.MemorySteam);sv d %' OR CommandLine ILIKE '%mshta file.hta%' OR CommandLine ILIKE '%GruntHTTP%' OR CommandLine ILIKE '%-EncodedCommand cwB2ACAAbwAgA%')

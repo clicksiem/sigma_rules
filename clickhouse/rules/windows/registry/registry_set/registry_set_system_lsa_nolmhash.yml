@@ -1,0 +1,13 @@
+id: c420410f-c2d8-4010-856b-dffe21866437
+name: Enable LM Hash Storage
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%System\\CurrentControlSet\\Control\\Lsa\\NoLMHash' AND Details='DWORD (0x00000000)'

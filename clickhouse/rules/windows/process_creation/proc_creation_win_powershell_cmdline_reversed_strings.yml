@@ -1,0 +1,14 @@
+id: b6b49cd1-34d6-4ead-b1bf-176e9edba9a4
+name: Potential PowerShell Obfuscation Via Reversed Commands
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov (idea), Vasiliy Burov (rule), oscd.community, Tim Shelton
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%hctac%' OR CommandLine ILIKE '%kaerb%' OR CommandLine ILIKE '%dnammoc%' OR CommandLine ILIKE '%ekovn%' OR CommandLine ILIKE '%eliFd%' OR CommandLine ILIKE '%rahc%' OR CommandLine ILIKE '%etirw%' OR CommandLine ILIKE '%golon%' OR CommandLine ILIKE '%tninon%' OR CommandLine ILIKE '%eddih%' OR CommandLine ILIKE '%tpircS%' OR CommandLine ILIKE '%ssecorp%' OR CommandLine ILIKE '%llehsrewop%' OR CommandLine ILIKE '%esnopser%' OR CommandLine ILIKE '%daolnwod%' OR CommandLine ILIKE '%tneilCbeW%' OR CommandLine ILIKE '%tneilc%' OR CommandLine ILIKE '%ptth%' OR CommandLine ILIKE '%elifotevas%' OR CommandLine ILIKE '%46esab%' OR CommandLine ILIKE '%htaPpmeTteG%' OR CommandLine ILIKE '%tcejbO%' OR CommandLine ILIKE '%maerts%' OR CommandLine ILIKE '%hcaerof%' OR CommandLine ILIKE '%retupmoc%')) AND (NOT (CommandLine ILIKE '% -EncodedCommand %' OR CommandLine ILIKE '% -enc %'))

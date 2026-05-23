@@ -1,0 +1,13 @@
+id: a85ffc3a-e8fd-4040-93bf-78aff284d801
+name: Use Of The SFTP.EXE Binary As A LOLBIN
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\sftp.exe' AND (CommandLine ILIKE '% -D ..%' OR CommandLine ILIKE '% -D C:\\%')

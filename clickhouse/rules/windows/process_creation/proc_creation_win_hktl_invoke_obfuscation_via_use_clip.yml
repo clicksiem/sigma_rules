@@ -1,0 +1,14 @@
+id: e1561947-b4e3-4a74-9bdd-83baed21bdb5
+name: Invoke-Obfuscation Via Use Clip
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(CommandLine, '(?i)echo.*clip.*&&.*(?:Clipboard|i`?n`?v`?o`?k`?e`?)')

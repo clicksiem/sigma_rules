@@ -1,0 +1,15 @@
+id: c80e66d8-1780-48a9-b412-46663fd21ac0
+name: Suspicious Autorun Registry Modified via WMI
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1547.001
+- attack.t1047
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe' OR ParentImage ILIKE '%\\wmiprvse.exe') AND ((CommandLine ILIKE '%reg%' AND CommandLine ILIKE '% add %') AND (CommandLine ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Run%' OR CommandLine ILIKE '%\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run%' OR CommandLine ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run%'))) AND ((CommandLine ILIKE '%:\\Perflogs%' OR CommandLine ILIKE '%:\\ProgramData''%' OR CommandLine ILIKE '%:\\Windows\\Temp%' OR CommandLine ILIKE '%:\\Temp%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp%' OR CommandLine ILIKE '%\\AppData\\Roaming%' OR CommandLine ILIKE '%:\\$Recycle.bin%' OR CommandLine ILIKE '%:\\Users\\Default%' OR CommandLine ILIKE '%:\\Users\\public%' OR CommandLine ILIKE '%\%temp\%%' OR CommandLine ILIKE '%\%tmp\%%' OR CommandLine ILIKE '%\%Public\%%' OR CommandLine ILIKE '%\%AppData\%%') OR (CommandLine ILIKE '%:\\Users\\%' AND (CommandLine ILIKE '%\\Favorites%' OR CommandLine ILIKE '%\\Favourites%' OR CommandLine ILIKE '%\\Contacts%' OR CommandLine ILIKE '%\\Music%' OR CommandLine ILIKE '%\\Pictures%' OR CommandLine ILIKE '%\\Documents%' OR CommandLine ILIKE '%\\Photos%')))

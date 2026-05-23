@@ -1,0 +1,11 @@
+id: f8d6a15e-4bc8-4c27-8e5d-2b10f0b73e5b
+name: Suspicious Powercfg Execution To Change Lock Screen Timeout
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powercfg.exe' OR OriginalFileName='PowerCfg.exe') AND ((CommandLine ILIKE '%/setacvalueindex %' AND CommandLine ILIKE '%SCHEME\_CURRENT%' AND CommandLine ILIKE '%SUB\_VIDEO%' AND CommandLine ILIKE '%VIDEOCONLOCK%') OR (CommandLine ILIKE '%-change %' AND CommandLine ILIKE '%-standby-timeout-%'))

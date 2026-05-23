@@ -1,0 +1,13 @@
+id: bf72941a-cba0-41ea-b18c-9aca3925690d
+name: PowerShell ADRecon Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.discovery
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Function Get-ADRExcelComOb%' OR ScriptBlockText ILIKE '%Get-ADRGPO%' OR ScriptBlockText ILIKE '%Get-ADRDomainController%' OR ScriptBlockText ILIKE '%ADRecon-Report.xlsx%'

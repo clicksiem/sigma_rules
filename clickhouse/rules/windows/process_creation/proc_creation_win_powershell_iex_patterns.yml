@@ -1,0 +1,12 @@
+id: 09576804-7a05-458e-a817-eb718ca91f54
+name: Suspicious PowerShell IEX Execution Patterns
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '% | iex;%' OR CommandLine ILIKE '% | iex %' OR CommandLine ILIKE '% | iex}%' OR CommandLine ILIKE '% | IEX ;%' OR CommandLine ILIKE '% | IEX -Error%' OR CommandLine ILIKE '% | IEX (new%' OR CommandLine ILIKE '%);IEX %')) AND (CommandLine ILIKE '%::FromBase64String%' OR CommandLine ILIKE '%.GetString([System.Convert]::%')) OR (CommandLine ILIKE '%)|iex;$%' OR CommandLine ILIKE '%);iex($%' OR CommandLine ILIKE '%);iex $%' OR CommandLine ILIKE '% | IEX | %' OR CommandLine ILIKE '% | iex\\"%')

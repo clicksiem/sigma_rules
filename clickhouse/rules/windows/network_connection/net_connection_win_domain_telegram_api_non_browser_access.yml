@@ -1,0 +1,15 @@
+id: c3dbbc9f-ef1d-470a-a90a-d343448d5875
+name: Suspicious Non-Browser Network Communication With Telegram API
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.exfiltration
+- attack.t1102
+- attack.t1567
+- attack.t1105
+rule: SELECT * FROM logs WHERE DestinationHostname ILIKE '%api.telegram.org%' AND (NOT (Image ILIKE '%\\brave.exe' OR (Image IN ('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe')) OR (Image IN ('C:\\Program Files\\Mozilla Firefox\\firefox.exe', 'C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe')) OR (Image IN ('C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe', 'C:\\Program Files\\Internet Explorer\\iexplore.exe')) OR Image ILIKE '%\\maxthon.exe' OR (Image ILIKE 'C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\%' OR Image ILIKE '%\\WindowsApps\\MicrosoftEdge.exe' OR (Image IN ('C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', 'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe'))) OR ((Image ILIKE 'C:\\Program Files (x86)\\Microsoft\\EdgeCore\\%' OR Image ILIKE 'C:\\Program Files\\Microsoft\\EdgeCore\\%') AND (Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\msedgewebview2.exe')) OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\safari.exe' OR Image ILIKE '%\\seamonkey.exe' OR Image ILIKE '%\\vivaldi.exe' OR Image ILIKE '%\\whale.exe'))

@@ -1,0 +1,11 @@
+id: 576426ad-0131-4001-ae01-be175da0c108
+name: PowerShell Script Dropped Via PowerShell.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND TargetFilename ILIKE '%.ps1') AND (NOT (TargetFilename ILIKE '%\_\_PSScriptPolicyTest\_%' OR (TargetFilename ILIKE 'C:\\Users\\%' AND TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%') OR TargetFilename ILIKE 'C:\\Windows\\Temp\\%'))

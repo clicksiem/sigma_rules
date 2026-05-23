@@ -1,0 +1,12 @@
+id: bd1c6866-65fc-44b2-be51-5588fcff82b9
+name: Renamed Msdt.EXE Execution
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE OriginalFileName='msdt.exe' AND (NOT Image ILIKE '%\\msdt.exe')

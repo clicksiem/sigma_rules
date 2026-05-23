@@ -1,0 +1,13 @@
+id: 526be59f-a573-4eea-b5f7-f0973207634d
+name: New Process Created Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Haag, Florian Roth (Nextron Systems), juju4, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- car.2016-03-002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND (CommandLine ILIKE '%process%' AND CommandLine ILIKE '%call%' AND CommandLine ILIKE '%create%')

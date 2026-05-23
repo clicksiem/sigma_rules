@@ -1,0 +1,13 @@
+id: 16a71777-0b2e-4db7-9888-9d59cb75200b
+name: Github Delete Action Invoked
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: github
+tags:
+- attack.impact
+- attack.collection
+- attack.t1213.003
+rule: SELECT * FROM logs WHERE action IN ('codespaces.destroy', 'environment.delete', 'project.delete', 'repo.destroy')

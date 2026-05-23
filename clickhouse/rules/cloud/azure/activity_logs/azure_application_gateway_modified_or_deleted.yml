@@ -1,0 +1,11 @@
+id: ad87d14e-7599-4633-ba81-aeb60cfe8cd6
+name: Azure Application Gateway Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: azure
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE operationName IN ('MICROSOFT.NETWORK/APPLICATIONGATEWAYS/WRITE', 'MICROSOFT.NETWORK/APPLICATIONGATEWAYS/DELETE')

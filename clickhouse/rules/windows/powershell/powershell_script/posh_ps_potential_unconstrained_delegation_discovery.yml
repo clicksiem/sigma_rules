@@ -1,0 +1,16 @@
+id: cdfa73b6-3c9d-4bb8-97f8-ddbd8921f5c5
+name: Potential Unconstrained Delegation Discovery Via Get-ADComputer - ScriptBlock
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.reconnaissance
+- attack.discovery
+- attack.credential-access
+- attack.t1018
+- attack.t1558
+- attack.t1589.002
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%-Properties%TrustedForDelegation%' OR ScriptBlockText ILIKE '%-Properties%TrustedToAuthForDelegation%' OR ScriptBlockText ILIKE '%-Properties%msDS-AllowedToDelegateTo%' OR ScriptBlockText ILIKE '%-Properties%PrincipalsAllowedToDelegateToAccount%' OR ScriptBlockText ILIKE '%-LDAPFilter%(userAccountControl:1.2.840.113556.1.4.803:=524288)%'

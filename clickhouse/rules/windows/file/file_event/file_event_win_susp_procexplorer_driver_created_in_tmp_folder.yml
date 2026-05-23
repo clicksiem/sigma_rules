@@ -1,0 +1,12 @@
+id: 3da70954-0f2c-4103-adff-b7440368f50e
+name: Suspicious PROCEXP152.sys File Created In TMP
+level: 5
+size: '>0'
+active: true
+author:
+- xknow (@xknow_infosec), xorxes (@xor_xes)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%' AND TargetFilename ILIKE '%PROCEXP152.sys') AND (NOT (Image ILIKE '%\\procexp64.exe%' OR Image ILIKE '%\\procexp.exe%' OR Image ILIKE '%\\procmon64.exe%' OR Image ILIKE '%\\procmon.exe%'))

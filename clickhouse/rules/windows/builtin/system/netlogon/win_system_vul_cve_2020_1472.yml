@@ -1,0 +1,12 @@
+id: a0cb7110-edf0-47a4-9177-541a4083128a
+name: Vulnerable Netlogon Secure Channel Connection Allowed
+level: 8
+size: '>0'
+active: true
+author:
+- NVISO
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548
+rule: SELECT * FROM logs WHERE Provider_Name='NetLogon' AND EventID=5829

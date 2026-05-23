@@ -1,0 +1,12 @@
+id: e56d3073-83ff-4021-90fe-c658e0709e72
+name: Gpresult Display Group Policy Information
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1615
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\gpresult.exe' AND (CommandLine ILIKE '%/z%' OR CommandLine ILIKE '%/v%')

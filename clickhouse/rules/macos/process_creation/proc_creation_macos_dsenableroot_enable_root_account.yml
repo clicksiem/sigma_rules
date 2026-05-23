@@ -1,0 +1,17 @@
+id: 821bcf4d-46c7-4b87-bc57-9509d3ba7c11
+name: Root Account Enable Via Dsenableroot
+level: 5
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078
+- attack.t1078.001
+- attack.t1078.003
+- attack.initial-access
+- attack.persistence
+rule: SELECT * FROM logs WHERE Image ILIKE '%/dsenableroot' AND (NOT CommandLine ILIKE '% -d %')

@@ -1,0 +1,12 @@
+id: 27ee9438-90dc-4bef-904b-d3ef927f5e7e
+name: Windows Kernel Debugger Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\kd.exe' OR OriginalFileName='kd.exe'

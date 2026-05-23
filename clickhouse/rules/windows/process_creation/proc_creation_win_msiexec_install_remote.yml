@@ -1,0 +1,12 @@
+id: 8150732a-0c9d-4a99-82b9-9efb9b90c40c
+name: Suspicious Msiexec Quiet Install From Remote Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.007
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\msiexec.exe' OR OriginalFileName='msiexec.exe') AND (CommandLine ILIKE '%-i%' OR CommandLine ILIKE '%/i%' OR CommandLine ILIKE '%–i%' OR CommandLine ILIKE '%—i%' OR CommandLine ILIKE '%―i%' OR CommandLine ILIKE '%-package%' OR CommandLine ILIKE '%/package%' OR CommandLine ILIKE '%–package%' OR CommandLine ILIKE '%—package%' OR CommandLine ILIKE '%―package%' OR CommandLine ILIKE '%-a%' OR CommandLine ILIKE '%/a%' OR CommandLine ILIKE '%–a%' OR CommandLine ILIKE '%—a%' OR CommandLine ILIKE '%―a%' OR CommandLine ILIKE '%-j%' OR CommandLine ILIKE '%/j%' OR CommandLine ILIKE '%–j%' OR CommandLine ILIKE '%—j%' OR CommandLine ILIKE '%―j%') AND (CommandLine ILIKE '%-q%' OR CommandLine ILIKE '%/q%' OR CommandLine ILIKE '%–q%' OR CommandLine ILIKE '%—q%' OR CommandLine ILIKE '%―q%') AND (CommandLine ILIKE '%http%' OR CommandLine ILIKE '%\\\\%')) AND (NOT (CommandLine ILIKE '%\\AppData\\Local\\Temp\\OpenOffice%' AND CommandLine ILIKE '%Installation Files\\openoffice%'))

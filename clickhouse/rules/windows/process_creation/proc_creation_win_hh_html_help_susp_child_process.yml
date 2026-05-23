@@ -1,0 +1,24 @@
+id: 52cad028-0ff0-4854-8f67-d25dfcbc78b4
+name: HTML Help HH.EXE Suspicious Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Maxim Pavlunin, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.initial-access
+- attack.stealth
+- attack.t1047
+- attack.t1059.001
+- attack.t1059.003
+- attack.t1059.005
+- attack.t1059.007
+- attack.t1218
+- attack.t1218.001
+- attack.t1218.010
+- attack.t1218.011
+- attack.t1566
+- attack.t1566.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\hh.exe' AND (Image ILIKE '%\\CertReq.exe' OR Image ILIKE '%\\CertUtil.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\installutil.exe' OR Image ILIKE '%\\MSbuild.exe' OR Image ILIKE '%\\MSHTA.EXE' OR Image ILIKE '%\\msiexec.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe')

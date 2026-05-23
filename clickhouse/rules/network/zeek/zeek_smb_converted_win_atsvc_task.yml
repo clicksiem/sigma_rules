@@ -1,0 +1,17 @@
+id: dde85b37-40cd-4a94-b00c-0b8794f956b5
+name: Remote Task Creation via ATSVC Named Pipe - Zeek
+level: 5
+size: '>0'
+active: true
+author:
+- Samir Bousseaden, @neu5rn
+group: zeek
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.lateral-movement
+- attack.persistence
+- car.2013-05-004
+- car.2015-04-001
+- attack.t1053.002
+rule: SELECT * FROM logs WHERE path ILIKE '\\*\\IPC$' AND name='atsvc'

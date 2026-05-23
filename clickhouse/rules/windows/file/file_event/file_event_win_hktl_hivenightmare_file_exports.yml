@@ -1,0 +1,13 @@
+id: 6ea858a8-ba71-4a12-b2cc-5d83312404c7
+name: HackTool - Typical HiveNightmare SAM File Export
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.001
+- cve.2021-36934
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\hive\_sam\_%' OR TargetFilename ILIKE '%\\SAM-2021-%' OR TargetFilename ILIKE '%\\SAM-2022-%' OR TargetFilename ILIKE '%\\SAM-2023-%' OR TargetFilename ILIKE '%\\SAM-haxx%' OR TargetFilename ILIKE '%\\Sam.save%') OR TargetFilename ILIKE 'C:\\windows\\temp\\sam'

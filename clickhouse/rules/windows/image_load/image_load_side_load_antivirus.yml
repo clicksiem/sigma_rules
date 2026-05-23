@@ -1,0 +1,15 @@
+id: 552b6b65-df37-4d3e-a258-f2fc4771ae54
+name: Potential Antivirus Software DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Wietze Beukema (project and research)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\log.dll' AND (NOT ((ImageLoaded ILIKE 'C:\\Program Files\\Bitdefender Antivirus Free\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\Bitdefender Antivirus Free\\%') OR (Image ILIKE 'C:\\Program Files\\Dell\\SARemediation\\audit\\TelemetryUtility.exe' AND (ImageLoaded IN ('C:\\Program Files\\Dell\\SARemediation\\plugin\\log.dll', 'C:\\Program Files\\Dell\\SARemediation\\audit\\log.dll'))) OR ImageLoaded ILIKE 'C:\\Program Files\\Canon\\MyPrinter\\%' OR (ImageLoaded IN ('C:\\Program Files\\AVAST Software\\Avast\\log.dll', 'C:\\Program Files (x86)\\AVAST Software\\Avast\\log.dll')) OR (ImageLoaded IN ('C:\\Program Files\\AVG\\Antivirus\\log.dll', 'C:\\Program Files (x86)\\AVG\\Antivirus\\log.dll'))))) OR (ImageLoaded ILIKE '%\\qrt.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files\\F-Secure\\Anti-Virus\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\F-Secure\\Anti-Virus\\%'))) OR ((ImageLoaded ILIKE '%\\ashldres.dll' OR ImageLoaded ILIKE '%\\lockdown.dll' OR ImageLoaded ILIKE '%\\vsodscpl.dll') AND (NOT (ImageLoaded ILIKE 'C:\\Program Files\\McAfee\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\McAfee\\%'))) OR (ImageLoaded ILIKE '%\\vftrace.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files\\CyberArk\\Endpoint Privilege Manager\\Agent\\x32\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\CyberArk\\Endpoint Privilege Manager\\Agent\\x32\\%'))) OR (ImageLoaded ILIKE '%\\wsc.dll' AND (NOT ((ImageLoaded ILIKE 'C:\\program Files\\AVAST Software\\Avast\\%' OR ImageLoaded ILIKE 'C:\\program Files (x86)\\AVAST Software\\Avast\\%') OR (ImageLoaded ILIKE 'C:\\Program Files\\AVG\\Antivirus\\%' OR ImageLoaded ILIKE 'C:\\Program Files (x86)\\AVG\\Antivirus\\%')))) OR (ImageLoaded ILIKE '%\\tmdbglog.dll' AND (NOT (ImageLoaded ILIKE 'C:\\program Files\\Trend Micro\\Titanium\\%' OR ImageLoaded ILIKE 'C:\\program Files (x86)\\Trend Micro\\Titanium\\%'))) OR (ImageLoaded ILIKE '%\\DLPPREM32.dll' AND (NOT (ImageLoaded ILIKE 'C:\\program Files\\ESET%' OR ImageLoaded ILIKE 'C:\\program Files (x86)\\ESET%')))

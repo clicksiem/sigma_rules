@@ -1,0 +1,12 @@
+id: 234f9f48-904b-4736-a34c-55d23919e4b7
+name: Google Cloud Re-identifies Sensitive Information
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.impact
+- attack.t1565
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name`='projects.content.reidentify'

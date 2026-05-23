@@ -1,0 +1,12 @@
+id: 0685b176-c816-4837-8e7b-1216f346636b
+name: HackTool - Quarks PwDump Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\QuarksPwDump.exe' OR (CommandLine IN (' -dhl', ' --dump-hash-local', ' -dhdc', ' --dump-hash-domain-cached', ' --dump-bitlocker', ' -dhd ', ' --dump-hash-domain ', '--ntds-file'))

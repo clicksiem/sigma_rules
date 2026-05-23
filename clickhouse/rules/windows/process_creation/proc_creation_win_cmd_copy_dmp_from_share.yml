@@ -1,0 +1,11 @@
+id: 044ba588-dff4-4918-9808-3f95e8160606
+name: Copy .DMP/.DUMP Files From Remote Share Via Cmd.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND ((CommandLine ILIKE '%copy %' AND CommandLine ILIKE '% \\\\%') AND (CommandLine ILIKE '%.dmp%' OR CommandLine ILIKE '%.dump%' OR CommandLine ILIKE '%.hdmp%'))

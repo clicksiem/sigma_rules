@@ -1,0 +1,13 @@
+id: ec52985a-d024-41e3-8ff6-14169039a0b3
+name: Mount Execution With Hidepid Parameter
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.credential-access
+- attack.stealth
+- attack.t1564
+rule: SELECT * FROM logs WHERE Image ILIKE '%/mount' AND (CommandLine ILIKE '%hidepid=2%' AND CommandLine ILIKE '% -o %')

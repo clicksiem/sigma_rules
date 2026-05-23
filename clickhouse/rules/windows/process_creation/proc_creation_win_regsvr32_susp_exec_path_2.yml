@@ -1,0 +1,12 @@
+id: 327ff235-94eb-4f06-b9de-aaee571324be
+name: Regsvr32 Execution From Highly Suspicious Location
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regsvr32.exe' OR OriginalFileName='REGSVR32.EXE') AND ((CommandLine ILIKE '%:\\PerfLogs\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%\\Windows\\Registration\\CRMLog%' OR CommandLine ILIKE '%\\Windows\\System32\\com\\dmp\\%' OR CommandLine ILIKE '%\\Windows\\System32\\FxsTmp\\%' OR CommandLine ILIKE '%\\Windows\\System32\\Microsoft\\Crypto\\RSA\\MachineKeys\\%' OR CommandLine ILIKE '%\\Windows\\System32\\spool\\drivers\\color\\%' OR CommandLine ILIKE '%\\Windows\\System32\\spool\\PRINTERS\\%' OR CommandLine ILIKE '%\\Windows\\System32\\spool\\SERVERS\\%' OR CommandLine ILIKE '%\\Windows\\System32\\Tasks\_Migrated\\%' OR CommandLine ILIKE '%\\Windows\\System32\\Tasks\\Microsoft\\Windows\\SyncCenter\\%' OR CommandLine ILIKE '%\\Windows\\SysWOW64\\com\\dmp\\%' OR CommandLine ILIKE '%\\Windows\\SysWOW64\\FxsTmp\\%' OR CommandLine ILIKE '%\\Windows\\SysWOW64\\Tasks\\Microsoft\\Windows\\PLA\\System\\%' OR CommandLine ILIKE '%\\Windows\\SysWOW64\\Tasks\\Microsoft\\Windows\\SyncCenter\\%' OR CommandLine ILIKE '%\\Windows\\Tasks\\%' OR CommandLine ILIKE '%\\Windows\\Tracing\\%') OR ((CommandLine ILIKE '% "C:\\%' OR CommandLine ILIKE '% C:\\%' OR CommandLine ILIKE '% ''C:\\%' OR CommandLine ILIKE '%D:\\%') AND (NOT (CommandLine ILIKE '%C:\\Program Files (x86)\\%' OR CommandLine ILIKE '%C:\\Program Files\\%' OR CommandLine ILIKE '%C:\\ProgramData\\%' OR CommandLine ILIKE '%C:\\Users\\%' OR CommandLine ILIKE '% C:\\Windows\\%' OR CommandLine ILIKE '% "C:\\Windows\\%' OR CommandLine ILIKE '% ''C:\\Windows\\%')))) AND (NOT (CommandLine='' OR isNull(CommandLine)))

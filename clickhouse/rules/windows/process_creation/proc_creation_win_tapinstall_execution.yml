@@ -1,0 +1,12 @@
+id: 99793437-3e16-439b-be0f-078782cf953d
+name: Tap Installer Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, Ian Davis, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\tapinstall.exe' AND (NOT ((Image ILIKE '%:\\Program Files\\Avast Software\\SecureLine VPN\\%' OR Image ILIKE '%:\\Program Files (x86)\\Avast Software\\SecureLine VPN\\%') OR Image ILIKE '%:\\Program Files\\OpenVPN Connect\\drivers\\tap\\%' OR Image ILIKE '%:\\Program Files (x86)\\Proton Technologies\\ProtonVPNTap\\installer\\%'))

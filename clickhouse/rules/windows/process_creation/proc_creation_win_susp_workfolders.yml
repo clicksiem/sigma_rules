@@ -1,0 +1,12 @@
+id: 0bbc6369-43e3-453d-9944-cae58821c173
+name: Execution via WorkFolders.exe
+level: 8
+size: '>0'
+active: true
+author:
+- Maxime Thiebaut (@0xThiebaut)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\control.exe' AND ParentImage ILIKE '%\\WorkFolders.exe') AND (NOT Image ILIKE 'C:\\Windows\\System32\\control.exe')

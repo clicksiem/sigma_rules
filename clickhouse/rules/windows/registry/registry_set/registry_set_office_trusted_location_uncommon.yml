@@ -1,0 +1,13 @@
+id: f742bde7-9528-42e5-bd82-84f51a8387d2
+name: Uncommon Microsoft Office Trusted Location Added
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%Security\\Trusted Locations\\Location%' AND TargetObject ILIKE '%\\Path') AND (NOT ((Image ILIKE '%:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\%' AND Image ILIKE '%\\OfficeClickToRun.exe') OR (Image ILIKE '%:\\Program Files\\Microsoft Office\\%' OR Image ILIKE '%:\\Program Files (x86)\\Microsoft Office\\%'))) AND (NOT (Details ILIKE '%\%APPDATA\%\\Microsoft\\Templates%' OR Details ILIKE '%\%\%APPDATA\%\%\\Microsoft\\Templates%' OR Details ILIKE '%\%APPDATA\%\\Microsoft\\Word\\Startup%' OR Details ILIKE '%\%\%APPDATA\%\%\\Microsoft\\Word\\Startup%' OR Details ILIKE '%:\\Program Files (x86)\\Microsoft Office\\root\\Templates\\%' OR Details ILIKE '%:\\Program Files\\Microsoft Office (x86)\\Templates%' OR Details ILIKE '%:\\Program Files\\Microsoft Office\\root\\Templates\\%' OR Details ILIKE '%:\\Program Files\\Microsoft Office\\Templates\\%'))

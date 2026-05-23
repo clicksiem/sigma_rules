@@ -1,0 +1,13 @@
+id: b2309017-4235-44fe-b5af-b15363011957
+name: Uncommon Child Process Of Defaultpack.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\DefaultPack.exe'

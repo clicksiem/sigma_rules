@@ -1,0 +1,13 @@
+id: 586a8d6b-6bfe-4ad9-9d78-888cd2fe50c3
+name: Remote Service Activity via SVCCTL Named Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.lateral-movement
+- attack.persistence
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE EventID=5145 AND ShareName ILIKE '\\\\*\\IPC$' AND RelativeTargetName='svcctl' AND AccessList ILIKE '%WriteData%'

@@ -1,0 +1,12 @@
+id: dd80db93-6ec2-4f4c-a017-ad40da6ffe81
+name: Windows Defender Real-Time Protection Failure/Restart
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Christopher Peacock '@securepeacock' (Update)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (EventID IN (3002, 3007)) AND (NOT (Feature_Name ILIKE '\%\%886' AND (Reason IN ('\%\%892', '\%\%858'))))

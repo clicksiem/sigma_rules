@@ -1,0 +1,14 @@
+id: 00b90cc1-17ec-402c-96ad-3a8117d7a582
+name: Suspicious Curl File Upload - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Cedric MAURUGEON (Update)
+group: linux
+tags:
+- attack.exfiltration
+- attack.command-and-control
+- attack.t1567
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/curl' AND ((CommandLine ILIKE '% --form%' OR CommandLine ILIKE '% --upload-file %' OR CommandLine ILIKE '% --data %' OR CommandLine ILIKE '% --data-%') OR match(CommandLine, '\s-[FTd]\s'))) AND (NOT (CommandLine ILIKE '%://localhost%' OR CommandLine ILIKE '%://127.0.0.1%'))

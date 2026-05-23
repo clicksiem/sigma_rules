@@ -1,0 +1,11 @@
+id: a717c561-d117-437e-b2d9-0118a7035d01
+name: OneLogin User Account Locked
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: onelogin
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE event_type_id IN (532, 553, 551)

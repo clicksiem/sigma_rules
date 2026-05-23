@@ -1,0 +1,12 @@
+id: 6d580420-ff3f-4e0e-b6b0-41b90c787e28
+name: SharpHound Recon Sessions
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='4b324fc8-1670-01d3-1278-5a47bf6ee188' AND OpNum=12

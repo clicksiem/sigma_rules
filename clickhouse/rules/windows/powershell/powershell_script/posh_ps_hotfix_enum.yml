@@ -1,0 +1,11 @@
+id: f5d1def8-1de0-4a0e-9794-1f6f27dd605c
+name: PowerShell Hotfix Enumeration
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Win32\_QuickFixEngineering%' AND ScriptBlockText ILIKE '%HotFixID%'

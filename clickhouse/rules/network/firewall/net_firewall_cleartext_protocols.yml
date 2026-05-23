@@ -1,0 +1,11 @@
+id: d7fb8f0e-bd5f-45c2-b467-19571c490d7e
+name: Cleartext Protocol Usage
+level: 3
+size: '>0'
+active: true
+author:
+- Alexandr Yampolskyi, SOC Prime, Tim Shelton
+group: ''
+tags:
+- attack.credential-access
+rule: SELECT * FROM logs WHERE (dst_port IN (8080, 21, 80, 23, 50000, 1521, 27017, 3306, 1433, 11211, 15672, 5900, 5901, 5902, 5903, 5904)) AND ((action IN ('forward', 'accept', 2)) OR blocked='false')

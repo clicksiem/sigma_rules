@@ -1,0 +1,12 @@
+id: d7654f02-e04b-4934-9838-65c46f187ebc
+name: PUA- IOX Tunneling Tool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1090
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\iox.exe' OR (CommandLine ILIKE '%.exe fwd -l %' OR CommandLine ILIKE '%.exe fwd -r %' OR CommandLine ILIKE '%.exe proxy -l %' OR CommandLine ILIKE '%.exe proxy -r %') OR (Hashes ILIKE '%MD5=9DB2D314DD3F704A02051EF5EA210993%' OR Hashes ILIKE '%SHA1=039130337E28A6623ECF9A0A3DA7D92C5964D8DD%' OR Hashes ILIKE '%SHA256=C6CF82919B809967D9D90EA73772A8AA1C1EB3BC59252D977500F64F1A0D6731%')

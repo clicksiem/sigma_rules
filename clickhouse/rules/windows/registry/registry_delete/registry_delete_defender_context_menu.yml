@@ -1,0 +1,11 @@
+id: 72a0369a-2576-4aaf-bfc9-6bb24a574ac6
+name: Delete Defender Scan ShellEx Context Menu Registry Key
+level: 5
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%shellex\\ContextMenuHandlers\\EPP%' AND (NOT ((Image ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' OR Image ILIKE 'C:\\Program Files\\Windows Defender\\%' OR Image ILIKE 'C:\\Program Files (x86)\\Windows Defender\\%') AND Image ILIKE '%\\MsMpEng.exe'))

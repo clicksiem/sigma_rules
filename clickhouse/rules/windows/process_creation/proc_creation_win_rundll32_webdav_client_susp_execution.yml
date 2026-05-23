@@ -1,0 +1,13 @@
+id: 982e9f2d-1a85-4d5b-aea4-31f5e97c6555
+name: Suspicious WebDav Client Execution Via Rundll32.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048.003
+- cve.2023-23397
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\svchost.exe' AND ParentCommandLine ILIKE '%-s WebClient%' AND Image ILIKE '%\\rundll32.exe' AND CommandLine ILIKE '%C:\\windows\\system32\\davclnt.dll,DavSetCookie%' AND match(CommandLine, '://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')) AND (NOT (CommandLine ILIKE '%://10.%' OR CommandLine ILIKE '%://192.168.%' OR CommandLine ILIKE '%://172.16.%' OR CommandLine ILIKE '%://172.17.%' OR CommandLine ILIKE '%://172.18.%' OR CommandLine ILIKE '%://172.19.%' OR CommandLine ILIKE '%://172.20.%' OR CommandLine ILIKE '%://172.21.%' OR CommandLine ILIKE '%://172.22.%' OR CommandLine ILIKE '%://172.23.%' OR CommandLine ILIKE '%://172.24.%' OR CommandLine ILIKE '%://172.25.%' OR CommandLine ILIKE '%://172.26.%' OR CommandLine ILIKE '%://172.27.%' OR CommandLine ILIKE '%://172.28.%' OR CommandLine ILIKE '%://172.29.%' OR CommandLine ILIKE '%://172.30.%' OR CommandLine ILIKE '%://172.31.%' OR CommandLine ILIKE '%://127.%' OR CommandLine ILIKE '%://169.254.%'))

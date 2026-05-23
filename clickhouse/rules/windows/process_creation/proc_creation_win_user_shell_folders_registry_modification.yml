@@ -1,0 +1,15 @@
+id: 8f3ab69a-aa22-4943-aa58-e0a52fdf6818
+name: User Shell Folders Registry Modification via CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1547.001
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\reg.exe') OR (OriginalFileName IN ('powershell.exe', 'pwsh.dll', 'reg.exe'))) AND (CommandLine ILIKE '% add %' OR CommandLine ILIKE '%New-ItemProperty%' OR CommandLine ILIKE '%Set-ItemProperty%' OR CommandLine ILIKE '%si %') AND (CommandLine ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders%' OR CommandLine ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders%') AND CommandLine ILIKE '%Startup%'

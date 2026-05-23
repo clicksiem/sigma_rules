@@ -1,0 +1,12 @@
+id: 58c0bff0-40a0-46e8-b5e8-b734b84d2017
+name: Certificate Exported From Local Certificate Store
+level: 5
+size: '>0'
+active: true
+author:
+- Zach Mathis
+group: windows
+tags:
+- attack.credential-access
+- attack.t1649
+rule: SELECT * FROM logs WHERE EventID=1007

@@ -1,0 +1,12 @@
+id: 9e099d99-44c2-42b6-a6d8-54c3545cab29
+name: HackTool - Mimikatz Kirbi File Creation
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), David ANDRE
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.kirbi' OR TargetFilename ILIKE '%mimilsa.log'

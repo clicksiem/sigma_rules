@@ -1,0 +1,12 @@
+id: 4281cb20-2994-4580-aa63-c8b86d019934
+name: Hiding Files with Attrib.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Sami Ruohonen
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\attrib.exe' OR OriginalFileName='ATTRIB.EXE') AND CommandLine ILIKE '% +h %') AND (NOT CommandLine ILIKE '%\\desktop.ini %') AND (NOT (ParentImage ILIKE '%\\cmd.exe' AND CommandLine ILIKE '+R +H +S +A \\*.cui' AND ParentCommandLine ILIKE 'C:\\WINDOWS\\system32\\*.bat'))

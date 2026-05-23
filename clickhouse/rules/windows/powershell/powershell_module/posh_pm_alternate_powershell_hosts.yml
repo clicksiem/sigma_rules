@@ -1,0 +1,12 @@
+id: 64e8e417-c19a-475a-8d19-98ea705394cc
+name: Alternate PowerShell Hosts - PowerShell Module
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ContextInfo ILIKE '%' AND (NOT ((ContextInfo ILIKE '%= powershell%' OR ContextInfo ILIKE '%= C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell%' OR ContextInfo ILIKE '%= C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell%' OR ContextInfo ILIKE '%= C:/Windows/System32/WindowsPowerShell/v1.0/powershell%' OR ContextInfo ILIKE '%= C:/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell%' OR ContextInfo ILIKE '%= \\??\\C:Windows\\System32\\WindowsPowerShell\\v1.0\\powershell%' OR ContextInfo ILIKE '%= \\??\\C:Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell%') OR ContextInfo ILIKE '%= C:\\WINDOWS\\System32\\sdiagnhost.exe -Embedding%' OR ContextInfo ILIKE '%ConfigSyncRun.exe%' OR ContextInfo ILIKE '%C:\\Windows\\system32\\dsac.exe%' OR ContextInfo ILIKE '%C:\\Windows\\system32\\wsmprovhost.exe -Embedding%' OR (Payload ILIKE '%Update-Help%' OR Payload ILIKE '%Failed to update Help for the module%')))

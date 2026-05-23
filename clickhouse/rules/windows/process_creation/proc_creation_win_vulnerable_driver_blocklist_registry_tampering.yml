@@ -1,0 +1,12 @@
+id: 22154f0e-5132-4a54-aa78-cc62f6def531
+name: Vulnerable Driver Blocklist Registry Tampering Via CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\reg.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll', 'reg.exe'))) AND (CommandLine ILIKE '%add %' OR CommandLine ILIKE '%New-ItemProperty %' OR CommandLine ILIKE '%Set-ItemProperty %' OR CommandLine ILIKE '%si %') AND (CommandLine ILIKE '%\\Control\\CI\\Config%' AND CommandLine ILIKE '%VulnerableDriverBlocklistEnable%')

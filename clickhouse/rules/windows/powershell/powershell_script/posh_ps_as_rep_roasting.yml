@@ -1,0 +1,12 @@
+id: 96c982fe-3d08-4df4-bed2-eb14e02f21c8
+name: Get-ADUser Enumeration Using UserAccountControl Flags
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-ADUser%' AND ScriptBlockText ILIKE '%-Filter%' AND ScriptBlockText ILIKE '%useraccountcontrol%' AND ScriptBlockText ILIKE '%-band%' AND ScriptBlockText ILIKE '%4194304%'

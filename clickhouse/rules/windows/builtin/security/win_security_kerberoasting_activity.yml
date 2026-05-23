@@ -1,0 +1,12 @@
+id: d04ae2b8-ad54-4de0-bd87-4bc1da66aa59
+name: Kerberoasting Activity - Initial Query
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE (EventID=4769 AND Status='0x0' AND TicketEncryptionType='0x17') AND (NOT ((ServiceName ILIKE '%krbtgt' OR ServiceName ILIKE '%$') OR TargetUserName ILIKE '%$@%'))

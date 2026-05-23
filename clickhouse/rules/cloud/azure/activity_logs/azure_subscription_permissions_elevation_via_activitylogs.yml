@@ -1,0 +1,15 @@
+id: 09438caa-07b1-4870-8405-1dbafe3dad95
+name: Azure Subscription Permission Elevation Via ActivityLogs
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE operationName='MICROSOFT.AUTHORIZATION/ELEVATEACCESS/ACTION'

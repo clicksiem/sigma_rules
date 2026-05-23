@@ -1,0 +1,12 @@
+id: ceb407f6-8277-439b-951f-e4210e3ed956
+name: Cisco Clear Logs
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.stealth
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'clear logging') OR hasToken(full_log, 'clear archive')

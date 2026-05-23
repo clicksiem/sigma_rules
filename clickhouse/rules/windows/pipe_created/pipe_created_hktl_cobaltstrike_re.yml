@@ -1,0 +1,13 @@
+id: 0e7163d4-9e19-4fa7-9be6-000c61aad77a
+name: CobaltStrike Named Pipe Pattern Regex
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE match(PipeName, '\\mojo\.5688\.8052\.(?:183894939787088877|35780273329370473)[0-9a-f]{2}') OR match(PipeName, '\\wkssvc_?[0-9a-f]{2}') OR match(PipeName, '\\ntsvcs[0-9a-f]{2}') OR match(PipeName, '\\DserNamePipe[0-9a-f]{2}') OR match(PipeName, '\\SearchTextHarvester[0-9a-f]{2}') OR match(PipeName, '\\mypipe-(?:f|h)[0-9a-f]{2}') OR match(PipeName, '\\windows\.update\.manager[0-9a-f]{2,3}') OR match(PipeName, '\\ntsvcs_[0-9a-f]{2}') OR match(PipeName, '\\scerpc_?[0-9a-f]{2}') OR match(PipeName, '\\PGMessagePipe[0-9a-f]{2}') OR match(PipeName, '\\MsFteWds[0-9a-f]{2}') OR match(PipeName, '\\f4c3[0-9a-f]{2}') OR match(PipeName, '\\fullduplex_[0-9a-f]{2}') OR match(PipeName, '\\msrpc_[0-9a-f]{4}') OR match(PipeName, '\\win\\msrpc_[0-9a-f]{2}') OR match(PipeName, '\\f53f[0-9a-f]{2}') OR match(PipeName, '\\rpc_[0-9a-f]{2}') OR match(PipeName, '\\spoolss_[0-9a-f]{2}') OR match(PipeName, '\\Winsock2\\CatalogChangeListener-[0-9a-f]{3}-0,')

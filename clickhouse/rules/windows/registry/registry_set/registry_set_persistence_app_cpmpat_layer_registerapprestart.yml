@@ -1,0 +1,13 @@
+id: b86852fb-4c77-48f9-8519-eb1b2c308b59
+name: Potential Persistence Via AppCompat RegisterAppRestart Layer
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.011
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers\\%' AND Details ILIKE '%REGISTERAPPRESTART%'

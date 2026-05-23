@@ -1,0 +1,12 @@
+id: 1dd05363-104e-4b4a-b963-196a534b03a1
+name: Potential Suspicious Mofcomp Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\mofcomp.exe' OR OriginalFileName='mofcomp.exe') AND ((ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe' OR ParentImage ILIKE '%\\wsl.exe' OR ParentImage ILIKE '%\\wscript.exe' OR ParentImage ILIKE '%\\cscript.exe') OR (CommandLine ILIKE '%\\AppData\\Local\\Temp%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\WINDOWS\\Temp\\%' OR CommandLine ILIKE '%\%temp\%%' OR CommandLine ILIKE '%\%tmp\%%' OR CommandLine ILIKE '%\%appdata\%%'))) AND (NOT (ParentImage ILIKE 'C:\\Windows\\System32\\wbem\\WmiPrvSE.exe' AND CommandLine ILIKE '%C:\\Windows\\TEMP\\%' AND CommandLine ILIKE '%.mof')) AND (NOT (CommandLine ILIKE '%C:\\Windows\\TEMP\\%' AND CommandLine ILIKE '%.mof'))

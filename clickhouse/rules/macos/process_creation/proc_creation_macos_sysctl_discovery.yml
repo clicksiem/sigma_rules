@@ -1,0 +1,14 @@
+id: 6ff08e55-ea53-4f27-94a1-eff92e6d9d5c
+name: System Information Discovery Via Sysctl - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Pratinav Chandra
+group: macos
+tags:
+- attack.stealth
+- attack.t1497.001
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/sysctl' OR CommandLine ILIKE '%sysctl%') AND (CommandLine ILIKE '%hw.%' OR CommandLine ILIKE '%kern.%' OR CommandLine ILIKE '%machdep.%')

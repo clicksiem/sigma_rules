@@ -1,0 +1,13 @@
+id: 3569aefd-e535-4391-8c18-24bd01a21eaf
+name: Suspicious Email Delivered In Microsoft 365
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM) (InTheCyber)
+group: m365
+tags:
+- attack.initial-access
+- attack.t1566.001
+- attack.t1566.002
+rule: SELECT * FROM logs WHERE (Workload='ThreatIntelligence' AND Operation='TIMailData' AND Directionality='Inbound') AND (NOT DeliveryAction='Blocked')

@@ -1,0 +1,14 @@
+id: 56321594-9087-49d9-bf10-524fe8479452
+name: Potential Persistence Via Netsh Helper DLL
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.007
+- attack.s0108
+rule: SELECT * FROM logs WHERE (OriginalFileName='netsh.exe' OR Image ILIKE '%\\netsh.exe') AND (CommandLine ILIKE '%add%' AND CommandLine ILIKE '%helper%')

@@ -1,0 +1,12 @@
+id: 932fb0d8-692b-4b0f-a26e-5643a50fe7d6
+name: Audio Capture via PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.t1123
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%WindowsAudioDevice-Powershell-Cmdlet%' OR CommandLine ILIKE '%Toggle-AudioDevice%' OR CommandLine ILIKE '%Get-AudioDevice %' OR CommandLine ILIKE '%Set-AudioDevice %' OR CommandLine ILIKE '%Write-AudioDevice %'

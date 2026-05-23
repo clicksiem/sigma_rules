@@ -1,0 +1,14 @@
+id: 21dd6d38-2b18-4453-9404-a0fe4a0cc288
+name: Curl Download And Execute Combination
+level: 8
+size: '>0'
+active: true
+author:
+- Sreeman, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% -c %' OR CommandLine ILIKE '% /c %' OR CommandLine ILIKE '% –c %' OR CommandLine ILIKE '% —c %' OR CommandLine ILIKE '% ―c %') AND (CommandLine ILIKE '%curl %' AND CommandLine ILIKE '%http%' AND CommandLine ILIKE '%-o%' AND CommandLine ILIKE '%&%')

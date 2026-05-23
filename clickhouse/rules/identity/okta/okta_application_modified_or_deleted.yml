@@ -1,0 +1,11 @@
+id: 7899144b-e416-4c28-b0b5-ab8f9e0a541d
+name: Okta Application Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: okta
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventType IN ('application.lifecycle.update', 'application.lifecycle.delete')

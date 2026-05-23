@@ -1,0 +1,12 @@
+id: ce446a9e-30b9-4483-8e38-d2c9ad0a2280
+name: Steganography Hide Files with Steghide
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.stealth
+- attack.t1027.003
+rule: SELECT * FROM logs WHERE type='EXECVE' AND a0='steghide' AND a1='embed' AND (a2 IN ('-cf', '-ef')) AND (a4 IN ('-cf', '-ef'))

@@ -1,0 +1,12 @@
+id: efec536f-72e8-4656-8960-5e85d091345b
+name: Set Suspicious Files as System Files Using Attrib.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\attrib.exe' OR OriginalFileName='ATTRIB.EXE') AND CommandLine ILIKE '% +s%' AND (CommandLine ILIKE '% \%%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\AppData\\Local\\%' OR CommandLine ILIKE '%\\ProgramData\\%' OR CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Windows\\Temp\\%') AND (CommandLine ILIKE '%.bat%' OR CommandLine ILIKE '%.dll%' OR CommandLine ILIKE '%.exe%' OR CommandLine ILIKE '%.hta%' OR CommandLine ILIKE '%.ps1%' OR CommandLine ILIKE '%.vbe%' OR CommandLine ILIKE '%.vbs%')) AND (NOT (CommandLine ILIKE '%\\Windows\\TEMP\\%' AND CommandLine ILIKE '%.exe%'))

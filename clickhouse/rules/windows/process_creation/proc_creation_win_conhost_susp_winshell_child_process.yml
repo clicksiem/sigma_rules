@@ -1,0 +1,13 @@
+id: dfa03a09-8b92-4d83-8e74-f72839b1c407
+name: Potentially Suspicious Child Processes Spawned by ConHost
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+- attack.t1218
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\conhost.exe' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\wscript.exe') OR (OriginalFileName IN ('cmd.exe', 'cscript.exe', 'mshta.exe', 'powershell\_ise.exe', 'powershell.exe', 'pwsh.dll', 'regsvr32.exe', 'wscript.exe')))

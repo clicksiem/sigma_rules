@@ -1,0 +1,15 @@
+id: 69483748-1525-4a6c-95ca-90dc8d431b68
+name: Suspicious Microsoft Office Child Process - MacOS
+level: 8
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.execution
+- attack.persistence
+- attack.t1059.002
+- attack.t1137.002
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%Microsoft Word%' OR ParentImage ILIKE '%Microsoft Excel%' OR ParentImage ILIKE '%Microsoft PowerPoint%' OR ParentImage ILIKE '%Microsoft OneNote%') AND (Image ILIKE '%/bash' OR Image ILIKE '%/curl' OR Image ILIKE '%/dash' OR Image ILIKE '%/fish' OR Image ILIKE '%/osacompile' OR Image ILIKE '%/osascript' OR Image ILIKE '%/sh' OR Image ILIKE '%/zsh' OR Image ILIKE '%/python' OR Image ILIKE '%/python3' OR Image ILIKE '%/wget')

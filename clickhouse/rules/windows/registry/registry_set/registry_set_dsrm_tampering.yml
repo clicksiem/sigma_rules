@@ -1,0 +1,14 @@
+id: b61e87c0-50db-4b2e-8986-6a2be94b33b0
+name: Directory Service Restore Mode(DSRM) Registry Value Tampering
+level: 8
+size: '>0'
+active: true
+author:
+- Nischal Khadgi
+group: windows
+tags:
+- attack.credential-access
+- attack.persistence
+- attack.defense-impairment
+- attack.t1556
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Control\\Lsa\\DsrmAdminLogonBehavior' AND (NOT Details='DWORD (0x00000000)')

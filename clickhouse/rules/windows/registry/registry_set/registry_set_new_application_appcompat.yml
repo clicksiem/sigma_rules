@@ -1,0 +1,12 @@
+id: 60936b49-fca0-4f32-993d-7415edcf9a5d
+name: New Application in AppCompat
+level: 1
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\AppCompatFlags\\Compatibility Assistant\\Store\\%'

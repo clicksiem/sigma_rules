@@ -1,0 +1,14 @@
+id: c4568f5d-131f-4e78-83d4-45b2da0ec4f1
+name: Communication To LocaltoNet Tunneling Service Initiated - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Andreas Braathen (mnemonic.io)
+group: linux
+tags:
+- attack.command-and-control
+- attack.t1572
+- attack.t1090
+- attack.t1102
+rule: SELECT * FROM logs WHERE (DestinationHostname ILIKE '%.localto.net' OR DestinationHostname ILIKE '%.localtonet.com') AND Initiated='true'

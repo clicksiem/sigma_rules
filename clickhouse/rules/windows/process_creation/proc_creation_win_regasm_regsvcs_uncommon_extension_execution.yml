@@ -1,0 +1,12 @@
+id: e9f8f8cc-07cc-4e81-b724-f387db9175e4
+name: Potentially Suspicious Execution Of Regasm/Regsvcs With Uncommon Extension
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.009
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\Regsvcs.exe' OR Image ILIKE '%\\Regasm.exe') OR (OriginalFileName IN ('RegSvcs.exe', 'RegAsm.exe'))) AND (CommandLine ILIKE '%.dat%' OR CommandLine ILIKE '%.gif%' OR CommandLine ILIKE '%.jpeg%' OR CommandLine ILIKE '%.jpg%' OR CommandLine ILIKE '%.png%' OR CommandLine ILIKE '%.txt%')

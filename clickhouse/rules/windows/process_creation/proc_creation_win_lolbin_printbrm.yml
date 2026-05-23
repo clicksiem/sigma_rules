@@ -1,0 +1,14 @@
+id: cafeeba3-01da-4ab4-b6c4-a31b1d9730c7
+name: PrintBrm ZIP Creation of Extraction
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.stealth
+- attack.t1105
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\PrintBrm.exe' AND (CommandLine ILIKE '% -f%' AND CommandLine ILIKE '%.zip%')

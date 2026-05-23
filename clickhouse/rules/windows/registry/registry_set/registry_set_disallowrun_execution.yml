@@ -1,0 +1,13 @@
+id: 275641a5-a492-45e2-a817-7c81e9d9d3e9
+name: Add DisallowRun Execution to Registry
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\DisallowRun' AND Details='DWORD (0x00000001)'

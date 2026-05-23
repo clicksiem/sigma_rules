@@ -1,0 +1,11 @@
+id: 898d5fc9-fbc3-43de-93ad-38e97237c344
+name: AppX Package Deployment Failed Due to Signing Requirements
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE EventID=401 AND ErrorCode='0x80073cff'

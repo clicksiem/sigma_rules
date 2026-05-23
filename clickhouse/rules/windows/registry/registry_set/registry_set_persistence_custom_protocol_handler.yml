@@ -1,0 +1,13 @@
+id: fdbf0b9d-0182-4c43-893b-a1eaab92d085
+name: Potential Persistence Via Custom Protocol Handler
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE 'HKCR\\%' AND Details ILIKE 'URL:%') AND (NOT (Details ILIKE 'URL:ms-%' OR (Image ILIKE 'C:\\Program Files (x86)%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%')))

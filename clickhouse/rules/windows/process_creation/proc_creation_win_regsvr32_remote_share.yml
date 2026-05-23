@@ -1,0 +1,12 @@
+id: 88a87a10-384b-4ad7-8871-2f9bf9259ce5
+name: Suspicious Regsvr32 Execution From Remote Share
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regsvr32.exe' OR OriginalFileName ILIKE '\\REGSVR32.EXE') AND CommandLine ILIKE '% \\\\%'

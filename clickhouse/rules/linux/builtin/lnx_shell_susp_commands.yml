@@ -1,0 +1,12 @@
+id: 2aa1440c-9ae9-4d92-84a7-a9e5f5e31695
+name: Suspicious Activity in Shell Commands
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'wget % - http% | perl') OR hasToken(full_log, 'wget % - http% | sh') OR hasToken(full_log, 'wget % - http% | bash') OR hasToken(full_log, 'python -m SimpleHTTPServer') OR hasToken(full_log, '-m http.server') OR hasToken(full_log, 'import pty; pty.spawn%') OR hasToken(full_log, 'socat exec:%') OR hasToken(full_log, 'socat -O /tmp/%') OR hasToken(full_log, 'socat tcp-connect%') OR hasToken(full_log, '%echo binary >>%') OR hasToken(full_log, '%wget %; chmod +x%') OR hasToken(full_log, '%wget %; chmod 777 %') OR hasToken(full_log, '%cd /tmp || cd /var/run || cd /mnt%') OR hasToken(full_log, '%stop;service iptables stop;%') OR hasToken(full_log, '%stop;SuSEfirewall2 stop;%') OR hasToken(full_log, 'chmod 777 2020%') OR hasToken(full_log, '%>>/etc/rc.local') OR hasToken(full_log, '%base64 -d /tmp/%') OR hasToken(full_log, '% | base64 -d %') OR hasToken(full_log, '%/chmod u+s %') OR hasToken(full_log, '%chmod +s /tmp/%') OR hasToken(full_log, '%chmod u+s /tmp/%') OR hasToken(full_log, '% /tmp/haxhax%') OR hasToken(full_log, '% /tmp/ns\_sploit%') OR hasToken(full_log, 'nc -l -p %') OR hasToken(full_log, 'cp /bin/ksh %') OR hasToken(full_log, 'cp /bin/sh %') OR hasToken(full_log, '% /tmp/%.b64 %') OR hasToken(full_log, '%/tmp/ysocereal.jar%') OR hasToken(full_log, '%/tmp/x %') OR hasToken(full_log, '%; chmod +x /tmp/%') OR hasToken(full_log, '%;chmod +x /tmp/%')

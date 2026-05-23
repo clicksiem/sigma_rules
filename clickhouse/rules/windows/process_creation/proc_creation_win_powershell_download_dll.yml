@@ -1,0 +1,14 @@
+id: 0f0450f3-8b47-441e-a31b-15a91dc243e2
+name: Potential DLL File Download Via PowerShell Invoke-WebRequest
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Hieu Tran
+group: windows
+tags:
+- attack.command-and-control
+- attack.execution
+- attack.t1059.001
+- attack.t1105
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Invoke-RestMethod %' OR CommandLine ILIKE '%Invoke-WebRequest %' OR CommandLine ILIKE '%IRM %' OR CommandLine ILIKE '%IWR %') AND (CommandLine ILIKE '%http%' AND CommandLine ILIKE '%OutFile%' AND CommandLine ILIKE '%.dll%')

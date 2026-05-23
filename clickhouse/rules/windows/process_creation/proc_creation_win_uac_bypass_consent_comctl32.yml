@@ -1,0 +1,12 @@
+id: 1ca6bd18-0ba0-44ca-851c-92ed89a61085
+name: UAC Bypass Using Consent and Comctl32 - Process
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\consent.exe' AND Image ILIKE '%\\werfault.exe' AND (IntegrityLevel IN ('High', 'System', 'S-1-16-16384', 'S-1-16-12288'))

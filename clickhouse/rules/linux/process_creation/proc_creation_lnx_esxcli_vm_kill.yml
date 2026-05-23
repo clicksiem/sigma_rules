@@ -1,0 +1,14 @@
+id: 2992ac4d-31e9-4325-99f2-b18a73221bb2
+name: ESXi VM Kill Via ESXCLI
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Cedric Maurugeon
+group: linux
+tags:
+- attack.execution
+- attack.impact
+- attack.t1059.012
+- attack.t1529
+rule: SELECT * FROM logs WHERE Image ILIKE '%/esxcli' AND (CommandLine ILIKE '%vm process%' AND CommandLine ILIKE '%kill%')

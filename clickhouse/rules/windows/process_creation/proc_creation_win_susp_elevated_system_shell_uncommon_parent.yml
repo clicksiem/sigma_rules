@@ -1,0 +1,13 @@
+id: 178e615d-e666-498b-9630-9ed363038101
+name: Elevated System Shell Spawned From Uncommon Parent Location
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Tim Shelton (update fp)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\cmd.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'powershell\_ise.EXE', 'pwsh.dll', 'Cmd.Exe'))) AND ((User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%') AND LogonId='0x3e7')) AND (NOT ((ParentImage ILIKE '%:\\Program Files (x86)\\%' OR ParentImage ILIKE '%:\\Program Files\\%' OR ParentImage ILIKE '%:\\ProgramData\\%' OR ParentImage ILIKE '%:\\Windows\\System32\\%' OR ParentImage ILIKE '%:\\Windows\\SysWOW64\\%' OR ParentImage ILIKE '%:\\Windows\\Temp\\%' OR ParentImage ILIKE '%:\\Windows\\WinSxS\\%') OR isNull(ParentImage) OR (ParentImage IN ('', '-')))) AND (NOT ((ParentImage ILIKE '%:\\ManageEngine\\ADManager Plus\\pgsql\\bin\\postgres.exe' AND Image ILIKE '%\\cmd.exe') OR (CommandLine ILIKE '%:\\WINDOWS\\system32\\cmd.exe /c "%' AND CurrentDirectory ILIKE '%:\\WINDOWS\\Temp\\asgard2-agent\\%') OR (ParentImage ILIKE '%:\\IBM\\SpectrumProtect\\webserver\\scripts\\%' AND CommandLine ILIKE '%:\\IBM\\SpectrumProtect\\webserver\\scripts\\%')))

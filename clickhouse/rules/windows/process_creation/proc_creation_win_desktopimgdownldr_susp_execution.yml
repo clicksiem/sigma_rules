@@ -1,0 +1,12 @@
+id: bb58aa4a-b80b-415a-a2c0-2f65a4c81009
+name: Suspicious Desktopimgdownldr Command
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% /lockscreenurl:%' AND (NOT (CommandLine ILIKE '%.jpg%' OR CommandLine ILIKE '%.jpeg%' OR CommandLine ILIKE '%.png%'))) OR (CommandLine ILIKE '%reg delete%' AND CommandLine ILIKE '%\\PersonalizationCSP%')

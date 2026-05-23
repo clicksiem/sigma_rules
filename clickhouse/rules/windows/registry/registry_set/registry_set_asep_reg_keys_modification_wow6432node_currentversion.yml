@@ -1,0 +1,13 @@
+id: 480421f9-417f-4d3b-9552-fd2728443ec8
+name: Wow6432Node Windows NT CurrentVersion Autorun Keys Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion%' AND (TargetObject ILIKE '%\\Windows\\Appinit\_Dlls%' OR TargetObject ILIKE '%\\Image File Execution Options%' OR TargetObject ILIKE '%\\Drivers32%')) AND (NOT (Details='(Empty)' OR isNull(Details) OR Details ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options'))

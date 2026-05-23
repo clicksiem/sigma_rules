@@ -1,0 +1,13 @@
+id: 1a5c46e9-f32f-42f7-b2bc-6e9084db7fbf
+name: Trust Access Disable For VBApplications
+level: 8
+size: '>0'
+active: true
+author:
+- Trent Liffick (@tliffick), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Security\\AccessVBOM' AND Details='DWORD (0x00000001)'

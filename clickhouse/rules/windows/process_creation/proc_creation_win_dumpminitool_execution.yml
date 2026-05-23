@@ -1,0 +1,14 @@
+id: dee0a7a3-f200-4112-a99b-952196d81e42
+name: DumpMinitool Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1003.001
+- attack.credential-access
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\DumpMinitool.exe' OR Image ILIKE '%\\DumpMinitool.x86.exe' OR Image ILIKE '%\\DumpMinitool.arm64.exe') OR (OriginalFileName IN ('DumpMinitool.exe', 'DumpMinitool.x86.exe', 'DumpMinitool.arm64.exe'))) AND (CommandLine ILIKE '% Full%' OR CommandLine ILIKE '% Mini%' OR CommandLine ILIKE '% WithHeap%')

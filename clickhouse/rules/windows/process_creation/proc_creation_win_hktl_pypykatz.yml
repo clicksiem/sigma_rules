@@ -1,0 +1,12 @@
+id: a29808fd-ef50-49ff-9c7a-59a9b040b404
+name: HackTool - Pypykatz Credentials Dumping Activity
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\pypykatz.exe' OR Image ILIKE '%\\python.exe') AND (CommandLine ILIKE '%live%' AND CommandLine ILIKE '%registry%')

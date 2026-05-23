@@ -1,0 +1,13 @@
+id: b7b19cb6-9b32-4fc4-a108-73f19acfe262
+name: Suspicious VBoxDrvInst.exe Parameters
+level: 5
+size: '>0'
+active: true
+author:
+- Konstantin Grishchenko, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\VBoxDrvInst.exe' AND (CommandLine ILIKE '%driver%' AND CommandLine ILIKE '%executeinf%')

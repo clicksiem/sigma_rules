@@ -1,0 +1,12 @@
+id: 6902955a-01b7-432c-b32a-6f5f81d8f625
+name: LSASS Process Dump Artefact In CrashDumps Folder
+level: 8
+size: '>0'
+active: true
+author:
+- '@pbssubhash'
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\CrashDumps\\%' AND TargetFilename ILIKE '%lsass.exe.%' AND TargetFilename ILIKE '%.dmp'

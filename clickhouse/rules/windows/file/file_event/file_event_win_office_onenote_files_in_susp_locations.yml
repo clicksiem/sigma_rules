@@ -1,0 +1,11 @@
+id: 7fd164ba-126a-4d9c-9392-0d4f7c243df0
+name: OneNote Attachment File Dropped In Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE ((TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%' OR TargetFilename ILIKE '%\\Users\\Public\\%' OR TargetFilename ILIKE '%\\Windows\\Temp\\%' OR TargetFilename ILIKE '%:\\Temp\\%') AND (TargetFilename ILIKE '%.one' OR TargetFilename ILIKE '%.onepkg')) AND (NOT (Image ILIKE '%:\\Program Files\\Microsoft Office\\%' AND Image ILIKE '%\\ONENOTE.EXE'))

@@ -1,0 +1,13 @@
+id: 5b872a46-3b90-45c1-8419-f675db8053aa
+name: UAC Bypass via Sdclt
+level: 8
+size: '>0'
+active: true
+author:
+- Omer Yampel, Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+- car.2019-04-001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Software\\Classes\\exefile\\shell\\runas\\command\\isolatedCommand' OR (TargetObject ILIKE '%Software\\Classes\\Folder\\shell\\open\\command\\SymbolicLinkValue' AND match(Details, '-1[0-9]{3}\\Software\\Classes\\'))

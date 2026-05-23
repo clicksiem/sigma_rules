@@ -1,0 +1,12 @@
+id: 9ed5959a-c43c-4c59-84e3-d28628429456
+name: UAC Bypass Using Iscsicpl - ImageLoad
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (Image ILIKE 'C:\\Windows\\SysWOW64\\iscsicpl.exe' AND ImageLoaded ILIKE '%\\iscsiexe.dll') AND (NOT (ImageLoaded ILIKE '%C:\\Windows\\%' AND ImageLoaded ILIKE '%iscsiexe.dll%'))

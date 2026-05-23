@@ -1,0 +1,12 @@
+id: c803b2ce-c4a2-4836-beae-b112010390b1
+name: New Network Route Added
+level: 5
+size: '>0'
+active: true
+author:
+- jamesc-grafana
+group: aws
+tags:
+- attack.defense-impairment
+- attack.t1686.001
+rule: SELECT * FROM logs WHERE eventSource='ec2.amazonaws.com' AND eventName='CreateRoute'

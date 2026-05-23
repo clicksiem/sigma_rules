@@ -1,0 +1,12 @@
+id: b5b29e4e-31fa-4fdf-b058-296e7a1aa0c2
+name: Suspicious FileFix Execution Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- 0xFustang, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.004
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\brave.exe' OR ParentImage ILIKE '%\\chrome.exe' OR ParentImage ILIKE '%\\firefox.exe' OR ParentImage ILIKE '%\\msedge.exe') AND CommandLine ILIKE '%#%') AND ((CommandLine ILIKE '%\%comspec\%%' OR CommandLine ILIKE '%bitsadmin%' OR CommandLine ILIKE '%certutil%' OR CommandLine ILIKE '%cmd%' OR CommandLine ILIKE '%cscript%' OR CommandLine ILIKE '%curl%' OR CommandLine ILIKE '%finger%' OR CommandLine ILIKE '%mshta%' OR CommandLine ILIKE '%powershell%' OR CommandLine ILIKE '%pwsh%' OR CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%schtasks%' OR CommandLine ILIKE '%wget%' OR CommandLine ILIKE '%wscript%') OR (CommandLine ILIKE '%account%' OR CommandLine ILIKE '%anti-bot%' OR CommandLine ILIKE '%botcheck%' OR CommandLine ILIKE '%captcha%' OR CommandLine ILIKE '%challenge%' OR CommandLine ILIKE '%confirmation%' OR CommandLine ILIKE '%fraud%' OR CommandLine ILIKE '%human%' OR CommandLine ILIKE '%identification%' OR CommandLine ILIKE '%identificator%' OR CommandLine ILIKE '%identity%' OR CommandLine ILIKE '%robot%' OR CommandLine ILIKE '%validation%' OR CommandLine ILIKE '%verification%' OR CommandLine ILIKE '%verify%'))

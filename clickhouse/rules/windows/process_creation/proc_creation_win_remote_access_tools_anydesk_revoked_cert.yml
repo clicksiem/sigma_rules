@@ -1,0 +1,12 @@
+id: 41f407b5-3096-44ea-a74f-96d04fbc41be
+name: Remote Access Tool - AnyDesk Execution With Known Revoked Signing Certificate
+level: 5
+size: '>0'
+active: true
+author:
+- Sai Prashanth Pulisetti, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.initial-access
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\AnyDesk.exe' OR Description='AnyDesk' OR Product='AnyDesk' OR Company='AnyDesk Software GmbH') AND (FileVersion ILIKE '7.0.%' OR FileVersion ILIKE '7.1.%' OR FileVersion ILIKE '8.0.1%' OR FileVersion ILIKE '8.0.2%' OR FileVersion ILIKE '8.0.3%' OR FileVersion ILIKE '8.0.4%' OR FileVersion ILIKE '8.0.5%' OR FileVersion ILIKE '8.0.6%' OR FileVersion ILIKE '8.0.7%')) AND (NOT (CommandLine ILIKE '% --remove%' OR CommandLine ILIKE '% --uninstall%'))

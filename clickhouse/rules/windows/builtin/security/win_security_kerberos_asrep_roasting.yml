@@ -1,0 +1,10 @@
+id: 3e2f1b2c-4d5e-11ee-be56-0242ac120002
+name: Potential AS-REP Roasting via Kerberos TGT Requests
+level: 5
+size: '>0'
+active: true
+author:
+- ANosir
+group: windows
+tags: []
+rule: SELECT * FROM logs WHERE EventID=4768 AND TicketEncryptionType='0x17' AND ServiceName='krbtgt' AND PreAuthType=0

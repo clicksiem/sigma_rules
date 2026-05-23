@@ -1,0 +1,13 @@
+id: 97aa2e88-555c-450d-85a6-229bcd87efb8
+name: Suspicious Screensaver Binary File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.scr' AND (NOT ((Image ILIKE '%\\Kindle.exe' OR Image ILIKE '%\\Bin\\ccSvcHst.exe') OR (Image ILIKE '%\\TiWorker.exe' AND TargetFilename ILIKE '%\\uwfservicingscr.scr')))

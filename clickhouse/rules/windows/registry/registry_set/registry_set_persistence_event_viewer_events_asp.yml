@@ -1,0 +1,13 @@
+id: a1e11042-a74a-46e6-b07c-c4ce8ecc239b
+name: Potential Persistence Via Event Viewer Events.asp
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Event Viewer\\MicrosoftRedirectionProgram%' OR TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Event Viewer\\MicrosoftRedirectionURL%') AND (NOT ((Image ILIKE '%C:\\WINDOWS\\system32\\svchost.exe' AND TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Event Viewer\\MicrosoftRedirectionProgram' AND Details ILIKE '\%\%SystemRoot\%\%\\PCHealth\\HelpCtr\\Binaries\\HelpCtr.exe') OR (Image ILIKE '%C:\\WINDOWS\\system32\\svchost.exe' AND TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Event Viewer\\MicrosoftRedirectionProgramCommandLineParameters' AND Details ILIKE '-url hcp://services/centers/support_topic=\%\%s') OR Details='http://go.microsoft.com/fwlink/events.asp' OR Details='(Empty)'))

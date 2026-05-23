@@ -1,0 +1,14 @@
+id: 59e938ff-0d6d-4dc3-b13f-36cc28734d4e
+name: Execute Code with Pester.bat
+level: 5
+size: '>0'
+active: true
+author:
+- Julia Fomina, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1216
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%Pester%' AND CommandLine ILIKE '%Get-Help%')) OR ((Image ILIKE '%\\cmd.exe' AND (CommandLine ILIKE '%pester%' AND CommandLine ILIKE '%;%')) AND (CommandLine ILIKE '%help%' OR CommandLine ILIKE '%?%'))

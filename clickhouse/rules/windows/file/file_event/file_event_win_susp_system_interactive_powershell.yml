@@ -1,0 +1,12 @@
+id: 5b40a734-99b6-4b98-a1d0-1cea51a08ab2
+name: Suspicious Interactive PowerShell as SYSTEM
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE TargetFilename IN ('C:\\Windows\\System32\\config\\systemprofile\\AppData\\Roaming\\Microsoft\\Windows\\PowerShell\\PSReadLine\\ConsoleHost\_history.txt', 'C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Microsoft\\Windows\\PowerShell\\StartupProfileData-Interactive')

@@ -1,0 +1,15 @@
+id: 22d80745-6f2c-46da-826b-77adaededd74
+name: Suspicious Service DACL Modification Via Set-Service Cmdlet - PS
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%-SecurityDescriptorSddl %' OR ScriptBlockText ILIKE '%-sd %') AND ((ScriptBlockText ILIKE '%Set-Service %' AND ScriptBlockText ILIKE '%D;;%') AND (ScriptBlockText ILIKE '%;;;IU%' OR ScriptBlockText ILIKE '%;;;SU%' OR ScriptBlockText ILIKE '%;;;BA%' OR ScriptBlockText ILIKE '%;;;SY%' OR ScriptBlockText ILIKE '%;;;WD%'))

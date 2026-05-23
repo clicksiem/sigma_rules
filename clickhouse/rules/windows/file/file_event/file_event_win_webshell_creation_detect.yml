@@ -1,0 +1,12 @@
+id: 39f1f9f2-9636-45de-98f6-a4046aa8e4b9
+name: Potential Webshell Creation On Static Website
+level: 5
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community, Tim Shelton, Thurein Oo
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE ((TargetFilename ILIKE '%\\inetpub\\wwwroot\\%' AND (TargetFilename ILIKE '%.ashx%' OR TargetFilename ILIKE '%.asp%' OR TargetFilename ILIKE '%.ph%' OR TargetFilename ILIKE '%.soap%')) OR ((TargetFilename ILIKE '%\\www\\%' OR TargetFilename ILIKE '%\\htdocs\\%' OR TargetFilename ILIKE '%\\html\\%') AND TargetFilename ILIKE '%.ph%')) AND (NOT ((TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%' OR TargetFilename ILIKE '%\\Windows\\Temp\\%') OR Image='System' OR TargetFilename ILIKE '%\\xampp%'))

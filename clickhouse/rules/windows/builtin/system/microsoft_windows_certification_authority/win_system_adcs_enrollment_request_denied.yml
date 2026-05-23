@@ -1,0 +1,13 @@
+id: 994bfd6d-0a2e-481e-a861-934069fcf5f5
+name: Active Directory Certificate Services Denied Certificate Enrollment Request
+level: 3
+size: '>0'
+active: true
+author:
+- '@SerkinValery'
+group: windows
+tags:
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1553.004
+rule: SELECT * FROM logs WHERE Provider_Name='Microsoft-Windows-CertificationAuthority' AND EventID=53

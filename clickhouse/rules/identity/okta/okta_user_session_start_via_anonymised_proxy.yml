@@ -1,0 +1,12 @@
+id: bde30855-5c53-4c18-ae90-1ff79ebc9578
+name: Okta User Session Start Via An Anonymising Proxy Service
+level: 8
+size: '>0'
+active: true
+author:
+- kelnage
+group: okta
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE eventType='user.session.start' AND `securityContext.isProxy`='true'

@@ -1,0 +1,12 @@
+id: 2837e152-93c8-43d2-85ba-c3cd3c2ae614
+name: Powershell Local Email Collection
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1114.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-Inbox.ps1%' OR ScriptBlockText ILIKE '%Microsoft.Office.Interop.Outlook%' OR ScriptBlockText ILIKE '%Microsoft.Office.Interop.Outlook.olDefaultFolders%' OR ScriptBlockText ILIKE '%-comobject outlook.application%'

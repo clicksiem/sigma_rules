@@ -1,0 +1,12 @@
+id: 11701de9-d5a5-44aa-8238-84252f131895
+name: Docker Container Discovery Via Dockerenv Listing
+level: 3
+size: '>0'
+active: true
+author:
+- Seth Hanford
+group: linux
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/cat' OR Image ILIKE '%/dir' OR Image ILIKE '%/find' OR Image ILIKE '%/ls' OR Image ILIKE '%/stat' OR Image ILIKE '%/test' OR Image ILIKE '%grep') AND CommandLine ILIKE '%.dockerenv'

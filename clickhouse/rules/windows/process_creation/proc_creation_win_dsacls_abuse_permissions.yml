@@ -1,0 +1,12 @@
+id: 01c42d3c-242d-4655-85b2-34f1739632f7
+name: Potentially Over Permissive Permissions Granted Using Dsacls.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dsacls.exe' OR OriginalFileName='DSACLS.EXE') AND CommandLine ILIKE '% /G %' AND (CommandLine ILIKE '%GR%' OR CommandLine ILIKE '%GE%' OR CommandLine ILIKE '%GW%' OR CommandLine ILIKE '%GA%' OR CommandLine ILIKE '%WP%' OR CommandLine ILIKE '%WD%')

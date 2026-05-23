@@ -1,0 +1,12 @@
+id: 0f6da907-5854-4be6-859a-e9958747b0aa
+name: Potential DLL Injection Via AccCheckConsole
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- detection.threat-hunting
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\AccCheckConsole.exe' OR OriginalFileName='AccCheckConsole.exe') AND (CommandLine ILIKE '% -hwnd%' OR CommandLine ILIKE '% -process %' OR CommandLine ILIKE '% -window %')

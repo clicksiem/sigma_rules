@@ -1,0 +1,18 @@
+id: cd55f721-5623-4663-bd9b-5229cab5237d
+name: OpenCanary - SSH New Connection Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.lateral-movement
+- attack.persistence
+- attack.stealth
+- attack.t1133
+- attack.t1021
+- attack.t1078
+rule: SELECT * FROM logs WHERE logtype=4000

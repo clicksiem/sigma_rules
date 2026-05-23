@@ -1,0 +1,13 @@
+id: 871b9555-69ca-4993-99d3-35a59f9f3599
+name: Suspicious UltraVNC Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Bhabesh Raj
+group: windows
+tags:
+- attack.lateral-movement
+- attack.g0047
+- attack.t1021.005
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%-autoreconnect %' AND CommandLine ILIKE '%-connect %' AND CommandLine ILIKE '%-id:%'

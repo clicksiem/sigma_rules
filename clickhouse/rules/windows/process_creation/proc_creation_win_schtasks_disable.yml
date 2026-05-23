@@ -1,0 +1,12 @@
+id: 9ac94dc8-9042-493c-ba45-3b5e7c86b980
+name: Disable Important Scheduled Task
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems), X__Junior
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' OR OriginalFileName='schtasks.exe') AND (CommandLine ILIKE '%-disable%' OR CommandLine ILIKE '%/disable%' OR CommandLine ILIKE '%–disable%' OR CommandLine ILIKE '%—disable%' OR CommandLine ILIKE '%―disable%') AND (CommandLine ILIKE '%\\Windows\\BitLocker%' OR CommandLine ILIKE '%\\Windows\\ExploitGuard%' OR CommandLine ILIKE '%\\Windows\\ExploitGuard\\ExploitGuard MDM policy Refresh%' OR CommandLine ILIKE '%\\Windows\\SystemRestore\\SR%' OR CommandLine ILIKE '%\\Windows\\UpdateOrchestrator\\%' OR CommandLine ILIKE '%\\Windows\\Windows Defender\\%' OR CommandLine ILIKE '%\\Windows\\WindowsBackup\\%' OR CommandLine ILIKE '%\\Windows\\WindowsUpdate\\%')

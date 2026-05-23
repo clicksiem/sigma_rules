@@ -1,0 +1,14 @@
+id: fdb62a13-9a81-4e5c-a38f-ea93a16f6d7c
+name: PowerShell Base64 Encoded FromBase64String Cmdlet
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1140
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%OjpGcm9tQmFzZTY0U3RyaW5n%' OR CommandLine ILIKE '%o6RnJvbUJhc2U2NFN0cmluZ%' OR CommandLine ILIKE '%6OkZyb21CYXNlNjRTdHJpbm%' OR (CommandLine ILIKE '%OgA6AEYAcgBvAG0AQgBhAHMAZQA2ADQAUwB0AHIAaQBuAGcA%' OR CommandLine ILIKE '%oAOgBGAHIAbwBtAEIAYQBzAGUANgA0AFMAdAByAGkAbgBnA%' OR CommandLine ILIKE '%6ADoARgByAG8AbQBCAGEAcwBlADYANABTAHQAcgBpAG4AZw%')

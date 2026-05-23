@@ -1,0 +1,15 @@
+id: 3e8207c5-fcd2-4ea6-9418-15d45b4890e4
+name: Potential Data Stealing Via Chromium Headless Debugging
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.collection
+- attack.stealth
+- attack.t1185
+- attack.t1564.003
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%--remote-debugging-%' AND CommandLine ILIKE '%--user-data-dir%' AND CommandLine ILIKE '%--headless%'

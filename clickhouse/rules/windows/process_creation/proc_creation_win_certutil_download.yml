@@ -1,0 +1,14 @@
+id: 19b08b1c-861d-4e75-a1ef-ea0c1baf202b
+name: Suspicious Download Via Certutil.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certutil.exe' OR OriginalFileName='CertUtil.exe') AND (CommandLine ILIKE '%urlcache %' OR CommandLine ILIKE '%verifyctl %' OR CommandLine ILIKE '%URL %') AND CommandLine ILIKE '%http%'

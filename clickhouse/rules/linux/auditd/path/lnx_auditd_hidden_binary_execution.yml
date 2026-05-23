@@ -1,0 +1,15 @@
+id: 9e1bef8d-0fff-46f6-8465-9aa54e128c1e
+name: Use Of Hidden Paths Or Files
+level: 3
+size: '>0'
+active: true
+author:
+- David Burkett, @signalblur
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (type='PATH' AND name ILIKE '%/.%') AND (NOT (name ILIKE '%/.cache/%' OR name ILIKE '%/.config/%' OR name ILIKE '%/.pyenv/%' OR name ILIKE '%/.rustup/toolchains%'))

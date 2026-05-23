@@ -1,0 +1,13 @@
+id: 9c8c7000-3065-44a8-a555-79bcba5d9955
+name: MSDT Execution Via Answer File
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\msdt.exe' AND CommandLine ILIKE '%\\WINDOWS\\diagnostics\\index\\PCWDiagnostic.xml%' AND (CommandLine ILIKE '% -af %' OR CommandLine ILIKE '% /af %' OR CommandLine ILIKE '% –af %' OR CommandLine ILIKE '% —af %' OR CommandLine ILIKE '% ―af %')) AND (NOT ParentImage ILIKE '%\\pcwrun.exe')

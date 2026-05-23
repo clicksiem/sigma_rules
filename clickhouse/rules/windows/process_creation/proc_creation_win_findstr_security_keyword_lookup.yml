@@ -1,0 +1,12 @@
+id: 4fe074b4-b833-4081-8f24-7dcfeca72b42
+name: Security Tools Keyword Lookup Via Findstr.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1518.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\find.exe' OR Image ILIKE '%\\findstr.exe') OR (OriginalFileName IN ('FIND.EXE', 'FINDSTR.EXE'))) AND (CommandLine ILIKE '% avira' OR CommandLine ILIKE '% avira"' OR CommandLine ILIKE '% cb' OR CommandLine ILIKE '% cb"' OR CommandLine ILIKE '% cylance' OR CommandLine ILIKE '% cylance"' OR CommandLine ILIKE '% defender' OR CommandLine ILIKE '% defender"' OR CommandLine ILIKE '% kaspersky' OR CommandLine ILIKE '% kaspersky"' OR CommandLine ILIKE '% kes' OR CommandLine ILIKE '% kes"' OR CommandLine ILIKE '% mc' OR CommandLine ILIKE '% mc"' OR CommandLine ILIKE '% sec' OR CommandLine ILIKE '% sec"' OR CommandLine ILIKE '% sentinel' OR CommandLine ILIKE '% sentinel"' OR CommandLine ILIKE '% symantec' OR CommandLine ILIKE '% symantec"' OR CommandLine ILIKE '% virus' OR CommandLine ILIKE '% virus"')

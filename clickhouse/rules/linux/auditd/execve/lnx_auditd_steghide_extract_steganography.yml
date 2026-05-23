@@ -1,0 +1,12 @@
+id: a5a827d9-1bbe-4952-9293-c59d897eb41b
+name: Steganography Extract Files with Steghide
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.stealth
+- attack.t1027.003
+rule: SELECT * FROM logs WHERE type='EXECVE' AND a0='steghide' AND a1='extract' AND a2='-sf' AND (a3 ILIKE '%.jpg' OR a3 ILIKE '%.png')

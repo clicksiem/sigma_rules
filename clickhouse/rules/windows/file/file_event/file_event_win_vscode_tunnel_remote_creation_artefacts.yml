@@ -1,0 +1,11 @@
+id: 56e05d41-ce99-4ecd-912d-93f019ee0b71
+name: Visual Studio Code Tunnel Remote File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\servers\\Stable-%' AND Image ILIKE '%\\server\\node.exe' AND TargetFilename ILIKE '%\\.vscode-server\\data\\User\\History\\%'

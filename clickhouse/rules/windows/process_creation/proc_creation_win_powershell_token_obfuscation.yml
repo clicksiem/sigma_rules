@@ -1,0 +1,12 @@
+id: deb9b646-a508-44ee-b7c9-d8965921c6b6
+name: Powershell Token Obfuscation - Process Creation
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.009
+rule: SELECT * FROM logs WHERE (match(CommandLine, '\w+`(?:\w+|-|.)`[\w+|\s]') OR match(CommandLine, '"(?:\{\d\})+"\s*-f') OR match(CommandLine, '(?i)\$\{`?e`?n`?v`?:`?p`?a`?t`?h`?\}')) AND (NOT CommandLine ILIKE '%${env:path}%')

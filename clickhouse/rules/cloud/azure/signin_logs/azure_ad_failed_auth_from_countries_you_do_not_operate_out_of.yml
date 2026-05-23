@@ -1,0 +1,17 @@
+id: 28870ae4-6a13-4616-bd1a-235a7fad7458
+name: Failed Authentications From Countries You Do Not Operate Out Of
+level: 3
+size: '>0'
+active: true
+author:
+- MikeDuddington, '@dudders1'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.credential-access
+- attack.stealth
+- attack.t1078.004
+- attack.t1110
+rule: SELECT * FROM logs WHERE (NOT Status='Success') AND (NOT Location ILIKE '%<Countries you DO operate out of e,g GB, use OR for multiple>%')

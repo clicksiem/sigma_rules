@@ -1,0 +1,14 @@
+id: 30a8cb77-8eb3-4cfb-8e79-ad457c5a4592
+name: Renamed Powershell Under Powershell Channel
+level: 3
+size: '>0'
+active: true
+author:
+- Harish Segar, frack113
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE Data ILIKE '%HostName=ConsoleHost%' AND (NOT ((Data ILIKE '%HostApplication=powershell%' OR Data ILIKE '%HostApplication=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell%' OR Data ILIKE '%HostApplication=C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell%' OR Data ILIKE '%HostApplication=C:/Windows/System32/WindowsPowerShell/v1.0/powershell%' OR Data ILIKE '%HostApplication=C:/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell%' OR Data ILIKE '%HostApplication=C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe%' OR Data ILIKE '%HostApplication=C:\\\\WINDOWS\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe%') OR match(Data, 'HostId=[a-zA-Z0-9-]{36}\s+EngineVersion=')))

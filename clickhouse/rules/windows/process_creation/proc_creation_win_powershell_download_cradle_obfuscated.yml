@@ -1,0 +1,14 @@
+id: 44e24481-6202-4c62-9127-5a0ae8e3fe3d
+name: Obfuscated PowerShell OneLiner Execution
+level: 8
+size: '>0'
+active: true
+author:
+- '@Kostastsale, TheDFIRReport'
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1059.001
+- attack.t1685
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\powershell.exe' AND (CommandLine ILIKE '%http://127.0.0.1%' AND CommandLine ILIKE '%\%{(IRM $\_)}%' AND CommandLine ILIKE '%Invoke%')

@@ -1,0 +1,12 @@
+id: 4782eb5a-a513-4523-a0ac-f3082b26ac5c
+name: Mshtml.DLL RunHTMLApplication Suspicious Usage
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems),  Florian Roth (Nextron Systems), Josh Nickels, frack113, Zaw Min Htun (ZETA)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\..\\%' AND CommandLine ILIKE '%mshtml%') AND (CommandLine ILIKE '%#135%' OR CommandLine ILIKE '%RunHTMLApplication%')

@@ -1,0 +1,12 @@
+id: a2e5019d-a658-4c6a-92bf-7197b54e2cae
+name: PowerShell Scripts Installed as Services
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND (ImagePath ILIKE '%powershell%' OR ImagePath ILIKE '%pwsh%')

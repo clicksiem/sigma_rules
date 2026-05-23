@@ -1,0 +1,12 @@
+id: 9a7a0393-2144-4626-9bf1-7c2f5a7321db
+name: System Network Connections Discovery - MacOs
+level: 1
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community
+group: macos
+tags:
+- attack.discovery
+- attack.t1049
+rule: SELECT * FROM logs WHERE Image ILIKE '%/who' OR Image ILIKE '%/w' OR Image ILIKE '%/last' OR Image ILIKE '%/lsof' OR Image ILIKE '%/netstat'

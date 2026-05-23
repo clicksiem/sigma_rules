@@ -1,0 +1,12 @@
+id: f24bcaea-0cd1-11eb-adc1-0242ac120002
+name: Uncommon  Assistive Technology Applications Execution Via AtBroker.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Mateusz Wydra, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\AtBroker.exe' OR OriginalFileName='AtBroker.exe') AND CommandLine ILIKE '%start%') AND (NOT (CommandLine ILIKE '%animations%' OR CommandLine ILIKE '%audiodescription%' OR CommandLine ILIKE '%caretbrowsing%' OR CommandLine ILIKE '%caretwidth%' OR CommandLine ILIKE '%colorfiltering%' OR CommandLine ILIKE '%cursorindicator%' OR CommandLine ILIKE '%cursorscheme%' OR CommandLine ILIKE '%filterkeys%' OR CommandLine ILIKE '%focusborderheight%' OR CommandLine ILIKE '%focusborderwidth%' OR CommandLine ILIKE '%highcontrast%' OR CommandLine ILIKE '%keyboardcues%' OR CommandLine ILIKE '%keyboardpref%' OR CommandLine ILIKE '%livecaptions%' OR CommandLine ILIKE '%magnifierpane%' OR CommandLine ILIKE '%messageduration%' OR CommandLine ILIKE '%minimumhitradius%' OR CommandLine ILIKE '%mousekeys%' OR CommandLine ILIKE '%Narrator%' OR CommandLine ILIKE '%osk%' OR CommandLine ILIKE '%overlappedcontent%' OR CommandLine ILIKE '%showsounds%' OR CommandLine ILIKE '%soundsentry%' OR CommandLine ILIKE '%speechreco%' OR CommandLine ILIKE '%stickykeys%' OR CommandLine ILIKE '%togglekeys%' OR CommandLine ILIKE '%voiceaccess%' OR CommandLine ILIKE '%windowarranging%' OR CommandLine ILIKE '%windowtracking%' OR CommandLine ILIKE '%windowtrackingtimeout%' OR CommandLine ILIKE '%windowtrackingzorder%')) AND (NOT CommandLine ILIKE '%Oracle\_JavaAccessBridge%')

@@ -1,0 +1,12 @@
+id: 8e0bb260-d4b2-4fff-bb8d-3f82118e6892
+name: Potentially Suspicious CMD Shell Output Redirect
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND ((CommandLine ILIKE '%>_\%APPDATA\%\\%' OR CommandLine ILIKE '%>_\%TEMP\%\\%' OR CommandLine ILIKE '%>_\%TMP\%\\%' OR CommandLine ILIKE '%>_\%USERPROFILE\%\\%' OR CommandLine ILIKE '%>_C:\\ProgramData\\%' OR CommandLine ILIKE '%>_C:\\Temp\\%' OR CommandLine ILIKE '%>_C:\\Users\\Public\\%' OR CommandLine ILIKE '%>_C:\\Windows\\Temp\\%') OR ((CommandLine ILIKE '% >%' OR CommandLine ILIKE '%">%' OR CommandLine ILIKE '%''>%') AND (CommandLine ILIKE '%C:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\%')))

@@ -1,0 +1,11 @@
+id: cf2e938e-9a3e-4fe8-a347-411642b28a9f
+name: Potential PowerShell Execution Policy Tampering - ProcCreation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\ShellIds\\Microsoft.PowerShell\\ExecutionPolicy%' OR CommandLine ILIKE '%\\Policies\\Microsoft\\Windows\\PowerShell\\ExecutionPolicy%') AND (CommandLine ILIKE '%Bypass%' OR CommandLine ILIKE '%RemoteSigned%' OR CommandLine ILIKE '%Unrestricted%')

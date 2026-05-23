@@ -1,0 +1,13 @@
+id: 52788a70-f1da-40dd-8fbd-73b5865d6568
+name: JScript Compiler Execution
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\jsc.exe' OR OriginalFileName='jsc.exe'

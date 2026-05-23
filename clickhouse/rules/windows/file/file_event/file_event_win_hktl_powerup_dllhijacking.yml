@@ -1,0 +1,15 @@
+id: 602a1f13-c640-4d73-b053-be9a2fa58b96
+name: HackTool - Powerup Write Hijack DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Subhash Popuri (@pbssubhash)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND TargetFilename ILIKE '%.bat'

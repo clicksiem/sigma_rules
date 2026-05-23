@@ -1,0 +1,13 @@
+id: c172b7b5-f3a1-4af2-90b7-822c63df86cb
+name: Mask System Power Settings Via Systemctl
+level: 8
+size: '>0'
+active: true
+author:
+- Milad Cheraghi, Nasreddine Bencherchali
+group: linux
+tags:
+- attack.persistence
+- attack.impact
+- attack.t1653
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/systemctl' AND CommandLine ILIKE '% mask%') AND (CommandLine ILIKE '%suspend.target%' OR CommandLine ILIKE '%hibernate.target%' OR CommandLine ILIKE '%hybrid-sleep.target%')

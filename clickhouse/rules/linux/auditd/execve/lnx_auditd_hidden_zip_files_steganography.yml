@@ -1,0 +1,12 @@
+id: 45810b50-7edc-42ca-813b-bdac02fb946b
+name: Steganography Hide Zip Information in Picture File
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.stealth
+- attack.t1027.003
+rule: SELECT * FROM logs WHERE (type='EXECVE' AND a0='cat') AND (a1 ILIKE '%.jpg' OR a1 ILIKE '%.png') AND a2 ILIKE '%.zip'

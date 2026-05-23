@@ -1,0 +1,12 @@
+id: fec96f39-988b-4586-b746-b93d59fd1922
+name: ScreenConnect Temporary Installation Artefact
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Bin\\ScreenConnect.%'

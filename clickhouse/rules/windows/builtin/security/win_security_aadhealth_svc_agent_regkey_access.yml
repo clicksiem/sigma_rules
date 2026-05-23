@@ -1,0 +1,12 @@
+id: 1d2ab8ac-1a01-423b-9c39-001510eae8e8
+name: Azure AD Health Service Agents Registry Keys Access
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: windows
+tags:
+- attack.discovery
+- attack.t1012
+rule: SELECT * FROM logs WHERE ((EventID IN (4656, 4663)) AND ObjectType='Key' AND ObjectName ILIKE '\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\ADHealthAgent') AND (NOT (ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.DiagnosticsAgent.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.InsightsService.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.MonitoringAgent.Startup.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Adfs.PshSurrogate.exe%' OR ProcessName ILIKE '%Microsoft.Identity.Health.Common.Clients.ResourceMonitor.exe%'))

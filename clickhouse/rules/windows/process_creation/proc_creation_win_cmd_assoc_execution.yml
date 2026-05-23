@@ -1,0 +1,13 @@
+id: 3d3aa6cd-6272-44d6-8afc-7e88dfef7061
+name: Change Default File Association Via Assoc
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND CommandLine ILIKE '%assoc%'

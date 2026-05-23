@@ -1,0 +1,12 @@
+id: abae8fec-57bd-4f87-aff6-6e3db989843d
+name: AWS Snapshot Backup Exfiltration
+level: 5
+size: '>0'
+active: true
+author:
+- Darin Smith
+group: aws
+tags:
+- attack.exfiltration
+- attack.t1537
+rule: SELECT * FROM logs WHERE eventSource='ec2.amazonaws.com' AND eventName='ModifySnapshotAttribute'

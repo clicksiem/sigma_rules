@@ -1,0 +1,13 @@
+id: 6bd75993-9888-4f91-9404-e1e4e4e34b77
+name: HackTool - LocalPotato Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- cve.2023-21746
+- attack.stealth
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\LocalPotato.exe' OR (CommandLine ILIKE '%.exe -i C:\\%' AND CommandLine ILIKE '%-o Windows\\%') OR (Hashes ILIKE '%IMPHASH=E1742EE971D6549E8D4D81115F88F1FC%' OR Hashes ILIKE '%IMPHASH=DD82066EFBA94D7556EF582F247C8BB5%')

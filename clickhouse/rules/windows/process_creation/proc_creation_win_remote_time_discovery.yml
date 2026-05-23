@@ -1,0 +1,12 @@
+id: b243b280-65fe-48df-ba07-6ddea7646427
+name: Discovery of a System Time
+level: 3
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.discovery
+- attack.t1124
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') AND CommandLine ILIKE '%time%') OR (Image ILIKE '%\\w32tm.exe' AND CommandLine ILIKE '%tz%')

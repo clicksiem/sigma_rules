@@ -1,0 +1,12 @@
+id: 1cdd9a09-06c9-4769-99ff-626e2b3991b8
+name: Suspicious Double Extension File Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), @blu3_team (idea), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1566.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%      .exe' OR Image ILIKE '%\_\_\_\_\_\_.exe' OR Image ILIKE '%.doc.exe' OR Image ILIKE '%.doc.js' OR Image ILIKE '%.docx.exe' OR Image ILIKE '%.docx.js' OR Image ILIKE '%.gif.exe' OR Image ILIKE '%.jpeg.exe' OR Image ILIKE '%.jpg.exe' OR Image ILIKE '%.mkv.exe' OR Image ILIKE '%.mov.exe' OR Image ILIKE '%.mp3.exe' OR Image ILIKE '%.mp4.exe' OR Image ILIKE '%.pdf.exe' OR Image ILIKE '%.pdf.js' OR Image ILIKE '%.png.exe' OR Image ILIKE '%.ppt.exe' OR Image ILIKE '%.ppt.js' OR Image ILIKE '%.pptx.exe' OR Image ILIKE '%.pptx.js' OR Image ILIKE '%.rtf.exe' OR Image ILIKE '%.rtf.js' OR Image ILIKE '%.svg.exe' OR Image ILIKE '%.txt.exe' OR Image ILIKE '%.txt.js' OR Image ILIKE '%.xls.exe' OR Image ILIKE '%.xls.js' OR Image ILIKE '%.xlsx.exe' OR Image ILIKE '%.xlsx.js' OR Image ILIKE '%⠀⠀⠀⠀⠀⠀.exe') AND (CommandLine ILIKE '%      .exe%' OR CommandLine ILIKE '%\_\_\_\_\_\_.exe%' OR CommandLine ILIKE '%.doc.exe%' OR CommandLine ILIKE '%.doc.js%' OR CommandLine ILIKE '%.docx.exe%' OR CommandLine ILIKE '%.docx.js%' OR CommandLine ILIKE '%.gif.exe%' OR CommandLine ILIKE '%.jpeg.exe%' OR CommandLine ILIKE '%.jpg.exe%' OR CommandLine ILIKE '%.mkv.exe%' OR CommandLine ILIKE '%.mov.exe%' OR CommandLine ILIKE '%.mp3.exe%' OR CommandLine ILIKE '%.mp4.exe%' OR CommandLine ILIKE '%.pdf.exe%' OR CommandLine ILIKE '%.pdf.js%' OR CommandLine ILIKE '%.png.exe%' OR CommandLine ILIKE '%.ppt.exe%' OR CommandLine ILIKE '%.ppt.js%' OR CommandLine ILIKE '%.pptx.exe%' OR CommandLine ILIKE '%.pptx.js%' OR CommandLine ILIKE '%.rtf.exe%' OR CommandLine ILIKE '%.rtf.js%' OR CommandLine ILIKE '%.svg.exe%' OR CommandLine ILIKE '%.txt.exe%' OR CommandLine ILIKE '%.txt.js%' OR CommandLine ILIKE '%.xls.exe%' OR CommandLine ILIKE '%.xls.js%' OR CommandLine ILIKE '%.xlsx.exe%' OR CommandLine ILIKE '%.xlsx.js%' OR CommandLine ILIKE '%⠀⠀⠀⠀⠀⠀.exe%')

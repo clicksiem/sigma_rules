@@ -1,0 +1,12 @@
+id: 5b768e71-86f2-4879-b448-81061cbae951
+name: Suspicious Manipulation Of Default Accounts Via Net.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND CommandLine ILIKE '% user %' AND (CommandLine ILIKE '% Järjestelmänvalvoja %' OR CommandLine ILIKE '% Rendszergazda %' OR CommandLine ILIKE '% Администратор %' OR CommandLine ILIKE '% Administrateur %' OR CommandLine ILIKE '% Administrador %' OR CommandLine ILIKE '% Administratör %' OR CommandLine ILIKE '% Administrator %' OR CommandLine ILIKE '% guest %' OR CommandLine ILIKE '% DefaultAccount %' OR CommandLine ILIKE '% "Järjestelmänvalvoja" %' OR CommandLine ILIKE '% "Rendszergazda" %' OR CommandLine ILIKE '% "Администратор" %' OR CommandLine ILIKE '% "Administrateur" %' OR CommandLine ILIKE '% "Administrador" %' OR CommandLine ILIKE '% "Administratör" %' OR CommandLine ILIKE '% "Administrator" %' OR CommandLine ILIKE '% "guest" %' OR CommandLine ILIKE '% "DefaultAccount" %' OR CommandLine ILIKE '% ''Järjestelmänvalvoja'' %' OR CommandLine ILIKE '% ''Rendszergazda'' %' OR CommandLine ILIKE '% ''Администратор'' %' OR CommandLine ILIKE '% ''Administrateur'' %' OR CommandLine ILIKE '% ''Administrador'' %' OR CommandLine ILIKE '% ''Administratör'' %' OR CommandLine ILIKE '% ''Administrator'' %' OR CommandLine ILIKE '% ''guest'' %' OR CommandLine ILIKE '% ''DefaultAccount'' %')) AND (NOT (CommandLine ILIKE '%guest%' AND CommandLine ILIKE '%/active no%'))

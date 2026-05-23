@@ -1,0 +1,15 @@
+id: 6b98b92b-4f00-4f62-b4fe-4d1920215771
+name: Potential DLL Sideloading Of Non-Existent DLLs From System Folders
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), SBousseaden
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%:\\Windows\\System32\\axeonoffhelper.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\cdpsgshims.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\oci.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\offdmpsvc.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\shellchromeapi.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\TSMSISrv.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\TSVIPSrv.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\wbem\\wbemcomn.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\WLBSCTRL.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\wow64log.dll' OR ImageLoaded ILIKE '%:\\Windows\\System32\\WptsExtensions.dll') AND (NOT (Signed='true' AND SignatureStatus='Valid' AND Signature='Microsoft Windows'))

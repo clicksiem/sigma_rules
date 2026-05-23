@@ -1,0 +1,12 @@
+id: aa8e035d-7be4-48d3-a944-102aec04400d
+name: Suspicious Extrac32 Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%extrac32.exe%' OR Image ILIKE '%\\extrac32.exe' OR OriginalFileName='extrac32.exe') AND CommandLine ILIKE '%.cab%' AND (CommandLine ILIKE '%/C%' OR CommandLine ILIKE '%/Y%' OR CommandLine ILIKE '% \\\\%')

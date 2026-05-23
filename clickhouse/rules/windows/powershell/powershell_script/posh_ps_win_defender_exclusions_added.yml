@@ -1,0 +1,14 @@
+id: c1344fa2-323b-4d2e-9176-84b4d4821c88
+name: Windows Defender Exclusions Added - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '% -ExclusionPath %' OR ScriptBlockText ILIKE '% -ExclusionExtension %' OR ScriptBlockText ILIKE '% -ExclusionProcess %' OR ScriptBlockText ILIKE '% -ExclusionIpAddress %') AND (ScriptBlockText ILIKE '%Add-MpPreference %' OR ScriptBlockText ILIKE '%Set-MpPreference %')

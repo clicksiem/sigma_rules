@@ -1,0 +1,12 @@
+id: 3908d64a-3c06-4091-b503-b3a94424533b
+name: New Github Organization Member Added
+level: 1
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: github
+tags:
+- attack.persistence
+- attack.t1136.003
+rule: SELECT * FROM logs WHERE action IN ('org.add\_member', 'org.invite\_member')

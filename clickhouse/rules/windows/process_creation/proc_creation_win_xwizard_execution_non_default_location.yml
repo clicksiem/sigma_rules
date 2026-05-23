@@ -1,0 +1,15 @@
+id: 193d5ccd-6f59-40c6-b5b0-8e32d5ddd3d1
+name: Xwizard.EXE Execution From Non-Default Location
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\xwizard.exe' OR OriginalFileName='xwizard.exe') AND (NOT (Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%' OR Image ILIKE 'C:\\Windows\\WinSxS\\%'))

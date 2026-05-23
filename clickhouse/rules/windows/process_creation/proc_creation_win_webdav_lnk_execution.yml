@@ -1,0 +1,13 @@
+id: 1412aa78-a24c-4abd-83df-767dfb2c5bbe
+name: Potentially Suspicious WebDAV LNK Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Micah Babinski
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.t1204
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\explorer.exe' AND (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe') AND CommandLine ILIKE '%\\DavWWWRoot\\%'

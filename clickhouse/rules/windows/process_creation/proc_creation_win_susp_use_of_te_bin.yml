@@ -1,0 +1,12 @@
+id: 634b00d5-ccc3-4a06-ae3b-0ec8444dd51b
+name: Malicious Windows Script Components File Execution by TAEF Detection
+level: 3
+size: '>0'
+active: true
+author:
+- Agro (@agro_sev) oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\te.exe' OR ParentImage ILIKE '%\\te.exe' OR OriginalFileName ILIKE '\\te.exe'

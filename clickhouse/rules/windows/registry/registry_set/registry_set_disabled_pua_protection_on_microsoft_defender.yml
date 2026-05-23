@@ -1,0 +1,12 @@
+id: 8ffc5407-52e3-478f-9596-0a7371eafe13
+name: Disable PUA Protection on Windows Defender
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Policies\\Microsoft\\Windows Defender\\PUAProtection%' AND Details='DWORD (0x00000000)'

@@ -1,0 +1,11 @@
+id: 5394fcc7-aeb2-43b5-9a09-cac9fc5edcd5
+name: Suspicious Execution Location Of Wermgr.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\wermgr.exe' AND (NOT (Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%' OR Image ILIKE 'C:\\Windows\\WinSxS\\%'))

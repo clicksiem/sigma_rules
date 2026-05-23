@@ -1,0 +1,13 @@
+id: b98968aa-dbc0-4a9c-ac35-108363cbf8d5
+name: WINEKEY Registry Modification
+level: 8
+size: '>0'
+active: true
+author:
+- omkar72
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Backup Mgr'

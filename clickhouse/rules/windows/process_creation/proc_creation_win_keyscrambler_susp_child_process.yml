@@ -1,0 +1,16 @@
+id: ca5583e9-8f80-46ac-ab91-7f314d13b984
+name: Potentially Suspicious Child Process of KeyScrambler.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1203
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\KeyScrambler.exe' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wscript.exe') OR (OriginalFileName IN ('Cmd.Exe', 'cscript.exe', 'mshta.exe', 'PowerShell.EXE', 'pwsh.dll', 'regsvr32.exe', 'RUNDLL32.EXE', 'wscript.exe')))

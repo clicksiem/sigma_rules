@@ -1,0 +1,13 @@
+id: b98a10af-1e1e-44a7-bab2-4cc026917648
+name: New PDQDeploy Service - Client Side
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND (ImagePath ILIKE '%PDQDeployRunner-%' OR ServiceName ILIKE 'PDQDeployRunner-%')

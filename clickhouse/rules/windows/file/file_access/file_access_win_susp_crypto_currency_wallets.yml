@@ -1,0 +1,12 @@
+id: f41b0311-44f9-44f0-816d-dd45e39d4bc8
+name: Access To Crypto Currency Wallets By Uncommon Applications
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.t1003
+- attack.credential-access
+rule: SELECT * FROM logs WHERE ((FileName ILIKE '%\\AppData\\Roaming\\Ethereum\\keystore\\%' OR FileName ILIKE '%\\AppData\\Roaming\\EthereumClassic\\keystore\\%' OR FileName ILIKE '%\\AppData\\Roaming\\monero\\wallets\\%') OR (FileName ILIKE '%\\AppData\\Roaming\\Bitcoin\\wallet.dat' OR FileName ILIKE '%\\AppData\\Roaming\\BitcoinABC\\wallet.dat' OR FileName ILIKE '%\\AppData\\Roaming\\BitcoinSV\\wallet.dat' OR FileName ILIKE '%\\AppData\\Roaming\\DashCore\\wallet.dat' OR FileName ILIKE '%\\AppData\\Roaming\\DogeCoin\\wallet.dat' OR FileName ILIKE '%\\AppData\\Roaming\\Litecoin\\wallet.dat' OR FileName ILIKE '%\\AppData\\Roaming\\Ripple\\wallet.dat' OR FileName ILIKE '%\\AppData\\Roaming\\Zcash\\wallet.dat')) AND (NOT (Image='System' OR (Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Windows\\system32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%'))) AND (NOT (Image ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\%' AND (Image ILIKE '%\\MpCopyAccelerator.exe' OR Image ILIKE '%\\MsMpEng.exe')))

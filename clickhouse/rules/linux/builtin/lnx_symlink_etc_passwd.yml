@@ -1,0 +1,12 @@
+id: c67fc22a-0be5-4b4f-aad5-2b32c4b69523
+name: Symlink Etc Passwd
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.t1204.001
+- attack.execution
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'ln -s -f /etc/passwd') OR hasToken(full_log, 'ln -s /etc/passwd')

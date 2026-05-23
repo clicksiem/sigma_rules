@@ -1,0 +1,13 @@
+id: 805c55d9-31e6-4846-9878-c34c75054fe9
+name: Octopus Scanner Malware
+level: 8
+size: '>0'
+active: true
+author:
+- NVISO
+group: windows
+tags:
+- attack.initial-access
+- attack.t1195
+- attack.t1195.001
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\AppData\\Local\\Microsoft\\Cache134.dat' OR TargetFilename ILIKE '%\\AppData\\Local\\Microsoft\\ExplorerSync.db'

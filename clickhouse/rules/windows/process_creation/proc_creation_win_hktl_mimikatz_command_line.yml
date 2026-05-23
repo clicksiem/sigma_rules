@@ -1,0 +1,16 @@
+id: a642964e-bead-4bed-8910-1bb4d63e3b4d
+name: HackTool - Mimikatz Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, oscd.community, David ANDRE (additional keywords), Tim Shelton
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.t1003.002
+- attack.t1003.004
+- attack.t1003.005
+- attack.t1003.006
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%DumpCreds%' OR CommandLine ILIKE '%mimikatz%') OR (CommandLine ILIKE '%::aadcookie%' OR CommandLine ILIKE '%::detours%' OR CommandLine ILIKE '%::memssp%' OR CommandLine ILIKE '%::mflt%' OR CommandLine ILIKE '%::ncroutemon%' OR CommandLine ILIKE '%::ngcsign%' OR CommandLine ILIKE '%::printnightmare%' OR CommandLine ILIKE '%::skeleton%' OR CommandLine ILIKE '%::preshutdown%' OR CommandLine ILIKE '%::mstsc%' OR CommandLine ILIKE '%::multirdp%') OR (CommandLine ILIKE '%rpc::%' OR CommandLine ILIKE '%token::%' OR CommandLine ILIKE '%crypto::%' OR CommandLine ILIKE '%dpapi::%' OR CommandLine ILIKE '%sekurlsa::%' OR CommandLine ILIKE '%kerberos::%' OR CommandLine ILIKE '%lsadump::%' OR CommandLine ILIKE '%privilege::%' OR CommandLine ILIKE '%process::%' OR CommandLine ILIKE '%vault::%')

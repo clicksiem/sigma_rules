@@ -1,0 +1,12 @@
+id: bbb80e91-5746-4fbe-8898-122e2cafdbf4
+name: Suspicious PowerShell Invocations - Generic - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (ContextInfo ILIKE '% -enc %' OR ContextInfo ILIKE '% -EncodedCommand %' OR ContextInfo ILIKE '% -ec %') AND (ContextInfo ILIKE '% -w hidden %' OR ContextInfo ILIKE '% -window hidden %' OR ContextInfo ILIKE '% -windowstyle hidden %' OR ContextInfo ILIKE '% -w 1 %') AND (ContextInfo ILIKE '% -noni %' OR ContextInfo ILIKE '% -noninteractive %')

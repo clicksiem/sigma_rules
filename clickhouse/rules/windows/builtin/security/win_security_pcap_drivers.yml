@@ -1,0 +1,13 @@
+id: 7b687634-ab20-11ea-bb37-0242ac130002
+name: Windows Pcap Drivers
+level: 5
+size: '>0'
+active: true
+author:
+- Cian Heasley
+group: windows
+tags:
+- attack.discovery
+- attack.credential-access
+- attack.t1040
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ServiceFileName ILIKE '%pcap%' OR ServiceFileName ILIKE '%npcap%' OR ServiceFileName ILIKE '%npf%' OR ServiceFileName ILIKE '%nm3%' OR ServiceFileName ILIKE '%ndiscap%' OR ServiceFileName ILIKE '%nmnt%' OR ServiceFileName ILIKE '%windivert%' OR ServiceFileName ILIKE '%USBPcap%' OR ServiceFileName ILIKE '%pktmon%')

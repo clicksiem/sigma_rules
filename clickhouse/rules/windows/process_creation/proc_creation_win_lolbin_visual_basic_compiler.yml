@@ -1,0 +1,12 @@
+id: 7b10f171-7f04-47c7-9fa2-5be43c76e535
+name: Visual Basic Command Line Compiler Usage
+level: 8
+size: '>0'
+active: true
+author:
+- Ensar Şamil, @sblmsrsn, @oscd_initiative
+group: windows
+tags:
+- attack.stealth
+- attack.t1027.004
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\vbc.exe' AND Image ILIKE '%\\cvtres.exe'

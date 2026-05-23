@@ -1,0 +1,15 @@
+id: b2ddd389-f676-4ac4-845a-e00781a48e5f
+name: Using SettingSyncHost.exe as LOLBin
+level: 8
+size: '>0'
+active: true
+author:
+- Anton Kutepov, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.008
+rule: SELECT * FROM logs WHERE (NOT (Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%')) AND (ParentCommandLine ILIKE '%cmd.exe /c%' AND ParentCommandLine ILIKE '%RoamDiag.cmd%' AND ParentCommandLine ILIKE '%-outputpath%')

@@ -1,0 +1,12 @@
+id: 452bce90-6fb0-43cc-97a5-affc283139b3
+name: Suspicious Windows Defender Registry Key Tampering Via Reg.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Swachchhanda Shrawan Poudel, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '%SOFTWARE\\Microsoft\\Windows Defender\\%' OR CommandLine ILIKE '%SOFTWARE\\Policies\\Microsoft\\Windows Defender Security Center%' OR CommandLine ILIKE '%SOFTWARE\\Policies\\Microsoft\\Windows Defender\\%')) AND (((CommandLine ILIKE '% add %' AND CommandLine ILIKE '%d 0%') AND (CommandLine ILIKE '%DisallowExploitProtectionOverride%' OR CommandLine ILIKE '%EnableControlledFolderAccess%' OR CommandLine ILIKE '%MpEnablePus%' OR CommandLine ILIKE '%PUAProtection%' OR CommandLine ILIKE '%SpynetReporting%' OR CommandLine ILIKE '%SubmitSamplesConsent%' OR CommandLine ILIKE '%TamperProtection%')) OR ((CommandLine ILIKE '% add %' AND CommandLine ILIKE '%d 1%') AND (CommandLine ILIKE '%DisableAccess%' OR CommandLine ILIKE '%DisableAntiSpyware%' OR CommandLine ILIKE '%DisableAntiSpywareRealtimeProtection%' OR CommandLine ILIKE '%DisableAntiVirus%' OR CommandLine ILIKE '%DisableAntiVirusSignatures%' OR CommandLine ILIKE '%DisableArchiveScanning%' OR CommandLine ILIKE '%DisableBehaviorMonitoring%' OR CommandLine ILIKE '%DisableBlockAtFirstSeen%' OR CommandLine ILIKE '%DisableCloudProtection%' OR CommandLine ILIKE '%DisableConfig%' OR CommandLine ILIKE '%DisableEnhancedNotifications%' OR CommandLine ILIKE '%DisableIntrusionPreventionSystem%' OR CommandLine ILIKE '%DisableIOAVProtection%' OR CommandLine ILIKE '%DisableNetworkProtection%' OR CommandLine ILIKE '%DisableOnAccessProtection%' OR CommandLine ILIKE '%DisablePrivacyMode%' OR CommandLine ILIKE '%DisableRealtimeMonitoring%' OR CommandLine ILIKE '%DisableRoutinelyTakingAction%' OR CommandLine ILIKE '%DisableScanOnRealtimeEnable%' OR CommandLine ILIKE '%DisableScriptScanning%' OR CommandLine ILIKE '%DisableSecurityCenter%' OR CommandLine ILIKE '%Notification\_Suppress%' OR CommandLine ILIKE '%SignatureDisableUpdateOnStartupWithoutEngine%')))

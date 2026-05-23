@@ -1,0 +1,12 @@
+id: d51694fe-484a-46ac-92d6-969e76d60d10
+name: Access To Potentially Sensitive Sysvol Files By Uncommon Applications
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.006
+rule: SELECT * FROM logs WHERE (FileName ILIKE '\\%' AND (FileName ILIKE '%\\sysvol\\%' AND FileName ILIKE '%\\Policies\\%') AND (FileName ILIKE '%audit.csv' OR FileName ILIKE '%Files.xml' OR FileName ILIKE '%GptTmpl.inf' OR FileName ILIKE '%groups.xml' OR FileName ILIKE '%Registry.pol' OR FileName ILIKE '%Registry.xml' OR FileName ILIKE '%scheduledtasks.xml' OR FileName ILIKE '%scripts.ini' OR FileName ILIKE '%services.xml')) AND (NOT ((Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Windows\\system32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%') OR Image ILIKE 'C:\\Windows\\explorer.exe'))

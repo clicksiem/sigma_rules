@@ -1,0 +1,14 @@
+id: a4c90ea1-2634-4ca0-adbb-35eae169b6fc
+name: ETW Logging Disabled In .NET Processes - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+- attack.t1685
+rule: SELECT * FROM logs WHERE (EventID=4657 AND ObjectName ILIKE '%\\SOFTWARE\\Microsoft\\.NETFramework' AND ObjectValueName='ETWEnabled' AND NewValue=0) OR (EventID=4657 AND ObjectName ILIKE '%\\Environment%' AND (ObjectValueName IN ('COMPlus\_ETWEnabled', 'COMPlus\_ETWFlags')) AND NewValue=0)

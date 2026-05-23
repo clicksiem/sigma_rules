@@ -1,0 +1,14 @@
+id: 4edf51e1-cb83-4e1a-bc39-800e396068e3
+name: Invoke-Obfuscation CLIP+ Launcher - Security
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE EventID=4697 AND (ServiceFileName ILIKE '%cmd%' AND ServiceFileName ILIKE '%&&%' AND ServiceFileName ILIKE '%clipboard]::%')

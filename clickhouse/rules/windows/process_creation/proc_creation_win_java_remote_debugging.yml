@@ -1,0 +1,12 @@
+id: 8f88e3f6-2a49-48f5-a5c4-2f7eedf78710
+name: Java Running with Remote Debugging
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.t1203
+- attack.execution
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%transport=dt\_socket,address=%' AND (CommandLine ILIKE '%jre1.%' OR CommandLine ILIKE '%jdk1.%')) AND (NOT (CommandLine ILIKE '%address=127.0.0.1%' OR CommandLine ILIKE '%address=localhost%'))

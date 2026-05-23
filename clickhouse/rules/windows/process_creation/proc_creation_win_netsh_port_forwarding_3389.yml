@@ -1,0 +1,13 @@
+id: 782d6f3e-4c5d-4b8c-92a3-1d05fed72e63
+name: RDP Port Forwarding Rule Added Via Netsh.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community
+group: windows
+tags:
+- attack.lateral-movement
+- attack.command-and-control
+- attack.t1090
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\netsh.exe' OR OriginalFileName='netsh.exe') AND (CommandLine ILIKE '% i%' AND CommandLine ILIKE '% p%' AND CommandLine ILIKE '%=3389%' AND CommandLine ILIKE '% c%')

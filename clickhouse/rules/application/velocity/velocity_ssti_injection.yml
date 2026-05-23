@@ -1,0 +1,12 @@
+id: 16c86189-b556-4ee8-b4c7-7e350a195a4f
+name: Potential Server Side Template Injection In Velocity
+level: 8
+size: '>0'
+active: true
+author:
+- Moti Harmats
+group: velocity
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'ParseErrorException') OR hasToken(full_log, 'VelocityException') OR hasToken(full_log, 'TemplateInitException')

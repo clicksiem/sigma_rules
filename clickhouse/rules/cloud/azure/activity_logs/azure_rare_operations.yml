@@ -1,0 +1,12 @@
+id: c1182e02-49a3-481c-b3de-0fadc4091488
+name: Rare Subscription-level Operations In Azure
+level: 5
+size: '>0'
+active: true
+author:
+- sawwinnnaung
+group: azure
+tags:
+- attack.t1003
+- attack.credential-access
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'Microsoft.DocumentDB/databaseAccounts/listKeys/action') OR hasToken(full_log, 'Microsoft.Maps/accounts/listKeys/action') OR hasToken(full_log, 'Microsoft.Media/mediaservices/listKeys/action') OR hasToken(full_log, 'Microsoft.CognitiveServices/accounts/listKeys/action') OR hasToken(full_log, 'Microsoft.Storage/storageAccounts/listKeys/action') OR hasToken(full_log, 'Microsoft.Compute/snapshots/write') OR hasToken(full_log, 'Microsoft.Network/networkSecurityGroups/write')

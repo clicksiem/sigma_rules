@@ -1,0 +1,12 @@
+id: 38a1ac5f-9c74-47d2-a345-dd6f5eb4e7c8
+name: HKTL - SharpSuccessor Privilege Escalation Tool Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1068
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SharpSuccessor.exe' OR OriginalFileName='SharpSuccessor.exe' OR CommandLine ILIKE '%SharpSuccessor%' OR (CommandLine ILIKE '% add %' AND CommandLine ILIKE '% /impersonate%' AND CommandLine ILIKE '% /path%' AND CommandLine ILIKE '% /account%' AND CommandLine ILIKE '% /name%')

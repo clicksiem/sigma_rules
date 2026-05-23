@@ -1,0 +1,14 @@
+id: b471f462-eb0d-4832-be35-28d94bdb4780
+name: Remote Access Tool - Renamed MeshAgent Execution - Windows
+level: 8
+size: '>0'
+active: true
+author:
+- Norbert Jaśniewicz (AlphaSOC)
+group: windows
+tags:
+- attack.command-and-control
+- attack.stealth
+- attack.t1219.002
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%--meshServiceName%' OR OriginalFileName ILIKE '%meshagent%') AND (NOT Image ILIKE '%\\meshagent.exe')

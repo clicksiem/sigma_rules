@@ -1,0 +1,12 @@
+id: 9cfc00b6-bfb7-49ce-9781-ef78503154bb
+name: Wlrmdr.EXE Uncommon Argument Or Child Process
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, manasmbellani
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\wlrmdr.exe' OR (((Image ILIKE '%\\wlrmdr.exe' OR OriginalFileName='WLRMNDR.EXE') AND (CommandLine ILIKE '%-s %' OR CommandLine ILIKE '%/s %' OR CommandLine ILIKE '%–s %' OR CommandLine ILIKE '%—s %' OR CommandLine ILIKE '%―s %') AND (CommandLine ILIKE '%-f %' OR CommandLine ILIKE '%/f %' OR CommandLine ILIKE '%–f %' OR CommandLine ILIKE '%—f %' OR CommandLine ILIKE '%―f %') AND (CommandLine ILIKE '%-t %' OR CommandLine ILIKE '%/t %' OR CommandLine ILIKE '%–t %' OR CommandLine ILIKE '%—t %' OR CommandLine ILIKE '%―t %') AND (CommandLine ILIKE '%-m %' OR CommandLine ILIKE '%/m %' OR CommandLine ILIKE '%–m %' OR CommandLine ILIKE '%—m %' OR CommandLine ILIKE '%―m %') AND (CommandLine ILIKE '%-a %' OR CommandLine ILIKE '%/a %' OR CommandLine ILIKE '%–a %' OR CommandLine ILIKE '%—a %' OR CommandLine ILIKE '%―a %') AND (CommandLine ILIKE '%-u %' OR CommandLine ILIKE '%/u %' OR CommandLine ILIKE '%–u %' OR CommandLine ILIKE '%—u %' OR CommandLine ILIKE '%―u %')) AND (NOT (ParentImage ILIKE 'C:\\Windows\\System32\\winlogon.exe' OR (ParentImage IN ('', '-')) OR isNull(ParentImage))))

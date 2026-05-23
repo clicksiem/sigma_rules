@@ -1,0 +1,13 @@
+id: 36388120-b3f1-4ce9-b50b-280d9a7f4c04
+name: Kaspersky Endpoint Security Stopped Via CommandLine - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Milad Cheraghi
+group: linux
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/systemctl' OR Image ILIKE '%/bash' OR Image ILIKE '%/sh') AND (CommandLine ILIKE '%stop%' AND CommandLine ILIKE '%kesl%')

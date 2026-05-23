@@ -1,0 +1,12 @@
+id: 33d50d03-20ec-4b74-a74e-1e65a38af1c0
+name: AWS EKS Cluster Created or Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: aws
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE eventSource='eks.amazonaws.com' AND (eventName IN ('CreateCluster', 'DeleteCluster'))

@@ -1,0 +1,13 @@
+id: b9e1f193-d236-4451-aaae-2f3d2102120d
+name: Cisco Sniffing
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.credential-access
+- attack.discovery
+- attack.t1040
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'monitor capture point') OR hasToken(full_log, 'set span') OR hasToken(full_log, 'set rspan')

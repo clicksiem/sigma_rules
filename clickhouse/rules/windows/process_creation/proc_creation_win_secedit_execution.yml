@@ -1,0 +1,32 @@
+id: c2c76b77-32be-4d1f-82c9-7e544bdfe0eb
+name: Potential Suspicious Activity Using SeCEdit
+level: 5
+size: '>0'
+active: true
+author:
+- Janantha Marasinghe
+group: windows
+tags:
+- attack.collection
+- attack.discovery
+- attack.persistence
+- attack.credential-access
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.defense-impairment
+- attack.t1685.001
+- attack.t1547.001
+- attack.t1505.005
+- attack.t1556.002
+- attack.t1685
+- attack.t1574.007
+- attack.t1564.002
+- attack.t1546.008
+- attack.t1546.007
+- attack.t1547.014
+- attack.t1547.010
+- attack.t1547.002
+- attack.t1557
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\secedit.exe' OR OriginalFileName='SeCEdit') AND ((CommandLine ILIKE '%/export%' AND CommandLine ILIKE '%/cfg%') OR (CommandLine ILIKE '%/configure%' AND CommandLine ILIKE '%/db%'))

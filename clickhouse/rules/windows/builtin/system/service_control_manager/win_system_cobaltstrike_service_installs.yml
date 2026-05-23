@@ -1,0 +1,17 @@
+id: 5a105d34-05fc-401e-8553-272b45c1522d
+name: CobaltStrike Service Installations - System
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Wojciech Lesicki
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.privilege-escalation
+- attack.lateral-movement
+- attack.t1021.002
+- attack.t1543.003
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7045) AND ((ImagePath ILIKE '%ADMIN$%' AND ImagePath ILIKE '%.exe%') OR (ImagePath ILIKE '%\%COMSPEC\%%' AND ImagePath ILIKE '%start%' AND ImagePath ILIKE '%powershell%') OR ImagePath ILIKE '%powershell -nop -w hidden -encodedcommand%' OR ImagePath ILIKE '%SUVYIChOZXctT2JqZWN0IE5ldC5XZWJjbGllbnQpLkRvd25sb2FkU3RyaW5nKCdodHRwOi8vMTI3LjAuMC4xO%' OR ImagePath ILIKE '%lFWCAoTmV3LU9iamVjdCBOZXQuV2ViY2xpZW50KS5Eb3dubG9hZFN0cmluZygnaHR0cDovLzEyNy4wLjAuMT%' OR ImagePath ILIKE '%JRVggKE5ldy1PYmplY3QgTmV0LldlYmNsaWVudCkuRG93bmxvYWRTdHJpbmcoJ2h0dHA6Ly8xMjcuMC4wLjE6%')

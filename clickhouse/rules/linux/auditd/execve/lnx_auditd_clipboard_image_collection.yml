@@ -1,0 +1,12 @@
+id: f200dc3f-b219-425d-a17e-c38467364816
+name: Clipboard Collection of Image Data with Xclip Tool
+level: 3
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.collection
+- attack.t1115
+rule: SELECT * FROM logs WHERE type='EXECVE' AND a0='xclip' AND (a1 IN ('-selection', '-sel')) AND (a2 IN ('clipboard', 'clip')) AND a3='-t' AND a4 ILIKE 'image/%' AND a5='-o'

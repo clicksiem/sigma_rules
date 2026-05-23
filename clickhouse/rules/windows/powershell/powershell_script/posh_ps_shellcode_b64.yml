@@ -1,0 +1,15 @@
+id: 16b37b70-6fcf-4814-a092-c36bd3aafcbd
+name: PowerShell ShellCode
+level: 8
+size: '>0'
+active: true
+author:
+- David Ledbetter (shellcode), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%OiCAAAAYInlM%' OR ScriptBlockText ILIKE '%OiJAAAAYInlM%'

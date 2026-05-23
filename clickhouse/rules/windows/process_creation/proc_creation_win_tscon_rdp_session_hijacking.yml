@@ -1,0 +1,11 @@
+id: 224f140f-3553-4cd1-af78-13d81bf9f7cc
+name: Potential RDP Session Hijacking Activity
+level: 5
+size: '>0'
+active: true
+author:
+- '@juju4'
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\tscon.exe' OR OriginalFileName='tscon.exe') AND (IntegrityLevel IN ('System', 'S-1-16-16384'))

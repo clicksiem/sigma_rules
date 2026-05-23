@@ -1,0 +1,12 @@
+id: 686c0b4b-9dd3-4847-9077-d6c1bbe36fcb
+name: Windows Defender Virus Scanning Feature Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Ján Trenčanský, frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=5012

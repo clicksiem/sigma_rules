@@ -1,0 +1,12 @@
+id: 472159c5-31b9-4f56-b794-b766faa8b0a7
+name: Suspicious LSASS Access Via MalSecLogon
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden (original elastic rule), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE TargetImage ILIKE '%\\lsass.exe' AND SourceImage ILIKE '%\\svchost.exe' AND GrantedAccess='0x14c0' AND CallTrace ILIKE '%seclogon.dll%'

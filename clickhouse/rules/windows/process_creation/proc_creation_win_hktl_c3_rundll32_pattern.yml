@@ -1,0 +1,12 @@
+id: b18c9d4c-fac9-4708-bd06-dd5bfacf200f
+name: HackTool - F-Secure C3 Load by Rundll32
+level: 10
+size: '>0'
+active: true
+author:
+- Alfie Champion (ajpc500)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%rundll32.exe%' AND CommandLine ILIKE '%.dll%' AND CommandLine ILIKE '%StartNodeRelay%'

@@ -1,0 +1,13 @@
+id: bab049ca-7471-4828-9024-38279a4c04da
+name: Virtualbox Driver Installation or Starting of VMs
+level: 3
+size: '>0'
+active: true
+author:
+- Janantha Marasinghe
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.006
+- attack.t1564
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%VBoxRT.dll,RTR3Init%' OR CommandLine ILIKE '%VBoxC.dll%' OR CommandLine ILIKE '%VBoxDrv.sys%') OR (CommandLine ILIKE '%startvm%' OR CommandLine ILIKE '%controlvm%')

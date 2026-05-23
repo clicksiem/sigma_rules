@@ -1,0 +1,12 @@
+id: b236190c-1c61-41e9-84b3-3fe03f6d76b0
+name: Potential Regsvr32 Commandline Flag Anomaly
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regsvr32.exe' AND (CommandLine ILIKE '% -i:%' OR CommandLine ILIKE '% /i:%' OR CommandLine ILIKE '% –i:%' OR CommandLine ILIKE '% —i:%' OR CommandLine ILIKE '% ―i:%')) AND (NOT CommandLine ILIKE '% -n %' OR CommandLine ILIKE '% /n %' OR CommandLine ILIKE '% –n %' OR CommandLine ILIKE '% —n %' OR CommandLine ILIKE '% ―n %')

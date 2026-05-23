@@ -1,0 +1,12 @@
+id: b4e6b016-a2ac-4759-ad85-8000b300d61e
+name: OpenCanary - TFTP Request
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.exfiltration
+- attack.t1041
+rule: SELECT * FROM logs WHERE logtype=10001

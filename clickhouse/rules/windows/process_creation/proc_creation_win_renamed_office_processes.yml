@@ -1,0 +1,12 @@
+id: 0b0cd537-fc77-4e6e-a973-e53495c1083d
+name: Renamed Office Binary Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE ((OriginalFileName IN ('Excel.exe', 'MSACCESS.EXE', 'MSPUB.EXE', 'OneNote.exe', 'OneNoteM.exe', 'OUTLOOK.EXE', 'POWERPNT.EXE', 'WinWord.exe', 'Olk.exe')) OR (Description IN ('Microsoft Access', 'Microsoft Excel', 'Microsoft OneNote', 'Microsoft Outlook', 'Microsoft PowerPoint', 'Microsoft Publisher', 'Microsoft Word', 'Sent to OneNote Tool'))) AND (NOT (Image ILIKE '%\\EXCEL.exe' OR Image ILIKE '%\\excelcnv.exe' OR Image ILIKE '%\\MSACCESS.exe' OR Image ILIKE '%\\MSPUB.EXE' OR Image ILIKE '%\\ONENOTE.EXE' OR Image ILIKE '%\\ONENOTEM.EXE' OR Image ILIKE '%\\OUTLOOK.EXE' OR Image ILIKE '%\\POWERPNT.EXE' OR Image ILIKE '%\\WINWORD.exe' OR Image ILIKE '%\\OLK.EXE'))

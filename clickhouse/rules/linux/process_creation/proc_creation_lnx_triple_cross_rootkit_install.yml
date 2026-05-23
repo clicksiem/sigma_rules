@@ -1,0 +1,12 @@
+id: 22236d75-d5a0-4287-bf06-c93b1770860f
+name: Triple Cross eBPF Rootkit Install Commands
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.stealth
+- attack.t1014
+rule: SELECT * FROM logs WHERE Image ILIKE '%/sudo' AND (CommandLine ILIKE '% tc %' AND CommandLine ILIKE '% enp0s3 %') AND (CommandLine ILIKE '% qdisc %' OR CommandLine ILIKE '% filter %')

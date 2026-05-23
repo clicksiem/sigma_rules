@@ -1,0 +1,14 @@
+id: 88a22f69-62f9-4b8a-aa00-6b0212f2f05a
+name: Invoke-Obfuscation Via Use Rundll32 - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (Payload ILIKE '%&&%' AND Payload ILIKE '%rundll32%' AND Payload ILIKE '%shell32.dll%' AND Payload ILIKE '%shellexec\_rundll%') AND (Payload ILIKE '%value%' OR Payload ILIKE '%invoke%' OR Payload ILIKE '%comspec%' OR Payload ILIKE '%iex%')

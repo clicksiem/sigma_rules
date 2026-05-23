@@ -1,0 +1,13 @@
+id: d487ed4a-fd24-436d-a0b2-f4e95f7b2635
+name: Suspicious ClickFix/FileFix Execution Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- montysecurity, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.001
+- attack.t1204.004
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\explorer.exe' AND CommandLine ILIKE '%#%') AND (CommandLine ILIKE '%account%' OR CommandLine ILIKE '%anti-bot%' OR CommandLine ILIKE '%botcheck%' OR CommandLine ILIKE '%captcha%' OR CommandLine ILIKE '%challenge%' OR CommandLine ILIKE '%confirmation%' OR CommandLine ILIKE '%fraud%' OR CommandLine ILIKE '%human%' OR CommandLine ILIKE '%identification%' OR CommandLine ILIKE '%identificator%' OR CommandLine ILIKE '%identity%' OR CommandLine ILIKE '%robot%' OR CommandLine ILIKE '%validation%' OR CommandLine ILIKE '%verification%' OR CommandLine ILIKE '%verify%')

@@ -1,0 +1,12 @@
+id: f37b4bce-49d0-4087-9f5b-58bffda77316
+name: Potential AutoLogger Sessions Tampering
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Control\\WMI\\Autologger\\%' AND ((TargetObject ILIKE '%\\EventLog-%' OR TargetObject ILIKE '%\\Defender%') AND (TargetObject ILIKE '%\\Enabled' OR TargetObject ILIKE '%\\Start') AND Details='DWORD (0x00000000)')) AND (NOT (Image ILIKE 'C:\\Windows\\system32\\wevtutil.exe' OR ((Image ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' OR Image ILIKE 'C:\\Program Files\\Windows Defender\\%' OR Image ILIKE 'C:\\Program Files (x86)\\Windows Defender\\%') AND Image ILIKE '%\\MsMpEng.exe' AND (TargetObject ILIKE '%\\DefenderApiLogger\\%' OR TargetObject ILIKE '%\\DefenderAuditLogger\\%'))))

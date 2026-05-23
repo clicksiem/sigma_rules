@@ -1,0 +1,15 @@
+id: 54f0434b-726f-48a1-b2aa-067df14516e4
+name: Password Protected ZIP File Opened (Suspicious Filenames)
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.stealth
+- attack.t1027
+- attack.t1105
+- attack.t1036
+rule: SELECT * FROM logs WHERE (EventID=5379 AND TargetName ILIKE '%Microsoft\_Windows\_Shell\_ZipFolder:filename%') AND (TargetName ILIKE '%invoice%' OR TargetName ILIKE '%new order%' OR TargetName ILIKE '%rechnung%' OR TargetName ILIKE '%factura%' OR TargetName ILIKE '%delivery%' OR TargetName ILIKE '%purchase%' OR TargetName ILIKE '%order%' OR TargetName ILIKE '%payment%')

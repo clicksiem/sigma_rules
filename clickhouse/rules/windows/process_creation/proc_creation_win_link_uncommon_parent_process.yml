@@ -1,0 +1,12 @@
+id: 6e968eb1-5f05-4dac-94e9-fd0c5cb49fd6
+name: Uncommon Link.EXE Parent Process
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\link.exe' AND CommandLine ILIKE '%LINK /%') AND (NOT ((ParentImage ILIKE 'C:\\Program Files\\Microsoft Visual Studio\\%' OR ParentImage ILIKE 'C:\\Program Files (x86)\\Microsoft Visual Studio\\%') AND (ParentImage ILIKE '%\\VC\\bin\\%' OR ParentImage ILIKE '%\\VC\\Tools\\%')))

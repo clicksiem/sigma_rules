@@ -1,0 +1,12 @@
+id: 4fe17521-aef3-4e6a-9d6b-4a7c8de155a8
+name: OpenCanary - GIT Clone Request
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.collection
+- attack.t1213
+rule: SELECT * FROM logs WHERE logtype=16001

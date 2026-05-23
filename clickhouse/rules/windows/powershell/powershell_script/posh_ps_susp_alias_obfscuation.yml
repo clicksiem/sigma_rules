@@ -1,0 +1,14 @@
+id: e8314f79-564d-4f79-bc13-fbc0bf2660d8
+name: Potential PowerShell Obfuscation Using Character Join
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1027
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%-Alias%' AND ScriptBlockText ILIKE '% -Value (-join(%'

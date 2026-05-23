@@ -1,0 +1,12 @@
+id: c1dda054-d638-4c16-afc8-53e007f3fbc5
+name: Automated Collection Command PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.collection
+- attack.t1119
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%.doc%' OR ScriptBlockText ILIKE '%.docx%' OR ScriptBlockText ILIKE '%.xls%' OR ScriptBlockText ILIKE '%.xlsx%' OR ScriptBlockText ILIKE '%.ppt%' OR ScriptBlockText ILIKE '%.pptx%' OR ScriptBlockText ILIKE '%.rtf%' OR ScriptBlockText ILIKE '%.pdf%' OR ScriptBlockText ILIKE '%.txt%') AND (ScriptBlockText ILIKE '%Get-ChildItem%' AND ScriptBlockText ILIKE '% -Recurse %' AND ScriptBlockText ILIKE '% -Include %')

@@ -1,0 +1,12 @@
+id: 6a5f68d1-c4b5-46b9-94ee-5324892ea939
+name: Uninstall Sysinternals Sysmon
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\Sysmon64.exe' OR Image ILIKE '%\\Sysmon.exe') OR Description='System activity monitor') AND (CommandLine ILIKE '%-u%' OR CommandLine ILIKE '%/u%' OR CommandLine ILIKE '%–u%' OR CommandLine ILIKE '%—u%' OR CommandLine ILIKE '%―u%')

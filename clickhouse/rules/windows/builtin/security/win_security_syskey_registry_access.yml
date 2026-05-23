@@ -1,0 +1,12 @@
+id: 9a4ff3b8-6187-4fd2-8e8b-e0eae1129495
+name: SysKey Registry Keys Access
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.discovery
+- attack.t1012
+rule: SELECT * FROM logs WHERE (EventID IN (4656, 4663)) AND ObjectType='key' AND (ObjectName ILIKE '%lsa\\JD' OR ObjectName ILIKE '%lsa\\GBG' OR ObjectName ILIKE '%lsa\\Skew1' OR ObjectName ILIKE '%lsa\\Data')

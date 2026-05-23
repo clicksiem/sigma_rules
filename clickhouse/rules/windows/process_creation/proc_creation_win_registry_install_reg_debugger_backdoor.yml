@@ -1,0 +1,13 @@
+id: ae215552-081e-44c7-805f-be16f975c8a2
+name: Suspicious Debugger Registration Cmdline
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community, Jonhnathan Ribeiro
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.008
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\CurrentVersion\\Image File Execution Options\\%' AND (CommandLine ILIKE '%sethc.exe%' OR CommandLine ILIKE '%utilman.exe%' OR CommandLine ILIKE '%osk.exe%' OR CommandLine ILIKE '%magnify.exe%' OR CommandLine ILIKE '%narrator.exe%' OR CommandLine ILIKE '%displayswitch.exe%' OR CommandLine ILIKE '%atbroker.exe%' OR CommandLine ILIKE '%HelpPane.exe%')

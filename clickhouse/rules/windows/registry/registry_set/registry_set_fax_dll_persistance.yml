@@ -1,0 +1,13 @@
+id: 9e3357ba-09d4-4fbd-a7c5-ad6386314513
+name: Change the Fax Dll
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Fax\\Device Providers\\%' AND TargetObject ILIKE '%\\ImageName%') AND (NOT Details ILIKE '\%systemroot\%\\system32\\fxst30.dll')

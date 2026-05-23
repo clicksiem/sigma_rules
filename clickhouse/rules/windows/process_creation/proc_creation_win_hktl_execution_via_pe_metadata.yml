@@ -1,0 +1,14 @@
+id: 37c1333a-a0db-48be-b64b-7393b2386e3b
+name: Hacktool Execution - PE Metadata
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.resource-development
+- attack.t1588.002
+- attack.t1003
+rule: SELECT * FROM logs WHERE Company='Cube0x0'

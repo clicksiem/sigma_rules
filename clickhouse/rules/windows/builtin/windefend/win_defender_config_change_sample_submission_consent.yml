@@ -1,0 +1,12 @@
+id: 91903aba-1088-42ee-b680-d6d94fe002b0
+name: Windows Defender Submit Sample Feature Disabled
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=5007 AND NewValue ILIKE '%\\Real-Time Protection\\SubmitSamplesConsent = 0x0%'

@@ -1,0 +1,14 @@
+id: beaa66d6-aa1b-4e3c-80f5-e0145369bfaf
+name: Potentially Suspicious EventLog Recon Activity Using Log Query Utilities
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.discovery
+- attack.t1552
+- attack.t1087
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%Microsoft-Windows-PowerShell%' OR CommandLine ILIKE '%Microsoft-Windows-Security-Auditing%' OR CommandLine ILIKE '%Microsoft-Windows-TerminalServices-LocalSessionManager%' OR CommandLine ILIKE '%Microsoft-Windows-TerminalServices-RemoteConnectionManager%' OR CommandLine ILIKE '%Microsoft-Windows-Windows Defender%' OR CommandLine ILIKE '%PowerShellCore%' OR CommandLine ILIKE '%Security%' OR CommandLine ILIKE '%Windows PowerShell%') OR (CommandLine ILIKE '%-InstanceId 462_%' OR CommandLine ILIKE '%.eventid -eq 462_%' OR CommandLine ILIKE '%.ID -eq 462_%' OR CommandLine ILIKE '%EventCode=_462_%' OR CommandLine ILIKE '%EventIdentifier=_462_%' OR CommandLine ILIKE '%System[EventID=462_]%' OR CommandLine ILIKE '%-InstanceId 4778%' OR CommandLine ILIKE '%.eventid -eq 4778%' OR CommandLine ILIKE '%.ID -eq 4778%' OR CommandLine ILIKE '%EventCode=_4778_%' OR CommandLine ILIKE '%EventIdentifier=_4778_%' OR CommandLine ILIKE '%System[EventID=4778]%' OR CommandLine ILIKE '%-InstanceId 25%' OR CommandLine ILIKE '%.eventid -eq 25%' OR CommandLine ILIKE '%.ID -eq 25%' OR CommandLine ILIKE '%EventCode=_25_%' OR CommandLine ILIKE '%EventIdentifier=_25_%' OR CommandLine ILIKE '%System[EventID=25]%' OR CommandLine ILIKE '%-InstanceId 1149%' OR CommandLine ILIKE '%.eventid -eq 1149%' OR CommandLine ILIKE '%.ID -eq 1149%' OR CommandLine ILIKE '%EventCode=_1149_%' OR CommandLine ILIKE '%EventIdentifier=_1149_%' OR CommandLine ILIKE '%System[EventID=1149]%' OR CommandLine ILIKE '%-InstanceId 21%' OR CommandLine ILIKE '%.eventid -eq 21%' OR CommandLine ILIKE '%.ID -eq 21%' OR CommandLine ILIKE '%EventCode=_21_%' OR CommandLine ILIKE '%EventIdentifier=_21_%' OR CommandLine ILIKE '%System[EventID=21]%' OR CommandLine ILIKE '%-InstanceId 22%' OR CommandLine ILIKE '%.eventid -eq 22%' OR CommandLine ILIKE '%.ID -eq 22%' OR CommandLine ILIKE '%EventCode=_22_%' OR CommandLine ILIKE '%EventIdentifier=_22_%' OR CommandLine ILIKE '%System[EventID=22]%')) AND ((CommandLine ILIKE '%Select%' AND CommandLine ILIKE '%Win32\_NTLogEvent%') OR ((Image ILIKE '%\\wevtutil.exe' OR OriginalFileName='wevtutil.exe') AND (CommandLine ILIKE '% qe %' OR CommandLine ILIKE '% query-events %')) OR ((Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND CommandLine ILIKE '% ntevent%') OR (CommandLine ILIKE '%Get-WinEvent %' OR CommandLine ILIKE '%get-eventlog %'))

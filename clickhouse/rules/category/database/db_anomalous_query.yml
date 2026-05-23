@@ -1,0 +1,16 @@
+id: d84c0ded-edd7-4123-80ed-348bb3ccc4d5
+name: Suspicious SQL Query
+level: 5
+size: '>0'
+active: true
+author:
+- '@juju4'
+group: ''
+tags:
+- attack.exfiltration
+- attack.initial-access
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1190
+- attack.t1505.001
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'drop') OR hasToken(full_log, 'truncate') OR hasToken(full_log, 'dump') OR hasToken(full_log, 'select *')

@@ -1,0 +1,13 @@
+id: bf344fea-d947-4ef4-9192-34d008315d3a
+name: Suspicious Shim Database Patching Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.011
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Custom\\%' AND (TargetObject ILIKE '%\\csrss.exe' OR TargetObject ILIKE '%\\dllhost.exe' OR TargetObject ILIKE '%\\explorer.exe' OR TargetObject ILIKE '%\\RuntimeBroker.exe' OR TargetObject ILIKE '%\\services.exe' OR TargetObject ILIKE '%\\sihost.exe' OR TargetObject ILIKE '%\\svchost.exe' OR TargetObject ILIKE '%\\taskhostw.exe' OR TargetObject ILIKE '%\\winlogon.exe' OR TargetObject ILIKE '%\\WmiPrvSe.exe')

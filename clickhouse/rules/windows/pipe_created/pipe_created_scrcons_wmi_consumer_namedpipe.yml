@@ -1,0 +1,12 @@
+id: 493fb4ab-cdcc-4c4f-818c-0e363bd1e4bb
+name: WMI Event Consumer Created Named Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.t1047
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\scrcons.exe'

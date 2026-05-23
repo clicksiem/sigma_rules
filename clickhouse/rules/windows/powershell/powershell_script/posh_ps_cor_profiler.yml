@@ -1,0 +1,15 @@
+id: 23590215-4702-4a70-8805-8dc9e58314a2
+name: Registry-Free Process Scope COR_PROFILER
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.012
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%$env:COR\_ENABLE\_PROFILING%' AND ScriptBlockText ILIKE '%$env:COR\_PROFILER%' AND ScriptBlockText ILIKE '%$env:COR\_PROFILER\_PATH%'

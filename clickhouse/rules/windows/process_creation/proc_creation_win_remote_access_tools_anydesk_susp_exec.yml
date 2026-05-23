@@ -1,0 +1,12 @@
+id: 065b00ca-5d5c-4557-ac95-64a6d0b64d86
+name: Remote Access Tool - Anydesk Execution From Suspicious Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\AnyDesk.exe' OR Image ILIKE '%\\AnyDeskMSI.exe') OR Description='AnyDesk' OR Product='AnyDesk' OR Company='AnyDesk Software GmbH') AND (NOT (Image ILIKE '%\\AppData\\%' OR Image ILIKE '%Program Files (x86)\\AnyDesk%' OR Image ILIKE '%Program Files\\AnyDesk%'))

@@ -1,0 +1,13 @@
+id: a166f74e-bf44-409d-b9ba-ea4b2dd8b3cd
+name: Macro Enabled In A Potentially Suspicious Document
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Security\\Trusted Documents\\TrustRecords%' AND (TargetObject ILIKE '%/AppData/Local/Microsoft/Windows/INetCache/%' OR TargetObject ILIKE '%/AppData/Local/Temp/%' OR TargetObject ILIKE '%/PerfLogs/%' OR TargetObject ILIKE '%C:/Users/Public/%' OR TargetObject ILIKE '%file:///D:/%' OR TargetObject ILIKE '%file:///E:/%')

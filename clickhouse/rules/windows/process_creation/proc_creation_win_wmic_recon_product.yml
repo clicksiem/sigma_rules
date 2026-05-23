@@ -1,0 +1,12 @@
+id: 15434e33-5027-4914-88d5-3d4145ec25a9
+name: Potential Product Reconnaissance Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND CommandLine ILIKE '%Product%') AND (NOT (CommandLine ILIKE '% uninstall%' OR CommandLine ILIKE '% install%'))

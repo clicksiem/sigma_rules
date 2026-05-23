@@ -1,0 +1,12 @@
+id: eb2fd349-ec67-4caa-9143-d79c7fb34441
+name: Suspicious GPO Discovery With Get-GPO
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1615
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-GPO%'

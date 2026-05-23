@@ -1,0 +1,15 @@
+id: 0d5675be-bc88-4172-86d3-1e96a4476536
+name: Potential Tampering With RDP Related Registry Keys Via Reg.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems), @Kostastsale, TheDFIRReport
+group: windows
+tags:
+- attack.persistence
+- attack.lateral-movement
+- attack.defense-impairment
+- attack.t1021.001
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '% add %' AND CommandLine ILIKE '%\\CurrentControlSet\\Control\\Terminal Server%' AND CommandLine ILIKE '%REG\_DWORD%' AND CommandLine ILIKE '% /f%')) AND ((CommandLine ILIKE '%Licensing Core%' AND CommandLine ILIKE '%EnableConcurrentSessions%') OR (CommandLine ILIKE '%AllowTSConnections%' OR CommandLine ILIKE '%fDenyTSConnections%' OR CommandLine ILIKE '%fEnableWinStation%' OR CommandLine ILIKE '%fSingleSessionPerUser%' OR CommandLine ILIKE '%IdleWinStationPoolCount%' OR CommandLine ILIKE '%MaxInstanceCount%' OR CommandLine ILIKE '%SecurityLayer%' OR CommandLine ILIKE '%TSAdvertise%' OR CommandLine ILIKE '%TSAppCompat%' OR CommandLine ILIKE '%TSEnabled%' OR CommandLine ILIKE '%TSUserEnabled%' OR CommandLine ILIKE '%WinStations\\RDP-Tcp%')) AND (NOT (CommandLine ILIKE '%SecurityLayer%' AND CommandLine ILIKE '%02%'))

@@ -1,0 +1,11 @@
+id: e36941d0-c0f0-443f-bc6f-cb2952eb69ea
+name: PowerShell Module File Created
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (TargetFilename ILIKE '%\\WindowsPowerShell\\Modules\\%' OR TargetFilename ILIKE '%\\PowerShell\\7\\Modules\\%')

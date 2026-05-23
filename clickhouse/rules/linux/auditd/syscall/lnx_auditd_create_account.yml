@@ -1,0 +1,12 @@
+id: 759d0d51-bc99-4b5e-9add-8f5b2c8e7512
+name: Creation Of An User Account
+level: 5
+size: '>0'
+active: true
+author:
+- Marie Euler, Pawel Mazur
+group: linux
+tags:
+- attack.t1136.001
+- attack.persistence
+rule: SELECT * FROM logs WHERE (type='SYSCALL' AND exe ILIKE '%/useradd') OR type ILIKE 'ADD\_USER'

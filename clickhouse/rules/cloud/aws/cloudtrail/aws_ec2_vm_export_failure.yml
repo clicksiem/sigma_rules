@@ -1,0 +1,14 @@
+id: 54b9a76a-3c71-4673-b4b3-2edb4566ea7b
+name: AWS EC2 VM Export Failure
+level: 3
+size: '>0'
+active: true
+author:
+- Diogo Braz
+group: aws
+tags:
+- attack.collection
+- attack.t1005
+- attack.exfiltration
+- attack.t1537
+rule: SELECT * FROM logs WHERE (eventName='CreateInstanceExportTask' AND eventSource='ec2.amazonaws.com') AND (NOT (errorMessage ILIKE '%' OR errorCode ILIKE '%' OR responseElements ILIKE '%Failure%'))

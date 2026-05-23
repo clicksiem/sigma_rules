@@ -1,0 +1,11 @@
+id: 99980a85-3a61-43d3-ac0f-b68d6b4797b1
+name: Google Cloud VPN Tunnel Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` IN ('compute.vpnTunnels.insert', 'compute.vpnTunnels.delete')

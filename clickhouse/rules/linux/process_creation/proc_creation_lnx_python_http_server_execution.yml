@@ -1,0 +1,12 @@
+id: 3f0f5957-04f8-4792-ad89-192b0303bde6
+name: Python WebServer Execution - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Mohamed LAKRI
+group: linux
+tags:
+- attack.exfiltration
+- attack.t1048.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/python' OR Image ILIKE '%/python2' OR Image ILIKE '%/python3') OR (Image ILIKE '%/python2.%' OR Image ILIKE '%/python3.%')) AND (CommandLine ILIKE '%http.server%' OR CommandLine ILIKE '%SimpleHTTPServer%')

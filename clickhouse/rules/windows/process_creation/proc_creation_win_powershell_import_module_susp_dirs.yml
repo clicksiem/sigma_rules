@@ -1,0 +1,12 @@
+id: c31364f7-8be6-4b77-8483-dd2b5a7b69a3
+name: Import PowerShell Modules From Suspicious Directories - ProcCreation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Import-Module "$Env:Temp\\%' OR CommandLine ILIKE '%Import-Module ''$Env:Temp\\%' OR CommandLine ILIKE '%Import-Module $Env:Temp\\%' OR CommandLine ILIKE '%Import-Module "$Env:Appdata\\%' OR CommandLine ILIKE '%Import-Module ''$Env:Appdata\\%' OR CommandLine ILIKE '%Import-Module $Env:Appdata\\%' OR CommandLine ILIKE '%Import-Module C:\\Users\\Public\\%' OR CommandLine ILIKE '%ipmo "$Env:Temp\\%' OR CommandLine ILIKE '%ipmo ''$Env:Temp\\%' OR CommandLine ILIKE '%ipmo $Env:Temp\\%' OR CommandLine ILIKE '%ipmo "$Env:Appdata\\%' OR CommandLine ILIKE '%ipmo ''$Env:Appdata\\%' OR CommandLine ILIKE '%ipmo $Env:Appdata\\%' OR CommandLine ILIKE '%ipmo C:\\Users\\Public\\%'

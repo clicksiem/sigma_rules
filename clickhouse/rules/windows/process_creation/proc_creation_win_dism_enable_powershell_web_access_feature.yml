@@ -1,0 +1,13 @@
+id: 7e8f2d3b-9c1a-4f67-b9e8-8d9006e0e51f
+name: PowerShell Web Access Feature Enabled Via DISM
+level: 8
+size: '>0'
+active: true
+author:
+- Michael Haag
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\dism.exe' OR OriginalFileName='DISM.EXE') AND (CommandLine ILIKE '%WindowsPowerShellWebAccess%' AND CommandLine ILIKE '%/online%' AND CommandLine ILIKE '%/enable-feature%')

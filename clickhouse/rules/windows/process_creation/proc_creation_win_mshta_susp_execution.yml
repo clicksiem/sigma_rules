@@ -1,0 +1,16 @@
+id: cc7abbd0-762b-41e3-8a26-57ad50d2eea3
+name: MSHTA Execution with Suspicious File Extensions
+level: 8
+size: '>0'
+active: true
+author:
+- Diego Perez (@darkquassar), Markus Neis, Swisscom (Improve Rule), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1140
+- attack.t1218.005
+- attack.execution
+- attack.t1059.007
+- cve.2020-1599
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mshta.exe' OR OriginalFileName='mshta.exe') AND (CommandLine ILIKE '%.7z%' OR CommandLine ILIKE '%.avi%' OR CommandLine ILIKE '%.bat%' OR CommandLine ILIKE '%.bmp%' OR CommandLine ILIKE '%.conf%' OR CommandLine ILIKE '%.csv%' OR CommandLine ILIKE '%.dll%' OR CommandLine ILIKE '%.doc%' OR CommandLine ILIKE '%.gif%' OR CommandLine ILIKE '%.gz%' OR CommandLine ILIKE '%.ini%' OR CommandLine ILIKE '%.jpe%' OR CommandLine ILIKE '%.jpg%' OR CommandLine ILIKE '%.json%' OR CommandLine ILIKE '%.lnk%' OR CommandLine ILIKE '%.log%' OR CommandLine ILIKE '%.mkv%' OR CommandLine ILIKE '%.mp3%' OR CommandLine ILIKE '%.mp4%' OR CommandLine ILIKE '%.pdf%' OR CommandLine ILIKE '%.png%' OR CommandLine ILIKE '%.ppt%' OR CommandLine ILIKE '%.rar%' OR CommandLine ILIKE '%.rtf%' OR CommandLine ILIKE '%.svg%' OR CommandLine ILIKE '%.tar%' OR CommandLine ILIKE '%.tmp%' OR CommandLine ILIKE '%.txt%' OR CommandLine ILIKE '%.xls%' OR CommandLine ILIKE '%.xml%' OR CommandLine ILIKE '%.yaml%' OR CommandLine ILIKE '%.yml%' OR CommandLine ILIKE '%.zip%' OR CommandLine ILIKE '%vbscript%')

@@ -1,0 +1,12 @@
+id: 954f0af7-62dd-418f-b3df-a84bc2c7a774
+name: New Remote Desktop Connection Initiated Via Mstsc.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\mstsc.exe' OR OriginalFileName='mstsc.exe') AND (CommandLine ILIKE '% -v:%' OR CommandLine ILIKE '% /v:%' OR CommandLine ILIKE '% –v:%' OR CommandLine ILIKE '% —v:%' OR CommandLine ILIKE '% ―v:%')) AND (NOT (ParentImage ILIKE 'C:\\Windows\\System32\\lxss\\wslhost.exe' AND CommandLine ILIKE '%C:\\ProgramData\\Microsoft\\WSL\\wslg.rdp%'))

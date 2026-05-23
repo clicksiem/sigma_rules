@@ -1,0 +1,12 @@
+id: 480e7e51-e797-47e3-8d72-ebfce65b6d8d
+name: Python Spawning Pretty TTY on Windows
+level: 8
+size: '>0'
+active: true
+author:
+- Nextron Systems
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%python.exe' OR Image ILIKE '%python3.exe' OR Image ILIKE '%python2.exe') AND ((CommandLine ILIKE '%import pty%' AND CommandLine ILIKE '%.spawn(%') OR CommandLine ILIKE '%from pty import spawn%')

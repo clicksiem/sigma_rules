@@ -1,0 +1,12 @@
+id: 7215374a-de4f-4b33-8ba5-70804c9251d3
+name: Bitbucket Unauthorized Access To A Resource
+level: 10
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.resource-development
+- attack.t1586
+rule: SELECT * FROM logs WHERE `auditType.category`='Security' AND `auditType.action`='Unauthorized access to a resource'

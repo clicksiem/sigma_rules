@@ -1,0 +1,12 @@
+id: 7f2bb9d5-6395-4de5-969c-70c11fbe6b12
+name: Split A File Into Pieces
+level: 3
+size: '>0'
+active: true
+author:
+- Igor Fits, Mikhail Larin, oscd.community
+group: macos
+tags:
+- attack.exfiltration
+- attack.t1030
+rule: SELECT * FROM logs WHERE Image ILIKE '%/split'

@@ -1,0 +1,13 @@
+id: 9df5f547-c86a-433e-b533-f2794357e242
+name: Classes Autorun Keys Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Classes%' AND (TargetObject ILIKE '%\\Folder\\ShellEx\\ExtShellFolderViews%' OR TargetObject ILIKE '%\\Folder\\ShellEx\\DragDropHandlers%' OR TargetObject ILIKE '%\\Folder\\Shellex\\ColumnHandlers%' OR TargetObject ILIKE '%\\Filter%' OR TargetObject ILIKE '%\\Exefile\\Shell\\Open\\Command\\(Default)%' OR TargetObject ILIKE '%\\Directory\\Shellex\\DragDropHandlers%' OR TargetObject ILIKE '%\\Directory\\Shellex\\CopyHookHandlers%' OR TargetObject ILIKE '%\\CLSID\\{AC757296-3522-4E11-9862-C17BE5A1767E}\\Instance%' OR TargetObject ILIKE '%\\CLSID\\{ABE3B9A4-257D-4B97-BD1A-294AF496222E}\\Instance%' OR TargetObject ILIKE '%\\CLSID\\{7ED96837-96F0-4812-B211-F13C24117ED3}\\Instance%' OR TargetObject ILIKE '%\\CLSID\\{083863F1-70DE-11d0-BD40-00A0C911CE86}\\Instance%' OR TargetObject ILIKE '%\\Classes\\AllFileSystemObjects\\ShellEx\\DragDropHandlers%' OR TargetObject ILIKE '%\\.exe%' OR TargetObject ILIKE '%\\.cmd%' OR TargetObject ILIKE '%\\ShellEx\\PropertySheetHandlers%' OR TargetObject ILIKE '%\\ShellEx\\ContextMenuHandlers%')) AND (NOT (Image ILIKE 'C:\\Windows\\System32\\drvinst.exe' OR Details='(Empty)' OR isNull(Details) OR (Image ILIKE 'C:\\Windows\\System32\\svchost.exe' AND TargetObject ILIKE '%\\lnkfile\\shellex\\ContextMenuHandlers\\%'))) AND (NOT Details='{807583E5-5146-11D5-A672-00B0D022E945}')

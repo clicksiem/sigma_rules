@@ -1,0 +1,15 @@
+id: e173ad47-4388-4012-ae62-bd13f71c18a8
+name: Potential DLL Sideloading Via DeviceEnroller.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- '@gott_cyber'
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\deviceenroller.exe' OR OriginalFileName='deviceenroller.exe') AND CommandLine ILIKE '%/PhoneDeepLink%'

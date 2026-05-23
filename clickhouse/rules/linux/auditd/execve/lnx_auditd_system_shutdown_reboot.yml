@@ -1,0 +1,12 @@
+id: 4cb57c2f-1f29-41f8-893d-8bed8e1c1d2f
+name: System Shutdown/Reboot - Linux
+level: 1
+size: '>0'
+active: true
+author:
+- Igor Fits, oscd.community
+group: linux
+tags:
+- attack.impact
+- attack.t1529
+rule: SELECT * FROM logs WHERE type='EXECVE' AND ((hasToken(full_log, 'shutdown') OR hasToken(full_log, 'reboot') OR hasToken(full_log, 'halt') OR hasToken(full_log, 'poweroff')) OR ((hasToken(full_log, 'init') OR hasToken(full_log, 'telinit')) AND (hasToken(full_log, '0') OR hasToken(full_log, '6'))))

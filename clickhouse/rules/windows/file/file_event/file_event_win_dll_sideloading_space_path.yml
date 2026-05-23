@@ -1,0 +1,15 @@
+id: b6f91281-20aa-446a-b986-38a92813a18f
+name: DLL Search Order Hijackig Via Additional Space in Path
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE 'C:\\Windows \\%' OR TargetFilename ILIKE 'C:\\Program Files \\%' OR TargetFilename ILIKE 'C:\\Program Files (x86) \\%') AND TargetFilename ILIKE '%.dll'

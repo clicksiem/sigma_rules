@@ -1,0 +1,12 @@
+id: c625d754-6a3d-4f65-9c9a-536aea960d37
+name: Permission Check Via Accesschk.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov (idea), Mangatas Tondang, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE (Product ILIKE '%AccessChk' OR Description ILIKE '%Reports effective permissions%' OR (Image ILIKE '%\\accesschk.exe' OR Image ILIKE '%\\accesschk64.exe') OR OriginalFileName='accesschk.exe') AND (CommandLine ILIKE '%uwcqv %' OR CommandLine ILIKE '%kwsu %' OR CommandLine ILIKE '%qwsu %' OR CommandLine ILIKE '%uwdqs %')

@@ -1,0 +1,12 @@
+id: 10344bb3-7f65-46c2-b915-2d00d47be5b0
+name: IE ZoneMap Setting Downgraded To MyComputer Zone For HTTP Protocols Via CLI
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\ProtocolDefaults%' AND CommandLine ILIKE '%http%' AND CommandLine ILIKE '% 0%'

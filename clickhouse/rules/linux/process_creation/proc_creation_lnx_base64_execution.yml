@@ -1,0 +1,12 @@
+id: ba592c6d-6888-43c3-b8c6-689b8fe47337
+name: Linux Base64 Encoded Pipe to Shell
+level: 5
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems)
+group: linux
+tags:
+- attack.stealth
+- attack.t1140
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%base64 %' AND ((CommandLine ILIKE '%| bash %' OR CommandLine ILIKE '%| sh %' OR CommandLine ILIKE '%|bash %' OR CommandLine ILIKE '%|sh %') OR (CommandLine ILIKE '% |sh' OR CommandLine ILIKE '%| bash' OR CommandLine ILIKE '%| sh' OR CommandLine ILIKE '%|bash'))

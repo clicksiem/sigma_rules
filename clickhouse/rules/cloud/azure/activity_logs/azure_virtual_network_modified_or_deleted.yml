@@ -1,0 +1,11 @@
+id: bcfcc962-0e4a-4fd9-84bb-a833e672df3f
+name: Azure Virtual Network Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE (operationName ILIKE 'MICROSOFT.NETWORK/VIRTUALNETWORKGATEWAYS/%' OR operationName ILIKE 'MICROSOFT.NETWORK/VIRTUALNETWORKS/%') AND (operationName ILIKE '%/WRITE' OR operationName ILIKE '%/DELETE')

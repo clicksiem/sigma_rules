@@ -1,0 +1,12 @@
+id: 9e8f6035-88bf-4a63-96b6-b17c0508257e
+name: Cisco Disabling Logging
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'no logging') OR hasToken(full_log, 'no aaa new-model')

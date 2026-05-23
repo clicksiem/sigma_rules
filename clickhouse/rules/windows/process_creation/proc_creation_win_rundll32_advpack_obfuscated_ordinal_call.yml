@@ -1,0 +1,11 @@
+id: a1473adb-5338-4a20-b4c3-126763e2d3d3
+name: Suspicious Advpack Call Via Rundll32.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE' OR CommandLine ILIKE '%rundll32%') AND CommandLine ILIKE '%advpack%' AND ((CommandLine ILIKE '%#+%' AND CommandLine ILIKE '%12%') OR CommandLine ILIKE '%#-%')

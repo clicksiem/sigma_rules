@@ -1,0 +1,14 @@
+id: 6f8b3439-a203-45dc-a88b-abf57ea15ccf
+name: HackTool - CrackMapExec PowerShell Obfuscation
+level: 8
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.001
+- attack.t1027.005
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%join%split%' OR CommandLine ILIKE '%( $ShellId[1]+$ShellId[13]+''x'')%' OR CommandLine ILIKE '%( $PSHome[%]+$PSHOME[%]+%' OR CommandLine ILIKE '%( $env:Public[13]+$env:Public[5]+''x'')%' OR CommandLine ILIKE '%( $env:ComSpec[4,%,25]-Join'''')%' OR CommandLine ILIKE '%[1,3]+''x''-Join'''')%')

@@ -1,0 +1,14 @@
+id: db92dd33-a3ad-49cf-8c2c-608c3e30ace0
+name: Invoke-Obfuscation Via Use Clip - Powershell
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(ScriptBlockText, '(?i)echo.*clip.*&&.*(Clipboard|i`?n`?v`?o`?k`?e`?)')

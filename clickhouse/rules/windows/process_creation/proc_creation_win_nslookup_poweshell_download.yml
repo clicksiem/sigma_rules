@@ -1,0 +1,11 @@
+id: 1b3b01c7-84e9-4072-86e5-fc285a41ff23
+name: Nslookup PowerShell Download Cradle - ProcessCreation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\nslookup.exe%' OR OriginalFileName ILIKE '\\nslookup.exe') AND ((ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '% -q=txt %' OR CommandLine ILIKE '% -querytype=txt %'))

@@ -1,0 +1,12 @@
+id: 6942bd25-5970-40ab-af49-944247103358
+name: Suspicious Get Information for SMB Share - PowerShell Module
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE Payload ILIKE '%get-smbshare%' OR ContextInfo ILIKE '%get-smbshare%'

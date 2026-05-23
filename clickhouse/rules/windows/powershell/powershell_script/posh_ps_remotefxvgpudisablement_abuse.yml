@@ -1,0 +1,12 @@
+id: cacef8fc-9d3d-41f7-956d-455c6e881bc5
+name: Potential RemoteFXvGPUDisablement.EXE Abuse - PowerShell ScriptBlock
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE 'function Get-VMRemoteFXPhysicalVideoAdapter {%'

@@ -1,0 +1,13 @@
+id: 8b5dacf2-aeb7-459d-b133-678eb696d410
+name: FortiGate - VPN SSL Settings Modified
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi @pedrinazziM (InTheCyber)
+group: fortigate
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1133
+rule: SELECT * FROM logs WHERE action='Edit' AND cfgpath='vpn.ssl.settings'

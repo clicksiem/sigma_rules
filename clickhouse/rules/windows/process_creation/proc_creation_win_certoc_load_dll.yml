@@ -1,0 +1,12 @@
+id: 242301bc-f92f-4476-8718-78004a6efd9f
+name: DLL Loaded via CertOC.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certoc.exe' OR OriginalFileName='CertOC.exe') AND (CommandLine ILIKE '% -LoadDLL %' OR CommandLine ILIKE '% /LoadDLL %' OR CommandLine ILIKE '% –LoadDLL %' OR CommandLine ILIKE '% —LoadDLL %' OR CommandLine ILIKE '% ―LoadDLL %')

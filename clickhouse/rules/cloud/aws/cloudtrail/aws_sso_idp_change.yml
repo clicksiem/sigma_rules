@@ -1,0 +1,14 @@
+id: d3adb3ef-b7e7-4003-9092-1924c797db35
+name: AWS Identity Center Identity Provider Change
+level: 8
+size: '>0'
+active: true
+author:
+- Michael McIntyre @wtfender
+group: aws
+tags:
+- attack.persistence
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1556
+rule: SELECT * FROM logs WHERE (eventSource IN ('sso-directory.amazonaws.com', 'sso.amazonaws.com')) AND (eventName IN ('AssociateDirectory', 'DisableExternalIdPConfigurationForDirectory', 'DisassociateDirectory', 'EnableExternalIdPConfigurationForDirectory'))

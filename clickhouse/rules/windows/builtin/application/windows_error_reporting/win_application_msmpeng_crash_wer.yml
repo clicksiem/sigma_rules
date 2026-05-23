@@ -1,0 +1,14 @@
+id: 6c82cf5c-090d-4d57-9188-533577631108
+name: Microsoft Malware Protection Engine Crash - WER
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.defense-impairment
+- attack.t1211
+- attack.t1685
+rule: SELECT * FROM logs WHERE Provider_Name='Windows Error Reporting' AND EventID=1001 AND (Data ILIKE '%MsMpEng.exe%' AND Data ILIKE '%mpengine.dll%')

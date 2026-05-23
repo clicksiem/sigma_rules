@@ -1,0 +1,12 @@
+id: d443095b-a221-4957-a2c4-cd1756c9b747
+name: Suspicious Base64 Encoded User-Agent
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE `c-useragent` ILIKE 'Q2hyb21l%' OR `c-useragent` ILIKE 'QXBwbGVXZWJLaX%' OR `c-useragent` ILIKE 'RGFsdmlr%' OR `c-useragent` ILIKE 'TW96aWxsY%'

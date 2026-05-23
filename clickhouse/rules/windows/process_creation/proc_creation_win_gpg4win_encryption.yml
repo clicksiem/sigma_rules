@@ -1,0 +1,11 @@
+id: 550bbb84-ce5d-4e61-84ad-e590f0024dcd
+name: File Encryption Using Gpg4win
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\gpg.exe' OR Image ILIKE '%\\gpg2.exe') OR Description='GnuPG’s OpenPGP tool') AND (CommandLine ILIKE '% -c %' AND CommandLine ILIKE '%passphrase%')

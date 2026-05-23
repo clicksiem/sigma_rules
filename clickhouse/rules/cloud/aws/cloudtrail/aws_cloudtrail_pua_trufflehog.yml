@@ -1,0 +1,13 @@
+id: a840e606-7c8c-4684-9bc1-eb6b6155127f
+name: PUA - AWS TruffleHog Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: aws
+tags:
+- attack.credential-access
+- attack.t1555
+- attack.t1003
+rule: SELECT * FROM logs WHERE userAgent='TruffleHog'

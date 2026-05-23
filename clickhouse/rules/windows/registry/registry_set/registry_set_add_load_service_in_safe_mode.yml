@@ -1,0 +1,12 @@
+id: 1547e27c-3974-43e2-a7d7-7f484fb928ec
+name: Registry Persistence via Service in Safe Mode
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.001
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%\\Control\\SafeBoot\\Minimal\\%' OR TargetObject ILIKE '%\\Control\\SafeBoot\\Network\\%') AND TargetObject ILIKE '%\\(Default)' AND Details='Service') AND (NOT ((Image ILIKE 'C:\\WINDOWS\\system32\\msiexec.exe' AND (TargetObject ILIKE '%\\Control\\SafeBoot\\Minimal\\SAVService\\(Default)' OR TargetObject ILIKE '%\\Control\\SafeBoot\\Network\\SAVService\\(Default)')) OR (Image ILIKE '%\\MBAMInstallerService.exe' AND TargetObject ILIKE '%\\MBAMService\\(Default)' AND Details='Service') OR (Image ILIKE 'C:\\Hexnode\\Hexnode Agent\\Current\\HexnodeAgent.exe' AND (TargetObject ILIKE '%\\Control\\SafeBoot\\Minimal\\Hexnode Updater\\(Default)' OR TargetObject ILIKE '%\\Control\\SafeBoot\\Network\\Hexnode Updater\\(Default)' OR TargetObject ILIKE '%\\Control\\SafeBoot\\Minimal\\Hexnode Agent\\(Default)' OR TargetObject ILIKE '%\\Control\\SafeBoot\\Network\\Hexnode Agent\\(Default)') AND Details='Service')))

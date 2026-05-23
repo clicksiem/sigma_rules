@@ -1,0 +1,13 @@
+id: 2cf29f11-e356-4f61-98c0-1bdb9393d6da
+name: Renamed Visual Studio Code Tunnel Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+- attack.t1219
+rule: SELECT * FROM logs WHERE (((isNull(OriginalFileName) AND CommandLine ILIKE '%.exe tunnel') OR (CommandLine ILIKE '%.exe tunnel%' AND CommandLine ILIKE '%--accept-server-license-terms%') OR (CommandLine ILIKE '%tunnel %' AND CommandLine ILIKE '%service%' AND CommandLine ILIKE '%internal-run%' AND CommandLine ILIKE '%tunnel-service.log%')) AND (NOT (Image ILIKE '%\\code-tunnel.exe' OR Image ILIKE '%\\code.exe'))) OR ((ParentCommandLine ILIKE '% tunnel' AND Image ILIKE '%\\cmd.exe' AND (CommandLine ILIKE '%/d /c %' AND CommandLine ILIKE '%\\servers\\Stable-%' AND CommandLine ILIKE '%code-server.cmd%')) AND (NOT (ParentImage ILIKE '%\\code-tunnel.exe' OR ParentImage ILIKE '%\\code.exe')))

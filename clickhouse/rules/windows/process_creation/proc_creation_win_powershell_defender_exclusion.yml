@@ -1,0 +1,12 @@
+id: 17769c90-230e-488b-a463-e05c08e9d48f
+name: Powershell Defender Exclusion
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Add-MpPreference %' OR CommandLine ILIKE '%Set-MpPreference %') AND (CommandLine ILIKE '% -ExclusionPath %' OR CommandLine ILIKE '% -ExclusionExtension %' OR CommandLine ILIKE '% -ExclusionProcess %' OR CommandLine ILIKE '% -ExclusionIpAddress %')

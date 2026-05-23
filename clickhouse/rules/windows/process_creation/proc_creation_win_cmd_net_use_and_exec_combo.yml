@@ -1,0 +1,12 @@
+id: f0507c0f-a3a2-40f5-acc6-7f543c334993
+name: Suspicious File Execution From Internet Hosted WebDav Share
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe%' OR OriginalFileName='Cmd.EXE') AND (CommandLine ILIKE '% net use http%' AND CommandLine ILIKE '%& start /b %' AND CommandLine ILIKE '%\\DavWWWRoot\\%') AND (CommandLine ILIKE '%.exe %' OR CommandLine ILIKE '%.dll %' OR CommandLine ILIKE '%.bat %' OR CommandLine ILIKE '%.vbs %' OR CommandLine ILIKE '%.ps1 %')

@@ -1,0 +1,13 @@
+id: 9c7e131a-0f2c-4ae0-9d43-b04f4e266d43
+name: Uncommon Child Process Of Appvlp.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Sreeman
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\appvlp.exe' AND (NOT (Image ILIKE '%:\\Windows\\SysWOW64\\rundll32.exe' OR Image ILIKE '%:\\Windows\\System32\\rundll32.exe')) AND (NOT ((Image ILIKE '%:\\Program Files\\Microsoft Office%' AND Image ILIKE '%\\msoasb.exe') OR ((Image ILIKE '%:\\Program Files\\Microsoft Office%' AND Image ILIKE '%\\SkypeSrv\\%') AND Image ILIKE '%\\SKYPESERVER.EXE') OR (Image ILIKE '%:\\Program Files\\Microsoft Office%' AND Image ILIKE '%\\MSOUC.EXE')))

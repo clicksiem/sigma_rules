@@ -1,0 +1,12 @@
+id: e32f92d1-523e-49c3-9374-bdb13b46a3ba
+name: Suspicious Mshta.EXE Execution Patterns
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1106
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\mshta.exe' OR OriginalFileName='MSHTA.EXE') AND ((ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\cscript.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe' OR ParentImage ILIKE '%\\regsvr32.exe' OR ParentImage ILIKE '%\\rundll32.exe' OR ParentImage ILIKE '%\\wscript.exe') AND (CommandLine ILIKE '%\\AppData\\Local\\%' OR CommandLine ILIKE '%C:\\ProgramData\\%' OR CommandLine ILIKE '%C:\\Users\\Public\\%' OR CommandLine ILIKE '%C:\\Windows\\Temp\\%'))) OR ((Image ILIKE '%\\mshta.exe' OR OriginalFileName='MSHTA.EXE') AND (NOT ((Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%') OR (CommandLine ILIKE '%.htm%' OR CommandLine ILIKE '%.hta%') OR (CommandLine ILIKE '%mshta.exe' OR CommandLine ILIKE '%mshta'))))

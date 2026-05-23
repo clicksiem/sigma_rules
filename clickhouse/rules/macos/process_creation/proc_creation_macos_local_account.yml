@@ -1,0 +1,12 @@
+id: ddf36b67-e872-4507-ab2e-46bda21b842c
+name: Local System Accounts Discovery - MacOs
+level: 3
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: macos
+tags:
+- attack.discovery
+- attack.t1087.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/dscl' AND (CommandLine ILIKE '%list%' AND CommandLine ILIKE '%/users%')) OR (Image ILIKE '%/dscacheutil' AND (CommandLine ILIKE '%-q%' AND CommandLine ILIKE '%user%')) OR CommandLine ILIKE '%''x:0:''%' OR (Image ILIKE '%/cat' AND (CommandLine ILIKE '%/etc/passwd%' OR CommandLine ILIKE '%/etc/sudoers%')) OR Image ILIKE '%/id' OR (Image ILIKE '%/lsof' AND CommandLine ILIKE '%-u%')

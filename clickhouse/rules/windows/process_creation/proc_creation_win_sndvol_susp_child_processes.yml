@@ -1,0 +1,11 @@
+id: ba42babc-0666-4393-a4f7-ceaf5a69191e
+name: Uncommon Child Processes Of SndVol.exe
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\SndVol.exe' AND (NOT (Image ILIKE '%\\rundll32.exe' AND CommandLine ILIKE '% shell32.dll,Control\_RunDLL %'))

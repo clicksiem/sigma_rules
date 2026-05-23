@@ -1,0 +1,12 @@
+id: 84232095-ecca-4015-b0d7-7726507ee793
+name: Suspicious DLL Loaded via CertOC.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certoc.exe' OR OriginalFileName='CertOC.exe') AND (CommandLine ILIKE '% -LoadDLL %' OR CommandLine ILIKE '% /LoadDLL %' OR CommandLine ILIKE '% –LoadDLL %' OR CommandLine ILIKE '% —LoadDLL %' OR CommandLine ILIKE '% ―LoadDLL %') AND (CommandLine ILIKE '%\\Appdata\\Local\\Temp\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%C:\\Windows\\Tasks\\%' OR CommandLine ILIKE '%C:\\Windows\\Temp\\%')

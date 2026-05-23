@@ -1,0 +1,12 @@
+id: 218d2855-2bba-4f61-9c85-81d0ea63ac71
+name: MSSQL Server Failed Logon
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), j4son
+group: windows
+tags:
+- attack.credential-access
+- attack.t1110
+rule: SELECT * FROM logs WHERE Provider_Name ILIKE '%MSSQL%' AND EventID=18456

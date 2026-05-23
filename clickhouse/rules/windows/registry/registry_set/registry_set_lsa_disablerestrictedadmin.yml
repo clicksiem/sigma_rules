@@ -1,0 +1,13 @@
+id: d6ce7ebd-260b-4323-9768-a9631c8d4db2
+name: RestrictedAdminMode Registry Value Tampering
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%System\\CurrentControlSet\\Control\\Lsa\\DisableRestrictedAdmin'

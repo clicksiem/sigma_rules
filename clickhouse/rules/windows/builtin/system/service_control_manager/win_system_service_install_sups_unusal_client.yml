@@ -1,0 +1,13 @@
+id: 71c276aa-49cd-43d2-b920-2dcd3e6962d5
+name: Service Installed By Unusual Client - System
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Rauch (Nextron Systems), Elastic (idea)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND ProcessId=0

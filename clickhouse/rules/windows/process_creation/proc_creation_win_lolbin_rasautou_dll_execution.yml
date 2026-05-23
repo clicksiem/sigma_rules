@@ -1,0 +1,12 @@
+id: cd3d1298-eb3b-476c-ac67-12847de55813
+name: DLL Execution via Rasautou.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Julia Fomina, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rasautou.exe' OR OriginalFileName='rasdlui.exe') AND (CommandLine ILIKE '% -d %' AND CommandLine ILIKE '% -p %')

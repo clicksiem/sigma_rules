@@ -1,0 +1,12 @@
+id: 84bae5d4-b518-4ae0-b331-6d4afd34d00f
+name: MacOS Network Service Scanning
+level: 3
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: macos
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/nc' OR Image ILIKE '%/netcat') AND (NOT CommandLine ILIKE '%l%')) OR (Image ILIKE '%/nmap' OR Image ILIKE '%/telnet')

@@ -1,0 +1,12 @@
+id: 7a4409fc-f8ca-45f6-8006-127d779eaad9
+name: LoadBalancer Security Group Modification
+level: 5
+size: '>0'
+active: true
+author:
+- jamesc-grafana
+group: aws
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE eventSource='elasticloadbalancing.amazonaws.com' AND (eventName IN ('ApplySecurityGroupsToLoadBalancer', 'SetSecurityGroups'))

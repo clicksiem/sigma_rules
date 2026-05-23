@@ -1,0 +1,12 @@
+id: 162e69a7-7981-4344-84a9-0f1c9a217a52
+name: Powershell Directory Enumeration
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%foreach%' AND ScriptBlockText ILIKE '%Get-ChildItem%' AND ScriptBlockText ILIKE '%-Path %' AND ScriptBlockText ILIKE '%-ErrorAction %' AND ScriptBlockText ILIKE '%SilentlyContinue%' AND ScriptBlockText ILIKE '%Out-File %' AND ScriptBlockText ILIKE '%-append%'

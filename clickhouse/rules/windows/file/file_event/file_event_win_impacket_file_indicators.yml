@@ -1,0 +1,12 @@
+id: 03f4ca17-de95-428d-a75a-4ee78b047256
+name: HackTool - Impacket File Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- The DFIR Report, IrishDeath
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE match(TargetFilename, '\\sessionresume_[a-zA-Z]{8}$')

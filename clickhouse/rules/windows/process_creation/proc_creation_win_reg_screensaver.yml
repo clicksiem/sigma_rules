@@ -1,0 +1,13 @@
+id: 0fc35fc3-efe6-4898-8a37-0b233339524f
+name: Suspicious ScreenSave Change by Reg.exe
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' AND (CommandLine ILIKE '%HKEY\_CURRENT\_USER\\Control Panel\\Desktop%' OR CommandLine ILIKE '%HKCU\\Control Panel\\Desktop%')) AND ((CommandLine ILIKE '%/v ScreenSaveActive%' AND CommandLine ILIKE '%/t REG\_SZ%' AND CommandLine ILIKE '%/d 1%' AND CommandLine ILIKE '%/f%') OR (CommandLine ILIKE '%/v ScreenSaveTimeout%' AND CommandLine ILIKE '%/t REG\_SZ%' AND CommandLine ILIKE '%/d %' AND CommandLine ILIKE '%/f%') OR (CommandLine ILIKE '%/v ScreenSaverIsSecure%' AND CommandLine ILIKE '%/t REG\_SZ%' AND CommandLine ILIKE '%/d 0%' AND CommandLine ILIKE '%/f%') OR (CommandLine ILIKE '%/v SCRNSAVE.EXE%' AND CommandLine ILIKE '%/t REG\_SZ%' AND CommandLine ILIKE '%/d %' AND CommandLine ILIKE '%.scr%' AND CommandLine ILIKE '%/f%'))

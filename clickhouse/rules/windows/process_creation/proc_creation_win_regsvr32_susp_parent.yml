@@ -1,0 +1,12 @@
+id: ab37a6ec-6068-432b-a64e-2c7bf95b1d22
+name: Scripting/CommandLine Process Spawned Regsvr32
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\cscript.exe' OR ParentImage ILIKE '%\\mshta.exe' OR ParentImage ILIKE '%\\powershell\_ise.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe' OR ParentImage ILIKE '%\\wscript.exe') AND Image ILIKE '%\\regsvr32.exe') AND (NOT (ParentImage ILIKE 'C:\\Windows\\System32\\cmd.exe' AND CommandLine ILIKE '% /s C:\\Windows\\System32\\RpcProxy\\RpcProxy.dll'))

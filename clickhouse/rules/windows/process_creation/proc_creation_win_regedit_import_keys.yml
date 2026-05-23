@@ -1,0 +1,13 @@
+id: 73bba97f-a82d-42ce-b315-9182e76c57b1
+name: Imports Registry Key From a File
+level: 5
+size: '>0'
+active: true
+author:
+- Oddvar Moe, Sander Wiebing, oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\regedit.exe' OR OriginalFileName='REGEDIT.EXE') AND (CommandLine ILIKE '% /i %' OR CommandLine ILIKE '% /s %' OR CommandLine ILIKE '%.reg%')) AND (NOT ((CommandLine ILIKE '% -e %' OR CommandLine ILIKE '% /e %' OR CommandLine ILIKE '% –e %' OR CommandLine ILIKE '% —e %' OR CommandLine ILIKE '% ―e %' OR CommandLine ILIKE '% -a %' OR CommandLine ILIKE '% /a %' OR CommandLine ILIKE '% –a %' OR CommandLine ILIKE '% —a %' OR CommandLine ILIKE '% ―a %' OR CommandLine ILIKE '% -c %' OR CommandLine ILIKE '% /c %' OR CommandLine ILIKE '% –c %' OR CommandLine ILIKE '% —c %' OR CommandLine ILIKE '% ―c %') AND match(CommandLine, ':[^ \\]')))

@@ -1,0 +1,13 @@
+id: ad720b90-25ad-43ff-9b5e-5c841facc8e5
+name: User Added to Local Administrators Group
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%localgroup %' AND CommandLine ILIKE '% /add%') OR (CommandLine ILIKE '%Add-LocalGroupMember %' AND CommandLine ILIKE '% -Group %')) AND (CommandLine ILIKE '% administrators %' OR CommandLine ILIKE '% administrateur%')

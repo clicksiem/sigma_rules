@@ -1,0 +1,15 @@
+id: 40b95d31-1afc-469e-8d34-9a3a667d058e
+name: Suspicious Csi.exe Usage
+level: 5
+size: '>0'
+active: true
+author:
+- Konstantin Grishchenko, oscd.community
+group: windows
+tags:
+- attack.lateral-movement
+- attack.execution
+- attack.stealth
+- attack.t1072
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\csi.exe' OR Image ILIKE '%\\rcsi.exe') OR (OriginalFileName IN ('csi.exe', 'rcsi.exe'))) AND Company='Microsoft Corporation'

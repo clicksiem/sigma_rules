@@ -1,0 +1,12 @@
+id: 51719bf5-e4fd-4e44-8ba8-b830e7ac0731
+name: Creation Of A Local User Account
+level: 3
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: macos
+tags:
+- attack.t1136.001
+- attack.persistence
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/dscl' AND CommandLine ILIKE '%create%') OR (Image ILIKE '%/sysadminctl' AND CommandLine ILIKE '%addUser%')

@@ -1,0 +1,12 @@
+id: d2e3f2f6-7e09-4bf2-bc5d-90186809e7fb
+name: PowerShell Script With File Upload Capabilities
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1020
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Invoke-RestMethod%' OR ScriptBlockText ILIKE '%Invoke-WebRequest%' OR ScriptBlockText ILIKE '%irm %' OR ScriptBlockText ILIKE '%iwr %') AND (ScriptBlockText ILIKE '%-Method "POST"%' OR ScriptBlockText ILIKE '%-Method "PUT"%' OR ScriptBlockText ILIKE '%-Method POST%' OR ScriptBlockText ILIKE '%-Method PUT%' OR ScriptBlockText ILIKE '%-Method ''POST''%' OR ScriptBlockText ILIKE '%-Method ''PUT''%')

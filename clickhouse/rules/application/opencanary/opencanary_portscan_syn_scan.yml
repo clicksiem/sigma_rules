@@ -1,0 +1,12 @@
+id: 974be8d2-283e-4033-ab08-7505b84204d0
+name: OpenCanary - Host Port Scan (SYN Scan)
+level: 8
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM)
+group: opencanary
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE logtype=5001

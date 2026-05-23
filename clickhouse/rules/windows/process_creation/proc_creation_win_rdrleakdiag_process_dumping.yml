@@ -1,0 +1,12 @@
+id: edadb1e5-5919-4e4c-8462-a9e643b02c4b
+name: Process Memory Dump via RdrLeakDiag.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Cedric MAURUGEON, Florian Roth (Nextron Systems), Swachchhanda Shrawan Poudel, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rdrleakdiag.exe' OR OriginalFileName='RdrLeakDiag.exe') AND (CommandLine ILIKE '%-memdmp%' OR CommandLine ILIKE '%/memdmp%' OR CommandLine ILIKE '%–memdmp%' OR CommandLine ILIKE '%—memdmp%' OR CommandLine ILIKE '%―memdmp%' OR CommandLine ILIKE '%fullmemdmp%') AND (CommandLine ILIKE '% -o %' OR CommandLine ILIKE '% /o %' OR CommandLine ILIKE '% –o %' OR CommandLine ILIKE '% —o %' OR CommandLine ILIKE '% ―o %' OR CommandLine ILIKE '% -p %' OR CommandLine ILIKE '% /p %' OR CommandLine ILIKE '% –p %' OR CommandLine ILIKE '% —p %' OR CommandLine ILIKE '% ―p %')

@@ -1,0 +1,14 @@
+id: bcfece3d-56fe-4545-9931-3b8e92927db1
+name: Winrs Local Command Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Liran Ravich, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.lateral-movement
+- attack.stealth
+- attack.t1021.006
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\winrs.exe' OR OriginalFileName='winrs.exe') AND (CommandLine ILIKE '%-r:localhost%' OR CommandLine ILIKE '%/r:localhost%' OR CommandLine ILIKE '%–r:localhost%' OR CommandLine ILIKE '%—r:localhost%' OR CommandLine ILIKE '%―r:localhost%' OR CommandLine ILIKE '%-r:127.0.0.1%' OR CommandLine ILIKE '%/r:127.0.0.1%' OR CommandLine ILIKE '%–r:127.0.0.1%' OR CommandLine ILIKE '%—r:127.0.0.1%' OR CommandLine ILIKE '%―r:127.0.0.1%' OR CommandLine ILIKE '%-r:[::1]%' OR CommandLine ILIKE '%/r:[::1]%' OR CommandLine ILIKE '%–r:[::1]%' OR CommandLine ILIKE '%—r:[::1]%' OR CommandLine ILIKE '%―r:[::1]%' OR CommandLine ILIKE '%-remote:localhost%' OR CommandLine ILIKE '%/remote:localhost%' OR CommandLine ILIKE '%–remote:localhost%' OR CommandLine ILIKE '%—remote:localhost%' OR CommandLine ILIKE '%―remote:localhost%' OR CommandLine ILIKE '%-remote:127.0.0.1%' OR CommandLine ILIKE '%/remote:127.0.0.1%' OR CommandLine ILIKE '%–remote:127.0.0.1%' OR CommandLine ILIKE '%—remote:127.0.0.1%' OR CommandLine ILIKE '%―remote:127.0.0.1%' OR CommandLine ILIKE '%-remote:[::1]%' OR CommandLine ILIKE '%/remote:[::1]%' OR CommandLine ILIKE '%–remote:[::1]%' OR CommandLine ILIKE '%—remote:[::1]%' OR CommandLine ILIKE '%―remote:[::1]%')) OR ((Image ILIKE '%\\winrs.exe' OR OriginalFileName='winrs.exe') AND (NOT (CommandLine ILIKE '%-r:%' OR CommandLine ILIKE '%/r:%' OR CommandLine ILIKE '%–r:%' OR CommandLine ILIKE '%—r:%' OR CommandLine ILIKE '%―r:%' OR CommandLine ILIKE '%-remote:%' OR CommandLine ILIKE '%/remote:%' OR CommandLine ILIKE '%–remote:%' OR CommandLine ILIKE '%—remote:%' OR CommandLine ILIKE '%―remote:%')))

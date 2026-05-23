@@ -1,0 +1,11 @@
+id: 434c08ba-8406-4d15-8b24-782cb071a691
+name: PowerShell Execution With Potential Decryption Capabilities
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%Get-ChildItem %' OR CommandLine ILIKE '%dir %' OR CommandLine ILIKE '%gci %' OR CommandLine ILIKE '%ls %') AND (CommandLine ILIKE '%Get-Content %' OR CommandLine ILIKE '%gc %' OR CommandLine ILIKE '%cat %' OR CommandLine ILIKE '%type %' OR CommandLine ILIKE '%ReadAllBytes%') AND ((CommandLine ILIKE '% ^| %' AND CommandLine ILIKE '%*.lnk%' AND CommandLine ILIKE '%-Recurse%' AND CommandLine ILIKE '%-Skip %') OR (CommandLine ILIKE '% -ExpandProperty %' AND CommandLine ILIKE '%*.lnk%' AND CommandLine ILIKE '%WriteAllBytes%' AND CommandLine ILIKE '% .length %'))

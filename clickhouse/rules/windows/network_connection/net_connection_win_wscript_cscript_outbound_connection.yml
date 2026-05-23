@@ -1,0 +1,12 @@
+id: 992a6cae-db6a-43c8-9cec-76d7195c96fc
+name: Outbound Network Connection Initiated By Script Interpreter
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Initiated='true' AND (Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe')) AND (NOT ((isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')) OR isIPAddressInRange(DestinationIp, '20.0.0.0/11')))

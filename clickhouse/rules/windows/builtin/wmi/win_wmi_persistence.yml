@@ -1,0 +1,13 @@
+id: 0b7889b4-5577-4521-a60a-3376ee7f9f7b
+name: WMI Persistence
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Gleb Sukhodolskiy, Timur Zinniatullin oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE ((EventID=5861 AND (hasToken(full_log, 'ActiveScriptEventConsumer') OR hasToken(full_log, 'CommandLineEventConsumer') OR hasToken(full_log, 'CommandLineTemplate'))) OR EventID=5859) AND (NOT (Provider='SCM Event Provider' AND Query ILIKE 'select % from MSFT\_SCMEventLogEvent' AND User='S-1-5-32-544' AND PossibleCause='Permanent'))

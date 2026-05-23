@@ -1,0 +1,12 @@
+id: 19aa4f58-94ca-45ff-bc34-92e533c0994a
+name: Suspicious User-Agents Related To Recon Tools
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Tim Shelton
+group: ''
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE `cs-user-agent` ILIKE '%Wfuzz/%' OR `cs-user-agent` ILIKE '%WPScan v%' OR `cs-user-agent` ILIKE '%Recon-ng/v%' OR `cs-user-agent` ILIKE '%GIS - AppSec Team - Project Vision%'

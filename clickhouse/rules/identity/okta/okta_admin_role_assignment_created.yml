@@ -1,0 +1,11 @@
+id: 139bdd4b-9cd7-49ba-a2f4-744d0a8f5d8c
+name: Okta Admin Role Assignment Created
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Khalimonenkov
+group: okta
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE eventType='iam.resourceset.bindings.add'

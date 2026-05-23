@@ -1,0 +1,11 @@
+id: fa7703d6-0ee8-4949-889c-48c84bc15b6f
+name: New Kind of Network (NKN) Detection
+level: 3
+size: '>0'
+active: true
+author:
+- Michael Portera (@mportatoes)
+group: zeek
+tags:
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE query ILIKE '%seed%' AND query ILIKE '%.nkn.org%'

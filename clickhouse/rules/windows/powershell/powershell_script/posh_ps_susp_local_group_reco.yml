@@ -1,0 +1,12 @@
+id: fa6a5a45-3ee2-4529-aa14-ee5edc9e29cb
+name: Suspicious Get Local Groups Information - PowerShell
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%get-localgroup %' OR ScriptBlockText ILIKE '%get-localgroupmember %') OR ((ScriptBlockText ILIKE '%get-wmiobject %' OR ScriptBlockText ILIKE '%gwmi %' OR ScriptBlockText ILIKE '%get-ciminstance %' OR ScriptBlockText ILIKE '%gcim %') AND ScriptBlockText ILIKE '%win32\_group%')

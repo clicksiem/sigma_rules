@@ -1,0 +1,12 @@
+id: 49329257-089d-46e6-af37-4afce4290685
+name: HackTool - SharpEvtMute DLL Load
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE Hashes ILIKE '%IMPHASH=330768A4F172E10ACB6287B87289D83B%'

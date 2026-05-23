@@ -1,0 +1,12 @@
+id: 2d2f44ff-4611-4778-a8fc-323a0e9850cc
+name: Inline Python Execution - Spawn Shell Via OS System Library
+level: 8
+size: '>0'
+active: true
+author:
+- Li Ling, Andy Parkidomo, Robert Rakowski, Blake Hartstein (Bloomberg L.P.)
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/python' OR Image ILIKE '%/python2' OR Image ILIKE '%/python3') OR (Image ILIKE '%/python2.%' OR Image ILIKE '%/python3.%')) AND ((CommandLine ILIKE '% -c %' AND CommandLine ILIKE '%os.system(%') AND (CommandLine ILIKE '%/bin/bash%' OR CommandLine ILIKE '%/bin/dash%' OR CommandLine ILIKE '%/bin/fish%' OR CommandLine ILIKE '%/bin/sh%' OR CommandLine ILIKE '%/bin/zsh%'))

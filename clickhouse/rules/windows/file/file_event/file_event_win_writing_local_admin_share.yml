@@ -1,0 +1,14 @@
+id: 4aafb0fa-bff5-4b9d-b99e-8093e659c65f
+name: Writing Local Admin Share
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.lateral-movement
+- attack.t1546.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\\\127.0.0%' AND TargetFilename ILIKE '%\\ADMIN$\\%'

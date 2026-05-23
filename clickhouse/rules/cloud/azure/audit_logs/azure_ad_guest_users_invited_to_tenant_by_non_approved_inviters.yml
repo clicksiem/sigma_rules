@@ -1,0 +1,15 @@
+id: 4ad97bf5-a514-41a4-abd3-4f3455ad4865
+name: Guest Users Invited To Tenant By Non Approved Inviters
+level: 5
+size: '>0'
+active: true
+author:
+- MikeDuddington, '@dudders1'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE (Category='UserManagement' AND OperationName='Invite external user') AND (NOT InitiatedBy ILIKE '%<approved guest inviter use OR for multiple>%')

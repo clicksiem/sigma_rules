@@ -1,0 +1,12 @@
+id: f0f7be61-9cf5-43be-9836-99d6ef448a18
+name: Uninstall Crowdstrike Falcon Sensor
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\WindowsSensor.exe%' AND CommandLine ILIKE '% /uninstall%' AND CommandLine ILIKE '% /quiet%'

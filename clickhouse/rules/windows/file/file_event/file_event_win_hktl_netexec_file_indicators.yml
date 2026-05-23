@@ -1,0 +1,15 @@
+id: efc21479-9e83-41da-8cf1-122e06ba8db3
+name: HackTool - NetExec File Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.lateral-movement
+- attack.discovery
+- attack.t1021.002
+- attack.t1059.005
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\nxc-windows-latest\\%' OR (TargetFilename ILIKE '%\\Temp\\\_MEI%' AND TargetFilename ILIKE '%\\nxc\\data\\%')

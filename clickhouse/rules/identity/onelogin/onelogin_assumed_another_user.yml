@@ -1,0 +1,11 @@
+id: 62fff148-278d-497e-8ecd-ad6083231a35
+name: OneLogin User Assumed Another User
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: onelogin
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE event_type_id=3

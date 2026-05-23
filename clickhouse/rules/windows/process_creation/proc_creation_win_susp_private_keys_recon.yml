@@ -1,0 +1,12 @@
+id: 213d6a77-3d55-4ce8-ba74-fcfef741974e
+name: Private Keys Reconnaissance Via CommandLine Tools
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.004
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%.key%' OR CommandLine ILIKE '%.pgp%' OR CommandLine ILIKE '%.gpg%' OR CommandLine ILIKE '%.ppk%' OR CommandLine ILIKE '%.p12%' OR CommandLine ILIKE '%.pem%' OR CommandLine ILIKE '%.pfx%' OR CommandLine ILIKE '%.cer%' OR CommandLine ILIKE '%.p7b%' OR CommandLine ILIKE '%.asc%') AND (((Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND CommandLine ILIKE '%dir %') OR (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND CommandLine ILIKE '%Get-ChildItem %') OR (Image ILIKE '%\\findstr.exe' OR OriginalFileName='FINDSTR.EXE'))

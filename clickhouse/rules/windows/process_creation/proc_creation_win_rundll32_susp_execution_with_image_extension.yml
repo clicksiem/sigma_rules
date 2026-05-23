@@ -1,0 +1,12 @@
+id: 4aa6040b-3f28-44e3-a769-9208e5feb5ec
+name: Suspicious Rundll32 Execution With Image Extension
+level: 8
+size: '>0'
+active: true
+author:
+- Hieu Tran
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.exe') AND (CommandLine ILIKE '%.bmp%' OR CommandLine ILIKE '%.cr2%' OR CommandLine ILIKE '%.eps%' OR CommandLine ILIKE '%.gif%' OR CommandLine ILIKE '%.ico%' OR CommandLine ILIKE '%.jpeg%' OR CommandLine ILIKE '%.jpg%' OR CommandLine ILIKE '%.nef%' OR CommandLine ILIKE '%.orf%' OR CommandLine ILIKE '%.png%' OR CommandLine ILIKE '%.raw%' OR CommandLine ILIKE '%.sr2%' OR CommandLine ILIKE '%.tif%' OR CommandLine ILIKE '%.tiff%')

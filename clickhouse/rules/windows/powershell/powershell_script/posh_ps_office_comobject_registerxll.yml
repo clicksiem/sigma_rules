@@ -1,0 +1,12 @@
+id: 36fbec91-fa1b-4d5d-8df1-8d8edcb632ad
+name: Code Executed Via Office Add-in XLL File
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.t1137.006
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%new-object %' AND ScriptBlockText ILIKE '%-ComObject %' AND ScriptBlockText ILIKE '%.application%' AND ScriptBlockText ILIKE '%.RegisterXLL%'

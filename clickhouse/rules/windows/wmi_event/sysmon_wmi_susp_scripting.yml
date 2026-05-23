@@ -1,0 +1,12 @@
+id: fe21810c-2a8c-478f-8dd3-5a287fb2a0e0
+name: Suspicious Scripting in a WMI Consumer
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro
+group: windows
+tags:
+- attack.execution
+- attack.t1059.005
+rule: SELECT * FROM logs WHERE (Destination ILIKE '%new-object%' AND Destination ILIKE '%net.webclient%' AND Destination ILIKE '%.downloadstring%') OR (Destination ILIKE '%new-object%' AND Destination ILIKE '%net.webclient%' AND Destination ILIKE '%.downloadfile%') OR (Destination ILIKE '% iex(%' OR Destination ILIKE '% -nop %' OR Destination ILIKE '% -noprofile %' OR Destination ILIKE '% -decode %' OR Destination ILIKE '% -enc %' OR Destination ILIKE '%WScript.Shell%' OR Destination ILIKE '%System.Security.Cryptography.FromBase64Transform%')

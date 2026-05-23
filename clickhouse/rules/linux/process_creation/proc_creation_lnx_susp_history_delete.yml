@@ -1,0 +1,12 @@
+id: 1182f3b3-e716-4efa-99ab-d2685d04360f
+name: History File Deletion
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.impact
+- attack.t1565.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/rm' OR Image ILIKE '%/unlink' OR Image ILIKE '%/shred') AND ((CommandLine ILIKE '%/.bash\_history%' OR CommandLine ILIKE '%/.zsh\_history%') OR (CommandLine ILIKE '%\_history' OR CommandLine ILIKE '%.history' OR CommandLine ILIKE '%zhistory'))

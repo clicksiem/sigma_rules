@@ -1,0 +1,13 @@
+id: f3d39c45-de1a-4486-a687-ab126124f744
+name: Sdiagnhost Calling Suspicious Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Nextron Systems, @Kostastsale
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1218
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\sdiagnhost.exe' AND (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\taskkill.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\calc.exe')) AND (NOT ((Image ILIKE '%\\cmd.exe' AND CommandLine ILIKE '%bits%') OR (Image ILIKE '%\\powershell.exe' AND (CommandLine ILIKE '%-noprofile -' OR CommandLine ILIKE '%-noprofile'))))

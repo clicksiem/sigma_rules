@@ -1,0 +1,12 @@
+id: 37222991-11e9-4b6d-8bdf-60fbe48f753e
+name: Overwriting the File with Dev Zero or Null
+level: 3
+size: '>0'
+active: true
+author:
+- Jakob Weinzettl, oscd.community
+group: linux
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE type='EXECVE' AND a0 ILIKE '%dd%' AND (a1 ILIKE '%if=/dev/null%' OR a1 ILIKE '%if=/dev/zero%')

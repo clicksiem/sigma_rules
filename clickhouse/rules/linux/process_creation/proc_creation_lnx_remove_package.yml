@@ -1,0 +1,12 @@
+id: 95d61234-7f56-465c-6f2d-b562c6fedbc4
+name: Linux Package Uninstall
+level: 3
+size: '>0'
+active: true
+author:
+- Tuan Le (NCSGroup), Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/yum' AND (CommandLine ILIKE '%erase%' OR CommandLine ILIKE '%remove%')) OR ((Image ILIKE '%/apt' OR Image ILIKE '%/apt-get') AND (CommandLine ILIKE '%remove%' OR CommandLine ILIKE '%purge%')) OR (Image ILIKE '%/dpkg' AND (CommandLine ILIKE '%--remove %' OR CommandLine ILIKE '% -r %')) OR (Image ILIKE '%/rpm' AND CommandLine ILIKE '% -e %')

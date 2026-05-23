@@ -1,0 +1,12 @@
+id: 0d18728b-f5bf-4381-9dcf-915539fff6c2
+name: Suspicious Cobalt Strike DNS Beaconing - DNS Client
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.t1071.004
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE EventID=3008 AND ((QueryName ILIKE 'aaa.stage.%' OR QueryName ILIKE 'post.1%') OR QueryName ILIKE '%.stage.123456.%')

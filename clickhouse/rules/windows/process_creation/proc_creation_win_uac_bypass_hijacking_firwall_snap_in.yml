@@ -1,0 +1,12 @@
+id: e52cb31c-10ed-4aea-bcb7-593c9f4a315b
+name: UAC Bypass via Windows Firewall Snap-In Hijack
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\mmc.exe' AND ParentCommandLine ILIKE '%WF.msc%') AND (NOT Image ILIKE '%\\WerFault.exe')

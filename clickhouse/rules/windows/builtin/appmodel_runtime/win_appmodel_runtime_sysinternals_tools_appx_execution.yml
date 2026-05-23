@@ -1,0 +1,12 @@
+id: d29a20b2-be4b-4827-81f2-3d8a59eab5fc
+name: Sysinternals Tools AppX Versions Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+rule: SELECT * FROM logs WHERE EventID=201 AND (ImageName IN ('procdump.exe', 'psloglist.exe', 'psexec.exe', 'livekd.exe', 'ADExplorer.exe'))

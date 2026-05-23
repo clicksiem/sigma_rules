@@ -1,0 +1,11 @@
+id: 312d0384-401c-4b8b-abdf-685ffba9a332
+name: Email Exifiltration Via Powershell
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems),  Azure-Sentinel (idea)
+group: windows
+tags:
+- attack.exfiltration
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%Add-PSSnapin%' AND CommandLine ILIKE '%Get-Recipient%' AND CommandLine ILIKE '%-ExpandProperty%' AND CommandLine ILIKE '%EmailAddresses%' AND CommandLine ILIKE '%SmtpAddress%' AND CommandLine ILIKE '%-hidetableheaders%')

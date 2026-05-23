@@ -1,0 +1,12 @@
+id: bed26dea-4525-47f4-b24a-76e30e44ffb0
+name: Audit Rules Deleted Via Auditctl
+level: 8
+size: '>0'
+active: true
+author:
+- Mohamed LAKRI
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/auditctl' AND match(CommandLine, '-D')

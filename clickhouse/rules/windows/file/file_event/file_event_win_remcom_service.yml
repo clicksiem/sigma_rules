@@ -1,0 +1,13 @@
+id: 7eff1a7f-dd45-4c20-877a-f21e342a7611
+name: RemCom Service File Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\RemComSvc.exe'

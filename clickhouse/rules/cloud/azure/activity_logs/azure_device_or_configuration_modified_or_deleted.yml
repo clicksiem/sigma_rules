@@ -1,0 +1,13 @@
+id: 46530378-f9db-4af9-a9e5-889c177d3881
+name: Azure Device or Configuration Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+- attack.t1485
+- attack.t1565.001
+rule: SELECT * FROM logs WHERE `properties.message` IN ('Delete device', 'Delete device configuration', 'Update device', 'Update device configuration')

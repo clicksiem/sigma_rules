@@ -1,0 +1,14 @@
+id: 4833155a-4053-4c9c-a997-777fcea0baa7
+name: SQLite Firefox Profile Data DB Access
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1539
+- attack.collection
+- attack.t1005
+rule: SELECT * FROM logs WHERE (Product='SQLite' OR (Image ILIKE '%\\sqlite.exe' OR Image ILIKE '%\\sqlite3.exe')) AND (CommandLine ILIKE '%cookies.sqlite%' OR CommandLine ILIKE '%places.sqlite%')

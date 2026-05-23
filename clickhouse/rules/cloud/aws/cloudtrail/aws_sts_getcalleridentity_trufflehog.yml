@@ -1,0 +1,12 @@
+id: 9b1b8e9b-0a5d-4af1-9d2f-4c4b6e7c2c9d
+name: AWS STS GetCallerIdentity Enumeration Via TruffleHog
+level: 5
+size: '>0'
+active: true
+author:
+- Adan Alvarez @adanalvarez
+group: aws
+tags:
+- attack.discovery
+- attack.t1087.004
+rule: SELECT * FROM logs WHERE eventSource='sts.amazonaws.com' AND eventName='GetCallerIdentity' AND userAgent ILIKE '%TruffleHog%'

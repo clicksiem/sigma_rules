@@ -1,0 +1,12 @@
+id: 75e508f7-932d-4ebc-af77-269237a84ce1
+name: DLL Loaded From Suspicious Location Via Cmspt.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\cmstp.exe' AND (ImageLoaded ILIKE '%\\PerfLogs\\%' OR ImageLoaded ILIKE '%\\ProgramData\\%' OR ImageLoaded ILIKE '%\\Users\\%' OR ImageLoaded ILIKE '%\\Windows\\Temp\\%' OR ImageLoaded ILIKE '%C:\\Temp\\%') AND (ImageLoaded ILIKE '%.dll' OR ImageLoaded ILIKE '%.ocx')

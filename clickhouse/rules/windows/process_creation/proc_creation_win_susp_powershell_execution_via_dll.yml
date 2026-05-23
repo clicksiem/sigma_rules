@@ -1,0 +1,12 @@
+id: 6812a10b-60ea-420c-832f-dfcc33b646ba
+name: Potential PowerShell Execution Via DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Markus Neis, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\InstallUtil.exe' OR Image ILIKE '%\\RegAsm.exe' OR Image ILIKE '%\\RegSvcs.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe') OR (OriginalFileName IN ('InstallUtil.exe', 'RegAsm.exe', 'RegSvcs.exe', 'REGSVR32.EXE', 'RUNDLL32.EXE'))) AND (CommandLine ILIKE '%Default.GetString%' OR CommandLine ILIKE '%DownloadString%' OR CommandLine ILIKE '%FromBase64String%' OR CommandLine ILIKE '%ICM %' OR CommandLine ILIKE '%IEX %' OR CommandLine ILIKE '%Invoke-Command%' OR CommandLine ILIKE '%Invoke-Expression%')

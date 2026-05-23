@@ -1,0 +1,11 @@
+id: 3b5b0213-0460-4e3f-8937-3abf98ff7dcc
+name: Suspicious Workstation Locking via Rundll32
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND ParentImage ILIKE '%\\cmd.exe' AND CommandLine ILIKE '%user32.dll,%' AND CommandLine ILIKE '%LockWorkStation%'

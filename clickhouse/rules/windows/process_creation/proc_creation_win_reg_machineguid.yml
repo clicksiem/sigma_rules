@@ -1,0 +1,12 @@
+id: f5240972-3938-4e56-8e4b-e33893176c1f
+name: Suspicious Query of MachineGUID
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\reg.exe' AND (CommandLine ILIKE '%SOFTWARE\\Microsoft\\Cryptography%' AND CommandLine ILIKE '%/v %' AND CommandLine ILIKE '%MachineGuid%')

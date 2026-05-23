@@ -1,0 +1,13 @@
+id: fa00b701-44c6-4679-994d-5a18afa8a707
+name: PUA - AdvancedRun Suspicious Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134.002
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%/EXEFilename%' OR CommandLine ILIKE '%/CommandLine%') AND ((CommandLine ILIKE '% /RunAs 8 %' OR CommandLine ILIKE '% /RunAs 4 %' OR CommandLine ILIKE '% /RunAs 10 %' OR CommandLine ILIKE '% /RunAs 11 %') OR (CommandLine ILIKE '%/RunAs 8' OR CommandLine ILIKE '%/RunAs 4' OR CommandLine ILIKE '%/RunAs 10' OR CommandLine ILIKE '%/RunAs 11'))

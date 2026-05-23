@@ -1,0 +1,12 @@
+id: 2dbd9d3d-9e27-42a8-b8df-f13825c6c3d5
+name: WebDav Client Execution Via Rundll32.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048.003
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\svchost.exe' AND (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND CommandLine ILIKE '%C:\\windows\\system32\\davclnt.dll,DavSetCookie%'

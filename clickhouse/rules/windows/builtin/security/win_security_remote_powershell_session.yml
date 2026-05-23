@@ -1,0 +1,12 @@
+id: 13acf386-b8c6-4fe0-9a6e-c4756b974698
+name: Remote PowerShell Sessions Network Connections (WinRM)
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE EventID=5156 AND (DestPort IN (5985, 5986)) AND LayerRTID=44

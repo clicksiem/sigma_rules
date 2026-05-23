@@ -1,0 +1,12 @@
+id: 25cde13e-8e20-4c29-b949-4e795b76f16f
+name: Suspicious Teams Application Related ObjectAcess Event
+level: 8
+size: '>0'
+active: true
+author:
+- '@SerkinValery'
+group: windows
+tags:
+- attack.credential-access
+- attack.t1528
+rule: SELECT * FROM logs WHERE (EventID=4663 AND (ObjectName ILIKE '%\\Microsoft\\Teams\\Cookies%' OR ObjectName ILIKE '%\\Microsoft\\Teams\\Local Storage\\leveldb%')) AND (NOT ProcessName ILIKE '%\\Microsoft\\Teams\\current\\Teams.exe%')

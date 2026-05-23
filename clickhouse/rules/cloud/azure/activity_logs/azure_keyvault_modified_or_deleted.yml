@@ -1,0 +1,14 @@
+id: 459a2970-bb84-4e6a-a32e-ff0fbd99448d
+name: Azure Key Vault Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+- attack.credential-access
+- attack.t1552
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE operationName IN ('MICROSOFT.KEYVAULT/VAULTS/WRITE', 'MICROSOFT.KEYVAULT/VAULTS/DELETE', 'MICROSOFT.KEYVAULT/VAULTS/DEPLOY/ACTION', 'MICROSOFT.KEYVAULT/VAULTS/ACCESSPOLICIES/WRITE')

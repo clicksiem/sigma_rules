@@ -1,0 +1,12 @@
+id: ea34fb97-e2c4-4afb-810f-785e4459b194
+name: Curl Usage on Linux
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%/curl'

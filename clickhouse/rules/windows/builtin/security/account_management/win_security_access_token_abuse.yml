@@ -1,0 +1,14 @@
+id: 02f7c9c1-1ae8-4c6a-8add-04693807f92f
+name: Potential Access Token Abuse
+level: 5
+size: '>0'
+active: true
+author:
+- Michaela Adams, Zach Mathis
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134.001
+- stp.4u
+rule: SELECT * FROM logs WHERE EventID=4624 AND LogonType=9 AND LogonProcessName='Advapi' AND AuthenticationPackageName='Negotiate' AND ImpersonationLevel ILIKE '\%\%1833'

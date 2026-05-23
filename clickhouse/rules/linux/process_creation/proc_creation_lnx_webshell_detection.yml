@@ -1,0 +1,12 @@
+id: 818f7b24-0fba-4c49-a073-8b755573b9c7
+name: Linux Webshell Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%/httpd' OR ParentImage ILIKE '%/lighttpd' OR ParentImage ILIKE '%/nginx' OR ParentImage ILIKE '%/apache2' OR ParentImage ILIKE '%/node' OR ParentImage ILIKE '%/caddy') OR (ParentCommandLine ILIKE '%/bin/java%' AND ParentCommandLine ILIKE '%tomcat%') OR (ParentCommandLine ILIKE '%/bin/java%' AND ParentCommandLine ILIKE '%websphere%')) AND (Image ILIKE '%/whoami' OR Image ILIKE '%/ifconfig' OR Image ILIKE '%/ip' OR Image ILIKE '%/bin/uname' OR Image ILIKE '%/bin/cat' OR Image ILIKE '%/bin/crontab' OR Image ILIKE '%/hostname' OR Image ILIKE '%/iptables' OR Image ILIKE '%/netstat' OR Image ILIKE '%/pwd' OR Image ILIKE '%/route')

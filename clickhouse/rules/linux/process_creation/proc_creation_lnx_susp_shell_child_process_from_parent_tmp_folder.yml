@@ -1,0 +1,11 @@
+id: 2fade0b6-7423-4835-9d4f-335b39b83867
+name: Shell Execution Of Process Located In Tmp Directory
+level: 8
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '/tmp/%' AND (Image ILIKE '%/bash' OR Image ILIKE '%/csh' OR Image ILIKE '%/dash' OR Image ILIKE '%/fish' OR Image ILIKE '%/ksh' OR Image ILIKE '%/sh' OR Image ILIKE '%/zsh')

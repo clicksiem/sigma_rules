@@ -1,0 +1,12 @@
+id: 6aa12161-235a-4dfb-9c74-fe08df8d8da1
+name: Bitbucket Audit Log Configuration Updated
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE `auditType.category`='Auditing' AND `auditType.action`='Audit log configuration updated'

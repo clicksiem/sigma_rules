@@ -1,0 +1,14 @@
+id: 12e6d621-194f-4f59-90cc-1959e21e69f7
+name: Register new Logon Process by Rubeus
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (source), Ilyas Ochkov (rule), oscd.community
+group: windows
+tags:
+- attack.lateral-movement
+- attack.privilege-escalation
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE EventID=4611 AND LogonProcessName='User32LogonProcesss'

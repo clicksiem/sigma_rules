@@ -1,0 +1,12 @@
+id: 76737c19-66ee-4c07-b65a-a03301d1573d
+name: GCP Break-glass Container Workload Deployed
+level: 5
+size: '>0'
+active: true
+author:
+- Bryan Lim
+group: gcp
+tags:
+- attack.privilege-escalation
+- attack.t1548
+rule: SELECT * FROM logs WHERE (`data.protoPayload.resource.type` ILIKE 'k8s\_cluster' AND (`data.protoPayload.logName` IN ('cloudaudit.googleapis.com/activity', 'cloudaudit.googleapis.com\%2Factivity')) AND `data.protoPayload.methodName`='io.k8s.core.v1.pods.create') AND hasToken(full_log, 'image-policy.k8s.io/break-glass')

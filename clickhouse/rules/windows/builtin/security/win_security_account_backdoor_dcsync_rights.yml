@@ -1,0 +1,13 @@
+id: 2c99737c-585d-4431-b61a-c911d86ff32f
+name: Powerview Add-DomainObjectAcl DCSync AD Extend Right
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden, Roberto Rodriguez @Cyb3rWard0g, oscd.community, Tim Shelton, Maxence Fossat
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE (EventID=5136 AND AttributeLDAPDisplayName='ntSecurityDescriptor' AND (AttributeValue ILIKE '%1131f6ad-9c07-11d1-f79f-00c04fc2dcd2%' OR AttributeValue ILIKE '%1131f6aa-9c07-11d1-f79f-00c04fc2dcd2%' OR AttributeValue ILIKE '%89e95b76-444d-4c62-991a-0facbeda640c%')) AND (NOT (ObjectClass IN ('dnsNode', 'dnsZoneScope', 'dnsZone')))

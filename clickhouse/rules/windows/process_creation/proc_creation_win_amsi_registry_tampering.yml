@@ -1,0 +1,12 @@
+id: 7dbbcac2-57a0-45ac-b306-ff30a8bd2981
+name: Windows AMSI Related Registry Tampering Via CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\Software\\Microsoft\\Windows Script\\Settings%' AND CommandLine ILIKE '%AmsiEnable%') AND ((((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%Set-ItemProperty%' OR CommandLine ILIKE '%New-ItemProperty%' OR CommandLine ILIKE '%sp %')) OR ((Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND CommandLine ILIKE '%add%'))

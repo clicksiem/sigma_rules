@@ -1,0 +1,12 @@
+id: 88872991-7445-4a22-90b2-a3adadb0e827
+name: Stop Windows Service Via Net.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Jakob Weinzettl, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE ((OriginalFileName IN ('net.exe', 'net1.exe')) OR (Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe')) AND CommandLine ILIKE '% stop %'

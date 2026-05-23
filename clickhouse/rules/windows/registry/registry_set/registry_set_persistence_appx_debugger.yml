@@ -1,0 +1,13 @@
+id: df4dc653-1029-47ba-8231-3c44238cc0ae
+name: Potential Persistence Using DebugPath
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.015
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%Classes\\ActivatableClasses\\Package\\Microsoft.%' AND TargetObject ILIKE '%\\DebugPath') OR (TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\PackagedAppXDebug\\Microsoft.%' AND TargetObject ILIKE '%\\(Default)')

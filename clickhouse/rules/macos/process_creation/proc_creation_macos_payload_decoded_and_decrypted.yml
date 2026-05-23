@@ -1,0 +1,17 @@
+id: 234dc5df-40b5-49d1-bf53-0d44ce778eca
+name: Payload Decoded and Decrypted via Built-in Utilities
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch (rule), Elastic (idea)
+group: macos
+tags:
+- attack.stealth
+- attack.t1059
+- attack.t1204
+- attack.execution
+- attack.t1140
+- attack.s0482
+- attack.s0402
+rule: SELECT * FROM logs WHERE Image ILIKE '%/openssl' AND (CommandLine ILIKE '%/Volumes/%' AND CommandLine ILIKE '%enc%' AND CommandLine ILIKE '%-base64%' AND CommandLine ILIKE '% -d %')

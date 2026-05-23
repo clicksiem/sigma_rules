@@ -1,0 +1,12 @@
+id: ca621ba5-54ab-4035-9942-d378e6fcde3c
+name: HackTool - HandleKatz LSASS Dumper Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\loader.exe' AND CommandLine ILIKE '%--pid:%') OR (Hashes ILIKE '%IMPHASH=38D9E015591BBFD4929E0D0F47FA0055%' OR Hashes ILIKE '%IMPHASH=0E2216679CA6E1094D63322E3412D650%') OR ((CommandLine ILIKE '%--pid:%' AND CommandLine ILIKE '%--outfile:%') AND (CommandLine ILIKE '%.dmp%' OR CommandLine ILIKE '%lsass%' OR CommandLine ILIKE '%.obf%' OR CommandLine ILIKE '%dump%'))

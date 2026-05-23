@@ -1,0 +1,13 @@
+id: 0bcfabcb-7929-47f4-93d6-b33fb67d34d1
+name: Adwind RAT / JRAT File Artifact
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Tom Ueltschi, Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059.005
+- attack.t1059.007
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\AppData\\Roaming\\Oracle\\bin\\java%' AND TargetFilename ILIKE '%.exe%') OR (TargetFilename ILIKE '%\\Retrive%' AND TargetFilename ILIKE '%.vbs%')

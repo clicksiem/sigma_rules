@@ -1,0 +1,13 @@
+id: 2c32b543-1058-4808-91c6-5b31b8bed6c5
+name: PUA - Crassus Execution
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.reconnaissance
+- attack.t1590.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Crassus.exe' OR OriginalFileName='Crassus.exe' OR Description ILIKE '%Crassus%'

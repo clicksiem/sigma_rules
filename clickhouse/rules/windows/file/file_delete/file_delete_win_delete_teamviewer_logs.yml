@@ -1,0 +1,12 @@
+id: b1decb61-ed83-4339-8e95-53ea51901720
+name: TeamViewer Log File Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\TeamViewer\_%' AND TargetFilename ILIKE '%.log') AND (NOT Image ILIKE 'C:\\Windows\\system32\\svchost.exe')

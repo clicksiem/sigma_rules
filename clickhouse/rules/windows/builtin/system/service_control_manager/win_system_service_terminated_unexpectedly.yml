@@ -1,0 +1,11 @@
+id: 56abae0c-6212-4b97-adc0-0b559bb950c3
+name: Important Windows Service Terminated Unexpectedly
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Provider_Name='Service Control Manager' AND EventID=7034) AND (param1 ILIKE '%Message Queuing%' OR (Binary ILIKE '%4d0053004d005100%' OR Binary ILIKE '%6d0073006d007100%'))

@@ -1,0 +1,14 @@
+id: 25eabf56-22f0-4915-a1ed-056b8dae0a68
+name: Suspicious Dropbox API Usage
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.exfiltration
+- attack.t1105
+- attack.t1567.002
+rule: SELECT * FROM logs WHERE (Initiated='true' AND (DestinationHostname ILIKE '%api.dropboxapi.com' OR DestinationHostname ILIKE '%content.dropboxapi.com')) AND (NOT Image ILIKE '%\\Dropbox%')

@@ -1,0 +1,14 @@
+id: 1a1ed54a-2ba4-4221-94d5-01dee560d71e
+name: Renamed CreateDump Utility Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1003.001
+- attack.credential-access
+rule: SELECT * FROM logs WHERE (OriginalFileName ILIKE 'FX\_VER\_INTERNALNAME\_STR' OR ((CommandLine ILIKE '% -u %' AND CommandLine ILIKE '% -f %' AND CommandLine ILIKE '%.dmp%') OR (CommandLine ILIKE '% --full %' AND CommandLine ILIKE '% --name %' AND CommandLine ILIKE '%.dmp%'))) AND (NOT Image ILIKE '%\\createdump.exe')

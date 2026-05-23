@@ -1,0 +1,12 @@
+id: 19aefed0-ffd4-47dc-a7fc-f8b1425e84f9
+name: Python SQL Exceptions
+level: 5
+size: '>0'
+active: true
+author:
+- Thomas Patzke
+group: python
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'DataError') OR hasToken(full_log, 'IntegrityError') OR hasToken(full_log, 'ProgrammingError') OR hasToken(full_log, 'OperationalError')

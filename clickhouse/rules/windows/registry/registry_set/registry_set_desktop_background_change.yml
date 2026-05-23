@@ -1,0 +1,15 @@
+id: 85b88e05-dadc-430b-8a9e-53ff1cd30aae
+name: Potentially Suspicious Desktop Background Change Via Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Stephen Lincoln @slincoln-aiq (AttackIQ)
+group: windows
+tags:
+- attack.persistence
+- attack.impact
+- attack.defense-impairment
+- attack.t1112
+- attack.t1491.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%Control Panel\\Desktop%' OR TargetObject ILIKE '%CurrentVersion\\Policies\\ActiveDesktop%' OR TargetObject ILIKE '%CurrentVersion\\Policies\\System%') AND ((TargetObject ILIKE '%NoChangingWallpaper' AND Details='DWORD (0x00000001)') OR TargetObject ILIKE '%\\Wallpaper' OR (TargetObject ILIKE '%\\WallpaperStyle' AND Details='2')) AND (NOT (Image ILIKE '%\\svchost.exe' OR (TargetObject ILIKE '%\\Control Panel\\Desktop\\Wallpaper' AND Details='(Empty)') OR Image ILIKE '%C:\\Windows\\Explorer.EXE')) AND (NOT ((Image IN ('C:\\Program Files\\Amazon\\EC2Launch\\EC2Launch.exe', 'C:\\Program Files (x86)\\Amazon\\EC2Launch\\EC2Launch.exe')) AND TargetObject ILIKE '%\\Control Panel\\Desktop\\Wallpaper'))

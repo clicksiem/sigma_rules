@@ -1,0 +1,12 @@
+id: 6555754e-5e7f-4a67-ad1c-4041c413a007
+name: Anomalous Token
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow'
+group: azure
+tags:
+- attack.t1528
+- attack.credential-access
+rule: SELECT * FROM logs WHERE riskEventType='anomalousToken'

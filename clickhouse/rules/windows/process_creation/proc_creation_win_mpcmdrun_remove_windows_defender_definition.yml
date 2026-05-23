@@ -1,0 +1,12 @@
+id: 9719a8aa-401c-41af-8108-ced7ec9cd75c
+name: Windows Defender Definition Files Removed
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\MpCmdRun.exe' OR OriginalFileName='MpCmdRun.exe') AND (CommandLine ILIKE '% -RemoveDefinitions%' AND CommandLine ILIKE '% -All%')

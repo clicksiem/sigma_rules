@@ -1,0 +1,15 @@
+id: d2451be2-b582-4e15-8701-4196ac180260
+name: Potential DLL Sideloading Of KeyScramblerIE.DLL Via KeyScrambler.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\KeyScrambler.exe' OR Image ILIKE '%\\KeyScramblerLogon.exe') AND ImageLoaded ILIKE '%\\KeyScramblerIE.dll') AND (NOT (((Image ILIKE '%C:\\Program Files (x86)\\KeyScrambler\\%' OR Image ILIKE '%C:\\Program Files\\KeyScrambler\\%') AND (ImageLoaded ILIKE '%C:\\Program Files (x86)\\KeyScrambler\\%' OR ImageLoaded ILIKE '%C:\\Program Files\\KeyScrambler\\%')) OR (Signature='QFX Software Corporation' AND SignatureStatus='Valid')))

@@ -1,0 +1,12 @@
+id: 3b5ba899-9842-4bc2-acc2-12308498bf42
+name: Office Application Initiated Network Connection Over Uncommon Ports
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Initiated='true' AND (Image ILIKE '%\\excel.exe' OR Image ILIKE '%\\outlook.exe' OR Image ILIKE '%\\powerpnt.exe' OR Image ILIKE '%\\winword.exe' OR Image ILIKE '%\\wordview.exe')) AND (NOT ((DestinationPort IN (53, 80, 139, 389, 443, 445, 3268)) OR (Image ILIKE '%:\\Program Files\\Microsoft Office\\%' AND Image ILIKE '%\\OUTLOOK.EXE' AND (DestinationPort IN (143, 465, 587, 993, 995)))))

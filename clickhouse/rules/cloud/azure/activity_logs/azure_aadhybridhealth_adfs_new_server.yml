@@ -1,0 +1,12 @@
+id: 288a39fc-4914-4831-9ada-270e9dc12cb4
+name: Azure Active Directory Hybrid Health AD FS New Server
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research), MSTIC
+group: azure
+tags:
+- attack.defense-impairment
+- attack.t1578
+rule: SELECT * FROM logs WHERE CategoryValue='Administrative' AND ResourceProviderValue='Microsoft.ADHybridHealthService' AND ResourceId ILIKE '%AdFederationService%' AND OperationNameValue='Microsoft.ADHybridHealthService/services/servicemembers/action'

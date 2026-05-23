@@ -1,0 +1,12 @@
+id: 6c0a7755-6d31-44fa-80e1-133e57752680
+name: Windows Defender Threat Detection Service Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- Ján Trenčanský, frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=7036 AND Provider_Name='Service Control Manager' AND (param1 IN ('Windows Defender Antivirus Service', 'Service antivirus Microsoft Defender')) AND (param2 IN ('stopped', 'arrêté'))

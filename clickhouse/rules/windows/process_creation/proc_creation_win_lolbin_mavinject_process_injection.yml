@@ -1,0 +1,14 @@
+id: 4f73421b-5a0b-4bbf-a892-5a7fb99bea66
+name: Mavinject Inject DLL Into Running Process
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.001
+- attack.t1218.013
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% /INJECTRUNNING %' AND (NOT ParentImage ILIKE 'C:\\Windows\\System32\\AppVClient.exe')

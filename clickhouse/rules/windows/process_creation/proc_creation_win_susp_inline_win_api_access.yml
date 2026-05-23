@@ -1,0 +1,12 @@
+id: ba3f5c1b-6272-4119-9dbd-0bc8d21c2702
+name: Potential WinAPI Calls Via CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1106
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%AddSecurityPackage%' OR CommandLine ILIKE '%AdjustTokenPrivileges%' OR CommandLine ILIKE '%Advapi32%' OR CommandLine ILIKE '%CloseHandle%' OR CommandLine ILIKE '%CreateProcessWithToken%' OR CommandLine ILIKE '%CreatePseudoConsole%' OR CommandLine ILIKE '%CreateRemoteThread%' OR CommandLine ILIKE '%CreateThread%' OR CommandLine ILIKE '%CreateUserThread%' OR CommandLine ILIKE '%DangerousGetHandle%' OR CommandLine ILIKE '%DuplicateTokenEx%' OR CommandLine ILIKE '%EnumerateSecurityPackages%' OR CommandLine ILIKE '%FreeHGlobal%' OR CommandLine ILIKE '%FreeLibrary%' OR CommandLine ILIKE '%GetDelegateForFunctionPointer%' OR CommandLine ILIKE '%GetLogonSessionData%' OR CommandLine ILIKE '%GetModuleHandle%' OR CommandLine ILIKE '%GetProcAddress%' OR CommandLine ILIKE '%GetProcessHandle%' OR CommandLine ILIKE '%GetTokenInformation%' OR CommandLine ILIKE '%ImpersonateLoggedOnUser%' OR CommandLine ILIKE '%kernel32%' OR CommandLine ILIKE '%LoadLibrary%' OR CommandLine ILIKE '%memcpy%' OR CommandLine ILIKE '%MiniDumpWriteDump%' OR CommandLine ILIKE '%ntdll%' OR CommandLine ILIKE '%OpenDesktop%' OR CommandLine ILIKE '%OpenProcess%' OR CommandLine ILIKE '%OpenProcessToken%' OR CommandLine ILIKE '%OpenThreadToken%' OR CommandLine ILIKE '%OpenWindowStation%' OR CommandLine ILIKE '%PtrToString%' OR CommandLine ILIKE '%QueueUserApc%' OR CommandLine ILIKE '%ReadProcessMemory%' OR CommandLine ILIKE '%RevertToSelf%' OR CommandLine ILIKE '%RtlCreateUserThread%' OR CommandLine ILIKE '%secur32%' OR CommandLine ILIKE '%SetThreadToken%' OR CommandLine ILIKE '%VirtualAlloc%' OR CommandLine ILIKE '%VirtualFree%' OR CommandLine ILIKE '%VirtualProtect%' OR CommandLine ILIKE '%WaitForSingleObject%' OR CommandLine ILIKE '%WriteInt32%' OR CommandLine ILIKE '%WriteProcessMemory%' OR CommandLine ILIKE '%ZeroFreeGlobalAllocUnicode%') AND (NOT ((Image ILIKE '%\\MpCmdRun.exe' AND CommandLine ILIKE '%GetLoadLibraryWAddress32%') OR (ParentImage ILIKE '%\\CompatTelRunner.exe' AND (CommandLine ILIKE '%FreeHGlobal%' OR CommandLine ILIKE '%PtrToString%' OR CommandLine ILIKE '%kernel32%' OR CommandLine ILIKE '%CloseHandle%'))))

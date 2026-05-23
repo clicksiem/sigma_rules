@@ -1,0 +1,12 @@
+id: ff301988-c231-4bd0-834c-ac9d73b86586
+name: PowerShell Console History Logs Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\PSReadLine\\ConsoleHost\_history.txt'

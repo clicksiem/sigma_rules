@@ -1,0 +1,17 @@
+id: 9a60e676-26ac-44c3-814b-0c2a8b977adf
+name: User Access Blocked by Azure Conditional Access
+level: 5
+size: '>0'
+active: true
+author:
+- AlertIQ
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.credential-access
+- attack.initial-access
+- attack.stealth
+- attack.t1110
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE ResultType=53003

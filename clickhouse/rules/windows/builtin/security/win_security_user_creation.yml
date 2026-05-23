@@ -1,0 +1,12 @@
+id: 66b6be3d-55d0-4f47-9855-d69df21740ea
+name: Local User Creation
+level: 3
+size: '>0'
+active: true
+author:
+- Patrick Bareiss
+group: windows
+tags:
+- attack.persistence
+- attack.t1136.001
+rule: SELECT * FROM logs WHERE EventID=4720

@@ -1,0 +1,13 @@
+id: b97cd4b1-30b8-4a9d-bd72-6293928d52bc
+name: Indirect Command Execution By Program Compatibility Wizard
+level: 3
+size: '>0'
+active: true
+author:
+- A. Sungurov , oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\pcwrun.exe'

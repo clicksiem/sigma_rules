@@ -1,0 +1,15 @@
+id: 9cfe4b27-1e56-48b4-b7a8-d46851c91a44
+name: MMC Executing Files with Reversed Extensions Using RTLO Abuse
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1204.002
+- attack.t1218.014
+- attack.t1036.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mmc.exe' OR OriginalFileName='MMC.exe') AND (CommandLine ILIKE '%cod.msc%' OR CommandLine ILIKE '%fdp.msc%' OR CommandLine ILIKE '%ftr.msc%' OR CommandLine ILIKE '%lmth.msc%' OR CommandLine ILIKE '%slx.msc%' OR CommandLine ILIKE '%tdo.msc%' OR CommandLine ILIKE '%xcod.msc%' OR CommandLine ILIKE '%xslx.msc%' OR CommandLine ILIKE '%xtpp.msc%')

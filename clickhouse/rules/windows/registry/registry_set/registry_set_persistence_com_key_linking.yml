@@ -1,0 +1,13 @@
+id: 9b0f8a61-91b2-464f-aceb-0527e0a45020
+name: Potential COM Object Hijacking Via TreatAs Subkey - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Kutepov Anton, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.015
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%HKU\\%' AND TargetObject ILIKE '%Classes\\CLSID\\%' AND TargetObject ILIKE '%\\TreatAs%') AND (NOT Image ILIKE 'C:\\WINDOWS\\system32\\svchost.exe')

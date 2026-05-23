@@ -1,0 +1,12 @@
+id: 313fbb0a-a341-4682-848d-6d6f8c4fab7c
+name: Suspicious PowerShell WindowStyle Option
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Tim Shelton (fp AWS)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.003
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%powershell%' AND ScriptBlockText ILIKE '%WindowStyle%' AND ScriptBlockText ILIKE '%Hidden%') AND (NOT (ScriptBlockText ILIKE '%:\\Program Files\\Amazon\\WorkSpacesConfig\\Scripts\\%' AND ScriptBlockText ILIKE '%$PSScriptRoot\\Module\\WorkspaceScriptModule\\WorkspaceScriptModule%'))

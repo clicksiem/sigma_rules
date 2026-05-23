@@ -1,0 +1,13 @@
+id: 6004abd0-afa4-4557-ba90-49d172e0a299
+name: Execute Pcwrun.EXE To Leverage Follina
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\pcwrun.exe' AND CommandLine ILIKE '%../%'

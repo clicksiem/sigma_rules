@@ -1,0 +1,12 @@
+id: 83dcd9f6-9ca8-4af7-a16e-a1c7a6b51871
+name: Linux Reverse Shell Indicator
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/bin/bash' AND (NOT (DestinationIp IN ('127.0.0.1', '0.0.0.0')))

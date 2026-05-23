@@ -1,0 +1,12 @@
+id: 94771a71-ba41-4b6e-a757-b531372eaab6
+name: File Download From Browser Process Via Inline URL
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\brave.exe' OR Image ILIKE '%\\chrome.exe' OR Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\vivaldi.exe') AND CommandLine ILIKE '%http%' AND ((CommandLine ILIKE '%.7z' OR CommandLine ILIKE '%.dat' OR CommandLine ILIKE '%.dll' OR CommandLine ILIKE '%.exe' OR CommandLine ILIKE '%.hta' OR CommandLine ILIKE '%.ps1' OR CommandLine ILIKE '%.psm1' OR CommandLine ILIKE '%.txt' OR CommandLine ILIKE '%.vbe' OR CommandLine ILIKE '%.vbs' OR CommandLine ILIKE '%.zip') OR (CommandLine ILIKE '%.7z"%' OR CommandLine ILIKE '%.dat"%' OR CommandLine ILIKE '%.dll"%' OR CommandLine ILIKE '%.hta"%' OR CommandLine ILIKE '%.ps1"%' OR CommandLine ILIKE '%.psm1"%' OR CommandLine ILIKE '%.txt"%' OR CommandLine ILIKE '%.vbe"%' OR CommandLine ILIKE '%.vbs"%' OR CommandLine ILIKE '%.zip"%'))

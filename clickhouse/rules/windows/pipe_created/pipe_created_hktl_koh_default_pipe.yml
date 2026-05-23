@@ -1,0 +1,15 @@
+id: 0adc67e0-a68f-4ffd-9c43-28905aad5d6a
+name: HackTool - Koh Default Named Pipe
+level: 10
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.credential-access
+- attack.stealth
+- attack.t1528
+- attack.t1134.001
+rule: SELECT * FROM logs WHERE PipeName ILIKE '%\\imposecost%' OR PipeName ILIKE '%\\imposingcost%'

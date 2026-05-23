@@ -1,0 +1,16 @@
+id: ae9d710f-dcd1-4f75-a0a5-93a73b5dda0e
+name: Launch Agent/Daemon Execution Via Launchctl
+level: 5
+size: '>0'
+active: true
+author:
+- Pratinav Chandra
+group: macos
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1569.001
+- attack.t1543.001
+- attack.t1543.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%/launchctl' AND (CommandLine ILIKE '%submit%' OR CommandLine ILIKE '%load%' OR CommandLine ILIKE '%start%')

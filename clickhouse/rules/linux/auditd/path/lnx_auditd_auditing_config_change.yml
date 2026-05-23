@@ -1,0 +1,12 @@
+id: 977ef627-4539-4875-adf4-ed8f780c4922
+name: Auditing Configuration Changes on Linux Host
+level: 8
+size: '>0'
+active: true
+author:
+- Mikhail Larin, oscd.community
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE type='PATH' AND (name ILIKE '/etc/audit/%' OR name='/etc/libaudit.conf' OR name ILIKE '/etc/audisp/%')

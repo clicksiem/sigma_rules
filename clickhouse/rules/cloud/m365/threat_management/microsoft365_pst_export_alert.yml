@@ -1,0 +1,12 @@
+id: 18b88d08-d73e-4f21-bc25-4b9892a4fdd0
+name: PST Export Alert Using eDiscovery Alert
+level: 5
+size: '>0'
+active: true
+author:
+- Sorina Ionescu
+group: m365
+tags:
+- attack.collection
+- attack.t1114
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='eDiscovery search started or exported' AND status='success'

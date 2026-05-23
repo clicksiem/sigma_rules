@@ -1,0 +1,14 @@
+id: 20e5497e-331c-4cd5-8d36-935f6e2a9a07
+name: Invoke-Obfuscation COMPRESS OBFUSCATION - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%new-object%' AND ScriptBlockText ILIKE '%text.encoding]::ascii%') AND (ScriptBlockText ILIKE '%system.io.compression.deflatestream%' OR ScriptBlockText ILIKE '%system.io.streamreader%') AND ScriptBlockText ILIKE '%readtoend'

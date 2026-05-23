@@ -1,0 +1,11 @@
+id: e021bbb5-407f-41f5-9dc9-1864c45a7a51
+name: Deployment Of The AppX Package Was Blocked By The Policy
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE EventID IN (441, 442, 453, 454)

@@ -1,0 +1,14 @@
+id: b17ea6f7-6e90-447e-a799-e6c0a493d6ce
+name: Shadow Copies Creation Using Operating Systems Utilities
+level: 5
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+- attack.t1003.002
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\vssadmin.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll', 'wmic.exe', 'VSSADMIN.EXE'))) AND (CommandLine ILIKE '%shadow%' AND CommandLine ILIKE '%create%')

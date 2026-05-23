@@ -1,0 +1,12 @@
+id: 067d8238-7127-451c-a9ec-fa78045b618b
+name: Linux Doas Tool Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Sittikorn S, Teoderick Contreras
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.t1548
+rule: SELECT * FROM logs WHERE Image ILIKE '%/doas'

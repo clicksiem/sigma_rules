@@ -1,0 +1,13 @@
+id: 710bdbce-495d-491d-9a8f-7d0d88d2b41e
+name: Special File Creation via Mknod Syscall
+level: 3
+size: '>0'
+active: true
+author:
+- Milad Cheraghi
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE type='SYSCALL' AND SYSCALL='mknod'

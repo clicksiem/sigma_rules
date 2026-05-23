@@ -1,0 +1,12 @@
+id: fa1a7e52-3d02-435b-81b8-00da14dd66c1
+name: Diskshadow Script Mode - Execution From Potential Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (OriginalFileName='diskshadow.exe' OR Image ILIKE '%\\diskshadow.exe') AND (CommandLine ILIKE '%-s %' OR CommandLine ILIKE '%/s %' OR CommandLine ILIKE '%–s %' OR CommandLine ILIKE '%—s %' OR CommandLine ILIKE '%―s %') AND (CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Local\\%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\\ProgramData\\%' OR CommandLine ILIKE '%\\Users\\Public\\%')

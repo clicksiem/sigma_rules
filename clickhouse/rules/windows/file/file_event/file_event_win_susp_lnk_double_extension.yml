@@ -1,0 +1,12 @@
+id: 3215aa19-f060-4332-86d5-5602511f3ca8
+name: Suspicious LNK Double Extension File Created
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.007
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%.lnk' AND (TargetFilename ILIKE '%.doc.%' OR TargetFilename ILIKE '%.docx.%' OR TargetFilename ILIKE '%.jpg.%' OR TargetFilename ILIKE '%.pdf.%' OR TargetFilename ILIKE '%.ppt.%' OR TargetFilename ILIKE '%.pptx.%' OR TargetFilename ILIKE '%.xls.%' OR TargetFilename ILIKE '%.xlsx.%')) AND (NOT TargetFilename ILIKE '%\\AppData\\Roaming\\Microsoft\\Windows\\Recent\\%') AND (NOT (((Image ILIKE '%\\excel.exe' OR Image ILIKE '%\\powerpnt.exe' OR Image ILIKE '%\\winword.exe') AND TargetFilename ILIKE '%\\AppData\\Roaming\\Microsoft\\Office\\Recent\\%') OR (Image ILIKE '%\\excel.exe' AND TargetFilename ILIKE '%\\AppData\\Roaming\\Microsoft\\Excel%') OR (Image ILIKE '%\\powerpnt.exe' AND TargetFilename ILIKE '%\\AppData\\Roaming\\Microsoft\\PowerPoint%') OR (Image ILIKE '%\\winword.exe' AND TargetFilename ILIKE '%\\AppData\\Roaming\\Microsoft\\Word%')))

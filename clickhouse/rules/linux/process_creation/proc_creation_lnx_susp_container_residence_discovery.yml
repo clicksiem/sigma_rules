@@ -1,0 +1,12 @@
+id: 746c86fb-ccda-4816-8997-01386263acc4
+name: Container Residence Discovery Via Proc Virtual FS
+level: 3
+size: '>0'
+active: true
+author:
+- Seth Hanford
+group: linux
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Image ILIKE '%awk' OR Image ILIKE '%/cat' OR Image ILIKE '%grep' OR Image ILIKE '%/head' OR Image ILIKE '%/less' OR Image ILIKE '%/more' OR Image ILIKE '%/nl' OR Image ILIKE '%/tail') AND (CommandLine ILIKE '%/proc/2/%' OR (CommandLine ILIKE '%/proc/%' AND (CommandLine ILIKE '%/cgroup' OR CommandLine ILIKE '%/sched')))

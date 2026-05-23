@@ -1,0 +1,16 @@
+id: 50a3c7aa-ec29-44a4-92c1-fce229eef6fc
+name: CA Policy Updated by Non Approved Actor
+level: 5
+size: '>0'
+active: true
+author:
+- Corissa Koopmans, '@corissalea'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.credential-access
+- attack.persistence
+- attack.defense-impairment
+- attack.t1548
+- attack.t1556
+rule: SELECT * FROM logs WHERE `properties.message`='Update conditional access policy'

@@ -1,0 +1,12 @@
+id: 3761e026-f259-44e6-8826-719ed8079408
+name: Linux Network Service Scanning - Auditd
+level: 3
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: linux
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE type='SYSCALL' AND (exe ILIKE '%/telnet' OR exe ILIKE '%/nmap' OR exe ILIKE '%/netcat' OR exe ILIKE '%/nc' OR exe ILIKE '%/ncat' OR exe ILIKE '%/nc.openbsd') AND key ILIKE 'network\_connect\_4'

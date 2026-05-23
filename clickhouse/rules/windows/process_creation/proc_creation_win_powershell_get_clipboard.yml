@@ -1,0 +1,12 @@
+id: b9aeac14-2ffd-4ad3-b967-1354a4e628c3
+name: PowerShell Get-Clipboard Cmdlet Via CLI
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.t1115
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Get-Clipboard%'

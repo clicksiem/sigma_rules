@@ -1,0 +1,12 @@
+id: 9d5a1274-922a-49d0-87f3-8c653483b909
+name: Uncommon System Information Discovery Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- TropChaud
+group: windows
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Description='WMI Commandline Utility' OR OriginalFileName='wmic.exe' OR Image ILIKE '%\\WMIC.exe') AND (CommandLine ILIKE '%LOGICALDISK get Name,Size,FreeSpace%' OR CommandLine ILIKE '%os get Caption,OSArchitecture,Version%')

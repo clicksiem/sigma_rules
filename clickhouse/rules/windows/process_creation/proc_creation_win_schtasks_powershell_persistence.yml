@@ -1,0 +1,15 @@
+id: b66474aa-bd92-4333-a16c-298155b120df
+name: Potential Persistence Via Powershell Search Order Hijacking - Task
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE 'C:\\WINDOWS\\System32\\svchost.exe' AND (ParentCommandLine ILIKE '%-k netsvcs%' AND ParentCommandLine ILIKE '%-s Schedule%') AND (CommandLine ILIKE '% -windowstyle hidden' OR CommandLine ILIKE '% -w hidden' OR CommandLine ILIKE '% -ep bypass' OR CommandLine ILIKE '% -noni')

@@ -1,0 +1,12 @@
+id: a5b977d6-8a81-4475-91b9-49dbfcd941f7
+name: Remove Immutable File Attribute - Auditd
+level: 5
+size: '>0'
+active: true
+author:
+- Jakob Weinzettl, oscd.community
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1222.002
+rule: SELECT * FROM logs WHERE type='EXECVE' AND a0 ILIKE '%chattr%' AND a1 ILIKE '%-i%'

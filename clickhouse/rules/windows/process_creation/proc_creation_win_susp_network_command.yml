@@ -1,0 +1,12 @@
+id: a29c1813-ab1f-4dde-b489-330b952e91ae
+name: Suspicious Network Command
+level: 3
+size: '>0'
+active: true
+author:
+- frack113, Christopher Peacock '@securepeacock', SCYTHE '@scythe_io'
+group: windows
+tags:
+- attack.discovery
+- attack.t1016
+rule: SELECT * FROM logs WHERE match(CommandLine, 'ipconfig\s+/all') OR match(CommandLine, 'netsh\s+interface show interface') OR match(CommandLine, 'arp\s+-a') OR match(CommandLine, 'nbtstat\s+-n') OR match(CommandLine, 'net\s+config') OR match(CommandLine, 'route\s+print')

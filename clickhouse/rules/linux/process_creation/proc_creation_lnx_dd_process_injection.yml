@@ -1,0 +1,13 @@
+id: 4cad6c64-d6df-42d6-8dae-eb78defdc415
+name: Potential Linux Process Code Injection Via DD Utility
+level: 5
+size: '>0'
+active: true
+author:
+- Joseph Kamau
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.009
+rule: SELECT * FROM logs WHERE Image ILIKE '%/dd' AND (CommandLine ILIKE '%of=%' AND CommandLine ILIKE '%/proc/%' AND CommandLine ILIKE '%/mem%')

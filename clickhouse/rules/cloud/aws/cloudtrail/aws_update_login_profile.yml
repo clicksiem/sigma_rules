@@ -1,0 +1,13 @@
+id: 055fb148-60f8-462d-ad16-26926ce050f1
+name: AWS User Login Profile Was Modified
+level: 8
+size: '>0'
+active: true
+author:
+- toffeebr33k
+group: aws
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1098
+rule: SELECT * FROM logs WHERE (eventSource='iam.amazonaws.com' AND eventName='UpdateLoginProfile') AND (NOT `userIdentity.arn`=`requestParameters.userName`)

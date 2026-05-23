@@ -1,0 +1,12 @@
+id: ec19ebab-72dc-40e1-9728-4c0b805d722c
+name: Tamper Windows Defender - PSClassic
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE Data ILIKE '%Set-MpPreference%' AND ((Data ILIKE '%-dbaf $true%' OR Data ILIKE '%-dbaf 1%' OR Data ILIKE '%-dbm $true%' OR Data ILIKE '%-dbm 1%' OR Data ILIKE '%-dips $true%' OR Data ILIKE '%-dips 1%' OR Data ILIKE '%-DisableArchiveScanning $true%' OR Data ILIKE '%-DisableArchiveScanning 1%' OR Data ILIKE '%-DisableBehaviorMonitoring $true%' OR Data ILIKE '%-DisableBehaviorMonitoring 1%' OR Data ILIKE '%-DisableBlockAtFirstSeen $true%' OR Data ILIKE '%-DisableBlockAtFirstSeen 1%' OR Data ILIKE '%-DisableCatchupFullScan $true%' OR Data ILIKE '%-DisableCatchupFullScan 1%' OR Data ILIKE '%-DisableCatchupQuickScan $true%' OR Data ILIKE '%-DisableCatchupQuickScan 1%' OR Data ILIKE '%-DisableIntrusionPreventionSystem $true%' OR Data ILIKE '%-DisableIntrusionPreventionSystem 1%' OR Data ILIKE '%-DisableIOAVProtection $true%' OR Data ILIKE '%-DisableIOAVProtection 1%' OR Data ILIKE '%-DisableRealtimeMonitoring $true%' OR Data ILIKE '%-DisableRealtimeMonitoring 1%' OR Data ILIKE '%-DisableRemovableDriveScanning $true%' OR Data ILIKE '%-DisableRemovableDriveScanning 1%' OR Data ILIKE '%-DisableScanningMappedNetworkDrivesForFullScan $true%' OR Data ILIKE '%-DisableScanningMappedNetworkDrivesForFullScan 1%' OR Data ILIKE '%-DisableScanningNetworkFiles $true%' OR Data ILIKE '%-DisableScanningNetworkFiles 1%' OR Data ILIKE '%-DisableScriptScanning $true%' OR Data ILIKE '%-DisableScriptScanning 1%' OR Data ILIKE '%-MAPSReporting $false%' OR Data ILIKE '%-MAPSReporting 0%' OR Data ILIKE '%-drdsc $true%' OR Data ILIKE '%-drdsc 1%' OR Data ILIKE '%-drtm $true%' OR Data ILIKE '%-drtm 1%' OR Data ILIKE '%-dscrptsc $true%' OR Data ILIKE '%-dscrptsc 1%' OR Data ILIKE '%-dsmndf $true%' OR Data ILIKE '%-dsmndf 1%' OR Data ILIKE '%-dsnf $true%' OR Data ILIKE '%-dsnf 1%' OR Data ILIKE '%-dss $true%' OR Data ILIKE '%-dss 1%') OR (Data ILIKE '%HighThreatDefaultAction Allow%' OR Data ILIKE '%htdefac Allow%' OR Data ILIKE '%LowThreatDefaultAction Allow%' OR Data ILIKE '%ltdefac Allow%' OR Data ILIKE '%ModerateThreatDefaultAction Allow%' OR Data ILIKE '%mtdefac Allow%' OR Data ILIKE '%SevereThreatDefaultAction Allow%' OR Data ILIKE '%stdefac Allow%'))

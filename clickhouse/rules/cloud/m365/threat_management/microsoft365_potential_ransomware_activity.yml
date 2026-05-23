@@ -1,0 +1,12 @@
+id: bd132164-884a-48f1-aa2d-c6d646b04c69
+name: Microsoft 365 - Potential Ransomware Activity
+level: 5
+size: '>0'
+active: true
+author:
+- austinsonger
+group: m365
+tags:
+- attack.impact
+- attack.t1486
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Potential ransomware activity' AND status='success'

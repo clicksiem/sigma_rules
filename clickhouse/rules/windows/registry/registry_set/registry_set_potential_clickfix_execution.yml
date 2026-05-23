@@ -1,0 +1,12 @@
+id: f5fe36cf-f1ec-4c23-903d-09a3110f6bbb
+name: Potential ClickFix Execution Pattern - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1204.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU\\%' AND (Details ILIKE '%http://%' OR Details ILIKE '%https://%') AND ((Details ILIKE '%account%' OR Details ILIKE '%anti-bot%' OR Details ILIKE '%botcheck%' OR Details ILIKE '%captcha%' OR Details ILIKE '%challenge%' OR Details ILIKE '%confirmation%' OR Details ILIKE '%fraud%' OR Details ILIKE '%human%' OR Details ILIKE '%identification%' OR Details ILIKE '%identificator%' OR Details ILIKE '%identity%' OR Details ILIKE '%robot%' OR Details ILIKE '%validation%' OR Details ILIKE '%verification%' OR Details ILIKE '%verify%') OR (Details ILIKE '%\%comspec\%%' OR Details ILIKE '%bitsadmin%' OR Details ILIKE '%certutil%' OR Details ILIKE '%cmd%' OR Details ILIKE '%cscript%' OR Details ILIKE '%curl%' OR Details ILIKE '%finger%' OR Details ILIKE '%mshta%' OR Details ILIKE '%powershell%' OR Details ILIKE '%pwsh%' OR Details ILIKE '%regsvr32%' OR Details ILIKE '%rundll32%' OR Details ILIKE '%schtasks%' OR Details ILIKE '%wget%' OR Details ILIKE '%wscript%'))

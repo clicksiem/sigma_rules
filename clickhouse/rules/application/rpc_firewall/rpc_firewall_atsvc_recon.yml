@@ -1,0 +1,11 @@
+id: f177f2bc-5f3e-4453-b599-57eefce9a59c
+name: Remote Schedule Task Recon via AtScv
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.discovery
+rule: SELECT * FROM logs WHERE (EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='1ff70682-0a51-30e8-076d-740be8cee98b') AND (NOT (OpNum IN (0, 1)))

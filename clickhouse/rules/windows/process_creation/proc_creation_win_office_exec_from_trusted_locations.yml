@@ -1,0 +1,12 @@
+id: f99abdf0-6283-4e71-bd2b-b5c048a94743
+name: Potentially Suspicious Office Document Executed From Trusted Location
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\explorer.exe' OR ParentImage ILIKE '%\\dopus.exe') AND ((Image ILIKE '%\\EXCEL.EXE' OR Image ILIKE '%\\POWERPNT.EXE' OR Image ILIKE '%\\WINWORD.exe') OR (OriginalFileName IN ('Excel.exe', 'POWERPNT.EXE', 'WinWord.exe'))) AND (CommandLine ILIKE '%\\AppData\\Roaming\\Microsoft\\Templates%' OR CommandLine ILIKE '%\\AppData\\Roaming\\Microsoft\\Word\\Startup\\%' OR CommandLine ILIKE '%\\Microsoft Office\\root\\Templates\\%' OR CommandLine ILIKE '%\\Microsoft Office\\Templates\\%')) AND (NOT (CommandLine ILIKE '%.dotx' OR CommandLine ILIKE '%.xltx' OR CommandLine ILIKE '%.potx'))

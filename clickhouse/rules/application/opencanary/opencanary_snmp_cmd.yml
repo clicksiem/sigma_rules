@@ -1,0 +1,14 @@
+id: e9856028-fd4e-46e6-b3d1-10f7ceb95078
+name: OpenCanary - SNMP OID Request
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.discovery
+- attack.lateral-movement
+- attack.t1016
+- attack.t1021
+rule: SELECT * FROM logs WHERE logtype=13001

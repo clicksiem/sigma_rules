@@ -1,0 +1,15 @@
+id: ee4c5d06-3abc-48cc-8885-77f1c20f4451
+name: DLL Sideloading Of ShellChromeAPI.DLL
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\ShellChromeAPI.dll'

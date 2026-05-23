@@ -1,0 +1,14 @@
+id: 74403157-20f5-415d-89a7-c505779585cf
+name: ConvertTo-SecureString Cmdlet Usage Via CommandLine
+level: 5
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov (idea), Vasiliy Burov (rule), oscd.community, Tim Shelton
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND CommandLine ILIKE '%ConvertTo-SecureString%'

@@ -1,0 +1,12 @@
+id: b55d23e5-6821-44ff-8a6e-67218891e49f
+name: HybridConnectionManager Service Running
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.persistence
+- attack.t1554
+rule: SELECT * FROM logs WHERE (EventID IN (40300, 40301, 40302)) AND (hasToken(full_log, 'HybridConnection') OR hasToken(full_log, 'sb://') OR hasToken(full_log, 'servicebus.windows.net') OR hasToken(full_log, 'HybridConnectionManage'))

@@ -1,0 +1,12 @@
+id: 49d9671b-0a0a-4c09-8280-d215bfd30662
+name: Application Terminated Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WMIC.exe' OR OriginalFileName='wmic.exe') AND (CommandLine ILIKE '%call%' AND CommandLine ILIKE '%terminate%')

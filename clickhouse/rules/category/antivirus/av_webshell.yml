@@ -1,0 +1,12 @@
+id: fdf135a2-9241-4f96-a114-bb404948f736
+name: Antivirus Web Shell Detection
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Arnim Rupp
+group: ''
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE (Signature ILIKE 'ASP.%' OR Signature ILIKE 'IIS/BackDoor%' OR Signature ILIKE 'JAVA/Backdoor%' OR Signature ILIKE 'JSP.%' OR Signature ILIKE 'Perl.%' OR Signature ILIKE 'PHP.%' OR Signature ILIKE 'Troj/ASP%' OR Signature ILIKE 'Troj/JSP%' OR Signature ILIKE 'Troj/PHP%' OR Signature ILIKE 'VBS/Uxor%') OR (Signature ILIKE '%ASP\_%' OR Signature ILIKE '%ASP:%' OR Signature ILIKE '%ASP.Agent%' OR Signature ILIKE '%ASP/%' OR Signature ILIKE '%Aspdoor%' OR Signature ILIKE '%ASPXSpy%' OR Signature ILIKE '%Backdoor.ASP%' OR Signature ILIKE '%Backdoor.Java%' OR Signature ILIKE '%Backdoor.JSP%' OR Signature ILIKE '%Backdoor.PHP%' OR Signature ILIKE '%Backdoor.VBS%' OR Signature ILIKE '%Backdoor/ASP%' OR Signature ILIKE '%Backdoor/Java%' OR Signature ILIKE '%Backdoor/JSP%' OR Signature ILIKE '%Backdoor/PHP%' OR Signature ILIKE '%Backdoor/VBS%' OR Signature ILIKE '%C99shell%' OR Signature ILIKE '%Chopper%' OR Signature ILIKE '%filebrowser%' OR Signature ILIKE '%JSP\_%' OR Signature ILIKE '%JSP:%' OR Signature ILIKE '%JSP.Agent%' OR Signature ILIKE '%JSP/%' OR Signature ILIKE '%Perl:%' OR Signature ILIKE '%Perl/%' OR Signature ILIKE '%PHP\_%' OR Signature ILIKE '%PHP:%' OR Signature ILIKE '%PHP.Agent%' OR Signature ILIKE '%PHP/%' OR Signature ILIKE '%PHPShell%' OR Signature ILIKE '%PShlSpy%' OR Signature ILIKE '%SinoChoper%' OR Signature ILIKE '%Trojan.ASP%' OR Signature ILIKE '%Trojan.JSP%' OR Signature ILIKE '%Trojan.PHP%' OR Signature ILIKE '%Trojan.VBS%' OR Signature ILIKE '%VBS.Agent%' OR Signature ILIKE '%VBS/Agent%' OR Signature ILIKE '%Webshell%')

@@ -1,0 +1,12 @@
+id: 0a1f9d29-6465-4776-b091-7f43b26e4c89
+name: Prefetch File Deleted
+level: 8
+size: '>0'
+active: true
+author:
+- Cedric MAURUGEON
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%:\\Windows\\Prefetch\\%' AND TargetFilename ILIKE '%.pf') AND (NOT (Image ILIKE '%:\\windows\\system32\\svchost.exe' AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%')))

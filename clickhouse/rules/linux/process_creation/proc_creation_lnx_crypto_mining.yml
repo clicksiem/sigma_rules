@@ -1,0 +1,12 @@
+id: 9069ea3c-b213-4c52-be13-86506a227ab1
+name: Linux Crypto Mining Indicators
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.impact
+- attack.t1496
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% --cpu-priority=%' OR CommandLine ILIKE '%--donate-level=0%' OR CommandLine ILIKE '% -o pool.%' OR CommandLine ILIKE '% --nicehash%' OR CommandLine ILIKE '% --algo=rx/0 %' OR CommandLine ILIKE '%stratum+tcp://%' OR CommandLine ILIKE '%stratum+udp://%' OR CommandLine ILIKE '%sh -c /sbin/modprobe msr allow\_writes=on%' OR CommandLine ILIKE '%LS1kb25hdGUtbGV2ZWw9%' OR CommandLine ILIKE '%0tZG9uYXRlLWxldmVsP%' OR CommandLine ILIKE '%tLWRvbmF0ZS1sZXZlbD%' OR CommandLine ILIKE '%c3RyYXR1bSt0Y3A6Ly%' OR CommandLine ILIKE '%N0cmF0dW0rdGNwOi8v%' OR CommandLine ILIKE '%zdHJhdHVtK3RjcDovL%' OR CommandLine ILIKE '%c3RyYXR1bSt1ZHA6Ly%' OR CommandLine ILIKE '%N0cmF0dW0rdWRwOi8v%' OR CommandLine ILIKE '%zdHJhdHVtK3VkcDovL%'

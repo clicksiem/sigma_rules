@@ -1,0 +1,12 @@
+id: 74298991-9fc4-460e-a92e-511aa60baec1
+name: Added Owner To Application
+level: 5
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Bailey Bercik '@baileybercik'
+group: azure
+tags:
+- attack.t1552
+- attack.credential-access
+rule: SELECT * FROM logs WHERE `properties.message`='Add owner to application'

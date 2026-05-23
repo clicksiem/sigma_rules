@@ -1,0 +1,12 @@
+id: 9637e8a5-7131-4f7f-bdc7-2b05d8670c43
+name: Suspicious File Characteristics Due to Missing Fields
+level: 5
+size: '>0'
+active: true
+author:
+- Markus Neis, Sander Wiebing
+group: windows
+tags:
+- attack.execution
+- attack.t1059.006
+rule: SELECT * FROM logs WHERE ((Description='?' AND FileVersion='?') OR (Description='?' AND Product='?') OR (Description='?' AND Company='?')) AND Image ILIKE '%\\Downloads\\%'

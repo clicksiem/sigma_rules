@@ -1,0 +1,12 @@
+id: ae2bdd58-0681-48ac-be7f-58ab4e593458
+name: Tamper Windows Defender Remove-MpPreference - ScriptBlockLogging
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Remove-MpPreference%' AND (ScriptBlockText ILIKE '%-ControlledFolderAccessProtectedFolders %' OR ScriptBlockText ILIKE '%-AttackSurfaceReductionRules\_Ids %' OR ScriptBlockText ILIKE '%-AttackSurfaceReductionRules\_Actions %' OR ScriptBlockText ILIKE '%-CheckForSignaturesBeforeRunningScan %')

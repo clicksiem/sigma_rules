@@ -1,0 +1,13 @@
+id: a94cdd87-6c54-4678-a6cc-2814ffe5a13d
+name: Unix Shell Configuration Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Peter Matkovski, IAI
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.004
+rule: SELECT * FROM logs WHERE type='PATH' AND (name='/etc/shells' OR name='/etc/profile' OR name ILIKE '/etc/profile.d/%' OR name='/etc/bash.bashrc' OR name='/etc/bashrc' OR name='/etc/zsh/zprofile' OR name='/etc/zsh/zshrc' OR name='/etc/zsh/zlogin' OR name='/etc/zsh/zlogout' OR name='/etc/csh.cshrc' OR name='/etc/csh.login' OR name='/root/.bashrc' OR name ILIKE '/root/.bash\_profile' OR name='/root/.profile' OR name='/root/.zshrc' OR name='/root/.zprofile' OR name ILIKE '/home/%/.bashrc' OR name ILIKE '/home/%/.zshrc' OR name ILIKE '/home/%/.bash\_profile' OR name ILIKE '/home/%/.zprofile' OR name ILIKE '/home/%/.profile' OR name ILIKE '/home/%/.bash\_login' OR name ILIKE '/home/%/.bash\_logout' OR name ILIKE '/home/%/.zlogin' OR name ILIKE '/home/%/.zlogout')

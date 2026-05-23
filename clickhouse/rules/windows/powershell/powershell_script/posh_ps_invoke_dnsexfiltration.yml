@@ -1,0 +1,12 @@
+id: d59d7842-9a21-4bc6-ba98-64bfe0091355
+name: Powershell DNSExfiltration
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Invoke-DNSExfiltrator%' OR (ScriptBlockText ILIKE '% -i %' AND ScriptBlockText ILIKE '% -d %' AND ScriptBlockText ILIKE '% -p %' AND ScriptBlockText ILIKE '% -doh %' AND ScriptBlockText ILIKE '% -t %')

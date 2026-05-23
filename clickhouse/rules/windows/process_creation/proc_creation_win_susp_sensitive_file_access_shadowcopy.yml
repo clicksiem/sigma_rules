@@ -1,0 +1,12 @@
+id: f57f8d16-1f39-4dcb-a604-6c73d9b54b3d
+name: Sensitive File Access Via Volume Shadow Copy Backup
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems), Tobias Michalski (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy%' AND (CommandLine ILIKE '%\\NTDS.dit%' OR CommandLine ILIKE '%\\SYSTEM%' OR CommandLine ILIKE '%\\SECURITY%')

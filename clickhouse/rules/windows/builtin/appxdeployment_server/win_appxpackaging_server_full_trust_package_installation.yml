@@ -1,0 +1,14 @@
+id: e54279c7-4910-4e2c-902c-c56a25b549f6
+name: Windows AppX Deployment Full Trust Package Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Haag, Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.defense-impairment
+- attack.t1204.002
+- attack.t1553.005
+rule: SELECT * FROM logs WHERE (EventID=400 AND HasFullTrust=true) AND (NOT ((PackageSourceUri ILIKE 'file:///C:/Program\%20Files/%' OR PackageSourceUri ILIKE 'file:///C:/Program\%20Files\%20(x86)/%') OR (PackageSourceUri ILIKE 'https://go.microsoft.com/fwlink/_linkid%' OR (PackageSourceUri ILIKE '%.cdn.microsoft.com%' OR PackageSourceUri ILIKE '%.cdn.office.net/%')) OR (CallingProcess ILIKE 'sysprep.exe%' OR CallingProcess ILIKE 'svchost.exe,AppReadiness%'))) AND (NOT (PackageSourceUri ILIKE 'x-windowsupdate://%' OR PackageFullName ILIKE 'MicrosoftWindows.Client.%'))

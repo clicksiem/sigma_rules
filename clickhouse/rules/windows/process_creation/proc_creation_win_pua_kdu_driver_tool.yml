@@ -1,0 +1,13 @@
+id: e76ca062-4de0-4d79-8d90-160a0d335eca
+name: PUA - Kernel Driver Utility (KDU) Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Matt Anderson, Dray Agha, Anna Pham (Huntress)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\kdu.exe' OR Image ILIKE '%\\hamakaze.exe') OR OriginalFileName='hamakaze.exe') AND (CommandLine ILIKE '%-map %' OR CommandLine ILIKE '%-prv %' OR CommandLine ILIKE '%-dse %' OR CommandLine ILIKE '%-ps %')

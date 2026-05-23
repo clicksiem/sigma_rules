@@ -1,0 +1,12 @@
+id: d7eb979b-c2b5-4a6f-a3a7-c87ce6763819
+name: Suspicious Control Panel DLL Load
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\System32\\control.exe' AND (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE')) AND (NOT CommandLine ILIKE '%Shell32.dll%')

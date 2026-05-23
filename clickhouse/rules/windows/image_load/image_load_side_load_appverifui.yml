@@ -1,0 +1,15 @@
+id: ee6cea48-c5b6-4304-a332-10fc6446f484
+name: Potential appverifUI.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\appverifUI.dll' AND (NOT ((Image IN ('C:\\Windows\\SysWOW64\\appverif.exe', 'C:\\Windows\\System32\\appverif.exe')) AND (ImageLoaded ILIKE 'C:\\Windows\\System32\\%' OR ImageLoaded ILIKE 'C:\\Windows\\SysWOW64\\%' OR ImageLoaded ILIKE 'C:\\Windows\\WinSxS\\%')))

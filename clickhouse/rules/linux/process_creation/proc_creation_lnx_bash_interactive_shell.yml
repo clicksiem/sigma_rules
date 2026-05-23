@@ -1,0 +1,11 @@
+id: 6104e693-a7d6-4891-86cb-49a258523559
+name: Bash Interactive Shell
+level: 3
+size: '>0'
+active: true
+author:
+- '@d4ns4n_'
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%/bash' AND CommandLine ILIKE '% -i %'

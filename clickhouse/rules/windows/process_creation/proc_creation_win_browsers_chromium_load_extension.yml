@@ -1,0 +1,12 @@
+id: 88d6e60c-759d-4ac1-a447-c0f1466c2d21
+name: Chromium Browser Instance Executed With Custom Extension
+level: 5
+size: '>0'
+active: true
+author:
+- Aedan Russell, frack113, X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1176.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\brave.exe' OR Image ILIKE '%\\chrome.exe' OR Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\vivaldi.exe') AND CommandLine ILIKE '%--load-extension=%'

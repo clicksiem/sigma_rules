@@ -1,0 +1,12 @@
+id: 7ac407cc-0f48-4328-aede-de1d2e6fef41
+name: Standard User In High Privileged Group
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE (EventID=300 AND TargetUserSid ILIKE 'S-1-5-21-%' AND (SidList ILIKE '%S-1-5-32-544%' OR SidList ILIKE '%-500}%' OR SidList ILIKE '%-518}%' OR SidList ILIKE '%-519}%')) AND (NOT (TargetUserSid ILIKE '%-500' OR TargetUserSid ILIKE '%-518' OR TargetUserSid ILIKE '%-519'))

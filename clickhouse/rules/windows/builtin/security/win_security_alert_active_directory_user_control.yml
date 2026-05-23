@@ -1,0 +1,13 @@
+id: 311b6ce2-7890-4383-a8c2-663a9f6b43cd
+name: Enabled User Right in AD to Control User Objects
+level: 8
+size: '>0'
+active: true
+author:
+- '@neu5ron'
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE EventID=4704 AND PrivilegeList ILIKE '%SeEnableDelegationPrivilege%'

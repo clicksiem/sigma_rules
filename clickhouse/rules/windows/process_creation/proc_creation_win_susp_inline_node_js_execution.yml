@@ -1,0 +1,12 @@
+id: 8537c866-072e-460d-bfff-aaf39cbd73d3
+name: Potentially Suspicious Inline JavaScript Execution via NodeJS Binary
+level: 5
+size: '>0'
+active: true
+author:
+- Microsoft (idea), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.007
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\node.exe' OR OriginalFileName='node.exe' OR Product='Node.js') AND (CommandLine ILIKE '%http%' AND CommandLine ILIKE '%execSync%' AND CommandLine ILIKE '%spawn%' AND CommandLine ILIKE '%fs%' AND CommandLine ILIKE '%path%' AND CommandLine ILIKE '%zlib%')

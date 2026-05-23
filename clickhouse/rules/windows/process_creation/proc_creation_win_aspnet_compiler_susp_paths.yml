@@ -1,0 +1,13 @@
+id: 9f50fe98-fe5c-4a2d-86c7-fad7f63ed622
+name: Potentially Suspicious ASP.NET Compilation Via AspNetCompiler
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework64\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm64\\%') AND Image ILIKE '%\\aspnet\_compiler.exe' AND (CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Roaming\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\Tasks\\%' OR CommandLine ILIKE '%:\\Windows\\Tasks\\%')

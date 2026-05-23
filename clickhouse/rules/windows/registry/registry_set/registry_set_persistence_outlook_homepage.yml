@@ -1,0 +1,13 @@
+id: ddd171b5-2cc6-4975-9e78-f0eccd08cc76
+name: Potential Persistence Via Outlook Home Page
+level: 8
+size: '>0'
+active: true
+author:
+- Tobias Michalski (Nextron Systems), David Bertho (@dbertho) & Eirik Sveen (@0xSV1), Storebrand
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Software\\Microsoft\\Office\\%' AND TargetObject ILIKE '%\\Outlook\\WebView\\%') AND TargetObject ILIKE '%\\URL'

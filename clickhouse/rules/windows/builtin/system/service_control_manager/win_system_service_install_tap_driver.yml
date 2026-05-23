@@ -1,0 +1,12 @@
+id: 8e4cf0e5-aa5d-4dc3-beff-dc26917744a9
+name: Tap Driver Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, Ian Davis, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND ImagePath ILIKE '%tap0901%'

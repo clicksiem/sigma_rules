@@ -1,0 +1,15 @@
+id: 71b31e99-9ad0-47d4-aeb5-c0ca3928eeeb
+name: Potential Waveedit.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\waveedit.dll' AND (NOT ((Image IN ('C:\\Program Files (x86)\\Nero\\Nero Apps\\Nero WaveEditor\\waveedit.exe', 'C:\\Program Files\\Nero\\Nero Apps\\Nero WaveEditor\\waveedit.exe')) AND (ImageLoaded ILIKE 'C:\\Program Files (x86)\\Nero\\Nero Apps\\Nero WaveEditor\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\Nero\\Nero Apps\\Nero WaveEditor\\%')))

@@ -1,0 +1,12 @@
+id: 164eda96-11b2-430b-85ff-6a265c15bf32
+name: Local Groups Reconnaissance Via Wmic.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1069.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND CommandLine ILIKE '% group%'

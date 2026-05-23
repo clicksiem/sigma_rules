@@ -1,0 +1,12 @@
+id: 31545105-3444-4584-bebf-c466353230d2
+name: Touch Suspicious Service File
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.stealth
+- attack.t1070.006
+rule: SELECT * FROM logs WHERE Image ILIKE '%/touch' AND CommandLine ILIKE '% -t %' AND CommandLine ILIKE '%.service'

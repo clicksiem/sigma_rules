@@ -1,0 +1,14 @@
+id: d3f90469-fb05-42ce-b67d-0fded91bbef3
+name: Bitbucket User Login Failure Via SSH
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.lateral-movement
+- attack.credential-access
+- attack.t1021.004
+- attack.t1110
+rule: SELECT * FROM logs WHERE `auditType.category`='Authentication' AND `auditType.action`='User login failed(SSH)'

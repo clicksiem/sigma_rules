@@ -1,0 +1,14 @@
+id: 3669afd2-9891-4534-a626-e5cf03810a61
+name: Load Of RstrtMgr.DLL By An Uncommon Process
+level: 3
+size: '>0'
+active: true
+author:
+- Luc Génaux
+group: windows
+tags:
+- attack.impact
+- attack.defense-impairment
+- attack.t1486
+- attack.t1685
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\RstrtMgr.dll' OR OriginalFileName='RstrtMgr.dll') AND (NOT ((Image ILIKE 'C:\\$WINDOWS.~BT\\''%' OR Image ILIKE 'C:\\$WinREAgent\\''%' OR Image ILIKE 'C:\\Program Files (x86)\\''%' OR Image ILIKE 'C:\\Program Files\\''%' OR Image ILIKE 'C:\\ProgramData\\''%' OR Image ILIKE 'C:\\Windows\\explorer.exe''%' OR Image ILIKE 'C:\\Windows\\SoftwareDistribution\\''%' OR Image ILIKE 'C:\\Windows\\SysNative\\''%' OR Image ILIKE 'C:\\Windows\\System32\\''%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\''%' OR Image ILIKE 'C:\\Windows\\WinSxS\\''%' OR Image ILIKE 'C:\\WUDownloadCache\\''%') OR (Image ILIKE 'C:\\Users\\''%' AND (Image ILIKE '%\\AppData\\Local\\Temp\\is-%' AND Image ILIKE '%.tmp\\%') AND Image ILIKE '%.tmp') OR Image ILIKE 'C:\\Windows\\Temp\\''%')) AND (NOT (Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\Microsoft\\OneDrive\\OneDriveStandaloneUpdater.exe'))

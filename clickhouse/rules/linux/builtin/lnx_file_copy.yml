@@ -1,0 +1,13 @@
+id: 7a14080d-a048-4de8-ae58-604ce58a795b
+name: Remote File Copy
+level: 3
+size: '>0'
+active: true
+author:
+- Ömer Günal
+group: linux
+tags:
+- attack.command-and-control
+- attack.lateral-movement
+- attack.t1105
+rule: SELECT * FROM logs WHERE (hasToken(full_log, 'scp ') OR hasToken(full_log, 'rsync ') OR hasToken(full_log, 'sftp ')) AND (hasToken(full_log, '@') OR hasToken(full_log, ':'))

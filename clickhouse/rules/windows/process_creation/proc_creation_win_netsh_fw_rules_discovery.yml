@@ -1,0 +1,12 @@
+id: 0e4164da-94bc-450d-a7be-a4b176179f1f
+name: Firewall Configuration Discovery Via Netsh.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- frack113, Christopher Peacock '@securepeacock', SCYTHE '@scythe_io'
+group: windows
+tags:
+- attack.discovery
+- attack.t1016
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\netsh.exe' OR OriginalFileName='netsh.exe') AND ((CommandLine ILIKE '%netsh%' AND CommandLine ILIKE '%show %' AND CommandLine ILIKE '%firewall %') AND (CommandLine ILIKE '%config %' OR CommandLine ILIKE '%state %' OR CommandLine ILIKE '%rule %' OR CommandLine ILIKE '%name=all%'))

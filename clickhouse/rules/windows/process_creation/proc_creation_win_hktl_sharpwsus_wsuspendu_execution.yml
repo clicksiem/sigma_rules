@@ -1,0 +1,13 @@
+id: b0ce780f-10bd-496d-9067-066d23dc3aa5
+name: HackTool - SharpWSUS/WSUSpendu Execution
+level: 8
+size: '>0'
+active: true
+author:
+- '@Kostastsale, Nasreddine Bencherchali (Nextron Systems)'
+group: windows
+tags:
+- attack.execution
+- attack.lateral-movement
+- attack.t1210
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% -Inject %' AND (CommandLine ILIKE '% -PayloadArgs %' OR CommandLine ILIKE '% -PayloadFile %')) OR ((CommandLine ILIKE '% approve %' OR CommandLine ILIKE '% create %' OR CommandLine ILIKE '% check %' OR CommandLine ILIKE '% delete %') AND (CommandLine ILIKE '% /payload:%' OR CommandLine ILIKE '% /payload=%' OR CommandLine ILIKE '% /updateid:%' OR CommandLine ILIKE '% /updateid=%'))

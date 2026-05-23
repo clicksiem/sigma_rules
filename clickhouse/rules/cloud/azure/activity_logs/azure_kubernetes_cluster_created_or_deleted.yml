@@ -1,0 +1,14 @@
+id: 9541f321-7cba-4b43-80fc-fbd1fb922808
+name: Azure Kubernetes Cluster Created or Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+- attack.t1485
+- attack.t1496
+- attack.t1489
+rule: SELECT * FROM logs WHERE operationName IN ('MICROSOFT.KUBERNETES/CONNECTEDCLUSTERS/WRITE', 'MICROSOFT.KUBERNETES/CONNECTEDCLUSTERS/DELETE')

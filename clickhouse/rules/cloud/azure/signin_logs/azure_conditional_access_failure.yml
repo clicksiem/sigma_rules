@@ -1,0 +1,17 @@
+id: b4a6d707-9430-4f5f-af68-0337f52d5c42
+name: Sign-in Failure Due to Conditional Access Requirements Not Met
+level: 8
+size: '>0'
+active: true
+author:
+- Yochana Henderson, '@Yochana-H'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.credential-access
+- attack.stealth
+- attack.t1110
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE ResultType=53003 AND Resultdescription='Blocked by Conditional Access'

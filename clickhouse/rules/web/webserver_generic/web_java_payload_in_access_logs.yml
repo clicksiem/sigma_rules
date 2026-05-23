@@ -1,0 +1,14 @@
+id: 583aa0a2-30b1-4d62-8bf3-ab73689efe6c
+name: Java Payload Strings
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Harjot Singh, "@cyb3rjy0t" (update)
+group: ''
+tags:
+- cve.2022-26134
+- cve.2021-26084
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE hasToken(full_log, '\%24\%7B\%28\%23a\%3D\%40') OR hasToken(full_log, '${(#a=@') OR hasToken(full_log, '\%24\%7B\%40java') OR hasToken(full_log, '${@java') OR hasToken(full_log, 'u0022java') OR hasToken(full_log, '\%2F\%24\%7B\%23') OR hasToken(full_log, '/${#') OR hasToken(full_log, 'new+java.') OR hasToken(full_log, 'getRuntime().exec(') OR hasToken(full_log, 'getRuntime\%28\%29.exec\%28')

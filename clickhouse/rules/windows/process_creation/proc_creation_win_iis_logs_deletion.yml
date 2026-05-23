@@ -1,0 +1,12 @@
+id: 0649be4a-aeb0-45b0-b89e-7f1668f6d9c0
+name: IIS WebServer Log Deletion via CommandLine Utilities
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('cmd.exe', 'powershell.exe', 'powershell\_ise.exe', 'pwsh.dll'))) AND (CommandLine ILIKE '%del %' OR CommandLine ILIKE '%erase %' OR CommandLine ILIKE '%rm %' OR CommandLine ILIKE '%remove-item %' OR CommandLine ILIKE '%rmdir %') AND CommandLine ILIKE '%\\inetpub\\logs\\%'

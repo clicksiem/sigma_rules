@@ -1,0 +1,12 @@
+id: a77c1610-fc73-4019-8e29-0f51efc04a51
+name: Potential Dosfuscation Activity
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%^^%' OR CommandLine ILIKE '%^|^%' OR CommandLine ILIKE '%,;,%' OR CommandLine ILIKE '%;;;;%' OR CommandLine ILIKE '%;; ;;%' OR CommandLine ILIKE '%(,(,%' OR CommandLine ILIKE '%\%COMSPEC:~%' OR CommandLine ILIKE '% c^m^d%' OR CommandLine ILIKE '%^c^m^d%' OR CommandLine ILIKE '% c^md%' OR CommandLine ILIKE '% cm^d%' OR CommandLine ILIKE '%^cm^d%' OR CommandLine ILIKE '% s^et %' OR CommandLine ILIKE '% s^e^t %' OR CommandLine ILIKE '% se^t %'

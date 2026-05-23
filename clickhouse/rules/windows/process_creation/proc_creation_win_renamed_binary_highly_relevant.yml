@@ -1,0 +1,13 @@
+id: 0ba1da6d-b6ce-4366-828c-18826c9de23e
+name: Potential Defense Evasion Via Rename Of Highly Relevant Binaries
+level: 8
+size: '>0'
+active: true
+author:
+- Matthew Green - @mgreen27, Florian Roth (Nextron Systems), frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+- car.2013-05-009
+rule: SELECT * FROM logs WHERE (Description='Execute processes remotely' OR Product='Sysinternals PsExec' OR (Description ILIKE 'Windows PowerShell%' OR Description ILIKE 'pwsh%') OR (OriginalFileName IN ('certutil.exe', 'cmstp.exe', 'cscript.exe', 'IE4UINIT.EXE', 'finger.exe', 'mshta.exe', 'msiexec.exe', 'msxsl.exe', 'powershell\_ise.exe', 'powershell.exe', 'psexec.c', 'psexec.exe', 'psexesvc.exe', 'pwsh.dll', 'reg.exe', 'regsvr32.exe', 'rundll32.exe', 'WerMgr', 'wmic.exe', 'wscript.exe'))) AND (NOT (Image ILIKE '%\\certutil.exe' OR Image ILIKE '%\\cmstp.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\ie4uinit.exe' OR Image ILIKE '%\\finger.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\msiexec.exe' OR Image ILIKE '%\\msxsl.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\psexec.exe' OR Image ILIKE '%\\psexec64.exe' OR Image ILIKE '%\\PSEXESVC.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\reg.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wermgr.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe'))

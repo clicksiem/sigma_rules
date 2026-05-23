@@ -1,0 +1,14 @@
+id: 10c14723-61c7-4c75-92ca-9af245723ad2
+name: HackTool - Potential Impacket Lateral Movement Activity
+level: 8
+size: '>0'
+active: true
+author:
+- Ecco, oscd.community, Jonhnathan Ribeiro, Tim Rauch
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- attack.lateral-movement
+- attack.t1021.003
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\wmiprvse.exe' OR ParentImage ILIKE '%\\mmc.exe' OR ParentImage ILIKE '%\\explorer.exe' OR ParentImage ILIKE '%\\services.exe') AND (CommandLine ILIKE '%cmd.exe%' AND CommandLine ILIKE '%/Q%' AND CommandLine ILIKE '%/c%' AND CommandLine ILIKE '%\\\\127.0.0.1\\%' AND CommandLine ILIKE '%&1%')) OR ((ParentCommandLine ILIKE '%svchost.exe -k netsvcs%' OR ParentCommandLine ILIKE '%taskeng.exe%') AND (CommandLine ILIKE '%cmd.exe%' AND CommandLine ILIKE '%/C%' AND CommandLine ILIKE '%Windows\\Temp\\%' AND CommandLine ILIKE '%&1%'))

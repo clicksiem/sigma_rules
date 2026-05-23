@@ -1,0 +1,13 @@
+id: 277efb8f-60be-4f10-b4d3-037802f37167
+name: Registry Persistence Mechanisms in Recycle Bin
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547
+rule: SELECT * FROM logs WHERE (EventType='RenameKey' AND NewName ILIKE '%\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}\\shell\\open%') OR (EventType='SetValue' AND TargetObject ILIKE '%\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}\\shell\\open\\command\\(Default)%')

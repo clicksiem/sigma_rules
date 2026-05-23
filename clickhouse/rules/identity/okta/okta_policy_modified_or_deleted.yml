@@ -1,0 +1,11 @@
+id: 1667a172-ed4c-463c-9969-efd92195319a
+name: Okta Policy Modified or Deleted
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: okta
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventType IN ('policy.lifecycle.update', 'policy.lifecycle.delete')

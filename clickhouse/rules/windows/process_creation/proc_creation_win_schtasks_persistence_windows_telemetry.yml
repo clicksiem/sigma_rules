@@ -1,0 +1,14 @@
+id: f548a603-c9f2-4c89-b511-b089f7e94549
+name: Potential Persistence Via Microsoft Compatibility Appraiser
+level: 5
+size: '>0'
+active: true
+author:
+- Sreeman
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' OR OriginalFileName='schtasks.exe') AND (CommandLine ILIKE '%run %' AND CommandLine ILIKE '%\\Application Experience\\Microsoft Compatibility Appraiser%')

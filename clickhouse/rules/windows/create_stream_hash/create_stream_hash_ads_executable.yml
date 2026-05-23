@@ -1,0 +1,13 @@
+id: b69888d4-380c-45ce-9cf9-d9ce46e67821
+name: Hidden Executable In NTFS Alternate Data Stream
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), @0xrawsec
+group: windows
+tags:
+- attack.stealth
+- attack.s0139
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE Hash ILIKE '%IMPHASH=%' AND (NOT Hash ILIKE '%IMPHASH=00000000000000000000000000000000%')

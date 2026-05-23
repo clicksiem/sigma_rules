@@ -1,0 +1,17 @@
+id: e5f5c693-52d7-4de5-88ae-afbfbce85595
+name: Unsigned .node File Loaded
+level: 5
+size: '>0'
+active: true
+author:
+- Jonathan Beierle (@hullabrian)
+group: windows
+tags:
+- attack.execution
+- attack.privilege-escalation
+- attack.persistence
+- attack.stealth
+- attack.t1129
+- attack.t1574.001
+- attack.t1036.005
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%.node' AND (Signed='false' OR SignatureStatus='Unavailable')) AND (NOT (Image ILIKE '%\\Code.exe' AND ImageLoaded ILIKE '%.vscode\\extensions\\ms-toolsai.jupyter-%' AND (ImageLoaded ILIKE '%\\electron.napi.node' OR ImageLoaded ILIKE '%\\node.napi.glibc.node')))

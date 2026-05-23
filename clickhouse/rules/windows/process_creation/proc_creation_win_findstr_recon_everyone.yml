@@ -1,0 +1,12 @@
+id: 47e4bab7-c626-47dc-967b-255608c9a920
+name: Permission Misconfiguration Reconnaissance Via Findstr.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.006
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\find.exe' OR Image ILIKE '%\\findstr.exe') OR (OriginalFileName IN ('FIND.EXE', 'FINDSTR.EXE'))) AND (CommandLine ILIKE '%"Everyone"%' OR CommandLine ILIKE '%''Everyone''%' OR CommandLine ILIKE '%"BUILTIN\\"%' OR CommandLine ILIKE '%''BUILTIN\\''%')) OR (CommandLine ILIKE '%icacls %' AND CommandLine ILIKE '%findstr %' AND CommandLine ILIKE '%Everyone%')

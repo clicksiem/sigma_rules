@@ -1,0 +1,12 @@
+id: fc014922-5def-4da9-a0fc-28c973f41bfb
+name: Execution DLL of Choice Using WAB.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- oscd.community, Natalia Shornikova
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\WAB\\DLLPath' AND (NOT Details ILIKE '\%CommonProgramFiles\%\\System\\wab32.dll')

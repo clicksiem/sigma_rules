@@ -1,0 +1,19 @@
+id: 56fa3cd6-f8d6-4520-a8c7-607292971886
+name: Cisco BGP Authentication Failures
+level: 3
+size: '>0'
+active: true
+author:
+- Tim Brown
+group: cisco
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.credential-access
+- attack.collection
+- attack.stealth
+- attack.t1078
+- attack.t1110
+- attack.t1557
+rule: SELECT * FROM logs WHERE hasToken(full_log, ':179') AND hasToken(full_log, 'IP-TCP-3-BADAUTH')

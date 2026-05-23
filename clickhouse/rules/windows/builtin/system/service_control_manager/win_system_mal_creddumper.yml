@@ -1,0 +1,19 @@
+id: 4976aa50-8f41-45c6-8b15-ab3fc10e79ed
+name: Credential Dumping Tools Service Execution - System
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.credential-access
+- attack.execution
+- attack.t1003.001
+- attack.t1003.002
+- attack.t1003.004
+- attack.t1003.005
+- attack.t1003.006
+- attack.t1569.002
+- attack.s0005
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND EventID=7045 AND (ImagePath ILIKE '%cachedump%' OR ImagePath ILIKE '%dumpsvc%' OR ImagePath ILIKE '%fgexec%' OR ImagePath ILIKE '%gsecdump%' OR ImagePath ILIKE '%mimidrv%' OR ImagePath ILIKE '%pwdump%' OR ImagePath ILIKE '%servpw%')

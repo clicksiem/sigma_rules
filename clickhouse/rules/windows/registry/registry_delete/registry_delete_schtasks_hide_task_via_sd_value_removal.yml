@@ -1,0 +1,12 @@
+id: acd74772-5f88-45c7-956b-6a7b36c294d2
+name: Removal Of SD Value to Hide Schedule Task - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Sittikorn S
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\%' AND TargetObject ILIKE '%SD%'

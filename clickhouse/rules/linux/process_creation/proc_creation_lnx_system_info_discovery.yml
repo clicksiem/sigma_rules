@@ -1,0 +1,12 @@
+id: 42df45e7-e6e9-43b5-8f26-bec5b39cc239
+name: System Information Discovery
+level: 1
+size: '>0'
+active: true
+author:
+- Ömer Günal, oscd.community
+group: linux
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE Image ILIKE '%/uname' OR Image ILIKE '%/hostname' OR Image ILIKE '%/uptime' OR Image ILIKE '%/lspci' OR Image ILIKE '%/dmidecode' OR Image ILIKE '%/lscpu' OR Image ILIKE '%/lsmod'

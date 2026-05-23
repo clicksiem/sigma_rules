@@ -1,0 +1,13 @@
+id: 28ac00d6-22d9-4a3c-927f-bbd770104573
+name: RestrictedAdminMode Registry Value Tampering - ProcCreation
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\System\\CurrentControlSet\\Control\\Lsa%' AND CommandLine ILIKE '%DisableRestrictedAdmin%'

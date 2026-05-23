@@ -1,0 +1,13 @@
+id: b207d563-a1d9-4275-b349-77d1eb55aa6d
+name: System Info Discovery via Sysinfo Syscall
+level: 3
+size: '>0'
+active: true
+author:
+- Milad Cheraghi
+group: linux
+tags:
+- attack.discovery
+- attack.t1057
+- attack.t1082
+rule: SELECT * FROM logs WHERE (type='SYSCALL' AND SYSCALL='sysinfo') AND (NOT exe ILIKE '%/bin/splunkd')

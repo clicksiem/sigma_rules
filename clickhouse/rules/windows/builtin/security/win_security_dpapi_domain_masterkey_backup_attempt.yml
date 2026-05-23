@@ -1,0 +1,12 @@
+id: 39a94fd1-8c9a-4ff6-bf22-c058762f8014
+name: DPAPI Domain Master Key Backup Attempt
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.004
+rule: SELECT * FROM logs WHERE EventID=4692

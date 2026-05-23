@@ -1,0 +1,12 @@
+id: 028c7842-4243-41cd-be6f-12f3cf1a26c7
+name: AD Object WriteDAC Access
+level: 10
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1222.001
+rule: SELECT * FROM logs WHERE EventID=4662 AND ObjectServer='DS' AND AccessMask='0x40000' AND (ObjectType IN ('19195a5b-6da0-11d0-afd3-00c04fd930c9', 'domainDNS'))

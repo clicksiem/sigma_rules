@@ -1,0 +1,11 @@
+id: 378a05d8-963c-46c9-bcce-13c7657eac99
+name: Potentially Suspicious Electron Application CommandLine
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\chrome.exe' OR Image ILIKE '%\\code.exe' OR Image ILIKE '%\\discord.exe' OR Image ILIKE '%\\GitHubDesktop.exe' OR Image ILIKE '%\\keybase.exe' OR Image ILIKE '%\\msedge\_proxy.exe' OR Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\msedgewebview2.exe' OR Image ILIKE '%\\msteams.exe' OR Image ILIKE '%\\slack.exe' OR Image ILIKE '%\\Teams.exe') OR (OriginalFileName IN ('chrome.exe', 'code.exe', 'discord.exe', 'GitHubDesktop.exe', 'keybase.exe', 'msedge\_proxy.exe', 'msedge.exe', 'msedgewebview2.exe', 'msteams.exe', 'slack.exe', 'Teams.exe'))) AND (CommandLine ILIKE '%--browser-subprocess-path%' OR CommandLine ILIKE '%--gpu-launcher%' OR CommandLine ILIKE '%--renderer-cmd-prefix%' OR CommandLine ILIKE '%--utility-cmd-prefix%')

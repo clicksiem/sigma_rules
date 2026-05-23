@@ -1,0 +1,12 @@
+id: 77df53a5-1d78-4f32-bc5a-0e7465bd8f41
+name: Portable Gpg.EXE Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1486
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\gpg.exe' OR Image ILIKE '%\\gpg2.exe') OR OriginalFileName='gpg.exe' OR Description='GnuPG’s OpenPGP tool') AND (NOT (Image ILIKE '%:\\Program Files (x86)\\GNU\\GnuPG\\bin\\%' OR Image ILIKE '%:\\Program Files (x86)\\GnuPG VS-Desktop\\%' OR Image ILIKE '%:\\Program Files (x86)\\GnuPG\\bin\\%' OR Image ILIKE '%:\\Program Files (x86)\\Gpg4win\\bin\\%'))

@@ -1,0 +1,16 @@
+id: 9b111d8e-92e0-4153-88bc-daefc1333aba
+name: DMSA Link Attributes Modified
+level: 3
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.002
+- attack.t1098
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%.Put("msDS-ManagedAccountPrecededByLink%' AND ScriptBlockText ILIKE '%CN=%'

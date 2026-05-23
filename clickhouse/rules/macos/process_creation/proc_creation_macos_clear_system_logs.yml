@@ -1,0 +1,12 @@
+id: acf61bd8-d814-4272-81f0-a7a269aa69aa
+name: Indicator Removal on Host - Clear Mac System Logs
+level: 5
+size: '>0'
+active: true
+author:
+- remotephone, oscd.community
+group: macos
+tags:
+- attack.defense-impairment
+- attack.t1685.006
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/rm' OR Image ILIKE '%/unlink' OR Image ILIKE '%/shred') AND (CommandLine ILIKE '%/var/log%' OR (CommandLine ILIKE '%/Users/%' AND CommandLine ILIKE '%/Library/Logs/%'))

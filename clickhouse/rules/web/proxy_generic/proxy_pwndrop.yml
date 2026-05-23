@@ -1,0 +1,14 @@
+id: 2b1ee7e4-89b6-4739-b7bb-b811b6607e5e
+name: PwnDrp Access
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1071.001
+- attack.t1102.001
+- attack.t1102.003
+rule: SELECT * FROM logs WHERE `c-uri` ILIKE '%/pwndrop/%'

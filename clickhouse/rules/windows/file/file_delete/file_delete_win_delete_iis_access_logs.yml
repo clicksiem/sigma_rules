@@ -1,0 +1,12 @@
+id: 3eb8c339-a765-48cc-a150-4364c04652bf
+name: IIS WebServer Access Logs Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\inetpub\\logs\\LogFiles\\%' AND TargetFilename ILIKE '%.log'

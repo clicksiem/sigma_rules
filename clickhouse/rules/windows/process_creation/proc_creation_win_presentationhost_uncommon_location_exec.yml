@@ -1,0 +1,13 @@
+id: d22e2925-cfd8-463f-96f6-89cec9d9bc5f
+name: XBAP Execution From Uncommon Locations Via PresentationHost.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\presentationhost.exe' OR OriginalFileName='PresentationHost.exe') AND CommandLine ILIKE '%.xbap%') AND (NOT (CommandLine ILIKE '% C:\\Windows\\%' OR CommandLine ILIKE '% C:\\Program Files%'))

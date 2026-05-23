@@ -1,0 +1,12 @@
+id: 0b9ad457-2554-44c1-82c2-d56a99c42377
+name: Anydesk Temporary Artefact
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\AppData\\Roaming\\AnyDesk\\user.conf%' OR TargetFilename ILIKE '%\\AppData\\Roaming\\AnyDesk\\system.conf%'

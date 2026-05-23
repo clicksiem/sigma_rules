@@ -1,0 +1,14 @@
+id: 424273ea-7cf8-43a6-b712-375f925e481f
+name: Scheduled Task Executed From A Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE EventID=129 AND (Path ILIKE '%C:\\Windows\\Temp\\%' OR Path ILIKE '%\\AppData\\Local\\Temp\\%' OR Path ILIKE '%\\Desktop\\%' OR Path ILIKE '%\\Downloads\\%' OR Path ILIKE '%\\Users\\Public\\%' OR Path ILIKE '%C:\\Temp\\%')

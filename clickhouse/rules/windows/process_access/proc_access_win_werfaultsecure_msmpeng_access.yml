@@ -1,0 +1,12 @@
+id: 387df17d-3b04-448f-8669-9e7fd5e5fd8c
+name: Suspicious Process Access of MsMpEng by WerFaultSecure - EDR-Freeze
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE SourceImage ILIKE '%\\WerFaultSecure.exe' AND TargetImage ILIKE '%\\MsMpEng.exe' AND (CallTrace ILIKE '%\\dbgcore.dll%' OR CallTrace ILIKE '%\\dbghelp.dll%')

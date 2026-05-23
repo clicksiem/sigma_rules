@@ -1,0 +1,12 @@
+id: 49f5dfc1-f92e-4d34-96fa-feba3f6acf36
+name: Disabling Security Tools - Builtin
+level: 5
+size: '>0'
+active: true
+author:
+- Ömer Günal, Alejandro Ortuno, oscd.community
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1686
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'stopping iptables') OR hasToken(full_log, 'stopping ip6tables') OR hasToken(full_log, 'stopping firewalld') OR hasToken(full_log, 'stopping cbdaemon') OR hasToken(full_log, 'stopping falcon-sensor')

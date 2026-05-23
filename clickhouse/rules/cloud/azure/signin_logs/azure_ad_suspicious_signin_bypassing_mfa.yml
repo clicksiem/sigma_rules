@@ -1,0 +1,17 @@
+id: 53bb4f7f-48a8-4475-ac30-5a82ddfdf6fc
+name: Potential MFA Bypass Using Legacy Client Authentication
+level: 8
+size: '>0'
+active: true
+author:
+- Harjot Singh, '@cyb3rjy0t'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.credential-access
+- attack.stealth
+- attack.t1078.004
+- attack.t1110
+rule: SELECT * FROM logs WHERE Status='Success' AND (userAgent ILIKE '%BAV2ROPC%' OR userAgent ILIKE '%CBAinPROD%' OR userAgent ILIKE '%CBAinTAR%')

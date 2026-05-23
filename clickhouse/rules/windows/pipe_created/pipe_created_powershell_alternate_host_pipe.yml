@@ -1,0 +1,12 @@
+id: 58cb02d5-78ce-4692-b3e1-dce850aae41a
+name: Alternate PowerShell Hosts Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g, Tim Shelton
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE PipeName ILIKE '\\PSHost%' AND (NOT (((Image ILIKE '%:\\Program Files\\PowerShell\\7-preview\\pwsh.exe%' OR Image ILIKE '%:\\Program Files\\PowerShell\\7\\pwsh.exe%' OR Image ILIKE '%:\\Windows\\system32\\dsac.exe%' OR Image ILIKE '%:\\Windows\\system32\\inetsrv\\w3wp.exe%' OR Image ILIKE '%:\\Windows\\System32\\sdiagnhost.exe%' OR Image ILIKE '%:\\Windows\\system32\\ServerManager.exe%' OR Image ILIKE '%:\\Windows\\system32\\wbem\\wmiprvse.exe%' OR Image ILIKE '%:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell\_ise.exe%' OR Image ILIKE '%:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe%' OR Image ILIKE '%:\\Windows\\System32\\wsmprovhost.exe%' OR Image ILIKE '%:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell\_ise.exe%' OR Image ILIKE '%:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe%') OR (Image ILIKE '%C:\\Program Files\\WindowsApps\\Microsoft.PowerShellPreview%' AND Image ILIKE '%\\pwsh.exe%') OR (Image ILIKE '%\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShellPreview%' AND Image ILIKE '%\\pwsh.exe%')) OR isNull(Image))) AND (NOT (((Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%') AND Image ILIKE '%\\Microsoft SQL Server\\%' AND Image ILIKE '%\\Tools\\Binn\\SQLPS.exe') OR (Image ILIKE 'C:\\Program Files\\AzureConnectedMachineAgent\\GCArcService%' AND Image ILIKE '%\\GC\\gc\_worker.exe') OR Image ILIKE 'C:\\Program Files\\Citrix\\%' OR Image ILIKE 'C:\\Program Files\\Microsoft\\Exchange Server\\%'))

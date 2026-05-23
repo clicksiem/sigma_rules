@@ -1,0 +1,14 @@
+id: a23791fe-8846-485a-b16b-ca691e1b03d4
+name: Invoke-Obfuscation RUNDLL LAUNCHER - PowerShell Module
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Payload ILIKE '%rundll32.exe%' AND Payload ILIKE '%shell32.dll%' AND Payload ILIKE '%shellexec\_rundll%' AND Payload ILIKE '%powershell%'

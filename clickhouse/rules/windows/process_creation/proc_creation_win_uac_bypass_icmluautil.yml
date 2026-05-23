@@ -1,0 +1,12 @@
+id: 49f2f17b-b4c8-4172-a68b-d5bf95d05130
+name: UAC Bypass via ICMLuaUtil
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Elastic (idea)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\dllhost.exe' AND (ParentCommandLine ILIKE '%/Processid:{3E5FC7F9-9A51-4367-9063-A120244FBEC7}%' OR ParentCommandLine ILIKE '%/Processid:{D2E7041B-2927-42FB-8E9F-7CE93B6DC937}%')) AND (NOT (Image ILIKE '%\\WerFault.exe' OR OriginalFileName='WerFault.exe'))

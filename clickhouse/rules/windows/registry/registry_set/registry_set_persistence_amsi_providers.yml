@@ -1,0 +1,11 @@
+id: 33efc23c-6ea2-4503-8cfe-bdf82ce8f705
+name: Potential Persistence Via New AMSI Providers - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\AMSI\\Providers\\%' OR TargetObject ILIKE '%\\SOFTWARE\\WOW6432Node\\Microsoft\\AMSI\\Providers\\%') AND (NOT (((Image IN ('C:\\Program Files\\Avast Software\\Avast\\RegSvr.exe', 'C:\\Program Files\\Avast Software\\Avast\\x86\\RegSvr.exe')) AND TargetObject ILIKE '%\\{FB904E4E-D2C7-4C8D-8492-B620BB9896B1}%') OR ((Image IN ('C:\\Program Files\\AVG\\Antivirus\\RegSvr.exe', 'C:\\Program Files\\AVG\\Antivirus\\x86\\RegSvr.exe')) AND TargetObject ILIKE '%\\{FB904E4E-D2C7-4C8D-8492-B620BB9896B1}%') OR (Image ILIKE 'C:\\Program Files\\Avira\\Endpoint Protection SDK\\endpointprotection.exe' AND TargetObject ILIKE '%\\{00000001-3DCC-4B48-A82E-E2071FE58E05}%')))

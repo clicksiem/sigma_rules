@@ -1,0 +1,12 @@
+id: 20d96d95-5a20-4cf1-a483-f3bda8a7c037
+name: Add or Remove Computer from DC
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1207
+rule: SELECT * FROM logs WHERE EventID IN (4741, 4743)

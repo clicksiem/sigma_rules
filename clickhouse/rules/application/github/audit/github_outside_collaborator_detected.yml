@@ -1,0 +1,16 @@
+id: eaa9ac35-1730-441f-9587-25767bde99d7
+name: Github Outside Collaborator Detected
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: github
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.collection
+- attack.t1098.001
+- attack.t1098.003
+- attack.t1213.003
+rule: SELECT * FROM logs WHERE action IN ('org.remove\_outside\_collaborator', 'project.update\_user\_permission')

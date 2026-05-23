@@ -1,0 +1,12 @@
+id: 145322e4-0fd3-486b-81ca-9addc75736d8
+name: Use of UltraVNC Remote Access Software
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Description='VNCViewer' OR Product='UltraVNC VNCViewer' OR Company='UltraVNC' OR OriginalFileName='VNCViewer.exe'

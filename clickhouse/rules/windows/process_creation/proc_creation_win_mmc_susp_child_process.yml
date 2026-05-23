@@ -1,0 +1,12 @@
+id: 05a2ab7e-ce11-4b63-86db-ab32e763e11d
+name: MMC Spawning Windows Shell
+level: 8
+size: '>0'
+active: true
+author:
+- Karneades, Swisscom CSIRT
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.003
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\mmc.exe' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\sh.exe' OR Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\reg.exe' OR Image ILIKE '%\\regsvr32.exe') OR Image ILIKE '%\\BITSADMIN%')

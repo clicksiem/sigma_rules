@@ -1,0 +1,11 @@
+id: 448fd1ea-2116-4c62-9cde-a92d120e0f08
+name: Azure Service Principal Removed
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE `properties.message`='Remove service principal'

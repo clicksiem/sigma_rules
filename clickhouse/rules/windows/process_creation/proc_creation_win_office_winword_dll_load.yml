@@ -1,0 +1,12 @@
+id: f7375e28-5c14-432f-b8d1-1db26c832df3
+name: Potential Arbitrary DLL Load Using Winword
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\WINWORD.exe' OR OriginalFileName='WinWord.exe') AND (CommandLine ILIKE '%/l %' AND CommandLine ILIKE '%.dll%')

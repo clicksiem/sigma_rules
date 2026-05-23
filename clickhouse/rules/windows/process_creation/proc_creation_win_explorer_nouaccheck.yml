@@ -1,0 +1,12 @@
+id: 534f2ef7-e8a2-4433-816d-c91bccde289b
+name: Explorer NOUACCHECK Flag
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\explorer.exe' AND CommandLine ILIKE '%/NOUACCHECK%') AND (NOT (ParentCommandLine ILIKE 'C:\\Windows\\system32\\svchost.exe -k netsvcs -p -s Schedule' OR ParentImage ILIKE 'C:\\Windows\\System32\\svchost.exe'))

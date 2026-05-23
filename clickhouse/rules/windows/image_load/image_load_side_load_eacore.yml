@@ -1,0 +1,15 @@
+id: edd3ddc3-386f-4ba5-9ada-4376b2cfa7b5
+name: Potential EACore.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\EACore.dll' AND (NOT ((Image ILIKE '%C:\\Program Files\\Electronic Arts\\EA Desktop\\%' AND Image ILIKE '%\\EACoreServer.exe%') AND ImageLoaded ILIKE 'C:\\Program Files\\Electronic Arts\\EA Desktop\\%'))

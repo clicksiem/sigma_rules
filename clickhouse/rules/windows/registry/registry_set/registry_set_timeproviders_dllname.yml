@@ -1,0 +1,13 @@
+id: e88a6ddc-74f7-463b-9b26-f69fc0d2ce85
+name: New TimeProviders Registered With Uncommon DLL Name
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1547.003
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Services\\W32Time\\TimeProviders%' AND TargetObject ILIKE '%\\DllName') AND (NOT (Details IN ('\%SystemRoot\%\\System32\\vmictimeprovider.dll', '\%systemroot\%\\system32\\w32time.dll', 'C:\\Windows\\SYSTEM32\\w32time.DLL')))

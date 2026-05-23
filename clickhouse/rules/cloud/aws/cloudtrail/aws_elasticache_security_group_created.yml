@@ -1,0 +1,13 @@
+id: 4ae68615-866f-4304-b24b-ba048dfa5ca7
+name: AWS ElastiCache Security Group Created
+level: 3
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: aws
+tags:
+- attack.persistence
+- attack.t1136
+- attack.t1136.003
+rule: SELECT * FROM logs WHERE eventSource='elasticache.amazonaws.com' AND eventName='CreateCacheSecurityGroup'

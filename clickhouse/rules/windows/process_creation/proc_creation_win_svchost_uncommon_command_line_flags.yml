@@ -1,0 +1,15 @@
+id: f17211f1-1f24-4d0c-829f-31e28dc93cdd
+name: Uncommon Svchost Command Line Parameter
+level: 8
+size: '>0'
+active: true
+author:
+- Liran Ravich
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1036.005
+- attack.t1055
+- attack.t1055.012
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\svchost.exe' AND (NOT (match(CommandLine, '-k\s\w{1,64}(?:\s?(?:-p|-s))?') OR CommandLine='' OR isNull(CommandLine))) AND (NOT ((ParentImage ILIKE '%\\MsMpEng.exe' AND CommandLine ILIKE '%svchost.exe%') OR (ParentImage ILIKE '%\\MRT.exe' AND CommandLine='svchost.exe')))

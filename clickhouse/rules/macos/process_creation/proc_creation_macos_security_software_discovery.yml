@@ -1,0 +1,12 @@
+id: 0ed75b9c-c73b-424d-9e7d-496cd565fbe0
+name: Security Software Discovery - MacOs
+level: 5
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community
+group: macos
+tags:
+- attack.discovery
+- attack.t1518.001
+rule: SELECT * FROM logs WHERE Image='/usr/bin/grep' AND ((CommandLine ILIKE '%nessusd%' OR CommandLine ILIKE '%santad%' OR CommandLine ILIKE '%CbDefense%' OR CommandLine ILIKE '%falcond%' OR CommandLine ILIKE '%td-agent%' OR CommandLine ILIKE '%packetbeat%' OR CommandLine ILIKE '%filebeat%' OR CommandLine ILIKE '%auditbeat%' OR CommandLine ILIKE '%osqueryd%' OR CommandLine ILIKE '%BlockBlock%' OR CommandLine ILIKE '%LuLu%') OR (CommandLine ILIKE '%Little%' AND CommandLine ILIKE '%Snitch%'))

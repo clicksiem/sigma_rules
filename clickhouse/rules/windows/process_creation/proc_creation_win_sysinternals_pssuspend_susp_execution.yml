@@ -1,0 +1,12 @@
+id: 4beb6ae0-f85b-41e2-8f18-8668abc8af78
+name: Sysinternals PsSuspend Suspicious Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (OriginalFileName='pssuspend.exe' OR (Image ILIKE '%\\pssuspend.exe' OR Image ILIKE '%\\pssuspend64.exe')) AND CommandLine ILIKE '%msmpeng.exe%'

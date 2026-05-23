@@ -1,0 +1,13 @@
+id: 1f6b8cd4-3e60-47cc-b282-5aa1cbc9182d
+name: Remote Access Tool - Team Viewer Session Started On Linux Host
+level: 3
+size: '>0'
+active: true
+author:
+- Josh Nickels, Qi Nan
+group: linux
+tags:
+- attack.persistence
+- attack.initial-access
+- attack.t1133
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%/TeamViewer\_Service' AND Image ILIKE '%/TeamViewer\_Desktop' AND CommandLine ILIKE '%/TeamViewer\_Desktop --IPCport 5939 --Module 1'

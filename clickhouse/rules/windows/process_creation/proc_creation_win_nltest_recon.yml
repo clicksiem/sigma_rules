@@ -1,0 +1,13 @@
+id: 5cc90652-4cbd-4241-aa3b-4b462fa5a248
+name: Potential Recon Activity Via Nltest.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Craig Young, oscd.community, Georg Lauenstein
+group: windows
+tags:
+- attack.discovery
+- attack.t1016
+- attack.t1482
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\nltest.exe' OR OriginalFileName='nltestrk.exe') AND ((CommandLine ILIKE '%server%' AND CommandLine ILIKE '%query%') OR (CommandLine ILIKE '%/user%' OR CommandLine ILIKE '%all\_trusts%' OR CommandLine ILIKE '%dclist:%' OR CommandLine ILIKE '%dnsgetdc:%' OR CommandLine ILIKE '%domain\_trusts%' OR CommandLine ILIKE '%dsgetdc:%' OR CommandLine ILIKE '%parentdomain%' OR CommandLine ILIKE '%trusted\_domains%'))

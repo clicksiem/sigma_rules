@@ -1,0 +1,12 @@
+id: 5ce0f04e-3efc-42af-839d-5b3a543b76c0
+name: Suspicious Process Execution From Fake Recycle.Bin Folder
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.stealth
+rule: SELECT * FROM logs WHERE Image ILIKE '%RECYCLERS.BIN\\%' OR Image ILIKE '%RECYCLER.BIN\\%'

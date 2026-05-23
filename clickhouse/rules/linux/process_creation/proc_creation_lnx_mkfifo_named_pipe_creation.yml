@@ -1,0 +1,11 @@
+id: 9d779ce8-5256-4b13-8b6f-b91c602b43f4
+name: Named Pipe Created Via Mkfifo
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%/mkfifo'

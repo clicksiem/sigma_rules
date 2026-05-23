@@ -1,0 +1,15 @@
+id: a537cfc3-4297-4789-92b5-345bfd845ad0
+name: Service DACL Abuse To Hide Services Via Sc.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Andreas Hunkeler (@Karneades)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' OR OriginalFileName='sc.exe') AND (CommandLine ILIKE '%sdset%' AND CommandLine ILIKE '%DCLCWPDTSD%')

@@ -1,0 +1,13 @@
+id: f7997770-92c3-4ec9-b112-774c4ef96f96
+name: Winlogon AllowMultipleTSSessions Enable
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\AllowMultipleTSSessions' AND Details ILIKE '%DWORD (0x00000001)'

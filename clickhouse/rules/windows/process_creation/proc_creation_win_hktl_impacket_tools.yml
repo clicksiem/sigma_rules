@@ -1,0 +1,14 @@
+id: 4627c6ae-6899-46e2-aa0c-6ebcb1becd19
+name: HackTool - Impacket Tools Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.execution
+- attack.credential-access
+- attack.t1557.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\goldenPac%' OR Image ILIKE '%\\karmaSMB%' OR Image ILIKE '%\\kintercept%' OR Image ILIKE '%\\ntlmrelayx%' OR Image ILIKE '%\\rpcdump%' OR Image ILIKE '%\\samrdump%' OR Image ILIKE '%\\secretsdump%' OR Image ILIKE '%\\smbexec%' OR Image ILIKE '%\\smbrelayx%' OR Image ILIKE '%\\wmiexec%' OR Image ILIKE '%\\wmipersist%') OR (Image ILIKE '%\\atexec\_windows.exe' OR Image ILIKE '%\\dcomexec\_windows.exe' OR Image ILIKE '%\\dpapi\_windows.exe' OR Image ILIKE '%\\findDelegation\_windows.exe' OR Image ILIKE '%\\GetADUsers\_windows.exe' OR Image ILIKE '%\\GetNPUsers\_windows.exe' OR Image ILIKE '%\\getPac\_windows.exe' OR Image ILIKE '%\\getST\_windows.exe' OR Image ILIKE '%\\getTGT\_windows.exe' OR Image ILIKE '%\\GetUserSPNs\_windows.exe' OR Image ILIKE '%\\ifmap\_windows.exe' OR Image ILIKE '%\\mimikatz\_windows.exe' OR Image ILIKE '%\\netview\_windows.exe' OR Image ILIKE '%\\nmapAnswerMachine\_windows.exe' OR Image ILIKE '%\\opdump\_windows.exe' OR Image ILIKE '%\\psexec\_windows.exe' OR Image ILIKE '%\\rdp\_check\_windows.exe' OR Image ILIKE '%\\sambaPipe\_windows.exe' OR Image ILIKE '%\\smbclient\_windows.exe' OR Image ILIKE '%\\smbserver\_windows.exe' OR Image ILIKE '%\\sniff\_windows.exe' OR Image ILIKE '%\\sniffer\_windows.exe' OR Image ILIKE '%\\split\_windows.exe' OR Image ILIKE '%\\ticketer\_windows.exe')

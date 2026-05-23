@@ -1,0 +1,16 @@
+id: 02122374-b74e-495c-b285-9e4da973f3d6
+name: DMSA Service Account Created in Specific OUs - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.persistence
+- attack.stealth
+- attack.t1078.002
+- attack.t1098
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-ADServiceAccount%' AND ScriptBlockText ILIKE '%-CreateDelegatedServiceAccount%' AND ScriptBlockText ILIKE '%-path%'

@@ -1,0 +1,15 @@
+id: f41dada5-3f56-4232-8503-3fb7f9cf2d60
+name: ESXi Storage Information Discovery Via ESXCLI
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Cedric Maurugeon
+group: linux
+tags:
+- attack.discovery
+- attack.execution
+- attack.t1033
+- attack.t1007
+- attack.t1059.012
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/esxcli' AND CommandLine ILIKE '%storage%') AND (CommandLine ILIKE '% get%' OR CommandLine ILIKE '% list%')

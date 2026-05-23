@@ -1,0 +1,11 @@
+id: f7158a64-6204-4d6d-868a-6e6378b467e0
+name: Suspicious C2 Activities
+level: 5
+size: '>0'
+active: true
+author:
+- Marie Euler
+group: linux
+tags:
+- attack.command-and-control
+rule: SELECT * FROM logs WHERE key ILIKE 'susp\_activity'

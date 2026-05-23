@@ -1,0 +1,12 @@
+id: b22a5b36-2431-493a-8be1-0bae56c28ef3
+name: Hidden User Creation
+level: 5
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community
+group: macos
+tags:
+- attack.stealth
+- attack.t1564.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/dscl' AND CommandLine ILIKE '%create%') AND (CommandLine ILIKE '%UniqueID%' AND match(CommandLine, '([0-9]|[1-9][0-9]|[1-4][0-9]{2})'))) OR ((Image ILIKE '%/dscl' AND CommandLine ILIKE '%create%') AND (CommandLine ILIKE '%IsHidden%' AND (CommandLine ILIKE '%true%' OR CommandLine ILIKE '%yes%' OR CommandLine ILIKE '%1%')))

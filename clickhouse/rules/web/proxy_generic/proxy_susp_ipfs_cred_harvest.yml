@@ -1,0 +1,13 @@
+id: eb6c2004-1cef-427f-8885-9042974e5eb6
+name: Suspicious Network Communication With IPFS
+level: 3
+size: '>0'
+active: true
+author:
+- Gavin Knapp
+group: ''
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1056
+rule: SELECT * FROM logs WHERE match(`cs-uri`, '(?i)(ipfs\.io/|ipfs\.io\s).+\..+@.+\.[a-z]+')

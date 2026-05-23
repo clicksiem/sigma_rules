@@ -1,0 +1,12 @@
+id: 43103702-5886-11ed-9b6a-0242ac120002
+name: Suspicious Vsls-Agent Command With AgentExtensionPath Load
+level: 5
+size: '>0'
+active: true
+author:
+- bohops
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\vsls-agent.exe' AND CommandLine ILIKE '%--agentExtensionPath%') AND (NOT CommandLine ILIKE '%Microsoft.VisualStudio.LiveShare.Agent.%')

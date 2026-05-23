@@ -1,0 +1,11 @@
+id: 61171ffc-d79c-4ae5-8e10-9323dba19cd3
+name: Azure VPN Connection Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE operationName IN ('MICROSOFT.NETWORK/VPNGATEWAYS/VPNCONNECTIONS/WRITE', 'MICROSOFT.NETWORK/VPNGATEWAYS/VPNCONNECTIONS/DELETE')

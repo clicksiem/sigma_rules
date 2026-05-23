@@ -1,0 +1,15 @@
+id: 6991bc2b-ae2e-447f-bc55-3a1ba04c14e5
+name: OpenCanary - FTP Login Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.initial-access
+- attack.exfiltration
+- attack.lateral-movement
+- attack.t1190
+- attack.t1021
+rule: SELECT * FROM logs WHERE logtype=2000

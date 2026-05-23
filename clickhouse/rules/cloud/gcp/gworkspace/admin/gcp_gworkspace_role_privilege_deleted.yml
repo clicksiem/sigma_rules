@@ -1,0 +1,11 @@
+id: bf638ef7-4d2d-44bb-a1dc-a238252e6267
+name: Google Workspace Role Privilege Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventService='admin.googleapis.com' AND eventName ILIKE 'REMOVE\_PRIVILEGE'

@@ -1,0 +1,13 @@
+id: 9b64de98-9db3-4033-bd7a-f51430105f00
+name: Windows Terminal Profile Settings Modification By Uncommon Process
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.015
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe') AND TargetFilename ILIKE '%\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal\_8wekyb3d8bbwe\\LocalState\\settings.json'

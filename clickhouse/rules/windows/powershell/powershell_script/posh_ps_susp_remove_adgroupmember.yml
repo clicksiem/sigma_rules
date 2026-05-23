@@ -1,0 +1,12 @@
+id: 48a45d45-8112-416b-8a67-46e03a4b2107
+name: Remove Account From Domain Admin Group
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1531
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Remove-ADGroupMember%' AND ScriptBlockText ILIKE '%-Identity %' AND ScriptBlockText ILIKE '%-Members %'

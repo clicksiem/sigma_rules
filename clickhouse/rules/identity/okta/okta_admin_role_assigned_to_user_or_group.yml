@@ -1,0 +1,13 @@
+id: 413d4a81-6c98-4479-9863-014785fd579c
+name: Okta Admin Role Assigned to an User or Group
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: okta
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098.003
+rule: SELECT * FROM logs WHERE eventType IN ('group.privilege.grant', 'user.account.privilege.grant')

@@ -1,0 +1,12 @@
+id: 0b7163dc-7eee-4960-af17-c0cd517f92da
+name: Service Started/Stopped Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE (OriginalFileName='wmic.exe' OR Image ILIKE '%\\WMIC.exe') AND ((CommandLine ILIKE '% service %' AND CommandLine ILIKE '% call %') AND (CommandLine ILIKE '%stopservice%' OR CommandLine ILIKE '%startservice%'))

@@ -1,0 +1,14 @@
+id: 4bf943c6-5146-4273-98dd-e958fd1e3abf
+name: Invoke-Obfuscation Obfuscated IEX Invocation
+level: 8
+size: '>0'
+active: true
+author:
+- Daniel Bohannon (@Mandiant/@FireEye), oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE match(CommandLine, '\$PSHome\[\s*\d{1,3}\s*\]\s*\+\s*\$PSHome\[') OR match(CommandLine, '\$ShellId\[\s*\d{1,3}\s*\]\s*\+\s*\$ShellId\[') OR match(CommandLine, '\$env:Public\[\s*\d{1,3}\s*\]\s*\+\s*\$env:Public\[') OR match(CommandLine, '\$env:ComSpec\[(?:\s*\d{1,3}\s*,){2}') OR match(CommandLine, '\*mdr\*\W\s*\)\.Name') OR match(CommandLine, '\$VerbosePreference\.ToString\(') OR match(CommandLine, '\[String\]\s*\$VerbosePreference')

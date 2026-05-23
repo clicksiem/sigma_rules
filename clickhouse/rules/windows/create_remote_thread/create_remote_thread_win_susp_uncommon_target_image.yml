@@ -1,0 +1,13 @@
+id: a1a144b7-5c9b-4853-a559-2172be8d4a03
+name: Remote Thread Creation In Uncommon Target Image
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055.003
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%\\calc.exe' OR TargetImage ILIKE '%\\calculator.exe' OR TargetImage ILIKE '%\\mspaint.exe' OR TargetImage ILIKE '%\\notepad.exe' OR TargetImage ILIKE '%\\ping.exe' OR TargetImage ILIKE '%\\sethc.exe' OR TargetImage ILIKE '%\\spoolsv.exe' OR TargetImage ILIKE '%\\wordpad.exe' OR TargetImage ILIKE '%\\write.exe') AND (NOT (SourceImage ILIKE 'C:\\Windows\\System32\\csrss.exe' OR ((SourceImage IN ('C:\\Windows\\System32\\explorer.exe', 'C:\\Windows\\System32\\OpenWith.exe')) AND TargetImage ILIKE 'C:\\Windows\\System32\\notepad.exe') OR (SourceImage ILIKE 'C:\\Windows\\System32\\AtBroker.exe' AND TargetImage ILIKE 'C:\\Windows\\System32\\Sethc.exe'))) AND (NOT (StartFunction='EtwpNotificationThread' OR SourceImage ILIKE '%unknown process%' OR (SourceImage ILIKE 'C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe' AND StartFunction='GetCommandLineW' AND (TargetImage IN ('C:\\Windows\\System32\\notepad.exe', 'C:\\Windows\\System32\\spoolsv.exe'))) OR (SourceImage ILIKE 'C:\\Program Files\\Xerox\\XeroxPrintExperience\\CommonFiles\\XeroxPrintJobEventManagerService.exe' AND StartFunction='LoadLibraryW' AND TargetImage ILIKE 'C:\\Windows\\System32\\spoolsv.exe')))

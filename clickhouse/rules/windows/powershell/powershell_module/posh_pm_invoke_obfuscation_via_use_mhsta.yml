@@ -1,0 +1,14 @@
+id: 07ad2ea8-6a55-4ac6-bf3e-91b8e59676eb
+name: Invoke-Obfuscation Via Use MSHTA - PowerShell Module
+level: 8
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Payload ILIKE '%set%' AND Payload ILIKE '%&&%' AND Payload ILIKE '%mshta%' AND Payload ILIKE '%vbscript:createobject%' AND Payload ILIKE '%.run%' AND Payload ILIKE '%(window.close)%'

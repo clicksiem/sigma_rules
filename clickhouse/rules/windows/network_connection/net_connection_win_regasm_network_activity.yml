@@ -1,0 +1,12 @@
+id: 0531e43a-d77d-47c2-b89f-5fe50321c805
+name: RegAsm.EXE Initiating Network Connection To Public IP
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.009
+rule: SELECT * FROM logs WHERE (Initiated='true' AND Image ILIKE '%\\regasm.exe') AND (NOT (isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')))

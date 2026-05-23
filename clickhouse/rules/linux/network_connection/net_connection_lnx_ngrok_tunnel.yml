@@ -1,0 +1,18 @@
+id: 19bf6fdb-7721-4f3d-867f-53467f6a5db6
+name: Communication To Ngrok Tunneling Service - Linux
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.exfiltration
+- attack.command-and-control
+- attack.t1567
+- attack.t1568.002
+- attack.t1572
+- attack.t1090
+- attack.t1102
+- attack.s0508
+rule: SELECT * FROM logs WHERE DestinationHostname ILIKE '%tunnel.us.ngrok.com%' OR DestinationHostname ILIKE '%tunnel.eu.ngrok.com%' OR DestinationHostname ILIKE '%tunnel.ap.ngrok.com%' OR DestinationHostname ILIKE '%tunnel.au.ngrok.com%' OR DestinationHostname ILIKE '%tunnel.sa.ngrok.com%' OR DestinationHostname ILIKE '%tunnel.jp.ngrok.com%' OR DestinationHostname ILIKE '%tunnel.in.ngrok.com%'

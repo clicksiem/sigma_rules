@@ -1,0 +1,13 @@
+id: 53389db6-ba46-48e3-a94c-e0f2cefe1583
+name: MITRE BZAR Indicators for Persistence
+level: 5
+size: '>0'
+active: true
+author:
+- '@neu5ron, SOC Prime'
+group: zeek
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.004
+rule: SELECT * FROM logs WHERE (endpoint='spoolss' AND operation='RpcAddMonitor') OR (endpoint='spoolss' AND operation='RpcAddPrintProcessor') OR (endpoint='IRemoteWinspool' AND operation='RpcAsyncAddMonitor') OR (endpoint='IRemoteWinspool' AND operation='RpcAsyncAddPrintProcessor') OR (endpoint='ISecLogon' AND operation='SeclCreateProcessWithLogonW') OR (endpoint='ISecLogon' AND operation='SeclCreateProcessWithLogonExW')

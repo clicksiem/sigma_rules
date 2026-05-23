@@ -1,0 +1,12 @@
+id: ee37eb7c-a4e7-4cd5-8fa4-efa27f1c3f31
+name: PUA - Ngrok Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1572
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% tcp 139%' OR CommandLine ILIKE '% tcp 445%' OR CommandLine ILIKE '% tcp 3389%' OR CommandLine ILIKE '% tcp 5985%' OR CommandLine ILIKE '% tcp 5986%') OR (CommandLine ILIKE '% start %' AND CommandLine ILIKE '%--all%' AND CommandLine ILIKE '%--config%' AND CommandLine ILIKE '%.yml%') OR (Image ILIKE '%ngrok.exe' AND (CommandLine ILIKE '% tcp %' OR CommandLine ILIKE '% http %' OR CommandLine ILIKE '% authtoken %')) OR (CommandLine ILIKE '%.exe authtoken %' OR CommandLine ILIKE '%.exe start --all%')

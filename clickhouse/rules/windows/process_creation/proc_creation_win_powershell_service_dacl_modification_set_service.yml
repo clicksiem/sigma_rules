@@ -1,0 +1,13 @@
+id: a95b9b42-1308-4735-a1af-abb1c5e6f5ac
+name: Suspicious Service DACL Modification Via Set-Service Cmdlet
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\pwsh.exe' OR OriginalFileName='pwsh.dll') AND (CommandLine ILIKE '%-SecurityDescriptorSddl %' OR CommandLine ILIKE '%-sd %') AND ((CommandLine ILIKE '%Set-Service %' AND CommandLine ILIKE '%D;;%') AND (CommandLine ILIKE '%;;;IU%' OR CommandLine ILIKE '%;;;SU%' OR CommandLine ILIKE '%;;;BA%' OR CommandLine ILIKE '%;;;SY%' OR CommandLine ILIKE '%;;;WD%'))

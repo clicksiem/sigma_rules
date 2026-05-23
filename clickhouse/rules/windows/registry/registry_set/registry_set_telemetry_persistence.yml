@@ -1,0 +1,14 @@
+id: 73a883d0-0348-4be4-a8d8-51031c2564f8
+name: Potential Registry Persistence Attempt Via Windows Telemetry
+level: 8
+size: '>0'
+active: true
+author:
+- Lednyov Alexey, oscd.community, Sreeman
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\TelemetryController\\%' AND TargetObject ILIKE '%\\Command' AND (Details ILIKE '%.bat%' OR Details ILIKE '%.bin%' OR Details ILIKE '%.cmd%' OR Details ILIKE '%.dat%' OR Details ILIKE '%.dll%' OR Details ILIKE '%.exe%' OR Details ILIKE '%.hta%' OR Details ILIKE '%.jar%' OR Details ILIKE '%.js%' OR Details ILIKE '%.msi%' OR Details ILIKE '%.ps%' OR Details ILIKE '%.sh%' OR Details ILIKE '%.vb%')) AND (NOT (Details ILIKE '%\\system32\\CompatTelRunner.exe%' OR Details ILIKE '%\\system32\\DeviceCensus.exe%'))

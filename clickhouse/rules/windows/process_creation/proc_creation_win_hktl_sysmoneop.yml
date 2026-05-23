@@ -1,0 +1,13 @@
+id: 8a7e90c5-fe6e-45dc-889e-057fe4378bd9
+name: HackTool - SysmonEOP Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- cve.2022-41120
+- attack.t1068
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SysmonEOP.exe' OR (Hashes ILIKE '%IMPHASH=22F4089EB8ABA31E1BB162C6D9BF72E5%' OR Hashes ILIKE '%IMPHASH=5123FA4C4384D431CD0D893EEB49BBEC%')

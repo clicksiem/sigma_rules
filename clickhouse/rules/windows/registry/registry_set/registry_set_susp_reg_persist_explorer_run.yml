@@ -1,0 +1,13 @@
+id: b7916c2a-fa2f-4795-9477-32b731f70f11
+name: Registry Persistence via Explorer Run Key
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run' AND (Details ILIKE '%:\\$Recycle.bin\\%' OR Details ILIKE '%:\\ProgramData\\%' OR Details ILIKE '%:\\Temp\\%' OR Details ILIKE '%:\\Users\\Default\\%' OR Details ILIKE '%:\\Users\\Public\\%' OR Details ILIKE '%:\\Windows\\Temp\\%' OR Details ILIKE '%\\AppData\\Local\\Temp\\%')

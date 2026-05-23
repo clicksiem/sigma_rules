@@ -1,0 +1,11 @@
+id: 555155a2-03bf-4fe7-af74-d176b3fdbe16
+name: Driver Added To Disallowed Images In HVCI - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Omar Khaled (@beacon_exe)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Control\\CI\\%' AND TargetObject ILIKE '%\\HVCIDisallowedImages%'

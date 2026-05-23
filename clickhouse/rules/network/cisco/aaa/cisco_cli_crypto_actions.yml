@@ -1,0 +1,14 @@
+id: 1f978c6a-4415-47fb-aca5-736a44d7ca3d
+name: Cisco Crypto Commands
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Clark
+group: cisco
+tags:
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1553.004
+- attack.t1552.004
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'crypto pki export') OR hasToken(full_log, 'crypto pki import') OR hasToken(full_log, 'crypto pki trustpoint')

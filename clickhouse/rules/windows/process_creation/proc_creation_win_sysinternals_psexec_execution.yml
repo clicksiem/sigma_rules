@@ -1,0 +1,14 @@
+id: 730fc21b-eaff-474b-ad23-90fd265d4988
+name: Psexec Execution
+level: 5
+size: '>0'
+active: true
+author:
+- omkar72
+group: windows
+tags:
+- attack.execution
+- attack.lateral-movement
+- attack.t1569
+- attack.t1021
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\psexec.exe' OR OriginalFileName='psexec.c'

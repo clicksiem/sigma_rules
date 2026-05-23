@@ -1,0 +1,12 @@
+id: e62a9f0c-ca1e-46b2-85d5-a6da77f86d1a
+name: File Encoded To Base64 Via Certutil.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Jonhnathan Ribeiro, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\certutil.exe' OR OriginalFileName='CertUtil.exe') AND (CommandLine ILIKE '%-encode%' OR CommandLine ILIKE '%/encode%' OR CommandLine ILIKE '%–encode%' OR CommandLine ILIKE '%—encode%' OR CommandLine ILIKE '%―encode%')

@@ -1,0 +1,15 @@
+id: 55695bc0-c8cf-461f-a379-2535f563c854
+name: Applications That Are Using ROPC Authentication Flow
+level: 5
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Bailey Bercik '@baileybercik'
+group: azure
+tags:
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+rule: SELECT * FROM logs WHERE `properties.message`='ROPC'

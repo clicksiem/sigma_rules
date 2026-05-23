@@ -1,0 +1,13 @@
+id: ebef4391-1a81-4761-a40a-1db446c0e625
+name: New ActiveScriptEventConsumer Created Via Wmic.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.003
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%ActiveScriptEventConsumer%' AND CommandLine ILIKE '% CREATE %'

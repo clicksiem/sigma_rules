@@ -1,0 +1,12 @@
+id: 2d22a514-e024-4428-9dba-41505bd63a5b
+name: Indirect Command Execution From Script File Via Bash.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1202
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%:\\Windows\\System32\\bash.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\bash.exe') OR OriginalFileName='Bash.exe') AND (NOT ((CommandLine ILIKE '%bash.exe -%' OR CommandLine ILIKE '%bash -%') OR isNull(CommandLine) OR CommandLine='' OR (CommandLine IN ('bash.exe', 'bash'))))

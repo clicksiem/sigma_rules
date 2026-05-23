@@ -1,0 +1,12 @@
+id: 57bff678-25d1-4d6c-8211-8ca106d12053
+name: Remote Access Tool - ScreenConnect Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Description='ScreenConnect Service' OR Product='ScreenConnect' OR Company='ScreenConnect Software'

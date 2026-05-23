@@ -1,0 +1,11 @@
+id: 22e58743-4ac8-4a9f-bf19-00a0428d8c5f
+name: Base64 MZ Header In CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%TVqQAAMAAAAEAAAA%' OR CommandLine ILIKE '%TVpQAAIAAAAEAA8A%' OR CommandLine ILIKE '%TVqAAAEAAAAEABAA%' OR CommandLine ILIKE '%TVoAAAAAAAAAAAAA%' OR CommandLine ILIKE '%TVpTAQEAAAAEAAAA%'

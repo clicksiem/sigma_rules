@@ -1,0 +1,12 @@
+id: 30bf1789-379d-4fdc-900f-55cd0a90a801
+name: Visual Studio Code Tunnel Service Installation
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%tunnel %' AND CommandLine ILIKE '%service%' AND CommandLine ILIKE '%internal-run%' AND CommandLine ILIKE '%tunnel-service.log%'

@@ -1,0 +1,14 @@
+id: dd857d3e-0c6e-457b-9b48-e82ae7f86bd7
+name: New Module Module Added To IIS Server
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1685.001
+- attack.t1505.004
+rule: SELECT * FROM logs WHERE (EventID=29 AND Configuration ILIKE '%/system.webServer/modules/add%') AND (NOT ((NewValue IN ('AnonymousAuthenticationModule', 'CustomErrorModule', 'DefaultDocumentModule', 'DirectoryListingModule', 'FileCacheModule', 'HttpCacheModule', 'HttpLoggingModule', 'ProtocolSupportModule', 'RequestFilteringModule', 'StaticCompressionModule', 'StaticFileModule', 'TokenCacheModule', 'UriCacheModule')) OR NewValue=''))

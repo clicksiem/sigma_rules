@@ -1,0 +1,12 @@
+id: 0cf2e1c6-8d10-4273-8059-738778f981ad
+name: Potential WerFault ReflectDebugger Registry Value Abuse
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior
+group: windows
+tags:
+- attack.stealth
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows\\Windows Error Reporting\\Hangs\\ReflectDebugger'

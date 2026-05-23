@@ -1,0 +1,12 @@
+id: 4b13db67-0c45-40f1-aba8-66a1a7198a1e
+name: Suspicious Extrac32 Alternate Data Stream Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%extrac32.exe%' AND CommandLine ILIKE '%.cab%') AND match(CommandLine, ':[^\\]')

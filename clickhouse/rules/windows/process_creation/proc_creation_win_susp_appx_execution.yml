@@ -1,0 +1,11 @@
+id: f91ed517-a6ba-471d-9910-b3b4a398c0f3
+name: Potentially Suspicious Windows App Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%C:\\Program Files\\WindowsApps\\%' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wscript.exe') OR (CommandLine ILIKE '%cmd /c%' OR CommandLine ILIKE '%Invoke-%' OR CommandLine ILIKE '%Base64%')) AND (NOT ((ParentImage ILIKE '%:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal%' AND ParentImage ILIKE '%\\WindowsTerminal.exe' AND (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\pwsh.exe')) OR (ParentImage ILIKE 'C:\\Program Files\\WindowsApps\\Microsoft.SysinternalsSuite%' AND Image ILIKE '%\\cmd.exe')))

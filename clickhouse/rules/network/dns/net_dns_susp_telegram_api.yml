@@ -1,0 +1,12 @@
+id: c64c5175-5189-431b-a55e-6d9882158251
+name: Telegram Bot API Request
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.command-and-control
+- attack.t1102.002
+rule: SELECT * FROM logs WHERE query='api.telegram.org'

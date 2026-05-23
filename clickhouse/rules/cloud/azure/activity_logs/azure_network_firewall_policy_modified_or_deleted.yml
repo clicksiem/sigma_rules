@@ -1,0 +1,13 @@
+id: 83c17918-746e-4bd9-920b-8e098bf88c23
+name: Azure Network Firewall Policy Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+- attack.defense-impairment
+- attack.t1686.001
+rule: SELECT * FROM logs WHERE operationName IN ('MICROSOFT.NETWORK/FIREWALLPOLICIES/WRITE', 'MICROSOFT.NETWORK/FIREWALLPOLICIES/JOIN/ACTION', 'MICROSOFT.NETWORK/FIREWALLPOLICIES/CERTIFICATES/ACTION', 'MICROSOFT.NETWORK/FIREWALLPOLICIES/DELETE')

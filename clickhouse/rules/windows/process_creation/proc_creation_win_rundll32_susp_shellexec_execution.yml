@@ -1,0 +1,11 @@
+id: d87bd452-6da1-456e-8155-7dc988157b7d
+name: Suspicious Usage Of ShellExec_RunDLL
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%ShellExec\_RunDLL%' AND (CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Temp\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%comspec%' OR CommandLine ILIKE '%iex%' OR CommandLine ILIKE '%Invoke-%' OR CommandLine ILIKE '%msiexec%' OR CommandLine ILIKE '%odbcconf%' OR CommandLine ILIKE '%regsvr32%')

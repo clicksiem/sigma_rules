@@ -1,0 +1,15 @@
+id: 5cdb711b-5740-4fb2-ba88-f7945027afac
+name: Rundll32 UNC Path Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.lateral-movement
+- attack.stealth
+- attack.t1021.002
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE' OR CommandLine ILIKE '%rundll32%') AND CommandLine ILIKE '% \\\\%'

@@ -1,0 +1,12 @@
+id: b26647de-4feb-4283-af6b-6117661283c5
+name: Powershell Suspicious Win32_PnPEntity
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1120
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Win32\_PnPEntity%'

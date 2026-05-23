@@ -1,0 +1,11 @@
+id: 2569ed8c-1147-498a-9b8c-2ad3656b10ed
+name: Potential Renamed Rundll32 Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%DllRegisterServer%' AND (NOT Image ILIKE '%\\rundll32.exe')

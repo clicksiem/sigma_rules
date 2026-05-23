@@ -1,0 +1,13 @@
+id: c43c26be-2e87-46c7-8661-284588c5a53e
+name: A Member Was Added to a Security-Enabled Global Group
+level: 3
+size: '>0'
+active: true
+author:
+- Alexandr Yampolskyi, SOC Prime
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1098
+rule: SELECT * FROM logs WHERE EventID IN (4728, 632)

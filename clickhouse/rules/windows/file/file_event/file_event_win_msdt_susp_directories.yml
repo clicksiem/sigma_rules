@@ -1,0 +1,14 @@
+id: 318557a5-150c-4c8d-b70e-a9910e199857
+name: File Creation In Suspicious Directory By Msdt.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Vadim Varganov, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+- cve.2022-30190
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\msdt.exe' AND (TargetFilename ILIKE '%\\Desktop\\%' OR TargetFilename ILIKE '%\\Start Menu\\Programs\\Startup\\%' OR TargetFilename ILIKE '%C:\\PerfLogs\\%' OR TargetFilename ILIKE '%C:\\ProgramData\\%' OR TargetFilename ILIKE '%C:\\Users\\Public\\%')

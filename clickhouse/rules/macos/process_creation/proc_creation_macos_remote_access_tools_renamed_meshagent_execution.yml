@@ -1,0 +1,14 @@
+id: bd3b5eaa-439d-4a42-8f35-a49f5c8a2582
+name: Remote Access Tool - Renamed MeshAgent Execution - MacOS
+level: 8
+size: '>0'
+active: true
+author:
+- Norbert Jaśniewicz (AlphaSOC)
+group: macos
+tags:
+- attack.command-and-control
+- attack.stealth
+- attack.t1219.002
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%--meshServiceName%' OR OriginalFileName ILIKE '%meshagent%') AND (NOT (Image ILIKE '%/meshagent' OR Image ILIKE '%/meshagent\_osx64'))

@@ -1,0 +1,15 @@
+id: ef0ff092-a24a-4fbc-beea-06c08d53e085
+name: Cisco Dot1x Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- Luc Génaux
+group: cisco
+tags:
+- attack.persistence
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1685
+- attack.t1556.004
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'access-session port-control force-authorized') OR hasToken(full_log, 'authentication port-control force-authorized') OR hasToken(full_log, 'dot1x port-control force-authorized') OR hasToken(full_log, 'no access-session port-control') OR hasToken(full_log, 'no authentication port-control') OR hasToken(full_log, 'no dot1x port-control') OR hasToken(full_log, 'no dot1x system-auth-control')

@@ -1,0 +1,13 @@
+id: 16124c2d-e40b-4fcc-8f2c-5ab7870a2223
+name: AWS EC2 Disable EBS Encryption
+level: 5
+size: '>0'
+active: true
+author:
+- Sittikorn S
+group: aws
+tags:
+- attack.impact
+- attack.t1486
+- attack.t1565
+rule: SELECT * FROM logs WHERE eventSource='ec2.amazonaws.com' AND eventName='DisableEbsEncryptionByDefault'

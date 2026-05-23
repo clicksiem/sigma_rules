@@ -1,0 +1,15 @@
+id: 060d5ad4-3153-47bb-8382-43e5e29eda92
+name: Unsigned Module Loaded by ClickOnce Application
+level: 5
+size: '>0'
+active: true
+author:
+- '@SerkinValery'
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\AppData\\Local\\Apps\\2.0\\%' AND (Signed='false' OR SignatureStatus='Expired')

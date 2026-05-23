@@ -1,0 +1,13 @@
+id: 81315b50-6b60-4d8f-9928-3466e1022515
+name: Desktop.INI Created by Uncommon Process
+level: 5
+size: '>0'
+active: true
+author:
+- Maxime Thiebaut (@0xThiebaut), Tim Shelton (HAWK.IO)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.009
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\desktop.ini' AND (NOT ((Image ILIKE 'C:\\Windows\\%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%') OR TargetFilename ILIKE 'C:\\$WINDOWS.~BT\\NewOS\\%')) AND (NOT ((Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\JetBrains\\Toolbox\\bin\\7z.exe' AND TargetFilename ILIKE '%\\JetBrains\\apps\\%') OR (Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\Microsoft\\OneDrive\\%')))

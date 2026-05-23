@@ -1,0 +1,16 @@
+id: 0ea8db81-2ff6-4525-9448-33bbe7effc13
+name: New DMSA Service Account Created in Specific OUs
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.initial-access
+- attack.persistence
+- attack.stealth
+- attack.t1078.002
+- attack.t1098
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\powershell\_ise.exe') OR (OriginalFileName IN ('powershell.exe', 'pwsh.dll', 'powershell\_ise.exe'))) AND (CommandLine ILIKE '%New-ADServiceAccount%' AND CommandLine ILIKE '%-CreateDelegatedServiceAccount%' AND CommandLine ILIKE '%-path%')

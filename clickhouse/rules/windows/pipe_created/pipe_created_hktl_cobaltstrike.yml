@@ -1,0 +1,13 @@
+id: d5601f8c-b26f-4ab0-9035-69e11a8d4ad2
+name: CobaltStrike Named Pipe
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Wojciech Lesicki
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE (PipeName ILIKE '%\\MSSE-%' AND PipeName ILIKE '%-server%') OR PipeName ILIKE '\\postex\_%' OR PipeName ILIKE '\\status\_%' OR PipeName ILIKE '\\msagent\_%' OR PipeName ILIKE '\\mojo\_%' OR PipeName ILIKE '\\interprocess\_%' OR PipeName ILIKE '\\samr\_%' OR PipeName ILIKE '\\netlogon\_%' OR PipeName ILIKE '\\srvsvc\_%' OR PipeName ILIKE '\\lsarpc\_%' OR PipeName ILIKE '\\wkssvc\_%'

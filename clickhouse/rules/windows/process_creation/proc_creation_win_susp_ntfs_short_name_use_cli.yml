@@ -1,0 +1,12 @@
+id: dd6b39d9-d9be-4a3b-8fe0-fe3c6a5c1795
+name: Use NTFS Short Name in Command Line
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%~1.exe%' OR CommandLine ILIKE '%~1.bat%' OR CommandLine ILIKE '%~1.msi%' OR CommandLine ILIKE '%~1.vbe%' OR CommandLine ILIKE '%~1.vbs%' OR CommandLine ILIKE '%~1.dll%' OR CommandLine ILIKE '%~1.ps1%' OR CommandLine ILIKE '%~1.js%' OR CommandLine ILIKE '%~1.hta%' OR CommandLine ILIKE '%~2.exe%' OR CommandLine ILIKE '%~2.bat%' OR CommandLine ILIKE '%~2.msi%' OR CommandLine ILIKE '%~2.vbe%' OR CommandLine ILIKE '%~2.vbs%' OR CommandLine ILIKE '%~2.dll%' OR CommandLine ILIKE '%~2.ps1%' OR CommandLine ILIKE '%~2.js%' OR CommandLine ILIKE '%~2.hta%') AND (NOT ((ParentImage ILIKE '%\\WebEx\\WebexHost.exe' OR ParentImage ILIKE '%\\thor\\thor64.exe') OR CommandLine ILIKE '%C:\\xampp\\vcredist\\VCREDI~1.EXE%'))

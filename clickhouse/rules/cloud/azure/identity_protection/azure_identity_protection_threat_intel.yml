@@ -1,0 +1,15 @@
+id: a2cb56ff-4f46-437a-a0fa-ffa4d1303cba
+name: Azure AD Threat Intelligence
+level: 8
+size: '>0'
+active: true
+author:
+- Mark Morowczynski '@markmorow', Gloria Lee, '@gleeiamglo'
+group: azure
+tags:
+- attack.stealth
+- attack.t1078
+- attack.persistence
+- attack.privilege-escalation
+- attack.initial-access
+rule: SELECT * FROM logs WHERE riskEventType='investigationsThreatIntelligence'

@@ -1,0 +1,12 @@
+id: 4b046706-5789-4673-b111-66f25fe99534
+name: Deleted Data Overwritten Via Cipher.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE (OriginalFileName='CIPHER.EXE' OR Image ILIKE '%\\cipher.exe') AND CommandLine ILIKE '% /w:%'

@@ -1,0 +1,12 @@
+id: fe2f9663-41cb-47e2-b954-8a228f3b9dff
+name: Linux Base64 Encoded Shebang In CLI
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.stealth
+- attack.t1140
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%IyEvYmluL2Jhc2%' OR CommandLine ILIKE '%IyEvYmluL2Rhc2%' OR CommandLine ILIKE '%IyEvYmluL3pza%' OR CommandLine ILIKE '%IyEvYmluL2Zpc2%' OR CommandLine ILIKE '%IyEvYmluL3No%'

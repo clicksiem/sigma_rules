@@ -1,0 +1,13 @@
+id: 4e2ed651-1906-4a59-a78a-18220fca1b22
+name: PUA - NirCmd Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\NirCmd.exe' OR OriginalFileName='NirCmd.exe') OR (CommandLine ILIKE '% execmd %' OR CommandLine ILIKE '%.exe script %' OR CommandLine ILIKE '%.exe shexec %' OR CommandLine ILIKE '% runinteractive %')) OR ((CommandLine ILIKE '% exec %' OR CommandLine ILIKE '% exec2 %') AND (CommandLine ILIKE '% show %' OR CommandLine ILIKE '% hide %'))

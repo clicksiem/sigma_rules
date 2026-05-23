@@ -1,0 +1,12 @@
+id: 8eef149c-bd26-49f2-9e5a-9b00e3af499b
+name: Pass the Hash Activity 2
+level: 5
+size: '>0'
+active: true
+author:
+- Dave Kennedy, Jeff Warren (method) / David Vassallo (rule)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1550.002
+rule: SELECT * FROM logs WHERE ((EventID=4624 AND SubjectUserSid='S-1-0-0' AND LogonType=3 AND LogonProcessName='NtLmSsp' AND KeyLength=0) OR (EventID=4624 AND LogonType=9 AND LogonProcessName='seclogo')) AND (NOT TargetUserName='ANONYMOUS LOGON')

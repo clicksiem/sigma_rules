@@ -1,0 +1,15 @@
+id: 2a0a169d-cc66-43ce-9ae2-6e678e54e46a
+name: Registry Modification Attempt Via VBScript - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.defense-impairment
+- attack.t1112
+- attack.t1059.005
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%CreateObject%' AND ScriptBlockText ILIKE '%Wscript.shell%' AND ScriptBlockText ILIKE '%.RegWrite%'

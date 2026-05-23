@@ -1,0 +1,13 @@
+id: f1086bf7-a0c4-4a37-9102-01e573caf4a0
+name: Renamed Whoami Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.discovery
+- attack.t1033
+- car.2016-03-001
+rule: SELECT * FROM logs WHERE OriginalFileName='whoami.exe' AND (NOT Image ILIKE '%\\whoami.exe')

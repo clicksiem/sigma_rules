@@ -1,0 +1,14 @@
+id: 67add051-9ee7-4ad3-93ba-42935615ae8d
+name: PUA - Process Hacker Driver Load
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- cve.2021-21551
+- attack.t1543
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\kprocesshacker.sys' OR (Hashes ILIKE '%IMPHASH=821D74031D3F625BCBD0DF08B70F1E77%' OR Hashes ILIKE '%IMPHASH=F86759BB4DE4320918615DC06E998A39%' OR Hashes ILIKE '%IMPHASH=0A64EEB85419257D0CE32BD5D55C3A18%' OR Hashes ILIKE '%IMPHASH=6E7B34DFC017700B1517B230DF6FF0D0%')

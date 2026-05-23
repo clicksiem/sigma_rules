@@ -1,0 +1,12 @@
+id: 7f2376f9-42ee-4dfc-9360-fecff9a88fc8
+name: BitLockerTogo.EXE Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Josh Nickels, mttaggart
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\BitLockerToGo.exe'

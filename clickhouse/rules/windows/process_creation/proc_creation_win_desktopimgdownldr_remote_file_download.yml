@@ -1,0 +1,12 @@
+id: 214641c2-c579-4ecb-8427-0cf19df6842e
+name: Remote File Download Via Desktopimgdownldr Utility
+level: 5
+size: '>0'
+active: true
+author:
+- Tim Rauch, Elastic (idea)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\desktopimgdownldr.exe' AND ParentImage ILIKE '%\\desktopimgdownldr.exe' AND CommandLine ILIKE '%/lockscreenurl:http%'

@@ -1,0 +1,11 @@
+id: caf201a9-c2ce-4a26-9c3a-2b9525413711
+name: Potentially Suspicious Call To Win32_NTEventlogFile Class
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%Win32\_NTEventlogFile%' AND (CommandLine ILIKE '%.BackupEventlog(%' OR CommandLine ILIKE '%.ChangeSecurityPermissions(%' OR CommandLine ILIKE '%.ChangeSecurityPermissionsEx(%' OR CommandLine ILIKE '%.ClearEventLog(%' OR CommandLine ILIKE '%.Delete(%' OR CommandLine ILIKE '%.DeleteEx(%' OR CommandLine ILIKE '%.Rename(%' OR CommandLine ILIKE '%.TakeOwnerShip(%' OR CommandLine ILIKE '%.TakeOwnerShipEx(%')

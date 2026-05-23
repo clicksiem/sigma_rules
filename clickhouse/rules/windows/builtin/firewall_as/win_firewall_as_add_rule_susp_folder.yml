@@ -1,0 +1,12 @@
+id: 9e2575e7-2cb9-4da1-adc8-ed94221dca5e
+name: New Firewall Rule Added In Windows Firewall Exception List For Potential Suspicious Application
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE ((EventID IN (2004, 2071, 2097)) AND (ApplicationPath ILIKE '%:\\PerfLogs\\%' OR ApplicationPath ILIKE '%:\\Temp\\%' OR ApplicationPath ILIKE '%:\\Tmp\\%' OR ApplicationPath ILIKE '%:\\Users\\Public\\%' OR ApplicationPath ILIKE '%:\\Windows\\Tasks\\%' OR ApplicationPath ILIKE '%:\\Windows\\Temp\\%' OR ApplicationPath ILIKE '%\\AppData\\Local\\Temp\\%')) AND (NOT Action=2)

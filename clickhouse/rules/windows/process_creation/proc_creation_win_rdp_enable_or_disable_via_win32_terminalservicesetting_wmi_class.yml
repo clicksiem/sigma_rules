@@ -1,0 +1,14 @@
+id: 4b8f6d3a-9c5e-4f2a-a7d8-6b9c3e5f2a8d
+name: RDP Enable or Disable via Win32_TerminalServiceSetting WMI Class
+level: 5
+size: '>0'
+active: true
+author:
+- Daniel Koifman (KoifSec), Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.001
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('wmic.exe', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%rdtoggle%' OR CommandLine ILIKE '%Win32\_TerminalServiceSetting%') AND CommandLine ILIKE '%SetAllowTSConnections%'

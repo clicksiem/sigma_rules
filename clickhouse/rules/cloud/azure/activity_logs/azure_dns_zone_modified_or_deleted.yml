@@ -1,0 +1,12 @@
+id: af6925b0-8826-47f1-9324-337507a0babd
+name: Azure DNS Zone Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+- attack.t1565.001
+rule: SELECT * FROM logs WHERE operationName ILIKE 'MICROSOFT.NETWORK/DNSZONES%' AND (operationName ILIKE '%/WRITE' OR operationName ILIKE '%/DELETE')

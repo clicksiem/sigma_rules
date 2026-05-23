@@ -1,0 +1,15 @@
+id: 1a31b18a-f00c-4061-9900-f735b96c99fc
+name: Remote Access Tool Services Have Been Installed - System
+level: 5
+size: '>0'
+active: true
+author:
+- Connor Martin, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1543.003
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE Provider_Name='Service Control Manager' AND (EventID IN (7045, 7036)) AND (ServiceName ILIKE '%AmmyyAdmin%' OR ServiceName ILIKE '%Atera%' OR ServiceName ILIKE '%BASupportExpressSrvcUpdater%' OR ServiceName ILIKE '%BASupportExpressStandaloneService%' OR ServiceName ILIKE '%chromoting%' OR ServiceName ILIKE '%GoToAssist%' OR ServiceName ILIKE '%GoToMyPC%' OR ServiceName ILIKE '%jumpcloud%' OR ServiceName ILIKE '%LMIGuardianSvc%' OR ServiceName ILIKE '%LogMeIn%' OR ServiceName ILIKE '%monblanking%' OR ServiceName ILIKE '%Parsec%' OR ServiceName ILIKE '%RManService%' OR ServiceName ILIKE '%RPCPerformanceService%' OR ServiceName ILIKE '%RPCService%' OR ServiceName ILIKE '%SplashtopRemoteService%' OR ServiceName ILIKE '%SSUService%' OR ServiceName ILIKE '%TeamViewer%' OR ServiceName ILIKE '%TightVNC%' OR ServiceName ILIKE '%vncserver%' OR ServiceName ILIKE '%Zoho%')

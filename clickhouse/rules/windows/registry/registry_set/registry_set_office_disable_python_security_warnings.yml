@@ -1,0 +1,12 @@
+id: 17e53739-a1fc-4a62-b1b9-87711c2d5e44
+name: Python Function Execution Security Warning Disabled In Excel - Registry
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), @Kostastsale
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Office\\%' AND TargetObject ILIKE '%\\Excel\\Security\\PythonFunctionWarnings' AND Details='DWORD (0x00000001)'

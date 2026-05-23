@@ -1,0 +1,15 @@
+id: c5c00f49-b3f9-45a6-997e-cfdecc6e1967
+name: Suspicious Schtasks Execution AppData Folder
+level: 8
+size: '>0'
+active: true
+author:
+- pH-T (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '%/Create%' AND CommandLine ILIKE '%/RU%' AND CommandLine ILIKE '%/TR%' AND CommandLine ILIKE '%C:\\Users\\%' AND CommandLine ILIKE '%\\AppData\\Local\\%') AND (CommandLine ILIKE '%NT AUT%' OR CommandLine ILIKE '% SYSTEM %')) AND (NOT ((ParentImage ILIKE '%\\AppData\\Local\\Temp\\%' AND ParentImage ILIKE '%TeamViewer\_.exe%') AND Image ILIKE '%\\schtasks.exe' AND CommandLine ILIKE '%/TN TVInstallRestore%'))

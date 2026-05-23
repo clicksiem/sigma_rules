@@ -1,0 +1,12 @@
+id: 379fa130-190e-4c3f-b7bc-6c8e834485f3
+name: File Deletion Via Del
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND (CommandLine ILIKE '%del %' OR CommandLine ILIKE '%erase %') AND (CommandLine ILIKE '% -f%' OR CommandLine ILIKE '% /f%' OR CommandLine ILIKE '% –f%' OR CommandLine ILIKE '% —f%' OR CommandLine ILIKE '% ―f%' OR CommandLine ILIKE '% -s%' OR CommandLine ILIKE '% /s%' OR CommandLine ILIKE '% –s%' OR CommandLine ILIKE '% —s%' OR CommandLine ILIKE '% ―s%' OR CommandLine ILIKE '% -q%' OR CommandLine ILIKE '% /q%' OR CommandLine ILIKE '% –q%' OR CommandLine ILIKE '% —q%' OR CommandLine ILIKE '% ―q%')

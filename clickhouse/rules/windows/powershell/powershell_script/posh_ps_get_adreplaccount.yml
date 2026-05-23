@@ -1,0 +1,12 @@
+id: 060c3ef1-fd0a-4091-bf46-e7d625f60b73
+name: Suspicious Get-ADReplAccount
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.006
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-ADReplAccount%' AND ScriptBlockText ILIKE '%-All %' AND ScriptBlockText ILIKE '%-Server %'

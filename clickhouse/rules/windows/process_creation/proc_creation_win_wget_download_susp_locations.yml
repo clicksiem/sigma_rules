@@ -1,0 +1,11 @@
+id: 40aa399c-7b02-4715-8e5f-73572b493f33
+name: Suspicious File Download From IP Via Wget.EXE - Paths
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wget.exe' OR OriginalFileName='wget.exe') AND match(CommandLine, '://[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}') AND CommandLine ILIKE '%http%' AND (match(CommandLine, '\s-O\s') OR CommandLine ILIKE '%--output-document%') AND ((CommandLine ILIKE '%:\\PerfLogs\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%' OR CommandLine ILIKE '%:\\Windows\\Help\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\Temporary Internet%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Favorites\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Favourites\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Contacts\\%') OR (CommandLine ILIKE '%:\\Users\\%' AND CommandLine ILIKE '%\\Pictures\\%'))

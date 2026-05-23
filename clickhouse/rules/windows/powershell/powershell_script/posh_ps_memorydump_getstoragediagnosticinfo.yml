@@ -1,0 +1,12 @@
+id: cd185561-4760-45d6-a63e-a51325112cae
+name: Live Memory Dump Using Powershell
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-StorageDiagnosticInfo%' AND ScriptBlockText ILIKE '%-IncludeLiveDump%'

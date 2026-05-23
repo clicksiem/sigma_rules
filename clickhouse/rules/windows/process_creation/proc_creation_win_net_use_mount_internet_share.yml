@@ -1,0 +1,12 @@
+id: 7e6237fe-3ddb-438f-9381-9bf9de5af8d0
+name: Windows Internet Hosted WebDav Share Mount Via Net.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND (CommandLine ILIKE '% use %' AND CommandLine ILIKE '% http%')

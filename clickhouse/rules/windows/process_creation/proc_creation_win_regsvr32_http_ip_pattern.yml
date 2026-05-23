@@ -1,0 +1,12 @@
+id: 2dd2c217-bf68-437a-b57c-fe9fd01d5de8
+name: Potentially Suspicious Regsvr32 HTTP IP Pattern
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.010
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regsvr32.exe' OR OriginalFileName='REGSVR32.EXE') AND (CommandLine ILIKE '% /i:http://1%' OR CommandLine ILIKE '% /i:http://2%' OR CommandLine ILIKE '% /i:http://3%' OR CommandLine ILIKE '% /i:http://4%' OR CommandLine ILIKE '% /i:http://5%' OR CommandLine ILIKE '% /i:http://6%' OR CommandLine ILIKE '% /i:http://7%' OR CommandLine ILIKE '% /i:http://8%' OR CommandLine ILIKE '% /i:http://9%' OR CommandLine ILIKE '% /i:https://1%' OR CommandLine ILIKE '% /i:https://2%' OR CommandLine ILIKE '% /i:https://3%' OR CommandLine ILIKE '% /i:https://4%' OR CommandLine ILIKE '% /i:https://5%' OR CommandLine ILIKE '% /i:https://6%' OR CommandLine ILIKE '% /i:https://7%' OR CommandLine ILIKE '% /i:https://8%' OR CommandLine ILIKE '% /i:https://9%' OR CommandLine ILIKE '% -i:http://1%' OR CommandLine ILIKE '% -i:http://2%' OR CommandLine ILIKE '% -i:http://3%' OR CommandLine ILIKE '% -i:http://4%' OR CommandLine ILIKE '% -i:http://5%' OR CommandLine ILIKE '% -i:http://6%' OR CommandLine ILIKE '% -i:http://7%' OR CommandLine ILIKE '% -i:http://8%' OR CommandLine ILIKE '% -i:http://9%' OR CommandLine ILIKE '% -i:https://1%' OR CommandLine ILIKE '% -i:https://2%' OR CommandLine ILIKE '% -i:https://3%' OR CommandLine ILIKE '% -i:https://4%' OR CommandLine ILIKE '% -i:https://5%' OR CommandLine ILIKE '% -i:https://6%' OR CommandLine ILIKE '% -i:https://7%' OR CommandLine ILIKE '% -i:https://8%' OR CommandLine ILIKE '% -i:https://9%')

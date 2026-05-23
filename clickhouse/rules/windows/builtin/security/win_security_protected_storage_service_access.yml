@@ -1,0 +1,12 @@
+id: 45545954-4016-43c6-855e-eae8f1c369dc
+name: Protected Storage Service Access
+level: 8
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez @Cyb3rWard0g
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE EventID=5145 AND ShareName ILIKE '%IPC%' AND RelativeTargetName ILIKE 'protected\_storage'

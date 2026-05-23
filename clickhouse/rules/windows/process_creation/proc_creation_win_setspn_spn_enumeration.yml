@@ -1,0 +1,12 @@
+id: 1eeed653-dbc8-4187-ad0c-eeebb20e6599
+name: Potential SPN Enumeration Via Setspn.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Markus Neis, keepwatch
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\setspn.exe' OR OriginalFileName='setspn.exe' OR (Description ILIKE '%Query or reset the computer%' AND Description ILIKE '%SPN attribute%')) AND (CommandLine ILIKE '% -q %' OR CommandLine ILIKE '% /q %')

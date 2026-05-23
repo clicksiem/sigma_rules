@@ -1,0 +1,12 @@
+id: e31033fc-33f0-4020-9a16-faf9b31cbf08
+name: PUA - Netcat Suspicious Execution
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1095
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\nc.exe' OR Image ILIKE '%\\ncat.exe' OR Image ILIKE '%\\netcat.exe') OR (CommandLine ILIKE '% -lvp %' OR CommandLine ILIKE '% -lvnp%' OR CommandLine ILIKE '% -l -v -p %' OR CommandLine ILIKE '% -lv -p %' OR CommandLine ILIKE '% -l --proxy-type http %' OR CommandLine ILIKE '% -vnl --exec %' OR CommandLine ILIKE '% -vnl -e %' OR CommandLine ILIKE '% --lua-exec %' OR CommandLine ILIKE '% --sh-exec %')

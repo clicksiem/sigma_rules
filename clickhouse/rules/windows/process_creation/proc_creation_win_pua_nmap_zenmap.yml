@@ -1,0 +1,12 @@
+id: f6ecd1cf-19b8-4488-97f6-00f0924991a3
+name: PUA - Nmap/Zenmap Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\nmap.exe' OR Image ILIKE '%\\zennmap.exe') OR (OriginalFileName IN ('nmap.exe', 'zennmap.exe'))

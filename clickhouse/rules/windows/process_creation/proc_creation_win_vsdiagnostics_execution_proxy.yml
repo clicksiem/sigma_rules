@@ -1,0 +1,12 @@
+id: ac1c92b4-ac81-405a-9978-4604d78cc47e
+name: Potential Binary Proxy Execution Via VSDiagnostics.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\VSDiagnostics.exe' OR OriginalFileName='VSDiagnostics.exe') AND CommandLine ILIKE '%start%' AND (CommandLine ILIKE '% /launch:%' OR CommandLine ILIKE '% -launch:%')

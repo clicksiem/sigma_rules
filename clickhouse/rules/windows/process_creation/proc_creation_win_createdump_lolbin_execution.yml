@@ -1,0 +1,14 @@
+id: 515c8be5-e5df-4c5e-8f6d-a4a2f05e4b48
+name: CreateDump Process Dump
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.t1003.001
+- attack.credential-access
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\createdump.exe' OR OriginalFileName ILIKE 'FX\_VER\_INTERNALNAME\_STR') AND (CommandLine ILIKE '% -u %' OR CommandLine ILIKE '% --full %' OR CommandLine ILIKE '% -f %' OR CommandLine ILIKE '% --name %' OR CommandLine ILIKE '%.dmp %')

@@ -1,0 +1,15 @@
+id: 4d136857-6a1a-432a-82fc-5dd497ee5e7c
+name: Sign-ins by Unknown Devices
+level: 3
+size: '>0'
+active: true
+author:
+- Michael Epping, '@mepples21'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE AuthenticationRequirement='singleFactorAuthentication' AND ResultType=0 AND NetworkLocationDetails='[]' AND `DeviceDetail.deviceId`=''

@@ -1,0 +1,12 @@
+id: 1712bafe-be05-4a0e-89d4-17a3ed151bf5
+name: Potential Hello-World Scraper Botnet Activity
+level: 5
+size: '>0'
+active: true
+author:
+- Joseph A. M.
+group: ''
+tags:
+- attack.reconnaissance
+- attack.t1595
+rule: SELECT * FROM logs WHERE `c-useragent`='Hello-World/1.0' AND `cs-method`='GET'

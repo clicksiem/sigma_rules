@@ -1,0 +1,11 @@
+id: b36d01a3-ddaf-4804-be18-18a6247adfcd
+name: Add Windows Capability Via PowerShell Cmdlet
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND CommandLine ILIKE '%Add-WindowsCapability%' AND CommandLine ILIKE '%OpenSSH.%'

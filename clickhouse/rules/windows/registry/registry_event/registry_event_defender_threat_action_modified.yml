@@ -1,0 +1,12 @@
+id: 5a9e1b2c-8f7d-4a1e-9b3c-0f6d7e5a4b1f
+name: Windows Defender Threat Severity Default Action Modified
+level: 8
+size: '>0'
+active: true
+author:
+- Matt Anderson (Huntress)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\Windows Defender\\Threats\\ThreatSeverityDefaultAction\\%' AND (TargetObject ILIKE '%\\1' OR TargetObject ILIKE '%\\2' OR TargetObject ILIKE '%\\4' OR TargetObject ILIKE '%\\5') AND (Details IN ('DWORD (0x00000006)', 'DWORD (0x00000009)'))

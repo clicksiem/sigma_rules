@@ -1,0 +1,13 @@
+id: 2c4523d5-d481-4ed0-8ec3-7fbf0cb41a75
+name: Driver Load From A Temporary Directory
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\Temp\\%'

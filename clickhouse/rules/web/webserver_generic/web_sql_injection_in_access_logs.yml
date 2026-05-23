@@ -1,0 +1,12 @@
+id: 5513deaf-f49a-46c2-a6c8-3f111b5cb453
+name: SQL Injection Strings In URI
+level: 8
+size: '>0'
+active: true
+author:
+- Saw Win Naung, Nasreddine Bencherchali (Nextron Systems), Thurein Oo (Yoma Bank)
+group: ''
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE `cs-method`='GET' AND (hasToken(full_log, '@@version') OR hasToken(full_log, '\%271\%27\%3D\%271') OR hasToken(full_log, '=select ') OR hasToken(full_log, '=select(') OR hasToken(full_log, '=select\%20') OR hasToken(full_log, 'concat\_ws(') OR hasToken(full_log, 'CONCAT(0x') OR hasToken(full_log, 'from mysql.innodb\_table\_stats') OR hasToken(full_log, 'from\%20mysql.innodb\_table\_stats') OR hasToken(full_log, 'group\_concat(') OR hasToken(full_log, 'information\_schema.tables') OR hasToken(full_log, 'json\_arrayagg(') OR hasToken(full_log, 'or 1=1#') OR hasToken(full_log, 'or\%201=1#') OR hasToken(full_log, 'order by ') OR hasToken(full_log, 'order\%20by\%20') OR hasToken(full_log, 'select % ') OR hasToken(full_log, 'select database()') OR hasToken(full_log, 'select version()') OR hasToken(full_log, 'select\%20%\%20') OR hasToken(full_log, 'select\%20database()') OR hasToken(full_log, 'select\%20version()') OR hasToken(full_log, 'select\%28sleep\%2810\%29') OR hasToken(full_log, 'SELECTCHAR(') OR hasToken(full_log, 'table\_schema') OR hasToken(full_log, 'UNION ALL SELECT') OR hasToken(full_log, 'UNION SELECT') OR hasToken(full_log, 'UNION\%20ALL\%20SELECT') OR hasToken(full_log, 'UNION\%20SELECT') OR hasToken(full_log, '''1''=''1')) AND (NOT `sc-status`=404)

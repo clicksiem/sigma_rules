@@ -1,0 +1,12 @@
+id: 700fb7e8-2981-401c-8430-be58e189e741
+name: Suspicious Package Installed - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1553.004
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%/apt' OR Image ILIKE '%/apt-get') AND CommandLine ILIKE '%install%') OR (Image ILIKE '%/yum' AND (CommandLine ILIKE '%localinstall%' OR CommandLine ILIKE '%install%')) OR (Image ILIKE '%/rpm' AND CommandLine ILIKE '%-i%') OR (Image ILIKE '%/dpkg' AND (CommandLine ILIKE '%--install%' OR CommandLine ILIKE '%-i%'))) AND (CommandLine ILIKE '%nmap%' OR CommandLine ILIKE '% nc%' OR CommandLine ILIKE '%netcat%' OR CommandLine ILIKE '%wireshark%' OR CommandLine ILIKE '%tshark%' OR CommandLine ILIKE '%openconnect%' OR CommandLine ILIKE '%proxychains%' OR CommandLine ILIKE '%socat%')

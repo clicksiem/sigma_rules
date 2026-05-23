@@ -1,0 +1,12 @@
+id: c048f047-7e2a-4888-b302-55f509d4a91d
+name: SCR File Write Event
+level: 5
+size: '>0'
+active: true
+author:
+- Christopher Peacock @securepeacock, SCYTHE @scythe_io
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%.scr' AND (NOT (TargetFilename ILIKE '%:\\$WINDOWS.~BT\\NewOS\\%' OR TargetFilename ILIKE '%:\\Windows\\System32\\%' OR TargetFilename ILIKE '%:\\Windows\\SysWOW64\\%' OR TargetFilename ILIKE '%:\\Windows\\WinSxS\\%' OR TargetFilename ILIKE '%:\\WUDownloadCache\\%'))

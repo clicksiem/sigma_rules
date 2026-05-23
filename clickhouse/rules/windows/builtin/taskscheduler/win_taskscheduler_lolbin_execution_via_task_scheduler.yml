@@ -1,0 +1,14 @@
+id: f0767f15-0fb3-44b9-851e-e8d9a6d0005d
+name: Scheduled Task Executed Uncommon LOLBIN
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.persistence
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE EventID=129 AND (Path ILIKE '%\\calc.exe' OR Path ILIKE '%\\cscript.exe' OR Path ILIKE '%\\mshta.exe' OR Path ILIKE '%\\mspaint.exe' OR Path ILIKE '%\\notepad.exe' OR Path ILIKE '%\\regsvr32.exe' OR Path ILIKE '%\\wscript.exe')

@@ -1,0 +1,15 @@
+id: 9ef27c24-4903-4192-881a-3adde7ff92a5
+name: Renamed Remote Utilities RAT (RURAT) Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.command-and-control
+- attack.discovery
+- attack.stealth
+- attack.s0592
+rule: SELECT * FROM logs WHERE Product='Remote Utilities' AND (NOT (Image ILIKE '%\\rutserv.exe' OR Image ILIKE '%\\rfusclient.exe'))

@@ -1,0 +1,12 @@
+id: eee00933-a761-4cd0-be70-c42fe91731e7
+name: Arbitrary File Download Via GfxDownloadWrapper.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\GfxDownloadWrapper.exe' AND (CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%')) AND (NOT CommandLine ILIKE '%https://gameplayapi.intel.com/%')

@@ -1,0 +1,12 @@
+id: 84b1706c-932a-44c4-ae28-892b28a25b94
+name: OneNote.EXE Execution of Malicious Embedded Scripts
+level: 8
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\onenote.exe' AND (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe') AND (CommandLine ILIKE '%\\exported\\%' OR CommandLine ILIKE '%\\onenoteofflinecache\_files\\%')

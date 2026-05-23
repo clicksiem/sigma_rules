@@ -1,0 +1,12 @@
+id: 0e29e3a7-1ad8-40aa-b691-9f82ecd33d66
+name: Office Macro File Download
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1566.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\RuntimeBroker.exe' OR Image ILIKE '%\\outlook.exe' OR Image ILIKE '%\\thunderbird.exe' OR Image ILIKE '%\\brave.exe' OR Image ILIKE '%\\chrome.exe' OR Image ILIKE '%\\firefox.exe' OR Image ILIKE '%\\iexplore.exe' OR Image ILIKE '%\\maxthon.exe' OR Image ILIKE '%\\MicrosoftEdge.exe' OR Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\msedgewebview2.exe' OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\safari.exe' OR Image ILIKE '%\\seamonkey.exe' OR Image ILIKE '%\\vivaldi.exe' OR Image ILIKE '%\\whale.exe') AND ((TargetFilename ILIKE '%.docm' OR TargetFilename ILIKE '%.dotm' OR TargetFilename ILIKE '%.xlsm' OR TargetFilename ILIKE '%.xltm' OR TargetFilename ILIKE '%.potm' OR TargetFilename ILIKE '%.pptm') OR (TargetFilename ILIKE '%.docm:Zone%' OR TargetFilename ILIKE '%.dotm:Zone%' OR TargetFilename ILIKE '%.xlsm:Zone%' OR TargetFilename ILIKE '%.xltm:Zone%' OR TargetFilename ILIKE '%.potm:Zone%' OR TargetFilename ILIKE '%.pptm:Zone%'))

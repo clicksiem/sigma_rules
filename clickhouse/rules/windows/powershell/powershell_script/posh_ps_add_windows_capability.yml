@@ -1,0 +1,11 @@
+id: 155c7fd5-47b4-49b2-bbeb-eb4fab335429
+name: Add Windows Capability Via PowerShell Script
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Add-WindowsCapability %' AND ScriptBlockText ILIKE '%-Name OpenSSH.%'

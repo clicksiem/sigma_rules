@@ -1,0 +1,14 @@
+id: 06b401f4-107c-4ff9-947f-9ec1e7649f1e
+name: Potential Arbitrary Command Execution Via FTP.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059
+- attack.t1202
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\ftp.exe' OR ((Image ILIKE '%\\ftp.exe' OR OriginalFileName='ftp.exe') AND (CommandLine ILIKE '%-s:%' OR CommandLine ILIKE '%/s:%' OR CommandLine ILIKE '%–s:%' OR CommandLine ILIKE '%—s:%' OR CommandLine ILIKE '%―s:%'))

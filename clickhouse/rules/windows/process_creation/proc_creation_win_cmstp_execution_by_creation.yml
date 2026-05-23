@@ -1,0 +1,15 @@
+id: 7d4cdc5a-0076-40ca-aac8-f7e714570e47
+name: CMSTP Execution Process Creation
+level: 8
+size: '>0'
+active: true
+author:
+- Nik Seetharaman
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218.003
+- attack.g0069
+- car.2019-04-001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\cmstp.exe'

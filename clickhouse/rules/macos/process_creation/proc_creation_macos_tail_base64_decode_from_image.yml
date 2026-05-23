@@ -1,0 +1,12 @@
+id: 09a910bf-f71f-4737-9c40-88880ba5913d
+name: Potential Base64 Decoded From Images
+level: 8
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: macos
+tags:
+- attack.stealth
+- attack.t1140
+rule: SELECT * FROM logs WHERE Image ILIKE '%/bash' AND (CommandLine ILIKE '%tail%' AND CommandLine ILIKE '%-c%') AND (CommandLine ILIKE '%base64%' AND CommandLine ILIKE '%-d%' AND CommandLine ILIKE '%>%') AND (CommandLine ILIKE '%.avif%' OR CommandLine ILIKE '%.gif%' OR CommandLine ILIKE '%.jfif%' OR CommandLine ILIKE '%.jpeg%' OR CommandLine ILIKE '%.jpg%' OR CommandLine ILIKE '%.pjp%' OR CommandLine ILIKE '%.pjpeg%' OR CommandLine ILIKE '%.png%' OR CommandLine ILIKE '%.svg%' OR CommandLine ILIKE '%.webp%')

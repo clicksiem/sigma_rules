@@ -1,0 +1,12 @@
+id: 39f919f3-980b-4e6f-a975-8af7e507ef2b
+name: Critical Hive In Suspicious Location Access Bits Cleared
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+rule: SELECT * FROM logs WHERE EventID=16 AND Provider_Name='Microsoft-Windows-Kernel-General' AND (HiveName ILIKE '%\\Temp\\SAM%' OR HiveName ILIKE '%\\Temp\\SECURITY%')

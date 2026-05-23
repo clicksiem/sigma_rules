@@ -1,0 +1,12 @@
+id: 0877ed01-da46-4c49-8476-d49cdd80dfa7
+name: Screen Capture - macOS
+level: 3
+size: '>0'
+active: true
+author:
+- remotephone, oscd.community
+group: macos
+tags:
+- attack.collection
+- attack.t1113
+rule: SELECT * FROM logs WHERE Image='/usr/sbin/screencapture'

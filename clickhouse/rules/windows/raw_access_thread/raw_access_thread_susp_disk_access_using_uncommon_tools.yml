@@ -1,0 +1,12 @@
+id: db809f10-56ce-4420-8c86-d6a7d793c79c
+name: Potential Defense Evasion Via Raw Disk Access By Uncommon Tools
+level: 3
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1006
+rule: SELECT * FROM logs WHERE (NOT (Device ILIKE '%floppy%' OR (Image ILIKE 'C:\\$WINDOWS.~BT\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Windows\\CCM\\%' OR Image ILIKE 'C:\\Windows\\explorer.exe%' OR Image ILIKE 'C:\\Windows\\servicing\\%' OR Image ILIKE 'C:\\Windows\\SoftwareDistribution\\%' OR Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SystemApps\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%' OR Image ILIKE 'C:\\Windows\\uus\\%' OR Image ILIKE 'C:\\Windows\\WinSxS\\%') OR (Image IN ('Registry', 'System')) OR (Image ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' AND (Image ILIKE '%\\MsMpEng.exe' OR Image ILIKE '%\\MpDefenderCoreService.exe')) OR (Image ILIKE 'C:\\Users\\%' AND (Image ILIKE '%\\AppData\\%' AND Image ILIKE '%\\Microsoft\\%')) OR (Image ILIKE 'C:\\Windows\\Temp\\%' AND (Image ILIKE '%\\Executables\\SSDUpdate.exe' OR Image ILIKE '%\\HostMetadata\\NVMEHostmetadata.exe')) OR isNull(Image) OR Image ILIKE 'C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe' OR Image ILIKE 'C:\\$WinREAgent\\Scratch\\%')) AND (NOT ((Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\GitHubDesktop\\app-%' AND Image ILIKE '%\\resources\\app\\git\\mingw64\\bin\\git.exe') OR (Image ILIKE 'C:\\Windows\\Temp\\asgard2-agent\\%' AND Image ILIKE '%\\thor.exe') OR (Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\Keybase\\upd.exe%')))

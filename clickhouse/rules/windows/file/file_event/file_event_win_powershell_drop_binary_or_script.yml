@@ -1,0 +1,11 @@
+id: 7047d730-036f-4f40-b9d8-1c63e36d5e62
+name: Potential Binary Or Script Dropper Via PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\pwsh.exe') AND (TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.chm' OR TargetFilename ILIKE '%.cmd' OR TargetFilename ILIKE '%.com' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.jar' OR TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.ocx' OR TargetFilename ILIKE '%.scr' OR TargetFilename ILIKE '%.sys' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.wsf')) AND (NOT ((TargetFilename ILIKE 'C:\\Users\\%' AND TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%' AND (TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe')) OR ((TargetFilename ILIKE 'C:\\Windows\\Temp\\%' OR TargetFilename ILIKE 'C:\\Windows\\SystemTemp\\%') AND (TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe')) OR (TargetFilename ILIKE 'C:\\Users\\%' AND TargetFilename ILIKE '%\\WindowsPowerShell\\Modules\\%' AND TargetFilename ILIKE '%.dll') OR (TargetFilename ILIKE 'C:\\Program Files\\PackageManagement\\ProviderAssemblies\\nuget\\%' AND TargetFilename ILIKE '%\\Microsoft.PackageManagement.NuGetProvider.dll')))

@@ -1,0 +1,12 @@
+id: 41bb431f-56d8-4691-bb56-ed34e390906f
+name: UAC Bypass Using MSConfig Token Modification - File
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Users\\%' AND TargetFilename ILIKE '%\\AppData\\Local\\Temp\\pkgmgr.exe'

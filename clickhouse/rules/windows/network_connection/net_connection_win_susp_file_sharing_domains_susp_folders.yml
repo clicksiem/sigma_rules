@@ -1,0 +1,12 @@
+id: e0f8ab85-0ac9-423b-a73a-81b3c7b1aa97
+name: Network Communication Initiated To File Sharing Domains From Process Located In Suspicious Folder
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%:\\$Recycle.bin%' OR Image ILIKE '%:\\Perflogs\\%' OR Image ILIKE '%:\\Temp\\%' OR Image ILIKE '%:\\Users\\Default\\%' OR Image ILIKE '%:\\Users\\Public\\%' OR Image ILIKE '%:\\Windows\\Fonts\\%' OR Image ILIKE '%:\\Windows\\IME\\%' OR Image ILIKE '%:\\Windows\\System32\\Tasks\\%' OR Image ILIKE '%:\\Windows\\Tasks\\%' OR Image ILIKE '%:\\Windows\\Temp\\%' OR Image ILIKE '%\\AppData\\Temp\\%' OR Image ILIKE '%\\config\\systemprofile\\%' OR Image ILIKE '%\\Windows\\addins\\%') AND (Initiated='true' AND (DestinationHostname ILIKE '%.githubusercontent.com' OR DestinationHostname ILIKE '%anonfiles.com' OR DestinationHostname ILIKE '%cdn.discordapp.com' OR DestinationHostname ILIKE '%ddns.net' OR DestinationHostname ILIKE '%dl.dropboxusercontent.com' OR DestinationHostname ILIKE '%ghostbin.co' OR DestinationHostname ILIKE '%github.com' OR DestinationHostname ILIKE '%glitch.me' OR DestinationHostname ILIKE '%gofile.io' OR DestinationHostname ILIKE '%hastebin.com' OR DestinationHostname ILIKE '%mediafire.com' OR DestinationHostname ILIKE '%mega.co.nz' OR DestinationHostname ILIKE '%mega.nz' OR DestinationHostname ILIKE '%onrender.com' OR DestinationHostname ILIKE '%pages.dev' OR DestinationHostname ILIKE '%paste.ee' OR DestinationHostname ILIKE '%pastebin.com' OR DestinationHostname ILIKE '%pastebin.pl' OR DestinationHostname ILIKE '%pastetext.net' OR DestinationHostname ILIKE '%pixeldrain.com' OR DestinationHostname ILIKE '%privatlab.com' OR DestinationHostname ILIKE '%privatlab.net' OR DestinationHostname ILIKE '%send.exploit.in' OR DestinationHostname ILIKE '%sendspace.com' OR DestinationHostname ILIKE '%storage.googleapis.com' OR DestinationHostname ILIKE '%storjshare.io' OR DestinationHostname ILIKE '%supabase.co' OR DestinationHostname ILIKE '%temp.sh' OR DestinationHostname ILIKE '%transfer.sh' OR DestinationHostname ILIKE '%trycloudflare.com' OR DestinationHostname ILIKE '%ufile.io' OR DestinationHostname ILIKE '%w3spaces.com' OR DestinationHostname ILIKE '%workers.dev'))

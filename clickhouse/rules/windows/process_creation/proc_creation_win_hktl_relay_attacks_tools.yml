@@ -1,0 +1,14 @@
+id: 5589ab4f-a767-433c-961d-c91f3f704db1
+name: Potential SMB Relay Attack Tool Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.execution
+- attack.credential-access
+- attack.t1557.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%PetitPotam%' OR Image ILIKE '%RottenPotato%' OR Image ILIKE '%HotPotato%' OR Image ILIKE '%JuicyPotato%' OR Image ILIKE '%\\just\_dce\_%' OR Image ILIKE '%Juicy Potato%' OR Image ILIKE '%\\temp\\rot.exe%' OR Image ILIKE '%\\Potato.exe%' OR Image ILIKE '%\\SpoolSample.exe%' OR Image ILIKE '%\\Responder.exe%' OR Image ILIKE '%\\smbrelayx%' OR Image ILIKE '%\\ntlmrelayx%' OR Image ILIKE '%\\LocalPotato%') OR (CommandLine ILIKE '%Invoke-Tater%' OR CommandLine ILIKE '% smbrelay%' OR CommandLine ILIKE '% ntlmrelay%' OR CommandLine ILIKE '%cme smb %' OR CommandLine ILIKE '% /ntlm:NTLMhash %' OR CommandLine ILIKE '%Invoke-PetitPotam%' OR CommandLine ILIKE '%.exe -t % -p %') OR (CommandLine ILIKE '%.exe -c "{%' AND CommandLine ILIKE '%}" -z')) AND (NOT (Image ILIKE '%HotPotatoes6%' OR Image ILIKE '%HotPotatoes7%' OR Image ILIKE '%HotPotatoes %'))

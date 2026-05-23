@@ -1,0 +1,14 @@
+id: ed447910-bc30-4575-a598-3a2e49516a7a
+name: Linux Setuid Capability Set on a Binary via Setcap Utility
+level: 3
+size: '>0'
+active: true
+author:
+- Luc Génaux
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1548
+- attack.t1554
+rule: SELECT * FROM logs WHERE Image ILIKE '%/setcap' AND CommandLine ILIKE '%cap\_setuid%'

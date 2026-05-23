@@ -1,0 +1,14 @@
+id: 7df1713a-1a5b-4a4b-a071-dc83b144a101
+name: Esentutl Gather Credentials
+level: 5
+size: '>0'
+active: true
+author:
+- sam0x90
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+- attack.t1003.003
+- attack.s0404
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%esentutl%' AND CommandLine ILIKE '% /p%'

@@ -1,0 +1,12 @@
+id: bbb7e38c-0b41-4a11-b306-d2a457b7ac2b
+name: Suspicious File Created In PerfLogs
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\PerfLogs\\%' AND (TargetFilename ILIKE '%.7z' OR TargetFilename ILIKE '%.bat' OR TargetFilename ILIKE '%.bin' OR TargetFilename ILIKE '%.chm' OR TargetFilename ILIKE '%.dll' OR TargetFilename ILIKE '%.exe' OR TargetFilename ILIKE '%.hta' OR TargetFilename ILIKE '%.lnk' OR TargetFilename ILIKE '%.ps1' OR TargetFilename ILIKE '%.psm1' OR TargetFilename ILIKE '%.py' OR TargetFilename ILIKE '%.scr' OR TargetFilename ILIKE '%.sys' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.zip')

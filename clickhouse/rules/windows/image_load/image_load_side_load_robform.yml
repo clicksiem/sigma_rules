@@ -1,0 +1,15 @@
+id: f64c9b2d-b0ad-481d-9d03-7fc75020892a
+name: Potential RoboForm.DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE (ImageLoaded ILIKE '%\\roboform.dll' OR ImageLoaded ILIKE '%\\roboform-x64.dll') AND (NOT ((Image ILIKE ' C:\\Program Files (x86)\\Siber Systems\\AI RoboForm\\%' OR Image ILIKE ' C:\\Program Files\\Siber Systems\\AI RoboForm\\%') AND (Image ILIKE '%\\robotaskbaricon.exe' OR Image ILIKE '%\\robotaskbaricon-x64.exe')))

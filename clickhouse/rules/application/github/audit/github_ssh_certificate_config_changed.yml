@@ -1,0 +1,15 @@
+id: 2f575940-d85e-4ddc-af13-17dad6f1a0ef
+name: Github SSH Certificate Configuration Changed
+level: 5
+size: '>0'
+active: true
+author:
+- Romain Gaillard (@romain-gaillard)
+group: github
+tags:
+- attack.initial-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE action IN ('ssh\_certificate\_authority.create', 'ssh\_certificate\_requirement.disable')

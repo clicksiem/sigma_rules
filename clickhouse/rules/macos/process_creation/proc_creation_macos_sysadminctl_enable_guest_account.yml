@@ -1,0 +1,16 @@
+id: d7329412-13bd-44ba-a072-3387f804a106
+name: Guest Account Enabled Via Sysadminctl
+level: 3
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r)
+group: macos
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+- attack.t1078.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%/sysadminctl' AND (CommandLine ILIKE '% -guestAccount%' AND CommandLine ILIKE '% on%')

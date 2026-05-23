@@ -1,0 +1,12 @@
+id: 9ec9fb1b-e059-4489-9642-f270c207923d
+name: Hiding User Account Via SpecialAccounts Registry Key - CommandLine
+level: 5
+size: '>0'
+active: true
+author:
+- '@Kostastsale, TheDFIRReport'
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\reg.exe' AND (CommandLine ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList%' AND CommandLine ILIKE '%add%' AND CommandLine ILIKE '%/v%' AND CommandLine ILIKE '%/d 0%')

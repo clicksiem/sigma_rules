@@ -1,0 +1,12 @@
+id: fdeebdf0-9f3f-4d08-84a6-4c4d13e39fe4
+name: Network Connection Initiated To Mega.nz
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1567.002
+rule: SELECT * FROM logs WHERE Initiated='true' AND (DestinationHostname ILIKE '%mega.co.nz' OR DestinationHostname ILIKE '%mega.nz')

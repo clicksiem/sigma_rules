@@ -1,0 +1,12 @@
+id: 1ce8c8a3-2723-48ed-8246-906ac91061a6
+name: Possible PetitPotam Coerce Authentication Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Mauricio Velazco, Michael Haag
+group: windows
+tags:
+- attack.credential-access
+- attack.t1187
+rule: SELECT * FROM logs WHERE EventID=5145 AND ShareName ILIKE '\\\\%' AND ShareName ILIKE '%\\IPC$' AND RelativeTargetName='lsarpc' AND SubjectUserName='ANONYMOUS LOGON'

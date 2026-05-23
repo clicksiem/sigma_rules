@@ -1,0 +1,12 @@
+id: 37db85d1-b089-490a-a59a-c7b6f984f480
+name: Sysmon Discovery Via Default Driver Altitude Using Findstr.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1518.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\find.exe' OR Image ILIKE '%\\findstr.exe') OR (OriginalFileName IN ('FIND.EXE', 'FINDSTR.EXE'))) AND CommandLine ILIKE '% 385201%'

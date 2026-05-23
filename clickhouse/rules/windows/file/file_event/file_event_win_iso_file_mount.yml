@@ -1,0 +1,12 @@
+id: 2f9356ae-bf43-41b8-b858-4496d83b2acb
+name: ISO File Created Within Temp Folders
+level: 8
+size: '>0'
+active: true
+author:
+- '@sam0x90'
+group: windows
+tags:
+- attack.initial-access
+- attack.t1566.001
+rule: SELECT * FROM logs WHERE ((TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%' AND TargetFilename ILIKE '%.zip\\%') AND TargetFilename ILIKE '%.iso') OR (TargetFilename ILIKE '%\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\%' AND TargetFilename ILIKE '%.iso')

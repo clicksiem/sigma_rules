@@ -1,0 +1,16 @@
+id: b730a276-6b63-41b8-bcf8-55930c8fc6ee
+name: Csc.EXE Execution Form Potentially Suspicious Parent
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems), X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.005
+- attack.t1059.007
+- attack.t1218.005
+- attack.t1027.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\csc.exe' OR OriginalFileName='csc.exe') AND ((ParentImage ILIKE '%\\cscript.exe' OR ParentImage ILIKE '%\\excel.exe' OR ParentImage ILIKE '%\\mshta.exe' OR ParentImage ILIKE '%\\onenote.exe' OR ParentImage ILIKE '%\\outlook.exe' OR ParentImage ILIKE '%\\powerpnt.exe' OR ParentImage ILIKE '%\\winword.exe' OR ParentImage ILIKE '%\\wscript.exe') OR ((ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe') AND (ParentCommandLine ILIKE '%-Encoded %' OR ParentCommandLine ILIKE '%FromBase64String%')) OR (match(ParentCommandLine, '(?:[Pp]rogram[Dd]ata|%(?:[Ll]ocal)?[Aa]pp[Dd]ata%|\\[Aa]pp[Dd]ata\\(?:[Ll]ocal(?:[Ll]ow)?|[Rr]oaming))\\[^\\]{1,256}$') OR (ParentCommandLine ILIKE '%:\\PerfLogs\\%' OR ParentCommandLine ILIKE '%:\\Users\\Public\\%' OR ParentCommandLine ILIKE '%:\\Windows\\Temp\\%' OR ParentCommandLine ILIKE '%\\Temporary Internet%') OR (ParentCommandLine ILIKE '%:\\Users\\%' AND ParentCommandLine ILIKE '%\\Favorites\\%') OR (ParentCommandLine ILIKE '%:\\Users\\%' AND ParentCommandLine ILIKE '%\\Favourites\\%') OR (ParentCommandLine ILIKE '%:\\Users\\%' AND ParentCommandLine ILIKE '%\\Contacts\\%') OR (ParentCommandLine ILIKE '%:\\Users\\%' AND ParentCommandLine ILIKE '%\\Pictures\\%'))) AND (NOT ((ParentImage ILIKE 'C:\\Program Files (x86)\\%' OR ParentImage ILIKE 'C:\\Program Files\\%') OR ParentImage ILIKE 'C:\\Windows\\System32\\sdiagnhost.exe' OR ParentImage ILIKE 'C:\\Windows\\System32\\inetsrv\\w3wp.exe')) AND (NOT (ParentImage ILIKE 'C:\\ProgramData\\chocolatey\\choco.exe' OR ParentCommandLine ILIKE '%\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection%' OR (ParentCommandLine ILIKE '%JwB7ACIAZgBhAGkAbABlAGQAIgA6AHQAcgB1AGUALAAiAG0AcwBnACIAOgAiAEEAbgBzAGkAYgBsAGUAIAByAGUAcQB1AGkAcgBlAHMAIABQAG8AdwBlAHIAUwBoAGUAbABsACAAdgAzAC4AMAAgAG8AcgAgAG4AZQB3AGUAcgAiAH0AJw%' OR ParentCommandLine ILIKE '%cAewAiAGYAYQBpAGwAZQBkACIAOgB0AHIAdQBlACwAIgBtAHMAZwAiADoAIgBBAG4AcwBpAGIAbABlACAAcgBlAHEAdQBpAHIAZQBzACAAUABvAHcAZQByAFMAaABlAGwAbAAgAHYAMwAuADAAIABvAHIAIABuAGUAdwBlAHIAIgB9ACcA%' OR ParentCommandLine ILIKE '%nAHsAIgBmAGEAaQBsAGUAZAAiADoAdAByAHUAZQAsACIAbQBzAGcAIgA6ACIAQQBuAHMAaQBiAGwAZQAgAHIAZQBxAHUAaQByAGUAcwAgAFAAbwB3AGUAcgBTAGgAZQBsAGwAIAB2ADMALgAwACAAbwByACAAbgBlAHcAZQByACIAfQAnA%')))

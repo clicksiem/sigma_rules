@@ -1,0 +1,11 @@
+id: c977cb50-3dff-4a9f-b873-9290f56132f1
+name: AppX Located in Uncommon Directory Added to Deployment Pipeline
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE EventID=854 AND (NOT ((Path ILIKE '%:/Program\%20Files%' OR Path ILIKE '%:/Windows/System32/%' OR Path ILIKE '%:\\Program Files (x86)\\%' OR Path ILIKE '%:\\Program Files\\%' OR Path ILIKE '%:\\Windows\\ImmersiveControlPanel\\%' OR Path ILIKE '%:\\Windows\\PrintDialog\\%' OR Path ILIKE '%:\\Windows\\SystemApps\\%' OR Path ILIKE '%AppData/Local/Temp/WinGet/Microsoft.Winget.Source%' OR Path ILIKE '%x-windowsupdate://%') OR (Path ILIKE '%https://installer.teams.static.microsoft/%' OR Path ILIKE '%https://res.cdn.office.net%' OR Path ILIKE '%https://statics.teams.cdn.live.net/%' OR Path ILIKE '%https://statics.teams.cdn.office.net/%' OR Path ILIKE '%microsoft.com%'))) AND (NOT (Path ILIKE '%AppData\\Local\\Microsoft\\OneDrive\\%' OR (Path ILIKE '%AppData/Local/Temp/WinGet/Microsoft.Winget.Source%' OR Path ILIKE '%AppData\\Local\\Temp\\WinGet\\Microsoft.Winget.Source%') OR Path ILIKE '%x-windowsupdate://%'))

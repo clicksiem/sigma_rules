@@ -1,0 +1,13 @@
+id: 6640f31c-01ad-49b5-beb5-83498a5cd8bd
+name: Potential Arbitrary Code Execution Via Node.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\node.exe' AND (CommandLine ILIKE '% -e %' OR CommandLine ILIKE '% --eval %')) AND (CommandLine ILIKE '%.exec(%' AND CommandLine ILIKE '%net.socket%' AND CommandLine ILIKE '%.connect%' AND CommandLine ILIKE '%child\_process%')

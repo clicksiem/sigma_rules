@@ -1,0 +1,12 @@
+id: 08f26069-6f80-474b-8d1f-d971c6fedea0
+name: User Has Been Deleted Via Userdel
+level: 5
+size: '>0'
+active: true
+author:
+- Tuan Le (NCSGroup)
+group: linux
+tags:
+- attack.impact
+- attack.t1531
+rule: SELECT * FROM logs WHERE Image ILIKE '%/userdel'

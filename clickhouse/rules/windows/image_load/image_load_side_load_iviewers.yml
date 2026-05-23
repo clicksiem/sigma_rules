@@ -1,0 +1,15 @@
+id: 4c21b805-4dd7-469f-b47d-7383a8fcb437
+name: Potential Iviewers.DLL Sideloading
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\iviewers.dll' AND (NOT (ImageLoaded ILIKE 'C:\\Program Files (x86)\\Windows Kits\\%' OR ImageLoaded ILIKE 'C:\\Program Files\\Windows Kits\\%'))

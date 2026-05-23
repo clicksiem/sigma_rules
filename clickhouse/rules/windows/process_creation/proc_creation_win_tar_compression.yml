@@ -1,0 +1,14 @@
+id: 418a3163-3247-4b7b-9933-dcfcb7c52ea9
+name: Compressed File Creation Via Tar.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), AdmU3
+group: windows
+tags:
+- attack.collection
+- attack.exfiltration
+- attack.t1560
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\tar.exe' OR OriginalFileName='bsdtar') AND (CommandLine ILIKE '%-c%' OR CommandLine ILIKE '%-r%' OR CommandLine ILIKE '%-u%')

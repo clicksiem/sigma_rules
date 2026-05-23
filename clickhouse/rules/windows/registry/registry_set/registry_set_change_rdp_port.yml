@@ -1,0 +1,13 @@
+id: 509e84b9-a71a-40e0-834f-05470369bd1e
+name: Default RDP Port Changed to Non Standard Port
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.010
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Control\\Terminal Server\\WinStations\\RDP-Tcp\\PortNumber' AND (NOT Details='DWORD (0x00000d3d)')

@@ -1,0 +1,12 @@
+id: afe52666-401e-4a02-b4ff-5d128990b8cb
+name: Suspicious Greedy Compression Using Rar.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems), Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\rar.exe' OR Description='Command line RAR') OR (CommandLine ILIKE '%.exe a %' OR CommandLine ILIKE '% a -m%')) AND ((CommandLine ILIKE '% -hp%' AND CommandLine ILIKE '% -r %') AND (CommandLine ILIKE '% _:\\*.%' OR CommandLine ILIKE '% _:\\\\*.%' OR CommandLine ILIKE '% _:\\$Recycle.bin\\%' OR CommandLine ILIKE '% _:\\PerfLogs\\%' OR CommandLine ILIKE '% _:\\Temp%' OR CommandLine ILIKE '% _:\\Users\\Public\\%' OR CommandLine ILIKE '% _:\\Windows\\%' OR CommandLine ILIKE '% \%public\%%'))

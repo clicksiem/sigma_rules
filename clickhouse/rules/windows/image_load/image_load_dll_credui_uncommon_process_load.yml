@@ -1,0 +1,13 @@
+id: 9ae01559-cf7e-4f8e-8e14-4c290a1b4784
+name: CredUI.DLL Loaded By Uncommon Process
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.credential-access
+- attack.collection
+- attack.t1056.002
+rule: SELECT * FROM logs WHERE ((ImageLoaded ILIKE '%\\credui.dll' OR ImageLoaded ILIKE '%\\wincredui.dll') OR (OriginalFileName IN ('credui.dll', 'wincredui.dll'))) AND (NOT ((Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Windows\\System32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%' OR Image ILIKE 'C:\\Windows\\SystemApps\\%') OR (Image IN ('C:\\Windows\\explorer.exe', 'C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe', 'C:\\Windows\\regedit.exe')))) AND (NOT (Image ILIKE '%\\opera\_autoupdate.exe' OR (Image ILIKE '%\\procexp64.exe' OR Image ILIKE '%\\procexp.exe') OR (Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\Microsoft\\Teams\\%' AND Image ILIKE '%\\Teams.exe') OR (Image ILIKE 'C:\\Users\\%' AND Image ILIKE '%\\AppData\\Local\\Microsoft\\OneDrive\\%')))

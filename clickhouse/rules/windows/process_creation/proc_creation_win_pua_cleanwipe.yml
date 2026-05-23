@@ -1,0 +1,12 @@
+id: f44800ac-38ec-471f-936e-3fa7d9c53100
+name: PUA - CleanWipe Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SepRemovalToolNative\_x64.exe' OR (Image ILIKE '%\\CATClean.exe' AND CommandLine ILIKE '%--uninstall%') OR (Image ILIKE '%\\NetInstaller.exe' AND CommandLine ILIKE '%-r%') OR (Image ILIKE '%\\WFPUnins.exe' AND (CommandLine ILIKE '%/uninstall%' AND CommandLine ILIKE '%/enterprise%'))

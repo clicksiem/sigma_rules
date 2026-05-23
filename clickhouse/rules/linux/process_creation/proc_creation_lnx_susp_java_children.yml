@@ -1,0 +1,12 @@
+id: d292e0af-9a18-420c-9525-ec0ac3936892
+name: Suspicious Java Children Processes
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%/java' AND (CommandLine ILIKE '%/bin/sh%' OR CommandLine ILIKE '%bash%' OR CommandLine ILIKE '%dash%' OR CommandLine ILIKE '%ksh%' OR CommandLine ILIKE '%zsh%' OR CommandLine ILIKE '%csh%' OR CommandLine ILIKE '%fish%' OR CommandLine ILIKE '%curl%' OR CommandLine ILIKE '%wget%' OR CommandLine ILIKE '%python%')

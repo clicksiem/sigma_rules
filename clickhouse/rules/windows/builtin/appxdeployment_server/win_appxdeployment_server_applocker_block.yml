@@ -1,0 +1,11 @@
+id: 6ae53108-c3a0-4bee-8f45-c7591a2c337f
+name: Deployment AppX Package Was Blocked By AppLocker
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE EventID=412

@@ -1,0 +1,13 @@
+id: 03d83090-8cba-44a0-b02f-0b756a050306
+name: Potential WinAPI Calls Via PowerShell Scripts
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Nikita Nazarov, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.t1106
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%VirtualAlloc%' AND ScriptBlockText ILIKE '%OpenProcess%' AND ScriptBlockText ILIKE '%WriteProcessMemory%' AND ScriptBlockText ILIKE '%CreateRemoteThread%') OR (ScriptBlockText ILIKE '%OpenProcessToken%' AND ScriptBlockText ILIKE '%LookupPrivilegeValue%' AND ScriptBlockText ILIKE '%AdjustTokenPrivileges%') OR (ScriptBlockText ILIKE '%OpenProcessToken%' AND ScriptBlockText ILIKE '%DuplicateTokenEx%' AND ScriptBlockText ILIKE '%CloseHandle%') OR (ScriptBlockText ILIKE '%WriteProcessMemory%' AND ScriptBlockText ILIKE '%VirtualAlloc%' AND ScriptBlockText ILIKE '%ReadProcessMemory%' AND ScriptBlockText ILIKE '%VirtualFree%')

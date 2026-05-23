@@ -1,0 +1,12 @@
+id: bef0bc5a-b9ae-425d-85c6-7b2d705980c6
+name: Python Initiated Connection
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE (Initiated='true' AND (Image ILIKE '%\\python%' AND Image ILIKE '%.exe%')) AND (NOT ((DestinationIp='127.0.0.1' AND SourceIp='127.0.0.1') OR (CommandLine ILIKE '%pip.exe%' AND CommandLine ILIKE '%install%'))) AND (NOT ((ParentImage ILIKE 'C:\\ProgramData\\Anaconda3\\Scripts\\conda.exe' AND (CommandLine ILIKE '%:\\ProgramData\\Anaconda3\\Scripts\\conda-script.py%' AND CommandLine ILIKE '%update%')) OR (ParentImage ILIKE 'C:\\ProgramData\\Anaconda3\\python.exe' AND CommandLine ILIKE '%C:\\ProgramData\\Anaconda3\\Scripts\\jupyter-notebook-script.py%')))

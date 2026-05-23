@@ -1,0 +1,13 @@
+id: 7aa4e81a-a65c-4e10-9f81-b200eb229d7d
+name: Potential Persistence Via VMwareToolBoxCmd.EXE VM State Change Script
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\VMwareToolBoxCmd.exe' OR OriginalFileName='toolbox-cmd.exe') AND (CommandLine ILIKE '% script %' AND CommandLine ILIKE '% set %')

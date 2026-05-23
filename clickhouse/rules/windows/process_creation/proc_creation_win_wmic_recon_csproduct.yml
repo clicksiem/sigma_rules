@@ -1,0 +1,13 @@
+id: 3e3ceccd-6c06-48b8-b5ff-ab1d25db8c1d
+name: Hardware Model Reconnaissance Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+- car.2016-03-002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wmic.exe' OR OriginalFileName='wmic.exe') AND CommandLine ILIKE '%csproduct%'

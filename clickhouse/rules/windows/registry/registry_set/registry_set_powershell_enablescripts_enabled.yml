@@ -1,0 +1,11 @@
+id: 8218c875-90b9-42e2-b60d-0b0069816d10
+name: PowerShell Script Execution Policy Enabled
+level: 3
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems), Thurein Oo
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Policies\\Microsoft\\Windows\\PowerShell\\EnableScripts' AND Details='DWORD (0x00000001)'

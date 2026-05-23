@@ -1,0 +1,13 @@
+id: 002bdb95-0cf1-46a6-9e08-d38c128a6127
+name: WScript or CScript Dropper - File
+level: 8
+size: '>0'
+active: true
+author:
+- Tim Shelton
+group: windows
+tags:
+- attack.execution
+- attack.t1059.005
+- attack.t1059.007
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe') AND (TargetFilename ILIKE '%:\\Perflogs\\%' OR TargetFilename ILIKE '%:\\ProgramData\\%' OR TargetFilename ILIKE '%:\\Temp\\%' OR TargetFilename ILIKE '%:\\Tmp\\%' OR TargetFilename ILIKE '%:\\Users\\%' OR TargetFilename ILIKE '%:\\Windows\\Temp\\%' OR TargetFilename ILIKE '%\\AppData\\Local\\Temp%' OR TargetFilename ILIKE '%\\AppData\\Roaming\\Temp%' OR TargetFilename ILIKE '%\\Start Menu\\Programs\\Startup\\%' OR TargetFilename ILIKE '%\\Temporary Internet%') AND (TargetFilename ILIKE '%.js' OR TargetFilename ILIKE '%.jse' OR TargetFilename ILIKE '%.vba' OR TargetFilename ILIKE '%.vbe' OR TargetFilename ILIKE '%.vbs' OR TargetFilename ILIKE '%.wsf' OR TargetFilename ILIKE '%.wsh')

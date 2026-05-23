@@ -1,0 +1,11 @@
+id: 0f16d9cf-0616-45c8-8fad-becc11b5a41c
+name: Renamed AutoHotkey.EXE Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Product ILIKE '%AutoHotkey%' OR Description ILIKE '%AutoHotkey%' OR (OriginalFileName IN ('AutoHotkey.exe', 'AutoHotkey.rc'))) AND (NOT ((Image ILIKE '%\\AutoHotkey.exe' OR Image ILIKE '%\\AutoHotkey32.exe' OR Image ILIKE '%\\AutoHotkey32\_UIA.exe' OR Image ILIKE '%\\AutoHotkey64.exe' OR Image ILIKE '%\\AutoHotkey64\_UIA.exe' OR Image ILIKE '%\\AutoHotkeyA32.exe' OR Image ILIKE '%\\AutoHotkeyA32\_UIA.exe' OR Image ILIKE '%\\AutoHotkeyU32.exe' OR Image ILIKE '%\\AutoHotkeyU32\_UIA.exe' OR Image ILIKE '%\\AutoHotkeyU64.exe' OR Image ILIKE '%\\AutoHotkeyU64\_UIA.exe') OR Image ILIKE '%\\AutoHotkey%'))

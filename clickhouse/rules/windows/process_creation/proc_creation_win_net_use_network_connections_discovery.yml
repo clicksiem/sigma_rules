@@ -1,0 +1,12 @@
+id: 1c67a717-32ba-409b-a45d-0fb704a73a81
+name: System Network Connections Discovery Via Net.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1049
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND ((CommandLine ILIKE '% use' OR CommandLine ILIKE '% sessions') OR (CommandLine ILIKE '% use %' OR CommandLine ILIKE '% sessions %'))

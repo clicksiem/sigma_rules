@@ -1,0 +1,14 @@
+id: 7b14c76a-c602-4ae6-9717-eff868153fc0
+name: HackTool - NoFilter Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Stamatis Chatzimangou (st0pp3r)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1134
+- attack.t1134.001
+rule: SELECT * FROM logs WHERE (EventID=5447 AND FilterName ILIKE '%RonPolicy%') OR (EventID=5449 AND ProviderContextName ILIKE '%RonPolicy%')

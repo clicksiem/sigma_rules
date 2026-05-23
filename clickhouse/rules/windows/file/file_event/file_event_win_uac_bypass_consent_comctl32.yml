@@ -1,0 +1,12 @@
+id: 62ed5b55-f991-406a-85d9-e8e8fdf18789
+name: UAC Bypass Using Consent and Comctl32 - File
+level: 8
+size: '>0'
+active: true
+author:
+- Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE 'C:\\Windows\\System32\\consent.exe.@%' AND TargetFilename ILIKE '%\\comctl32.dll'

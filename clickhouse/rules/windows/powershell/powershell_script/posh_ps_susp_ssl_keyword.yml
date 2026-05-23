@@ -1,0 +1,12 @@
+id: 195626f3-5f1b-4403-93b7-e6cfd4d6a078
+name: Suspicious SSL Connection
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1573
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%System.Net.Security.SslStream%' AND ScriptBlockText ILIKE '%Net.Security.RemoteCertificateValidationCallback%' AND ScriptBlockText ILIKE '%.AuthenticateAsClient%'

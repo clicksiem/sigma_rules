@@ -1,0 +1,12 @@
+id: 961e0abb-1b1e-4c84-a453-aafe56ad0d34
+name: Execution via stordiag.exe
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Songer (@austinsonger)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\stordiag.exe' AND (Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\systeminfo.exe' OR Image ILIKE '%\\fltmc.exe')) AND (NOT (ParentImage ILIKE 'c:\\windows\\system32\\%' OR ParentImage ILIKE 'c:\\windows\\syswow64\\%'))

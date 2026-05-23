@@ -1,0 +1,12 @@
+id: 7f2954d2-99c2-4d42-a065-ca36740f187b
+name: Hypervisor Enforced Paging Translation Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\DisableHypervisorEnforcedPagingTranslation' AND Details='DWORD (0x00000001)'

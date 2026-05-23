@@ -1,0 +1,11 @@
+id: 53ef0cef-fa24-4f25-a34a-6c72dfa2e6e2
+name: Query Usage To Exfil Data
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%:\\Windows\\System32\\query.exe' AND (CommandLine ILIKE '%session >%' OR CommandLine ILIKE '%process >%')

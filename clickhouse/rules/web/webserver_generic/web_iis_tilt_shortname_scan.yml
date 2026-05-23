@@ -1,0 +1,12 @@
+id: 7cb02516-6d95-4ffc-8eee-162075e111ac
+name: Successful IIS Shortname Fuzzing Scan
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: ''
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE `cs-uri-query` ILIKE '%~1%' AND `cs-uri-query` ILIKE '%a.aspx' AND (`cs-method` IN ('GET', 'OPTIONS')) AND (`sc-status` IN (200, 301))

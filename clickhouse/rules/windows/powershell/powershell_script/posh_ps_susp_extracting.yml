@@ -1,0 +1,12 @@
+id: bd5971a7-626d-46ab-8176-ed643f694f68
+name: Extracting Information with PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%ls%' AND ScriptBlockText ILIKE '% -R%' AND ScriptBlockText ILIKE '%select-string %' AND ScriptBlockText ILIKE '%-Pattern %'

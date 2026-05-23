@@ -1,0 +1,14 @@
+id: 0c718a5e-4284-4fb9-b4d9-b9a50b3a1974
+name: Invoke-Obfuscation STDIN+ Launcher - Security
+level: 8
+size: '>0'
+active: true
+author:
+- Jonathan Cheong, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1027
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (EventID=4697 AND (ServiceFileName ILIKE '%cmd%' AND ServiceFileName ILIKE '%powershell%')) AND (ServiceFileName ILIKE '%${input}%' OR ServiceFileName ILIKE '%noexit%') AND (ServiceFileName ILIKE '% /c %' OR ServiceFileName ILIKE '% /r %')

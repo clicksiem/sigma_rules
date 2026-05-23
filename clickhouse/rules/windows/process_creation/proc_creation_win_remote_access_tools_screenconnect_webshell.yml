@@ -1,0 +1,12 @@
+id: b19146a3-25d4-41b4-928b-1e2a92641b1b
+name: Remote Access Tool - ScreenConnect Server Web Shell Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Jason Rathbun (Blackpoint Cyber)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1190
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\ScreenConnect.Service.exe' AND (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\csc.exe')

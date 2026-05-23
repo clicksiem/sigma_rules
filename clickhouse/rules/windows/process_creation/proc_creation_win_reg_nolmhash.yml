@@ -1,0 +1,13 @@
+id: 98dedfdd-8333-49d4-9f23-d7018cccae53
+name: Enable LM Hash Storage - ProcCreation
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1112
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%\\System\\CurrentControlSet\\Control\\Lsa%' AND CommandLine ILIKE '%NoLMHash%' AND CommandLine ILIKE '% 0%'

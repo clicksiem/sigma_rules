@@ -1,0 +1,15 @@
+id: 11d00fff-5dc3-428c-8184-801f292faec0
+name: Service Registry Key Read Access Request
+level: 3
+size: '>0'
+active: true
+author:
+- Center for Threat Informed Defense (CTID) Summiting the Pyramid Team
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+rule: SELECT * FROM logs WHERE EventID=4663 AND (ObjectName ILIKE '%\\SYSTEM\\%' AND ObjectName ILIKE '%ControlSet\\Services\\%') AND AccessList ILIKE '%\%\%1538%'

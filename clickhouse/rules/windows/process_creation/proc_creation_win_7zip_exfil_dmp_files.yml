@@ -1,0 +1,12 @@
+id: ec570e53-4c76-45a9-804d-dc3f355ff7a7
+name: 7Zip Compressing Dump Files
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE (Description ILIKE '%7-Zip%' OR (Image ILIKE '%\\7z.exe' OR Image ILIKE '%\\7zr.exe' OR Image ILIKE '%\\7za.exe') OR (OriginalFileName IN ('7z.exe', '7za.exe'))) AND (CommandLine ILIKE '%.dmp%' OR CommandLine ILIKE '%.dump%' OR CommandLine ILIKE '%.hdmp%')

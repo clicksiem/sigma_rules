@@ -1,0 +1,12 @@
+id: 646bc99f-6682-4b47-a73a-17b1b64c9d34
+name: Execute Files with Msdeploy.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%verb:sync%' AND CommandLine ILIKE '%-source:RunCommand%' AND CommandLine ILIKE '%-dest:runCommand%') AND Image ILIKE '%\\msdeploy.exe'

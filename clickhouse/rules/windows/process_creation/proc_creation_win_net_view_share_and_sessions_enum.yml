@@ -1,0 +1,12 @@
+id: 62510e69-616b-4078-b371-847da438cc03
+name: Share And Session Enumeration Using Net.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Endgame, JHasenbusch (ported for oscd.community)
+group: windows
+tags:
+- attack.discovery
+- attack.t1018
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND CommandLine ILIKE '%view%') AND (NOT CommandLine ILIKE '%\\\\%')

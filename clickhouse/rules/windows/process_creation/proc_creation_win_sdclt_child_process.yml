@@ -1,0 +1,12 @@
+id: da2738f2-fadb-4394-afa7-0a0674885afa
+name: Sdclt Child Processes
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548.002
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\sdclt.exe'

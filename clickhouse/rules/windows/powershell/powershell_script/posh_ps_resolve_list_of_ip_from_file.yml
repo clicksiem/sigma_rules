@@ -1,0 +1,12 @@
+id: fbc5e92f-3044-4e73-a5c6-1c4359b539de
+name: PowerShell Script With File Hostname Resolving Capabilities
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1020
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Get-content %' AND ScriptBlockText ILIKE '%foreach%' AND ScriptBlockText ILIKE '%[System.Net.Dns]::GetHostEntry%' AND ScriptBlockText ILIKE '%Out-File%'

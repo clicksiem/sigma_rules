@@ -1,0 +1,12 @@
+id: d5b9ae7a-e6fc-405e-80ff-2ff9dcc64e7e
+name: Sysprep on AppData Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\sysprep.exe' AND CommandLine ILIKE '%\\AppData\\%'

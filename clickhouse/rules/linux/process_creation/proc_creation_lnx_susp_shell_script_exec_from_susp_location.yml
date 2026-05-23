@@ -1,0 +1,11 @@
+id: 30bcce26-51c5-49f2-99c8-7b59e3af36c7
+name: Execution Of Script Located In Potentially Suspicious Directory
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/bash' OR Image ILIKE '%/csh' OR Image ILIKE '%/dash' OR Image ILIKE '%/fish' OR Image ILIKE '%/ksh' OR Image ILIKE '%/sh' OR Image ILIKE '%/zsh') AND CommandLine ILIKE '% -c %' AND CommandLine ILIKE '%/tmp/%'

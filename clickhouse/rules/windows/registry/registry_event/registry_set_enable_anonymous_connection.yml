@@ -1,0 +1,12 @@
+id: 4d431012-2ab5-4db7-a84e-b29809da2172
+name: Enable Remote Connection Between Anonymous Computer - AllowAnonymousCallback
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Microsoft\\WBEM\\CIMOM\\AllowAnonymousCallback%' AND Details='DWORD (0x00000001)'

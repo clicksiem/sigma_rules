@@ -1,0 +1,15 @@
+id: 00d0b5ab-1f55-4120-8e83-487c0a7baf19
+name: Download From Suspicious TLD - Blacklist
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: ''
+tags:
+- attack.initial-access
+- attack.t1566
+- attack.execution
+- attack.t1203
+- attack.t1204.002
+rule: SELECT * FROM logs WHERE (`c-uri-extension` IN ('exe', 'vbs', 'bat', 'rar', 'ps1', 'doc', 'docm', 'xls', 'xlsm', 'pptm', 'rtf', 'hta', 'dll', 'ws', 'wsf', 'sct', 'zip')) AND (`cs-host` ILIKE '%.country' OR `cs-host` ILIKE '%.stream' OR `cs-host` ILIKE '%.gdn' OR `cs-host` ILIKE '%.mom' OR `cs-host` ILIKE '%.xin' OR `cs-host` ILIKE '%.kim' OR `cs-host` ILIKE '%.men' OR `cs-host` ILIKE '%.loan' OR `cs-host` ILIKE '%.download' OR `cs-host` ILIKE '%.racing' OR `cs-host` ILIKE '%.online' OR `cs-host` ILIKE '%.science' OR `cs-host` ILIKE '%.ren' OR `cs-host` ILIKE '%.gb' OR `cs-host` ILIKE '%.win' OR `cs-host` ILIKE '%.top' OR `cs-host` ILIKE '%.review' OR `cs-host` ILIKE '%.vip' OR `cs-host` ILIKE '%.party' OR `cs-host` ILIKE '%.tech' OR `cs-host` ILIKE '%.xyz' OR `cs-host` ILIKE '%.date' OR `cs-host` ILIKE '%.faith' OR `cs-host` ILIKE '%.zip' OR `cs-host` ILIKE '%.cricket' OR `cs-host` ILIKE '%.space' OR `cs-host` ILIKE '%.info' OR `cs-host` ILIKE '%.vn' OR `cs-host` ILIKE '%.cm' OR `cs-host` ILIKE '%.am' OR `cs-host` ILIKE '%.cc' OR `cs-host` ILIKE '%.asia' OR `cs-host` ILIKE '%.ws' OR `cs-host` ILIKE '%.tk' OR `cs-host` ILIKE '%.biz' OR `cs-host` ILIKE '%.su' OR `cs-host` ILIKE '%.st' OR `cs-host` ILIKE '%.ro' OR `cs-host` ILIKE '%.ge' OR `cs-host` ILIKE '%.ms' OR `cs-host` ILIKE '%.pk' OR `cs-host` ILIKE '%.nu' OR `cs-host` ILIKE '%.me' OR `cs-host` ILIKE '%.ph' OR `cs-host` ILIKE '%.to' OR `cs-host` ILIKE '%.tt' OR `cs-host` ILIKE '%.name' OR `cs-host` ILIKE '%.tv' OR `cs-host` ILIKE '%.kz' OR `cs-host` ILIKE '%.tc' OR `cs-host` ILIKE '%.mobi' OR `cs-host` ILIKE '%.study' OR `cs-host` ILIKE '%.click' OR `cs-host` ILIKE '%.link' OR `cs-host` ILIKE '%.trade' OR `cs-host` ILIKE '%.accountant' OR `cs-host` ILIKE '%.cf' OR `cs-host` ILIKE '%.gq' OR `cs-host` ILIKE '%.ml' OR `cs-host` ILIKE '%.ga' OR `cs-host` ILIKE '%.pw')

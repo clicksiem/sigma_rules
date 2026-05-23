@@ -1,0 +1,12 @@
+id: 8823e85d-31d8-473e-b7f4-92da070f0fc6
+name: Suspicious ShellExec_RunDLL Call Via Ordinal
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (ParentCommandLine ILIKE '%SHELL32.DLL%' AND (ParentCommandLine ILIKE '%#568%' OR ParentCommandLine ILIKE '%#570%' OR ParentCommandLine ILIKE '%#572%' OR ParentCommandLine ILIKE '%#576%')) AND (((ParentCommandLine ILIKE '%comspec%' OR ParentCommandLine ILIKE '%iex%' OR ParentCommandLine ILIKE '%Invoke-%' OR ParentCommandLine ILIKE '%msiexec%' OR ParentCommandLine ILIKE '%odbcconf%' OR ParentCommandLine ILIKE '%regsvr32%') OR (ParentCommandLine ILIKE '%\\Desktop\\%' OR ParentCommandLine ILIKE '%\\ProgramData\\%' OR ParentCommandLine ILIKE '%\\Temp\\%' OR ParentCommandLine ILIKE '%\\Users\\Public\\%')) OR (Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\bitsadmin.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\curl.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\msiexec.exe' OR Image ILIKE '%\\msxsl.exe' OR Image ILIKE '%\\odbcconf.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe'))

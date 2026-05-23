@@ -1,0 +1,12 @@
+id: 1f6399cf-2c80-4924-ace1-6fcff3393480
+name: DirectorySearcher Powershell Exploitation
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1018
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-Object %' AND ScriptBlockText ILIKE '%System.DirectoryServices.DirectorySearcher%' AND ScriptBlockText ILIKE '%.PropertiesToLoad.Add%' AND ScriptBlockText ILIKE '%.findall()%' AND ScriptBlockText ILIKE '%Properties.name%'

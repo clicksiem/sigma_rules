@@ -1,0 +1,12 @@
+id: 87911521-7098-470b-a459-9a57fc80bdfd
+name: Sysmon Configuration Update
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\Sysmon64.exe' OR Image ILIKE '%\\Sysmon.exe') OR Description='System activity monitor') AND (CommandLine ILIKE '%-c%' OR CommandLine ILIKE '%/c%' OR CommandLine ILIKE '%–c%' OR CommandLine ILIKE '%—c%' OR CommandLine ILIKE '%―c%')

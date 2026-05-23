@@ -1,0 +1,12 @@
+id: a5c7a43f-6009-4a8c-80c5-32abf1c53ecc
+name: Microsoft Office Protected View Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Office\\%' AND TargetObject ILIKE '%\\Security\\ProtectedView\\%') AND ((Details='DWORD (0x00000001)' AND (TargetObject ILIKE '%\\DisableAttachementsInPV' OR TargetObject ILIKE '%\\DisableInternetFilesInPV' OR TargetObject ILIKE '%\\DisableIntranetCheck' OR TargetObject ILIKE '%\\DisableUnsafeLocationsInPV')) OR (Details='DWORD (0x00000000)' AND (TargetObject ILIKE '%\\enabledatabasefileprotectedview' OR TargetObject ILIKE '%\\enableforeigntextfileprotectedview')))

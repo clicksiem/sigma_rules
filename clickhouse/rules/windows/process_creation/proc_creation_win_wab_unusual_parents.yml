@@ -1,0 +1,12 @@
+id: 63d1ccc0-2a43-4f4b-9289-361b308991ff
+name: Wab/Wabmig Unusual Parent Or Child Processes
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%\\WmiPrvSE.exe' OR ParentImage ILIKE '%\\svchost.exe' OR ParentImage ILIKE '%\\dllhost.exe') AND (Image ILIKE '%\\wab.exe' OR Image ILIKE '%\\wabmig.exe')) OR (ParentImage ILIKE '%\\wab.exe' OR ParentImage ILIKE '%\\wabmig.exe')

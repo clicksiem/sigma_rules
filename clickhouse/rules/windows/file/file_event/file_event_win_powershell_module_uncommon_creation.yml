@@ -1,0 +1,11 @@
+id: e3845023-ca9a-4024-b2b2-5422156d5527
+name: PowerShell Module File Created By Non-PowerShell Process
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\WindowsPowerShell\\Modules\\%' OR TargetFilename ILIKE '%\\PowerShell\\7\\Modules\\%') AND (NOT ((Image ILIKE '%:\\Program Files\\PowerShell\\7-preview\\pwsh.exe' OR Image ILIKE '%:\\Program Files\\PowerShell\\7\\pwsh.exe' OR Image ILIKE '%:\\Windows\\System32\\poqexec.exe' OR Image ILIKE '%:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell\_ise.exe' OR Image ILIKE '%:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\poqexec.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell\_ise.exe' OR Image ILIKE '%:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe') OR (Image IN ('C:\\Windows\\System32\\msiexec.exe', 'C:\\Windows\\SysWOW64\\msiexec.exe'))))

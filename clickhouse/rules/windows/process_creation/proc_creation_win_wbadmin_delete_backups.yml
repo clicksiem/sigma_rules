@@ -1,0 +1,12 @@
+id: 89f75308-5b1b-4390-b2d8-d6b2340efaf8
+name: Windows Backup Deleted Via Wbadmin.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\wbadmin.exe' OR OriginalFileName='WBADMIN.EXE') AND (CommandLine ILIKE '%delete %' AND CommandLine ILIKE '%backup%')) AND (NOT CommandLine ILIKE '%keepVersions:0%')

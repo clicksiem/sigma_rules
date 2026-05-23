@@ -1,0 +1,13 @@
+id: c90362e0-2df3-4e61-94fe-b37615814cb1
+name: Potential Persistence Via Netsh Helper DLL - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Anish Bogati
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1546.007
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\NetSh%' AND Details ILIKE '%.dll%') AND (NOT (Image ILIKE 'C:\\Windows\\System32\\poqexec.exe' AND (Details IN ('ipmontr.dll', 'iasmontr.dll', 'ippromon.dll'))))

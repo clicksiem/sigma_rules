@@ -1,0 +1,12 @@
+id: 1e59c230-6670-45bf-83b0-98903780607e
+name: Gpscript Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\gpscript.exe' OR OriginalFileName='GPSCRIPT.EXE') AND (CommandLine ILIKE '% /logon%' OR CommandLine ILIKE '% /startup%')) AND (NOT ParentCommandLine ILIKE 'C:\\windows\\system32\\svchost.exe -k netsvcs -p -s gpsvc')

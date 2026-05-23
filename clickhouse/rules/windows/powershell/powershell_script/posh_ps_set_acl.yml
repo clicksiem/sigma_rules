@@ -1,0 +1,12 @@
+id: cae80281-ef23-44c5-873b-fd48d2666f49
+name: PowerShell Script Change Permission Via Set-Acl - PsScript
+level: 3
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1222
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%Set-Acl %' AND ScriptBlockText ILIKE '%-AclObject %' AND ScriptBlockText ILIKE '%-Path %'

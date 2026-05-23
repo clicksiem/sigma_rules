@@ -1,0 +1,12 @@
+id: 9c8afa4d-0022-48f0-9456-3712466f9701
+name: Tap Driver Installation - Security
+level: 3
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, Ian Davis, oscd.community
+group: windows
+tags:
+- attack.exfiltration
+- attack.t1048
+rule: SELECT * FROM logs WHERE EventID=4697 AND ServiceFileName ILIKE '%tap0901%'

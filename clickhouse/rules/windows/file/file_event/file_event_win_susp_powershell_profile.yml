@@ -1,0 +1,13 @@
+id: b5b78988-486d-4a80-b991-930eff3ff8bf
+name: PowerShell Profile Modification
+level: 5
+size: '>0'
+active: true
+author:
+- HieuTT35, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.013
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\Microsoft.PowerShell\_profile.ps1' OR TargetFilename ILIKE '%\\PowerShell\\profile.ps1' OR TargetFilename ILIKE '%\\Program Files\\PowerShell\\7-preview\\profile.ps1' OR TargetFilename ILIKE '%\\Program Files\\PowerShell\\7\\profile.ps1' OR TargetFilename ILIKE '%\\Windows\\System32\\WindowsPowerShell\\v1.0\\profile.ps1' OR TargetFilename ILIKE '%\\WindowsPowerShell\\profile.ps1'

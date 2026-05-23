@@ -1,0 +1,11 @@
+id: 2a7d64cf-81fa-4daf-ab1b-ab80b789c067
+name: Azure Firewall Rule Configuration Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE operationName IN ('MICROSOFT.NETWORK/FIREWALLPOLICIES/RULECOLLECTIONGROUPS/WRITE', 'MICROSOFT.NETWORK/FIREWALLPOLICIES/RULECOLLECTIONGROUPS/DELETE', 'MICROSOFT.NETWORK/FIREWALLPOLICIES/RULEGROUPS/WRITE', 'MICROSOFT.NETWORK/FIREWALLPOLICIES/RULEGROUPS/DELETE')

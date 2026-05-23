@@ -1,0 +1,14 @@
+id: df9a0e0e-fedb-4d6c-8668-d765dfc92aa7
+name: Suspicious Non PowerShell WSMAN COM Provider
+level: 5
+size: '>0'
+active: true
+author:
+- Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+- attack.lateral-movement
+- attack.t1021.003
+rule: SELECT * FROM logs WHERE Data ILIKE '%ProviderName=WSMan%' AND (NOT ((Data ILIKE '%HostApplication=powershell%' OR Data ILIKE '%HostApplication=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell%' OR Data ILIKE '%HostApplication=C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell%' OR Data ILIKE '%HostApplication=C:/Windows/System32/WindowsPowerShell/v1.0/powershell%' OR Data ILIKE '%HostApplication=C:/Windows/SysWOW64/WindowsPowerShell/v1.0/powershell%') OR match(Data, 'HostId=[a-zA-Z0-9-]{36}\s+EngineVersion='))) AND (NOT Data ILIKE '%HostApplication=C:\\Hexnode\\Hexnode Agent\\Current\\HexnodeAgent.exe%')

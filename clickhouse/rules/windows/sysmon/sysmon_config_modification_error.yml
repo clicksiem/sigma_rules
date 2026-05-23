@@ -1,0 +1,12 @@
+id: 815cd91b-7dbc-4247-841a-d7dd1392b0a8
+name: Sysmon Configuration Error
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1564
+rule: 'SELECT * FROM logs WHERE (Description ILIKE ''%Failed to open service configuration with error%'' OR Description ILIKE ''%Failed to connect to the driver to update configuration%'') AND (NOT ((Description ILIKE ''%Failed to open service configuration with error%'' AND Description ILIKE ''%Last error: The media is write protected.%'') OR (Description ILIKE ''%Failed to open service configuration with error 19%'' OR Description ILIKE ''%Failed to open service configuration with error 93%'')))'

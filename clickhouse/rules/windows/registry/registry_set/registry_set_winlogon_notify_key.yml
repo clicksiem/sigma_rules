@@ -1,0 +1,13 @@
+id: bbf59793-6efb-4fa1-95ca-a7d288e52c88
+name: Winlogon Notify Key Logon Persistence
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.004
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Notify\\logon' AND Details ILIKE '%.dll'

@@ -1,0 +1,12 @@
+id: 62f7c9bf-9135-49b2-8aeb-1e54a6ecc13c
+name: Tor Client/Browser Execution
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1090.003
+rule: SELECT * FROM logs WHERE Description='Tor Browser' OR Product='Tor Browser' OR (Image ILIKE '%\\tor.exe' OR Image ILIKE '%\\Tor Browser\\Browser\\firefox.exe')

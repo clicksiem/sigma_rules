@@ -1,0 +1,12 @@
+id: 75c505b1-711d-4f68-a357-8c3fe37dbf2d
+name: HackTool - SILENTTRINITY Stager DLL Load
+level: 8
+size: '>0'
+active: true
+author:
+- Aleksey Potapov, oscd.community
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1071
+rule: SELECT * FROM logs WHERE Description ILIKE '%st2stager%'

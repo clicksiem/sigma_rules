@@ -1,0 +1,12 @@
+id: eca5e022-d368-4043-98e5-9736fb01f72f
+name: Clear or Disable Kernel Ring Buffer Logs via Syslog Syscall
+level: 5
+size: '>0'
+active: true
+author:
+- Milad Cheraghi
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1685.006
+rule: SELECT * FROM logs WHERE type='SYSCALL' AND SYSCALL='syslog' AND (a0 IN (4, 5, 6))

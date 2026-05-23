@@ -1,0 +1,12 @@
+id: c9eb55c3-b468-40ab-9089-db2862e42137
+name: Device Installation Blocked
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.initial-access
+- attack.t1200
+rule: SELECT * FROM logs WHERE EventID=6423

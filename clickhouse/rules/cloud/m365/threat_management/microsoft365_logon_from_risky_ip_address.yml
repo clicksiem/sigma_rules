@@ -1,0 +1,15 @@
+id: c191e2fa-f9d6-4ccf-82af-4f2aba08359f
+name: Logon from a Risky IP Address
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: m365
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Log on from a risky IP address' AND status='success'

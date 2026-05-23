@@ -1,0 +1,11 @@
+id: 37e8d358-6408-4853-82f4-98333fca7014
+name: Remote Access Tool - NetSupport Execution From Unusual Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\client32.exe' OR Product ILIKE '%NetSupport Remote Control%' OR OriginalFileName ILIKE '%client32.exe%' OR Hashes ILIKE '%IMPHASH=a9d50692e95b79723f3e76fcf70d023e%') AND (NOT (Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%'))

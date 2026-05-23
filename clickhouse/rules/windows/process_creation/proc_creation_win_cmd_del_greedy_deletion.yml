@@ -1,0 +1,12 @@
+id: 204b17ae-4007-471b-917b-b917b315c5db
+name: Greedy File Deletion Using Del
+level: 5
+size: '>0'
+active: true
+author:
+- frack113 , X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND (CommandLine ILIKE '%del %' OR CommandLine ILIKE '%erase %') AND (CommandLine ILIKE '%\\*.au3%' OR CommandLine ILIKE '%\\*.dll%' OR CommandLine ILIKE '%\\*.exe%' OR CommandLine ILIKE '%\\*.js%')

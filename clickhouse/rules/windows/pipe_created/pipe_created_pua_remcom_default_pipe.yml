@@ -1,0 +1,14 @@
+id: d36f87ea-c403-44d2-aa79-1a0ac7c24456
+name: PUA - RemCom Default Named Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- Nikita Nazarov, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE PipeName ILIKE '%\\RemCom%'

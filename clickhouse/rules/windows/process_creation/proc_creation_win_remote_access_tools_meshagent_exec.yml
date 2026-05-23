@@ -1,0 +1,12 @@
+id: 74a2b202-73e0-4693-9a3a-9d36146d0775
+name: Remote Access Tool - MeshAgent Command Execution via MeshCentral
+level: 5
+size: '>0'
+active: true
+author:
+- '@Kostastsale'
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\meshagent.exe' AND (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe')

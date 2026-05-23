@@ -1,0 +1,13 @@
+id: 236d8e89-ed95-4789-a982-36f4643738ba
+name: Suspicious Persistence Via VMwareToolBoxCmd.EXE VM State Change Script
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.persistence
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\VMwareToolBoxCmd.exe' OR OriginalFileName='toolbox-cmd.exe') AND (CommandLine ILIKE '% script %' AND CommandLine ILIKE '% set %') AND (CommandLine ILIKE '%:\\PerfLogs\\%' OR CommandLine ILIKE '%:\\Temp\\%' OR CommandLine ILIKE '%:\\Windows\\System32\\Tasks\\%' OR CommandLine ILIKE '%:\\Windows\\Tasks\\%' OR CommandLine ILIKE '%:\\Windows\\Temp\\%' OR CommandLine ILIKE '%\\AppData\\Local\\Temp%')

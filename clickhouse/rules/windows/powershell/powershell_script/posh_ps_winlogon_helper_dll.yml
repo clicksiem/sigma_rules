@@ -1,0 +1,13 @@
+id: 851c506b-6b7c-4ce2-8802-c703009d03c0
+name: Winlogon Helper DLL
+level: 5
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.004
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%CurrentVersion\\Winlogon%' AND (ScriptBlockText ILIKE '%Set-ItemProperty%' OR ScriptBlockText ILIKE '%New-Item%')

@@ -1,0 +1,12 @@
+id: aa7a3fce-bef5-4311-9cc1-5f04bb8c308c
+name: Certificate Exported Via PowerShell - ScriptBlock
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1552.004
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Export-PfxCertificate%' OR ScriptBlockText ILIKE '%Export-Certificate%') AND (NOT ScriptBlockText ILIKE '%CmdletsToExport = @(%')

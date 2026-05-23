@@ -1,0 +1,11 @@
+id: cf1dbc6b-6205-41b4-9b88-a83980d2255b
+name: Okta API Token Revoked
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: okta
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventType ILIKE 'system.api\_token.revoke'

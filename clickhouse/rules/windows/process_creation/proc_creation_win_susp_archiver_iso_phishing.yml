@@ -1,0 +1,12 @@
+id: fcdf69e5-a3d3-452a-9724-26f2308bf2b1
+name: Phishing Pattern ISO in Archive
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1566
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\Winrar.exe' OR ParentImage ILIKE '%\\7zFM.exe' OR ParentImage ILIKE '%\\peazip.exe') AND (Image ILIKE '%\\isoburn.exe' OR Image ILIKE '%\\PowerISO.exe' OR Image ILIKE '%\\ImgBurn.exe')

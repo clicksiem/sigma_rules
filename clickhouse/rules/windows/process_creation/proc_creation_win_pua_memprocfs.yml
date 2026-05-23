@@ -1,0 +1,15 @@
+id: 8a1b2c3d-4e5f-6789-abcd-ef1234567890
+name: PUA - Memory Dump Mount Via MemProcFS
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+- attack.t1003.001
+- attack.t1003.004
+- attack.t1003.002
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\MemProcFS.exe' OR OriginalFileName='MemProcFS.exe' OR Description='MemProcFS') AND CommandLine ILIKE '%-device%'

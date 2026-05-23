@@ -1,0 +1,12 @@
+id: 0badd08f-c6a3-4630-90d3-6875cca440be
+name: User Logoff Event
+level: 1
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1531
+rule: SELECT * FROM logs WHERE EventID IN (4634, 4647)

@@ -1,0 +1,12 @@
+id: 9f0a8bf3-a65b-440a-8c1e-5cb1547c8e70
+name: New DLL Registered Via Odbcconf.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Kirill Kiryanov, Beyu Denis, Daniil Yugoslavskiy, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.008
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\odbcconf.exe' OR OriginalFileName='odbcconf.exe') AND (CommandLine ILIKE '%REGSVR %' AND CommandLine ILIKE '%.dll%')

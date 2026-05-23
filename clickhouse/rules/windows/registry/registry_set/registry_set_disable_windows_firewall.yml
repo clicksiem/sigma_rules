@@ -1,0 +1,12 @@
+id: e78c408a-e2ea-43cd-b5ea-51975cf358c0
+name: Disable Windows Firewall by Registry
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\WindowsFirewall\\StandardProfile\\EnableFirewall' OR TargetObject ILIKE '%\\SOFTWARE\\Policies\\Microsoft\\WindowsFirewall\\DomainProfile\\EnableFirewall') AND Details='DWORD (0x00000000)'

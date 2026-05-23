@@ -1,0 +1,11 @@
+id: cc9d3712-6310-4320-b2df-7cb408274d53
+name: Rebuild Performance Counter Values Via Lodctr.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\lodctr.exe' AND OriginalFileName='LODCTR.EXE') AND (CommandLine ILIKE '% -r%' OR CommandLine ILIKE '% /r%' OR CommandLine ILIKE '% –r%' OR CommandLine ILIKE '% —r%' OR CommandLine ILIKE '% ―r%')

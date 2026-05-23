@@ -1,0 +1,12 @@
+id: a66bc059-c370-472c-a0d7-f8fd1bf9d583
+name: Network Connection Initiated By Eqnedt32.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1203
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\eqnedt32.exe'

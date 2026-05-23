@@ -1,0 +1,12 @@
+id: 214e8f95-100a-4e04-bb31-ef6cba8ce07e
+name: DCERPC SMB Spoolss Named Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- OTR (Open Threat Research)
+group: windows
+tags:
+- attack.lateral-movement
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE EventID=5145 AND ShareName ILIKE '\\\\*\\IPC$' AND RelativeTargetName='spoolss'

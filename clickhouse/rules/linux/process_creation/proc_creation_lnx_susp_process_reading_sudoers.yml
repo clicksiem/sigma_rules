@@ -1,0 +1,12 @@
+id: 0f79c4d2-4e1f-4683-9c36-b5469a665e06
+name: Access of Sudoers File Content
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: linux
+tags:
+- attack.reconnaissance
+- attack.t1592.004
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/cat' OR Image ILIKE '%/ed' OR Image ILIKE '%/egrep' OR Image ILIKE '%/emacs' OR Image ILIKE '%/fgrep' OR Image ILIKE '%/grep' OR Image ILIKE '%/head' OR Image ILIKE '%/less' OR Image ILIKE '%/more' OR Image ILIKE '%/nano' OR Image ILIKE '%/tail') AND CommandLine ILIKE '% /etc/sudoers%'

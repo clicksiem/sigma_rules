@@ -1,0 +1,12 @@
+id: b3cec4e7-6901-4b0d-a02d-8ab2d8eb818b
+name: File Time Attribute Change - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Igor Fits, oscd.community
+group: linux
+tags:
+- attack.stealth
+- attack.t1070.006
+rule: SELECT * FROM logs WHERE type='EXECVE' AND hasToken(full_log, 'touch') AND (hasToken(full_log, '-t') OR hasToken(full_log, '-acmr') OR hasToken(full_log, '-d') OR hasToken(full_log, '-r'))

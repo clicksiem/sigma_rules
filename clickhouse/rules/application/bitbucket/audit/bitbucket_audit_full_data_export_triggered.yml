@@ -1,0 +1,12 @@
+id: 195e1b9d-bfc2-4ffa-ab4e-35aef69815f8
+name: Bitbucket Full Data Export Triggered
+level: 8
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf)
+group: bitbucket
+tags:
+- attack.collection
+- attack.t1213.003
+rule: SELECT * FROM logs WHERE `auditType.category`='Data pipeline' AND `auditType.action`='Full data export triggered'

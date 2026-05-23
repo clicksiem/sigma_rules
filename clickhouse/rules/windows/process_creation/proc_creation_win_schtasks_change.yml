@@ -1,0 +1,14 @@
+id: 1c0e41cd-21bb-4433-9acc-4a2cd6367b9b
+name: Suspicious Modification Of Scheduled Tasks
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.t1053.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\schtasks.exe' AND (CommandLine ILIKE '% /Change %' AND CommandLine ILIKE '% /TN %')) AND (CommandLine ILIKE '%\\AppData\\Local\\Temp%' OR CommandLine ILIKE '%\\AppData\\Roaming\\%' OR CommandLine ILIKE '%\\Users\\Public\\%' OR CommandLine ILIKE '%\\WINDOWS\\Temp\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Temporary Internet%' OR CommandLine ILIKE '%C:\\ProgramData\\%' OR CommandLine ILIKE '%C:\\Perflogs\\%' OR CommandLine ILIKE '%\%ProgramData\%%' OR CommandLine ILIKE '%\%appdata\%%' OR CommandLine ILIKE '%\%comspec\%%' OR CommandLine ILIKE '%\%localappdata\%%') AND (CommandLine ILIKE '%regsvr32%' OR CommandLine ILIKE '%rundll32%' OR CommandLine ILIKE '%cmd /c %' OR CommandLine ILIKE '%cmd /k %' OR CommandLine ILIKE '%cmd /r %' OR CommandLine ILIKE '%cmd.exe /c %' OR CommandLine ILIKE '%cmd.exe /k %' OR CommandLine ILIKE '%cmd.exe /r %' OR CommandLine ILIKE '%powershell%' OR CommandLine ILIKE '%mshta%' OR CommandLine ILIKE '%wscript%' OR CommandLine ILIKE '%cscript%' OR CommandLine ILIKE '%certutil%' OR CommandLine ILIKE '%bitsadmin%' OR CommandLine ILIKE '%bash.exe%' OR CommandLine ILIKE '%bash %' OR CommandLine ILIKE '%scrcons%' OR CommandLine ILIKE '%wmic %' OR CommandLine ILIKE '%wmic.exe%' OR CommandLine ILIKE '%forfiles%' OR CommandLine ILIKE '%scriptrunner%' OR CommandLine ILIKE '%hh.exe%' OR CommandLine ILIKE '%hh %')

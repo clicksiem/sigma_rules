@@ -1,0 +1,15 @@
+id: 4d7cda18-1b12-4e52-b45c-d28653210df8
+name: Sysmon Driver Unloaded Via Fltmc.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Kirill Kiryanov, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.defense-impairment
+- attack.t1070
+- attack.t1685
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\fltMC.exe' OR OriginalFileName='fltMC.exe') AND (CommandLine ILIKE '%unload%' AND CommandLine ILIKE '%sysmon%')

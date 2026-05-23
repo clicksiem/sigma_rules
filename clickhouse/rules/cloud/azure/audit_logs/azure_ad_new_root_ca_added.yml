@@ -1,0 +1,15 @@
+id: 4bb80281-3756-4ec8-a88e-523c5a6fda9e
+name: New Root Certificate Authority Added
+level: 5
+size: '>0'
+active: true
+author:
+- Harjot Shah Singh, '@cyb3rjy0t'
+group: azure
+tags:
+- attack.credential-access
+- attack.persistence
+- attack.privilege-escalation
+- attack.defense-impairment
+- attack.t1556
+rule: SELECT * FROM logs WHERE OperationName='Set Company Information' AND `TargetResources.modifiedProperties.newValue` ILIKE '%TrustedCAsForPasswordlessAuth%'

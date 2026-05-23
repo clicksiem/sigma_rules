@@ -1,0 +1,12 @@
+id: b9f0e6f5-09b4-4358-bae4-08408705bd5c
+name: New User Created Via Net.EXE With Never Expire Option
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1136.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\net.exe' OR Image ILIKE '%\\net1.exe') OR (OriginalFileName IN ('net.exe', 'net1.exe'))) AND (CommandLine ILIKE '%user%' AND CommandLine ILIKE '%add%' AND CommandLine ILIKE '%expires:never%')

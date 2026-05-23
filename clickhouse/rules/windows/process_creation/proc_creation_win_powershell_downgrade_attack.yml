@@ -1,0 +1,12 @@
+id: b3512211-c67e-4707-bedc-66efc7848863
+name: Potential PowerShell Downgrade Attack
+level: 5
+size: '>0'
+active: true
+author:
+- Harish Segar (rule)
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\powershell.exe' AND (CommandLine ILIKE '% -version 2 %' OR CommandLine ILIKE '% -versio 2 %' OR CommandLine ILIKE '% -versi 2 %' OR CommandLine ILIKE '% -vers 2 %' OR CommandLine ILIKE '% -ver 2 %' OR CommandLine ILIKE '% -ve 2 %' OR CommandLine ILIKE '% -v 2 %')

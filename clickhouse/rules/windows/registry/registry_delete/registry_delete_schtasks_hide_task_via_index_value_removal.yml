@@ -1,0 +1,12 @@
+id: 526cc8bc-1cdc-48ad-8b26-f19bff969cec
+name: Removal Of Index Value to Hide Schedule Task - Registry
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\%' AND TargetObject ILIKE '%Index%'

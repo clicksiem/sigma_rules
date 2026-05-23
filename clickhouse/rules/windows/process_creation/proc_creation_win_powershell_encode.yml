@@ -1,0 +1,12 @@
+id: fb843269-508c-4b76-8b8d-88679db22ce7
+name: Suspicious Execution of Powershell with Base64
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '% -e %' OR CommandLine ILIKE '% -en %' OR CommandLine ILIKE '% -enc %' OR CommandLine ILIKE '% -enco%' OR CommandLine ILIKE '% -ec %')) AND (NOT (CommandLine ILIKE '% -Encoding %' OR (ParentImage ILIKE '%C:\\Packages\\Plugins\\Microsoft.GuestConfiguration.ConfigurationforWindows\\%' OR ParentImage ILIKE '%\\gc\_worker.exe%')))

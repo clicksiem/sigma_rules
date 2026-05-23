@@ -1,0 +1,12 @@
+id: 0022869c-49f7-4ff2-ba03-85ac42ddac58
+name: System Information Discovery via Registry Queries
+level: 3
+size: '>0'
+active: true
+author:
+- lazarg
+group: windows
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\reg.exe' AND CommandLine ILIKE '%query%' AND (CommandLine ILIKE '%-v%' OR CommandLine ILIKE '%/v%' OR CommandLine ILIKE '%–v%' OR CommandLine ILIKE '%—v%' OR CommandLine ILIKE '%―v%')) OR ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND (CommandLine ILIKE '%Get-ItemPropertyValue%' OR CommandLine ILIKE '%gpv%'))) AND (CommandLine ILIKE '%\\SOFTWARE\\Microsoft\\Windows Defender%' OR CommandLine ILIKE '%\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion%' OR CommandLine ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall%' OR CommandLine ILIKE '%\\SYSTEM\\CurrentControlSet\\Control\\TimeZoneInformation%' OR CommandLine ILIKE '%\\SYSTEM\\CurrentControlSet\\Services%')

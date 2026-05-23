@@ -1,0 +1,12 @@
+id: 0d7a9363-af70-4e7b-a3b7-1a176b7fbe84
+name: Exports Registry Key To an Alternate Data Stream
+level: 8
+size: '>0'
+active: true
+author:
+- Oddvar Moe, Sander Wiebing, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1564.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\regedit.exe'

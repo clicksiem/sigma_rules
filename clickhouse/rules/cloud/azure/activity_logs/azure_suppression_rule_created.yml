@@ -1,0 +1,11 @@
+id: 92cc3e5d-eb57-419d-8c16-5c63f325a401
+name: Azure Suppression Rule Created
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: azure
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE operationName='MICROSOFT.SECURITY/ALERTSSUPPRESSIONRULES/WRITE'

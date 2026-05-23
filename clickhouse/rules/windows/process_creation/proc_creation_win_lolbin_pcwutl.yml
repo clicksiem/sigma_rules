@@ -1,0 +1,12 @@
+id: 9386d78a-7207-4048-9c9f-a93a7c2d1c05
+name: Code Execution via Pcwutl.dll
+level: 5
+size: '>0'
+active: true
+author:
+- Julia Fomina, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.011
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' OR OriginalFileName='RUNDLL32.EXE') AND (CommandLine ILIKE '%pcwutl%' AND CommandLine ILIKE '%LaunchApplication%')

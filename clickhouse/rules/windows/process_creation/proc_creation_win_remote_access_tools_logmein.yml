@@ -1,0 +1,12 @@
+id: d85873ef-a0f8-4c48-a53a-6b621f11729d
+name: Remote Access Tool - LogMeIn Execution
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1219.002
+rule: SELECT * FROM logs WHERE Description='LMIGuardianSvc' OR Product='LMIGuardianSvc' OR Company='LogMeIn, Inc.'

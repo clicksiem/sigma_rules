@@ -1,0 +1,13 @@
+id: 35b781cc-1a08-4a5a-80af-42fd7c315c6b
+name: Discovery Using AzureHound
+level: 8
+size: '>0'
+active: true
+author:
+- Janantha Marasinghe
+group: azure
+tags:
+- attack.discovery
+- attack.t1087.004
+- attack.t1526
+rule: SELECT * FROM logs WHERE userAgent ILIKE '%azurehound%' AND ResultType=0

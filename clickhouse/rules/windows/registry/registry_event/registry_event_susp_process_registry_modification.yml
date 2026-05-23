@@ -1,0 +1,15 @@
+id: 7f4c43f9-b1a5-4c7d-b24a-b41bf3a3ebf2
+name: Registry Tampering by Potentially Suspicious Processes
+level: 5
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.defense-impairment
+- attack.t1112
+- attack.t1059.005
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe') AND (NOT (Details='Binary Data' OR isNull(Details) OR (Image ILIKE '%\\wscript.exe' AND (TargetObject ILIKE '%SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Notifications\\Data\\%' OR TargetObject ILIKE '%\\Services\\bam\\State\\UserSettings\\S-1-%' OR TargetObject ILIKE '%Software\\Microsoft\\Windows Script\\Settings\\Telemetry\\wscript.exe\\%' OR TargetObject ILIKE '%Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\%')) OR (Image ILIKE '%\\wscript.exe' AND TargetObject ILIKE '%\\wscript.exe%')))

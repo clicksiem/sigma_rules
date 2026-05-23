@@ -1,0 +1,13 @@
+id: 5bac7a56-da88-4c27-922e-c81e113b20cb
+name: Github Self-Hosted Runner Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Daniel Koifman (KoifSec)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1102.002
+- attack.t1071
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\Runner.Worker.exe' OR OriginalFileName='Runner.Worker.dll') AND CommandLine ILIKE '%spawnclient%') OR ((Image ILIKE '%\\Runner.Listener.exe' OR OriginalFileName='Runner.Listener.dll') AND (CommandLine ILIKE '%run%' OR CommandLine ILIKE '%configure%'))

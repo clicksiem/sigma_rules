@@ -1,0 +1,14 @@
+id: 13db8d2e-7723-4c2c-93c1-a4d36994f7ef
+name: Potential In-Memory Download And Compile Of Payloads
+level: 5
+size: '>0'
+active: true
+author:
+- Sohan G (D4rkCiph3r), Red Canary (idea)
+group: macos
+tags:
+- attack.command-and-control
+- attack.execution
+- attack.t1059.007
+- attack.t1105
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%osacompile%' AND CommandLine ILIKE '%curl%'

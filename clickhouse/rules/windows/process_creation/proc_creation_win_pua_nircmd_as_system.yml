@@ -1,0 +1,13 @@
+id: d9047477-0359-48c9-b8c7-792cedcdc9c4
+name: PUA - NirCmd Execution As LOCAL SYSTEM
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1569.002
+- attack.s0029
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% runassystem %'

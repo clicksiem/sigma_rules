@@ -1,0 +1,12 @@
+id: 0248a7bc-8a9a-4cd8-a57e-3ae8e073a073
+name: ISO Image Mounted
+level: 5
+size: '>0'
+active: true
+author:
+- Syed Hasan (@syedhasan009)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1566.001
+rule: SELECT * FROM logs WHERE (EventID=4663 AND ObjectServer='Security' AND ObjectType='File' AND ObjectName ILIKE '\\Device\\CdRom%') AND (NOT (ObjectName IN ('\\Device\\CdRom0\\autorun.ico', '\\Device\\CdRom0\\setup.exe', '\\Device\\CdRom0\\setup64.exe')))

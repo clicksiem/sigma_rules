@@ -1,0 +1,12 @@
+id: 410d2a41-1e6d-452f-85e5-abdd8257a823
+name: Azure Application Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: azure
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE `properties.message` IN ('Delete application', 'Hard Delete application')

@@ -1,0 +1,12 @@
+id: f38ce0b9-5e97-4b47-a211-7dc8d8b871da
+name: Potential RDP Tunneling Via Plink
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1572
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\plink.exe' AND CommandLine ILIKE '%:127.0.0.1:3389%') OR ((Image ILIKE '%\\plink.exe' AND CommandLine ILIKE '%:3389%') AND (CommandLine ILIKE '% -P 443%' OR CommandLine ILIKE '% -P 22%'))

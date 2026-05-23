@@ -1,0 +1,12 @@
+id: d3feb4ee-ff1d-4d3d-bd10-5b28a238cc72
+name: File and Directory Discovery - Linux
+level: 1
+size: '>0'
+active: true
+author:
+- Daniil Yugoslavskiy, oscd.community, CheraghiMilad
+group: linux
+tags:
+- attack.discovery
+- attack.t1083
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/file' AND match(CommandLine, '(.){200,}')) OR (Image ILIKE '%/ls' AND CommandLine ILIKE '%-R%') OR Image ILIKE '%/find' OR Image ILIKE '%/tree' OR Image ILIKE '%/findmnt' OR Image ILIKE '%/mlocate'

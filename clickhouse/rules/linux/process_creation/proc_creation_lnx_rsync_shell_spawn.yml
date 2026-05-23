@@ -1,0 +1,13 @@
+id: 297241f3-8108-4b3a-8c15-2dda9f844594
+name: Suspicious Invocation of Shell via Rsync
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth
+group: linux
+tags:
+- attack.execution
+- attack.t1059
+- attack.t1203
+rule: SELECT * FROM logs WHERE ((ParentImage ILIKE '%/rsync' OR ParentImage ILIKE '%/rsyncd') AND (Image ILIKE '%/ash' OR Image ILIKE '%/bash' OR Image ILIKE '%/csh' OR Image ILIKE '%/dash' OR Image ILIKE '%/ksh' OR Image ILIKE '%/sh' OR Image ILIKE '%/tcsh' OR Image ILIKE '%/zsh')) AND (NOT CommandLine ILIKE '% -e %')

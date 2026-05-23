@@ -1,0 +1,14 @@
+id: 179b3686-6271-4d87-807d-17d843a8af73
+name: Suspicious Filename with Embedded Base64 Commands
+level: 8
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: linux
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1059.004
+- attack.t1027
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%{echo%' OR TargetFilename ILIKE '%{base64,-d}%'

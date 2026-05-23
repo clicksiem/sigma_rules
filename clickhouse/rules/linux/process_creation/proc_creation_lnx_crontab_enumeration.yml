@@ -1,0 +1,12 @@
+id: 403ed92c-b7ec-4edd-9947-5b535ee12d46
+name: Crontab Enumeration
+level: 3
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.discovery
+- attack.t1007
+rule: SELECT * FROM logs WHERE Image ILIKE '%/crontab' AND CommandLine ILIKE '% -l%'

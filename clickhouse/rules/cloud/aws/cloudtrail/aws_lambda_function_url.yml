@@ -1,0 +1,12 @@
+id: ec541962-c05a-4420-b9ea-84de072d18f4
+name: New AWS Lambda Function URL Configuration Created
+level: 5
+size: '>0'
+active: true
+author:
+- Ivan Saakov
+group: aws
+tags:
+- attack.initial-access
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE eventSource='lambda.amazonaws.com' AND eventName='CreateFunctionUrlConfig'

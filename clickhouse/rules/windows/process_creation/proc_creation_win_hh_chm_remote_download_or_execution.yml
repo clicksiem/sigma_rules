@@ -1,0 +1,12 @@
+id: f57c58b3-ee69-4ef5-9041-455bf39aaa89
+name: Remote CHM File Download/Execution Via HH.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.001
+rule: SELECT * FROM logs WHERE (OriginalFileName='HH.exe' OR Image ILIKE '%\\hh.exe') AND (CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%' OR CommandLine ILIKE '%\\\\%')

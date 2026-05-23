@@ -1,0 +1,14 @@
+id: 9f5c1d59-33be-4e60-bcab-85d2f566effd
+name: Suspicious Process Access to LSASS with Dbgcore/Dbghelp DLLs
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.defense-impairment
+- attack.t1003.001
+- attack.t1685
+rule: SELECT * FROM logs WHERE (TargetImage ILIKE '%\\lsass.exe' AND (CallTrace ILIKE '%dbgcore.dll%' OR CallTrace ILIKE '%dbghelp.dll%')) AND (SourceImage ILIKE '%:\\Perflogs\\%' OR SourceImage ILIKE '%:\\Temp\\%' OR SourceImage ILIKE '%:\\Users\\Public\\%' OR SourceImage ILIKE '%\\$Recycle.Bin\\%' OR SourceImage ILIKE '%\\AppData\\Roaming\\%' OR SourceImage ILIKE '%\\Contacts\\%' OR SourceImage ILIKE '%\\Desktop\\%' OR SourceImage ILIKE '%\\Documents\\%' OR SourceImage ILIKE '%\\Downloads\\%' OR SourceImage ILIKE '%\\Favorites\\%' OR SourceImage ILIKE '%\\Favourites\\%' OR SourceImage ILIKE '%\\inetpub\\wwwroot\\%' OR SourceImage ILIKE '%\\Music\\%' OR SourceImage ILIKE '%\\Pictures\\%' OR SourceImage ILIKE '%\\Start Menu\\Programs\\Startup\\%' OR SourceImage ILIKE '%\\Users\\Default\\%' OR SourceImage ILIKE '%\\Videos\\%' OR SourceImage ILIKE '%\\Windows\\Temp\\%')

@@ -1,0 +1,12 @@
+id: 570ae5ec-33dc-427c-b815-db86228ad43e
+name: Application Uninstalled
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE Provider_Name='MsiInstaller' AND (EventID IN (1034, 11724))

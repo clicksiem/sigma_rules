@@ -1,0 +1,12 @@
+id: b28e58e4-2a72-4fae-bdee-0fbe904db642
+name: Windows Defender Real-time Protection Disabled
+level: 8
+size: '>0'
+active: true
+author:
+- Ján Trenčanský, frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE EventID=5001

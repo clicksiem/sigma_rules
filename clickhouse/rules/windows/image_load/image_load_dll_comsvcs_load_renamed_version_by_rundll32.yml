@@ -1,0 +1,12 @@
+id: 8cde342c-ba48-4b74-b615-172c330f2e93
+name: Suspicious Renamed Comsvcs DLL Loaded By Rundll32
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\rundll32.exe' AND (Hashes ILIKE '%IMPHASH=eed93054cb555f3de70eaa9787f32ebb%' OR Hashes ILIKE '%IMPHASH=5e0dbdec1fce52daae251a110b4f309d%' OR Hashes ILIKE '%IMPHASH=eadbccbb324829acb5f2bbe87e5549a8%' OR Hashes ILIKE '%IMPHASH=407ca0f7b523319d758a40d7c0193699%' OR Hashes ILIKE '%IMPHASH=281d618f4e6271e527e6386ea6f748de%')) AND (NOT ImageLoaded ILIKE '%\\comsvcs.dll')

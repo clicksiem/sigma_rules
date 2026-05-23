@@ -1,0 +1,12 @@
+id: 46612ae6-86be-4802-bc07-39b59feb1309
+name: Access To Windows DPAPI Master Keys By Uncommon Applications
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555.004
+rule: SELECT * FROM logs WHERE (FileName ILIKE '%\\Microsoft\\Protect\\S-1-5-18\\%' OR FileName ILIKE '%\\Microsoft\\Protect\\S-1-5-21-%') AND (NOT (Image ILIKE 'C:\\Program Files\\%' OR Image ILIKE 'C:\\Program Files (x86)\\%' OR Image ILIKE 'C:\\Windows\\system32\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\%'))

@@ -1,0 +1,11 @@
+id: 6aef64e3-60c6-4782-8db3-8448759c714e
+name: Google Workspace Role Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE eventService='admin.googleapis.com' AND (eventName IN ('DELETE\_ROLE', 'RENAME\_ROLE', 'UPDATE\_ROLE'))

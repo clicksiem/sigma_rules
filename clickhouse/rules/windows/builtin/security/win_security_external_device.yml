@@ -1,0 +1,14 @@
+id: f69a87ea-955e-4fb4-adb2-bb9fd6685632
+name: External Disk Drive Or USB Storage Device Was Recognized By The System
+level: 3
+size: '>0'
+active: true
+author:
+- Keith Wright
+group: windows
+tags:
+- attack.t1091
+- attack.t1200
+- attack.lateral-movement
+- attack.initial-access
+rule: SELECT * FROM logs WHERE EventID=6416 AND (ClassName='DiskDrive' OR DeviceDescription='USB Mass Storage Device')

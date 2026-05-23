@@ -1,0 +1,12 @@
+id: e92a4287-e072-4a40-9739-370c106bb750
+name: HackTool - SOAPHound Execution
+level: 8
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.discovery
+- attack.t1087
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% --buildcache %' OR CommandLine ILIKE '% --bhdump %' OR CommandLine ILIKE '% --certdump %' OR CommandLine ILIKE '% --dnsdump %') AND (CommandLine ILIKE '% -c %' OR CommandLine ILIKE '% --cachefilename %' OR CommandLine ILIKE '% -o %' OR CommandLine ILIKE '% --outputdirectory%')

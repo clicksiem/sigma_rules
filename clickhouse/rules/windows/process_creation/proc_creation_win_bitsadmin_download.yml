@@ -1,0 +1,18 @@
+id: d059842b-6b9d-4ed1-b5c3-5b89143c6ede
+name: File Download Via Bitsadmin
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Haag, FPT.EagleEye
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+- attack.s0190
+- attack.t1036.003
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\bitsadmin.exe' OR OriginalFileName='bitsadmin.exe') AND (CommandLine ILIKE '% /transfer %' OR ((CommandLine ILIKE '% /create %' OR CommandLine ILIKE '% /addfile %') AND CommandLine ILIKE '%http%'))

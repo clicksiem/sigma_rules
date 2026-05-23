@@ -1,0 +1,15 @@
+id: 5afee48e-67dd-4e03-a783-f74259dcf998
+name: Potential LSASS Process Dump Via Procdump
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+- attack.credential-access
+- attack.t1003.001
+- car.2013-05-009
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '% -ma %' OR CommandLine ILIKE '% /ma %' OR CommandLine ILIKE '% –ma %' OR CommandLine ILIKE '% —ma %' OR CommandLine ILIKE '% ―ma %' OR CommandLine ILIKE '% -mm %' OR CommandLine ILIKE '% /mm %' OR CommandLine ILIKE '% –mm %' OR CommandLine ILIKE '% —mm %' OR CommandLine ILIKE '% ―mm %' OR CommandLine ILIKE '% -mp %' OR CommandLine ILIKE '% /mp %' OR CommandLine ILIKE '% –mp %' OR CommandLine ILIKE '% —mp %' OR CommandLine ILIKE '% ―mp %') AND (CommandLine ILIKE '% ls%' OR CommandLine ILIKE '% keyiso%' OR CommandLine ILIKE '% samss%')

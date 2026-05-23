@@ -1,0 +1,12 @@
+id: ca2092a1-c273-4878-9b4b-0d60115bf5ea
+name: Suspicious Encoded PowerShell Command Line
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Markus Neis, Jonhnathan Ribeiro, Daniil Yugoslavskiy, Anton Kutepov, oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND ((CommandLine ILIKE '% -e%' AND (CommandLine ILIKE '% JAB%' OR CommandLine ILIKE '% SUVYI%' OR CommandLine ILIKE '% SQBFAFgA%' OR CommandLine ILIKE '% aQBlAHgA%' OR CommandLine ILIKE '% aWV4I%' OR CommandLine ILIKE '% IAA%' OR CommandLine ILIKE '% IAB%' OR CommandLine ILIKE '% UwB%' OR CommandLine ILIKE '% cwB%')) OR (CommandLine ILIKE '%.exe -ENCOD %' OR CommandLine ILIKE '% BA^J e-%')) AND (NOT CommandLine ILIKE '% -ExecutionPolicy remotesigned %')

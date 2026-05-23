@@ -1,0 +1,12 @@
+id: c9a88268-0047-4824-ba6e-4d81ce0b907c
+name: Antivirus Relevant File Paths Alerts
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Arnim Rupp
+group: ''
+tags:
+- attack.resource-development
+- attack.t1588
+rule: SELECT * FROM logs WHERE (Filename ILIKE '%:\\PerfLogs\\%' OR Filename ILIKE '%:\\Temp\\%' OR Filename ILIKE '%:\\Users\\Default\\%' OR Filename ILIKE '%:\\Users\\Public\\%' OR Filename ILIKE '%:\\Windows\\%' OR Filename ILIKE '%/www/%' OR Filename ILIKE '%\\inetpub\\%' OR Filename ILIKE '%\\tsclient\\%' OR Filename ILIKE '%apache%' OR Filename ILIKE '%nginx%' OR Filename ILIKE '%tomcat%' OR Filename ILIKE '%weblogic%') OR (Filename ILIKE '%.asax' OR Filename ILIKE '%.ashx' OR Filename ILIKE '%.asmx' OR Filename ILIKE '%.asp' OR Filename ILIKE '%.aspx' OR Filename ILIKE '%.bat' OR Filename ILIKE '%.cfm' OR Filename ILIKE '%.cgi' OR Filename ILIKE '%.chm' OR Filename ILIKE '%.cmd' OR Filename ILIKE '%.dat' OR Filename ILIKE '%.ear' OR Filename ILIKE '%.gif' OR Filename ILIKE '%.hta' OR Filename ILIKE '%.jpeg' OR Filename ILIKE '%.jpg' OR Filename ILIKE '%.jsp' OR Filename ILIKE '%.jspx' OR Filename ILIKE '%.lnk' OR Filename ILIKE '%.msc' OR Filename ILIKE '%.php' OR Filename ILIKE '%.pl' OR Filename ILIKE '%.png' OR Filename ILIKE '%.ps1' OR Filename ILIKE '%.psm1' OR Filename ILIKE '%.py' OR Filename ILIKE '%.pyc' OR Filename ILIKE '%.rb' OR Filename ILIKE '%.scf' OR Filename ILIKE '%.sct' OR Filename ILIKE '%.sh' OR Filename ILIKE '%.svg' OR Filename ILIKE '%.txt' OR Filename ILIKE '%.vbe' OR Filename ILIKE '%.vbs' OR Filename ILIKE '%.war' OR Filename ILIKE '%.wll' OR Filename ILIKE '%.wsf' OR Filename ILIKE '%.wsh' OR Filename ILIKE '%.xll' OR Filename ILIKE '%.xml')

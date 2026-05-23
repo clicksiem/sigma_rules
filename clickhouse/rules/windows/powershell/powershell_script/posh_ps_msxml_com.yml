@@ -1,0 +1,12 @@
+id: 78aa1347-1517-4454-9982-b338d6df8343
+name: Powershell MsXml COM Object
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, MatilJ
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%New-Object%' AND ScriptBlockText ILIKE '%-ComObject%' AND ScriptBlockText ILIKE '%MsXml2.%' AND ScriptBlockText ILIKE '%XmlHttp%'

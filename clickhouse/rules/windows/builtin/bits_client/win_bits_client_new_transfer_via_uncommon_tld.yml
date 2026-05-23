@@ -1,0 +1,14 @@
+id: 6d44fb93-e7d2-475c-9d3d-54c9c1e33427
+name: BITS Transfer Job With Uncommon Or Suspicious Remote TLD
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+rule: SELECT * FROM logs WHERE EventID=16403 AND (NOT (RemoteName ILIKE '%.azureedge.net/%' OR RemoteName ILIKE '%.com/%' OR RemoteName ILIKE '%.sfx.ms/%' OR RemoteName ILIKE '%download.mozilla.org/%' OR RemoteName ILIKE '%cdn.onenote.net/%' OR RemoteName ILIKE '%cdn.office.net/%' OR RemoteName ILIKE '%tscdn.m365.static.microsoft/%'))

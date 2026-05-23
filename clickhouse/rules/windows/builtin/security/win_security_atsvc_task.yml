@@ -1,0 +1,17 @@
+id: f6de6525-4509-495a-8a82-1f8b0ed73a00
+name: Remote Task Creation via ATSVC Named Pipe
+level: 5
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.execution
+- attack.lateral-movement
+- attack.persistence
+- car.2013-05-004
+- car.2015-04-001
+- attack.t1053.002
+rule: SELECT * FROM logs WHERE EventID=5145 AND ShareName ILIKE '\\\\*\\IPC$' AND RelativeTargetName='atsvc' AND AccessList ILIKE '%WriteData%'

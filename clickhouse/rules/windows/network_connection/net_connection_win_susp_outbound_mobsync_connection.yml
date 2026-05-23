@@ -1,0 +1,15 @@
+id: 9f2cc74d-78af-4eb2-bb64-9cd1d292b87b
+name: Microsoft Sync Center Suspicious Network Connections
+level: 5
+size: '>0'
+active: true
+author:
+- elhoim
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+- attack.t1218
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\mobsync.exe' AND (NOT (isIPAddressInRange(DestinationIp, '127.0.0.0/8') OR isIPAddressInRange(DestinationIp, '10.0.0.0/8') OR isIPAddressInRange(DestinationIp, '172.16.0.0/12') OR isIPAddressInRange(DestinationIp, '192.168.0.0/16') OR isIPAddressInRange(DestinationIp, '169.254.0.0/16') OR isIPAddressInRange(DestinationIp, '::1/128') OR isIPAddressInRange(DestinationIp, 'fe80::/10') OR isIPAddressInRange(DestinationIp, 'fc00::/7')))

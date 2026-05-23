@@ -1,0 +1,11 @@
+id: d08dd86f-681e-4a00-a92c-1db218754417
+name: MSSQL XPCmdshell Option Change
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Provider_Name ILIKE '%MSSQL%' AND EventID=15457 AND Data ILIKE '%xp\_cmdshell%'

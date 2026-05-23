@@ -1,0 +1,12 @@
+id: 9db5446c-b44a-4291-8b89-fcab5609c3b3
+name: OpenCanary - VNC Connection Attempt
+level: 8
+size: '>0'
+active: true
+author:
+- Security Onion Solutions
+group: opencanary
+tags:
+- attack.lateral-movement
+- attack.t1021
+rule: SELECT * FROM logs WHERE logtype=12001

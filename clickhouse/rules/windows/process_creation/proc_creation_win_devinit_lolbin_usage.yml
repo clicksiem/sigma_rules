@@ -1,0 +1,13 @@
+id: 90d50722-0483-4065-8e35-57efaadd354d
+name: Arbitrary MSI Download Via Devinit.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% -t msi-install %' AND CommandLine ILIKE '% -i http%'

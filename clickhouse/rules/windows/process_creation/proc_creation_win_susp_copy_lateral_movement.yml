@@ -1,0 +1,16 @@
+id: 855bc8b5-2ae8-402e-a9ed-b889e6df1900
+name: Copy From Or To Admin Share Or Sysvol Folder
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), oscd.community, Teymur Kheirkhabarov @HeirhabarovT, Zach Stanford @svch0st, Nasreddine Bencherchali
+group: windows
+tags:
+- attack.lateral-movement
+- attack.collection
+- attack.exfiltration
+- attack.t1039
+- attack.t1048
+- attack.t1021.002
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\\\%\\%$%' OR CommandLine ILIKE '%\\Sysvol\\%') AND (((Image ILIKE '%\\robocopy.exe' OR Image ILIKE '%\\xcopy.exe') OR (OriginalFileName IN ('robocopy.exe', 'XCOPY.EXE'))) OR ((Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND CommandLine ILIKE '%copy%') OR (((Image ILIKE '%\\powershell\_ise.exe%' OR Image ILIKE '%\\powershell.exe%' OR Image ILIKE '%\\pwsh.exe%') OR (OriginalFileName IN ('powershell\_ise.exe', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%copy-item%' OR CommandLine ILIKE '%copy %' OR CommandLine ILIKE '%cpi %' OR CommandLine ILIKE '% cp %' OR CommandLine ILIKE '%move %' OR CommandLine ILIKE '% move-item%' OR CommandLine ILIKE '% mi %' OR CommandLine ILIKE '% mv %')))

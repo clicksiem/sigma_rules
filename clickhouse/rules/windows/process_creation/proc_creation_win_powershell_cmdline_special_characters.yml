@@ -1,0 +1,14 @@
+id: d7bcd677-645d-4691-a8d4-7a5602b780d1
+name: Potential PowerShell Command Line Obfuscation
+level: 8
+size: '>0'
+active: true
+author:
+- Teymur Kheirkhabarov (idea), Vasiliy Burov (rule), oscd.community, Tim Shelton (fp)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1027
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (((Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell.EXE', 'pwsh.dll'))) AND (match(CommandLine, '\+.*\+.*\+.*\+.*\+.*\+.*\+.*\+.*\+.*\+.*\+.*\+.*\+.*\+') OR match(CommandLine, '\{.*\{.*\{.*\{.*\{.*\{.*\{.*\{.*\{.*\{') OR match(CommandLine, '\^.*\^.*\^.*\^.*\^') OR match(CommandLine, '`.*`.*`.*`.*`'))) AND (NOT (ParentImage ILIKE 'C:\\Program Files\\Amazon\\SSM\\ssm-document-worker.exe' OR (CommandLine ILIKE '%new EventSource("Microsoft.Windows.Sense.Client.Management"%' OR CommandLine ILIKE '%public static extern bool InstallELAMCertificateInfo(SafeFileHandle handle);%')))

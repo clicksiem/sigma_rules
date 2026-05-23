@@ -1,0 +1,13 @@
+id: 5fc297ae-25b6-488a-8f25-cc12ac29b744
+name: Potentially Suspicious Usage Of Qemu
+level: 5
+size: '>0'
+active: true
+author:
+- Muhammad Faisal (@faisalusuf), Hunter Juhan (@threatHNTR)
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1090
+- attack.t1572
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%-m 1M%' OR CommandLine ILIKE '%-m 2M%' OR CommandLine ILIKE '%-m 3M%') AND (CommandLine ILIKE '%restrict=off%' AND CommandLine ILIKE '%-netdev %' AND CommandLine ILIKE '%connect=%' AND CommandLine ILIKE '%-nographic%')) AND (NOT (CommandLine ILIKE '% -cdrom %' OR CommandLine ILIKE '% type=virt %' OR CommandLine ILIKE '% -blockdev %'))

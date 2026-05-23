@@ -1,0 +1,12 @@
+id: 5f6a601c-2ecb-498b-9c33-660362323afa
+name: Root Certificate Installed From Susp Locations
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1553.004
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%Import-Certificate%' AND CommandLine ILIKE '% -FilePath %' AND CommandLine ILIKE '%Cert:\\LocalMachine\\Root%') AND (CommandLine ILIKE '%\\AppData\\Local\\Temp\\%' OR CommandLine ILIKE '%:\\Windows\\TEMP\\%' OR CommandLine ILIKE '%\\Desktop\\%' OR CommandLine ILIKE '%\\Downloads\\%' OR CommandLine ILIKE '%\\Perflogs\\%' OR CommandLine ILIKE '%:\\Users\\Public\\%')

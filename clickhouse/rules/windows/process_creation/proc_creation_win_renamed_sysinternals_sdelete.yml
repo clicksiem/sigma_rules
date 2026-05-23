@@ -1,0 +1,12 @@
+id: c1d867fe-8d95-4487-aab4-e53f2d339f90
+name: Renamed Sysinternals Sdelete Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE OriginalFileName='sdelete.exe' AND (NOT (Image ILIKE '%\\sdelete.exe' OR Image ILIKE '%\\sdelete64.exe'))

@@ -1,0 +1,13 @@
+id: a6b33c02-8305-488f-8585-03cb2a7763f2
+name: Windows Credential Editor Registry
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+- attack.s0005
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%Services\\WCESERVICE\\Start%'

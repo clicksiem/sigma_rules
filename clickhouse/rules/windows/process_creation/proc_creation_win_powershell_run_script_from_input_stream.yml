@@ -1,0 +1,12 @@
+id: c83bf4b5-cdf0-437c-90fa-43d734f7c476
+name: Run PowerShell Script from Redirected Input Stream
+level: 8
+size: '>0'
+active: true
+author:
+- Moriarty Meng (idea), Anton Kutepov (rule), oscd.community
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') AND match(CommandLine, '\s-\s*<')

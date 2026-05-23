@@ -1,0 +1,12 @@
+id: 4358e5a5-7542-4dcb-b9f3-87667371839b
+name: ISO or Image Mount Indicator in Recent Files
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.initial-access
+- attack.t1566.001
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%.iso.lnk' OR TargetFilename ILIKE '%.img.lnk' OR TargetFilename ILIKE '%.vhd.lnk' OR TargetFilename ILIKE '%.vhdx.lnk') AND TargetFilename ILIKE '%\\Microsoft\\Windows\\Recent\\%'

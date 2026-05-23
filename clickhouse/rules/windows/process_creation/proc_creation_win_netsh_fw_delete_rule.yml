@@ -1,0 +1,12 @@
+id: 1a5fefe6-734f-452e-a07d-fc1c35bce4b2
+name: Firewall Rule Deleted Via Netsh.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\netsh.exe' OR OriginalFileName='netsh.exe') AND (CommandLine ILIKE '%firewall%' AND CommandLine ILIKE '%delete %')) AND (NOT ((ParentImage ILIKE '%\\Dropbox.exe' AND CommandLine ILIKE '%name=Dropbox%') OR (ParentImage ILIKE '%\\instup.exe' AND CommandLine ILIKE '%advfirewall firewall delete rule name="Avast Antivirus Admin Client"%')))

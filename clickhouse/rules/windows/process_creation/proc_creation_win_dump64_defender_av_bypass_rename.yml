@@ -1,0 +1,12 @@
+id: 129966c9-de17-4334-a123-8b58172e664d
+name: Potential Windows Defender AV Bypass Via Dump64.EXE Rename
+level: 8
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger, Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (Image ILIKE ':\\Program Files%' AND Image ILIKE '%\\Microsoft Visual Studio\\%' AND Image ILIKE '%\\dump64.exe') AND (OriginalFileName='procdump' OR (CommandLine ILIKE '% -ma %' OR CommandLine ILIKE '% -mp %'))

@@ -1,0 +1,12 @@
+id: 817f252c-5143-4dae-b418-48c3e9f63728
+name: Windows Recall Feature Enabled Via Reg.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Sajid Nawaz Khan
+group: windows
+tags:
+- attack.collection
+- attack.t1113
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '%Microsoft\\Windows\\WindowsAI%' AND CommandLine ILIKE '%DisableAIDataAnalysis%') AND ((CommandLine ILIKE '%add%' OR CommandLine ILIKE '%0%') OR CommandLine ILIKE '%delete%')

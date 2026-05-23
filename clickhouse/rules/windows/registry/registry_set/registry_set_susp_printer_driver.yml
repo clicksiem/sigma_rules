@@ -1,0 +1,16 @@
+id: e0813366-0407-449a-9869-a2db1119dc41
+name: Suspicious Printer Driver Empty Manufacturer
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574
+- cve.2021-1675
+rule: SELECT * FROM logs WHERE ((TargetObject ILIKE '%\\Control\\Print\\Environments\\Windows x64\\Drivers%' AND TargetObject ILIKE '%\\Manufacturer%') AND Details='(Empty)') AND (NOT (TargetObject ILIKE '%\\CutePDF Writer v4.0\\%' OR (TargetObject ILIKE '%\\VNC Printer (PS)\\%' OR TargetObject ILIKE '%\\VNC Printer (UD)\\%') OR TargetObject ILIKE '%\\Version-3\\PDF24\\%'))

@@ -1,0 +1,13 @@
+id: 744a188b-0415-4792-896f-11ddb0588dbc
+name: Potential Process Injection Via Msra.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Alexander McDonald
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.stealth
+- attack.t1055
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\msra.exe' AND ParentCommandLine ILIKE '%msra.exe' AND (Image ILIKE '%\\arp.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\net.exe' OR Image ILIKE '%\\netstat.exe' OR Image ILIKE '%\\nslookup.exe' OR Image ILIKE '%\\route.exe' OR Image ILIKE '%\\schtasks.exe' OR Image ILIKE '%\\whoami.exe')

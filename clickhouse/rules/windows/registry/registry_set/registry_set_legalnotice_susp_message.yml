@@ -1,0 +1,12 @@
+id: 8b9606c9-28be-4a38-b146-0e313cc232c1
+name: Potential Ransomware Activity Using LegalNotice Message
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.impact
+- attack.t1491.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\LegalNoticeCaption%' OR TargetObject ILIKE '%\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\LegalNoticeText%') AND (Details ILIKE '%encrypted%' OR Details ILIKE '%Unlock-Password%' OR Details ILIKE '%paying%')

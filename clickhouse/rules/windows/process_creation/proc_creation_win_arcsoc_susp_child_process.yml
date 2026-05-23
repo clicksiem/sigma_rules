@@ -1,0 +1,13 @@
+id: 8e95e73e-ba02-4a87-b4d7-0929b8053038
+name: Suspicious ArcSOC.exe Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Micah Babinski
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+- attack.t1203
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\ArcSOC.exe' AND (Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wmic.exe' OR Image ILIKE '%\\wscript.exe')) AND (NOT (Image ILIKE '%\\cmd.exe' AND CommandLine='cmd.exe /c "ver"'))

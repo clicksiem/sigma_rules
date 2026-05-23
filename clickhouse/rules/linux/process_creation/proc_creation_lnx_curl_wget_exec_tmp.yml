@@ -1,0 +1,13 @@
+id: a2d9e2f3-0f43-4c7a-bcd9-9acfc0d723aa
+name: Suspicious Download and Execute Pattern via Curl/Wget
+level: 8
+size: '>0'
+active: true
+author:
+- Aayush Gupta
+group: linux
+tags:
+- attack.execution
+- attack.t1059.004
+- attack.t1203
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%/curl%' OR CommandLine ILIKE '%/wget%') AND (CommandLine ILIKE '%/tmp/%' OR CommandLine ILIKE '%/dev/shm/%') AND CommandLine ILIKE '%sh -c%'

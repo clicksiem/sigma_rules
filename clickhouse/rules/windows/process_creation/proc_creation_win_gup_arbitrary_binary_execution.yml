@@ -1,0 +1,11 @@
+id: d65aee4d-2292-4cea-b832-83accd6cfa43
+name: Arbitrary Binary Execution Using GUP Utility
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\gup.exe' AND Image ILIKE '%\\explorer.exe') AND (NOT ((Image ILIKE '%\\explorer.exe' AND CommandLine ILIKE '%\\Notepad++\\notepad++.exe%') OR ParentImage ILIKE '%\\Notepad++\\updater\\%' OR isNull(CommandLine)))

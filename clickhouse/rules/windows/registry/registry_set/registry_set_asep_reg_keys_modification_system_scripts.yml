@@ -1,0 +1,13 @@
+id: e7a2fd40-3ae1-4a85-bf80-15cf624fb1b1
+name: System Scripts Autorun Keys Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Policies\\Microsoft\\Windows\\System\\Scripts%' AND (TargetObject ILIKE '%\\Startup%' OR TargetObject ILIKE '%\\Shutdown%' OR TargetObject ILIKE '%\\Logon%' OR TargetObject ILIKE '%\\Logoff%') AND (NOT Details='(Empty)')

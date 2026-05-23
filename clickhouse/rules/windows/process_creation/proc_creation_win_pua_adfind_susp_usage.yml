@@ -1,0 +1,16 @@
+id: 9a132afa-654e-11eb-ae93-0242ac130002
+name: PUA - AdFind Suspicious Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Janantha Marasinghe (https://github.com/blueteam0ps), FPT.EagleEye Team, omkar72, oscd.community
+group: windows
+tags:
+- attack.discovery
+- attack.t1018
+- attack.t1087.002
+- attack.t1482
+- attack.t1069.002
+- stp.1u
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%domainlist%' OR CommandLine ILIKE '%trustdmp%' OR CommandLine ILIKE '%dcmodes%' OR CommandLine ILIKE '%adinfo%' OR CommandLine ILIKE '%-sc dclist%' OR CommandLine ILIKE '%computer\_pwdnotreqd%' OR CommandLine ILIKE '%objectcategory=%' OR CommandLine ILIKE '%-subnets -f%' OR CommandLine ILIKE '%name="Domain Admins"%' OR CommandLine ILIKE '%-sc u:%' OR CommandLine ILIKE '%domainncs%' OR CommandLine ILIKE '%dompol%' OR CommandLine ILIKE '% oudmp %' OR CommandLine ILIKE '%subnetdmp%' OR CommandLine ILIKE '%gpodmp%' OR CommandLine ILIKE '%fspdmp%' OR CommandLine ILIKE '%users\_noexpire%' OR CommandLine ILIKE '%computers\_active%' OR CommandLine ILIKE '%computers\_pwdnotreqd%'

@@ -1,0 +1,12 @@
+id: aff815cc-e400-4bf0-a47a-5d8a2407d4e1
+name: Use Get-NetTCPConnection - PowerShell Module
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1049
+rule: SELECT * FROM logs WHERE ContextInfo ILIKE '%Get-NetTCPConnection%'

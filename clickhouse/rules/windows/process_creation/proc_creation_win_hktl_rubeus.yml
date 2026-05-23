@@ -1,0 +1,15 @@
+id: 7ec2c172-dceb-4c10-92c9-87c1881b7e18
+name: HackTool - Rubeus Execution
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003
+- attack.t1558.003
+- attack.lateral-movement
+- attack.t1550.003
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\Rubeus.exe' OR OriginalFileName='Rubeus.exe' OR Description='Rubeus' OR (CommandLine ILIKE '%asreproast %' OR CommandLine ILIKE '%dump /service:krbtgt %' OR CommandLine ILIKE '%dump /luid:0x%' OR CommandLine ILIKE '%kerberoast %' OR CommandLine ILIKE '%createnetonly /program:%' OR CommandLine ILIKE '%ptt /ticket:%' OR CommandLine ILIKE '%/impersonateuser:%' OR CommandLine ILIKE '%renew /ticket:%' OR CommandLine ILIKE '%asktgt /user:%' OR CommandLine ILIKE '%harvest /interval:%' OR CommandLine ILIKE '%s4u /user:%' OR CommandLine ILIKE '%s4u /ticket:%' OR CommandLine ILIKE '%hash /password:%' OR CommandLine ILIKE '%golden /aes256:%' OR CommandLine ILIKE '%silver /user:%')

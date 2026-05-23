@@ -1,0 +1,11 @@
+id: bc3a4b0c-e167-48e1-aa88-b3020950e560
+name: Remote Printing Abuse for Lateral Movement
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.lateral-movement
+rule: SELECT * FROM logs WHERE EventLog='RPCFW' AND EventID=3 AND (InterfaceUuid IN ('12345678-1234-abcd-ef00-0123456789ab', '76f03f96-cdfd-44fc-a22c-64950a001209', '0b6edbfa-4a24-4fc6-8a23-942b1eca65d1', 'ae33069b-a2a8-46ee-a235-ddfd339be281'))

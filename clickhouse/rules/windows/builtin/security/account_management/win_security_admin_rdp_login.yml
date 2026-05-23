@@ -1,0 +1,19 @@
+id: 0f63e1ef-1eb9-4226-9d54-8927ca08520a
+name: Admin User Remote Logon
+level: 3
+size: '>0'
+active: true
+author:
+- juju4
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.lateral-movement
+- attack.initial-access
+- attack.stealth
+- attack.t1078.001
+- attack.t1078.002
+- attack.t1078.003
+- car.2016-04-005
+rule: SELECT * FROM logs WHERE EventID=4624 AND LogonType=10 AND AuthenticationPackageName='Negotiate' AND TargetUserName ILIKE 'Admin%'

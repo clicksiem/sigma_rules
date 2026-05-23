@@ -1,0 +1,14 @@
+id: 1ff315dc-2a3a-4b71-8dde-873818d25d39
+name: New BITS Job Created Via Bitsadmin
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1197
+rule: SELECT * FROM logs WHERE EventID=3 AND processPath ILIKE '%\\bitsadmin.exe'

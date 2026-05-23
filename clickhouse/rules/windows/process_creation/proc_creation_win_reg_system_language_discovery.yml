@@ -1,0 +1,12 @@
+id: c43a5405-e8e1-4221-9ac9-dbe3fa14e886
+name: System Language Discovery via Reg.Exe
+level: 5
+size: '>0'
+active: true
+author:
+- Marco Pedrinazzi (@pedrinazziM) (InTheCyber)
+group: windows
+tags:
+- attack.discovery
+- attack.t1614.001
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\reg.exe' OR OriginalFileName='reg.exe') AND (CommandLine ILIKE '%query%' AND CommandLine ILIKE '%Control\\Nls\\Language%')

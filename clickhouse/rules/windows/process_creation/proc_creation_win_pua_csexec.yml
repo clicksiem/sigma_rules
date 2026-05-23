@@ -1,0 +1,14 @@
+id: d08a2711-ee8b-4323-bdec-b7d85e892b31
+name: PUA - CsExec Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.resource-development
+- attack.t1587.001
+- attack.execution
+- attack.t1569.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\csexec.exe' OR Description='csexec'

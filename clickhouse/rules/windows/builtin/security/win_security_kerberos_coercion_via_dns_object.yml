@@ -1,0 +1,15 @@
+id: b07e58cf-cacc-4135-8473-ccb2eba63dd2
+name: Potential Kerberos Coercion by Spoofing SPNs via DNS Manipulation
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1557.003
+- attack.persistence
+- attack.privilege-escalation
+rule: SELECT * FROM logs WHERE ((EventID IN (5136, 5137)) AND ObjectClass='dnsNode' AND (ObjectDN ILIKE '%UWhRCA%' AND ObjectDN ILIKE '%BAAAA%' AND ObjectDN ILIKE '%CN=MicrosoftDNS%')) OR (EventID=4662 AND (AdditionalInfo ILIKE '%UWhRCA%' AND AdditionalInfo ILIKE '%BAAAA%' AND AdditionalInfo ILIKE '%CN=MicrosoftDNS%'))

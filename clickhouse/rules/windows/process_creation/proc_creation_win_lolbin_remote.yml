@@ -1,0 +1,13 @@
+id: 4eddc365-79b4-43ff-a9d7-99422dc34b93
+name: Use of Remote.exe
+level: 5
+size: '>0'
+active: true
+author:
+- Christopher Peacock @SecurePeacock, SCYTHE @scythe_io
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\remote.exe' OR OriginalFileName='remote.exe'

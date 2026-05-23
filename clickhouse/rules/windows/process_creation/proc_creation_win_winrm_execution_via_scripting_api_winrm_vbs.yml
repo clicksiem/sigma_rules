@@ -1,0 +1,12 @@
+id: 9df0dd3a-1a5c-47e3-a2bc-30ed177646a0
+name: Remote Code Execute via Winrm.vbs
+level: 5
+size: '>0'
+active: true
+author:
+- Julia Fomina, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1216
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cscript.exe' OR OriginalFileName='cscript.exe') AND (CommandLine ILIKE '%winrm%' AND CommandLine ILIKE '%invoke Create wmicimv2/Win32\_%' AND CommandLine ILIKE '%-r:http%')

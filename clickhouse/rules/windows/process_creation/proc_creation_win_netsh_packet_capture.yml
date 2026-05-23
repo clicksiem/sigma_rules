@@ -1,0 +1,13 @@
+id: d3c3861d-c504-4c77-ba55-224ba82d0118
+name: New Network Trace Capture Started Via Netsh.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Kutepov Anton, oscd.community
+group: windows
+tags:
+- attack.discovery
+- attack.credential-access
+- attack.t1040
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\netsh.exe' OR OriginalFileName='netsh.exe') AND (CommandLine ILIKE '%trace%' AND CommandLine ILIKE '%start%')

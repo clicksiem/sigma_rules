@@ -1,0 +1,12 @@
+id: 7cccd811-7ae9-4ebe-9afd-cb5c406b824b
+name: Potential Execution of Sysinternals Tools
+level: 3
+size: '>0'
+active: true
+author:
+- Markus Neis
+group: windows
+tags:
+- attack.resource-development
+- attack.t1588.002
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '% -accepteula%' OR CommandLine ILIKE '% /accepteula%' OR CommandLine ILIKE '% –accepteula%' OR CommandLine ILIKE '% —accepteula%' OR CommandLine ILIKE '% ―accepteula%'

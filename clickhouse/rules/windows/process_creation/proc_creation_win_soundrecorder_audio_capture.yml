@@ -1,0 +1,12 @@
+id: 83865853-59aa-449e-9600-74b9d89a6d6e
+name: Audio Capture via SoundRecorder
+level: 5
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.collection
+- attack.t1123
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\SoundRecorder.exe' AND CommandLine ILIKE '%/FILE%'

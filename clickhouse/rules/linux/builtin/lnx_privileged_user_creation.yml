@@ -1,0 +1,14 @@
+id: 0ac15ec3-d24f-4246-aa2a-3077bb1cf90e
+name: Privileged User Has Been Created
+level: 8
+size: '>0'
+active: true
+author:
+- Pawel Mazur
+group: linux
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1136.001
+- attack.t1098
+rule: SELECT * FROM logs WHERE hasToken(full_log, 'new user') AND (hasToken(full_log, 'GID=0,') OR hasToken(full_log, 'UID=0,') OR hasToken(full_log, 'GID=10,') OR hasToken(full_log, 'GID=27,'))

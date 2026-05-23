@@ -1,0 +1,15 @@
+id: a0b38b70-3cb5-484b-a4eb-c4d8e7bcc0a9
+name: Okta New Admin Console Behaviours
+level: 8
+size: '>0'
+active: true
+author:
+- kelnage
+group: okta
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE (eventType ILIKE 'policy.evaluate\_sign\_on' AND `target.displayName`='Okta Admin Console') AND (`debugContext.debugData.behaviors` ILIKE '%POSITIVE%' OR `debugContext.debugData.logOnlySecurityData` ILIKE '%POSITIVE%')

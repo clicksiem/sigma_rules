@@ -1,0 +1,11 @@
+id: 28268a8f-191f-4c17-85b2-f5aa4fa829c3
+name: Google Cloud DNS Zone Modified or Deleted
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: gcp
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE `gcp.audit.method_name` IN ('Dns.ManagedZones.Delete', 'Dns.ManagedZones.Update', 'Dns.ManagedZones.Patch')

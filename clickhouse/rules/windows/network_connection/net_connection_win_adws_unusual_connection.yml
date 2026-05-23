@@ -1,0 +1,12 @@
+id: b3ad3c0f-c949-47a1-a30e-b0491ccae876
+name: Uncommon Connection to Active Directory Web Services
+level: 5
+size: '>0'
+active: true
+author:
+- '@kostastsale'
+group: windows
+tags:
+- attack.discovery
+- attack.t1087
+rule: SELECT * FROM logs WHERE (Initiated=true AND DestinationPort=9389) AND (NOT (Image ILIKE 'C:\\Windows\\system32\\dsac.exe' OR Image ILIKE 'C:\\Program Files\\Microsoft Monitoring Agent\\' OR (Image ILIKE 'C:\\Program Files\\PowerShell\\7\\pwsh.exe%' OR Image ILIKE 'C:\\Program Files\\PowerShell\\7-preview\\pwsh.ex%' OR Image ILIKE 'C:\\Windows\\System32\\WindowsPowerShell\\%' OR Image ILIKE 'C:\\Windows\\SysWOW64\\WindowsPowerShell\\%')))

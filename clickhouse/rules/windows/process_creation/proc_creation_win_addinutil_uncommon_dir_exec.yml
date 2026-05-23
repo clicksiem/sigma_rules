@@ -1,0 +1,12 @@
+id: 6120ac2a-a34b-42c0-a9bd-1fb9f459f348
+name: AddinUtil.EXE Execution From Uncommon Directory
+level: 5
+size: '>0'
+active: true
+author:
+- Michael McKinley (@McKinleyMike), Tony Latteri (@TheLatteri)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\addinutil.exe' OR OriginalFileName='AddInUtil.exe') AND (NOT (Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\Framework64\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm\\%' OR Image ILIKE '%:\\Windows\\Microsoft.NET\\FrameworkArm64\\%' OR Image ILIKE '%:\\Windows\\WinSxS\\%'))

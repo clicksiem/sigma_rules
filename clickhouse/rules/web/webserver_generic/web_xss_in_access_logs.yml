@@ -1,0 +1,12 @@
+id: 65354b83-a2ea-4ea6-8414-3ab38be0d409
+name: Cross Site Scripting Strings
+level: 8
+size: '>0'
+active: true
+author:
+- Saw Win Naung, Nasreddine Bencherchali
+group: ''
+tags:
+- attack.initial-access
+- attack.t1189
+rule: SELECT * FROM logs WHERE `cs-method`='GET' AND (hasToken(full_log, '=<script>') OR hasToken(full_log, '=\%3Cscript\%3E') OR hasToken(full_log, '=\%253Cscript\%253E') OR hasToken(full_log, '<iframe ') OR hasToken(full_log, '\%3Ciframe ') OR hasToken(full_log, '<svg ') OR hasToken(full_log, '\%3Csvg ') OR hasToken(full_log, 'document.cookie') OR hasToken(full_log, 'document.domain') OR hasToken(full_log, ' onerror=') OR hasToken(full_log, ' onresize=') OR hasToken(full_log, ' onload="') OR hasToken(full_log, 'onmouseover=') OR hasToken(full_log, '${alert') OR hasToken(full_log, 'javascript:alert') OR hasToken(full_log, 'javascript\%3Aalert')) AND (NOT `sc-status`=404)

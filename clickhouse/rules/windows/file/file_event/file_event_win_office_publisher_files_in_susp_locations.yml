@@ -1,0 +1,11 @@
+id: 3d2a2d59-929c-4b78-8c1a-145dfe9e07b1
+name: Publisher Attachment File Dropped In Suspicious Location
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%\\AppData\\Local\\Temp\\%' OR TargetFilename ILIKE '%\\Users\\Public\\%' OR TargetFilename ILIKE '%\\Windows\\Temp\\%' OR TargetFilename ILIKE '%C:\\Temp\\%') AND TargetFilename ILIKE '%.pub'

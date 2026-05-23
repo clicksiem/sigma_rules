@@ -1,0 +1,12 @@
+id: 81bcb81b-5b1f-474b-b373-52c871aaa7b1
+name: Stop Windows Service Via Sc.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Jakob Weinzettl, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.impact
+- attack.t1489
+rule: SELECT * FROM logs WHERE (OriginalFileName='sc.exe' OR Image ILIKE '%\\sc.exe') AND CommandLine ILIKE '% stop %'

@@ -1,0 +1,16 @@
+id: 95afc12e-3cbb-40c3-9340-84a032e596a3
+name: Service Registry Permissions Weakness Check
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.execution
+- attack.stealth
+- attack.t1574.011
+- stp.2a
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%get-acl%' AND ScriptBlockText ILIKE '%REGISTRY::HKLM\\SYSTEM\\CurrentControlSet\\Services\\%'

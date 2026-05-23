@@ -1,0 +1,12 @@
+id: 3e102cd9-a70d-4a7a-9508-403963092f31
+name: Linux Network Service Scanning Tools Execution
+level: 3
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community, Georg Lauenstein (sure[secure])
+group: linux
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%/nc' OR Image ILIKE '%/ncat' OR Image ILIKE '%/netcat' OR Image ILIKE '%/socat') AND (NOT (CommandLine ILIKE '% --listen %' OR CommandLine ILIKE '% -l %'))) OR (Image ILIKE '%/autorecon' OR Image ILIKE '%/hping' OR Image ILIKE '%/hping2' OR Image ILIKE '%/hping3' OR Image ILIKE '%/naabu' OR Image ILIKE '%/nmap' OR Image ILIKE '%/nping' OR Image ILIKE '%/telnet' OR Image ILIKE '%/zenmap')

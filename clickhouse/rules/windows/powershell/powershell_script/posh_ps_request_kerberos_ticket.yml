@@ -1,0 +1,12 @@
+id: a861d835-af37-4930-bcd6-5b178bfb54df
+name: Suspicious Kerberos Ticket Request via PowerShell Script - ScriptBlock
+level: 8
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1558.003
+rule: SELECT * FROM logs WHERE ScriptBlockText ILIKE '%System.IdentityModel.Tokens.KerberosRequestorSecurityToken%' AND ScriptBlockText ILIKE '%.GetRequest()%'

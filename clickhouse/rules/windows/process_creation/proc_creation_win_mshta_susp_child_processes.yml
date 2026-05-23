@@ -1,0 +1,15 @@
+id: 03cc0c25-389f-4bf8-b48d-11878079f1ca
+name: Suspicious MSHTA Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Michael Haag
+group: windows
+tags:
+- attack.stealth
+- attack.t1218.005
+- car.2013-02-003
+- car.2013-03-001
+- car.2014-04-003
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\mshta.exe' AND ((Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\wscript.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\sh.exe' OR Image ILIKE '%\\bash.exe' OR Image ILIKE '%\\reg.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\bitsadmin.exe') OR (OriginalFileName IN ('Cmd.Exe', 'PowerShell.EXE', 'pwsh.dll', 'wscript.exe', 'cscript.exe', 'Bash.exe', 'reg.exe', 'REGSVR32.EXE', 'bitsadmin.exe')))

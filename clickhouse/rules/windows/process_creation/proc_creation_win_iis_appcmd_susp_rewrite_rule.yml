@@ -1,0 +1,11 @@
+id: 7c8af9b2-dcae-41a2-a9db-b28c288b5f08
+name: Suspicious IIS URL GlobalRules Rewrite Via AppCmd
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\appcmd.exe' OR OriginalFileName='appcmd.exe') AND (CommandLine ILIKE '%set%' AND CommandLine ILIKE '%config%' AND CommandLine ILIKE '%section:system.webServer/rewrite/globalRules%' AND CommandLine ILIKE '%commit:%')

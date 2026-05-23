@@ -1,0 +1,13 @@
+id: 99cf1e02-00fb-4c0d-8375-563f978dfd37
+name: Deny Service Access Using Security Descriptor Tampering Via Sc.EXE
+level: 8
+size: '>0'
+active: true
+author:
+- Jonhnathan Ribeiro, oscd.community
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1543.003
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\sc.exe' OR OriginalFileName='sc.exe') AND (CommandLine ILIKE '%sdset%' AND CommandLine ILIKE '%D;%') AND (CommandLine ILIKE '%;IU%' OR CommandLine ILIKE '%;SU%' OR CommandLine ILIKE '%;BA%' OR CommandLine ILIKE '%;SY%' OR CommandLine ILIKE '%;WD%')

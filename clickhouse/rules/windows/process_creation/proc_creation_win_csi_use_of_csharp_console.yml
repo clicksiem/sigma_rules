@@ -1,0 +1,13 @@
+id: a9e416a8-e613-4f8b-88b8-a7d1d1af2f61
+name: Suspicious Use of CSharp Interactive Console
+level: 8
+size: '>0'
+active: true
+author:
+- Michael R. (@nahamike01)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1127
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\csi.exe' AND (ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe' OR ParentImage ILIKE '%\\powershell\_ise.exe') AND OriginalFileName='csi.exe'

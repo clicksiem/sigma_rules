@@ -1,0 +1,14 @@
+id: 8a4519e8-e64a-40b6-ae85-ba8ad2177559
+name: Renamed BrowserCore.EXE Execution
+level: 8
+size: '>0'
+active: true
+author:
+- Max Altgelt (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.stealth
+- attack.t1528
+- attack.t1036.003
+rule: SELECT * FROM logs WHERE OriginalFileName='BrowserCore.exe' AND (NOT Image ILIKE '%\\BrowserCore.exe')

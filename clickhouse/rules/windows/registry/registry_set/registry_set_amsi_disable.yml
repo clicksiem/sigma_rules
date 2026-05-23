@@ -1,0 +1,12 @@
+id: aa37cbb0-da36-42cb-a90f-fdf216fc7467
+name: AMSI Disabled via Registry Modification
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\Windows Script\\Settings\\AmsiEnable' AND Details='DWORD (0x00000000)'

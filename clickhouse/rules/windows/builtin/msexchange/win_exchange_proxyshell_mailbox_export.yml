@@ -1,0 +1,12 @@
+id: 516376b4-05cd-4122-bae0-ad7641c38d48
+name: Mailbox Export to Exchange Webserver
+level: 10
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Rich Warren, Christian Burkard (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1505.003
+rule: SELECT * FROM logs WHERE ((hasToken(full_log, 'New-MailboxExportRequest') AND hasToken(full_log, ' -Mailbox ')) AND (hasToken(full_log, '-FilePath "\\\\') OR hasToken(full_log, '.aspx'))) OR (hasToken(full_log, 'New-ManagementRoleAssignment') AND hasToken(full_log, ' -Role "Mailbox Import Export"') AND hasToken(full_log, ' -User '))

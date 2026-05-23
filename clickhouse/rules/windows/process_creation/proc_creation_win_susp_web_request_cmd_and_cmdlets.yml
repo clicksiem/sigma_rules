@@ -1,0 +1,12 @@
+id: 9fc51a3c-81b3-4fa7-b35f-7c02cf10fd2d
+name: Usage Of Web Request Commands And Cmdlets
+level: 5
+size: '>0'
+active: true
+author:
+- James Pemberton / @4A616D6573, Endgame, JHasenbusch, oscd.community, Austin Songer @austinsonger
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%[System.Net.WebRequest]::create%' OR CommandLine ILIKE '%curl %' OR CommandLine ILIKE '%Invoke-RestMethod%' OR CommandLine ILIKE '%Invoke-WebRequest%' OR CommandLine ILIKE '% irm %' OR CommandLine ILIKE '%iwr %' OR CommandLine ILIKE '%Resume-BitsTransfer%' OR CommandLine ILIKE '%Start-BitsTransfer%' OR CommandLine ILIKE '%wget %' OR CommandLine ILIKE '%WinHttp.WinHttpRequest%'

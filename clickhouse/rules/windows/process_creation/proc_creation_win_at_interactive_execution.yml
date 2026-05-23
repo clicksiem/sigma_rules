@@ -1,0 +1,14 @@
+id: 60fc936d-2eb0-4543-8a13-911c750a1dfc
+name: Interactive AT Job
+level: 8
+size: '>0'
+active: true
+author:
+- E.M. Anhaus (originally from Atomic Blue Detections, Endgame), oscd.community
+group: windows
+tags:
+- attack.persistence
+- attack.execution
+- attack.privilege-escalation
+- attack.t1053.002
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\at.exe' AND CommandLine ILIKE '%interactive%'

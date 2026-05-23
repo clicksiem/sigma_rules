@@ -1,0 +1,12 @@
+id: 7c9340a9-e2ee-4e43-94c5-c54ebbea1006
+name: File And SubFolder Enumeration Via Dir Command
+level: 3
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.discovery
+- attack.t1217
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\cmd.exe' OR OriginalFileName='Cmd.Exe') AND (CommandLine ILIKE '%dir%-s%' OR CommandLine ILIKE '%dir%/s%' OR CommandLine ILIKE '%dir%–s%' OR CommandLine ILIKE '%dir%—s%' OR CommandLine ILIKE '%dir%―s%')

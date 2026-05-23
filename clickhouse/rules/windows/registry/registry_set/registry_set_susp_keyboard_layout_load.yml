@@ -1,0 +1,12 @@
+id: 34aa0252-6039-40ff-951f-939fd6ce47d8
+name: Suspicious Keyboard Layout Load
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.resource-development
+- attack.t1588.002
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\Keyboard Layout\\Preload\\%' OR TargetObject ILIKE '%\\Keyboard Layout\\Substitutes\\%') AND (Details ILIKE '%00000429%' OR Details ILIKE '%00050429%' OR Details ILIKE '%0000042a%')

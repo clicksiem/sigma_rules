@@ -1,0 +1,13 @@
+id: f674e36a-4b91-431e-8aef-f8a96c2aca35
+name: CurrentControlSet Autorun Keys Modification
+level: 5
+size: '>0'
+active: true
+author:
+- Victor Sergeev, Daniil Yugoslavskiy, Gleb Sukhodolskiy, Timur Zinniatullin, oscd.community, Tim Shelton, frack113 (split)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.t1547.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SYSTEM\\CurrentControlSet\\Control%' AND (TargetObject ILIKE '%\\Terminal Server\\WinStations\\RDP-Tcp\\InitialProgram%' OR TargetObject ILIKE '%\\Terminal Server\\Wds\\rdpwd\\StartupPrograms%' OR TargetObject ILIKE '%\\SecurityProviders\\SecurityProviders%' OR TargetObject ILIKE '%\\SafeBoot\\AlternateShell%' OR TargetObject ILIKE '%\\Print\\Providers%' OR TargetObject ILIKE '%\\Print\\Monitors%' OR TargetObject ILIKE '%\\NetworkProvider\\Order%' OR TargetObject ILIKE '%\\Lsa\\Notification Packages%' OR TargetObject ILIKE '%\\Lsa\\Authentication Packages%' OR TargetObject ILIKE '%\\BootVerificationProgram\\ImagePath%')) AND (NOT (Details='(Empty)' OR (Image ILIKE 'C:\\Windows\\System32\\spoolsv.exe' AND TargetObject ILIKE '%\\Print\\Monitors\\CutePDF Writer Monitor%' AND (Details IN ('cpwmon64\_v40.dll', 'CutePDF Writer'))) OR (Image ILIKE 'C:\\Windows\\System32\\spoolsv.exe' AND TargetObject ILIKE '%Print\\Monitors\\Appmon\\Ports\\Microsoft.Office.OneNote\_%' AND (User ILIKE '%AUTHORI%' OR User ILIKE '%AUTORI%')) OR (Image ILIKE 'C:\\Windows\\System32\\poqexec.exe' AND TargetObject ILIKE '%\\NetworkProvider\\Order\\ProviderOrder') OR (Image ILIKE 'C:\\Windows\\System32\\spoolsv.exe' AND TargetObject ILIKE '%\\Print\\Monitors\\MONVNC\\Driver' AND Details='VNCpm.dll')))

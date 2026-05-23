@@ -1,0 +1,12 @@
+id: d8b0a4fe-07a8-41be-bd39-b14afa025d95
+name: Activity from Anonymous IP Addresses
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: m365
+tags:
+- attack.command-and-control
+- attack.t1573
+rule: SELECT * FROM logs WHERE eventSource='SecurityComplianceCenter' AND eventName='Activity from anonymous IP addresses' AND status='success'

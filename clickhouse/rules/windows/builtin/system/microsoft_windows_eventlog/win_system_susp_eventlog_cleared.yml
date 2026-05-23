@@ -1,0 +1,13 @@
+id: 100ef69e-3327-481c-8e5c-6d80d9507556
+name: Important Windows Eventlog Cleared
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Tim Shelton, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.005
+- car.2016-04-002
+rule: SELECT * FROM logs WHERE EventID=104 AND Provider_Name='Microsoft-Windows-Eventlog' AND (Channel IN ('Microsoft-Windows-PowerShell/Operational', 'Microsoft-Windows-Sysmon/Operational', 'PowerShellCore/Operational', 'Security', 'System', 'Windows PowerShell'))

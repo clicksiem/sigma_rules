@@ -1,0 +1,11 @@
+id: c633622e-cab9-4eaa-bb13-66a1d68b3e47
+name: New Virtual Smart Card Created Via TpmVscMgr.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\tpmvscmgr.exe' AND OriginalFileName='TpmVscMgr.exe') AND CommandLine ILIKE '%create%'

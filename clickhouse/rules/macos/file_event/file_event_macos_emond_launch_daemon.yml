@@ -1,0 +1,13 @@
+id: 23c43900-e732-45a4-8354-63e4a6c187ce
+name: MacOS Emond Launch Daemon
+level: 5
+size: '>0'
+active: true
+author:
+- Alejandro Ortuno, oscd.community
+group: macos
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.t1546.014
+rule: SELECT * FROM logs WHERE (TargetFilename ILIKE '%/etc/emond.d/rules/%' AND TargetFilename ILIKE '%.plist') OR TargetFilename ILIKE '%/private/var/db/emondClients/%'

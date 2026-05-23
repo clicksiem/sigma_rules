@@ -1,0 +1,12 @@
+id: c7dcacd0-cc59-4004-b0a4-1d6cdebe6f3e
+name: Disable Administrative Share Creation at Startup
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.005
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Services\\LanmanServer\\Parameters\\%' AND (TargetObject ILIKE '%\\AutoShareWks' OR TargetObject ILIKE '%\\AutoShareServer') AND Details='DWORD (0x00000000)'

@@ -1,0 +1,12 @@
+id: 6c6c6282-7671-4fe9-a0ce-a2dcebdc342b
+name: Powershell XML Execute Command
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%New-Object%' AND ScriptBlockText ILIKE '%System.Xml.XmlDocument%' AND ScriptBlockText ILIKE '%.Load%') AND (ScriptBlockText ILIKE '%IEX %' OR ScriptBlockText ILIKE '%Invoke-Expression %' OR ScriptBlockText ILIKE '%Invoke-Command %' OR ScriptBlockText ILIKE '%ICM -%')

@@ -1,0 +1,12 @@
+id: 35a05c60-9012-49b6-a11f-6bab741c9f74
+name: Wget Creating Files in Tmp Directory
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: linux
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE Image ILIKE '%/wget' AND (TargetFilename ILIKE '/tmp/%' OR TargetFilename ILIKE '/var/tmp/%')

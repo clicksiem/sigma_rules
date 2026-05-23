@@ -1,0 +1,12 @@
+id: 3a8da4e0-36c1-40d2-8b29-b3e890d5172a
+name: NTDS Exfiltration Filename Patterns
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\All.cab' OR TargetFilename ILIKE '%.ntds.cleartext'

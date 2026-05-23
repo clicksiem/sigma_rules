@@ -1,0 +1,12 @@
+id: 883835a7-df45-43e4-bf1d-4268768afda4
+name: Regedit as Trusted Installer
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.t1548
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\regedit.exe' AND (ParentImage ILIKE '%\\TrustedInstaller.exe' OR ParentImage ILIKE '%\\ProcessHacker.exe')

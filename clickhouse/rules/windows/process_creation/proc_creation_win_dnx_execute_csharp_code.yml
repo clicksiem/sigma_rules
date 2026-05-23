@@ -1,0 +1,13 @@
+id: 81ebd28b-9607-4478-bf06-974ed9d53ed7
+name: Potential Application Whitelisting Bypass via Dnx.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Beyu Denis, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+- attack.t1027.004
+rule: SELECT * FROM logs WHERE Image ILIKE '%\\dnx.exe'

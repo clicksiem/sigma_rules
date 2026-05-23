@@ -1,0 +1,11 @@
+id: 0a3ff354-93fc-4273-8a03-1078782de5b7
+name: Recon Activity via SASec
+level: 8
+size: '>0'
+active: true
+author:
+- Sagie Dulce, Dekel Paz
+group: rpc_firewall
+tags:
+- attack.discovery
+rule: SELECT * FROM logs WHERE (EventLog='RPCFW' AND EventID=3 AND InterfaceUuid='378e52b0-c0a9-11cf-822d-00aa0051e40f') AND (NOT (OpNum IN (0, 1)))

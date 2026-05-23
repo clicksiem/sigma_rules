@@ -1,0 +1,12 @@
+id: 0403d67d-6227-4ea8-8145-4e72db7da120
+name: UtilityFunctions.ps1 Proxy Dll
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.stealth
+- attack.t1216
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%UtilityFunctions.ps1%' OR CommandLine ILIKE '%RegSnapin %'

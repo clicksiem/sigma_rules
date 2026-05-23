@@ -1,0 +1,12 @@
+id: 488b44e7-3781-4a71-888d-c95abfacf44d
+name: Windows Firewall Profile Disabled
+level: 5
+size: '>0'
+active: true
+author:
+- Austin Songer @austinsonger
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Set-NetFirewallProfile %' AND ScriptBlockText ILIKE '% -Enabled %' AND ScriptBlockText ILIKE '% False%') AND (ScriptBlockText ILIKE '% -All %' OR ScriptBlockText ILIKE '%Public%' OR ScriptBlockText ILIKE '%Domain%' OR ScriptBlockText ILIKE '%Private%')

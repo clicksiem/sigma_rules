@@ -1,0 +1,13 @@
+id: a3b5e3e9-1b49-4119-8b8e-0344a01f21ee
+name: Data Compressed
+level: 3
+size: '>0'
+active: true
+author:
+- Timur Zinniatullin, oscd.community
+group: linux
+tags:
+- attack.exfiltration
+- attack.collection
+- attack.t1560.001
+rule: SELECT * FROM logs WHERE (type='execve' AND a0='zip') OR (type='execve' AND a0='gzip' AND a1='-k') OR (type='execve' AND a0='tar' AND a1 ILIKE '%-c%')

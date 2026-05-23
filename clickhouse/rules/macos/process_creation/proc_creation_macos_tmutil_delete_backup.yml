@@ -1,0 +1,12 @@
+id: 452df256-da78-427a-866f-49fa04417d74
+name: Time Machine Backup Deletion Attempt Via Tmutil - MacOS
+level: 5
+size: '>0'
+active: true
+author:
+- Pratinav Chandra
+group: macos
+tags:
+- attack.impact
+- attack.t1490
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/tmutil' OR CommandLine ILIKE '%tmutil%') AND CommandLine ILIKE '%delete%'

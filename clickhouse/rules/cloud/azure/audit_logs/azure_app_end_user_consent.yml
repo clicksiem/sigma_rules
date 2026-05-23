@@ -1,0 +1,12 @@
+id: 9b2cc4c4-2ad4-416d-8e8e-ee6aa6f5035a
+name: End User Consent
+level: 3
+size: '>0'
+active: true
+author:
+- Bailey Bercik '@baileybercik', Mark Morowczynski '@markmorow'
+group: azure
+tags:
+- attack.credential-access
+- attack.t1528
+rule: SELECT * FROM logs WHERE `ConsentContext.IsAdminConsent`='false'

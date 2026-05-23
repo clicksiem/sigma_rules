@@ -1,0 +1,11 @@
+id: 1c526788-0abe-4713-862f-b520da5e5316
+name: Chromium Browser Headless Execution To Mockbin Like Site
+level: 8
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\brave.exe' OR Image ILIKE '%\\chrome.exe' OR Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\vivaldi.exe') AND CommandLine ILIKE '%--headless%' AND (CommandLine ILIKE '%://run.mocky%' OR CommandLine ILIKE '%://mockbin%')

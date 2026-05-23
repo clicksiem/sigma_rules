@@ -1,0 +1,14 @@
+id: f8ad2e2c-40b6-4117-84d7-20b89896ab23
+name: Suspicious Scan Loop Network
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1059
+- attack.discovery
+- attack.t1018
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%for %' OR CommandLine ILIKE '%foreach %') AND (CommandLine ILIKE '%nslookup%' OR CommandLine ILIKE '%ping%')

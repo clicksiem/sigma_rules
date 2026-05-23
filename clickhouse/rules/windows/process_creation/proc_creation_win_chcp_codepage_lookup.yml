@@ -1,0 +1,12 @@
+id: 7090adee-82e2-4269-bd59-80691e7c6338
+name: Console CodePage Lookup Via CHCP
+level: 5
+size: '>0'
+active: true
+author:
+- _pete_0, TheDFIRReport
+group: windows
+tags:
+- attack.discovery
+- attack.t1614.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\cmd.exe' AND (ParentCommandLine ILIKE '% -c %' OR ParentCommandLine ILIKE '% /c %' OR ParentCommandLine ILIKE '% –c %' OR ParentCommandLine ILIKE '% —c %' OR ParentCommandLine ILIKE '% ―c %' OR ParentCommandLine ILIKE '% -r %' OR ParentCommandLine ILIKE '% /r %' OR ParentCommandLine ILIKE '% –r %' OR ParentCommandLine ILIKE '% —r %' OR ParentCommandLine ILIKE '% ―r %' OR ParentCommandLine ILIKE '% -k %' OR ParentCommandLine ILIKE '% /k %' OR ParentCommandLine ILIKE '% –k %' OR ParentCommandLine ILIKE '% —k %' OR ParentCommandLine ILIKE '% ―k %') AND Image ILIKE '%\\chcp.com' AND (CommandLine ILIKE '%chcp' OR CommandLine ILIKE '%chcp ' OR CommandLine ILIKE '%chcp  ')

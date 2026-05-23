@@ -1,0 +1,11 @@
+id: 411742ad-89b0-49cb-a7b0-3971b5c1e0a4
+name: Locked Workstation
+level: 1
+size: '>0'
+active: true
+author:
+- Alexandr Yampolskyi, SOC Prime
+group: windows
+tags:
+- attack.impact
+rule: SELECT * FROM logs WHERE EventID=4800

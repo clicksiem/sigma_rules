@@ -1,0 +1,12 @@
+id: 2d5e7a8b-f484-4a24-945d-7f0efd52eab0
+name: System Information Discovery Using Ioreg
+level: 5
+size: '>0'
+active: true
+author:
+- Joseliyo Sanchez, @Joseliyo_Jstnk
+group: macos
+tags:
+- attack.discovery
+- attack.t1082
+rule: SELECT * FROM logs WHERE (Image ILIKE '%/ioreg' OR CommandLine ILIKE '%ioreg%') AND (CommandLine ILIKE '%-l%' OR CommandLine ILIKE '%-c%') AND (CommandLine ILIKE '%AppleAHCIDiskDriver%' OR CommandLine ILIKE '%IOPlatformExpertDevice%' OR CommandLine ILIKE '%Oracle%' OR CommandLine ILIKE '%Parallels%' OR CommandLine ILIKE '%USB Vendor Name%' OR CommandLine ILIKE '%VirtualBox%' OR CommandLine ILIKE '%VMware%')

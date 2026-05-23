@@ -1,0 +1,12 @@
+id: 1af57a4b-460a-4738-9034-db68b880c665
+name: PowerShell SAM Copy
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.002
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%\\HarddiskVolumeShadowCopy%' AND CommandLine ILIKE '%System32\\config\\sam%') AND (CommandLine ILIKE '%Copy-Item%' OR CommandLine ILIKE '%cp $\_.%' OR CommandLine ILIKE '%cpi $\_.%' OR CommandLine ILIKE '%copy $\_.%' OR CommandLine ILIKE '%.File]::Copy(%')

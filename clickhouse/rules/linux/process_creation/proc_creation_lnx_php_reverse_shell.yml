@@ -1,0 +1,11 @@
+id: c6714a24-d7d5-4283-a36b-3ffd091d5f7e
+name: Potential PHP Reverse Shell
+level: 8
+size: '>0'
+active: true
+author:
+- '@d4ns4n_'
+group: linux
+tags:
+- attack.execution
+rule: SELECT * FROM logs WHERE Image ILIKE '%/php%' AND (CommandLine ILIKE '% -r %' AND CommandLine ILIKE '%fsockopen%') AND (CommandLine ILIKE '%ash%' OR CommandLine ILIKE '%bash%' OR CommandLine ILIKE '%bsh%' OR CommandLine ILIKE '%csh%' OR CommandLine ILIKE '%ksh%' OR CommandLine ILIKE '%pdksh%' OR CommandLine ILIKE '%sh%' OR CommandLine ILIKE '%tcsh%' OR CommandLine ILIKE '%zsh%')

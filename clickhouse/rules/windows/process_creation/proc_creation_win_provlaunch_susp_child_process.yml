@@ -1,0 +1,12 @@
+id: f9999590-1f94-4a34-a91e-951e47bedefd
+name: Suspicious Provlaunch.EXE Child Process
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\provlaunch.exe' AND ((Image ILIKE '%\\calc.exe' OR Image ILIKE '%\\cmd.exe' OR Image ILIKE '%\\cscript.exe' OR Image ILIKE '%\\mshta.exe' OR Image ILIKE '%\\notepad.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe' OR Image ILIKE '%\\regsvr32.exe' OR Image ILIKE '%\\rundll32.exe' OR Image ILIKE '%\\wscript.exe') OR (Image ILIKE '%:\\PerfLogs\\%' OR Image ILIKE '%:\\Temp\\%' OR Image ILIKE '%:\\Users\\Public\\%' OR Image ILIKE '%\\AppData\\Temp\\%' OR Image ILIKE '%\\Windows\\System32\\Tasks\\%' OR Image ILIKE '%\\Windows\\Tasks\\%' OR Image ILIKE '%\\Windows\\Temp\\%'))

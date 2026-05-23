@@ -1,0 +1,12 @@
+id: 74c01ace-0152-4094-8ae2-6fd776dd43e5
+name: File or Folder Permissions Change
+level: 3
+size: '>0'
+active: true
+author:
+- Jakob Weinzettl, oscd.community
+group: linux
+tags:
+- attack.defense-impairment
+- attack.t1222.002
+rule: SELECT * FROM logs WHERE type='EXECVE' AND (a0 ILIKE '%chmod%' OR a0 ILIKE '%chown%')

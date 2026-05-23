@@ -1,0 +1,12 @@
+id: 4e7050dd-e548-483f-b7d6-527ab4fa784d
+name: NTDS.DIT Creation By Uncommon Parent Process
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.003
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\ntds.dit' AND ((ParentImage ILIKE '%\\cscript.exe' OR ParentImage ILIKE '%\\httpd.exe' OR ParentImage ILIKE '%\\nginx.exe' OR ParentImage ILIKE '%\\php-cgi.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe' OR ParentImage ILIKE '%\\w3wp.exe' OR ParentImage ILIKE '%\\wscript.exe') OR (ParentImage ILIKE '%\\apache%' OR ParentImage ILIKE '%\\tomcat%' OR ParentImage ILIKE '%\\AppData\\%' OR ParentImage ILIKE '%\\Temp\\%' OR ParentImage ILIKE '%\\Public\\%' OR ParentImage ILIKE '%\\PerfLogs\\%'))

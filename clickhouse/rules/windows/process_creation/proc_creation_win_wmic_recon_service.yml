@@ -1,0 +1,12 @@
+id: 76f55eaa-d27f-4213-9d45-7b0e4b60bbae
+name: Service Reconnaissance Via Wmic.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- frack113, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.t1047
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\WMIC.exe' OR OriginalFileName='wmic.exe') AND CommandLine ILIKE '%service%') AND (NOT (CommandLine ILIKE '%Change%' OR CommandLine ILIKE '%Create%' OR CommandLine ILIKE '%Delete%' OR CommandLine ILIKE '%PauseService%' OR CommandLine ILIKE '%ResumeService%' OR CommandLine ILIKE '%SetSecurityDescriptor%' OR CommandLine ILIKE '%StartService%' OR CommandLine ILIKE '%StopService%' OR CommandLine ILIKE '%UserControlService%'))

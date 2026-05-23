@@ -1,0 +1,15 @@
+id: 844f8eb2-610b-42c8-89a4-47596e089663
+name: Potential ShellDispatch.DLL Sideloading
+level: 5
+size: '>0'
+active: true
+author:
+- X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.privilege-escalation
+- attack.execution
+- attack.stealth
+- attack.t1574.001
+rule: SELECT * FROM logs WHERE ImageLoaded ILIKE '%\\ShellDispatch.dll' AND (NOT ((ImageLoaded ILIKE '%:\\Users\\%' AND ImageLoaded ILIKE '%\\AppData\\Local\\Temp\\%') OR ImageLoaded ILIKE '%:\\Windows\\Temp\\%'))

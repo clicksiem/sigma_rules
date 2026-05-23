@@ -1,0 +1,11 @@
+id: 086ae989-9ca6-4fe7-895a-759c5544f247
+name: Potential Persistence Via TypedPaths
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+rule: SELECT * FROM logs WHERE TargetObject ILIKE '%\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\TypedPaths\\%' AND (NOT (Image IN ('C:\\Windows\\explorer.exe', 'C:\\Windows\\SysWOW64\\explorer.exe')))

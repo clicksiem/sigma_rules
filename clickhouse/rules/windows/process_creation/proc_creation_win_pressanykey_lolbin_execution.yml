@@ -1,0 +1,13 @@
+id: a20391f8-76fb-437b-abc0-dba2df1952c6
+name: Visual Studio NodejsTools PressAnyKey Arbitrary Binary Execution
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\Microsoft.NodejsTools.PressAnyKey.exe'

@@ -1,0 +1,12 @@
+id: fc028194-969d-4122-8abe-0470d5b8f12f
+name: Access to Browser Login Data
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.credential-access
+- attack.t1555.003
+rule: SELECT * FROM logs WHERE (ScriptBlockText ILIKE '%Copy-Item%' AND ScriptBlockText ILIKE '%-Destination%') AND (ScriptBlockText ILIKE '%\\Opera Software\\Opera Stable\\Login Data%' OR ScriptBlockText ILIKE '%\\Mozilla\\Firefox\\Profiles%' OR ScriptBlockText ILIKE '%\\Microsoft\\Edge\\User Data\\Default%' OR ScriptBlockText ILIKE '%\\Google\\Chrome\\User Data\\Default\\Login Data%' OR ScriptBlockText ILIKE '%\\Google\\Chrome\\User Data\\Default\\Login Data For Account%')

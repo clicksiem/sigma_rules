@@ -1,0 +1,15 @@
+id: 5afa454e-030c-4ab4-9253-a90aa7fcc581
+name: Device Registration or Join Without MFA
+level: 5
+size: '>0'
+active: true
+author:
+- Michael Epping, '@mepples21'
+group: azure
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.initial-access
+- attack.stealth
+- attack.t1078.004
+rule: SELECT * FROM logs WHERE (ResourceDisplayName='Device Registration Service' AND conditionalAccessStatus='success') AND (NOT AuthenticationRequirement='multiFactorAuthentication')

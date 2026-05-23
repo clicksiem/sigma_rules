@@ -1,0 +1,13 @@
+id: 84b777bd-c946-4d17-aa2e-c39f5a454325
+name: RBAC Permission Enumeration Attempt
+level: 3
+size: '>0'
+active: true
+author:
+- Leo Tsaousis (@laripping)
+group: kubernetes
+tags:
+- attack.t1069.003
+- attack.t1087.004
+- attack.discovery
+rule: SELECT * FROM logs WHERE verb='create' AND apiGroup='authorization.k8s.io' AND `objectRef.resource`='selfsubjectrulesreviews'

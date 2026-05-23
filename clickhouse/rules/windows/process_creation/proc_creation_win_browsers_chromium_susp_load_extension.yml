@@ -1,0 +1,12 @@
+id: 27ba3207-dd30-4812-abbf-5d20c57d474e
+name: Suspicious Chromium Browser Instance Executed With Custom Extension
+level: 8
+size: '>0'
+active: true
+author:
+- Aedan Russell, frack113, X__Junior (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.t1176.001
+rule: SELECT * FROM logs WHERE (ParentImage ILIKE '%\\cmd.exe' OR ParentImage ILIKE '%\\cscript.exe' OR ParentImage ILIKE '%\\mshta.exe' OR ParentImage ILIKE '%\\powershell.exe' OR ParentImage ILIKE '%\\pwsh.exe' OR ParentImage ILIKE '%\\regsvr32.exe' OR ParentImage ILIKE '%\\rundll32.exe' OR ParentImage ILIKE '%\\wscript.exe') AND (Image ILIKE '%\\brave.exe' OR Image ILIKE '%\\chrome.exe' OR Image ILIKE '%\\msedge.exe' OR Image ILIKE '%\\opera.exe' OR Image ILIKE '%\\vivaldi.exe') AND CommandLine ILIKE '%--load-extension=%'

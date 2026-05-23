@@ -1,0 +1,12 @@
+id: fed85bf9-e075-4280-9159-fbe8a023d6fa
+name: Advanced IP Scanner - File Event
+level: 5
+size: '>0'
+active: true
+author:
+- '@ROxPinTeddy'
+group: windows
+tags:
+- attack.discovery
+- attack.t1046
+rule: SELECT * FROM logs WHERE TargetFilename ILIKE '%\\AppData\\Local\\Temp\\Advanced IP Scanner 2%'

@@ -1,0 +1,12 @@
+id: eae8ce9f-bde9-47a6-8e79-f20d18419910
+name: Suspicious History File Operations - Linux
+level: 5
+size: '>0'
+active: true
+author:
+- Mikhail Larin, oscd.community
+group: linux
+tags:
+- attack.credential-access
+- attack.t1552.003
+rule: SELECT * FROM logs WHERE type='EXECVE' AND (hasToken(full_log, '.bash\_history') OR hasToken(full_log, '.zsh\_history') OR hasToken(full_log, '.zhistory') OR hasToken(full_log, '.history') OR hasToken(full_log, '.sh\_history') OR hasToken(full_log, 'fish\_history'))

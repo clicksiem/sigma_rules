@@ -1,0 +1,12 @@
+id: 3d7679bd-0c00-440c-97b0-3f204273e6c7
+name: New Process Created Via Taskmgr.EXE
+level: 3
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+- attack.t1036
+rule: SELECT * FROM logs WHERE ParentImage ILIKE '%\\taskmgr.exe' AND (NOT (Image ILIKE '%:\\Windows\\System32\\mmc.exe' OR Image ILIKE '%:\\Windows\\System32\\resmon.exe' OR Image ILIKE '%:\\Windows\\System32\\Taskmgr.exe'))

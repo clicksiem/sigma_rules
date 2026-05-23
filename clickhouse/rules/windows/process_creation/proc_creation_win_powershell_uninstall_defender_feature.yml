@@ -1,0 +1,12 @@
+id: c443012c-7928-43bf-ac20-7eda5efe61ad
+name: Suspicious Uninstall of Windows Defender Feature via PowerShell
+level: 8
+size: '>0'
+active: true
+author:
+- yxinmiracle
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((Image ILIKE '%\\powershell\_ise.exe' OR Image ILIKE '%\\powershell.exe' OR Image ILIKE '%\\pwsh.exe') OR (OriginalFileName IN ('PowerShell\_ISE.EXE', 'PowerShell.EXE', 'pwsh.dll'))) AND (CommandLine ILIKE '%Uninstall-WindowsFeature%' OR CommandLine ILIKE '%Remove-WindowsFeature%') AND CommandLine ILIKE '%Windows-Defender%'

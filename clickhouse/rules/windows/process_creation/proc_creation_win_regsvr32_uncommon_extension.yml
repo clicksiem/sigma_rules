@@ -1,0 +1,15 @@
+id: 50919691-7302-437f-8e10-1fe088afa145
+name: Regsvr32 DLL Execution With Uncommon Extension
+level: 5
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems)
+group: windows
+tags:
+- attack.privilege-escalation
+- attack.persistence
+- attack.stealth
+- attack.t1574
+- attack.execution
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\regsvr32.exe' OR OriginalFileName='REGSVR32.EXE') AND (NOT ((CommandLine ILIKE '%.ax%' OR CommandLine ILIKE '%.cpl%' OR CommandLine ILIKE '%.dll%' OR CommandLine ILIKE '%.ocx%') OR isNull(CommandLine) OR CommandLine='')) AND (NOT (CommandLine ILIKE '%.ppl%' OR CommandLine ILIKE '%.bav%'))

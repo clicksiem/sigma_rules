@@ -1,0 +1,12 @@
+id: 26b692dc-1722-49b2-b496-a8258aa6371d
+name: Clear PowerShell History - PowerShell
+level: 5
+size: '>0'
+active: true
+author:
+- Ilyas Ochkov, Jonhnathan Ribeiro, Daniil Yugoslavskiy, oscd.community
+group: windows
+tags:
+- attack.stealth
+- attack.t1070.003
+rule: SELECT * FROM logs WHERE ((ScriptBlockText ILIKE '%Set-PSReadlineOption%' AND ScriptBlockText ILIKE '%–HistorySaveStyle%' AND ScriptBlockText ILIKE '%SaveNothing%') OR (ScriptBlockText ILIKE '%Set-PSReadlineOption%' AND ScriptBlockText ILIKE '%-HistorySaveStyle%' AND ScriptBlockText ILIKE '%SaveNothing%')) OR ((ScriptBlockText ILIKE '%del%' OR ScriptBlockText ILIKE '%Remove-Item%' OR ScriptBlockText ILIKE '%rm%') AND ScriptBlockText ILIKE '%(Get-PSReadlineOption).HistorySavePath%')

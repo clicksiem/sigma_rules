@@ -1,0 +1,12 @@
+id: 0cb8d736-995d-4ce7-a31e-1e8d452a1459
+name: Potential EventLog File Location Tampering
+level: 8
+size: '>0'
+active: true
+author:
+- D3F7A5105
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685.001
+rule: SELECT * FROM logs WHERE (TargetObject ILIKE '%\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\%' AND TargetObject ILIKE '%\\File') AND (NOT Details ILIKE '%\\System32\\Winevt\\Logs\\%')

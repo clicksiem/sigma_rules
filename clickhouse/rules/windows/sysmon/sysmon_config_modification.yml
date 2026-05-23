@@ -1,0 +1,11 @@
+id: 8ac03a65-6c84-4116-acad-dc1558ff7a77
+name: Sysmon Configuration Change
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+rule: SELECT * FROM logs WHERE EventID=16

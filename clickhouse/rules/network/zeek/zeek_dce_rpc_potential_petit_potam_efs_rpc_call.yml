@@ -1,0 +1,14 @@
+id: 4096842a-8f9f-4d36-92b4-d0b2a62f9b2a
+name: Potential PetitPotam Attack Via EFS RPC Calls
+level: 5
+size: '>0'
+active: true
+author:
+- '@neu5ron, @Antonlovesdnb, Mike Remen'
+group: zeek
+tags:
+- attack.collection
+- attack.credential-access
+- attack.t1557.001
+- attack.t1187
+rule: SELECT * FROM logs WHERE operation ILIKE 'efs%'

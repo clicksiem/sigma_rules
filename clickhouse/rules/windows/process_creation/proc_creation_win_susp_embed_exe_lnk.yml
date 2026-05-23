@@ -1,0 +1,12 @@
+id: 30e92f50-bb5a-4884-98b5-d20aa80f3d7a
+name: Hidden Powershell in Link File Pattern
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.execution
+- attack.t1059.001
+rule: SELECT * FROM logs WHERE ParentImage ILIKE 'C:\\Windows\\explorer.exe' AND Image ILIKE 'C:\\Windows\\System32\\cmd.exe' AND (CommandLine ILIKE '%powershell%' AND CommandLine ILIKE '%.lnk%')

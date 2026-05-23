@@ -1,0 +1,11 @@
+id: a383dec4-deec-4e6e-913b-ed9249670848
+name: Potential Signing Bypass Via Windows Developer Features
+level: 8
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.stealth
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\SystemSettingsAdminFlows.exe' OR OriginalFileName='SystemSettingsAdminFlows.EXE') AND CommandLine ILIKE '%TurnOnDeveloperFeatures%' AND (CommandLine ILIKE '%DeveloperUnlock%' OR CommandLine ILIKE '%EnableSideloading%')

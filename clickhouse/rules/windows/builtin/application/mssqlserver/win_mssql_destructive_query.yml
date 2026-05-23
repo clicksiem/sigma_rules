@@ -1,0 +1,13 @@
+id: 00321fee-ca72-4cce-b011-5415af3b9960
+name: MSSQL Destructive Query
+level: 5
+size: '>0'
+active: true
+author:
+- Daniel Degasperi '@d4ns4n_'
+group: windows
+tags:
+- attack.exfiltration
+- attack.impact
+- attack.t1485
+rule: SELECT * FROM logs WHERE Provider_Name='MSSQLSERVER$AUDIT' AND EventID=33205 AND (Data ILIKE '%statement:TRUNCATE TABLE%' OR Data ILIKE '%statement:DROP TABLE%' OR Data ILIKE '%statement:DROP DATABASE%')

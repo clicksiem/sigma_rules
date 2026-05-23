@@ -1,0 +1,12 @@
+id: ffa6861c-4461-4f59-8a41-578c39f3f23e
+name: LSASS Dump Keyword In CommandLine
+level: 8
+size: '>0'
+active: true
+author:
+- E.M. Anhaus, Tony Lambert, oscd.community, Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.credential-access
+- attack.t1003.001
+rule: SELECT * FROM logs WHERE (CommandLine ILIKE '%lsass.dmp%' OR CommandLine ILIKE '%lsass.zip%' OR CommandLine ILIKE '%lsass.rar%' OR CommandLine ILIKE '%Andrew.dmp%' OR CommandLine ILIKE '%Coredump.dmp%' OR CommandLine ILIKE '%NotLSASS.zip%' OR CommandLine ILIKE '%lsass\_2%' OR CommandLine ILIKE '%lsassdump%' OR CommandLine ILIKE '%lsassdmp%') OR (CommandLine ILIKE '%lsass%' AND CommandLine ILIKE '%.dmp%') OR (CommandLine ILIKE '%SQLDmpr%' AND CommandLine ILIKE '%.mdmp%') OR (CommandLine ILIKE '%nanodump%' AND CommandLine ILIKE '%.dmp%')

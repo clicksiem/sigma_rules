@@ -1,0 +1,12 @@
+id: 02b64f1b-3f33-4e67-aede-ef3b0a5a8fcf
+name: Potential COM Objects Download Cradles Usage - Process Creation
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.command-and-control
+- attack.t1105
+rule: SELECT * FROM logs WHERE CommandLine ILIKE '%[Type]::GetTypeFromCLSID(%' AND (CommandLine ILIKE '%0002DF01-0000-0000-C000-000000000046%' OR CommandLine ILIKE '%F6D90F16-9C73-11D3-B32E-00C04F990BB4%' OR CommandLine ILIKE '%F5078F35-C551-11D3-89B9-0000F81FE221%' OR CommandLine ILIKE '%88d96a0a-f192-11d4-a65f-0040963251e5%' OR CommandLine ILIKE '%AFBA6B42-5692-48EA-8141-DC517DCF0EF1%' OR CommandLine ILIKE '%AFB40FFD-B609-40A3-9828-F88BBE11E4E3%' OR CommandLine ILIKE '%88d96a0b-f192-11d4-a65f-0040963251e5%' OR CommandLine ILIKE '%2087c2f4-2cef-4953-a8ab-66779b670495%' OR CommandLine ILIKE '%000209FF-0000-0000-C000-000000000046%' OR CommandLine ILIKE '%00024500-0000-0000-C000-000000000046%')

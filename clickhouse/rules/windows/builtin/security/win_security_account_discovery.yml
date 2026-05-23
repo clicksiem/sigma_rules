@@ -1,0 +1,12 @@
+id: 35ba1d85-724d-42a3-889f-2e2362bcaf23
+name: AD Privileged Users or Groups Reconnaissance
+level: 8
+size: '>0'
+active: true
+author:
+- Samir Bousseaden
+group: windows
+tags:
+- attack.discovery
+- attack.t1087.002
+rule: SELECT * FROM logs WHERE (EventID=4661 AND (ObjectType IN ('SAM\_USER', 'SAM\_GROUP'))) AND ((ObjectName ILIKE '%-512' OR ObjectName ILIKE '%-502' OR ObjectName ILIKE '%-500' OR ObjectName ILIKE '%-505' OR ObjectName ILIKE '%-519' OR ObjectName ILIKE '%-520' OR ObjectName ILIKE '%-544' OR ObjectName ILIKE '%-551' OR ObjectName ILIKE '%-555') OR ObjectName ILIKE '%admin%') AND (NOT SubjectUserName ILIKE '%$')

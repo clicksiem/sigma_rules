@@ -1,0 +1,15 @@
+id: 8839e550-52d7-4958-9f2f-e13c1e736838
+name: Security Event Logging Disabled via MiniNt Registry Key - Registry Set
+level: 8
+size: '>0'
+active: true
+author:
+- Swachchhanda Shrawan Poudel (Nextron Systems)
+group: windows
+tags:
+- attack.persistence
+- attack.defense-impairment
+- attack.t1685.001
+- attack.t1112
+- car.2022-03-001
+rule: SELECT * FROM logs WHERE TargetObject ILIKE 'HKLM\\System\\CurrentControlSet\\Control\\MiniNt\\(Default)'

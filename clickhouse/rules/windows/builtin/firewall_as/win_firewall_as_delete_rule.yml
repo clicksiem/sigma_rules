@@ -1,0 +1,12 @@
+id: c187c075-bb3e-4c62-b4fa-beae0ffc211f
+name: A Rule Has Been Deleted From The Windows Firewall Exception List
+level: 5
+size: '>0'
+active: true
+author:
+- frack113
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1686.003
+rule: SELECT * FROM logs WHERE (EventID IN (2006, 2052)) AND (NOT ((ModifyingApplication ILIKE 'C:\\Program Files (x86)\\%' OR ModifyingApplication ILIKE 'C:\\Program Files\\%' OR ModifyingApplication ILIKE 'C:\\Windows\\WinSxS\\%') OR ModifyingApplication ILIKE 'C:\\Windows\\System32\\svchost.exe' OR isNull(ModifyingApplication) OR ModifyingApplication='')) AND (NOT (ModifyingApplication ILIKE 'C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\%' AND ModifyingApplication ILIKE '%\\MsMpEng.exe'))

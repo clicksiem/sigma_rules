@@ -1,0 +1,12 @@
+id: 847d5ff3-8a31-4737-a970-aeae8fe21765
+name: Potential Tampering With Security Products Via WMIC
+level: 8
+size: '>0'
+active: true
+author:
+- Florian Roth (Nextron Systems), Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.defense-impairment
+- attack.t1685
+rule: SELECT * FROM logs WHERE ((CommandLine ILIKE '%wmic%' AND CommandLine ILIKE '%product where %' AND CommandLine ILIKE '%call%' AND CommandLine ILIKE '%uninstall%' AND CommandLine ILIKE '%/nointeractive%') OR ((CommandLine ILIKE '%wmic%' AND CommandLine ILIKE '%caption like %') AND (CommandLine ILIKE '%call delete%' OR CommandLine ILIKE '%call terminate%')) OR (CommandLine ILIKE '%process %' AND CommandLine ILIKE '%where %' AND CommandLine ILIKE '%delete%')) AND (CommandLine ILIKE '%\%carbon\%%' OR CommandLine ILIKE '%\%cylance\%%' OR CommandLine ILIKE '%\%endpoint\%%' OR CommandLine ILIKE '%\%eset\%%' OR CommandLine ILIKE '%\%malware\%%' OR CommandLine ILIKE '%\%Sophos\%%' OR CommandLine ILIKE '%\%symantec\%%' OR CommandLine ILIKE '%Antivirus%' OR CommandLine ILIKE '%AVG %' OR CommandLine ILIKE '%Carbon Black%' OR CommandLine ILIKE '%CarbonBlack%' OR CommandLine ILIKE '%Cb Defense Sensor 64-bit%' OR CommandLine ILIKE '%Crowdstrike Sensor%' OR CommandLine ILIKE '%Cylance %' OR CommandLine ILIKE '%Dell Threat Defense%' OR CommandLine ILIKE '%DLP Endpoint%' OR CommandLine ILIKE '%Endpoint Detection%' OR CommandLine ILIKE '%Endpoint Protection%' OR CommandLine ILIKE '%Endpoint Security%' OR CommandLine ILIKE '%Endpoint Sensor%' OR CommandLine ILIKE '%ESET File Security%' OR CommandLine ILIKE '%LogRhythm System Monitor Service%' OR CommandLine ILIKE '%Malwarebytes%' OR CommandLine ILIKE '%McAfee Agent%' OR CommandLine ILIKE '%Microsoft Security Client%' OR CommandLine ILIKE '%Sophos Anti-Virus%' OR CommandLine ILIKE '%Sophos AutoUpdate%' OR CommandLine ILIKE '%Sophos Credential Store%' OR CommandLine ILIKE '%Sophos Management Console%' OR CommandLine ILIKE '%Sophos Management Database%' OR CommandLine ILIKE '%Sophos Management Server%' OR CommandLine ILIKE '%Sophos Remote Management System%' OR CommandLine ILIKE '%Sophos Update Manager%' OR CommandLine ILIKE '%Threat Protection%' OR CommandLine ILIKE '%VirusScan%' OR CommandLine ILIKE '%Webroot SecureAnywhere%' OR CommandLine ILIKE '%Windows Defender%')

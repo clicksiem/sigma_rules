@@ -1,0 +1,13 @@
+id: b124ddf4-778d-418e-907f-6dd3fc0d31cd
+name: Arbitrary File Download Via PresentationHost.EXE
+level: 5
+size: '>0'
+active: true
+author:
+- Nasreddine Bencherchali (Nextron Systems)
+group: windows
+tags:
+- attack.execution
+- attack.stealth
+- attack.t1218
+rule: SELECT * FROM logs WHERE (Image ILIKE '%\\presentationhost.exe' OR OriginalFileName='PresentationHost.exe') AND (CommandLine ILIKE '%http://%' OR CommandLine ILIKE '%https://%' OR CommandLine ILIKE '%ftp://%')
