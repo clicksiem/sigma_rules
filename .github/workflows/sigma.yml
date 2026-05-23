@@ -19,4 +19,4 @@ jobs:
         run: uv sync
 
       - name: Run update script
-        run: ./scripts/update.sh
+        run: bash ./scripts/update.sh
