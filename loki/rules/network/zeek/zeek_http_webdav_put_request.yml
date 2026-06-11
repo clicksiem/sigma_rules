@@ -1,0 +1,1 @@
+{job=~".+"} | json | user_agent=~`(?i).*WebDAV.*` and method=~`(?i)^PUT$` and id.resp_h!=ip("10.0.0.0/8") and id.resp_h!=ip("127.0.0.0/8") and id.resp_h!=ip("172.16.0.0/12") and id.resp_h!=ip("192.168.0.0/16") and id.resp_h!=ip("169.254.0.0/16")

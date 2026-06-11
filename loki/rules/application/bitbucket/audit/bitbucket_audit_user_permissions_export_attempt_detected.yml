@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | auditType_category=~`(?i)^Users\ and\ groups$` and (auditType_action=~`(?i)^User\ details\ export\ failed$` or auditType_action=~`(?i)^User\ details\ export\ started$` or auditType_action=~`(?i)^User\ details\ exported$`)

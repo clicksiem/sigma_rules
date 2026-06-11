@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Remove\-EtwTraceProvider\ .*` or ScriptBlockText=~`(?i).*Set\-EtwTraceProvider\ .*` and ScriptBlockText=~`(?i).*0x11.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\gpscript\.exe$` or OriginalFileName=~`(?i)^GPSCRIPT\.EXE$`) and (CommandLine=~`(?i).*\ /logon.*` or CommandLine=~`(?i).*\ /startup.*`) and ParentCommandLine!~`(?i)^C:\\windows\\system32\\svchost\.exe\ \-k\ netsvcs\ \-p\ \-s\ gpsvc$`

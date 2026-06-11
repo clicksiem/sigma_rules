@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\Psr\.exe$` and (CommandLine=~`(?i).*/start.*` or CommandLine=~`(?i).*\-start.*`)

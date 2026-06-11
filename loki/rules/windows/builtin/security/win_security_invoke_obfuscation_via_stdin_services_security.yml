@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4697 and ServiceFileName=~`(?i).*set.*` and ServiceFileName=~`(?i).*\&\&.*` and (ServiceFileName=~`(?i).*environment.*` or ServiceFileName=~`(?i).*invoke.*` or ServiceFileName=~`(?i).*\$\{input\).*`)

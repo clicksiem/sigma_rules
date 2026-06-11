@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~"(?i)echo.*clip.*&&.*(Clipboard|i`?n`?v`?o`?k`?e`?)"

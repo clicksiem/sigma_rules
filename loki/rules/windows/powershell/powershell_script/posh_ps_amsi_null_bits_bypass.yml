@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*if\(0\)\{\{\{0\}\}\}'\ \-f\ \$\(0\ \-as\ \[char\]\)\ \+.*` or ScriptBlockText=~`(?i).*\#<NULL>.*`

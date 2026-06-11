@@ -1,0 +1,1 @@
+{job=~".+"} | json | name=~`(?i).*\.pst$` or name=~`(?i).*\.ost$` or name=~`(?i).*\.msg$` or name=~`(?i).*\.nst$` or name=~`(?i).*\.oab$` or name=~`(?i).*\.edb$` or name=~`(?i).*\.nsf$` or name=~`(?i).*\.bak$` or name=~`(?i).*\.dmp$` or name=~`(?i).*\.kirbi$` or name=~`(?i).*\.rdp$`

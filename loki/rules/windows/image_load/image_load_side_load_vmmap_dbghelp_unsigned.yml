@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*C:\\Debuggers\\dbghelp\.dll.*` and (Image=~`(?i).*\\vmmap\.exe$` or Image=~`(?i).*\\vmmap64\.exe$`) and Signed!~`(?i)^true$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\[System\.Environment\]::UserName.*` or ScriptBlockText=~`(?i).*\$env:UserName.*` or ScriptBlockText=~`(?i).*\[System\.Security\.Principal\.WindowsIdentity\]::GetCurrent\(\).*`

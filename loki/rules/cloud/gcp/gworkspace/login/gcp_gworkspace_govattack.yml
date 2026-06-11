@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | protoPayload_serviceName=~`(?i)^login\.googleapis\.com$` and protoPayload_metadata_event_eventName=~`(?i)^gov_attack_warning$`

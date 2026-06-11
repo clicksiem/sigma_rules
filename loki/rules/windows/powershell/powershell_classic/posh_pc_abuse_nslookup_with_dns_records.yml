@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Data=~`(?i).*powershell.*` and Data=~`(?i).*nslookup.*` and Data=~`(?i).*\[1\].*` and (Data=~`(?i).*\-q=txt\ http.*` or Data=~`(?i).*\-querytype=txt\ http.*` or Data=~`(?i).*\-type=txt\ http.*`)

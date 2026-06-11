@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/sudo$` and CommandLine=~`(?i).*execve_hijack.*`

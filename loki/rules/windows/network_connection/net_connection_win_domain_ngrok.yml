@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and (DestinationHostname=~`(?i).*\.ngrok\-free\.app$` or DestinationHostname=~`(?i).*\.ngrok\-free\.dev$` or DestinationHostname=~`(?i).*\.ngrok\.app$` or DestinationHostname=~`(?i).*\.ngrok\.dev$` or DestinationHostname=~`(?i).*\.ngrok\.io$`)

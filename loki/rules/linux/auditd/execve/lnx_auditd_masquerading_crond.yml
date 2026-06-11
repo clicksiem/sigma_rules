@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^execve$` and a0=~`(?i)^cp$` and a1=~`(?i)^/bin/sh$` and a2=~`(?i).*/crond$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*winrm.*` and (CommandLine=~`(?i).*format:pretty.*` or CommandLine=~`(?i).*format:"pretty".*` or CommandLine=~`(?i).*format:"text".*` or CommandLine=~`(?i).*format:text.*`) and Image!~`(?i)^C:\\Windows\\System32\\.*` and Image!~`(?i)^C:\\Windows\\SysWOW64\\.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | json | request_type=~`(?i)^TGS$` and cipher=~`(?i)^rc4\-hmac$` and service!~`(?i)^\$.*`

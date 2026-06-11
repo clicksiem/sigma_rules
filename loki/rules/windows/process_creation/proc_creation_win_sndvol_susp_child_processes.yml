@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\SndVol\.exe$` and (Image!~`(?i).*\\rundll32\.exe$` or CommandLine!~`(?i).*\ shell32\.dll,Control_RunDLL\ .*`)

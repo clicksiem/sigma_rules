@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i)^C:\\Windows\\SysWOW64\\setup16\.exe$` and ParentCommandLine=~`(?i).*\ \-m\ .*` and Image!~`(?i)^C:\\\~MSSETUP\.T\\.*`

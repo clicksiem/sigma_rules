@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Services\\LanmanServer\\Parameters\\MaxMpxCt$`

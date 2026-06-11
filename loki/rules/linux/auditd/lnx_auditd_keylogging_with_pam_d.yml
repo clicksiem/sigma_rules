@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^PATH$` and (name=~`(?i)^/etc/pam\.d/system\-auth$` or name=~`(?i)^/etc/pam\.d/password\-auth$`) or type=~`(?i)^TTY$` or type=~`(?i)^USER_TTY$`

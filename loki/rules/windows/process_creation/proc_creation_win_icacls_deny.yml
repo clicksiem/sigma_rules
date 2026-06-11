@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^iCACLS\.EXE$` or Image=~`(?i).*\\icacls\.exe$`) and CommandLine=~`(?i).*/deny.*` and CommandLine=~`(?i).*S\-1\-1\-0:.*`

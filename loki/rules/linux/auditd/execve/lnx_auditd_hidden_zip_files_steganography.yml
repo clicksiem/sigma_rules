@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^cat$` and (a1=~`(?i).*\.jpg$` or a1=~`(?i).*\.png$`) and a2=~`(?i).*\.zip$`

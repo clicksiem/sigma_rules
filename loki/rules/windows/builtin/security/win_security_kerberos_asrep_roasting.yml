@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4768 and TicketEncryptionType=~`(?i)^0x17$` and ServiceName=~`(?i)^krbtgt$` and PreAuthType=0

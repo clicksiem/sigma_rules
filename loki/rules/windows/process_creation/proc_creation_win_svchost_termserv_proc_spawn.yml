@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentCommandLine=~`(?i).*\\svchost\.exe.*` and ParentCommandLine=~`(?i).*termsvcs.*` and Image!~`(?i).*\\rdpclip\.exe$` and Image!~`(?i).*:\\Windows\\System32\\csrss\.exe$` and Image!~`(?i).*:\\Windows\\System32\\wininit\.exe$` and Image!~`(?i).*:\\Windows\\System32\\winlogon\.exe$` and Image!=``

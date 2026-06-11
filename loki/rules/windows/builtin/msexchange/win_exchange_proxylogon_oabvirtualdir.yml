@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)OabVirtualDirectory` |~ `(?i)\ \-ExternalUrl\ ` |~ `(?i)eval\(request|http://f/<script|"unsafe"\};|function\ Page_Load\(\)`

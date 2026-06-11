@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^ScreenConnect$` and EventID=200 and Data=~`(?i).*Executed\ command\ of\ length.*`

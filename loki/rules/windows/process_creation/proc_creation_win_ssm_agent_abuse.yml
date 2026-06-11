@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\amazon\-ssm\-agent\.exe$` and CommandLine=~`(?i).*\-register\ .*` and CommandLine=~`(?i).*\-code\ .*` and CommandLine=~`(?i).*\-id\ .*` and CommandLine=~`(?i).*\-region\ .*`

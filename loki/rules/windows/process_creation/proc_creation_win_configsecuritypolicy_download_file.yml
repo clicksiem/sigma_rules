@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*ConfigSecurityPolicy\.exe.*` or Image=~`(?i).*\\ConfigSecurityPolicy\.exe$` or OriginalFileName=~`(?i)^ConfigSecurityPolicy\.exe$`) and (CommandLine=~`(?i).*ftp://.*` or CommandLine=~`(?i).*http://.*` or CommandLine=~`(?i).*https://.*`)

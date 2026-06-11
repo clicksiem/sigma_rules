@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | cs_user_agent=~`(?i).*Wfuzz/.*` or cs_user_agent=~`(?i).*WPScan\ v.*` or cs_user_agent=~`(?i).*Recon\-ng/v.*` or cs_user_agent=~`(?i).*GIS\ \-\ AppSec\ Team\ \-\ Project\ Vision.*`

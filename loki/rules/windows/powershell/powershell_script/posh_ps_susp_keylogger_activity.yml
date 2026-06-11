@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\[Windows\.Input\.Keyboard\]::IsKeyDown\(\[System\.Windows\.Input\.Key\]::.*`

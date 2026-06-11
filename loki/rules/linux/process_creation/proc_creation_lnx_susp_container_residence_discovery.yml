@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*awk$` or Image=~`(?i).*/cat$` or Image=~`(?i).*grep$` or Image=~`(?i).*/head$` or Image=~`(?i).*/less$` or Image=~`(?i).*/more$` or Image=~`(?i).*/nl$` or Image=~`(?i).*/tail$`) and (CommandLine=~`(?i).*/proc/2/.*` or CommandLine=~`(?i).*/proc/.*` and (CommandLine=~`(?i).*/cgroup$` or CommandLine=~`(?i).*/sched$`))

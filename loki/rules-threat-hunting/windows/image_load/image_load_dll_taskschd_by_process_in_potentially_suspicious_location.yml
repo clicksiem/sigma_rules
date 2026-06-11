@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ImageLoaded=~`(?i).*\\taskschd\.dll$` or OriginalFileName=~`(?i)^taskschd\.dll$`) and (Image=~`(?i).*:\\Temp\\.*` or Image=~`(?i).*:\\Users\\Public\\.*` or Image=~`(?i).*:\\Windows\\Temp\\.*` or Image=~`(?i).*\\AppData\\Local\\Temp\\.*` or Image=~`(?i).*\\Desktop\\.*` or Image=~`(?i).*\\Downloads\\.*`)

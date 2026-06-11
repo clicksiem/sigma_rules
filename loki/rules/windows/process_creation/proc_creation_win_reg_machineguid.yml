@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\reg\.exe$` and CommandLine=~`(?i).*SOFTWARE\\Microsoft\\Cryptography.*` and CommandLine=~`(?i).*/v\ .*` and CommandLine=~`(?i).*MachineGuid.*`

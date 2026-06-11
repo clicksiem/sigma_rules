@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | protoPayload_Servicename=~`(?i)^login\.googleapis\.com$` and (protoPayload_metadata_event_eventName=~`(?i)^suspicious_login_less_secure_app$` or protoPayload_metadata_event_eventName=~`(?i)^suspicious_login$` or protoPayload_metadata_event_eventName=~`(?i)^suspicious_programmatic_login$`)

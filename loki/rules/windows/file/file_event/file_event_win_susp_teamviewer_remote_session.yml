@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\TeamViewer\\RemotePrinting\\tvprint\.db$` or TargetFilename=~`(?i).*\\TeamViewer\\TVNetwork\.log$` or TargetFilename=~`(?i).*\\TeamViewer.*` and TargetFilename=~`(?i).*_Logfile\.log.*`

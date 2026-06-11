@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (CommandLine=~`(?i).*/curl.*` or CommandLine=~`(?i).*/wget.*`) and (CommandLine=~`(?i).*/tmp/.*` or CommandLine=~`(?i).*/dev/shm/.*`) and CommandLine=~`(?i).*sh\ \-c.*`

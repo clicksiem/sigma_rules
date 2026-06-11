@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)LDP` |~ `(?i)SOCKET_TCP_PACKET_MD5_AUTHEN_FAIL|TCPMD5AuthenFail`

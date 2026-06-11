@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)attempt\ to\ execute\ code\ on\ stack\ by|0bin0sh1|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA|stack\ smashing\ detected`

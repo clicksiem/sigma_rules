@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\dism\.exe$` or OriginalFileName=~`(?i)^DISM\.EXE$`) and CommandLine=~`(?i).*WindowsPowerShellWebAccess.*` and CommandLine=~`(?i).*/online.*` and CommandLine=~`(?i).*/enable\-feature.*`

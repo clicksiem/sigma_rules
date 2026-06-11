@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\iviewers\.dll$` and ImageLoaded!~`(?i)^C:\\Program\ Files\ \(x86\)\\Windows\ Kits\\.*` and ImageLoaded!~`(?i)^C:\\Program\ Files\\Windows\ Kits\\.*`

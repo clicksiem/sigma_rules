@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Company=~`(?i)^SecurityXploded$` or Image=~`(?i).*PasswordDump\.exe$` or OriginalFileName=~`(?i).*PasswordDump\.exe$`

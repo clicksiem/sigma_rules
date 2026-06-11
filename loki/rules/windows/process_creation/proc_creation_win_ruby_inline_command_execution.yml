@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\ruby\.exe$` or OriginalFileName=~`(?i)^ruby\.exe$`) and CommandLine=~`(?i).*\ \-e.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^eks\.amazonaws\.com$` and (eventName=~`(?i)^CreateCluster$` or eventName=~`(?i)^DeleteCluster$`)

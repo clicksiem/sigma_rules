@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^Exchange$` and eventName=~`(?i)^Add\-FederatedDomain$` and status=~`(?i)^success$`

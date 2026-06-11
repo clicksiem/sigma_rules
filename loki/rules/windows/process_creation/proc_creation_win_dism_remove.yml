@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\DismHost\.exe$` and ParentCommandLine=~`(?i).*/Online.*` and ParentCommandLine=~`(?i).*/Disable\-Feature.*` or Image=~`(?i).*\\Dism\.exe$` and CommandLine=~`(?i).*/Online.*` and CommandLine=~`(?i).*/Disable\-Feature.*`

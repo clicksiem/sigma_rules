@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\sc\.exe$` and CommandLine=~`(?i).*create.*` and CommandLine=~`(?i).*binPath.*` and (ParentImage!~`(?i)^C:\\Program\ Files\ \(x86\)\\Dropbox\\Client\\.*` and ParentImage!~`(?i)^C:\\Program\ Files\\Dropbox\\Client\\.*` or ParentImage!~`(?i).*\\Dropbox\.exe$`)

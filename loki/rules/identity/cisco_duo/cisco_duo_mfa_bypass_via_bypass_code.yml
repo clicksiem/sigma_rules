@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | event_type=~`(?i)^authentication$` and reason=~`(?i)^bypass_user$`

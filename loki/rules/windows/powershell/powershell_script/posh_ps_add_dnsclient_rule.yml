@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Add\-DnsClientNrptRule.*` and ScriptBlockText=~`(?i).*\-Namesp.*` and ScriptBlockText=~`(?i).*\-NameSe.*`

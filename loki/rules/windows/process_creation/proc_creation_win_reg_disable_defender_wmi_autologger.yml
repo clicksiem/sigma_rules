@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\reg\.exe$` or OriginalFileName=~`(?i)^reg\.exe$`) and (CommandLine=~`(?i).*\\Control\\WMI\\Autologger\\DefenderApiLogger\\Start.*` or CommandLine=~`(?i).*\\Control\\WMI\\Autologger\\DefenderAuditLogger\\Start.*`) and CommandLine=~`(?i).*add.*` and CommandLine=~`(?i).*0.*` and CommandLine!~`(?i).*0x00000001.*`

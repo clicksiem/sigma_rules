@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=3008 and QueryName=~`(?i).*ufile\.io.*`

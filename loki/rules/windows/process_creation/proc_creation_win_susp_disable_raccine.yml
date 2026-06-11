@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*taskkill\ .*` and CommandLine=~`(?i).*RaccineSettings\.exe.*` or CommandLine=~`(?i).*reg\.exe.*` and CommandLine=~`(?i).*delete.*` and CommandLine=~`(?i).*Raccine\ Tray.*` or CommandLine=~`(?i).*schtasks.*` and CommandLine=~`(?i).*/DELETE.*` and CommandLine=~`(?i).*Raccine\ Rules\ Updater.*`

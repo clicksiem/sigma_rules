@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*System\.Net\.WebClient.*` and (ScriptBlockText=~`(?i).*\.DownloadFile\(.*` or ScriptBlockText=~`(?i).*\.DownloadFileAsync\(.*` or ScriptBlockText=~`(?i).*\.DownloadString\(.*` or ScriptBlockText=~`(?i).*\.DownloadStringAsync\(.*`)

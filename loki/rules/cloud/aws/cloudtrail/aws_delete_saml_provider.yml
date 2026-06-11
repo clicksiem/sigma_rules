@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^iam\.amazonaws\.com$` and eventName=~`(?i)^DeleteSAMLProvider$` and status=~`(?i)^success$`

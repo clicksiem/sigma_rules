@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Product=~`(?i)^SQLite$` or Image=~`(?i).*\\sqlite\.exe$` or Image=~`(?i).*\\sqlite3\.exe$`) and (CommandLine=~`(?i).*cookies\.sqlite.*` or CommandLine=~`(?i).*places\.sqlite.*`)

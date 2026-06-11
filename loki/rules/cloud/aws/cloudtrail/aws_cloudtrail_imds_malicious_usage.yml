@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | userIdentity_arn=~`.+:assumed-role/aws:.+` and eventSource!~`(?i)^ssm\.amazonaws\.com$` and eventName!~`(?i)^RegisterManagedInstance$` and sourceIPAddress!~`(?i)^AWS\ Internal$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4661 and AccessMask=~`(?i)^0x2d$` and (ObjectType=~`(?i)^SAM_USER$` or ObjectType=~`(?i)^SAM_GROUP$`) and ObjectName=~`(?i)^S\-1\-5\-21\-.*` and (ObjectName=~`(?i).*\-500$` or ObjectName=~`(?i).*\-512$`)

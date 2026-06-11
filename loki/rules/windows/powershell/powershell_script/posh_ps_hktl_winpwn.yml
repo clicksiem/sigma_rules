@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Offline_Winpwn.*` or ScriptBlockText=~`(?i).*WinPwn\ .*` or ScriptBlockText=~`(?i).*WinPwn\.exe.*` or ScriptBlockText=~`(?i).*WinPwn\.ps1.*`

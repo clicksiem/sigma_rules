@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\cscript\.exe$` or OriginalFileName=~`(?i)^cscript\.exe$`) and CommandLine=~`(?i).*winrm.*` and CommandLine=~`(?i).*invoke\ Create\ wmicimv2/Win32_.*` and CommandLine=~`(?i).*\-r:http.*`

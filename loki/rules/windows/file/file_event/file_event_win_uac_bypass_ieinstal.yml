@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i)^C:\\Program\ Files\\Internet\ Explorer\\IEInstal\.exe$` and TargetFilename=~`(?i)^C:\\Users\\.*` and TargetFilename=~`(?i).*\\AppData\\Local\\Temp\\.*` and TargetFilename=~`(?i).*consent\.exe$`

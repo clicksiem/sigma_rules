@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*\\Event\ Viewer\\RecentViews.*` or CommandLine=~`(?i).*\\EventV\~1\\RecentViews.*`) and CommandLine=~`(?i).*>.*`

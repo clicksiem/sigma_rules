@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*WindowsAudioDevice\-Powershell\-Cmdlet.*` or CommandLine=~`(?i).*Toggle\-AudioDevice.*` or CommandLine=~`(?i).*Get\-AudioDevice\ .*` or CommandLine=~`(?i).*Set\-AudioDevice\ .*` or CommandLine=~`(?i).*Write\-AudioDevice\ .*`

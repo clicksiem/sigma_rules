@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*Classes\\\..*` and Details=~`(?i)^exefile$`

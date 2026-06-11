@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5145 and ObjectType=~`(?i)^File$` and RelativeTargetName=~`(?i).*\\desktop\.ini$` and (AccessList=~`(?i).*WriteData.*` or AccessList=~`(?i).*DELETE.*` or AccessList=~`(?i).*WriteDAC.*` or AccessList=~`(?i).*AppendData.*` or AccessList=~`(?i).*AddSubdirectory.*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\tpmvscmgr\.exe$` and OriginalFileName=~`(?i)^TpmVscMgr\.exe$` and CommandLine=~`(?i).*create.*`

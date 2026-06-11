@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (cs_uri_query=~`(?i).*cmd=read.*` or cs_uri_query=~`(?i).*connect\&target.*` or cs_uri_query=~`(?i).*cmd=connect.*` or cs_uri_query=~`(?i).*cmd=disconnect.*` or cs_uri_query=~`(?i).*cmd=forward.*`) and cs_referer=`` and cs_user_agent=`` and cs_method=~`(?i)^POST$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\bitsadmin\.exe$` or OriginalFileName=~`(?i)^bitsadmin\.exe$`) and (CommandLine=~`(?i).*\ /transfer\ .*` or (CommandLine=~`(?i).*\ /create\ .*` or CommandLine=~`(?i).*\ /addfile\ .*`) and CommandLine=~`(?i).*http.*`)

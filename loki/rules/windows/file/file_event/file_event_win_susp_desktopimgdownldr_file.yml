@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\svchost\.exe$` and TargetFilename=~`(?i).*\\Personalization\\LockScreenImage\\.*` and TargetFilename!~`(?i).*C:\\Windows\\.*` and TargetFilename!~`(?i).*\.jpg.*` and TargetFilename!~`(?i).*\.jpeg.*` and TargetFilename!~`(?i).*\.png.*`

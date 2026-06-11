@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/ls$` and (CommandLine=~`(?i).*\ /$` or CommandLine=~`(?i).*\ /\ .*`) and CommandLine=~`(?:\s-[^-\s]{0,20}i|\s--inode\s)` and CommandLine=~`(?:\s-[^-\s]{0,20}d|\s--directory\s)`

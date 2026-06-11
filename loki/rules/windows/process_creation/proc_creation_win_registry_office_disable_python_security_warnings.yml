@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\\Microsoft\\Office\\.*` and CommandLine=~`(?i).*\\Excel\\Security.*` and CommandLine=~`(?i).*PythonFunctionWarnings.*` and CommandLine=~`(?i).*\ 0.*`

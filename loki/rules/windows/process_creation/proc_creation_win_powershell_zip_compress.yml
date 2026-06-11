@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*Compress\-Archive\ \-Path.*\-DestinationPath\ \$env:TEMP.*` or CommandLine=~`(?i).*Compress\-Archive\ \-Path.*\-DestinationPath.*\\AppData\\Local\\Temp\\.*` or CommandLine=~`(?i).*Compress\-Archive\ \-Path.*\-DestinationPath.*:\\Windows\\Temp\\.*`

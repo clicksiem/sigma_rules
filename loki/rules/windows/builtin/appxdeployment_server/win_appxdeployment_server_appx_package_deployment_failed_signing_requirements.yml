@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=401 and ErrorCode=~`(?i)^0x80073cff$`

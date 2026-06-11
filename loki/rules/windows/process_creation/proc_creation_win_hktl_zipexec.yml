@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*/generic:Microsoft_Windows_Shell_ZipFolder:filename=.*` and CommandLine=~`(?i).*\.zip.*` and CommandLine=~`(?i).*/pass:.*` and CommandLine=~`(?i).*/user:.*` or CommandLine=~`(?i).*/delete.*` and CommandLine=~`(?i).*Microsoft_Windows_Shell_ZipFolder:filename=.*` and CommandLine=~`(?i).*\.zip.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4697 and ServiceFileName=~`(?i).*new\-object.*` and ServiceFileName=~`(?i).*text\.encoding\]::ascii.*` and ServiceFileName=~`(?i).*readtoend.*` and (ServiceFileName=~`(?i).*system\.io\.compression\.deflatestream.*` or ServiceFileName=~`(?i).*system\.io\.streamreader.*`)

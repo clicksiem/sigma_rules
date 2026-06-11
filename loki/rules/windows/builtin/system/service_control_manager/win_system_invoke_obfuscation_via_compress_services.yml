@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Service\ Control\ Manager$` and EventID=7045 and ImagePath=~`(?i).*new\-object.*` and ImagePath=~`(?i).*text\.encoding\]::ascii.*` and ImagePath=~`(?i).*readtoend.*` and (ImagePath=~`(?i).*:system\.io\.compression\.deflatestream.*` or ImagePath=~`(?i).*system\.io\.streamreader.*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Microsoft\-Windows\-WindowsUpdateClient$` and (EventID=16 or EventID=20 or EventID=24 or EventID=213 or EventID=217)

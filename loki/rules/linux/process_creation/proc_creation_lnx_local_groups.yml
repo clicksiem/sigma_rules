@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/groups$` or (Image=~`(?i).*/cat$` or Image=~`(?i).*/ed$` or Image=~`(?i).*/head$` or Image=~`(?i).*/less$` or Image=~`(?i).*/more$` or Image=~`(?i).*/nano$` or Image=~`(?i).*/tail$` or Image=~`(?i).*/vi$` or Image=~`(?i).*/vim$`) and CommandLine=~`(?i).*/etc/group.*`

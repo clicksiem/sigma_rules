@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\Runner\.Worker\.exe$` or OriginalFileName=~`(?i)^Runner\.Worker\.dll$`) and CommandLine=~`(?i).*spawnclient.*` or (Image=~`(?i).*\\Runner\.Listener\.exe$` or OriginalFileName=~`(?i)^Runner\.Listener\.dll$`) and (CommandLine=~`(?i).*run.*` or CommandLine=~`(?i).*configure.*`)

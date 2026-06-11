@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | SourceImage=~`(?i).*\\WerFault\.exe$` and TargetImage=~`(?i).*\\lsass\.exe$` and GrantedAccess=~`(?i)^0x1FFFFF$`

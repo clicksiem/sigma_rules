@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^rds\.amazonaws\.com$` and (eventName=~`(?i)^ModifyDBCluster$` or eventName=~`(?i)^DeleteDBCluster$`)

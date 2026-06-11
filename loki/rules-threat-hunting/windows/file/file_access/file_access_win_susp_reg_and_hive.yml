@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (FileName=~`(?i).*\.hive$` or FileName=~`(?i).*\.reg$`) and Image!~`(?i)^C:\\Program\ Files\ \(x86\)\\.*` and Image!~`(?i)^C:\\Program\ Files\\.*` and Image!~`(?i)^C:\\Windows\\System32\\.*` and Image!~`(?i)^C:\\Windows\\SysWOW64\\.*`

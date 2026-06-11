@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*set.*` and ScriptBlockText=~`(?i).*\&\&.*` and ScriptBlockText=~`(?i).*mshta.*` and ScriptBlockText=~`(?i).*vbscript:createobject.*` and ScriptBlockText=~`(?i).*\.run.*` and ScriptBlockText=~`(?i).*\(window\.close\).*`

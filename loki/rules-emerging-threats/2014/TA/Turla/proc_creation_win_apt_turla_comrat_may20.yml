@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*tracert\ \-h\ 10\ yahoo\.com.*` or CommandLine=~`(?i).*\.WSqmCons\)\)\|iex;.*` or CommandLine=~"(?i).*Fr`omBa`se6`4Str`ing.*" or CommandLine=~`net\s+use\s+https://docs.live.net` and CommandLine=~`(?i).*@aol\.co\.uk.*`

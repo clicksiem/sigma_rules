@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\client32\.exe$` or Product=~`(?i).*NetSupport\ Remote\ Control.*` or OriginalFileName=~`(?i).*client32\.exe.*` or Hashes=~`(?i).*IMPHASH=a9d50692e95b79723f3e76fcf70d023e.*`) and Image!~`(?i)^C:\\Program\ Files\\.*` and Image!~`(?i)^C:\\Program\ Files\ \(x86\)\\.*`

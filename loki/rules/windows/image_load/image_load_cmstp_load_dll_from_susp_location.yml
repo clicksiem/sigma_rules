@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\cmstp\.exe$` and (ImageLoaded=~`(?i).*\\PerfLogs\\.*` or ImageLoaded=~`(?i).*\\ProgramData\\.*` or ImageLoaded=~`(?i).*\\Users\\.*` or ImageLoaded=~`(?i).*\\Windows\\Temp\\.*` or ImageLoaded=~`(?i).*C:\\Temp\\.*`) and (ImageLoaded=~`(?i).*\.dll$` or ImageLoaded=~`(?i).*\.ocx$`)

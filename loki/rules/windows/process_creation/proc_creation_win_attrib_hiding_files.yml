@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\attrib\.exe$` or OriginalFileName=~`(?i)^ATTRIB\.EXE$`) and CommandLine=~`(?i).*\ \+h\ .*` and CommandLine!~`(?i).*\\desktop\.ini\ .*` and (ParentImage!~`(?i).*\\cmd\.exe$` or CommandLine!~`(?i)^\+R\ \+H\ \+S\ \+A\ \\\\.*\.cui$` or ParentCommandLine!~`(?i)^C:\\WINDOWS\\system32\\\\.*\.bat$`)

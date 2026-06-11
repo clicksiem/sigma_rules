@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^group\.privilege\.grant$` or eventType=~`(?i)^user\.account\.privilege\.grant$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\ScreenConnect\.ClientService\.exe$` and (Image=~`(?i).*\\cmd\.exe$` or OriginalFileName=~`(?i)^Cmd\.Exe$`) and CommandLine=~`(?i).*\\TEMP\\ScreenConnect\\.*`

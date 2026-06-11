@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Description=~`(?i)^Java\ Update\ Scheduler$` or Description=~`(?i)^Java\(TM\)\ Update\ Scheduler$`) and Image!~`(?i).*\\jusched\.exe$`

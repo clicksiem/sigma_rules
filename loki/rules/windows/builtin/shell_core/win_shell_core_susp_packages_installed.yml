@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=28115 and (Name=~`(?i).*Zenmap.*` or Name=~`(?i).*AnyDesk.*` or Name=~`(?i).*wireshark.*` or Name=~`(?i).*openvpn.*`) or EventID=28115 and (AppID=~`(?i).*zenmap\.exe.*` or AppID=~`(?i).*prokzult\ ad.*` or AppID=~`(?i).*wireshark.*` or AppID=~`(?i).*openvpn.*`)

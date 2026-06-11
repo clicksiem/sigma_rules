@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=3008 and (QueryName=~`(?i).*api\.put\.io.*` or QueryName=~`(?i).*upload\.put\.io.*`)

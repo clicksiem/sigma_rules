@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\unregmp2\.exe$` or OriginalFileName=~`(?i)^unregmp2\.exe$`) and CommandLine=~`(?i).*\ \-HideWMP.*` or CommandLine=~`(?i).*\ /HideWMP.*` or CommandLine=~`(?i).*\ –HideWMP.*` or CommandLine=~`(?i).*\ —HideWMP.*` or CommandLine=~`(?i).*\ ―HideWMP.*`

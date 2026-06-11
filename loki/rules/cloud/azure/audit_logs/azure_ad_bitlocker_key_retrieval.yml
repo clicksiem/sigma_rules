@@ -1,0 +1,1 @@
+{job="logstash"} | json | Category=~`(?i)^KeyManagement$` and OperationName=~`(?i)^Read\ BitLocker\ key$`

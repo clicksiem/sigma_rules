@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^rds\.amazonaws\.com$` and (eventName=~`(?i)^AuthorizeDBSecurityGroupIngress$` or eventName=~`(?i)^CreateDBSecurityGroup$` or eventName=~`(?i)^DeleteDBSecurityGroup$` or eventName=~`(?i)^RevokeDBSecurityGroupIngress$`)

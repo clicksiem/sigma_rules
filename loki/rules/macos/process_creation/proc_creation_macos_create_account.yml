@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/dscl$` and CommandLine=~`(?i).*create.*` or Image=~`(?i).*/sysadminctl$` and CommandLine=~`(?i).*addUser.*`

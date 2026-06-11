@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | verb=~`(?i)^delete$` and objectRef_resource=~`(?i)^events$`

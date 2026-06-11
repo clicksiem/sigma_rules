@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (PipeName=~`(?i).*\\pipe\\.*` or PipeName=~`(?i).*\\pipe\\srvsvc.*`) and PipeName!~`(?i).*\\CtxShare.*` and PipeName!~`(?i)^\\pipe\\.*`

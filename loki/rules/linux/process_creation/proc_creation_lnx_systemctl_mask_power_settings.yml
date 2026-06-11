@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/systemctl$` and CommandLine=~`(?i).*\ mask.*` and (CommandLine=~`(?i).*suspend\.target.*` or CommandLine=~`(?i).*hibernate\.target.*` or CommandLine=~`(?i).*hybrid\-sleep\.target.*`)

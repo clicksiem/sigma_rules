@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Description=~`(?i)^Radmin\ Viewer$` or Product=~`(?i)^Radmin\ Viewer$` or OriginalFileName=~`(?i)^Radmin\.exe$`

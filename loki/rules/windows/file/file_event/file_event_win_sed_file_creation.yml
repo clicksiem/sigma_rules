@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetFilename=~`(?i).*:\\ProgramData\\.*` or TargetFilename=~`(?i).*:\\Temp\\.*` or TargetFilename=~`(?i).*:\\Windows\\System32\\Tasks\\.*` or TargetFilename=~`(?i).*:\\Windows\\Tasks\\.*` or TargetFilename=~`(?i).*:\\Windows\\Temp\\.*` or TargetFilename=~`(?i).*\\AppData\\Local\\Temp\\.*`) and TargetFilename=~`(?i).*\.sed$`

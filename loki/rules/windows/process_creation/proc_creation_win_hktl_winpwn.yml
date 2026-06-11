@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*Offline_Winpwn.*` or CommandLine=~`(?i).*WinPwn\ .*` or CommandLine=~`(?i).*WinPwn\.exe.*` or CommandLine=~`(?i).*WinPwn\.ps1.*`

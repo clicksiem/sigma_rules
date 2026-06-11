@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^import$` and (a1=~`(?i)^\-window$` and a2=~`(?i)^root$` and (a3=~`(?i).*\.png$` or a3=~`(?i).*\.jpg$` or a3=~`(?i).*\.jpeg$`) or a1=~`(?i).*\.png$` or a1=~`(?i).*\.jpg$` or a1=~`(?i).*\.jpeg$`)

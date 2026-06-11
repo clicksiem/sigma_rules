@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (eventType=~`(?i)^user\.lifecycle\.create$` or eventType=~`(?i)^user\.lifecycle\.activate$`) and target_displayName=~`(?i).*svc_network_backup.*`

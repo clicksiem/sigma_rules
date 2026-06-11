@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\dfsvc\.exe$` and Image=~`(?i).*\\AppData\\Local\\Apps\\2\.0\\$`

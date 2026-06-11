@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetImage=~`(?i).*\\lsass\.exe$` and SourceImage=~`(?i).*\\rundll32\.exe$` and CallTrace=~`(?i).*comsvcs\.dll.*`

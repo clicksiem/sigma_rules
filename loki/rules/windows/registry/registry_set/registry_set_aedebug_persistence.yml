@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\ NT\\CurrentVersion\\AeDebug\\Debugger.*` and Details=~`(?i).*\.dll$` and Details!~`(?i)^"C:\\WINDOWS\\system32\\vsjitdebugger\.exe"\ \-p\ %ld\ \-e\ %ld\ \-j\ 0x%p$`

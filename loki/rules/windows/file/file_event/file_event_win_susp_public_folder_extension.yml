@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*:\\Users\\Public\\.*` and (TargetFilename=~`(?i).*\.bat$` or TargetFilename=~`(?i).*\.dll$` or TargetFilename=~`(?i).*\.exe$` or TargetFilename=~`(?i).*\.hta$` or TargetFilename=~`(?i).*\.js$` or TargetFilename=~`(?i).*\.ps1$` or TargetFilename=~`(?i).*\.vbe$` or TargetFilename=~`(?i).*\.vbs$`)

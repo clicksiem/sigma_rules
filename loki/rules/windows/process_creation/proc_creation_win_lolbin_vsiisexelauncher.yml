@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\VSIISExeLauncher\.exe$` or OriginalFileName=~`(?i)^VSIISExeLauncher\.exe$`) and (CommandLine=~`(?i).*\ \-p\ .*` or CommandLine=~`(?i).*\ \-a\ .*`)

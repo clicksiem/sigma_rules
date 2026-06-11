@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4663 and ObjectName=~`(?i).*\\SYSTEM\\.*` and ObjectName=~`(?i).*ControlSet\\Services\\.*` and AccessList=~`(?i).*%%1538.*`

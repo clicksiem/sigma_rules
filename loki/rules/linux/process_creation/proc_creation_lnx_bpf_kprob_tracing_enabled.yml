@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*echo\ 1\ >.*` and CommandLine=~`(?i).*/sys/kernel/debug/tracing/events/kprobes/.*` and (CommandLine=~`(?i).*/myprobe/enable.*` or CommandLine=~`(?i).*/myretprobe/enable.*`)

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/file$` and CommandLine=~`(.){200,}` or Image=~`(?i).*/ls$` and CommandLine=~`(?i).*\-R.*` or Image=~`(?i).*/find$` or Image=~`(?i).*/tree$` or Image=~`(?i).*/findmnt$` or Image=~`(?i).*/mlocate$`

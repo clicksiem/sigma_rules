@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetFilename=~`(?i).*\\Microsoft\\Event\ Viewer\\RecentViews$` or TargetFilename=~`(?i).*\\Microsoft\\EventV\~1\\RecentViews$`) and Image!~`(?i)^C:\\Windows\\System32\\.*` and Image!~`(?i)^C:\\Windows\\SysWOW64\\.*`

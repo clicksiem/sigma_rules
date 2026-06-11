@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\[Ref\]\.Assembly\.GetType.*` and ScriptBlockText=~`(?i).*SetValue\(\$null,\$true\).*` and ScriptBlockText=~`(?i).*NonPublic,Static.*`

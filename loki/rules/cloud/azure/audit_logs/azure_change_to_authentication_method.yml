@@ -1,0 +1,1 @@
+{job="logstash"} | json | LoggedByService=~`(?i)^Authentication\ Methods$` and Category=~`(?i)^UserManagement$` and OperationName=~`(?i)^User\ registered\ security\ info$`

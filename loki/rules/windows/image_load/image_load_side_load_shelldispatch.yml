@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\ShellDispatch\.dll$` and (ImageLoaded!~`(?i).*:\\Users\\.*` or ImageLoaded!~`(?i).*\\AppData\\Local\\Temp\\.*`) and ImageLoaded!~`(?i).*:\\Windows\\Temp\\.*`

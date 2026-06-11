@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)Set\-OabVirtualDirectory` |~ `(?i)ExternalUrl` |~ `(?i)Page_Load` |~ `(?i)script`

@@ -1,0 +1,1 @@
+{job="logstash"} | json | Status=~`(?i)^Success$` and AppId=~`(?i)^Insert\ Application\ ID\ use\ OR\ for\ multiple$` and AuthenticationRequirement=~`(?i)^singleFactorAuthentication$`

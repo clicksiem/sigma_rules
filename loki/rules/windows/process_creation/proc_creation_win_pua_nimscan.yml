@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\NimScan\.exe$` or Hashes=~`(?i).*IMPHASH=41BB1C7571B3A724EB83A1D2B96DBB8C.*` or Hashes=~`(?i).*IMPHASH=B1B6ADACB172795480179EFD18A29549.*` or Hashes=~`(?i).*IMPHASH=0D1F896DC7642AD8384F9042F30279C2.*`

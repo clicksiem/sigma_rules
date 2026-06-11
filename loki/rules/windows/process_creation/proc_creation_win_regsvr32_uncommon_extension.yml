@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\regsvr32\.exe$` or OriginalFileName=~`(?i)^REGSVR32\.EXE$`) and CommandLine!~`(?i).*\.ax.*` and CommandLine!~`(?i).*\.cpl.*` and CommandLine!~`(?i).*\.dll.*` and CommandLine!~`(?i).*\.ocx.*` and CommandLine!=`` and CommandLine!~`(?i)^$` and CommandLine!~`(?i).*\.ppl.*` and CommandLine!~`(?i).*\.bav.*`

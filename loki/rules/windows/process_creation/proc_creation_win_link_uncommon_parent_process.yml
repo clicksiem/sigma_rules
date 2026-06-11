@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\link\.exe$` and CommandLine=~`(?i).*LINK\ /.*` and (ParentImage!~`(?i)^C:\\Program\ Files\\Microsoft\ Visual\ Studio\\.*` and ParentImage!~`(?i)^C:\\Program\ Files\ \(x86\)\\Microsoft\ Visual\ Studio\\.*` or ParentImage!~`(?i).*\\VC\\bin\\.*` and ParentImage!~`(?i).*\\VC\\Tools\\.*`)

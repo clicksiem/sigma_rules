@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\nxc\-windows\-latest\\.*` or TargetFilename=~`(?i).*\\Temp\\_MEI.*` and TargetFilename=~`(?i).*\\nxc\\data\\.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4662 and ObjectType=~`(?i)^SecretObject$` and AccessMask=~`(?i)^0x2$` and ObjectName=~`(?i).*BCKUPKEY.*`

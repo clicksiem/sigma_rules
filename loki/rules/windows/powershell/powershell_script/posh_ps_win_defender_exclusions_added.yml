@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ScriptBlockText=~`(?i).*\ \-ExclusionPath\ .*` or ScriptBlockText=~`(?i).*\ \-ExclusionExtension\ .*` or ScriptBlockText=~`(?i).*\ \-ExclusionProcess\ .*` or ScriptBlockText=~`(?i).*\ \-ExclusionIpAddress\ .*`) and (ScriptBlockText=~`(?i).*Add\-MpPreference\ .*` or ScriptBlockText=~`(?i).*Set\-MpPreference\ .*`)

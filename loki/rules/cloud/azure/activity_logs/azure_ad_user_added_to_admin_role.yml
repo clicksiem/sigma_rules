@@ -1,0 +1,1 @@
+{job="logstash"} | json | Operation=~`(?i)^Add\ member\ to\ role\.$` and Workload=~`(?i)^AzureActiveDirectory$` and (ModifiedProperties___NewValue=~`(?i).*Admins$` or ModifiedProperties___NewValue=~`(?i).*Administrator$`)

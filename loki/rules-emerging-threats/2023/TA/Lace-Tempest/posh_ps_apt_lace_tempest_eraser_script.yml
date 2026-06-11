@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*cleanLL.*` and ScriptBlockText=~`(?i).*usersfiles\.war.*` and ScriptBlockText=~`(?i).*Remove\-Item\ \-Path\ "\$tomcat_dir.*` and ScriptBlockText=~`(?i).*SysAidServer.*` and ScriptBlockText=~`(?i).*sleep\ .*` and ScriptBlockText=~`(?i).*while\(1\).*`

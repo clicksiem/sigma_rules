@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/setcap$` and CommandLine=~`(?i).*cap_setuid.*`

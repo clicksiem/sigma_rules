@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\addinutil\.exe$` and Image!~`(?i).*:\\Windows\\System32\\conhost\.exe$` and Image!~`(?i).*:\\Windows\\System32\\werfault\.exe$` and Image!~`(?i).*:\\Windows\\SysWOW64\\werfault\.exe$`

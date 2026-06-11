@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~"\\w+`(?:\\w+|-|.)`[\\w+|\\s]" or CommandLine=~`"(?:\{\d\})+"\s*-f` or CommandLine=~"(?i)\\$\\{`?e`?n`?v`?:`?p`?a`?t`?h`?\\}") and CommandLine!~`(?i).*\$\{env:path\}.*`

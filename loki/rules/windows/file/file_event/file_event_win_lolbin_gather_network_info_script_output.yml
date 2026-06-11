@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)^C:\\Windows\\System32\\config.*` and (TargetFilename=~`(?i).*\\Hotfixinfo\.txt$` or TargetFilename=~`(?i).*\\netiostate\.txt$` or TargetFilename=~`(?i).*\\sysportslog\.txt$` or TargetFilename=~`(?i).*\\VmSwitchLog\.evtx$`)

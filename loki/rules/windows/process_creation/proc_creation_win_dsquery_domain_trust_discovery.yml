@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\dsquery\.exe$` or OriginalFileName=~`(?i)^dsquery\.exe$`) and CommandLine=~`(?i).*trustedDomain.*`

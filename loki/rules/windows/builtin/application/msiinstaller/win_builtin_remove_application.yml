@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^MsiInstaller$` and (EventID=1034 or EventID=11724)

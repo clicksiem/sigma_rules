@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4765 or EventID=4766 or EventID=4738 and SidHistory!~`(?i)^\-$` and SidHistory!~`(?i)^%%1793$` and SidHistory!=``

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*New\-PSDrive.*` and ScriptBlockText=~`(?i).*\-psprovider\ .*` and ScriptBlockText=~`(?i).*filesystem.*` and ScriptBlockText=~`(?i).*\-root\ .*` and ScriptBlockText=~`(?i).*\\\\.*` and ScriptBlockText=~`(?i).*\$.*`

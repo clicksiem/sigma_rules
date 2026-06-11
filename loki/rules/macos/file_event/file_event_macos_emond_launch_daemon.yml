@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | TargetFilename=~`(?i).*/etc/emond\.d/rules/.*` and TargetFilename=~`(?i).*\.plist$` or TargetFilename=~`(?i).*/private/var/db/emondClients/.*`

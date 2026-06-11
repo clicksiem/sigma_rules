@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\node\.exe$` and (CommandLine=~`(?i).*\ \-e\ .*` or CommandLine=~`(?i).*\ \-\-eval\ .*`) and CommandLine=~`(?i).*\.exec\(.*` and CommandLine=~`(?i).*net\.socket.*` and CommandLine=~`(?i).*\.connect.*` and CommandLine=~`(?i).*child_process.*`

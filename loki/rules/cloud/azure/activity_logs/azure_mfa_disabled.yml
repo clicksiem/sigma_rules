@@ -1,0 +1,1 @@
+{job="logstash"} | json | eventSource=~`(?i)^AzureActiveDirectory$` and eventName=~`(?i)^Disable\ Strong\ Authentication\.$` and status=~`(?i)^success$`

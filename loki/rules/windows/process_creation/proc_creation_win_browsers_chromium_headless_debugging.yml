@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\-\-remote\-debugging\-.*` and CommandLine=~`(?i).*\-\-user\-data\-dir.*` and CommandLine=~`(?i).*\-\-headless.*`

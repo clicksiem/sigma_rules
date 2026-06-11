@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5145 and ShareName=~`(?i)^\\\\.*` and ShareName=~`(?i).*\\IPC\$$` and RelativeTargetName=~`(?i)^lsarpc$` and SubjectUserName=~`(?i)^ANONYMOUS\ LOGON$`

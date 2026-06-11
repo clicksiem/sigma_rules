@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)touch` |~ `(?i)\-t|\-acmr|\-d|\-r` | logfmt | type=~`(?i)^EXECVE$`

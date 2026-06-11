@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\coregen\.exe$` and ImageLoaded!~`(?i)^C:\\Program\ Files\ \(x86\)\\Microsoft\ Silverlight\\.*` and ImageLoaded!~`(?i)^C:\\Program\ Files\\Microsoft\ Silverlight\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\System32\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\SysWOW64\\.*`

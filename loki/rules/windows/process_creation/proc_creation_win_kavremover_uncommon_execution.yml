@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\ run\ run\-cmd\ .*` and ParentImage!~`(?i).*\\cleanapi\.exe$` and ParentImage!~`(?i).*\\kavremover\.exe$`

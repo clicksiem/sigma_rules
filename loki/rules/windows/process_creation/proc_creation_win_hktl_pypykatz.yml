@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\pypykatz\.exe$` or Image=~`(?i).*\\python\.exe$`) and CommandLine=~`(?i).*live.*` and CommandLine=~`(?i).*registry.*`

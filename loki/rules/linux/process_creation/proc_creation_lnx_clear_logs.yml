@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/rm$` or Image=~`(?i).*/rmdir$` or Image=~`(?i).*/shred$` or Image=~`(?i).*/unlink$`) and (CommandLine=~`(?i).*/var/log.*` or CommandLine=~`(?i).*/var/spool/mail.*`) and (Image!~`(?i).*/rm$` or CommandLine!~`(?i)^rm\ \-f\ /var/log/sysstat/.*`) and (Image!~`(?i).*/rm$` or CommandLine!~`(?i)^rm\ \-f\ \-\-\ /var/log//dmesg.*`)

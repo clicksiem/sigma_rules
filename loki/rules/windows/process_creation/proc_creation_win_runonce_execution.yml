@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\runonce\.exe$` or Description=~`(?i)^Run\ Once\ Wrapper$`) and (CommandLine=~`(?i).*/AlternateShellStartup.*` or CommandLine=~`(?i).*/r$`)

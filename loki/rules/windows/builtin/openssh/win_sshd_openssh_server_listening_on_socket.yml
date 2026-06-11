@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4 and process=~`(?i)^sshd$` and payload=~`(?i)^Server\ listening\ on\ .*`

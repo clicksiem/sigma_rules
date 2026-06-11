@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^Plink$` or CommandLine=~`(?i).*\ \-l\ forward.*` and CommandLine=~`(?i).*\ \-P\ .*` and CommandLine=~`(?i).*\ \-R\ .*`) and Image!~`(?i).*\\plink\.exe$`

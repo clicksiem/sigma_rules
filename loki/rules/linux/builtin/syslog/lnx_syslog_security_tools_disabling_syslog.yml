@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)stopping\ iptables|stopping\ ip6tables|stopping\ firewalld|stopping\ cbdaemon|stopping\ falcon\-sensor`

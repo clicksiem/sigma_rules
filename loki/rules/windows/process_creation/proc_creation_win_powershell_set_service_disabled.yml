@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\powershell\.exe$` or OriginalFileName=~`(?i)^PowerShell\.EXE$`) and CommandLine=~`(?i).*Set\-Service.*` and CommandLine=~`(?i).*\-StartupType.*` and (CommandLine=~`(?i).*Disabled.*` or CommandLine=~`(?i).*Manual.*`)

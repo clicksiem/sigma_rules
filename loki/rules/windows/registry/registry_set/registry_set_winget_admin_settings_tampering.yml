@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\winget\.exe$` and TargetObject=~`(?i)^\\REGISTRY\\A\\.*` and TargetObject=~`(?i).*\\LocalState\\admin_settings$`

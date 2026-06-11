@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\AppData\\Roaming\\AnyDesk\\user\.conf.*` or TargetFilename=~`(?i).*\\AppData\\Roaming\\AnyDesk\\system\.conf.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and DestinationHostname=~`(?i).*\.tunnels\.api\.visualstudio\.com$`

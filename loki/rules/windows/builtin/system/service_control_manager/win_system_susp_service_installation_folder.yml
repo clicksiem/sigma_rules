@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Service\ Control\ Manager$` and EventID=7045 and (ImagePath=~`(?i).*\\AppData\\.*` or ImagePath=~`(?i).*\\\\127\.0\.0\.1.*` or ImagePath=~`(?i).*\\\\localhost.*`) and (ServiceName!~`(?i)^Zoom\ Sharing\ Service$` or ImagePath!~`(?i).*:\\Program\ Files\\Common\ Files\\Zoom\\Support\\CptService\.exe.*`)

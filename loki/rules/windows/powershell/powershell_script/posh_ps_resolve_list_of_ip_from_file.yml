@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Get\-content\ .*` and ScriptBlockText=~`(?i).*foreach.*` and ScriptBlockText=~`(?i).*\[System\.Net\.Dns\]::GetHostEntry.*` and ScriptBlockText=~`(?i).*Out\-File.*`

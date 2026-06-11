@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*UtilityFunctions\.ps1.*` or CommandLine=~`(?i).*RegSnapin\ .*`

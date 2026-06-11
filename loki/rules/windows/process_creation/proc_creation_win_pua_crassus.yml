@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\Crassus\.exe$` or OriginalFileName=~`(?i)^Crassus\.exe$` or Description=~`(?i).*Crassus.*`

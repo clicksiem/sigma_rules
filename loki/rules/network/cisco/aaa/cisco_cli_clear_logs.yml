@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)clear\ logging|clear\ archive`

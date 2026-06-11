@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and (a0=~`(?i).*systemctl.*` or a0=~`(?i).*service.*`) and (a1=~`(?i).*reload.*` or a1=~`(?i).*start.*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^curl\.exe$` or Description=~`(?i)^The\ curl\ executable$`) and Image!~`(?i).*\\curl.*`

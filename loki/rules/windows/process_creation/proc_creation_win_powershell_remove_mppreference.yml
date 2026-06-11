@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*Remove\-MpPreference.*` and (CommandLine=~`(?i).*\-ControlledFolderAccessProtectedFolders\ .*` or CommandLine=~`(?i).*\-AttackSurfaceReductionRules_Ids\ .*` or CommandLine=~`(?i).*\-AttackSurfaceReductionRules_Actions\ .*` or CommandLine=~`(?i).*\-CheckForSignaturesBeforeRunningScan\ .*`)

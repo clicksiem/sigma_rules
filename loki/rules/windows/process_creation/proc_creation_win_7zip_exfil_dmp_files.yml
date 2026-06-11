@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Description=~`(?i).*7\-Zip.*` or Image=~`(?i).*\\7z\.exe$` or Image=~`(?i).*\\7zr\.exe$` or Image=~`(?i).*\\7za\.exe$` or OriginalFileName=~`(?i)^7z\.exe$` or OriginalFileName=~`(?i)^7za\.exe$`) and (CommandLine=~`(?i).*\.dmp.*` or CommandLine=~`(?i).*\.dump.*` or CommandLine=~`(?i).*\.hdmp.*`)

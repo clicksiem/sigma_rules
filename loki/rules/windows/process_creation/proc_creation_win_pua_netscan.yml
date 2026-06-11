@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\netscan\.exe$` or Product=~`(?i)^Network\ Scanner$` or Description=~`(?i)^Application\ for\ scanning\ networks$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | gcp_audit_method_name=~`(?i)^projects\.content\.reidentify$`

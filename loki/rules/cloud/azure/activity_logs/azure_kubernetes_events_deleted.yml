@@ -1,0 +1,1 @@
+{job="logstash"} | json | operationName=~`(?i)^MICROSOFT\.KUBERNETES/CONNECTEDCLUSTERS/EVENTS\.K8S\.IO/EVENTS/DELETE$`

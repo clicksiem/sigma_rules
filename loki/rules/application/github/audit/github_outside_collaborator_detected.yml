@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^org\.remove_outside_collaborator$` or action=~`(?i)^project\.update_user_permission$`

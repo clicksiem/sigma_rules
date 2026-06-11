@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Function\ Get\-ADRExcelComOb.*` or ScriptBlockText=~`(?i).*Get\-ADRGPO.*` or ScriptBlockText=~`(?i).*Get\-ADRDomainController.*` or ScriptBlockText=~`(?i).*ADRecon\-Report\.xlsx.*`

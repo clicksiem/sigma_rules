@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | auditType_category=~`(?i)^Permissions$` and (auditType_action=~`(?i)^Global\ permission\ remove\ request$` or auditType_action=~`(?i)^Global\ permission\ removed$` or auditType_action=~`(?i)^Global\ permission\ granted$` or auditType_action=~`(?i)^Global\ permission\ requested$`)

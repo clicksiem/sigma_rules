@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*SOFTWARE\\Microsoft\\\.NETFramework\\ETWEnabled$` and Details=~`(?i)^DWORD\ \(0x00000000\)$` or (TargetObject=~`(?i).*\\COMPlus_ETWEnabled$` or TargetObject=~`(?i).*\\COMPlus_ETWFlags$`) and (Details=0 or Details=~`(?i)^DWORD\ \(0x00000000\)$`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*ConsoleHost_history\.txt.*` or CommandLine=~`(?i).*\(Get\-PSReadLineOption\)\.HistorySavePath.*`

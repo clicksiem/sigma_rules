@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\services\\DNS\\Parameters\\ServerLevelPluginDll$`

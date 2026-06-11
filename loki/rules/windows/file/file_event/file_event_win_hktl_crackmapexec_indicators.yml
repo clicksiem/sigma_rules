@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)^C:\\Windows\\Temp\\.*` and (TargetFilename=~`(?i).*\\temp\.ps1$` or TargetFilename=~`(?i).*\\msol\.ps1$` or TargetFilename=~`\\[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.txt$` or TargetFilename=~`\\[a-zA-Z]{8}\.tmp$`)

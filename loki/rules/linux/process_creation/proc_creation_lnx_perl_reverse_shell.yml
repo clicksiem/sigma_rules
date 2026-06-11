@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/perl$` and CommandLine=~`(?i).*\ \-e\ .*` and (CommandLine=~`(?i).*fdopen\(.*` and CommandLine=~`(?i).*::Socket::INET.*` or CommandLine=~`(?i).*Socket.*` and CommandLine=~`(?i).*connect.*` and CommandLine=~`(?i).*open.*` and CommandLine=~`(?i).*exec.*`)

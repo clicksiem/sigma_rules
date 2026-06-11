@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\RjvPlatform\.dll$` and Image=~`(?i)^\\SystemResetPlatform\.exe$` and Image!~`(?i)^C:\\Windows\\System32\\SystemResetPlatform\\.*`

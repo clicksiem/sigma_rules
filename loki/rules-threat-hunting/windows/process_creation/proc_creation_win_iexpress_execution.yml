@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\iexpress\.exe$` and (Image=~`(?i).*\\makecab\.exe$` or OriginalFileName=~`(?i)^makecab\.exe$`) or (Image=~`(?i).*\\iexpress\.exe$` or OriginalFileName=~`(?i)^IEXPRESS\.exe$`) and CommandLine=~`(?i).*\ /n\ .*`

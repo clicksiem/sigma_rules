@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)dir|show\ arp|show\ cdp|show\ clock|show\ ip\ interface|show\ ip\ route|show\ ip\ sockets|show\ processes|show\ ssh|show\ users|show\ version`

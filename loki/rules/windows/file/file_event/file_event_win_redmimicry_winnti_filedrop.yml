@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\gthread\-3\.6\.dll$` or TargetFilename=~`(?i).*\\sigcmm\-2\.4\.dll$` or TargetFilename=~`(?i).*\\Windows\\Temp\\tmp\.bat$`

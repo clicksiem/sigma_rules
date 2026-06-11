@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\ /INJECTRUNNING\ .*` and ParentImage!~`(?i)^C:\\Windows\\System32\\AppVClient\.exe$`

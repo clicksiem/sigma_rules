@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | gcp_audit_method_name=~`(?i)^admissionregistration\.k8s\.io\.v.*` and (gcp_audit_method_name=~`(?i).*\.mutatingwebhookconfigurations\..*` or gcp_audit_method_name=~`(?i).*\.validatingwebhookconfigurations\..*`) and (gcp_audit_method_name=~`(?i).*create$` or gcp_audit_method_name=~`(?i).*patch$` or gcp_audit_method_name=~`(?i).*replace$`)

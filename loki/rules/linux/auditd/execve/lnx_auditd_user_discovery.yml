@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and (a0=~`(?i)^hostname$` or a0=~`(?i)^id$` or a0=~`(?i)^last$` or a0=~`(?i)^uname$` or a0=~`(?i)^users$` or a0=~`(?i)^w$` or a0=~`(?i)^who$` or a0=~`(?i)^whoami$`)

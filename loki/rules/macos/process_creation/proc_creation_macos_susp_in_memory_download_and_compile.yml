@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*osacompile.*` and CommandLine=~`(?i).*curl.*`

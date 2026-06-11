@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=201 and (ImageName=~`(?i)^procdump\.exe$` or ImageName=~`(?i)^psloglist\.exe$` or ImageName=~`(?i)^psexec\.exe$` or ImageName=~`(?i)^livekd\.exe$` or ImageName=~`(?i)^ADExplorer\.exe$`)

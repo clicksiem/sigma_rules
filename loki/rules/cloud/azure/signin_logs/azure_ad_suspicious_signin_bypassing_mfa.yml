@@ -1,0 +1,1 @@
+{job="logstash"} | json | Status=~`(?i)^Success$` and (userAgent=~`(?i).*BAV2ROPC.*` or userAgent=~`(?i).*CBAinPROD.*` or userAgent=~`(?i).*CBAinTAR.*`)

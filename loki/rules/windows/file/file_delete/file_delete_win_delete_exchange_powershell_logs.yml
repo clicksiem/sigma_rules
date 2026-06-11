@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)^\\Logging\\CmdletInfra\\LocalPowerShell\\Cmdlet\\.*` and TargetFilename=~`(?i).*_Cmdlet_.*`

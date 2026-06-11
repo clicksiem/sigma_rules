@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4657 and ObjectName=~`(?i).*\\SOFTWARE\\Microsoft\\\.NETFramework$` and ObjectValueName=~`(?i)^ETWEnabled$` and NewValue=0 or EventID=4657 and ObjectName=~`(?i).*\\Environment.*` and (ObjectValueName=~`(?i)^COMPlus_ETWEnabled$` or ObjectValueName=~`(?i)^COMPlus_ETWFlags$`) and NewValue=0

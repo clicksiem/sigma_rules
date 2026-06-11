@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SOFTWARE\\.*` and TargetObject=~`(?i).*\\Microsoft\\Office\\.*` and TargetObject=~`(?i).*\\Common\\Security.*` and TargetObject=~`(?i).*\\MacroRuntimeScanScope$` and Details=~`(?i)^DWORD\ \(0x00000000\)$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\csi\.exe$` or Image=~`(?i).*\\rcsi\.exe$` or OriginalFileName=~`(?i)^csi\.exe$` or OriginalFileName=~`(?i)^rcsi\.exe$`) and Company=~`(?i)^Microsoft\ Corporation$`

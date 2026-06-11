@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=4656 or EventID=4663) and ObjectType=~`(?i)^key$` and (ObjectName=~`(?i).*lsa\\JD$` or ObjectName=~`(?i).*lsa\\GBG$` or ObjectName=~`(?i).*lsa\\Skew1$` or ObjectName=~`(?i).*lsa\\Data$`)

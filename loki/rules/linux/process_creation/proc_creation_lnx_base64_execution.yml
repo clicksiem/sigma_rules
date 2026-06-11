@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*base64\ .*` and (CommandLine=~`(?i).*\|\ bash\ .*` or CommandLine=~`(?i).*\|\ sh\ .*` or CommandLine=~`(?i).*\|bash\ .*` or CommandLine=~`(?i).*\|sh\ .*` or CommandLine=~`(?i).*\ \|sh$` or CommandLine=~`(?i).*\|\ bash$` or CommandLine=~`(?i).*\|\ sh$` or CommandLine=~`(?i).*\|bash$`)

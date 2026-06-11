@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)\\(venv|python(.+)?)\\lib\\site-packages\\` and TargetFilename=~`(?i).*\.pth$` and (Image!~`(?i).*\\python\.exe$` or TargetFilename!~`(?i).*\\pywin32\.pth$` and TargetFilename!~`(?i).*\\distutils\-precedence\.pth$`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=4720 and SamAccountName=~`(?i).*\$.*` or EventID=4781 and NewTargetUserName=~`(?i).*\$.*`) and (EventID!=4720 or TargetUserName!~`(?i)^HomeGroupUser\$$`)

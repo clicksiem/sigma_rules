@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/cat$` or Image=~`(?i).*/dir$` or Image=~`(?i).*/find$` or Image=~`(?i).*/ls$` or Image=~`(?i).*/stat$` or Image=~`(?i).*/test$` or Image=~`(?i).*grep$`) and CommandLine=~`(?i).*\.dockerenv$`

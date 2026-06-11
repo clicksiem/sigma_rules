@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^MSSQLSERVER\$AUDIT$` and EventID=33205 and (Data=~`(?i).*statement:TRUNCATE\ TABLE.*` or Data=~`(?i).*statement:DROP\ TABLE.*` or Data=~`(?i).*statement:DROP\ DATABASE.*`)

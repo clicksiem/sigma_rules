@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^ssh_certificate_authority\.create$` or action=~`(?i)^ssh_certificate_requirement\.disable$`

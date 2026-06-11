@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^s3\.amazonaws\.com$` and eventName=~`(?i)^PutBucketVersioning$` and requestParameters=~`(?i).*Suspended.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*http_proxy=.*` or CommandLine=~`(?i).*https_proxy=.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | gcp_audit_method_name=~`(?i)^v.*\.Compute\.Firewalls\.Delete$` or gcp_audit_method_name=~`(?i)^v.*\.Compute\.Firewalls\.Patch$` or gcp_audit_method_name=~`(?i)^v.*\.Compute\.Firewalls\.Update$` or gcp_audit_method_name=~`(?i)^v.*\.Compute\.Firewalls\.Insert$`

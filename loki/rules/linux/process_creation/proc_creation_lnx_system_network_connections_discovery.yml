@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/who$` or Image=~`(?i).*/w$` or Image=~`(?i).*/last$` or Image=~`(?i).*/lsof$` or Image=~`(?i).*/netstat$`) and (ParentCommandLine!~`(?i).*/usr/bin/landscape\-sysinfo.*` or Image!~`(?i).*/who$`)

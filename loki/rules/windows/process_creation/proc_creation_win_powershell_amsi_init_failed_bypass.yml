@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*System\.Management\.Automation\.AmsiUtils.*` and CommandLine=~`(?i).*amsiInitFailed.*` or CommandLine=~`(?i).*\[Ref\]\.Assembly\.GetType.*` and CommandLine=~`(?i).*SetValue\(\$null,\$true\).*` and CommandLine=~`(?i).*NonPublic,Static.*`

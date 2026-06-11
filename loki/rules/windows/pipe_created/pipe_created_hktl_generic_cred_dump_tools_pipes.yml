@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | PipeName=~`(?i).*\\cachedump.*` or PipeName=~`(?i).*\\lsadump.*` or PipeName=~`(?i).*\\wceservicepipe.*`

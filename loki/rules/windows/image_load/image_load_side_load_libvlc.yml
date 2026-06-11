@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\libvlc\.dll$` and ImageLoaded!~`(?i)^C:\\Program\ Files\ \(x86\)\\VideoLAN\\VLC\\.*` and ImageLoaded!~`(?i)^C:\\Program\ Files\\VideoLAN\\VLC\\.*`

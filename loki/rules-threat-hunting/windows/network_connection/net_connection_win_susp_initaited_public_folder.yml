@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and Image=~`(?i).*:\\Users\\Public\\.*` and Image!~`(?i).*:\\Users\\Public\\IBM\\ClientSolutions\\Start_Programs\\.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\Keyboard\ Layout\\Preload\\.*` or TargetObject=~`(?i).*\\Keyboard\ Layout\\Substitutes\\.*`) and (Details=~`(?i).*00000429.*` or Details=~`(?i).*00050429.*` or Details=~`(?i).*0000042a.*`)

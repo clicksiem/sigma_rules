@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (IntegrityLevel=~`(?i)^Medium$` or IntegrityLevel=~`(?i)^S\-1\-16\-8192$`) and CommandLine=~`(?i).*ControlSet.*` and CommandLine=~`(?i).*services.*` and (CommandLine=~`(?i).*\\ImagePath.*` or CommandLine=~`(?i).*\\FailureCommand.*` or CommandLine=~`(?i).*\\ServiceDll.*`)

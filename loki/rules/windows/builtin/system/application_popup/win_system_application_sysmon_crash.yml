@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Application\ Popup$` and EventID=26 and (Caption=~`(?i)^sysmon64\.exe\ \-\ Application\ Error$` or Caption=~`(?i)^sysmon\.exe\ \-\ Application\ Error$`)

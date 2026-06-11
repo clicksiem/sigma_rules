@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\certoc\.exe$` or OriginalFileName=~`(?i)^CertOC\.exe$`) and CommandLine=~`://[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}` and CommandLine=~`(?i).*\-GetCACAPS.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^psexesvc\.exe$` and Image!~`(?i)^C:\\Windows\\PSEXESVC\.exe$`

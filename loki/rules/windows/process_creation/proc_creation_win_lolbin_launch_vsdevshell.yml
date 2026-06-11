@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*Launch\-VsDevShell\.ps1.*` and (CommandLine=~`(?i).*VsWherePath\ .*` or CommandLine=~`(?i).*VsInstallationPath\ .*`)

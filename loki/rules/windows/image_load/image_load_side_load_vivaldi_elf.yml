@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\vivaldi_elf\.dll$` and (Image!~`(?i).*\\Vivaldi\\Application\\vivaldi\.exe$` or ImageLoaded!~`(?i).*\\Vivaldi\\Application\\.*`)

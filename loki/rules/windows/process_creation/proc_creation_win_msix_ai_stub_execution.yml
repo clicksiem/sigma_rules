@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\AI_STUBS\\AiStubX64Elevated\.exe$` or Image=~`(?i).*\\AI_STUBS\\AiStubX86Elevated\.exe$` or Image=~`(?i).*\\AI_STUBS\\AiStubX64\.exe$` or Image=~`(?i).*\\AI_STUBS\\AiStubX86\.exe$`) and OriginalFileName=~`(?i)^popupwrapper\.exe$`

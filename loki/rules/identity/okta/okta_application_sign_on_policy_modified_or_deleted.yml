@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^application\.policy\.sign_on\.update$` or eventType=~`(?i)^application\.policy\.sign_on\.rule\.delete$`

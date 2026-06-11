@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ParentImage=~`(?i).*\\powershell\.exe$` or ParentImage=~`(?i).*\\pwsh\.exe$`) and ParentCommandLine=~`(?i).*\\WindowsPowerShell\\Modules\\Pester\\.*` and (ParentCommandLine=~`(?i).*\{\ Invoke\-Pester\ \-EnableExit\ ;.*` or ParentCommandLine=~`(?i).*\{\ Get\-Help\ ".*`)

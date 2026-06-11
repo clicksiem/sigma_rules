@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Services\\LanmanServer\\Parameters\\.*` and (TargetObject=~`(?i).*\\AutoShareWks$` or TargetObject=~`(?i).*\\AutoShareServer$`) and Details=~`(?i)^DWORD\ \(0x00000000\)$`

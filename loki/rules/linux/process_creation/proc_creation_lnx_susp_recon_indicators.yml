@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*\ \-name\ \.htpasswd.*` or CommandLine=~`(?i).*\ \-perm\ \-4000\ .*`

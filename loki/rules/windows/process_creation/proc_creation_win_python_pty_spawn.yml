@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*python\.exe$` or Image=~`(?i).*python3\.exe$` or Image=~`(?i).*python2\.exe$`) and (CommandLine=~`(?i).*import\ pty.*` and CommandLine=~`(?i).*\.spawn\(.*` or CommandLine=~`(?i).*from\ pty\ import\ spawn.*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*FromBase64String.*` and CommandLine=~`(?i).*MemoryStream.*` and CommandLine=~`(?i).*H4sI.*`

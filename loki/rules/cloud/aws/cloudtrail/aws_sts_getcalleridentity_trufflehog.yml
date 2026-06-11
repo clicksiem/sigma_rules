@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^sts\.amazonaws\.com$` and eventName=~`(?i)^GetCallerIdentity$` and userAgent=~`(?i).*TruffleHog.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Services\\DHCPServer\\Parameters\\CalloutDlls$` or TargetObject=~`(?i).*\\Services\\DHCPServer\\Parameters\\CalloutEnabled$`

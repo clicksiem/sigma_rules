@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\Adobe\ Creative\ Cloud\ Experience\\libs\\node\.exe$` and CommandLine!~`(?i).*Adobe\ Creative\ Cloud\ Experience\\js.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventName=~`(?i)^ConsoleLogin$` and additionalEventData_MFAUsed=~`(?i)^NO$` and responseElements_ConsoleLogin=~`(?i)^Success$`

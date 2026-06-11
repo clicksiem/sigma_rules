@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^SYSCALL$` and SYSCALL=~`(?i)^sysinfo$` and exe!~`(?i).*/bin/splunkd$`

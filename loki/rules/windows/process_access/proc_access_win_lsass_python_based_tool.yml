@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetImage=~`(?i).*\\lsass\.exe$` and CallTrace=~`(?i).*_ctypes\.pyd\+.*` and CallTrace=~`(?i).*:\\Windows\\System32\\KERNELBASE\.dll\+.*` and CallTrace=~`(?i).*:\\Windows\\SYSTEM32\\ntdll\.dll\+.*` and (CallTrace=~`(?i).*python27\.dll\+.*` or CallTrace=~`(?i).*python3.*\.dll\+.*`) and GrantedAccess=~`(?i)^0x1FFFFF$`

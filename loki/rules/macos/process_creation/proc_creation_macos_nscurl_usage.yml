@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/nscurl$` and (CommandLine=~`(?i).*\-\-download\ .*` or CommandLine=~`(?i).*\-\-download\-directory\ .*` or CommandLine=~`(?i).*\-\-output\ .*` or CommandLine=~`(?i).*\-dir\ .*` or CommandLine=~`(?i).*\-dl\ .*` or CommandLine=~`(?i).*\-ld.*` or CommandLine=~`(?i).*\-o\ .*`)

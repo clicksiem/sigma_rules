@@ -1,0 +1,1 @@
+{job="logstash"} | json | OperationName=~`(?i)^Set\ Company\ Information$` and TargetResources_modifiedProperties_newValue=~`(?i).*TrustedCAsForPasswordlessAuth.*`

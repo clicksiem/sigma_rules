@@ -1,0 +1,1 @@
+{job=~".+"} | json | certificate_serial=~`(?i)^8BB00EE$`

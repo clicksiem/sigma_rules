@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4625 and IpAddress!~`(?i).*\-.*` and IpAddress!=ip("::1/128") and IpAddress!=ip("10.0.0.0/8") and IpAddress!=ip("127.0.0.0/8") and IpAddress!=ip("172.16.0.0/12") and IpAddress!=ip("192.168.0.0/16") and IpAddress!=ip("169.254.0.0/16") and IpAddress!=ip("fc00::/7") and IpAddress!=ip("fe80::/10")

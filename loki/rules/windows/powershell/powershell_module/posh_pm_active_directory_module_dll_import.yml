@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Payload=~`(?i).*Import\-Module\ .*` or Payload=~`(?i).*ipmo\ .*`) and Payload=~`(?i).*Microsoft\.ActiveDirectory\.Management\.dll.*`

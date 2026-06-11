@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Get\-ItemProperty.*` and ScriptBlockText=~`(?i).*Registry::.*` and ScriptBlockText=~`(?i).*HKEY_CURRENT_USER\\Control\ Panel\\Desktop\\.*` and ScriptBlockText=~`(?i).*WallPaper.*` or ScriptBlockText=~`(?i).*SystemParametersInfo\(20,0,.*,3\).*`

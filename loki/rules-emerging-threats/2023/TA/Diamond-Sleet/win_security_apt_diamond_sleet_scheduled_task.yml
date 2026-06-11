@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4698 and TaskName=~`(?i)^\\Windows\ TeamCity\ Settings\ User\ Interface$` and TaskContent=~`(?i).*uTYNkfKxHiZrx3KJ.*`

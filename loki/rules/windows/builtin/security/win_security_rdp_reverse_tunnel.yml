@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5156 and (SourcePort=3389 and (DestAddress=~`(?i)^127\..*` or DestAddress=~`(?i)^::1$`) or DestPort=3389 and (SourceAddress=~`(?i)^127\..*` or SourceAddress=~`(?i)^::1$`)) and FilterOrigin!~`(?i)^AppContainer\ Loopback$` and Application!~`(?i).*\\thor\.exe$` and Application!~`(?i).*\\thor64\.exe$`

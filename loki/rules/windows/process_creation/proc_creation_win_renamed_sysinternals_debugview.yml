@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Product=~`(?i)^Sysinternals\ DebugView$` and (OriginalFileName!~`(?i)^Dbgview\.exe$` or Image!~`(?i).*\\Dbgview\.exe$`)

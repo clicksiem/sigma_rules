@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | ParentCommandLine=~`(?i)^bash\ \-i$` and (CommandLine=~`(?i).*\-c\ import\ .*` or CommandLine=~`(?i).*base64.*` or CommandLine=~`(?i).*pty\.spawn.*` or Image=~`(?i).*whoami$` or Image=~`(?i).*iptables$` or Image=~`(?i).*/ncat$` or Image=~`(?i).*/nc$` or Image=~`(?i).*/netcat$`)

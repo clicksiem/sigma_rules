@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | auditType_category=~`(?i)^Auditing$` and auditType_action=~`(?i)^Audit\ log\ configuration\ updated$`

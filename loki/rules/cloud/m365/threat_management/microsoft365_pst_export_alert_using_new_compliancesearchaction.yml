@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^SecurityComplianceCenter$` and Payload=~`(?i).*New\-ComplianceSearchAction.*` and Payload=~`(?i).*Export.*` and Payload=~`(?i).*pst.*`

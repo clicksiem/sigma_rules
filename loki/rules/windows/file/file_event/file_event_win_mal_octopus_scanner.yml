@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\AppData\\Local\\Microsoft\\Cache134\.dat$` or TargetFilename=~`(?i).*\\AppData\\Local\\Microsoft\\ExplorerSync\.db$`

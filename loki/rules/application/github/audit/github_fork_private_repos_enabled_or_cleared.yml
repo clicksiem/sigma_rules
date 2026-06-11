@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^private_repository_forking\.clear$` or action=~`(?i)^private_repository_forking\.enable$`

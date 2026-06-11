@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*get\-ADPrincipalGroupMembership.*` or ScriptBlockText=~`(?i).*get\-aduser.*` and ScriptBlockText=~`(?i).*\-f\ .*` and ScriptBlockText=~`(?i).*\-pr\ .*` and ScriptBlockText=~`(?i).*DoesNotRequirePreAuth.*`

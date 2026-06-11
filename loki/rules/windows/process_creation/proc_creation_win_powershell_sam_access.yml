@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\\HarddiskVolumeShadowCopy.*` and CommandLine=~`(?i).*System32\\config\\sam.*` and (CommandLine=~`(?i).*Copy\-Item.*` or CommandLine=~`(?i).*cp\ \$_\..*` or CommandLine=~`(?i).*cpi\ \$_\..*` or CommandLine=~`(?i).*copy\ \$_\..*` or CommandLine=~`(?i).*\.File\]::Copy\(.*`)

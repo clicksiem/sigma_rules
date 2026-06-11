@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\.node$` and (Signed=~`(?i)^false$` or SignatureStatus=~`(?i)^Unavailable$`) and (Image!~`(?i).*\\Code\.exe$` or ImageLoaded!~`(?i).*\.vscode\\extensions\\ms\-toolsai\.jupyter\-.*` or ImageLoaded!~`(?i).*\\electron\.napi\.node$` and ImageLoaded!~`(?i).*\\node\.napi\.glibc\.node$`)

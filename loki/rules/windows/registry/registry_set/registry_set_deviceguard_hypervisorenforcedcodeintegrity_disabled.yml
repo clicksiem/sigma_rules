@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\Control\\DeviceGuard\\HypervisorEnforcedCodeIntegrity$` or TargetObject=~`(?i).*\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity\\Enabled$` or TargetObject=~`(?i).*\\Microsoft\\Windows\\DeviceGuard\\HypervisorEnforcedCodeIntegrity$`) and Details=~`(?i)^DWORD\ \(0x00000000\)$`

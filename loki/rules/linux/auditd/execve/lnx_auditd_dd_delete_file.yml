@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i).*dd.*` and (a1=~`(?i).*if=/dev/null.*` or a1=~`(?i).*if=/dev/zero.*`)

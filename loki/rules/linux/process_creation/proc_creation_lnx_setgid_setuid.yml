@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*chown\ root.*` and (CommandLine=~`(?i).*\ chmod\ u\+s.*` or CommandLine=~`(?i).*\ chmod\ g\+s.*`)

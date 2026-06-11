@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*ps\.exe\ \-accepteula.*` and CommandLine=~`(?i).*\-s\ cmd\ /c\ netstat.*`

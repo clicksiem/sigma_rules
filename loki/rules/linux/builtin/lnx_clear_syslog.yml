@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)rm\ /var/log/syslog|rm\ \-r\ /var/log/syslog|rm\ \-f\ /var/log/syslog|rm\ \-rf\ /var/log/syslog|mv\ /var/log/syslog|\ >/var/log/syslog|\ >\ /var/log/syslog` !~ `(?i)/syslog\.`

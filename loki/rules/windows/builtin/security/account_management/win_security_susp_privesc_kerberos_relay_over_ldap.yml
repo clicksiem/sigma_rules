@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4624 and LogonType=3 and AuthenticationPackageName=~`(?i)^Kerberos$` and IpAddress=~`(?i)^127\.0\.0\.1$` and TargetUserSid=~`(?i)^S\-1\-5\-21\-.*` and TargetUserSid=~`(?i).*\-500$` and IpPort!~`(?i)^0$`

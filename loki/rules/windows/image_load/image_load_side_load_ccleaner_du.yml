@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\CCleanerDU\.dll$` and (Image!~`(?i)^C:\\Program\ Files\\CCleaner\\.*` and Image!~`(?i)^C:\\Program\ Files\ \(x86\)\\CCleaner\\.*` or Image!~`(?i).*\\CCleaner\.exe$` and Image!~`(?i).*\\CCleaner64\.exe$`)

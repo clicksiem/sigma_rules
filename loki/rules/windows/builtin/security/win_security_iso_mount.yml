@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4663 and ObjectServer=~`(?i)^Security$` and ObjectType=~`(?i)^File$` and ObjectName=~`(?i)^\\Device\\CdRom.*` and ObjectName!~`(?i)^\\Device\\CdRom0\\autorun\.ico$` and ObjectName!~`(?i)^\\Device\\CdRom0\\setup\.exe$` and ObjectName!~`(?i)^\\Device\\CdRom0\\setup64\.exe$`

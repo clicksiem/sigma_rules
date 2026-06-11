@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventName=~`(?i)^EnableRegion$` and eventSource=~`(?i)^account\.amazonaws\.com$`

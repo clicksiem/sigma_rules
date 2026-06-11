@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | event_type_id=532 or event_type_id=553 or event_type_id=551

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ScriptBlockText=~`(?i).*Add\-AppPackage\ .*` or ScriptBlockText=~`(?i).*Add\-AppxPackage\ .*`) and ScriptBlockText=~`(?i).*\ \-AllowUnsigned.*`

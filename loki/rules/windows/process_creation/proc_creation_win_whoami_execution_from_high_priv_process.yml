@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^whoami\.exe$` or Image=~`(?i).*\\whoami\.exe$`) and (User=~`(?i).*AUTHORI.*` or User=~`(?i).*AUTORI.*` or User=~`(?i).*TrustedInstaller.*`)

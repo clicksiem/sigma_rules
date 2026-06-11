@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^Edit$` and cfgpath=~`(?i)^user\.group$`

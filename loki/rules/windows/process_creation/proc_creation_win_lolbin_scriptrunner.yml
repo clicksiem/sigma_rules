@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\ScriptRunner\.exe$` or OriginalFileName=~`(?i)^ScriptRunner\.exe$`) and CommandLine=~`(?i).*\ \-appvscript\ .*`

@@ -1,0 +1,1 @@
+{job=~".+"} | json | (c_useragent=~`(?i).*WebDAV.*` or c_uri=~`(?i).*webdav.*`) and (resp_mime_types=~`(?i).*dosexec.*` or c_uri=~`(?i).*\.exe$`)

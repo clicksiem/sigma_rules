@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | cs_method=~`(?i)^POST$` and c_uri=~`(?i).*/mgmt/tm/util/bash$`

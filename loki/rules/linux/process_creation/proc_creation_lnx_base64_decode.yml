@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/base64$` and CommandLine=~`(?i).*\-d.*`

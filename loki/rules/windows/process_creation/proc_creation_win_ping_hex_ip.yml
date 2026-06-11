@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\ping\.exe$` and CommandLine=~`0x[a-fA-F0-9]{8}`

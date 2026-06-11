@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/xattr$` and CommandLine=~`(?i).*\-d.*` and CommandLine=~`(?i).*com\.apple\.quarantine.*`

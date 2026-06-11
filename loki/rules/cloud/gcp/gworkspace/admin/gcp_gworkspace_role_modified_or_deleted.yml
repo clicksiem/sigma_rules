@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventService=~`(?i)^admin\.googleapis\.com$` and (eventName=~`(?i)^DELETE_ROLE$` or eventName=~`(?i)^RENAME_ROLE$` or eventName=~`(?i)^UPDATE_ROLE$`)

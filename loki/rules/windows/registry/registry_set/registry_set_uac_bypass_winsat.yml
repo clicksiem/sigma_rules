@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Root\\InventoryApplicationFile\\winsat\.exe\|.*` and TargetObject=~`(?i).*\\LowerCaseLongPath$` and Details=~`(?i)^c:\\users\\.*` and Details=~`(?i).*\\appdata\\local\\temp\\system32\\winsat\.exe$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)HybridConnection|sb://|servicebus\.windows\.net|HybridConnectionManage` | json | (EventID=40300 or EventID=40301 or EventID=40302)

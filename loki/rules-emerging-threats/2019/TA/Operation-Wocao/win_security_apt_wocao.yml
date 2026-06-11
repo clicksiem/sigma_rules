@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4799 and TargetUserName=~`(?i)^Administr.*` and CallerProcessName=~`(?i).*\\checkadmin\.exe$`

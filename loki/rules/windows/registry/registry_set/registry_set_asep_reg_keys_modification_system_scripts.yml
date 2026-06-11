@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Software\\Policies\\Microsoft\\Windows\\System\\Scripts.*` and (TargetObject=~`(?i).*\\Startup.*` or TargetObject=~`(?i).*\\Shutdown.*` or TargetObject=~`(?i).*\\Logon.*` or TargetObject=~`(?i).*\\Logoff.*`) and Details!~`(?i)^\(Empty\)$`

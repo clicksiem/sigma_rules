@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*:\\Windows\\System32\\CodeIntegrity\\.*` and (TargetFilename=~`(?i).*\.cip$` or TargetFilename=~`(?i).*\.p7b$`) and IntegrityLevel=~`(?i)^High$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\BFE\\Parameters\\Policy\\Persistent\\Filter\\.*` and Image!~`(?i)^C:\\Windows\\System32\\svchost\.exe$` and Image!~`(?i)^C:\\Windows\\SysWOW64\\svchost\.exe$`

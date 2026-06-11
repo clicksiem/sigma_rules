@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Import\-Module\ .*` and ScriptBlockText=~`(?i).*Microsoft\.ActiveDirectory\.Management\.dll.*` or ScriptBlockText=~`(?i).*ipmo\ Microsoft\.ActiveDirectory\.Management\.dll.*`

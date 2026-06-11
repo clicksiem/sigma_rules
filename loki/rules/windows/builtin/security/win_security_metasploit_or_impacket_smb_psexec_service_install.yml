@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4697 and ServiceFileName=~`^%systemroot%\\[a-zA-Z]{8}\.exe$` and ServiceName=~`(^[a-zA-Z]{4}$)|(^[a-zA-Z]{8}$)|(^[a-zA-Z]{16}$)` and ServiceStartType=3 and ServiceType=~`(?i)^0x10$` and ServiceName!~`(?i)^PSEXESVC$`

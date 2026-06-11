@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Description=~`(?i)^NetSupport\ Client\ Configurator$` or Product=~`(?i)^NetSupport\ Remote\ Control$` or Company=~`(?i)^NetSupport\ Ltd$` or OriginalFileName=~`(?i)^PCICFGUI\.EXE$`

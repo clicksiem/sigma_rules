@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^user\.mfa\.factor\.deactivate$` or eventType=~`(?i)^user\.mfa\.factor\.reset_all$`

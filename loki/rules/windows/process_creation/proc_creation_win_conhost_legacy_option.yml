@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (IntegrityLevel=~`(?i)^High$` or IntegrityLevel=~`(?i)^S\-1\-16\-12288$`) and CommandLine=~`(?i).*conhost\.exe.*` and CommandLine=~`(?i).*0xffffffff.*` and CommandLine=~`(?i).*\-ForceV1.*`

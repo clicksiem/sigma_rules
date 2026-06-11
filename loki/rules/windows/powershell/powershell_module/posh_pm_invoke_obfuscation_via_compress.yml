@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~`(?i).*new\-object.*` and Payload=~`(?i).*text\.encoding\]::ascii.*` and (Payload=~`(?i).*system\.io\.compression\.deflatestream.*` or Payload=~`(?i).*system\.io\.streamreader.*`) and Payload=~`(?i).*readtoend$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Control\\Lsa\\DsrmAdminLogonBehavior$` and Details!~`(?i)^DWORD\ \(0x00000000\)$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/curl$` and (CommandLine=~`(?i).*\ \-A\ .*` or CommandLine=~`(?i).*\ \-\-user\-agent\ .*`)

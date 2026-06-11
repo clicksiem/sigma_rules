@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\schtasks\.exe$` or OriginalFileName=~`(?i)^schtasks\.exe$`) and CommandLine=~`(?i).*run\ .*` and CommandLine=~`(?i).*\\Application\ Experience\\Microsoft\ Compatibility\ Appraiser.*`

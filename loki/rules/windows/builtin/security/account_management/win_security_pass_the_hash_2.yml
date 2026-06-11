@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=4624 and SubjectUserSid=~`(?i)^S\-1\-0\-0$` and LogonType=3 and LogonProcessName=~`(?i)^NtLmSsp$` and KeyLength=0 or EventID=4624 and LogonType=9 and LogonProcessName=~`(?i)^seclogo$`) and TargetUserName!~`(?i)^ANONYMOUS\ LOGON$`

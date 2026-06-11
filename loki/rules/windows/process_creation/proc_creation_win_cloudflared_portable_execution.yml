@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\cloudflared\.exe$` and Image!~`(?i).*:\\Program\ Files\ \(x86\)\\cloudflared\\.*` and Image!~`(?i).*:\\Program\ Files\\cloudflared\\.*`

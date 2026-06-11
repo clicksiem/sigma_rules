@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/c89$` or Image=~`(?i).*/c99$` or Image=~`(?i).*/gcc$`) and CommandLine=~`(?i).*\-wrapper.*` and (CommandLine=~`(?i).*/bin/bash,\-s.*` or CommandLine=~`(?i).*/bin/dash,\-s.*` or CommandLine=~`(?i).*/bin/fish,\-s.*` or CommandLine=~`(?i).*/bin/sh,\-s.*` or CommandLine=~`(?i).*/bin/zsh,\-s.*`)

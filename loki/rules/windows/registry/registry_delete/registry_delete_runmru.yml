@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU$`

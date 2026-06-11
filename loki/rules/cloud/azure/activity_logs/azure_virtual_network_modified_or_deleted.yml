@@ -1,0 +1,1 @@
+{job="logstash"} | json | (operationName=~`(?i)^MICROSOFT\.NETWORK/VIRTUALNETWORKGATEWAYS/.*` or operationName=~`(?i)^MICROSOFT\.NETWORK/VIRTUALNETWORKS/.*`) and (operationName=~`(?i).*/WRITE$` or operationName=~`(?i).*/DELETE$`)

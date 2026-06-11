@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*new\-object.*` and CommandLine=~`(?i).*text\.encoding\]::ascii.*` and (CommandLine=~`(?i).*system\.io\.compression\.deflatestream.*` or CommandLine=~`(?i).*system\.io\.streamreader.*` or CommandLine=~`(?i).*readtoend\(.*`)

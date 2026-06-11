@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\Stracciatella\.exe$` or OriginalFileName=~`(?i)^Stracciatella\.exe$` or Description=~`(?i)^Stracciatella$` or Hashes=~`(?i).*SHA256=9d25e61ec1527e2a69d7c2a4e3fe2fe15890710c198a66a9f25d99fdf6c7b956.*` or Hashes=~`(?i).*SHA256=fd16609bd9830c63b9413671678bb159b89c357d21942ddbb6b93add808d121a.*`

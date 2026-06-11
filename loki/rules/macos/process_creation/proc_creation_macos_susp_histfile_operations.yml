@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*\.bash_history.*` or CommandLine=~`(?i).*\.zsh_history.*` or CommandLine=~`(?i).*\.zhistory.*` or CommandLine=~`(?i).*\.history.*` or CommandLine=~`(?i).*\.sh_history.*` or CommandLine=~`(?i).*fish_history.*`

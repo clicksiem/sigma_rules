@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)entered\ promiscuous\ mode|Deactivating\ service|Oversized\ packet\ received\ from|imuxsock\ begins\ to\ drop\ messages`

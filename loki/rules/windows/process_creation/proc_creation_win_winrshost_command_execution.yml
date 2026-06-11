@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\winrshost\.exe$` and Image!~`(?i)^C:\\Windows\\System32\\conhost\.exe$`

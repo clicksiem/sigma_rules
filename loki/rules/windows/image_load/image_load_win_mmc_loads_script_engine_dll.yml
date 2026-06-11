@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\mmc\.exe$` and (ImageLoaded=~`(?i).*\\vbscript\.dll$` or ImageLoaded=~`(?i).*\\jscript\.dll$` or ImageLoaded=~`(?i).*\\jscript9\.dll$`)

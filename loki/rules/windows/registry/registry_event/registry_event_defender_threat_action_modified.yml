@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Microsoft\\Windows\ Defender\\Threats\\ThreatSeverityDefaultAction\\.*` and (TargetObject=~`(?i).*\\1$` or TargetObject=~`(?i).*\\2$` or TargetObject=~`(?i).*\\4$` or TargetObject=~`(?i).*\\5$`) and (Details=~`(?i)^DWORD\ \(0x00000006\)$` or Details=~`(?i)^DWORD\ \(0x00000009\)$`)

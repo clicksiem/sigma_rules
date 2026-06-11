@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/shutdown$` or Image=~`(?i).*/reboot$` or Image=~`(?i).*/halt$`

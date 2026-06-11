@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=8004 and (WorkstationName=~`(?i)^Rdesktop$` or WorkstationName=~`(?i)^Remmina$` or WorkstationName=~`(?i)^Freerdp$` or WorkstationName=~`(?i)^Windows7$` or WorkstationName=~`(?i)^Windows8$` or WorkstationName=~`(?i)^Windows2012$` or WorkstationName=~`(?i)^Windows2016$` or WorkstationName=~`(?i)^Windows2019$`)

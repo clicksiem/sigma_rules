@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\format\.com$` and CommandLine=~`(?i).*/fs:.*` and CommandLine!~`(?i).*/fs:exFAT.*` and CommandLine!~`(?i).*/fs:FAT.*` and CommandLine!~`(?i).*/fs:NTFS.*` and CommandLine!~`(?i).*/fs:ReFS.*` and CommandLine!~`(?i).*/fs:UDF.*`

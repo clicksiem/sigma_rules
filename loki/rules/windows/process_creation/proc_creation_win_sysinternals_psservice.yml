@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^psservice\.exe$` or Image=~`(?i).*\\PsService\.exe$` or Image=~`(?i).*\\PsService64\.exe$`

@@ -1,0 +1,1 @@
+{job="logstash"} | json | properties_message=~`(?i)^Admin\ registered\ security\ info$` and Status=~`(?i)^Admin\ registered\ temporary\ access\ pass\ method\ for\ user$`

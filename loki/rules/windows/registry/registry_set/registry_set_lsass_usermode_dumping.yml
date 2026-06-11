@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\\Windows\ Error\ Reporting\\LocalDumps\\DumpType.*` or TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\\Windows\ Error\ Reporting\\LocalDumps\\lsass\.exe\\DumpType.*`) and Details=~`(?i)^DWORD\ \(0x00000002\)$`

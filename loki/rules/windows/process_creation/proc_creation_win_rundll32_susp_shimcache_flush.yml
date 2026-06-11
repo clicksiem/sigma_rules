@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*rundll32.*` and CommandLine=~`(?i).*apphelp\.dll.*` and (CommandLine=~`(?i).*ShimFlushCache.*` or CommandLine=~`(?i).*\#250.*`) or CommandLine=~`(?i).*rundll32.*` and CommandLine=~`(?i).*kernel32\.dll.*` and (CommandLine=~`(?i).*BaseFlushAppcompatCache.*` or CommandLine=~`(?i).*\#46.*`)

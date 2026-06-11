@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Get\-ChildItem.*` and ScriptBlockText=~`(?i).*\ \-Recurse\ .*` and ScriptBlockText=~`(?i).*\ \-Path\ .*` and ScriptBlockText=~`(?i).*\ \-Filter\ Bookmarks.*` and ScriptBlockText=~`(?i).*\ \-ErrorAction\ SilentlyContinue.*` and ScriptBlockText=~`(?i).*\ \-Force.*`

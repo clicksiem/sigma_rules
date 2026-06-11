@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Software\\Microsoft\\Fax\\Device\ Providers\\.*` and TargetObject=~`(?i).*\\ImageName.*` and Details!~`(?i)^%systemroot%\\system32\\fxst30\.dll$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\excel\.exe$` or Image=~`(?i).*\\mspub\.exe$` or Image=~`(?i).*\\outlook\.exe$` or Image=~`(?i).*\\onenote\.exe$` or Image=~`(?i).*\\onenoteim\.exe$` or Image=~`(?i).*\\powerpnt\.exe$` or Image=~`(?i).*\\winword\.exe$`) and ImageLoaded=~`(?i).*\\clr\.dll.*`

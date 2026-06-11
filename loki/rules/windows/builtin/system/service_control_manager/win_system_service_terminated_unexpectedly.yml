@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Service\ Control\ Manager$` and EventID=7034 and (param1=~`(?i).*Message\ Queuing.*` or Binary=~`(?i).*4d0053004d005100.*` or Binary=~`(?i).*6d0073006d007100.*`)

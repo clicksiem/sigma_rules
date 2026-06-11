@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\schtasks\.exe$` and CommandLine=~`(?i).*\ /delete\ .*` and CommandLine=~`(?i).*/tn\ \\.*.*` and CommandLine=~`(?i).*\ /f.*`

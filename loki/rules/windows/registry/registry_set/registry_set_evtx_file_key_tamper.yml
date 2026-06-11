@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SYSTEM\\CurrentControlSet\\Services\\EventLog\\.*` and TargetObject=~`(?i).*\\File$` and Details!~`(?i).*\\System32\\Winevt\\Logs\\.*`

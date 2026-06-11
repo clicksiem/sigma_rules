@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/apt$` or Image=~`(?i).*/apt\-get$`) and CommandLine=~`(?i).*APT::Update::Pre\-Invoke::=.*`

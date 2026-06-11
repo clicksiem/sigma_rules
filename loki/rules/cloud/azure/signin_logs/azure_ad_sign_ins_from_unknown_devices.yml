@@ -1,0 +1,1 @@
+{job="logstash"} | json | AuthenticationRequirement=~`(?i)^singleFactorAuthentication$` and ResultType=0 and NetworkLocationDetails=~`(?i)^\[\]$` and DeviceDetail_deviceId=~`(?i)^$`

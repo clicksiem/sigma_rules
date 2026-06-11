@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^PATH$` and (name=~`(?i)^/etc/syslog\.conf$` or name=~`(?i)^/etc/rsyslog\.conf$` or name=~`(?i)^/etc/syslog\-ng/syslog\-ng\.conf$`)

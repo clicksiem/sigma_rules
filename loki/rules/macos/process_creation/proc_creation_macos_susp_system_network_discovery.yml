@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/arp$` or Image=~`(?i).*/ifconfig$` or Image=~`(?i).*/netstat$` or Image=~`(?i).*/networksetup$` or Image=~`(?i).*/socketfilterfw$` or Image=~`(?i)^/usr/bin/defaults$` and CommandLine=~`(?i).*/Library/Preferences/com\.apple\.alf.*` and CommandLine=~`(?i).*read.*`) and ParentImage!~`(?i).*/wifivelocityd$`

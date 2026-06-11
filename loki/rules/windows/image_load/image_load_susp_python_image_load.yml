@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Description=~`(?i)^Python\ Core$` and Image!~`(?i).*Python.*` and Image!~`(?i)^C:\\Program\ Files\\.*` and Image!~`(?i)^C:\\Program\ Files\ \(x86\)\\.*` and Image!~`(?i)^C:\\ProgramData\\Anaconda3\\.*` and Image!=``

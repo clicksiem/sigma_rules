@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4697 and (ServiceFileName=~`(?i).*cachedump.*` or ServiceFileName=~`(?i).*dumpsvc.*` or ServiceFileName=~`(?i).*fgexec.*` or ServiceFileName=~`(?i).*gsecdump.*` or ServiceFileName=~`(?i).*mimidrv.*` or ServiceFileName=~`(?i).*pwdump.*` or ServiceFileName=~`(?i).*servpw.*`)

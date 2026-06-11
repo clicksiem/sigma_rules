@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetImage=~`(?i).*\\mstsc\.exe$` and (SourceImage=~`(?i).*:\\Temp\\.*` or SourceImage=~`(?i).*:\\Users\\Public\\.*` or SourceImage=~`(?i).*:\\Windows\\PerfLogs\\.*` or SourceImage=~`(?i).*:\\Windows\\Tasks\\.*` or SourceImage=~`(?i).*:\\Windows\\Temp\\.*` or SourceImage=~`(?i).*\\AppData\\Local\\Temp\\.*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\SharpLDAPmonitor\.exe$` or OriginalFileName=~`(?i)^SharpLDAPmonitor\.exe$` or CommandLine=~`(?i).*/user:.*` and CommandLine=~`(?i).*/pass:.*` and CommandLine=~`(?i).*/dcip:.*`

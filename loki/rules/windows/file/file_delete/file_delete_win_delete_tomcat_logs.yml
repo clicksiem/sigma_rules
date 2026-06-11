@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\Tomcat.*` and TargetFilename=~`(?i).*\\logs\\.*` and (TargetFilename=~`(?i).*catalina\..*` or TargetFilename=~`(?i).*_access_log\..*` or TargetFilename=~`(?i).*localhost\..*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\MSDTC\\MTxOCI\\OracleOciLib$` and Details!~`(?i).*oci\.dll.*` or TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\MSDTC\\MTxOCI\\OracleOciLibPath$` and Details!~`(?i).*%SystemRoot%\\System32\\.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\sc\.exe$` and (IntegrityLevel=~`(?i)^Medium$` or IntegrityLevel=~`(?i)^S\-1\-16\-8192$`) and (CommandLine=~`(?i).*config.*` and CommandLine=~`(?i).*binPath.*` or CommandLine=~`(?i).*failure.*` and CommandLine=~`(?i).*command.*`)

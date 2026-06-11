@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4656 and ObjectType=~`(?i)^Key$` and ObjectName=~`(?i).*\\SAM$`

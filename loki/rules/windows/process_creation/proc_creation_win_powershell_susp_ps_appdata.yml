@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*powershell\.exe.*` or CommandLine=~`(?i).*\\powershell.*` or CommandLine=~`(?i).*\\pwsh.*` or CommandLine=~`(?i).*pwsh\.exe.*`) and CommandLine=~`(?i).*/c\ .*` and CommandLine=~`(?i).*\\AppData\\.*` and (CommandLine=~`(?i).*Local\\.*` or CommandLine=~`(?i).*Roaming\\.*`)

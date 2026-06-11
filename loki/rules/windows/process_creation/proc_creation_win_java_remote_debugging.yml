@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*transport=dt_socket,address=.*` and (CommandLine=~`(?i).*jre1\..*` or CommandLine=~`(?i).*jdk1\..*`) and CommandLine!~`(?i).*address=127\.0\.0\.1.*` and CommandLine!~`(?i).*address=localhost.*`

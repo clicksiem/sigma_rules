@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | c_useragent=~`(?i)^Mozilla/5\.0\ \(Windows\ NT\ 6\.1;\ WOW64;\ Trident/7\.0;\ rv:11\.0\)\ like\ Gecko$` and (cs_uri=~`(?i)^/admin/get\.php$` or cs_uri=~`(?i)^/news\.php$` or cs_uri=~`(?i)^/login/process\.php$`) and cs_method=~`(?i)^POST$`

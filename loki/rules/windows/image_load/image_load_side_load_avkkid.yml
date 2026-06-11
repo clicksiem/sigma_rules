@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\AVKkid\.dll$` and (Image!~`(?i).*C:\\Program\ Files\ \(x86\)\\G\ DATA\\.*` and Image!~`(?i).*C:\\Program\ Files\\G\ DATA\\.*` or Image!~`(?i).*\\AVKKid\.exe$` or ImageLoaded!~`(?i)^C:\\Program\ Files\ \(x86\)\\G\ DATA\\.*` and ImageLoaded!~`(?i)^C:\\Program\ Files\\G\ DATA\\.*`)

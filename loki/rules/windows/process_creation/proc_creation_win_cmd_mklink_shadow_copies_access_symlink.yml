@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*mklink.*` and CommandLine=~`(?i).*HarddiskVolumeShadowCopy.*`

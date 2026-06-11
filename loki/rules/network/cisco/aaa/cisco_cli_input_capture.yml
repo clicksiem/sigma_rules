@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)show\ history|show\ history\ all|show\ logging`

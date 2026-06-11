@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\SyncAppvPublishingServer\.exe$` or OriginalFileName=~`(?i)^syncappvpublishingserver\.exe$`) and CommandLine=~`(?i).*"n;\ .*`

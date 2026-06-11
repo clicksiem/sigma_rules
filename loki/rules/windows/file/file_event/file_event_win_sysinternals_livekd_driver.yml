@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)^C:\\Windows\\System32\\drivers\\LiveKdD\.SYS$` and (Image=~`(?i).*\\livekd\.exe$` or Image=~`(?i).*\\livek64\.exe$`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\GUP\.exe$` or OriginalFileName=~`(?i)^gup\.exe$`) and CommandLine=~`(?i).*\ \-unzipTo\ .*` and CommandLine=~`(?i).*http.*` and ParentImage!~`(?i).*\\notepad\+\+\.exe$`

@@ -1,0 +1,1 @@
+{job="logstash"} | json | ResultType=53003 and Resultdescription=~`(?i)^Blocked\ by\ Conditional\ Access$`

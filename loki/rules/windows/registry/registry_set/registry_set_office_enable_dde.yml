@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Word\\Security\\AllowDDE$` and (Details=~`(?i)^DWORD\ \(0x00000001\)$` or Details=~`(?i)^DWORD\ \(0x00000002\)$`) or (TargetObject=~`(?i).*\\Excel\\Security\\DisableDDEServerLaunch$` or TargetObject=~`(?i).*\\Excel\\Security\\DisableDDEServerLookup$`) and Details=~`(?i)^DWORD\ \(0x00000000\)$`

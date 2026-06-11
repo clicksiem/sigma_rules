@@ -1,0 +1,1 @@
+{job="logstash"} | json | ResultType=50074 and ResultDescription=~`(?i).*Strong\ Auth\ required.*` or ResultType=500121 and ResultDescription=~`(?i).*Authentication\ failed\ during\ strong\ authentication\ request.*`

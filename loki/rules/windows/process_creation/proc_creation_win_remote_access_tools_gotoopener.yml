@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Description=~`(?i)^GoTo\ Opener$` or Product=~`(?i)^GoTo\ Opener$` or Company=~`(?i)^LogMeIn,\ Inc\.$`

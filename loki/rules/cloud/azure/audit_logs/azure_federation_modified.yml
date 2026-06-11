@@ -1,0 +1,1 @@
+{job="logstash"} | json | ActivityDisplayName=~`(?i)^Set\ federation\ settings\ on\ domain$`

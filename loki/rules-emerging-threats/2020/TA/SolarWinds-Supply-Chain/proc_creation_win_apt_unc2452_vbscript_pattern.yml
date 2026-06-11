@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*Execute.*` and CommandLine=~`(?i).*CreateObject.*` and CommandLine=~`(?i).*RegRead.*` and CommandLine=~`(?i).*window\.close.*` and CommandLine=~`(?i).*\\Microsoft\\Windows\\CurrentVersion.*` and CommandLine!~`(?i).*\\Software\\Microsoft\\Windows\\CurrentVersion\\Run.*`

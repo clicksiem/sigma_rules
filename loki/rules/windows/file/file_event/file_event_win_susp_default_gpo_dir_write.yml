@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\Policies\\\{31B2F340\-016D\-11D2\-945F\-00C04FB984F9\}\\.*` and (TargetFilename=~`(?i).*\.dll$` or TargetFilename=~`(?i).*\.exe$`)

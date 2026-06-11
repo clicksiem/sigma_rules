@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)dpapi::masterkey|eo\.oe\.kiwi|event::clear|event::drop|gentilkiwi\.com|kerberos::golden|kerberos::ptc|kerberos::ptt|kerberos::tgt|Kiwi\ Legit\ Printer|lsadump::|mimidrv\.sys|\\mimilib\.dll|misc::printnightmare|misc::shadowcopies|misc::skeleton|privilege::backup|privilege::debug|privilege::driver|sekurlsa::` | json | EventID!=15

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^s3\.amazonaws\.com$` and (eventName=~`(?i)^PutBucketLogging$` or eventName=~`(?i)^PutBucketWebsite$` or eventName=~`(?i)^PutEncryptionConfiguration$` or eventName=~`(?i)^PutLifecycleConfiguration$` or eventName=~`(?i)^PutReplicationConfiguration$` or eventName=~`(?i)^ReplicateObject$` or eventName=~`(?i)^RestoreObject$`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\excel\.exe$` and (ImageLoaded=~`(?i).*\\Desktop\\.*` or ImageLoaded=~`(?i).*\\Downloads\\.*` or ImageLoaded=~`(?i).*\\Perflogs\\.*` or ImageLoaded=~`(?i).*\\Temp\\.*` or ImageLoaded=~`(?i).*\\Users\\Public\\.*` or ImageLoaded=~`(?i).*\\Windows\\Tasks\\.*`) and ImageLoaded=~`(?i).*\.xll$`

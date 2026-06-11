@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | TargetFilename=~`(?i).*/etc/profile\.d/.*` and (TargetFilename=~`(?i).*\.csh$` or TargetFilename=~`(?i).*\.sh$`)

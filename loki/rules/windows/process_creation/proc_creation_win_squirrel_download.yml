@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\squirrel\.exe$` or Image=~`(?i).*\\update\.exe$`) and (CommandLine=~`(?i).*\ \-\-download\ .*` or CommandLine=~`(?i).*\ \-\-update\ .*` or CommandLine=~`(?i).*\ \-\-updateRollback=.*`) and CommandLine=~`(?i).*http.*`

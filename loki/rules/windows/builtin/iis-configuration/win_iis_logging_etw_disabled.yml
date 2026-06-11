@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=29 and Configuration=~`(?i).*@logTargetW3C$` and OldValue=~`(?i).*ETW.*` and NewValue!~`(?i).*ETW.*`

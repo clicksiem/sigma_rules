@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\AppData\\Roaming\\Oracle\\bin\\java.*` and TargetFilename=~`(?i).*\.exe.*` or TargetFilename=~`(?i).*\\Retrive.*` and TargetFilename=~`(?i).*\.vbs.*`

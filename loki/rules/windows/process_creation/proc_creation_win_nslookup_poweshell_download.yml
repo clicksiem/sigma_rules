@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\nslookup\.exe.*` or OriginalFileName=~`(?i)^\\nslookup\.exe$`) and (ParentImage=~`(?i).*\\powershell\.exe$` or ParentImage=~`(?i).*\\pwsh\.exe$`) and (CommandLine=~`(?i).*\ \-q=txt\ .*` or CommandLine=~`(?i).*\ \-querytype=txt\ .*`)

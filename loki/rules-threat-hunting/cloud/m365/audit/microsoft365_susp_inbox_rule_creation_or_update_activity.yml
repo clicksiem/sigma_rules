@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Operation=~`(?i)^New\-InboxRule$` or Operation=~`(?i)^Set\-InboxRule$`) and (Parameters=~`(?i).*DeleteMessage.*` or Parameters=~`(?i).*MarkAsRead.*` or Parameters=~`(?i).*MoveToFolder.*` or Parameters=~`(?i).*SubjectOrBodyContainsWords.*`)

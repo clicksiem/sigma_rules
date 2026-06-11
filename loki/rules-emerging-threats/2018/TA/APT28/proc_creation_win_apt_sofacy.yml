@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\rundll32\.exe$` and (CommandLine=~`(?i).*%LOCALAPPDATA%.*` or CommandLine=~`(?i).*\\AppData\\Local\\.*`) and (CommandLine=~`(?i).*\.dat",.*` or CommandLine=~`(?i).*\.dll\ \#1$` or CommandLine=~`(?i).*\.dll"\ \#1$` or CommandLine=~`(?i).*\.dll",\#1$`) and CommandLine!~`(?i).*\\AppData\\Local\\Temp\\.*`

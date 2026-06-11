@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^SYSCALL$` and comm=~`(?i)^insmod$` and exe=~`(?i)^/usr/bin/kmod$`

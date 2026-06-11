@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\DisallowRun$` and Details=~`(?i)^DWORD\ \(0x00000001\)$`

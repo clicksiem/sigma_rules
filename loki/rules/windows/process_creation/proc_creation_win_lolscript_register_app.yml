@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\cscript\.exe$` or Image=~`(?i).*\\wscript\.exe$` or OriginalFileName=~`(?i)^cscript\.exe$` or OriginalFileName=~`(?i)^wscript\.exe$`) and CommandLine=~`(?i).*\.vbs\ \-register\ .*`

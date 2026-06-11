@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\.dmp$` or TargetFilename=~`(?i).*\.dump$` or TargetFilename=~`(?i).*\.hdmp$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image!~`(?i).*\\.*` and Image!=`` and Image!~`(?i)^\-$` and Image!~`(?i)^$` and Image!~`(?i)^System$` and Image!~`(?i)^Registry$` and Image!~`(?i)^MemCompression$` and Image!~`(?i)^vmmem$` and CommandLine!~`(?i)^Registry$` and CommandLine!~`(?i)^MemCompression$` and CommandLine!~`(?i)^vmmem$`

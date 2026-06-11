@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\gup\.exe$` and ImageLoaded=~`(?i).*\\libcurl\.dll$` and Image!~`(?i).*\\Notepad\+\+\\updater\\GUP\.exe$`

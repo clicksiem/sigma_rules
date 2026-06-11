@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*Classes\\ActivatableClasses\\Package\\Microsoft\..*` and TargetObject=~`(?i).*\\DebugPath$` or TargetObject=~`(?i).*\\Software\\Microsoft\\Windows\\CurrentVersion\\PackagedAppXDebug\\Microsoft\..*` and TargetObject=~`(?i).*\\\(Default\)$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/wget$` and (CommandLine=~`\s-O\s` or CommandLine=~`(?i).*\-\-output\-document.*`) and CommandLine=~`(?i).*/tmp/.*`

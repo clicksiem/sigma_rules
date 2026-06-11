@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^SERVICE_STOP$` and (unit=~`(?i)^firewalld$` or unit=~`(?i)^iptables$` or unit=~`(?i)^ufw$`)

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^elasticfilesystem\.amazonaws\.com$` and eventName=~`(?i)^DeleteFileSystem$`

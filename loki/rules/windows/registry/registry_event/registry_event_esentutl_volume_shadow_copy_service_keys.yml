@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*System\\CurrentControlSet\\Services\\VSS.*` and Image=~`(?i).*esentutl\.exe$` and TargetObject!~`(?i).*System\\CurrentControlSet\\Services\\VSS\\Start.*`

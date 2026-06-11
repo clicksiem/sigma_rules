@@ -1,0 +1,1 @@
+{job="logstash"} | json | (operationName=~`(?i)^MICROSOFT\.KUBERNETES/CONNECTEDCLUSTERS/BATCH.*` or operationName=~`(?i)^MICROSOFT\.CONTAINERSERVICE/MANAGEDCLUSTERS/BATCH.*`) and (operationName=~`(?i).*/CRONJOBS/WRITE$` or operationName=~`(?i).*/JOBS/WRITE$`)

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*python.*` and CommandLine=~`(?i).*\ \-c\ .*` and CommandLine=~`(?i).*import.*` and CommandLine=~`(?i).*pty.*` and CommandLine=~`(?i).*socket.*` and CommandLine=~`(?i).*spawn.*` and CommandLine=~`(?i).*\.connect.*`

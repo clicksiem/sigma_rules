@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\SolidPDFCreator\.dll$` and (Image!~`(?i).*\\SolidPDFCreator\.exe$` or ImageLoaded!~`(?i)^C:\\Program\ Files\ \(x86\)\\SolidDocuments\\SolidPDFCreator\\.*` and ImageLoaded!~`(?i)^C:\\Program\ Files\\SolidDocuments\\SolidPDFCreator\\.*`)

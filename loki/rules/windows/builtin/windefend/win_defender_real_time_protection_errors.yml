@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=3002 or EventID=3007) and (Feature_Name!~`(?i)^%%886$` or Reason!~`(?i)^%%892$` and Reason!~`(?i)^%%858$`)

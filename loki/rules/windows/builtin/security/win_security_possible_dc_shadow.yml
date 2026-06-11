@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4742 and ServicePrincipalNames=~`(?i).*GC/.*` or EventID=5136 and AttributeLDAPDisplayName=~`(?i)^servicePrincipalName$` and AttributeValue=~`(?i)^GC/.*`

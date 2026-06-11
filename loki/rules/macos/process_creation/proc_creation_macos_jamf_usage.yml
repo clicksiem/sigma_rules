@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/jamf$` and (CommandLine=~`(?i).*createAccount.*` or CommandLine=~`(?i).*manage.*` or CommandLine=~`(?i).*removeFramework.*` or CommandLine=~`(?i).*removeMdmProfile.*` or CommandLine=~`(?i).*resetPassword.*` or CommandLine=~`(?i).*setComputerName.*`)

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^iptables$` and a1=~`(?i).*DROP.*` or type=~`(?i)^EXECVE$` and a0=~`(?i)^firewall\-cmd$` and a1=~`(?i).*remove.*` or type=~`(?i)^EXECVE$` and a0=~`(?i)^ufw$` and a1=~`(?i).*delete.*` or type=~`(?i)^EXECVE$` and a0=~`(?i)^nft$` and (a1=~`(?i).*delete.*` or a1=~`(?i).*flush.*`)

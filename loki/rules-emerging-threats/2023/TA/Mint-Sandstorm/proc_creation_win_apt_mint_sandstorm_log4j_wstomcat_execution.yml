@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\ws_tomcatservice\.exe$` and Image!~`(?i).*\\repadmin\.exe$`

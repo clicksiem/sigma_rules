@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)^C:\\Windows\\System32\\consent\.exe\.@.*` and TargetFilename=~`(?i).*\\comctl32\.dll$`

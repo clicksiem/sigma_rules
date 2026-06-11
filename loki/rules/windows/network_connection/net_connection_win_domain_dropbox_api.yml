@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and (DestinationHostname=~`(?i).*api\.dropboxapi\.com$` or DestinationHostname=~`(?i).*content\.dropboxapi\.com$`) and Image!~`(?i).*\\Dropbox.*`

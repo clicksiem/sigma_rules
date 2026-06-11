@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\WinSCP\.exe$` or OriginalFileName=~`(?i)^winscp\.exe$`) and CommandLine=~`(?i).*\-command.*` or CommandLine=~`(?i).*/command.*` or CommandLine=~`(?i).*–command.*` or CommandLine=~`(?i).*—command.*` or CommandLine=~`(?i).*―command.*` and CommandLine=~`(?i).*open\ .*` and CommandLine=~`(?i).*ftp://.*`

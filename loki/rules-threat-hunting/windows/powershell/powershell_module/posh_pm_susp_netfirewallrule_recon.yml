@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~`(?i).*Get\-NetFirewallRule.*` or Payload=~`(?i).*Show\-NetFirewallRule.*` or ContextInfo=~`(?i).*Get\-NetFirewallRule.*` or ContextInfo=~`(?i).*Show\-NetFirewallRule.*`

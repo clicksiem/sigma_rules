@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Invoke\-DNSExfiltrator.*` or ScriptBlockText=~`(?i).*\ \-i\ .*` and ScriptBlockText=~`(?i).*\ \-d\ .*` and ScriptBlockText=~`(?i).*\ \-p\ .*` and ScriptBlockText=~`(?i).*\ \-doh\ .*` and ScriptBlockText=~`(?i).*\ \-t\ .*`

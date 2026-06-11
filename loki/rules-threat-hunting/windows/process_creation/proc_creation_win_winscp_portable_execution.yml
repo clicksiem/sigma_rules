@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\WinSCP\.exe$` or OriginalFileName=~`(?i)^winscp\.exe$`) and Image!~`(?i)^C:\\Program\ Files\ \(x86\)\\WinSCP\\.*`

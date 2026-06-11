@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\msiexec\.exe$` or OriginalFileName=~`(?i)^\\msiexec\.exe$`) and CommandLine=~`(?i).*\ \-z\ .*` or CommandLine=~`(?i).*\ /z\ .*` or CommandLine=~`(?i).*\ –z\ .*` or CommandLine=~`(?i).*\ —z\ .*` or CommandLine=~`(?i).*\ ―z\ .*` and CommandLine=~`(?i).*\.dll.*`

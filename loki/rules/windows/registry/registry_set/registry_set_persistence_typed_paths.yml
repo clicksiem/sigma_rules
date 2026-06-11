@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\TypedPaths\\.*` and Image!~`(?i)^C:\\Windows\\explorer\.exe$` and Image!~`(?i)^C:\\Windows\\SysWOW64\\explorer\.exe$`

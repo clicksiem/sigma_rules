@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^execve$` and a0=~`(?i)^zip$` or type=~`(?i)^execve$` and a0=~`(?i)^gzip$` and a1=~`(?i)^\-k$` or type=~`(?i)^execve$` and a0=~`(?i)^tar$` and a1=~`(?i).*\-c.*`

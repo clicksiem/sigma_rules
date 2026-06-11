@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*:\\Windows\\Prefetch\\.*` and TargetFilename=~`(?i).*\.pf$` and (Image!~`(?i).*:\\windows\\system32\\svchost\.exe$` or User!~`(?i).*AUTHORI.*` and User!~`(?i).*AUTORI.*`)

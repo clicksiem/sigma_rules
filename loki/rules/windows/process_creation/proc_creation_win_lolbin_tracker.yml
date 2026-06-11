@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\tracker\.exe$` or Description=~`(?i)^Tracker$`) and (CommandLine=~`(?i).*\ /d\ .*` or CommandLine=~`(?i).*\ /c\ .*`) and CommandLine!~`(?i).*\ /ERRORREPORT:PROMPT\ .*` and ParentImage!~`(?i).*\\Msbuild\\Current\\Bin\\MSBuild\.exe$` and ParentImage!~`(?i).*\\Msbuild\\Current\\Bin\\amd64\\MSBuild\.exe$`

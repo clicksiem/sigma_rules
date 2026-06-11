@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Advapi32\.dll.*` or ScriptBlockText=~`(?i).*kernel32\.dll.*` or ScriptBlockText=~`(?i).*KernelBase\.dll.*` or ScriptBlockText=~`(?i).*ntdll\.dll.*` or ScriptBlockText=~`(?i).*secur32\.dll.*` or ScriptBlockText=~`(?i).*user32\.dll.*`

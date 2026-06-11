@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\MpSvc\.dll$` and ImageLoaded!~`(?i)^C:\\Program\ Files\\Windows\ Defender\\.*` and ImageLoaded!~`(?i)^C:\\ProgramData\\Microsoft\\Windows\ Defender\\Platform\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\WinSxS\\.*`

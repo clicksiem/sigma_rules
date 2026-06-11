@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^elasticloadbalancing\.amazonaws\.com$` and (eventName=~`(?i)^ApplySecurityGroupsToLoadBalancer$` or eventName=~`(?i)^SetSecurityGroups$`)

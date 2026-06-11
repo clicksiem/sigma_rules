@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\\register_app\.vbs.*` and CommandLine=~`(?i).*\-register.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*\ /account=system\ .*` or CommandLine=~`(?i).*\ /account=ti\ .*`) and CommandLine=~`(?i).*/exec=.*`

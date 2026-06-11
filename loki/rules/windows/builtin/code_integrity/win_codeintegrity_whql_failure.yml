@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=3082 or EventID=3083) and FileNameBuffer!~`(?i)^system32\\drivers\\vsock\.sys$` and FileNameBuffer!~`(?i)^System32\\drivers\\vmci\.sys$`

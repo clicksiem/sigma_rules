@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\$env:APPDATA.*` and ScriptBlockText=~`(?i).*function\ MainPayload.*` and ScriptBlockText=~`(?i).*::WriteAllBytes.*` and ScriptBlockText=~`(?i).*wscript\.exe.*`

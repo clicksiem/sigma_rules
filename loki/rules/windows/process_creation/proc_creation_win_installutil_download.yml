@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\InstallUtil\.exe$` or OriginalFileName=~`(?i)^InstallUtil\.exe$`) and (CommandLine=~`(?i).*ftp://.*` or CommandLine=~`(?i).*http://.*` or CommandLine=~`(?i).*https://.*`)

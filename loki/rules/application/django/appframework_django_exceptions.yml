@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)SuspiciousOperation|DisallowedHost|DisallowedModelAdminLookup|DisallowedModelAdminToField|DisallowedRedirect|InvalidSessionKey|RequestDataTooBig|SuspiciousFileOperation|SuspiciousMultipartForm|SuspiciousSession|TooManyFieldsSent|PermissionDenied`

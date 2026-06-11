@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Description=~`(?i)^\\.$` and FileVersion=~`(?i)^\\.$` or Description=~`(?i)^\\.$` and Product=~`(?i)^\\.$` or Description=~`(?i)^\\.$` and Company=~`(?i)^\\.$`) and Image=~`(?i).*\\Downloads\\.*`

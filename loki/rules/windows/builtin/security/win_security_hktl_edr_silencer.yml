@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=5441 or EventID=5447) and FilterName=~`(?i).*Custom\ Outbound\ Filter.*`

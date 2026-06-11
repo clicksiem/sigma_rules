@@ -1,0 +1,1 @@
+{job=~".+"} | json | path=~`(?i).*\\.*` and path=~`(?i).*\\IPC\$.*` and (name=~`(?i).*\-stdin$` or name=~`(?i).*\-stdout$` or name=~`(?i).*\-stderr$`) and name!~`(?i)^PSEXESVC.*`

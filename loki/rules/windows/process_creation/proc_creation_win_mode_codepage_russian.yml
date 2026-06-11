@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\mode\.com$` or OriginalFileName=~`(?i)^MODE\.COM$`) and CommandLine=~`(?i).*\ con\ .*` and CommandLine=~`(?i).*\ cp\ .*` and CommandLine=~`(?i).*\ select=.*` and (CommandLine=~`(?i).*=1251$` or CommandLine=~`(?i).*=866$`)

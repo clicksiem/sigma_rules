@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^ESENT$` and (EventID=216 or EventID=325 or EventID=326 or EventID=327) and Data=~`(?i).*ntds\.dit.*`

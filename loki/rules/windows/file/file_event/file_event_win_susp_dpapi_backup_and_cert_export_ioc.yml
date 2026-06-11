@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetFilename=~`(?i).*ntds_capi_.*` or TargetFilename=~`(?i).*ntds_legacy_.*` or TargetFilename=~`(?i).*ntds_unknown_.*`) and (TargetFilename=~`(?i).*\.cer$` or TargetFilename=~`(?i).*\.key$` or TargetFilename=~`(?i).*\.pfx$` or TargetFilename=~`(?i).*\.pvk$`)

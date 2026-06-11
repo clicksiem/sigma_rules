@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | userIdentity_type=~`(?i)^AssumedRole$` and userIdentity_sessionContext_sessionIssuer_type=~`(?i)^Role$`

@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)show\ running\-config|show\ startup\-config|show\ archive\ config|more`

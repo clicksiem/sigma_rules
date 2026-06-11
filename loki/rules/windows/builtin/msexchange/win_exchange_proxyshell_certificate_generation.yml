@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)New\-ExchangeCertificate` |~ `(?i)\ \-GenerateRequest` |~ `(?i)\ \-BinaryEncoded` |~ `(?i)\ \-RequestFile` |~ `(?i)\\\\localhost\\C\$|\\\\127\.0\.0\.1\\C\$|C:\\inetpub|\.aspx`

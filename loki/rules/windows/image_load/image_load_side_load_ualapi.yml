@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\fxssvc\.exe$` and ImageLoaded=~`(?i).*ualapi\.dll$` and ImageLoaded!~`(?i)^C:\\Windows\\WinSxS\\.*`

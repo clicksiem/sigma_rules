@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=5038 or EventID=6281) and param1!~`(?i).*\\CSFalconServiceUninstallTool_.*` and param1!~`(?i).*\\Program\ Files\\CrowdStrike\\.*` and param1!~`(?i).*\\System32\\drivers\\CrowdStrike\\.*` and param1!~`(?i).*\\Windows\\System32\\ScriptControl64_.*` and param1!~`(?i).*\\Program\ Files\\Sophos\\.*`

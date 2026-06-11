@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*\-\-meshServiceName.*` or OriginalFileName=~`(?i).*meshagent.*`) and Image!~`(?i).*\\meshagent\.exe$`

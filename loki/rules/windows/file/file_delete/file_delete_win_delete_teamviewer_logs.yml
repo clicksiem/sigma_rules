@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\TeamViewer_.*` and TargetFilename=~`(?i).*\.log$` and Image!~`(?i)^C:\\Windows\\system32\\svchost\.exe$`

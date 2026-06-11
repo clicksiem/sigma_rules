@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/at$` or Image=~`(?i).*/atd$`

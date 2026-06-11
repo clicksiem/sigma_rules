@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*InprocServer32\\\(Default\)$` and Details=~`(?i)^C:\\WINDOWS\\system32\\scrobj\.dll$`

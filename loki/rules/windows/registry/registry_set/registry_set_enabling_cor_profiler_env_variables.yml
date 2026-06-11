@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\COR_ENABLE_PROFILING$` or TargetObject=~`(?i).*\\COR_PROFILER$` or TargetObject=~`(?i).*\\CORECLR_ENABLE_PROFILING$` or TargetObject=~`(?i).*\\CORECLR_PROFILER_PATH.*`

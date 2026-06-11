@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*rundll32\.exe.*` and CommandLine=~`(?i).*Execute.*` and CommandLine=~`(?i).*RegRead.*` and CommandLine=~`(?i).*window\.close.*`

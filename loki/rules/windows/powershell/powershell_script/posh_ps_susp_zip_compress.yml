@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Compress\-Archive\ \-Path.*\-DestinationPath\ \$env:TEMP.*` or ScriptBlockText=~`(?i).*Compress\-Archive\ \-Path.*\-DestinationPath.*\\AppData\\Local\\Temp\\.*` or ScriptBlockText=~`(?i).*Compress\-Archive\ \-Path.*\-DestinationPath.*:\\Windows\\Temp\\.*`

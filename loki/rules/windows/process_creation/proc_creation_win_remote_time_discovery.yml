@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\net\.exe$` or Image=~`(?i).*\\net1\.exe$`) and CommandLine=~`(?i).*time.*` or Image=~`(?i).*\\w32tm\.exe$` and CommandLine=~`(?i).*tz.*`

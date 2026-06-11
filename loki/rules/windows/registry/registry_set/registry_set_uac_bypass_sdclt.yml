@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*Software\\Classes\\exefile\\shell\\runas\\command\\isolatedCommand$` or TargetObject=~`(?i).*Software\\Classes\\Folder\\shell\\open\\command\\SymbolicLinkValue$` and Details=~`-1[0-9]{3}\\Software\\Classes\\`

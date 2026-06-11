@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/curl$` and (CommandLine=~`(?i).*\ \-\-form.*` or CommandLine=~`(?i).*\ \-\-upload\-file\ .*` or CommandLine=~`(?i).*\ \-\-data\ .*` or CommandLine=~`(?i).*\ \-\-data\-.*` or CommandLine=~`\s-[FTd]\s`) and CommandLine!~`(?i).*://localhost.*` and CommandLine!~`(?i).*://127\.0\.0\.1.*`

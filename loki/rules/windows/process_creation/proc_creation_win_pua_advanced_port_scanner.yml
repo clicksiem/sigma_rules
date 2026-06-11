@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\advanced_port_scanner.*` or OriginalFileName=~`(?i).*advanced_port_scanner.*` or Description=~`(?i).*Advanced\ Port\ Scanner.*` or CommandLine=~`(?i).*/portable.*` and CommandLine=~`(?i).*/lng.*`

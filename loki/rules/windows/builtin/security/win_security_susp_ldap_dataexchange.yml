@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5136 and AttributeValue=~`(?i).*` and (AttributeLDAPDisplayName=~`(?i)^primaryInternationalISDNNumber$` or AttributeLDAPDisplayName=~`(?i)^otherFacsimileTelephoneNumber$` or AttributeLDAPDisplayName=~`(?i)^primaryTelexNumber$`)

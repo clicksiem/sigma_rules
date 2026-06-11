@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/nc$` or Image=~`(?i).*/netcat$`) and CommandLine!~`(?i).*l.*` or Image=~`(?i).*/nmap$` or Image=~`(?i).*/telnet$`

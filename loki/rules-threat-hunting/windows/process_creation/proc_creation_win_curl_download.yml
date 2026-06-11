@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\curl\.exe$` or Product=~`(?i)^The\ curl\ executable$`) and (CommandLine=~`(?i).*\ \-O.*` or CommandLine=~`(?i).*\-\-remote\-name.*` or CommandLine=~`(?i).*\-\-output.*`)

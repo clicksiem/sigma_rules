@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*localgroup\ .*` and CommandLine=~`(?i).*\ /add.*` or CommandLine=~`(?i).*Add\-LocalGroupMember\ .*` and CommandLine=~`(?i).*\ \-Group\ .*`) and (CommandLine=~`(?i).*Group\ Policy\ Creator\ Owners.*` or CommandLine=~`(?i).*Schema\ Admins.*`)

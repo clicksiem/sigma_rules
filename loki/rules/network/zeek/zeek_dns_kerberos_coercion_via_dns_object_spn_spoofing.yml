@@ -1,0 +1,1 @@
+{job=~".+"} | json | query=~`(?i).*UWhRCA.*` and query=~`(?i).*BAAAA.*`

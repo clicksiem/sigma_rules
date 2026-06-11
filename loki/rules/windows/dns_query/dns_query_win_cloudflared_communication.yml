@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | QueryName=~`(?i).*\.v2\.argotunnel\.com$` or QueryName=~`(?i).*protocol\-v2\.argotunnel\.com$` or QueryName=~`(?i).*trycloudflare\.com$` or QueryName=~`(?i).*update\.argotunnel\.com$`

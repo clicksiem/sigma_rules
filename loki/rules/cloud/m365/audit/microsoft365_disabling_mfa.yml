@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Operation=~`(?i).*Disable\ Strong\ Authentication\..*`

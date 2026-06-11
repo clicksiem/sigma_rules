@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^chmod$` and a1=777 or type=~`(?i)^EXECVE$` and a0=~`(?i)^chmod$` and a1=~`(?i)^u\+s$` or type=~`(?i)^EXECVE$` and a0=~`(?i)^cp$` and a1=~`(?i)^/bin/ksh$` or type=~`(?i)^EXECVE$` and a0=~`(?i)^cp$` and a1=~`(?i)^/bin/sh$`

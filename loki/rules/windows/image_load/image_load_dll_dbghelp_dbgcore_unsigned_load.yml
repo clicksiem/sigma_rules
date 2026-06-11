@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ImageLoaded=~`(?i).*\\dbghelp\.dll$` or ImageLoaded=~`(?i).*\\dbgcore\.dll$`) and Signed=~`(?i)^false$`

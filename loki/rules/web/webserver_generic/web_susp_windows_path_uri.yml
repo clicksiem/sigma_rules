@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | cs_uri_query=~`(?i).*=C:/Users.*` or cs_uri_query=~`(?i).*=C:/Program%20Files.*` or cs_uri_query=~`(?i).*=C:/Windows.*` or cs_uri_query=~`(?i).*=C%3A%5CUsers.*` or cs_uri_query=~`(?i).*=C%3A%5CProgram%20Files.*` or cs_uri_query=~`(?i).*=C%3A%5CWindows.*`

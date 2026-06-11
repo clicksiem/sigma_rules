@@ -1,0 +1,1 @@
+{job="logstash"} | json | operationName=~`(?i)^MICROSOFT\.CONTAINERREGISTRY/REGISTRIES/WRITE$` or operationName=~`(?i)^MICROSOFT\.CONTAINERREGISTRY/REGISTRIES/DELETE$`

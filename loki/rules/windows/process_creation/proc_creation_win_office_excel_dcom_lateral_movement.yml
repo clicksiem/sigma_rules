@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\excel\.exe$` and (OriginalFileName=~`(?i)^foxprow\.exe$` or OriginalFileName=~`(?i)^schdplus\.exe$` or OriginalFileName=~`(?i)^winproj\.exe$` or Image=~`(?i).*\\foxprow\.exe$` or Image=~`(?i).*\\schdplus\.exe$` or Image=~`(?i).*\\winproj\.exe$`)

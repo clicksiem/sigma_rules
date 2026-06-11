@@ -1,0 +1,1 @@
+{job="logstash"} | json | operationName=~`(?i)^MICROSOFT\.KEYVAULT/VAULTS/WRITE$` or operationName=~`(?i)^MICROSOFT\.KEYVAULT/VAULTS/DELETE$` or operationName=~`(?i)^MICROSOFT\.KEYVAULT/VAULTS/DEPLOY/ACTION$` or operationName=~`(?i)^MICROSOFT\.KEYVAULT/VAULTS/ACCESSPOLICIES/WRITE$`

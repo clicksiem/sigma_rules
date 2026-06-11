@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | TargetFilename=~`[^/]{100,}$` and TargetFilename!~`(?i)^/run/systemd/units/invocation:systemd\-fsck@.*` and TargetFilename!~`(?i)^/sys/firmware/.*` and TargetFilename!~`(?i)^/var/log/journal/.*`

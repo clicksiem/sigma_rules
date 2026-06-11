@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4624 and LogonType=10 and (IpAddress=~`(?i)^::1$` or IpAddress=~`(?i)^127\.0\.0\.1$`)

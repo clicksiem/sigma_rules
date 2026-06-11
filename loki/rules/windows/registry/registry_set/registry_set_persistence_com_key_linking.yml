@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*HKU\\.*` and TargetObject=~`(?i).*Classes\\CLSID\\.*` and TargetObject=~`(?i).*\\TreatAs.*` and Image!~`(?i)^C:\\WINDOWS\\system32\\svchost\.exe$`

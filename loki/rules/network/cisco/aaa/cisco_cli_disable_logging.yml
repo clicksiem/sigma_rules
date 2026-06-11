@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)no\ logging|no\ aaa\ new\-model`

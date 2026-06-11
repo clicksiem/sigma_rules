@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^elasticache\.amazonaws\.com$` and eventName=~`(?i)^CreateCacheSecurityGroup$`

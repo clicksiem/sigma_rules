@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and (Image=~`(?i).*\\regsvr32\.exe$` or Image=~`(?i).*\\rundll32\.exe$` or Image=~`(?i).*\\dllhost\.exe$`) and (CommandLine=~`(?i).*\\regsvr32\.exe$` or CommandLine=~`(?i).*\\rundll32\.exe$` or CommandLine=~`(?i).*\\dllhost\.exe$`) and CommandLine!~`(?i)^$` and CommandLine!=``

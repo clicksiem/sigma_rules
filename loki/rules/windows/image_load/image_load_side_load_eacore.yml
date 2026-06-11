@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\EACore\.dll$` and (Image!~`(?i).*C:\\Program\ Files\\Electronic\ Arts\\EA\ Desktop\\.*` or Image!~`(?i).*\\EACoreServer\.exe.*` or ImageLoaded!~`(?i)^C:\\Program\ Files\\Electronic\ Arts\\EA\ Desktop\\.*`)

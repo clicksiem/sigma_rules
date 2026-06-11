@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=129 and (Path=~`(?i).*\\calc\.exe$` or Path=~`(?i).*\\cscript\.exe$` or Path=~`(?i).*\\mshta\.exe$` or Path=~`(?i).*\\mspaint\.exe$` or Path=~`(?i).*\\notepad\.exe$` or Path=~`(?i).*\\regsvr32\.exe$` or Path=~`(?i).*\\wscript\.exe$`)

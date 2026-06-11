@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4732 and (TargetUserName=~`(?i)^Administr.*` or TargetSid=~`(?i)^S\-1\-5\-32\-544$`) and SubjectUserName!~`(?i).*\$$`

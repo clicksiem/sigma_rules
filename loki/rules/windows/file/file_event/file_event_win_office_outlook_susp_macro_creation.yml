@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\Microsoft\\Outlook\\VbaProject\.OTM$` and Image!~`(?i).*\\outlook\.exe$`

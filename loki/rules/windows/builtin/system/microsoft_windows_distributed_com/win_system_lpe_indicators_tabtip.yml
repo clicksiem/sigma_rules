@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Microsoft\-Windows\-DistributedCOM$` and EventID=10001 and param1=~`(?i)^C:\\Program\ Files\\Common\ Files\\microsoft\ shared\\ink\\TabTip\.exe$` and param2=2147943140 and param3=~`(?i)^\{054AAE20\-4BEA\-4347\-8A35\-64A533254A9D\}$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i).*chattr.*` and a1=~`(?i).*\-i.*`

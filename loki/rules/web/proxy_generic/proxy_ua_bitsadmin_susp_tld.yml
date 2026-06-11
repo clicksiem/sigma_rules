@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | c_useragent=~`(?i)^Microsoft\ BITS/.*` and cs_host!~`(?i).*\.com$` and cs_host!~`(?i).*\.net$` and cs_host!~`(?i).*\.org$` and cs_host!~`(?i).*\.scdn\.co$` and cs_host!~`(?i).*\.sfx\.ms$`

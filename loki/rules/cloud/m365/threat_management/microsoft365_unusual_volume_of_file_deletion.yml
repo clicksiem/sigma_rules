@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^SecurityComplianceCenter$` and eventName=~`(?i)^Unusual\ volume\ of\ file\ deletion$` and status=~`(?i)^success$`

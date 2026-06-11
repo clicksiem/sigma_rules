@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (ParentImage=~`(?i).*/applet$` or ParentImage=~`(?i).*/osascript$`) and CommandLine=~`(?i).*osacompile.*`

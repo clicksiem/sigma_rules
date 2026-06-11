@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ScriptBlockText=~`(?i).*Invoke\-WebRequest.*` or ScriptBlockText=~`(?i).*Invoke\-RestMethod.*` or ScriptBlockText=~`(?i).*\ irm\ .*` or ScriptBlockText=~`(?i).*iwr\ .*`) and ScriptBlockText=~`(?i).*\-UserAgent\ .*`

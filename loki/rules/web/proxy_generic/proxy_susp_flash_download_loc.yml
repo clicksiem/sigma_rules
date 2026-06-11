@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (c_uri=~`(?i).*/flash_install\.php.*` or c_uri=~`(?i).*/install_flash_player\.exe$`) and cs_host!~`(?i).*\.adobe\.com$`

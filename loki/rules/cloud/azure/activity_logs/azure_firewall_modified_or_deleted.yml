@@ -1,0 +1,1 @@
+{job="logstash"} | json | operationName=~`(?i)^MICROSOFT\.NETWORK/AZUREFIREWALLS/WRITE$` or operationName=~`(?i)^MICROSOFT\.NETWORK/AZUREFIREWALLS/DELETE$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^arecord$` and a1=~`(?i)^\-vv$` and a2=~`(?i)^\-fdat$` or type=~`(?i)^SYSCALL$` and exe=~`(?i).*/ecasound$` and SYSCALL=~`(?i)^memfd_create$`

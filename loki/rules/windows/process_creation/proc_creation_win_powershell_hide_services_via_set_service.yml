@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\pwsh\.exe$` or OriginalFileName=~`(?i)^pwsh\.dll$`) and CommandLine=~`(?i).*Set\-Service\ .*` and CommandLine=~`(?i).*DCLCWPDTSD.*` and (CommandLine=~`(?i).*\-SecurityDescriptorSddl\ .*` or CommandLine=~`(?i).*\-sd\ .*`)

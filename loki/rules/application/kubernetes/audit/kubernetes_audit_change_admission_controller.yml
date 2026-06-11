@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | objectRef_apiGroup=~`(?i)^admissionregistration\.k8s\.io$` and (objectRef_resource=~`(?i)^mutatingwebhookconfigurations$` or objectRef_resource=~`(?i)^validatingwebhookconfigurations$`) and (verb=~`(?i)^create$` or verb=~`(?i)^delete$` or verb=~`(?i)^patch$` or verb=~`(?i)^replace$` or verb=~`(?i)^update$`)

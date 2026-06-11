@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (SourceImage=~`(?i).*\\powershell\.exe$` or SourceImage=~`(?i).*\\pwsh\.exe$`) and TargetImage=~`(?i).*\\lsass\.exe$`

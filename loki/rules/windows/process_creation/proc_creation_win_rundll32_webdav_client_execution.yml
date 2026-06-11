@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\svchost\.exe$` and (Image=~`(?i).*\\rundll32\.exe$` or OriginalFileName=~`(?i)^RUNDLL32\.EXE$`) and CommandLine=~`(?i).*C:\\windows\\system32\\davclnt\.dll,DavSetCookie.*`

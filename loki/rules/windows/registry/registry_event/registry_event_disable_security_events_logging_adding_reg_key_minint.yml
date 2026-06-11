@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i)^HKLM\\SYSTEM\\CurrentControlSet\\Control\\MiniNt$` and EventType=~`(?i)^CreateKey$` or NewName=~`(?i)^HKLM\\SYSTEM\\CurrentControlSet\\Control\\MiniNt$`

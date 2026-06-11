@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^codespaces\.destroy$` or action=~`(?i)^environment\.delete$` or action=~`(?i)^project\.delete$` or action=~`(?i)^repo\.destroy$`

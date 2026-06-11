@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\fsutil\.exe$` or OriginalFileName=~`(?i)^fsutil\.exe$`) and (CommandLine=~`(?i).*deletejournal.*` or CommandLine=~`(?i).*createjournal.*` or CommandLine=~`(?i).*setZeroData.*`)

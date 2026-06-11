@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | gcp_audit_method_name=~`(?i)^cloudsql\.instances\.create$` or gcp_audit_method_name=~`(?i)^cloudsql\.instances\.delete$` or gcp_audit_method_name=~`(?i)^cloudsql\.users\.update$` or gcp_audit_method_name=~`(?i)^cloudsql\.users\.delete$`

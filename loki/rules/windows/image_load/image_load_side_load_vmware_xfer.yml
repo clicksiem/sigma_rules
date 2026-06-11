@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\VMwareXferlogs\.exe$` and ImageLoaded=~`(?i).*\\glib\-2\.0\.dll$` and ImageLoaded!~`(?i)^C:\\Program\ Files\\VMware\\.*`

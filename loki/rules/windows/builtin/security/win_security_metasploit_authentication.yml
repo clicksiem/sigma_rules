@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=4625 or EventID=4624) and LogonType=3 and AuthenticationPackageName=~`(?i)^NTLM$` and WorkstationName=~`^[A-Za-z0-9]{16}$` or EventID=4776 and Workstation=~`^[A-Za-z0-9]{16}$`

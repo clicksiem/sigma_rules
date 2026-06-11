@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*Get\-Process\ lsas.*` or CommandLine=~`(?i).*ps\ lsas.*` or CommandLine=~`(?i).*gps\ lsas.*`

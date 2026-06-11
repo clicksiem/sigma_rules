@@ -1,0 +1,1 @@
+{job="logstash"} | json | Status=~`(?i)^Success$` and Location!~`(?i).*<Countries\ you\ DO\ operate\ out\ of\ e,g\ GB,\ use\ OR\ for\ multiple>.*`

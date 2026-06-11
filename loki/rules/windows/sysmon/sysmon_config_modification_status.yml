@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)Sysmon\ config\ state\ changed` | json | State!~`(?i)^Started$`

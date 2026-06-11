@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Mount\-DiskImage\ .*` and ScriptBlockText=~`(?i).*\-ImagePath\ .*` and ScriptBlockText=~`(?i).*Get\-Volume.*` and ScriptBlockText=~`(?i).*\.DriveLetter.*` and ScriptBlockText=~`(?i).*invoke\-item\ .*` and ScriptBlockText=~`(?i).*\):\\.*`

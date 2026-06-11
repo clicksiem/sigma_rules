@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Provider_Name=~`(?i)^Kerberos\-Key\-Distribution\-Center$` or Provider_Name=~`(?i)^Microsoft\-Windows\-Kerberos\-Key\-Distribution\-Center$`) and (EventID=39 or EventID=41)

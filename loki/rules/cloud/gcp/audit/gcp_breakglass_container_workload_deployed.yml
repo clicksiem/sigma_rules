@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)image\-policy\.k8s\.io/break\-glass` | logfmt | data_protoPayload_resource_type=~`(?i)^k8s_cluster$` and (data_protoPayload_logName=~`(?i)^cloudaudit\.googleapis\.com/activity$` or data_protoPayload_logName=~`(?i)^cloudaudit\.googleapis\.com%2Factivity$`) and data_protoPayload_methodName=~`(?i)^io\.k8s\.core\.v1\.pods\.create$`

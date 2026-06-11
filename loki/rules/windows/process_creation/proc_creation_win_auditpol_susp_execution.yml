@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\auditpol\.exe$` or OriginalFileName=~`(?i)^AUDITPOL\.EXE$`) and (CommandLine=~`(?i).*disable.*` or CommandLine=~`(?i).*clear.*` or CommandLine=~`(?i).*remove.*` or CommandLine=~`(?i).*restore.*`)

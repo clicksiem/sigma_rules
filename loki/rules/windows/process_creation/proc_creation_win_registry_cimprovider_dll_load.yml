@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\register\-cimprovider\.exe$` and CommandLine=~`(?i).*\-path.*` and CommandLine=~`(?i).*dll.*`

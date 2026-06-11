@@ -1,0 +1,1 @@
+{job=~".+"} | json | query=~`(?i).*seed.*` and query=~`(?i).*\.nkn\.org.*`

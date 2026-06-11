@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (DestinationHostname=~`(?i).*\.localto\.net$` or DestinationHostname=~`(?i).*\.localtonet\.com$`) and Initiated=~`(?i)^true$`

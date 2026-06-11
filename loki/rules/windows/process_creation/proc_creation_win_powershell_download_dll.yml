@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*Invoke\-RestMethod\ .*` or CommandLine=~`(?i).*Invoke\-WebRequest\ .*` or CommandLine=~`(?i).*IRM\ .*` or CommandLine=~`(?i).*IWR\ .*`) and CommandLine=~`(?i).*http.*` and CommandLine=~`(?i).*OutFile.*` and CommandLine=~`(?i).*\.dll.*`

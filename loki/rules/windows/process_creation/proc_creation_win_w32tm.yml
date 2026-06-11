@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\w32tm\.exe$` or OriginalFileName=~`(?i)^w32time\.dll$`) and CommandLine=~`(?i).*/stripchart.*` and CommandLine=~`(?i).*/computer:.*` and CommandLine=~`(?i).*/period:.*` and CommandLine=~`(?i).*/dataonly.*` and CommandLine=~`(?i).*/samples:.*`

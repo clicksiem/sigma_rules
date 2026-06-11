@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\w3wp\.exe$` and CommandLine=~`(?i).*MSExchange.*` and (TargetFilename=~`(?i).*FrontEnd\\HttpProxy\\.*` or TargetFilename=~`(?i).*\\inetpub\\wwwroot\\aspnet_client\\.*`) and (TargetFilename=~`(?i).*\.aspx$` or TargetFilename=~`(?i).*\.asp$` or TargetFilename=~`(?i).*\.ashx$`)

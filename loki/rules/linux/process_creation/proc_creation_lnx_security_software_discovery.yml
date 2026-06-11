@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/grep$` or Image=~`(?i).*/egrep$`) and (CommandLine=~`(?i).*nessusd.*` or CommandLine=~`(?i).*td\-agent.*` or CommandLine=~`(?i).*packetbeat.*` or CommandLine=~`(?i).*filebeat.*` or CommandLine=~`(?i).*auditbeat.*` or CommandLine=~`(?i).*osqueryd.*` or CommandLine=~`(?i).*cbagentd.*` or CommandLine=~`(?i).*falcond.*`)

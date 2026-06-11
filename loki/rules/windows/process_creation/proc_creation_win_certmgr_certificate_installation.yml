@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\CertMgr\.exe$` or OriginalFileName=~`(?i)^CERTMGT\.EXE$`) and CommandLine=~`(?i).*/add.*` and CommandLine=~`(?i).*root.*`

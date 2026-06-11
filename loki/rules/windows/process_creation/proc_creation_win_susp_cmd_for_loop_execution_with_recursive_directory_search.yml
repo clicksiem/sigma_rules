@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*for\ /f.*` and CommandLine=~`(?i).*tokens=.*` and CommandLine=~`(?i).*in\ \(.*` and CommandLine=~`(?i).*dir.*` or ParentCommandLine=~`(?i).*for\ /f.*` and ParentCommandLine=~`(?i).*tokens=.*` and ParentCommandLine=~`(?i).*in\ \(.*` and ParentCommandLine=~`(?i).*dir.*`

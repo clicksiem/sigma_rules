@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*:\\Windows\\system32\\taskmgr\.exe$` or Image=~`(?i).*:\\Windows\\SysWOW64\\taskmgr\.exe$`) and TargetFilename=~`(?i).*\\AppData\\Local\\Temp\\.*` and TargetFilename=~`(?i).*\\lsass.*` and TargetFilename=~`(?i).*\.DMP.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Provider_Name=~`(?i)^Microsoft\-Windows\-Audit\-CVE$` or Provider_Name=~`(?i)^Audit\-CVE$`) and EventID=1

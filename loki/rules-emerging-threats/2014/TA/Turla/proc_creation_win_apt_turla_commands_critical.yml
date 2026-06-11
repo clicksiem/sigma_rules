@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i)^net\ use\ \\\\%DomainController%\\C\$\ "P@ssw0rd"\ .*` or CommandLine=~`(?i)^dir\ c:\\.*\.doc.*\ /s$` or CommandLine=~`(?i)^dir\ %TEMP%\\.*\.exe$`

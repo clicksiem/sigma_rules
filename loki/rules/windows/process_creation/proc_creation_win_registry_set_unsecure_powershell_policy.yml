@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*\\ShellIds\\Microsoft\.PowerShell\\ExecutionPolicy.*` or CommandLine=~`(?i).*\\Policies\\Microsoft\\Windows\\PowerShell\\ExecutionPolicy.*`) and (CommandLine=~`(?i).*Bypass.*` or CommandLine=~`(?i).*RemoteSigned.*` or CommandLine=~`(?i).*Unrestricted.*`)

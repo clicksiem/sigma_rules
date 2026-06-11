@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Outlook\\LoadMacroProviderOnBoot$` and Details=~`(?i).*0x00000001.*`

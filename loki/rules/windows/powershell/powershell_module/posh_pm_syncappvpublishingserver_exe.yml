@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ContextInfo=~`(?i).*SyncAppvPublishingServer\.exe.*`

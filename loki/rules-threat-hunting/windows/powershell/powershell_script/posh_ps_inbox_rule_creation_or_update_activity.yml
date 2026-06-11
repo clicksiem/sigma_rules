@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ScriptBlockText=~`(?i).*New\-InboxRule.*` or ScriptBlockText=~`(?i).*Set\-InboxRule.*`) and (ScriptBlockText=~`(?i).*DeleteMessage.*` or ScriptBlockText=~`(?i).*MarkAsRead.*` or ScriptBlockText=~`(?i).*MoveToFolder.*` or ScriptBlockText=~`(?i).*SubjectOrBodyContainsWords.*`)

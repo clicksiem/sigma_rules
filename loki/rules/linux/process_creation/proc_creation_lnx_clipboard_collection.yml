@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*xclip.*` and CommandLine=~`(?i).*\-sel.*` and CommandLine=~`(?i).*clip.*` and CommandLine=~`(?i).*\-o.*`

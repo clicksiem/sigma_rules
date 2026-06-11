@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4624 and LogonType=3 and ProcessName=~`(?i).*scrcons\.exe$` and TargetLogonId!~`(?i)^0x3e7$`

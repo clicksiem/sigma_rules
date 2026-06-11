@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Microsoft\\Windows\ NT\\Rpc\\ExtErrorInformation$` and (Details=~`(?i)^DWORD\ \(0x00000000\)$` or Details=~`(?i)^DWORD\ \(0x00000002\)$`)

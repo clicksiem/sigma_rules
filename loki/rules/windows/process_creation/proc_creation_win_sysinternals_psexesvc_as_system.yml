@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i)^C:\\Windows\\PSEXESVC\.exe$` and (User=~`(?i).*AUTHORI.*` or User=~`(?i).*AUTORI.*`)

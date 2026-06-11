@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=5136 or EventID=5137) and ObjectClass=~`(?i)^dnsNode$` and ObjectDN=~`(?i).*UWhRCA.*` and ObjectDN=~`(?i).*BAAAA.*` and ObjectDN=~`(?i).*CN=MicrosoftDNS.*` or EventID=4662 and AdditionalInfo=~`(?i).*UWhRCA.*` and AdditionalInfo=~`(?i).*BAAAA.*` and AdditionalInfo=~`(?i).*CN=MicrosoftDNS.*`

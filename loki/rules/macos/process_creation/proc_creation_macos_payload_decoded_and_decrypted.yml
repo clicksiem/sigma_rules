@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/openssl$` and CommandLine=~`(?i).*/Volumes/.*` and CommandLine=~`(?i).*enc.*` and CommandLine=~`(?i).*\-base64.*` and CommandLine=~`(?i).*\ \-d\ .*`

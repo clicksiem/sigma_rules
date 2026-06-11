@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\amsi\.dll$` and (Image=~`(?i).*\\ExtExport\.exe$` or Image=~`(?i).*\\odbcconf\.exe$` or Image=~`(?i).*\\rundll32\.exe$`)

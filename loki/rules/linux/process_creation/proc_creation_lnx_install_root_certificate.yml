@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/update\-ca\-certificates$` or Image=~`(?i).*/update\-ca\-trust$`

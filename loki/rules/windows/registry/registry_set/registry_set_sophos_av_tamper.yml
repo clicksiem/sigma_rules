@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\Sophos\ Endpoint\ Defense\\TamperProtection\\Config\\SAVEnabled.*` or TargetObject=~`(?i).*\\Sophos\ Endpoint\ Defense\\TamperProtection\\Config\\SEDEnabled.*` or TargetObject=~`(?i).*\\Sophos\\SAVService\\TamperProtection\\Enabled.*`) and Details=~`(?i)^DWORD\ \(0x00000000\)$`

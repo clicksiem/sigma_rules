@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=3008 and (QueryName=~`(?i)^aaa\.stage\..*` or QueryName=~`(?i)^post\.1.*` or QueryName=~`(?i).*\.stage\.123456\..*`)

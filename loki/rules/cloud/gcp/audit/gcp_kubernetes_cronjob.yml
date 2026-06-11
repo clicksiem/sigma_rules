@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | gcp_audit_method_name=~`(?i)^io\.k8s\.api\.batch\.v.*\.Job$` or gcp_audit_method_name=~`(?i)^io\.k8s\.api\.batch\.v.*\.CronJob$`

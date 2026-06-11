@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\PowerTool\.exe$` or Image=~`(?i).*\\PowerTool64\.exe$` or OriginalFileName=~`(?i)^PowerTool\.exe$`

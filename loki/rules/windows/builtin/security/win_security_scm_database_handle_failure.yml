@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4656 and ObjectType=~`(?i)^SC_MANAGER\ OBJECT$` and ObjectName=~`(?i)^ServicesActive$` and AccessMask=~`(?i)^0xf003f$` and SubjectLogonId!~`(?i)^0x3e4$`

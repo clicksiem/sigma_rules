@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\JWrapper\-Remote\ Access\\.*` or Image=~`(?i).*\\JWrapper\-Remote\ Support\\.*`) and Image=~`(?i).*\\SimpleService\.exe$`

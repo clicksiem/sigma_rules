@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*:\\Windows\\apppatch\\Custom\\.*` or TargetFilename=~`(?i).*:\\Windows\\apppatch\\CustomSDB\\.*`

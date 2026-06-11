@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~"(?i)echo.*clip.*&&.*(?:Clipboard|i`?n`?v`?o`?k`?e`?)"

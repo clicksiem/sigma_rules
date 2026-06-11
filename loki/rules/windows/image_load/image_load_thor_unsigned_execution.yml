@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\thor\.exe$` or Image=~`(?i).*\\thor64\.exe$`) and (ImageLoaded=~`(?i).*\\thor\.exe$` or ImageLoaded=~`(?i).*\\thor64\.exe$`) and (Signed!~`(?i)^true$` or SignatureStatus!~`(?i)^valid$` or Signature!~`(?i)^Nextron\ Systems\ GmbH$`)

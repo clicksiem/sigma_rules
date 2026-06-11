@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*New\-Object.*` and ScriptBlockText=~`(?i).*\-ComObject.*` and ScriptBlockText=~`(?i).*MsXml2\..*` and ScriptBlockText=~`(?i).*XmlHttp.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^repo\.archived$` or action=~`(?i)^repo\.unarchived$`

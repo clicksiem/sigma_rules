@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | ParentImage=~`(?i).*/jamf$` and (Image=~`(?i).*/bash$` or Image=~`(?i).*/sh$`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\NetSh.*` and Details=~`(?i).*\.dll.*` and (Image!~`(?i)^C:\\Windows\\System32\\poqexec\.exe$` or Details!~`(?i)^ipmontr\.dll$` and Details!~`(?i)^iasmontr\.dll$` and Details!~`(?i)^ippromon\.dll$`)

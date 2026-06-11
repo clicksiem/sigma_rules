@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\EDRSilencer\.exe$` or OriginalFileName=~`(?i)^EDRSilencer\.exe$` or Description=~`(?i).*EDRSilencer.*`

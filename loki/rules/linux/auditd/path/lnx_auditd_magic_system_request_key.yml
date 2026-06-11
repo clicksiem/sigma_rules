@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^PATH$` and (name=~`(?i).*/sysrq$` or name=~`(?i).*/sysctl\.conf$` or name=~`(?i).*/sysrq\-trigger$`)

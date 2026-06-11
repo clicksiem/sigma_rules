@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ImageLoaded=~`(?i).*\\appwiz\.cpl$` or ImageLoaded=~`(?i).*\\bthprops\.cpl$` or ImageLoaded=~`(?i).*\\hdwwiz\.cpl$`) and ImageLoaded!~`(?i)^C:\\Windows\\Prefetch\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\System32\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\SysWOW64\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\WinSxS\\.*`

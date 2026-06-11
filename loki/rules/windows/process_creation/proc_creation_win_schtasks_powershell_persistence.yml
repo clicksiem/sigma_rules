@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i)^C:\\WINDOWS\\System32\\svchost\.exe$` and ParentCommandLine=~`(?i).*\-k\ netsvcs.*` and ParentCommandLine=~`(?i).*\-s\ Schedule.*` and (CommandLine=~`(?i).*\ \-windowstyle\ hidden$` or CommandLine=~`(?i).*\ \-w\ hidden$` or CommandLine=~`(?i).*\ \-ep\ bypass$` or CommandLine=~`(?i).*\ \-noni$`)

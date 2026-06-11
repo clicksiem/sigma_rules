@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | FileName=~`(?i)^\\.*` and FileName=~`(?i).*\\sysvol\\.*` and FileName=~`(?i).*\\Policies\\.*` and Image!~`(?i).*:\\Program\ Files\ \(x86\)\\.*` and Image!~`(?i).*:\\Program\ Files\\.*` and Image!~`(?i).*:\\Windows\\explorer\.exe.*` and Image!~`(?i).*:\\Windows\\system32\\.*` and Image!~`(?i).*:\\Windows\\SysWOW64\\.*`

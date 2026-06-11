@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\hive_sam_.*` or TargetFilename=~`(?i).*\\SAM\-2021\-.*` or TargetFilename=~`(?i).*\\SAM\-2022\-.*` or TargetFilename=~`(?i).*\\SAM\-2023\-.*` or TargetFilename=~`(?i).*\\SAM\-haxx.*` or TargetFilename=~`(?i).*\\Sam\.save.*` or TargetFilename=~`(?i)^C:\\windows\\temp\\sam$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\tar\.exe$` or OriginalFileName=~`(?i)^bsdtar$`) and (CommandLine=~`(?i).*\-c.*` or CommandLine=~`(?i).*\-r.*` or CommandLine=~`(?i).*\-u.*`)

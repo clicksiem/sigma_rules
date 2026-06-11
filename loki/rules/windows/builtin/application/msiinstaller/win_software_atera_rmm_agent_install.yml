@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=1033 and Provider_Name=~`(?i)^MsiInstaller$` and Message=~`(?i).*AteraAgent.*`

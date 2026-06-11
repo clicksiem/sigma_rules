@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\gpresult\.exe$` and (CommandLine=~`(?i).*/z.*` or CommandLine=~`(?i).*/v.*`)

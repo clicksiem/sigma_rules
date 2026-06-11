@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\ADExp\.exe$` or Image=~`(?i).*\\ADExplorer\.exe$` or Image=~`(?i).*\\ADExplorer64\.exe$` or Image=~`(?i).*\\ADExplorer64a\.exe$` or OriginalFileName=~`(?i)^AdExp$` or Description=~`(?i)^Active\ Directory\ Editor$` or Product=~`(?i)^Sysinternals\ ADExplorer$`) and CommandLine=~`(?i).*snapshot.*`

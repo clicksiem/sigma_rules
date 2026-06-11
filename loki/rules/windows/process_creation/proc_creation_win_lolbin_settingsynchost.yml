@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image!~`(?i)^C:\\Windows\\System32\\.*` and Image!~`(?i)^C:\\Windows\\SysWOW64\\.*` and ParentCommandLine=~`(?i).*cmd\.exe\ /c.*` and ParentCommandLine=~`(?i).*RoamDiag\.cmd.*` and ParentCommandLine=~`(?i).*\-outputpath.*`

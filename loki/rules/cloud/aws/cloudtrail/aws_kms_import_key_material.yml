@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^kms\.amazonaws\.com$` and (eventName=~`(?i)^ImportKeyMaterial$` or eventName=~`(?i)^DeleteImportedKeyMaterial$`)

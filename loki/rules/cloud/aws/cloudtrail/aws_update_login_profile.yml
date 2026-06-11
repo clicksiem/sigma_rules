@@ -1,0 +1,1 @@
+{job=~".+"}  | logfmt | eventSource=~`(?i)^iam\.amazonaws\.com$` and eventName=~`(?i)^UpdateLoginProfile$`| label_format match_0=`{{ if eq .requestParameters_userName .userIdentity_arn }}true{{ else }}false{{ end }}` | match_0!=`true`

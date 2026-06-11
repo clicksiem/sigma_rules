@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | ParentImage=~`(?i).*/git$` and ParentCommandLine=~`(?i).*\ \-p\ .*` and ParentCommandLine=~`(?i).*help.*` and (CommandLine=~`(?i).*bash\ 0<\&1.*` or CommandLine=~`(?i).*dash\ 0<\&1.*` or CommandLine=~`(?i).*sh\ 0<\&1.*`)

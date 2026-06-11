@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\sdbinst\.exe$` or OriginalFileName=~`(?i)^sdbinst\.exe$`) and CommandLine=~`(?i).*\.sdb.*` and (ParentImage!~`(?i).*\\msiexec\.exe$` or CommandLine!~`(?i).*:\\Program\ Files\ \(x86\)\\IIS\ Express\\iisexpressshim\.sdb.*` and CommandLine!~`(?i).*:\\Program\ Files\\IIS\ Express\\iisexpressshim\.sdb.*`)

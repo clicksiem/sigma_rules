@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\msedge_proxy\.exe$` or OriginalFileName=~`(?i)^msedge_proxy\.exe$`) and (CommandLine=~`(?i).*http://.*` or CommandLine=~`(?i).*https://.*`)

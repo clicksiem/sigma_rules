@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\chcp\.com$` and (CommandLine=~`(?i).*\ 936$` or CommandLine=~`(?i).*\ 1258$`)

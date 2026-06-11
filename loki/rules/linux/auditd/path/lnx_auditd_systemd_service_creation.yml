@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^PATH$` and nametype=~`(?i)^CREATE$` and (name=~`(?i)^/usr/lib/systemd/system/.*` or name=~`(?i)^/etc/systemd/system/.*` or name=~`(?i).*/\.config/systemd/user/.*`)

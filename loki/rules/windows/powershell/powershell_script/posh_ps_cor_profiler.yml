@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\$env:COR_ENABLE_PROFILING.*` and ScriptBlockText=~`(?i).*\$env:COR_PROFILER.*` and ScriptBlockText=~`(?i).*\$env:COR_PROFILER_PATH.*`

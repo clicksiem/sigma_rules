@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\fDenyTSConnections$` or TargetObject=~`(?i).*\\fSingleSessionPerUser$` or TargetObject=~`(?i).*\\UserAuthentication$`) and Details=~`(?i)^DWORD\ \(0x00000000\)$`

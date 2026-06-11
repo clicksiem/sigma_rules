@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*get\-acl.*` and ScriptBlockText=~`(?i).*REGISTRY::HKLM\\SYSTEM\\CurrentControlSet\\Services\\.*`

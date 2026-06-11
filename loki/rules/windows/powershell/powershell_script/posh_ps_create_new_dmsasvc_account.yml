@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*New\-ADServiceAccount.*` and ScriptBlockText=~`(?i).*\-CreateDelegatedServiceAccount.*` and ScriptBlockText=~`(?i).*\-path.*`

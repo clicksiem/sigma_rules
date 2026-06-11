@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)%24%7B%28%23a%3D%40|\$\{\(\#a=@|%24%7B%40java|\$\{@java|u0022java|%2F%24%7B%23|/\$\{\#|new\+java\.|getRuntime\(\)\.exec\(|getRuntime%28%29\.exec%28`

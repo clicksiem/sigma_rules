@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\sdbinst\.exe$` or OriginalFileName=~`(?i)^sdbinst\.exe$`) and CommandLine!~`(?i).*\.sdb.*` and CommandLine!~`(?i).*\ \-c$` and CommandLine!~`(?i).*\ \-f$` and CommandLine!~`(?i).*\ \-mm$` and CommandLine!~`(?i).*\ \-t$` and CommandLine!~`(?i).*\ \-m\ \-bg.*` and CommandLine!=`` and CommandLine!~`(?i)^$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\mpiexec\.exe$` or Hashes=~`(?i).*IMPHASH=d8b52ef6aaa3a81501bdfff9dbb96217.*`) and (CommandLine=~`(?i).*\ /n\ 1\ .*` or CommandLine=~`(?i).*\ \-n\ 1\ .*`)

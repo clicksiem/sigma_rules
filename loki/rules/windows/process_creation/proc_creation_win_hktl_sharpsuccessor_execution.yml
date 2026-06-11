@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\SharpSuccessor\.exe$` or OriginalFileName=~`(?i)^SharpSuccessor\.exe$` or CommandLine=~`(?i).*SharpSuccessor.*` or CommandLine=~`(?i).*\ add\ .*` and CommandLine=~`(?i).*\ /impersonate.*` and CommandLine=~`(?i).*\ /path.*` and CommandLine=~`(?i).*\ /account.*` and CommandLine=~`(?i).*\ /name.*`

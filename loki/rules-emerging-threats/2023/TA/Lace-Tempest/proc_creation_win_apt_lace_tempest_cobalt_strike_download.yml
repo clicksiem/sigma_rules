@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\-nop\ \-w\ hidden\ \-c\ IEX\ \(\(new\-object\ net\.webclient\)\.downloadstring\(.*` and CommandLine=~`(?i).*/a'\).*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i)^\\AgentExecutor\.exe$` or OriginalFileName=~`(?i)^AgentExecutor\.exe$`) and (CommandLine=~`(?i).*\ \-powershell.*` or CommandLine=~`(?i).*\ \-remediationScript.*`) and ParentImage!~`(?i).*\\Microsoft\.Management\.Services\.IntuneWindowsAgent\.exe$`

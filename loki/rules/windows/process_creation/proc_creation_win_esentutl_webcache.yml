@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\esentutl\.exe$` or OriginalFileName=~`(?i)^esentutl\.exe$`) and CommandLine=~`(?i).*\-r.*` or CommandLine=~`(?i).*/r.*` or CommandLine=~`(?i).*–r.*` or CommandLine=~`(?i).*—r.*` or CommandLine=~`(?i).*―r.*` and CommandLine=~`(?i).*\\Windows\\WebCache.*`

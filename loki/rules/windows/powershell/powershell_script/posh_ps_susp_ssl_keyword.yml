@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*System\.Net\.Security\.SslStream.*` and ScriptBlockText=~`(?i).*Net\.Security\.RemoteCertificateValidationCallback.*` and ScriptBlockText=~`(?i).*\.AuthenticateAsClient.*`

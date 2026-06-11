@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^ec2\.amazonaws\.com$` and requestParameters_attribute=~`(?i)^userData$` and eventName=~`(?i)^ModifyInstanceAttribute$`

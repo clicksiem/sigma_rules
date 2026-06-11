@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | EventLog=~`(?i)^RPCFW$` and EventID=3 and InterfaceUuid=~`(?i)^86d35949\-83c9\-4044\-b424\-db363231fd0c$` and OpNum!=1 and OpNum!=3 and OpNum!=4 and OpNum!=10 and OpNum!=11 and OpNum!=12 and OpNum!=13 and OpNum!=14 and OpNum!=15

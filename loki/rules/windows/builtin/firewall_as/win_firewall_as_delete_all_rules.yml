@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=2033 or EventID=2059) and ModifyingApplication!~`(?i).*:\\Windows\\System32\\svchost\.exe$` and (ModifyingApplication!~`(?i).*:\\ProgramData\\Microsoft\\Windows\ Defender\\Platform\\.*` or ModifyingApplication!~`(?i).*\\MsMpEng\.exe.*`)

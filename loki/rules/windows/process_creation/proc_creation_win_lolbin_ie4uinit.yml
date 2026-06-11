@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\ie4uinit\.exe$` or OriginalFileName=~`(?i)^IE4UINIT\.EXE$`) and CurrentDirectory!~`(?i)^c:\\windows\\system32\\$` and CurrentDirectory!~`(?i)^c:\\windows\\sysWOW64\\$` and CurrentDirectory!=``

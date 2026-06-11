@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\Control\\Lsa\\Security\ Packages$` or TargetObject=~`(?i).*\\Control\\Lsa\\OSConfig\\Security\ Packages$`) and Image!~`(?i)^C:\\Windows\\system32\\msiexec\.exe$` and Image!~`(?i)^C:\\Windows\\syswow64\\MsiExec\.exe$` and Image!=``

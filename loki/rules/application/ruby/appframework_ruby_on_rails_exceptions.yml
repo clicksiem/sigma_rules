@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)ActionController::InvalidAuthenticityToken|ActionController::InvalidCrossOriginRequest|ActionController::MethodNotAllowed|ActionController::BadRequest|ActionController::ParameterMissing`

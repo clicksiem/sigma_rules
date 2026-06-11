@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Invoke\-CimMethod\ .*` and ScriptBlockText=~`(?i).*\-ClassName\ .*` and ScriptBlockText=~`(?i).*Win32_Product\ .*` and ScriptBlockText=~`(?i).*\-MethodName\ .*` and ScriptBlockText=~`(?i).*\.msi.*`

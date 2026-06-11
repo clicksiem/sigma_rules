@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*dll,MyStart.*` or CommandLine=~`(?i).*dll\ MyStart.*` or CommandLine=~`(?i).*\ MyStart$` and CommandLine=~`(?i).*rundll32\.exe.*`

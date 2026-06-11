@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i)^TeamViewer_Desktop\.exe$` and ParentImage=~`(?i)^TeamViewer_Service\.exe$` and CommandLine=~`(?i).*TeamViewer_Desktop\.exe\ \-\-IPCport\ 5939\ \-\-Module\ 1$`

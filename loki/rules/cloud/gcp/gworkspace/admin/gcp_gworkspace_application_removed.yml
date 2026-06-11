@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventService=~`(?i)^admin\.googleapis\.com$` and (eventName=~`(?i)^REMOVE_APPLICATION$` or eventName=~`(?i)^REMOVE_APPLICATION_FROM_WHITELIST$`)

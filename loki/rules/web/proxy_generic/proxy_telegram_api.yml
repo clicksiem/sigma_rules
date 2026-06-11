@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | cs_host=~`(?i)^api\.telegram\.org$` and c_useragent!~`(?i).*Telegram.*` and c_useragent!~`(?i).*Bot.*`

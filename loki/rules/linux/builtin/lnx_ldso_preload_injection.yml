@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)/etc/ld\.so\.preload`

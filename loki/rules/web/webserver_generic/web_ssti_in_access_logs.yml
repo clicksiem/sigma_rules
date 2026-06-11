@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)=\{\{|=%7B%7B|=\$\{|=\$%7B|=<%=|=%3C%25=|=@\(|freemarker\.template\.utility\.Execute|\.getClass\(\)\.forName\('javax\.script\.ScriptEngineManager'\)|T\(org\.apache\.commons\.io\.IOUtils\)` | logfmt | cs_method=~`(?i)^GET$` and sc_status!=404

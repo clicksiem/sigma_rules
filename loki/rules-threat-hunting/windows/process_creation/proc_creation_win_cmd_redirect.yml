@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^Cmd\.Exe$` or Image=~`(?i).*\\cmd\.exe$`) and CommandLine=~`(?i).*>.*` and CommandLine!~`(?i).*C:\\Program\ Files\ \(x86\)\\Internet\ Download\ Manager\\IDMMsgHost\.exe.*` and CommandLine!~`(?i).*chrome\-extension://.*` and CommandLine!~`(?i).*\\\.\\pipe\\chrome\.nativeMessaging.*`

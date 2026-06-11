@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Test\-NetConnection.*` and ScriptBlockText=~`(?i).*\-ComputerName\ .*` and ScriptBlockText=~`(?i).*\-port\ .*` and ScriptBlockText!~`(?i).*\ 443\ .*` and ScriptBlockText!~`(?i).*\ 80\ .*`

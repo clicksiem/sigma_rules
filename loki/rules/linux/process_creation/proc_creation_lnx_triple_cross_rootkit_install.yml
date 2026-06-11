@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/sudo$` and CommandLine=~`(?i).*\ tc\ .*` and CommandLine=~`(?i).*\ enp0s3\ .*` and (CommandLine=~`(?i).*\ qdisc\ .*` or CommandLine=~`(?i).*\ filter\ .*`)

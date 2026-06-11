@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^ses\.amazonaws\.com$` and eventName=~`(?i)^DeleteIdentity$`

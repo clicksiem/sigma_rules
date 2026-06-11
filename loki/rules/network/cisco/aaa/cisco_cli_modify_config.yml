@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)ip\ http\ server|ip\ https\ server|kron\ policy\-list|kron\ occurrence|policy\-list|access\-list|ip\ access\-group|archive\ maximum|ntp\ server`

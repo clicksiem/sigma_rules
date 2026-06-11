@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*:\\Windows\\Microsoft\.NET\\.*` and Image=~`(?i).*\\dfsvc\.exe$` and Initiated=~`(?i)^true$` and DestinationPort!=80 and DestinationPort!=443 and (DestinationIsIpv6!~`(?i)^true$` or DestinationPort!=53)

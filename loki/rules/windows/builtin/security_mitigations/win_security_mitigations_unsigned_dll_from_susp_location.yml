@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=11 or EventID=12) and (ImageName=~`(?i).*\\Users\\Public\\.*` or ImageName=~`(?i).*\\PerfLogs\\.*` or ImageName=~`(?i).*\\Desktop\\.*` or ImageName=~`(?i).*\\Downloads\\.*` or ImageName=~`(?i).*\\AppData\\Local\\Temp\\.*` or ImageName=~`(?i).*C:\\Windows\\TEMP\\.*`)

@@ -1,0 +1,1 @@
+{job="logstash"} | json | Category=~`(?i)^UserManagement$` and OperationName=~`(?i)^Update\ user$` and properties_message=~`(?i)^"displayName":"UserType","oldValue":"\[\\"Guest\\"\]","newValue":"\[\\"Member\\"\]"$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*type\ %windir%\\system32\\ntdll\.dll.*` or CommandLine=~`(?i).*type\ %systemroot%\\system32\\ntdll\.dll.*` or CommandLine=~`(?i).*type\ c:\\windows\\system32\\ntdll\.dll.*` or CommandLine=~`(?i).*\\ntdll\.dll\ >\ \\\\\.\\pipe\\.*`

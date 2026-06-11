@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (CommandLine=~`(?i).*\-\-meshServiceName.*` or OriginalFileName=~`(?i).*meshagent.*`) and Image!~`(?i).*/meshagent$` and Image!~`(?i).*/meshagent_osx64$`

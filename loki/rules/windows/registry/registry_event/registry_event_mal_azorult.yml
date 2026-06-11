@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=12 or EventID=13) and TargetObject=~`(?i).*SYSTEM\\.*` and TargetObject=~`(?i).*\\services\\localNETService$`

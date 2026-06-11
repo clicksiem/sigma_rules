@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/find$` and (CommandLine=~`(?i).*\-perm\ \-4000.*` or CommandLine=~`(?i).*\-perm\ \-2000.*` or CommandLine=~`(?i).*\-perm\ 0777.*` or CommandLine=~`(?i).*\-perm\ \-222.*` or CommandLine=~`(?i).*\-perm\ \-o\ w.*` or CommandLine=~`(?i).*\-perm\ \-o\ x.*` or CommandLine=~`(?i).*\-perm\ \-u=s.*` or CommandLine=~`(?i).*\-perm\ \-g=s.*`)

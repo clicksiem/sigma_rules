@@ -1,0 +1,1 @@
+{job="logstash"} | json | LoggedByService=~`(?i)^Core\ Directory$` and Category=~`(?i)^UserManagement$` and OperationName=~`(?i)^Update\ user$` and TargetResources_ModifiedProperties_DisplayName=~`(?i)^StrongAuthenticationRequirement$` and TargetResources_ModifiedProperties_NewValue=~`(?i).*State":0.*`

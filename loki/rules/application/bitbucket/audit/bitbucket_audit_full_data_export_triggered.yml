@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | auditType_category=~`(?i)^Data\ pipeline$` and auditType_action=~`(?i)^Full\ data\ export\ triggered$`

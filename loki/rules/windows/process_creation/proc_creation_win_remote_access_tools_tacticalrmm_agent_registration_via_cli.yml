@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\TacticalAgent\\tacticalrmm\.exe.*` and CommandLine=~`(?i).*\-\-api.*` and CommandLine=~`(?i).*\-\-auth.*` and CommandLine=~`(?i).*\-\-client\-id.*` and CommandLine=~`(?i).*\-\-site\-id.*` and CommandLine=~`(?i).*\-\-agent\-type.*`

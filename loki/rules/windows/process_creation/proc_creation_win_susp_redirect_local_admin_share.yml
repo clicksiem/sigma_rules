@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*>.*` and (CommandLine=~`(?i).*\\\\127\.0\.0\.1\\admin\$\\.*` or CommandLine=~`(?i).*\\\\localhost\\admin\$\\.*`)

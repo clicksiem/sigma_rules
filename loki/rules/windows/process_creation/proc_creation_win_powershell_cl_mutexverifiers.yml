@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ParentImage=~`(?i).*\\powershell\.exe$` or ParentImage=~`(?i).*\\pwsh\.exe$`) and Image=~`(?i).*\\powershell\.exe$` and CommandLine=~`(?i).*\ \-nologo\ \-windowstyle\ minimized\ \-file\ .*` and (CommandLine=~`(?i).*\\AppData\\Local\\Temp\\.*` or CommandLine=~`(?i).*\\Windows\\Temp\\.*`)

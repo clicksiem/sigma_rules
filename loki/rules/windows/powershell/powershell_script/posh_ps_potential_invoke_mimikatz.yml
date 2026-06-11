@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*DumpCreds.*` and ScriptBlockText=~`(?i).*DumpCerts.*` or ScriptBlockText=~`(?i).*sekurlsa::logonpasswords.*` or ScriptBlockText=~`(?i).*crypto::certificates.*` and ScriptBlockText=~`(?i).*CERT_SYSTEM_STORE_LOCAL_MACHINE.*`

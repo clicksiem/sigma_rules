@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^application\.lifecycle\.update$` or eventType=~`(?i)^application\.lifecycle\.delete$`

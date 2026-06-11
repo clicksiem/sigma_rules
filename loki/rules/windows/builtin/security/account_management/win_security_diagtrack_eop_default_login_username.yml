@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4624 and LogonType=9 and TargetOutboundUserName=~`(?i)^thisisnotvaliduser$`

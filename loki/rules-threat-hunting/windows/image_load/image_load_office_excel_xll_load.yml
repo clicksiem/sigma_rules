@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\excel\.exe$` and ImageLoaded=~`(?i).*\.xll$`

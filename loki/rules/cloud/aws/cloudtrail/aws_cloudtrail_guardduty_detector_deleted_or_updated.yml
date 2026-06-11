@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^guardduty\.amazonaws\.com$` and (eventName=~`(?i)^DeleteDetector$` or eventName=~`(?i)^UpdateDetector$` and requestParameters_enable=~`(?i)^false$`) and (errorCode=~`(?i)^Success$` or errorCode=``)

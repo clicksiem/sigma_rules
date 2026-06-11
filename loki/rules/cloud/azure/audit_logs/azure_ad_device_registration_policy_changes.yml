@@ -1,0 +1,1 @@
+{job="logstash"} | json | Category=~`(?i)^Policy$` and ActivityDisplayName=~`(?i)^Set\ device\ registration\ policies$`

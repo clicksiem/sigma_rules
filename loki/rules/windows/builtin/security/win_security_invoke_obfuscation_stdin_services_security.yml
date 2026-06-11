@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4697 and ServiceFileName=~`(?i).*cmd.*` and ServiceFileName=~`(?i).*powershell.*` and (ServiceFileName=~`(?i).*\$\{input\}.*` or ServiceFileName=~`(?i).*noexit.*`) and (ServiceFileName=~`(?i).*\ /c\ .*` or ServiceFileName=~`(?i).*\ /r\ .*`)

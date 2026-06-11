@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\tasklist\.exe$` or OriginalFileName=~`(?i)^tasklist\.exe$`) and CommandLine=~`(?i).*\-m.*` or CommandLine=~`(?i).*/m.*` or CommandLine=~`(?i).*–m.*` or CommandLine=~`(?i).*—m.*` or CommandLine=~`(?i).*―m.*` and CommandLine=~`(?i).*rdpcorets\.dll.*`

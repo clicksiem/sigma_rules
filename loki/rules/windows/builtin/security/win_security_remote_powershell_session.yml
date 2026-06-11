@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5156 and (DestPort=5985 or DestPort=5986) and LayerRTID=44

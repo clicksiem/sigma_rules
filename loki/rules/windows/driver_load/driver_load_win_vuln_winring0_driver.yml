@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Hashes=~`(?i).*IMPHASH=D41FA95D4642DC981F10DE36F4DC8CD7.*` or ImageLoaded=~`(?i).*\\WinRing0x64\.sys$` or ImageLoaded=~`(?i).*\\WinRing0\.sys$` or ImageLoaded=~`(?i).*\\WinRing0\.dll$` or ImageLoaded=~`(?i).*\\WinRing0x64\.dll$` or ImageLoaded=~`(?i).*\\winring00x64\.sys$`

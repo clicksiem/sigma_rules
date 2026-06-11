@@ -1,0 +1,1 @@
+{job="logstash"} | json | Status=~`(?i)^Success$` and AuthenticationRequirement=~`(?i)^singleFactorAuthentication$` and RiskState=~`(?i)^atRisk$` and (DeviceDetail_trusttype=~`(?i)^$` or DeviceDetail_trusttype=``)

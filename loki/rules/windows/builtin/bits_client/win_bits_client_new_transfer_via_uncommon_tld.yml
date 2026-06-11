@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=16403 and RemoteName!~`(?i).*\.azureedge\.net/.*` and RemoteName!~`(?i).*\.com/.*` and RemoteName!~`(?i).*\.sfx\.ms/.*` and RemoteName!~`(?i).*download\.mozilla\.org/.*` and RemoteName!~`(?i).*cdn\.onenote\.net/.*` and RemoteName!~`(?i).*cdn\.office\.net/.*` and RemoteName!~`(?i).*tscdn\.m365\.static\.microsoft/.*`

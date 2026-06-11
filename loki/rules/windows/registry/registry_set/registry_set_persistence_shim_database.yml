@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\ NT\\CurrentVersion\\AppCompatFlags\\InstalledSDB\\.*` or TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\ NT\\CurrentVersion\\AppCompatFlags\\Custom\\.*`) and Details!~`(?i)^$` and Details!~`(?i)^\(Empty\)$` and Details!=``

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/wget$` and (TargetFilename=~`(?i)^/tmp/.*` or TargetFilename=~`(?i)^/var/tmp/.*`)

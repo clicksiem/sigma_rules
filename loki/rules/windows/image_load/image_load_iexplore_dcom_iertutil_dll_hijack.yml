@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\Internet\ Explorer\\iexplore\.exe$` and ImageLoaded=~`(?i).*\\Internet\ Explorer\\iertutil\.dll$`

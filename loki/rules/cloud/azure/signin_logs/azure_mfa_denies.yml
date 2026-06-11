@@ -1,0 +1,1 @@
+{job="logstash"} | json | AuthenticationRequirement=~`(?i)^multiFactorAuthentication$` and Status=~`(?i).*MFA\ Denied.*`

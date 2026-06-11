@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\ /lockscreenurl:.*` and CommandLine!~`(?i).*\.jpg.*` and CommandLine!~`(?i).*\.jpeg.*` and CommandLine!~`(?i).*\.png.*` or CommandLine=~`(?i).*reg\ delete.*` and CommandLine=~`(?i).*\\PersonalizationCSP.*`

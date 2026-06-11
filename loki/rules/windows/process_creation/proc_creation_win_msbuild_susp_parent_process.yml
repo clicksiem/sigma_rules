@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\MSBuild\.exe$` or OriginalFileName=~`(?i)^MSBuild\.exe$`) and ParentImage!~`(?i).*\\devenv\.exe$` and ParentImage!~`(?i).*\\cmd\.exe$` and ParentImage!~`(?i).*\\msbuild\.exe$` and ParentImage!~`(?i).*\\python\.exe$` and ParentImage!~`(?i).*\\explorer\.exe$` and ParentImage!~`(?i).*\\nuget\.exe$`

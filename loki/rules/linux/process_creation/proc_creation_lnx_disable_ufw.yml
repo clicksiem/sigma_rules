@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*\-ufw\-init.*` and CommandLine=~`(?i).*force\-stop.*` or CommandLine=~`(?i).*ufw.*` and CommandLine=~`(?i).*disable.*`

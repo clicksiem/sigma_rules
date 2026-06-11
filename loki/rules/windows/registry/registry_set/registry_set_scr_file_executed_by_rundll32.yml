@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\rundll32\.exe$` and TargetObject=~`(?i).*\\Control\ Panel\\Desktop\\SCRNSAVE\.EXE.*` and Details=~`(?i).*\.scr$` and Details!~`(?i).*C:\\Windows\\System32\\.*` and Details!~`(?i).*C:\\Windows\\SysWOW64\\.*`

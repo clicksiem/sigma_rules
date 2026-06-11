@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/rm$` or Image=~`(?i).*/shred$` or Image=~`(?i).*/unlink$`

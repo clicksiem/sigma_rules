@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\AppData\\Local\\Temp\\Advanced\ IP\ Scanner\ 2.*`

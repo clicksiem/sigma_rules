@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)access\-session\ port\-control\ force\-authorized|authentication\ port\-control\ force\-authorized|dot1x\ port\-control\ force\-authorized|no\ access\-session\ port\-control|no\ authentication\ port\-control|no\ dot1x\ port\-control|no\ dot1x\ system\-auth\-control`

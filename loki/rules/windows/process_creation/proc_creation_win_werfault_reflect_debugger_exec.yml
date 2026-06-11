@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\WerFault\.exe$` or OriginalFileName=~`(?i)^WerFault\.exe$`) and CommandLine=~`(?i).*\ \-pr\ .*`

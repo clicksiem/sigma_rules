@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\schtasks\.exe$` and (CommandLine=~`(?i).*/delete.*` or CommandLine=~`(?i).*/change.*`) and CommandLine=~`(?i).*/TN.*` and CommandLine=~`(?i).*\\Microsoft\\Windows\\Defrag\\ScheduledDefrag.*`

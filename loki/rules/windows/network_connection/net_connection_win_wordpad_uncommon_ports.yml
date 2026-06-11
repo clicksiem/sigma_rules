@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and Image=~`(?i).*\\wordpad\.exe$` and DestinationPort!=80 and DestinationPort!=139 and DestinationPort!=443 and DestinationPort!=445 and DestinationPort!=465 and DestinationPort!=587 and DestinationPort!=993 and DestinationPort!=995

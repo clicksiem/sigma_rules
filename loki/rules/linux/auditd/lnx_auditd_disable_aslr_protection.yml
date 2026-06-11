@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^SYSCALL$` and SYSCALL=~`(?i)^personality$` and a0=40000 or type=~`(?i)^EXECVE$` and a0=~`(?i)^sysctl$` and a1=~`(?i)^\-w$` and a2=~`(?i)^kernel\.randomize_va_space=0$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*:\\Windows\ \\System32\\.*` or ImageLoaded=~`(?i).*:\\Windows\ \\SysWOW64\\.*`

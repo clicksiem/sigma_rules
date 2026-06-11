@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\mmc\.exe$` or OriginalFileName=~`(?i)^MMC\.exe$`) and CommandLine=~`(?i).*gpme\.msc.*` and CommandLine=~`(?i).*gpobject:.*` and (CommandLine=~`(?i).*31B2F340\-016D\-11D2\-945F\-00C04FB984F9.*` or CommandLine=~`(?i).*6AC1786C\-016F\-11D2\-945F\-00C04FB984F9.*`)

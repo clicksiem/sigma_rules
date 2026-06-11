@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetFilename=~`(?i).*\.AAA$` or TargetFilename=~`(?i).*\.ZZZ$`) and TargetFilename!~`(?i).*\\Wireshark\\radius\\dictionary\.alcatel\-lucent\.aaa$`

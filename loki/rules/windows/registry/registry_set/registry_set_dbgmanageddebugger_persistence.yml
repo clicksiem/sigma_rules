@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Microsoft\\\.NETFramework\\DbgManagedDebugger$` and Details!~`(?i)^"C:\\Windows\\system32\\vsjitdebugger\.exe"\ PID\ %d\ APPDOM\ %d\ EXTEXT\ "%s"\ EVTHDL\ %d$`

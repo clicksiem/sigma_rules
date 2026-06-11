@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)\(2\ users\ now\ present\)`

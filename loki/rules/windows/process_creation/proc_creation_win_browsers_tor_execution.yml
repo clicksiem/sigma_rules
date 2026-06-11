@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Description=~`(?i)^Tor\ Browser$` or Product=~`(?i)^Tor\ Browser$` or Image=~`(?i).*\\tor\.exe$` or Image=~`(?i).*\\Tor\ Browser\\Browser\\firefox\.exe$`

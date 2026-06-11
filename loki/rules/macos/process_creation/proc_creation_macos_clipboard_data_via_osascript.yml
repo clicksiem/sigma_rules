@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*osascript.*` and CommandLine=~`(?i).*\ \-e\ .*` and CommandLine=~`(?i).*clipboard.*`

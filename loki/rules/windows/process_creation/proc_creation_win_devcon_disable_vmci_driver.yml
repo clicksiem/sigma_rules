@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\devcon\.exe$` or OriginalFileName=~`(?i)^DevCon\.exe$`) and CommandLine=~`(?i).*\ disable\ .*` and (CommandLine=~`(?i).*15AD\&DEV_0740.*` or CommandLine=~`(?i).*VMWVMCIHOSTDEV.*`)

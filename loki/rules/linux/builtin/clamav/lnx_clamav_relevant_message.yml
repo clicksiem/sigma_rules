@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)Trojan.*FOUND|VirTool.*FOUND|Webshell.*FOUND|Rootkit.*FOUND|Htran.*FOUND`

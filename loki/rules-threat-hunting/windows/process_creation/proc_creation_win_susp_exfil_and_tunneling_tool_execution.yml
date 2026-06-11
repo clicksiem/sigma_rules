@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\httptunnel\.exe$` or Image=~`(?i).*\\plink\.exe$` or Image=~`(?i).*\\socat\.exe$` or Image=~`(?i).*\\stunnel\.exe$`

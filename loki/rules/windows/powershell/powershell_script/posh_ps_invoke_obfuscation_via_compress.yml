@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*new\-object.*` and ScriptBlockText=~`(?i).*text\.encoding\]::ascii.*` and (ScriptBlockText=~`(?i).*system\.io\.compression\.deflatestream.*` or ScriptBlockText=~`(?i).*system\.io\.streamreader.*`) and ScriptBlockText=~`(?i).*readtoend$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | verb=~`(?i)^create$` and apiGroup=~`(?i)^authorization\.k8s\.io$` and objectRef_resource=~`(?i)^selfsubjectrulesreviews$`

@@ -1,0 +1,1 @@
+{job="logstash"} | json | DeviceDetail_isCompliant=~`(?i)^false$`

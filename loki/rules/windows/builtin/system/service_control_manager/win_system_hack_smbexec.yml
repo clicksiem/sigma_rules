@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Service\ Control\ Manager$` and EventID=7045 and (ServiceName=~`(?i)^BTOBTO$` or ImagePath=~`(?i).*\.bat\ \&\ del\ .*` or ImagePath=~`(?i).*__output\ 2\^>\^\&1\ >.*`)

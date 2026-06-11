@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Product=~`(?i)^Remote\ Utilities$` and Image!~`(?i).*\\rutserv\.exe$` and Image!~`(?i).*\\rfusclient\.exe$`

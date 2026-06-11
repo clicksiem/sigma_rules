@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/launchctl$` and (CommandLine=~`(?i).*submit.*` or CommandLine=~`(?i).*load.*` or CommandLine=~`(?i).*start.*`)

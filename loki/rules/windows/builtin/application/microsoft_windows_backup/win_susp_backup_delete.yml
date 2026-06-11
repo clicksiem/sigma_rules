@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=524 and Provider_Name=~`(?i)^Microsoft\-Windows\-Backup$`

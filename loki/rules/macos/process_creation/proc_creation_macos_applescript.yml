@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/osascript$` and (CommandLine=~`(?i).*\ \-e\ .*` or CommandLine=~`(?i).*\.scpt.*` or CommandLine=~`(?i).*\.js.*`)

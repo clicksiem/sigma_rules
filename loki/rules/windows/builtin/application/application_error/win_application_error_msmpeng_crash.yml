@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Application\ Error$` and EventID=1000 and Data=~`(?i).*MsMpEng\.exe.*` and Data=~`(?i).*mpengine\.dll.*`

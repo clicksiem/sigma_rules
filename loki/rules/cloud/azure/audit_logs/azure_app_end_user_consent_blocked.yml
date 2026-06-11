@@ -1,0 +1,1 @@
+{job="logstash"} | json | failure_status_reason=~`(?i)^Microsoft\.online\.Security\.userConsentBlockedForRiskyAppsExceptions$`

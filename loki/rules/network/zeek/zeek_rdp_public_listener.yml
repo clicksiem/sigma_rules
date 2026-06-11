@@ -1,0 +1,1 @@
+{job=~".+"} | json | id.orig_h!=ip("::1/128") and id.orig_h!=ip("10.0.0.0/8") and id.orig_h!=ip("127.0.0.0/8") and id.orig_h!=ip("172.16.0.0/12") and id.orig_h!=ip("192.168.0.0/16") and id.orig_h!=ip("169.254.0.0/16") and id.orig_h!=ip("2620:83:8000::/48") and id.orig_h!=ip("fc00::/7") and id.orig_h!=ip("fe80::/10")

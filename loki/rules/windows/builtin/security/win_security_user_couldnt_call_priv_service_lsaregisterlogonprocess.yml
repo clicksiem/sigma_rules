@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4673 and Service=~`(?i)^LsaRegisterLogonProcess\(\)$` and Keywords=~`(?i)^0x8010000000000000$`

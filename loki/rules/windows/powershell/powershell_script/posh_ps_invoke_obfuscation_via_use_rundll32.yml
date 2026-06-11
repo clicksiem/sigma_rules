@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\&\&.*` and ScriptBlockText=~`(?i).*rundll32.*` and ScriptBlockText=~`(?i).*shell32\.dll.*` and ScriptBlockText=~`(?i).*shellexec_rundll.*` and (ScriptBlockText=~`(?i).*value.*` or ScriptBlockText=~`(?i).*invoke.*` or ScriptBlockText=~`(?i).*comspec.*` or ScriptBlockText=~`(?i).*iex.*`)

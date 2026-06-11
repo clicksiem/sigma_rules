@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\\Microsoft\\Windows\\CurrentVersion\\Internet\ Settings\\ZoneMap\\ProtocolDefaults.*` and CommandLine=~`(?i).*http.*` and CommandLine=~`(?i).*\ 0.*`

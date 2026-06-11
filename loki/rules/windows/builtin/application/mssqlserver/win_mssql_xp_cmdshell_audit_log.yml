@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i).*MSSQL.*` and EventID=33205 and Data=~`(?i).*object_name:xp_cmdshell.*` and Data=~`(?i).*statement:EXEC.*`

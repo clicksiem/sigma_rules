@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | query=~`(?i)^api\.telegram\.org$`

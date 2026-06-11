@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^policy\.evaluate_sign_on$` and target_displayName=~`(?i)^Okta\ Admin\ Console$` and (debugContext_debugData_behaviors=~`(?i).*POSITIVE.*` or debugContext_debugData_logOnlySecurityData=~`(?i).*POSITIVE.*`)

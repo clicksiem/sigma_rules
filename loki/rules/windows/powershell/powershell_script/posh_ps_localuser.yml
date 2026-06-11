@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Disable\-LocalUser.*` or ScriptBlockText=~`(?i).*Enable\-LocalUser.*` or ScriptBlockText=~`(?i).*Get\-LocalUser.*` or ScriptBlockText=~`(?i).*Set\-LocalUser.*` or ScriptBlockText=~`(?i).*New\-LocalUser.*` or ScriptBlockText=~`(?i).*Rename\-LocalUser.*` or ScriptBlockText=~`(?i).*Remove\-LocalUser.*`

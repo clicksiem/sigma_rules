@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Microsoft\-Windows\-Ntfs$` and EventID=98 and DeviceName=~`(?i).*HarddiskVolumeShadowCopy.*`

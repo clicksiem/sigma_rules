@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i)^/usr/bin/security$` and (CommandLine=~`(?i).*find\-certificate.*` or CommandLine=~`(?i).*\ export\ .*`) or CommandLine=~`(?i).*\ dump\-keychain\ .*` or CommandLine=~`(?i).*\ login\-keychain\ .*`

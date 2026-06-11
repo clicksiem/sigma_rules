@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Invoke\-TroubleshootingPack.*` and ScriptBlockText=~`(?i).*C:\\Windows\\Diagnostics\\System\\PCW.*` and ScriptBlockText=~`(?i).*\-AnswerFile.*` and ScriptBlockText=~`(?i).*\-Unattended.*`

@@ -1,0 +1,1 @@
+{job="logstash"} | json | ResultType=50097 and ResultDescription=~`(?i)^Device\ authentication\ is\ required$` or ResultType=50155 and ResultDescription=~`(?i)^DeviceAuthenticationFailed$` or ResultType=50158 and ResultDescription=~`(?i)^ExternalSecurityChallenge\ \-\ External\ security\ challenge\ was\ not\ satisfied$`

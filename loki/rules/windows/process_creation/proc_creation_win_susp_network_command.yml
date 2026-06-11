@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`ipconfig\s+/all` or CommandLine=~`netsh\s+interface show interface` or CommandLine=~`arp\s+-a` or CommandLine=~`nbtstat\s+-n` or CommandLine=~`net\s+config` or CommandLine=~`route\s+print`

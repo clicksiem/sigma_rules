@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/uname$` or Image=~`(?i).*/hostname$` or Image=~`(?i).*/uptime$` or Image=~`(?i).*/lspci$` or Image=~`(?i).*/dmidecode$` or Image=~`(?i).*/lscpu$` or Image=~`(?i).*/lsmod$`

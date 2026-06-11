@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | record_type=~`(?i)^TXT$` and (answer=~`(?i).*IEX.*` or answer=~`(?i).*Invoke\-Expression.*` or answer=~`(?i).*cmd\.exe.*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\reg\.exe$` or OriginalFileName=~`(?i)^reg\.exe$`) and CommandLine=~`(?i).*Microsoft\\Windows\\WindowsAI.*` and CommandLine=~`(?i).*DisableAIDataAnalysis.*` and (CommandLine=~`(?i).*add.*` or CommandLine=~`(?i).*0.*` or CommandLine=~`(?i).*delete.*`)

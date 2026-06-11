@@ -1,0 +1,1 @@
+{job="logstash"} | json | ResultType=50057 and ResultDescription=~`(?i)^User\ account\ is\ disabled\.\ The\ account\ has\ been\ disabled\ by\ an\ administrator\.$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=300 and TargetUserSid=~`(?i)^S\-1\-5\-21\-.*` and (SidList=~`(?i).*S\-1\-5\-32\-544.*` or SidList=~`(?i).*\-500\}.*` or SidList=~`(?i).*\-518\}.*` or SidList=~`(?i).*\-519\}.*`) and TargetUserSid!~`(?i).*\-500$` and TargetUserSid!~`(?i).*\-518$` and TargetUserSid!~`(?i).*\-519$`

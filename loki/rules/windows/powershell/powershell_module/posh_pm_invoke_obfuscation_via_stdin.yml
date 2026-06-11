@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~`(?i)(set).*&&\s?set.*(environment|invoke|\$?\{?input).*&&.*"`

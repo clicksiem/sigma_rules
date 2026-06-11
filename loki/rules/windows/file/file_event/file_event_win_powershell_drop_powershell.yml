@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\powershell\.exe$` or Image=~`(?i).*\\pwsh\.exe$`) and TargetFilename=~`(?i).*\.ps1$` and TargetFilename!~`(?i).*__PSScriptPolicyTest_.*` and (TargetFilename!~`(?i)^C:\\Users\\.*` or TargetFilename!~`(?i).*\\AppData\\Local\\Temp\\.*`) and TargetFilename!~`(?i)^C:\\Windows\\Temp\\.*`

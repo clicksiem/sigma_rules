@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i)^:\\Program\ Files.*` and Image=~`(?i).*\\Microsoft\ Visual\ Studio\\.*` and Image=~`(?i).*\\dump64\.exe$` and (OriginalFileName=~`(?i)^procdump$` or CommandLine=~`(?i).*\ \-ma\ .*` or CommandLine=~`(?i).*\ \-mp\ .*`)

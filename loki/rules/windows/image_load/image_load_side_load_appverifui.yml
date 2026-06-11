@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\appverifUI\.dll$` and (Image!~`(?i)^C:\\Windows\\SysWOW64\\appverif\.exe$` and Image!~`(?i)^C:\\Windows\\System32\\appverif\.exe$` or ImageLoaded!~`(?i)^C:\\Windows\\System32\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\SysWOW64\\.*` and ImageLoaded!~`(?i)^C:\\Windows\\WinSxS\\.*`)

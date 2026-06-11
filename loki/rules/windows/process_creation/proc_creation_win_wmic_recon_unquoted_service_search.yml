@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^wmic\.exe$` or Image=~`(?i).*\\WMIC\.exe$`) and CommandLine=~`(?i).*\ service\ get\ .*` and CommandLine=~`(?i).*name,displayname,pathname,startmode.*`

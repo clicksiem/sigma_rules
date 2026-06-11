@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/grep$` and CommandLine=~`(?i).*password.*` or CommandLine=~`(?i).*laZagne.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\-autoreconnect\ .*` and CommandLine=~`(?i).*\-connect\ .*` and CommandLine=~`(?i).*\-id:.*`

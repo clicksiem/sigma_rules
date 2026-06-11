@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^zone\.deactivate$` or eventType=~`(?i)^zone\.delete$`

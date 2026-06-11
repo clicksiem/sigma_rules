@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\ShellIds\\Microsoft\.PowerShell\\ExecutionPolicy$` or TargetObject=~`(?i).*\\Policies\\Microsoft\\Windows\\PowerShell\\ExecutionPolicy$`) and (Details=~`(?i).*Bypass.*` or Details=~`(?i).*Unrestricted.*`) and Image!~`(?i).*:\\Windows\\System32\\.*` and Image!~`(?i).*:\\Windows\\SysWOW64\\.*`

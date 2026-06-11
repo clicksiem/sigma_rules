@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\aspnet_regiis\.exe$` or OriginalFileName=~`(?i)^aspnet_regiis\.exe$`) and CommandLine=~`(?i).*connectionStrings.*` and CommandLine=~`(?i).*\ \-pdf.*`

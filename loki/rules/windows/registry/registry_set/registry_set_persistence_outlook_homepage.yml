@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Software\\Microsoft\\Office\\.*` and TargetObject=~`(?i).*\\Outlook\\WebView\\.*` and TargetObject=~`(?i).*\\URL$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/sysctl$` or CommandLine=~`(?i).*sysctl.*`) and (CommandLine=~`(?i).*hw\..*` or CommandLine=~`(?i).*kern\..*` or CommandLine=~`(?i).*machdep\..*`)

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | verb=~`(?i)^create$` and objectRef_resource=~`(?i)^pods$` and objectRef_subresource=~`(?i)^exec$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~`(?i).*set.*` and Payload=~`(?i).*\&\&.*` and Payload=~`(?i).*mshta.*` and Payload=~`(?i).*vbscript:createobject.*` and Payload=~`(?i).*\.run.*` and Payload=~`(?i).*\(window\.close\).*`

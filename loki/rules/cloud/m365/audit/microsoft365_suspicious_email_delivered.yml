@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Workload=~`(?i)^ThreatIntelligence$` and Operation=~`(?i)^TIMailData$` and Directionality=~`(?i)^Inbound$` and DeliveryAction!~`(?i)^Blocked$`

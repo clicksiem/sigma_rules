@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\gpg\.exe$` or Image=~`(?i).*\\gpg2\.exe$` or Description=~`(?i)^GnuPG’s\ OpenPGP\ tool$`) and CommandLine=~`(?i).*\ \-d\ .*` and CommandLine=~`(?i).*passphrase.*`

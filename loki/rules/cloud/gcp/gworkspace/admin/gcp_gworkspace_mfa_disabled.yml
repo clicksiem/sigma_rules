@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventService=~`(?i)^admin\.googleapis\.com$` and (eventName=~`(?i)^ENFORCE_STRONG_AUTHENTICATION$` or eventName=~`(?i)^ALLOW_STRONG_AUTHENTICATION$`) and new_value=~`(?i)^false$`

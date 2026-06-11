@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (QueryName=~`(?i)^taf\.teamviewer\.com$` or QueryName=~`(?i)^udp\.ping\.teamviewer\.com$`) and Image!~`(?i).*TeamViewer.*`

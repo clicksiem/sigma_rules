@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^xclip$` and (a1=~`(?i)^\-selection$` or a1=~`(?i)^\-sel$`) and (a2=~`(?i)^clipboard$` or a2=~`(?i)^clip$`) and a3=~`(?i)^\-o$`

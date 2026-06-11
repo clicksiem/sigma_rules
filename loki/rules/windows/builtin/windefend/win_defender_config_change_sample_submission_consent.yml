@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5007 and NewValue=~`(?i).*\\Real\-Time\ Protection\\SubmitSamplesConsent\ =\ 0x0.*`

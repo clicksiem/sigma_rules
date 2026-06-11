@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4662 and ObjectType=~`(?i)^WMI\ Namespace$` and ObjectName=~`(?i).*subscription.*`

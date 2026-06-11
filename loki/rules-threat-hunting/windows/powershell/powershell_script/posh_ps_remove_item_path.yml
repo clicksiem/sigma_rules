@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Remove\-Item\ \-Path\ .*` or ScriptBlockText=~`(?i).*del\ \-Path\ .*` or ScriptBlockText=~`(?i).*erase\ \-Path\ .*` or ScriptBlockText=~`(?i).*rd\ \-Path\ .*` or ScriptBlockText=~`(?i).*ri\ \-Path\ .*` or ScriptBlockText=~`(?i).*rm\ \-Path\ .*` or ScriptBlockText=~`(?i).*rmdir\ \-Path\ .*`

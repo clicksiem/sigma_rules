@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*for\ .*` or CommandLine=~`(?i).*foreach\ .*`) and (CommandLine=~`(?i).*nslookup.*` or CommandLine=~`(?i).*ping.*`)

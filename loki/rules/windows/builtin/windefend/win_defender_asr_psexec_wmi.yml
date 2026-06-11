@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=1121 and (ProcessName=~`(?i).*\\wmiprvse\.exe$` or ProcessName=~`(?i).*\\psexesvc\.exe$`)

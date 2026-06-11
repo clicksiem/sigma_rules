@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i)^/usr/sbin/firmwarepasswd$` and (CommandLine=~`(?i).*setpasswd.*` or CommandLine=~`(?i).*full.*` or CommandLine=~`(?i).*delete.*` or CommandLine=~`(?i).*check.*`)

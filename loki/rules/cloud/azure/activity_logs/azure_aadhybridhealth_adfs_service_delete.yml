@@ -1,0 +1,1 @@
+{job="logstash"} | json | CategoryValue=~`(?i)^Administrative$` and ResourceProviderValue=~`(?i)^Microsoft\.ADHybridHealthService$` and ResourceId=~`(?i).*AdFederationService.*` and OperationNameValue=~`(?i)^Microsoft\.ADHybridHealthService/services/delete$`

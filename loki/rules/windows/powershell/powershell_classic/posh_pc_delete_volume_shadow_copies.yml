@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Data=~`(?i).*Get\-WmiObject.*` and Data=~`(?i).*Win32_ShadowCopy.*` and (Data=~`(?i).*Delete\(\).*` or Data=~`(?i).*Remove\-WmiObject.*`)

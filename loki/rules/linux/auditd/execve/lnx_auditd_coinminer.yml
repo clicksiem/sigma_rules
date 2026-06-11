@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | a1=~`(?i)^\-\-cpu\-priority.*` or a2=~`(?i)^\-\-cpu\-priority.*` or a3=~`(?i)^\-\-cpu\-priority.*` or a4=~`(?i)^\-\-cpu\-priority.*` or a5=~`(?i)^\-\-cpu\-priority.*` or a6=~`(?i)^\-\-cpu\-priority.*` or a7=~`(?i)^\-\-cpu\-priority.*`

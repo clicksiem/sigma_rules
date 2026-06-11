@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\verclsid\.exe$` or OriginalFileName=~`(?i)^verclsid\.exe$`) and CommandLine=~`(?i).*/S.*` and CommandLine=~`(?i).*/C.*` and (ParentImage!~`(?i).*C:\\Windows\\System32\\RuntimeBroker\.exe$` or CommandLine!~`(?i).*verclsid\.exe"\ /S\ /C\ \{.*` or CommandLine!~`(?i).*\}\ /I\ \{.*`)

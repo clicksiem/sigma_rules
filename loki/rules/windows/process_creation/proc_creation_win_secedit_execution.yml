@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\secedit\.exe$` or OriginalFileName=~`(?i)^SeCEdit$`) and (CommandLine=~`(?i).*/export.*` and CommandLine=~`(?i).*/cfg.*` or CommandLine=~`(?i).*/configure.*` and CommandLine=~`(?i).*/db.*`)

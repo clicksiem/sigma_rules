@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\CreateMiniDump\.exe$` or Hashes=~`(?i).*IMPHASH=4a07f944a83e8a7c2525efa35dd30e2f.*`

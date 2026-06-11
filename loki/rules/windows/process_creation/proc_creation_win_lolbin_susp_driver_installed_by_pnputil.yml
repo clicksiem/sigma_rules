@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*\-i.*` or CommandLine=~`(?i).*/install.*` or CommandLine=~`(?i).*\-a.*` or CommandLine=~`(?i).*/add\-driver.*` or CommandLine=~`(?i).*\.inf.*`) and Image=~`(?i).*\\pnputil\.exe$`

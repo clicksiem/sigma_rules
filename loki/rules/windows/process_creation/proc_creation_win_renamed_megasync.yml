@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^megasync\.exe$` and Image!~`(?i).*\\megasync\.exe$`

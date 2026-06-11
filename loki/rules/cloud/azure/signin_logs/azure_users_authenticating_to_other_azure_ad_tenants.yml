@@ -1,0 +1,1 @@
+{job="logstash"} | json | Status=~`(?i)^Success$` and HomeTenantId=~`(?i)^HomeTenantID$` and ResourceTenantId!~`(?i).*HomeTenantID.*`

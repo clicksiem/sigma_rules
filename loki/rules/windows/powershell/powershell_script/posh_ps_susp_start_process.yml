@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Start\-Process.*` and ScriptBlockText=~`(?i).*\-PassThru\ .*` and ScriptBlockText=~`(?i).*\-FilePath\ .*`

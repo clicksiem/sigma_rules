@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^gpg\.exe$` and Image!~`(?i).*\\gpg\.exe$` and Image!~`(?i).*\\gpg2\.exe$`

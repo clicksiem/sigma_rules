@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and (a0=~`(?i)^mkdir$` or a0=~`(?i)^nano$` or a0=~`(?i)^touch$` or a0=~`(?i)^vi$` or a0=~`(?i)^vim$`) and (a1=~`(^|\/)\.[^.\/]` or a2=~`(^|\/)\.[^.\/]`)

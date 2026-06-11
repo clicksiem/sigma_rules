@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | auditType_category=~`(?i)^Authentication$` and auditType_action=~`(?i)^User\ login\ failed$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4657 and ObjectName=~`(?i).*\\Microsoft\\Windows\ Defender\\Exclusions\\.*`

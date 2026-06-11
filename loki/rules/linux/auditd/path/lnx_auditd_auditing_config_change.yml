@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^PATH$` and (name=~`(?i)^/etc/audit/.*` or name=~`(?i)^/etc/libaudit\.conf$` or name=~`(?i)^/etc/audisp/.*`)

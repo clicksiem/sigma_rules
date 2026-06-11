@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=11 or EventID=12) and (ProcessPath=~`(?i).*\\MpCmdRun\.exe$` or ProcessPath=~`(?i).*\\NisSrv\.exe$`)

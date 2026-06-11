@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)\-\-to\-ports\ 42|\-\-to\-ports\ 43` | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i).*iptables$` and a1=~`(?i)^\-t$` and a2=~`(?i)^nat$`

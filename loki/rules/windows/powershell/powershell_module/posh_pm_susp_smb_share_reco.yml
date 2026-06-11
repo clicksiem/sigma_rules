@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~`(?i).*get\-smbshare.*` or ContextInfo=~`(?i).*get\-smbshare.*`

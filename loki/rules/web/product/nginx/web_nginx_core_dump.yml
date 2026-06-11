@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)exited\ on\ signal\ 6\ \(core\ dumped\)`

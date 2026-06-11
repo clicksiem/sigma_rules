@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | CommandLine=~`(?i).*IyEvYmluL2Jhc2.*` or CommandLine=~`(?i).*IyEvYmluL2Rhc2.*` or CommandLine=~`(?i).*IyEvYmluL3pza.*` or CommandLine=~`(?i).*IyEvYmluL2Zpc2.*` or CommandLine=~`(?i).*IyEvYmluL3No.*`

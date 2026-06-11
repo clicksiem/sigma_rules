@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4697 and ServiceName=~`(?i)^HybridConnectionManager$` and ServiceFileName=~`(?i).*HybridConnectionManager.*`

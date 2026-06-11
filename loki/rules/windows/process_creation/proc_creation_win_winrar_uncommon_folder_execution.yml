@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\rar\.exe$` or Image=~`(?i).*\\winrar\.exe$` or Description=~`(?i)^Command\ line\ RAR$` or Description=~`(?i)^WinRAR$`) and Image!~`(?i).*\\UnRAR\.exe$` and Image!~`(?i).*:\\Program\ Files\ \(x86\)\\WinRAR\\.*` and Image!~`(?i).*:\\Program\ Files\\WinRAR\\.*` and Image!~`(?i).*:\\Windows\\Temp\\.*`

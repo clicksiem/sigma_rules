@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*verb:sync.*` and CommandLine=~`(?i).*\-source:RunCommand.*` and CommandLine=~`(?i).*\-dest:runCommand.*` and Image=~`(?i).*\\msdeploy\.exe$`

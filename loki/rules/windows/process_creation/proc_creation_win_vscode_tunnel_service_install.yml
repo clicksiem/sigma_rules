@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*tunnel\ .*` and CommandLine=~`(?i).*service.*` and CommandLine=~`(?i).*internal\-run.*` and CommandLine=~`(?i).*tunnel\-service\.log.*`

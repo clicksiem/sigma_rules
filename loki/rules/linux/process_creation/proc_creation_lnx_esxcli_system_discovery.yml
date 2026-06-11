@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/esxcli$` and CommandLine=~`(?i).*system.*` and (CommandLine=~`(?i).*\ get.*` or CommandLine=~`(?i).*\ list.*`)

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | FileName=~`(?i).*\\Panther\\unattend\.xml$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Install\-WindowsFeature\ WindowsPowerShellWebAccess.*` or ScriptBlockText=~`(?i).*Install\-PswaWebApplication.*` or ScriptBlockText=~`(?i).*Add\-PswaAuthorizationRule.*` and ScriptBlockText=~`(?i).*\-UserName\ .*` and ScriptBlockText=~`(?i).*\-ComputerName\ .*`

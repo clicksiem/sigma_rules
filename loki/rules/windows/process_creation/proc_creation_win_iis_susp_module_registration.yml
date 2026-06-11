@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\w3wp\.exe$` and (CommandLine=~`(?i).*appcmd\.exe\ add\ module.*` or CommandLine=~`(?i).*\ system\.enterpriseservices\.internal\.publish.*` and Image=~`(?i).*\\powershell\.exe$` or CommandLine=~`(?i).*gacutil.*` and CommandLine=~`(?i).*\ /I.*`)

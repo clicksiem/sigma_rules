@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventService=~`(?i)^admin\.googleapis\.com$` and (eventName=~`(?i)^GRANT_DELEGATED_ADMIN_PRIVILEGES$` or eventName=~`(?i)^GRANT_ADMIN_PRIVILEGE$`)

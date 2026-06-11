@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Set\-NetFirewallProfile\ .*` and ScriptBlockText=~`(?i).*\ \-Enabled\ .*` and ScriptBlockText=~`(?i).*\ False.*` and (ScriptBlockText=~`(?i).*\ \-All\ .*` or ScriptBlockText=~`(?i).*Public.*` or ScriptBlockText=~`(?i).*Domain.*` or ScriptBlockText=~`(?i).*Private.*`)

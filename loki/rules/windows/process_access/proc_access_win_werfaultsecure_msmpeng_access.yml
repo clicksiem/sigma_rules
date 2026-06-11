@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | SourceImage=~`(?i).*\\WerFaultSecure\.exe$` and TargetImage=~`(?i).*\\MsMpEng\.exe$` and (CallTrace=~`(?i).*\\dbgcore\.dll.*` or CallTrace=~`(?i).*\\dbghelp\.dll.*`)

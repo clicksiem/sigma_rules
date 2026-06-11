@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*:\\\$Recycle\.Bin\.exe$` or TargetFilename=~`(?i).*:\\Documents\ and\ Settings\.exe$` or TargetFilename=~`(?i).*:\\MSOCache\.exe$` or TargetFilename=~`(?i).*:\\PerfLogs\.exe$` or TargetFilename=~`(?i).*:\\Recovery\.exe$` or TargetFilename=~`(?i).*\.bat\.exe$` or TargetFilename=~`(?i).*\.sys\.exe$`

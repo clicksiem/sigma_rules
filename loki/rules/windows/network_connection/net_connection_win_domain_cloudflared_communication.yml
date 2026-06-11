@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and (DestinationHostname=~`(?i).*\.v2\.argotunnel\.com$` or DestinationHostname=~`(?i).*protocol\-v2\.argotunnel\.com$` or DestinationHostname=~`(?i).*trycloudflare\.com$` or DestinationHostname=~`(?i).*update\.argotunnel\.com$`)

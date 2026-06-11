@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*nslookup.*` and CommandLine=~`(?i).*_ldap\._tcp\.dc\._msdcs\..*`

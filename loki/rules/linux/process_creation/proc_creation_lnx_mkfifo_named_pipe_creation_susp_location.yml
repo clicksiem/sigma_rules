@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/mkfifo$` and CommandLine=~`(?i).*\ /tmp/.*`

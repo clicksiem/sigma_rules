@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*regsvr32.*` and CommandLine=~`(?i).*\\AppData\\Local\\.*` and CommandLine=~`(?i).*\.dll.*` and CommandLine=~`(?i).*,DllEntry.*`

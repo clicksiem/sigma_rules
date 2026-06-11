@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)bash\ \-c\ /bin/bash` |~ `(?i)\&/dev/tcp/`

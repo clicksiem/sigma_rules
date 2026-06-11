@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | event_type_id=3

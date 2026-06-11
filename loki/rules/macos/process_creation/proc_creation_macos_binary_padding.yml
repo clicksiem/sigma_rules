@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/truncate$` and CommandLine=~`(?i).*\-s\ \+.*` or Image=~`(?i).*/dd$` and (CommandLine=~`(?i).*if=/dev/zero.*` or CommandLine=~`(?i).*if=/dev/random.*` or CommandLine=~`(?i).*if=/dev/urandom.*`)

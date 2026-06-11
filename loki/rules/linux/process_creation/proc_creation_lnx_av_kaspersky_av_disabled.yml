@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/systemctl$` or Image=~`(?i).*/bash$` or Image=~`(?i).*/sh$`) and CommandLine=~`(?i).*stop.*` and CommandLine=~`(?i).*kesl.*`

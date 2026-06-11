@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\rundll32\.exe$` or OriginalFileName=~`(?i)^RUNDLL32\.EXE$` or CommandLine=~`(?i).*rundll32.*`) and (CommandLine=~`(?i).*\#\+.*` or CommandLine=~`(?i).*\#\-.*` or CommandLine=~`(?i).*\#0.*` or CommandLine=~`(?i).*\#655.*` or CommandLine=~`(?i).*\#656.*`)

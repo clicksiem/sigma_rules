@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*set.*` and CommandLine=~`(?i).*\&\&.*` and CommandLine=~`(?i).*mshta.*` and CommandLine=~`(?i).*vbscript:createobject.*` and CommandLine=~`(?i).*\.run.*` and CommandLine=~`(?i).*\(window\.close\).*`

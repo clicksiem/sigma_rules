@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\[System\.Net\.HttpWebRequest\].*` and ScriptBlockText=~`(?i).*System\.Net\.Sockets\.TcpListener.*` and ScriptBlockText=~`(?i).*AcceptTcpClient.*`

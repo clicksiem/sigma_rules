@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ContextInfo=~`(?i).*System\.Net\.WebClient.*` and (ContextInfo=~`(?i).*\.DownloadFile\(.*` or ContextInfo=~`(?i).*\.DownloadString\(.*`)

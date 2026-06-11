@@ -1,0 +1,1 @@
+{job=~".+"} !~ `(?i)samr` !~ `(?i)lsarpc` !~ `(?i)winreg` !~ `(?i)netlogon` !~ `(?i)srvsvc` !~ `(?i)protected_storage` !~ `(?i)wkssvc` !~ `(?i)browser` !~ `(?i)netdfs` !~ `(?i)svcctl` !~ `(?i)spoolss` !~ `(?i)ntsvcs` !~ `(?i)LSM_API_service` !~ `(?i)HydraLsPipe` !~ `(?i)TermSrv_API_service` !~ `(?i)MsFteWds` | json | path=~`(?i)^\\\\\\.*\\IPC\$$`

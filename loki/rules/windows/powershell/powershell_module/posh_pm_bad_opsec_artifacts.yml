@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~`(?i).*\$DoIt.*` or Payload=~`(?i).*harmj0y.*` or Payload=~`(?i).*mattifestation.*` or Payload=~`(?i).*_RastaMouse.*` or Payload=~`(?i).*tifkin_.*` or Payload=~`(?i).*0xdeadbeef.*`

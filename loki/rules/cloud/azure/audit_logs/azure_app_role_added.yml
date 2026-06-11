@@ -1,0 +1,1 @@
+{job="logstash"} | json | targetResources_type=~`(?i)^Service\ Principal$` and (properties_message=~`(?i)^Add\ member\ to\ role$` or properties_message=~`(?i)^Add\ eligible\ member\ to\ role$` or properties_message=~`(?i)^Add\ scoped\ member\ to\ role$`)

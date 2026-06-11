@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^AdvancedRun\.exe$` or CommandLine=~`(?i).*\ /EXEFilename\ .*` and CommandLine=~`(?i).*\ /Run.*` or CommandLine=~`(?i).*\ /WindowState\ 0.*` and CommandLine=~`(?i).*\ /RunAs\ .*` and CommandLine=~`(?i).*\ /CommandLine\ .*`

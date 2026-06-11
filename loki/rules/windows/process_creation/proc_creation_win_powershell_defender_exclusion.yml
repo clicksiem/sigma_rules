@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*Add\-MpPreference\ .*` or CommandLine=~`(?i).*Set\-MpPreference\ .*`) and (CommandLine=~`(?i).*\ \-ExclusionPath\ .*` or CommandLine=~`(?i).*\ \-ExclusionExtension\ .*` or CommandLine=~`(?i).*\ \-ExclusionProcess\ .*` or CommandLine=~`(?i).*\ \-ExclusionIpAddress\ .*`)

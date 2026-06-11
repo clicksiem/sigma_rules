@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\powercfg\.exe$` or OriginalFileName=~`(?i)^PowerCfg\.exe$`) and (CommandLine=~`(?i).*/setacvalueindex\ .*` and CommandLine=~`(?i).*SCHEME_CURRENT.*` and CommandLine=~`(?i).*SUB_VIDEO.*` and CommandLine=~`(?i).*VIDEOCONLOCK.*` or CommandLine=~`(?i).*\-change\ .*` and CommandLine=~`(?i).*\-standby\-timeout\-.*`)

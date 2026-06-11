@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\SharpEvtMute\.exe$` or Description=~`(?i)^SharpEvtMute$` or CommandLine=~`(?i).*\-\-Filter\ "rule\ .*` or CommandLine=~`(?i).*\-\-Encoded\ \-\-Filter\ \\".*`

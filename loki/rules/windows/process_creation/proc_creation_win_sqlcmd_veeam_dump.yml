@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\sqlcmd\.exe$` and CommandLine=~`(?i).*SELECT.*` and CommandLine=~`(?i).*TOP.*` and CommandLine=~`(?i).*\[VeeamBackup\]\.\[dbo\]\.\[Credentials\].*`

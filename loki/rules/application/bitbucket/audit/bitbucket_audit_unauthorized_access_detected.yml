@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | auditType_category=~`(?i)^Security$` and auditType_action=~`(?i)^Unauthorized\ access\ to\ a\ resource$`

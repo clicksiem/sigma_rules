@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (SourceImage=~`(?i).*\\System32\\cscript\.exe$` or SourceImage=~`(?i).*\\System32\\wscript\.exe$` or SourceImage=~`(?i).*\\System32\\mshta\.exe$` or SourceImage=~`(?i).*\\winword\.exe$` or SourceImage=~`(?i).*\\excel\.exe$`) and TargetImage=~`(?i).*\\SysWOW64\\.*` and StartModule=``

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/firewall\-cmd$` or Image=~`(?i).*/ufw$` or Image=~`(?i).*/iptables$` or Image=~`(?i).*/netstat$` or Image=~`(?i).*/ss$` or Image=~`(?i).*/ip$` or Image=~`(?i).*/ifconfig$` or Image=~`(?i).*/systemd\-resolve$` or Image=~`(?i).*/route$` or CommandLine=~`(?i).*/etc/resolv\.conf.*`

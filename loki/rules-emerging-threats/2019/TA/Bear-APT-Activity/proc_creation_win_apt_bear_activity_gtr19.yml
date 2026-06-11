@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*xcopy\ /S\ /E\ /C\ /Q\ /H\ \\\\.*` and CommandLine=~`(?i).*\\sysvol\\.*` or CommandLine=~`(?i).*adexplorer\ \-snapshot\ ""\ c:\\users\\.*` and CommandLine=~`(?i).*\\downloads\\.*` and CommandLine=~`(?i).*\.snp.*`

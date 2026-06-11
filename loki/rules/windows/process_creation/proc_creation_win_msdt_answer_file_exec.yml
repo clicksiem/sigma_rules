@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\msdt\.exe$` and CommandLine=~`(?i).*\\WINDOWS\\diagnostics\\index\\PCWDiagnostic\.xml.*` and CommandLine=~`(?i).*\ \-af\ .*` or CommandLine=~`(?i).*\ /af\ .*` or CommandLine=~`(?i).*\ –af\ .*` or CommandLine=~`(?i).*\ —af\ .*` or CommandLine=~`(?i).*\ ―af\ .*` and ParentImage!~`(?i).*\\pcwrun\.exe$`

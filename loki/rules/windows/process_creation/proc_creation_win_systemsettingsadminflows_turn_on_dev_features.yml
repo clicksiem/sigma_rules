@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\SystemSettingsAdminFlows\.exe$` or OriginalFileName=~`(?i)^SystemSettingsAdminFlows\.EXE$`) and CommandLine=~`(?i).*TurnOnDeveloperFeatures.*` and (CommandLine=~`(?i).*DeveloperUnlock.*` or CommandLine=~`(?i).*EnableSideloading.*`)

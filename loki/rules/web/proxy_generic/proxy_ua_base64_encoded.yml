@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | c_useragent=~`(?i)^Q2hyb21l.*` or c_useragent=~`(?i)^QXBwbGVXZWJLaX.*` or c_useragent=~`(?i)^RGFsdmlr.*` or c_useragent=~`(?i)^TW96aWxsY.*`

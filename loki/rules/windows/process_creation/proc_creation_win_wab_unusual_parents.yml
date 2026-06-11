@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ParentImage=~`(?i).*\\WmiPrvSE\.exe$` or ParentImage=~`(?i).*\\svchost\.exe$` or ParentImage=~`(?i).*\\dllhost\.exe$`) and (Image=~`(?i).*\\wab\.exe$` or Image=~`(?i).*\\wabmig\.exe$`) or ParentImage=~`(?i).*\\wab\.exe$` or ParentImage=~`(?i).*\\wabmig\.exe$`

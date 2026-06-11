@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*\\Microsoft\\Teams\\Cookies.*` or CommandLine=~`(?i).*\\Microsoft\\Teams\\Local\ Storage\\leveldb.*`) and Image!~`(?i).*\\Microsoft\\Teams\\current\\Teams\.exe$`

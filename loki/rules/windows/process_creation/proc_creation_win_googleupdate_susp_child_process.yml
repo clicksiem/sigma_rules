@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\GoogleUpdate\.exe$` and Image!~`(?i).*\\Google.*` and Image!~`(?i).*\\setup\.exe$` and Image!~`(?i).*chrome_updater\.exe$` and Image!~`(?i).*chrome_installer\.exe$` and Image!=``

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\colorcpl\.exe$` and TargetFilename!~`(?i).*\.icm$` and TargetFilename!~`(?i).*\.gmmp$` and TargetFilename!~`(?i).*\.cdmp$` and TargetFilename!~`(?i).*\.camp$`

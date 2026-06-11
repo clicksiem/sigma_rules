@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^org\.add_member$` or action=~`(?i)^org\.invite_member$`

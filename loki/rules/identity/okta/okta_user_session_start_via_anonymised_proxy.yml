@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^user\.session\.start$` and securityContext_isProxy=~`(?i)^true$`

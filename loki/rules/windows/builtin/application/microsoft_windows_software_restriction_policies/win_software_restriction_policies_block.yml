@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Microsoft\-Windows\-SoftwareRestrictionPolicies$` and (EventID=865 or EventID=866 or EventID=867 or EventID=868 or EventID=882)

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i)^/bin/dd$` or Image=~`(?i)^/usr/bin/dd$`) and CommandLine=~`(?i).*of=.*` and (CommandLine=~`(?i).*if=/dev/zero.*` or CommandLine=~`(?i).*if=/dev/null.*`)

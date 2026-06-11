@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\wsl\.exe$` or OriginalFileName=~`(?i)^wsl$`) and (CommandLine=~`(?i).*\ \-\-install\ .*` or CommandLine=~`(?i).*\ \-i\ .*`) and CommandLine=~`(?i).*kali.*`

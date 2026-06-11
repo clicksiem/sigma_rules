@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\wsreset\.exe$` and (IntegrityLevel=~`(?i)^High$` or IntegrityLevel=~`(?i)^System$` or IntegrityLevel=~`(?i)^S\-1\-16\-16384$` or IntegrityLevel=~`(?i)^S\-1\-16\-12288$`)

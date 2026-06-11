@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^FX_VER_INTERNALNAME_STR$` or CommandLine=~`(?i).*\ \-u\ .*` and CommandLine=~`(?i).*\ \-f\ .*` and CommandLine=~`(?i).*\.dmp.*` or CommandLine=~`(?i).*\ \-\-full\ .*` and CommandLine=~`(?i).*\ \-\-name\ .*` and CommandLine=~`(?i).*\.dmp.*`) and Image!~`(?i).*\\createdump\.exe$`

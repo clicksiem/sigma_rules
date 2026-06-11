@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\VMware\\VMware\ Tools\\vmStatsProvider\\win32.*` and ImageLoaded=~`(?i).*\\vmGuestLib\.dll.*` and Image=~`(?i).*\\Windows\\System32\\wbem\\WmiApSrv\.exe$` and Signed!~`(?i)^true$`

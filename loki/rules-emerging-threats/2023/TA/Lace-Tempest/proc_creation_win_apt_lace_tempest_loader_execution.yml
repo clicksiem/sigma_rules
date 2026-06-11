@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*:\\Program\ Files\\SysAidServer\\tomcat\\webapps\\usersfiles\\user\.exe$` or Hashes=~`(?i).*SHA256=B5ACF14CDAC40BE590318DEE95425D0746E85B1B7B1CBD14DA66F21F2522BF4D.*`

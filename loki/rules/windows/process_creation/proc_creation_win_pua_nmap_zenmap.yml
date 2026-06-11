@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\nmap\.exe$` or Image=~`(?i).*\\zennmap\.exe$` or OriginalFileName=~`(?i)^nmap\.exe$` or OriginalFileName=~`(?i)^zennmap\.exe$`

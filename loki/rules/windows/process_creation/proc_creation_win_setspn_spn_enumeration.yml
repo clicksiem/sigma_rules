@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\setspn\.exe$` or OriginalFileName=~`(?i)^setspn\.exe$` or Description=~`(?i).*Query\ or\ reset\ the\ computer.*` and Description=~`(?i).*SPN\ attribute.*`) and (CommandLine=~`(?i).*\ \-q\ .*` or CommandLine=~`(?i).*\ /q\ .*`)

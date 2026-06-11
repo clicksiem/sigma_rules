@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\certutil\.exe$` and Initiated=~`(?i)^true$` and (DestinationPort=80 or DestinationPort=135 or DestinationPort=443 or DestinationPort=445)

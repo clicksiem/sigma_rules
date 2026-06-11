@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*New\-Object.*` and ScriptBlockText=~`(?i).*System\.Net\.NetworkInformation\.Ping.*` and ScriptBlockText=~`(?i).*\.Send\(.*`

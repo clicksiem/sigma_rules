@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and (DestinationHostname=~`(?i).*mega\.co\.nz$` or DestinationHostname=~`(?i).*mega\.nz$`)

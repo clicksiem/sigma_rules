@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\ \-NoP\ \-NonI\ \-w\ Hidden\ \-c\ \$x=\$\(\(gp\ HKCU:Software\\Microsoft\\Windows\ Update\)\.Update\).*` or CommandLine=~`(?i).*\ \-NoP\ \-NonI\ \-c\ \$x=\$\(\(gp\ HKCU:Software\\Microsoft\\Windows\ Update\)\.Update\);.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetImage=~`(?i).*\\calc\.exe$` or TargetImage=~`(?i).*\\calculator\.exe$` or TargetImage=~`(?i).*\\mspaint\.exe$` or TargetImage=~`(?i).*\\notepad\.exe$` or TargetImage=~`(?i).*\\ping\.exe$` or TargetImage=~`(?i).*\\wordpad\.exe$` or TargetImage=~`(?i).*\\write\.exe$`) and GrantedAccess=~`(?i)^0x1FFFFF$`

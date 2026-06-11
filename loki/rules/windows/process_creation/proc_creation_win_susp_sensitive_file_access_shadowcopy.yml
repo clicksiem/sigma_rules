@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\\\\\\.\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy.*` and (CommandLine=~`(?i).*\\NTDS\.dit.*` or CommandLine=~`(?i).*\\SYSTEM.*` or CommandLine=~`(?i).*\\SECURITY.*`)

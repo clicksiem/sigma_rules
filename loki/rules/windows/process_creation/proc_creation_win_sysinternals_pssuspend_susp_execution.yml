@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^pssuspend\.exe$` or Image=~`(?i).*\\pssuspend\.exe$` or Image=~`(?i).*\\pssuspend64\.exe$`) and CommandLine=~`(?i).*msmpeng\.exe.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*get\-localgroup\ .*` or ScriptBlockText=~`(?i).*get\-localgroupmember\ .*` or (ScriptBlockText=~`(?i).*get\-wmiobject\ .*` or ScriptBlockText=~`(?i).*gwmi\ .*` or ScriptBlockText=~`(?i).*get\-ciminstance\ .*` or ScriptBlockText=~`(?i).*gcim\ .*`) and ScriptBlockText=~`(?i).*win32_group.*`

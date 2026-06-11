@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4657 and ObjectName=~`(?i).*\\REGISTRY\\MACHINE\\SYSTEM.*` and ObjectName=~`(?i).*ControlSet.*` and ObjectName=~`(?i).*\\Control\\Lsa.*` and (ObjectValueName=~`(?i)^LmCompatibilityLevel$` or ObjectValueName=~`(?i)^NtlmMinClientSec$` or ObjectValueName=~`(?i)^RestrictSendingNTLMTraffic$`)

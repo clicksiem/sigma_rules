@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\wsass\.exe$` or Hashes=~`(?i).*IMPHASH=32F5095C9BBDCACF28FD4060EB4DFC42.*` or CommandLine=~`(?i)\.exe[\"\']?\s+[^\"]{0,64}werfaultsecure\.exe[\"\']?\s+\d{2,10}`

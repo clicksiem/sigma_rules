@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (TargetFilename=~`(?i)^/Library/StartupItems/.*` or TargetFilename=~`(?i)^/System/Library/StartupItems.*`) and TargetFilename=~`(?i).*\.plist$`

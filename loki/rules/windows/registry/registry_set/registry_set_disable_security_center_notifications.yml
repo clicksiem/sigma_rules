@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*Windows\\CurrentVersion\\ImmersiveShell\\UseActionCenterExperience$` and Details=~`(?i)^DWORD\ \(0x00000000\)$`

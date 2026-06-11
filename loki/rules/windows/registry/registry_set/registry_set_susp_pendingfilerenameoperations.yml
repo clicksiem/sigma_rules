@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\CurrentControlSet\\Control\\Session\ Manager\\PendingFileRenameOperations.*` and (Image=~`(?i).*\\Users\\Public\\.*` or Image=~`(?i).*\\reg\.exe$` or Image=~`(?i).*\\regedit\.exe$`)

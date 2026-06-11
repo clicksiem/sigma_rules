@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^PowerShell\.EXE$` or OriginalFileName=~`(?i)^pwsh\.dll$` or Image=~`(?i).*\\powershell\.exe$` or Image=~`(?i).*\\pwsh\.exe$`) and CommandLine=~`(?i).*\ Net\.Sockets\.TCPClient.*` and CommandLine=~`(?i).*\.GetStream\(.*` and CommandLine=~`(?i).*\.Write\(.*`

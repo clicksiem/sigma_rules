@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\ \-name\ IEHarden\ .*` and CommandLine=~`(?i).*\ \-value\ 0\ .*` or CommandLine=~`(?i).*\ \-name\ DEPOff\ .*` and CommandLine=~`(?i).*\ \-value\ 1\ .*` or CommandLine=~`(?i).*\ \-name\ DisableFirstRunCustomize\ .*` and CommandLine=~`(?i).*\ \-value\ 2\ .*`

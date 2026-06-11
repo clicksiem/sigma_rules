@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Data=~`(?i).*EngineVersion=2\..*` and Data!~`(?i).*HostVersion=2\..*`

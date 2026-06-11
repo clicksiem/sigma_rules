@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=6416 and (ClassName=~`(?i)^DiskDrive$` or DeviceDescription=~`(?i)^USB\ Mass\ Storage\ Device$`)

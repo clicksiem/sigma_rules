@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^Service\ Control\ Manager$` and EventID=7045 and ImagePath=~`(?i).*cmd.*` and ImagePath=~`(?i).*"set.*` and ImagePath=~`(?i).*\-f.*` and (ImagePath=~`(?i).*/c.*` or ImagePath=~`(?i).*/r.*`)

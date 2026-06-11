@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i)^/usr/bin/file$` and CommandLine=~`(.){200,}` or Image=~`(?i)^/bin/ls$` and CommandLine=~`(?i).*\-R.*` or Image=~`(?i)^/usr/bin/find$` or Image=~`(?i)^/usr/bin/mdfind$` or Image=~`(?i)^/tree$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*shellex\\ContextMenuHandlers\\EPP.*` and (Image!~`(?i)^C:\\ProgramData\\Microsoft\\Windows\ Defender\\Platform\\.*` and Image!~`(?i)^C:\\Program\ Files\\Windows\ Defender\\.*` and Image!~`(?i)^C:\\Program\ Files\ \(x86\)\\Windows\ Defender\\.*` or Image!~`(?i).*\\MsMpEng\.exe$`)

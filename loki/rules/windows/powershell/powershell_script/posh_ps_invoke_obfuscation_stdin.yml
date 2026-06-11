@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`cmd.{0,5}(?:/c|/r).+powershell.+(?:\$?\{?input\}?|noexit).+"`

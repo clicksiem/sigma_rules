@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Services\\W32Time\\TimeProviders.*` and TargetObject=~`(?i).*\\DllName$` and Details!~`(?i)^%SystemRoot%\\System32\\vmictimeprovider\.dll$` and Details!~`(?i)^%systemroot%\\system32\\w32time\.dll$` and Details!~`(?i)^C:\\Windows\\SYSTEM32\\w32time\.DLL$`

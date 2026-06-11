@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | action=~`(?i)^migration\.create$` or action=~`(?i)^org\.transfer_outgoing$` or action=~`(?i)^org\.transfer$` or action=~`(?i)^repo\.transfer_outgoing$`

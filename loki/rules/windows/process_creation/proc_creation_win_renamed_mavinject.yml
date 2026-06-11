@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^mavinject32\.exe$` or OriginalFileName=~`(?i)^mavinject64\.exe$`) and Image!~`(?i).*\\mavinject32\.exe$` and Image!~`(?i).*\\mavinject64\.exe$`

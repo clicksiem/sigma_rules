@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\xordump\.exe$` or CommandLine=~`(?i).*\ \-process\ lsass\.exe\ .*` or CommandLine=~`(?i).*\ \-m\ comsvcs\ .*` or CommandLine=~`(?i).*\ \-m\ dbghelp\ .*` or CommandLine=~`(?i).*\ \-m\ dbgcore\ .*`

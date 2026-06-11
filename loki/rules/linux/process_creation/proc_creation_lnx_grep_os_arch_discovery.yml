@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/grep$` and (CommandLine=~`(?i).*aarch64$` or CommandLine=~`(?i).*arm$` or CommandLine=~`(?i).*i386$` or CommandLine=~`(?i).*i686$` or CommandLine=~`(?i).*mips$` or CommandLine=~`(?i).*x86_64$`)

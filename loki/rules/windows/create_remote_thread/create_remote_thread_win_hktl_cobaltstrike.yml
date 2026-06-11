@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | StartAddress=~`(?i).*0B80$` or StartAddress=~`(?i).*0C7C$` or StartAddress=~`(?i).*0C88$`

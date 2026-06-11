@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Description=~`(?i)^PDQ\ Deploy\ Console$` or Product=~`(?i)^PDQ\ Deploy$` or Company=~`(?i)^PDQ\.com$` or OriginalFileName=~`(?i)^PDQDeployConsole\.exe$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (IntegrityLevel=~`(?i)^High$` or IntegrityLevel=~`(?i)^System$` or IntegrityLevel=~`(?i)^S\-1\-16\-16384$` or IntegrityLevel=~`(?i)^S\-1\-16\-12288$`) and ParentImage=~`(?i).*\\AppData\\Local\\Temp\\system32\\winsat\.exe$` and ParentCommandLine=~`(?i).*C:\\Windows\ \\system32\\winsat\.exe.*`

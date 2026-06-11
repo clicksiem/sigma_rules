@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/sysadminctl$` and CommandLine=~`(?i).*\ \-addUser\ .*` and CommandLine=~`(?i).*\ \-admin\ .*`

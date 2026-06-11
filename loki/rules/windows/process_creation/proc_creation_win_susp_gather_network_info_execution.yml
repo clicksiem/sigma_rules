@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*gatherNetworkInfo\.vbs.*` and Image!~`(?i).*\\cscript\.exe$` and Image!~`(?i).*\\wscript\.exe$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Operation=~`(?i).*domain.*` and (Operation=~`(?i).*add.*` or Operation=~`(?i).*new.*`)

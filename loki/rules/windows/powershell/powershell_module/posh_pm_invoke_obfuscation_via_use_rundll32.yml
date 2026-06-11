@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~`(?i).*\&\&.*` and Payload=~`(?i).*rundll32.*` and Payload=~`(?i).*shell32\.dll.*` and Payload=~`(?i).*shellexec_rundll.*` and (Payload=~`(?i).*value.*` or Payload=~`(?i).*invoke.*` or Payload=~`(?i).*comspec.*` or Payload=~`(?i).*iex.*`)

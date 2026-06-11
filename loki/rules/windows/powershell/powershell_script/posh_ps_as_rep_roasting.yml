@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Get\-ADUser.*` and ScriptBlockText=~`(?i).*\-Filter.*` and ScriptBlockText=~`(?i).*useraccountcontrol.*` and ScriptBlockText=~`(?i).*\-band.*` and ScriptBlockText=~`(?i).*4194304.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^steghide$` and a1=~`(?i)^embed$` and (a2=~`(?i)^\-cf$` or a2=~`(?i)^\-ef$`) and (a4=~`(?i)^\-cf$` or a4=~`(?i)^\-ef$`)

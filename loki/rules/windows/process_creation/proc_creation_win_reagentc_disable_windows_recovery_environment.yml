@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\reagentc\.exe$` or OriginalFileName=~`(?i)^reagentc\.exe$`) and CommandLine=~`(?i).*\-disable.*` or CommandLine=~`(?i).*/disable.*` or CommandLine=~`(?i).*–disable.*` or CommandLine=~`(?i).*—disable.*` or CommandLine=~`(?i).*―disable.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | PipeName=~`(?i)^\\atctl$` or PipeName=~`(?i)^\\comnap$` or PipeName=~`(?i)^\\iehelper$` or PipeName=~`(?i)^\\sdlrpc$` or PipeName=~`(?i)^\\userpipe$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\dotnet\.exe$` or Image=~`(?i).*\\w3wp\.exe$` or Image=~`(?i).*\\java\.exe$`) and (TargetFilename=~`(?i).*\\apache.*` or TargetFilename=~`(?i).*\\tomcat.*`) and TargetFilename=~`(?i).*\\webapps\\ROOT\\.*` and TargetFilename=~`(?i).*\.jsp$`

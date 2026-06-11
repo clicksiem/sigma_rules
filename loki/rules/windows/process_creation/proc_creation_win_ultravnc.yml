@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Description=~`(?i)^VNCViewer$` or Product=~`(?i)^UltraVNC\ VNCViewer$` or Company=~`(?i)^UltraVNC$` or OriginalFileName=~`(?i)^VNCViewer\.exe$`

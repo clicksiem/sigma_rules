@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventType=~`(?i)^DeleteValue$` and TargetObject=~`(?i).*\\AppXypsaf9f1qserqevf0sws76dx4k9a5206\\Shell\\open\\command\\DelegateExecute$` or TargetObject=~`(?i).*\\AppXypsaf9f1qserqevf0sws76dx4k9a5206\\Shell\\open\\command\\\(Default\)$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4697 and ServiceFileName=~`(?i).*mshta.*` and ServiceFileName=~`(?i).*vbscript:createobject.*` and ServiceFileName=~`(?i).*\.run.*` and ServiceFileName=~`(?i).*window\.close.*`

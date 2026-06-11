@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^OpenConsole\.exe$` or Image=~`(?i).*\\OpenConsole\.exe$`) and Image!~`(?i)^C:\\Program\ Files\\WindowsApps\\Microsoft\.WindowsTerminal.*`

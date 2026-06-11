@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5447 and FilterName=~`(?i).*RonPolicy.*` or EventID=5449 and ProviderContextName=~`(?i).*RonPolicy.*`

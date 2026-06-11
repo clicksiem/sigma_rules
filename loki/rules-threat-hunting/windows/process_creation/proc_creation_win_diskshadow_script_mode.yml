@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^diskshadow\.exe$` or Image=~`(?i).*\\diskshadow\.exe$`) and CommandLine=~`(?i).*\-s\ .*` or CommandLine=~`(?i).*/s\ .*` or CommandLine=~`(?i).*–s\ .*` or CommandLine=~`(?i).*—s\ .*` or CommandLine=~`(?i).*―s\ .*`

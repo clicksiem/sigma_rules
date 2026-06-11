@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | cs_method=~`(?i)^GET$` and (c_uri=~`(?i).*/api/Core/Command/Init$` or c_uri=~`(?i).*/api/Core/Command/Restart$`)

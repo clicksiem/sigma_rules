@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/csrutil$` and CommandLine=~`(?i).*status.*`

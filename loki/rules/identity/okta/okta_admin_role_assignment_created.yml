@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^iam\.resourceset\.bindings\.add$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Policies\\Microsoft\\Windows\\PowerShell\\EnableScripts$` and Details=~`(?i)^DWORD\ \(0x00000001\)$`

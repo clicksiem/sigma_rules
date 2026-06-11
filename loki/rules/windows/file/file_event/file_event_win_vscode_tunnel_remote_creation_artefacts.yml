@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\servers\\Stable\-.*` and Image=~`(?i).*\\server\\node\.exe$` and TargetFilename=~`(?i).*\\\.vscode\-server\\data\\User\\History\\.*`

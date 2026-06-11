@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=1006 or EventID=1015 or EventID=1116 or EventID=1117

@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)monitor\ capture\ point|set\ span|set\ rspan`

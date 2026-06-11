@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\sqlps\.exe$` or (Image=~`(?i).*\\sqlps\.exe$` or OriginalFileName=~`(?i)^sqlps\.exe$`) and ParentImage!~`(?i).*\\sqlagent\.exe$`

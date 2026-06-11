@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Payload=~"(?i)echo.*clip.*&&.*(Clipboard|i`?n`?v`?o`?k`?e`?)"

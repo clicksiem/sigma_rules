@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/system_profiler$` or CommandLine=~`(?i).*system_profiler.*`) and (CommandLine=~`(?i).*SPApplicationsDataType.*` or CommandLine=~`(?i).*SPHardwareDataType.*` or CommandLine=~`(?i).*SPNetworkDataType.*` or CommandLine=~`(?i).*SPUSBDataType.*`)

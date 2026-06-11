@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\3proxy\.exe$` or Description=~`(?i)^3proxy\ \-\ tiny\ proxy\ server$` or CommandLine=~`(?i).*\.exe\ \-i127\.0\.0\.1\ \-p.*`

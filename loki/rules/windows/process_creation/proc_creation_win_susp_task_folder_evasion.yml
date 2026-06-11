@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*echo\ .*` or CommandLine=~`(?i).*copy\ .*` or CommandLine=~`(?i).*type\ .*` or CommandLine=~`(?i).*file\ createnew.*`) and (CommandLine=~`(?i).*\ C:\\Windows\\System32\\Tasks\\.*` or CommandLine=~`(?i).*\ C:\\Windows\\SysWow64\\Tasks\\.*`)

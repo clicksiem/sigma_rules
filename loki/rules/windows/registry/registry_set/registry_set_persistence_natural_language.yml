@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SYSTEM\\CurrentControlSet\\Control\\ContentIndex\\Language\\.*` and (TargetObject=~`(?i).*\\StemmerDLLPathOverride.*` or TargetObject=~`(?i).*\\WBDLLPathOverride.*` or TargetObject=~`(?i).*\\StemmerClass.*` or TargetObject=~`(?i).*\\WBreakerClass.*`)

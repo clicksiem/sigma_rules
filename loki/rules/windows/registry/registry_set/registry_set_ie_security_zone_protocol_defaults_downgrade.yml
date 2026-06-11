@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Microsoft\\Windows\\CurrentVersion\\Internet\ Settings\\ZoneMap\\ProtocolDefaults.*` and (TargetObject=~`(?i).*\\http$` or TargetObject=~`(?i).*\\https$`) and Details=~`(?i).*DWORD\ \(0x00000000\).*`

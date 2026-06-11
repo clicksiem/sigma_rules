@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^PATH$` and name=~`(?i).*/\..*` and name!~`(?i).*/\.cache/.*` and name!~`(?i).*/\.config/.*` and name!~`(?i).*/\.pyenv/.*` and name!~`(?i).*/\.rustup/toolchains.*`

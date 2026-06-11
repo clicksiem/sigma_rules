@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\LegalNoticeCaption.*` or TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\LegalNoticeText.*`) and (Details=~`(?i).*encrypted.*` or Details=~`(?i).*Unlock\-Password.*` or Details=~`(?i).*paying.*`)

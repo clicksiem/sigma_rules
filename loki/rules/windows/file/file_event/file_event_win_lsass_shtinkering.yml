@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)^C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\CrashDumps\\.*` and TargetFilename=~`(?i).*lsass\.exe\..*` and TargetFilename=~`(?i).*\.dmp$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | AuditSourceName=~`(?i)^VSSAudit$` and (EventID=4904 or EventID=4905)

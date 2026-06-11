@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\svchost\.exe$` and CommandLine!~`-k\s\w{1,64}(?:\s?(?:-p|-s))?` and CommandLine!~`(?i)^$` and CommandLine!=`` and (ParentImage!~`(?i).*\\MsMpEng\.exe$` or CommandLine!~`(?i).*svchost\.exe.*`) and (ParentImage!~`(?i).*\\MRT\.exe$` or CommandLine!~`(?i)^svchost\.exe$`)

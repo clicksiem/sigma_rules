@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | SamAccountName=~`(?i)^SAMTHEADMIN\-.*` and SamAccountName=~`(?i).*\$$` or TargetUserName=~`(?i)^SAMTHEADMIN\-.*` and TargetUserName=~`(?i).*\$$`

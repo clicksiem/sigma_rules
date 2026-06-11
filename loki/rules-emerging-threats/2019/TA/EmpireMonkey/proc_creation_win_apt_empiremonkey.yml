@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*/e:jscript.*` and CommandLine=~`(?i).*\\Local\\Temp\\Errors\.bat.*`

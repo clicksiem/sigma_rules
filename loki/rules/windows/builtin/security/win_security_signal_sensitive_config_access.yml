@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4663 and ObjectType=~`(?i)^File$` and ObjectName=~`(?i).*\\AppData\\Roaming\\Signal\\.*` and (ObjectName=~`(?i).*\\config\.json$` or ObjectName=~`(?i).*\\db\.sqlite$`) and ProcessName!~`(?i).*\\signal\-portable\.exe$` and ProcessName!~`(?i).*\\signal\.exe$`

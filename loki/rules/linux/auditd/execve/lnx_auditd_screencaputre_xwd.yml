@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^EXECVE$` and a0=~`(?i)^xwd$` and (a1=~`(?i)^\-root$` and a2=~`(?i)^\-out$` and a3=~`(?i).*\.xwd$` or a1=~`(?i)^\-out$` and a2=~`(?i).*\.xwd$`)

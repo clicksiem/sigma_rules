@@ -1,0 +1,1 @@
+{job="logstash"} | json | Status=~`(?i)^failure$` and Count=~`(?i)^<10%$`

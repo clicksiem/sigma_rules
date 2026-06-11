@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Provider_Name=~`(?i)^ScreenConnect$` and EventID=201 and Data=~`(?i).*Transferred\ files\ with\ action.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)ActiveScriptEventConsumer|CommandLineEventConsumer|CommandLineTemplate` | json | (EventID=5861 or EventID=5859) and (Provider!~`(?i)^SCM\ Event\ Provider$` or Query!~`(?i)^select\ .*\ from\ MSFT_SCMEventLogEvent$` or User!~`(?i)^S\-1\-5\-32\-544$` or PossibleCause!~`(?i)^Permanent$`)

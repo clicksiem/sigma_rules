@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^lambda\.amazonaws\.com$` and eventName=~`(?i)^UpdateFunctionConfiguration.*` and requestParameters_layers=~`(?i).*`

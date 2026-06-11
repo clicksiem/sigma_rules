@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\dtrace\.exe$` and CommandLine=~`(?i).*lkd\(0\).*` or CommandLine=~`(?i).*syscall:::return.*` and CommandLine=~`(?i).*lkd\(.*`

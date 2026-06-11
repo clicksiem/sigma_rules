@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/dscacheutil$` and CommandLine=~`(?i).*\-q.*` and CommandLine=~`(?i).*group.*` or Image=~`(?i).*/cat$` and CommandLine=~`(?i).*/etc/group.*` or Image=~`(?i).*/dscl$` and CommandLine=~`(?i).*\-list.*` and CommandLine=~`(?i).*/groups.*`

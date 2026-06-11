@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/python$` or Image=~`(?i).*/python2$` or Image=~`(?i).*/python3$` or Image=~`(?i).*/python2\..*` or Image=~`(?i).*/python3\..*`) and (CommandLine=~`(?i).*http\.server.*` or CommandLine=~`(?i).*SimpleHTTPServer.*`)

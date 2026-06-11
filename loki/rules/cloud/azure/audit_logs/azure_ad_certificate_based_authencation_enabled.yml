@@ -1,0 +1,1 @@
+{job="logstash"} | json | OperationName=~`(?i)^Authentication\ Methods\ Policy\ Update$` and TargetResources_modifiedProperties=~`(?i).*AuthenticationMethodsPolicy.*`

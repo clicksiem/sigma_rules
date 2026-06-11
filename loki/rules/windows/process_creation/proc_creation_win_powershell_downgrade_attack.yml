@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\powershell\.exe$` and (CommandLine=~`(?i).*\ \-version\ 2\ .*` or CommandLine=~`(?i).*\ \-versio\ 2\ .*` or CommandLine=~`(?i).*\ \-versi\ 2\ .*` or CommandLine=~`(?i).*\ \-vers\ 2\ .*` or CommandLine=~`(?i).*\ \-ver\ 2\ .*` or CommandLine=~`(?i).*\ \-ve\ 2\ .*` or CommandLine=~`(?i).*\ \-v\ 2\ .*`)

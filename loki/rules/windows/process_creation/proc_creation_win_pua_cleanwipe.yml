@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\SepRemovalToolNative_x64\.exe$` or Image=~`(?i).*\\CATClean\.exe$` and CommandLine=~`(?i).*\-\-uninstall.*` or Image=~`(?i).*\\NetInstaller\.exe$` and CommandLine=~`(?i).*\-r.*` or Image=~`(?i).*\\WFPUnins\.exe$` and CommandLine=~`(?i).*/uninstall.*` and CommandLine=~`(?i).*/enterprise.*`

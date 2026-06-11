@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*Clear\-History.*` or (ScriptBlockText=~`(?i).*Remove\-Item.*` or ScriptBlockText=~`(?i).*rm.*`) and (ScriptBlockText=~`(?i).*ConsoleHost_history\.txt.*` or ScriptBlockText=~`(?i).*\(Get\-PSReadlineOption\)\.HistorySavePath.*`)

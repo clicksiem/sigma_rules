@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\mstsc\.exe$` or OriginalFileName=~`(?i)^mstsc\.exe$`) and (CommandLine=~`(?i).*\.rdp$` or CommandLine=~`(?i).*\.rdp"$`) and (ParentImage!~`(?i)^C:\\Windows\\System32\\lxss\\wslhost\.exe$` or CommandLine!~`(?i).*C:\\ProgramData\\Microsoft\\WSL\\wslg\.rdp.*`)

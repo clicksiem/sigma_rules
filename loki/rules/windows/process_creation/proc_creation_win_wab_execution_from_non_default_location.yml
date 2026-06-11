@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\wab\.exe$` or Image=~`(?i).*\\wabmig\.exe$`) and Image!~`(?i)^C:\\Windows\\WinSxS\\.*` and Image!~`(?i)^C:\\Program\ Files\\Windows\ Mail\\.*` and Image!~`(?i)^C:\\Program\ Files\ \(x86\)\\Windows\ Mail\\.*`

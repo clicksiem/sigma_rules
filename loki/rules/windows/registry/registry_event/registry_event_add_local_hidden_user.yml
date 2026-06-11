@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SAM\\SAM\\Domains\\Account\\Users\\Names\\.*` and TargetObject=~`(?i).*\$\\\(Default\)$` and Image=~`(?i).*\\lsass\.exe$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\OfflineScannerShell\.exe$` or OriginalFileName=~`(?i)^OfflineScannerShell\.exe$`) and CurrentDirectory!~`(?i)^C:\\Program\ Files\\Windows\ Defender\\Offline\\$` and CurrentDirectory!~`(?i)^$` and CurrentDirectory!=``

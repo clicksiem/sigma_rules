@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Outlook\\Security\\Level$` and Details=~`(?i).*0x00000001.*`

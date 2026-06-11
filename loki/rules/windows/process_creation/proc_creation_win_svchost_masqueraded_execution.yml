@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\svchost\.exe$` and Image!~`(?i)^C:\\Windows\\System32\\svchost\.exe$` and Image!~`(?i)^C:\\Windows\\SysWOW64\\svchost\.exe$` and OriginalFileName!~`(?i)^svchost\.exe$`

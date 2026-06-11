@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/python3.*` and (TargetFilename=~`(?i).*/\.config/sysmon/sysmon\.py$` or TargetFilename=~`(?i).*/\.config/systemd/user/sysmon\.service$`)

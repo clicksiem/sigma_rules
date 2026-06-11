@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | SourceImage=~`(?i).*:\\Windows\\SysWOW64\\.*` and GrantedAccess=~`(?i)^0x1fffff$` and CallTrace=~`(?i)^UNKNOWN\(0000000000000000\)\|UNKNOWN\(0000000000000000\)\|.*`

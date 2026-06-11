@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\livekd\.exe$` or Image=~`(?i).*\\livekd64\.exe$` or OriginalFileName=~`(?i)^livekd\.exe$`

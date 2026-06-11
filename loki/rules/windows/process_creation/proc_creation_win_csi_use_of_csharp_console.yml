@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\csi\.exe$` and (ParentImage=~`(?i).*\\powershell\.exe$` or ParentImage=~`(?i).*\\pwsh\.exe$` or ParentImage=~`(?i).*\\powershell_ise\.exe$`) and OriginalFileName=~`(?i)^csi\.exe$`

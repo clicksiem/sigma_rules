@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\CLSID\\\{fdb00e52\-a214\-4aa1\-8fba\-4357bb0072ec\}\\InProcServer32\\\(Default\)$` and Details!~`(?i)^%windir%\\system32\\amsi\.dll$`

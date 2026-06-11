@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i)^C:\\Windows\\System32\\spool\\drivers\\color\\.*` and (TargetFilename=~`(?i).*\.dll$` or TargetFilename=~`(?i).*\.exe$` or TargetFilename=~`(?i).*\.sys$`)

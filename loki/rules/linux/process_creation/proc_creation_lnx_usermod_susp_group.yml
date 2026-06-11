@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/usermod$` and (CommandLine=~`(?i).*\-aG\ root.*` or CommandLine=~`(?i).*\-aG\ sudoers.*`)

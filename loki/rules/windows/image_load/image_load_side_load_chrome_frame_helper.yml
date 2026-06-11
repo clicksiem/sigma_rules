@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ImageLoaded=~`(?i).*\\chrome_frame_helper\.dll$` and ImageLoaded!~`(?i)^C:\\Program\ Files\\Google\\Chrome\\Application\\.*` and ImageLoaded!~`(?i)^C:\\Program\ Files\ \(x86\)\\Google\\Chrome\\Application\\.*` and ImageLoaded!~`(?i).*\\AppData\\local\\Google\\Chrome\\Application\\.*`

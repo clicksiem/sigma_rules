@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*GZipStream.*` and CommandLine=~`(?i).*::Decompress.*`

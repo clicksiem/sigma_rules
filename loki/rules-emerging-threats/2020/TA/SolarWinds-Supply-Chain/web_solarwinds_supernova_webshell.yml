@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | cs_uri_query=~`(?i).*logoimagehandler\.ashx.*` and cs_uri_query=~`(?i).*clazz.*` or cs_uri_query=~`(?i).*logoimagehandler\.ashx.*` and sc_status=500

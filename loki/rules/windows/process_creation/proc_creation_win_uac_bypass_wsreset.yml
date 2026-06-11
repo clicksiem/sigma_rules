@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\wsreset\.exe$` and Image!~`(?i).*\\conhost\.exe$` and OriginalFileName!~`(?i)^CONHOST\.EXE$`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | objectRef_apiGroup=~`(?i)^rbac\.authorization\.k8s\.io$` and (objectRef_resource=~`(?i)^clusterrolebindings$` or objectRef_resource=~`(?i)^rolebindings$`) and (verb=~`(?i)^create$` or verb=~`(?i)^delete$` or verb=~`(?i)^patch$` or verb=~`(?i)^replace$` or verb=~`(?i)^update$`)

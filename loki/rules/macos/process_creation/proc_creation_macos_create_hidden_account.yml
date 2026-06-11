@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/dscl$` and CommandLine=~`(?i).*create.*` and CommandLine=~`(?i).*UniqueID.*` and CommandLine=~`([0-9]|[1-9][0-9]|[1-4][0-9]{2})` or Image=~`(?i).*/dscl$` and CommandLine=~`(?i).*create.*` and CommandLine=~`(?i).*IsHidden.*` and (CommandLine=~`(?i).*true.*` or CommandLine=~`(?i).*yes.*` or CommandLine=~`(?i).*1.*`)

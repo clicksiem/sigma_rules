@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | type=~`(?i)^SYSCALL$` and (exe=~`(?i).*/telnet$` or exe=~`(?i).*/nmap$` or exe=~`(?i).*/netcat$` or exe=~`(?i).*/nc$` or exe=~`(?i).*/ncat$` or exe=~`(?i).*/nc\.openbsd$`) and key=~`(?i)^network_connect_4$`

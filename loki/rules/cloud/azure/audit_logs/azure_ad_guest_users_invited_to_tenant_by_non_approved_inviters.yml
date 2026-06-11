@@ -1,0 +1,1 @@
+{job="logstash"} | json | Category=~`(?i)^UserManagement$` and OperationName=~`(?i)^Invite\ external\ user$` and InitiatedBy!~`(?i).*<approved\ guest\ inviter\ use\ OR\ for\ multiple>.*`

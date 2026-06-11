@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\\PROCEXP.*` and TargetFilename=~`(?i).*\.sys$` and Image!~`(?i).*\\procexp\.exe$` and Image!~`(?i).*\\procexp64\.exe$`

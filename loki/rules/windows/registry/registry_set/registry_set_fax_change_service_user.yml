@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i)^HKLM\\System\\CurrentControlSet\\Services\\Fax\\ObjectName$` and Details!~`(?i).*NetworkService.*`

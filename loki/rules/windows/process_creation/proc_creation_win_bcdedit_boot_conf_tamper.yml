@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (Image=~`(?i).*\\bcdedit\.exe$` or OriginalFileName=~`(?i)^bcdedit\.exe$`) and CommandLine=~`(?i).*set.*` and (CommandLine=~`(?i).*bootstatuspolicy.*` and CommandLine=~`(?i).*ignoreallfailures.*` or CommandLine=~`(?i).*recoveryenabled.*` and CommandLine=~`(?i).*no.*`)

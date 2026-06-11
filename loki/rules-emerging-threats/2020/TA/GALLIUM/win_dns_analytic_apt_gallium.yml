@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=257 and (QNAME=~`(?i)^asyspy256\.ddns\.net$` or QNAME=~`(?i)^hotkillmail9sddcc\.ddns\.net$` or QNAME=~`(?i)^rosaf112\.ddns\.net$` or QNAME=~`(?i)^cvdfhjh1231\.myftp\.biz$` or QNAME=~`(?i)^sz2016rose\.ddns\.net$` or QNAME=~`(?i)^dffwescwer4325\.myftp\.biz$` or QNAME=~`(?i)^cvdfhjh1231\.ddns\.net$`)

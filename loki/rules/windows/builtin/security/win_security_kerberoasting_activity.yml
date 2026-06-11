@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4769 and Status=~`(?i)^0x0$` and TicketEncryptionType=~`(?i)^0x17$` and ServiceName!~`(?i).*krbtgt$` and ServiceName!~`(?i).*\$$` and TargetUserName!~`(?i).*\$@.*`

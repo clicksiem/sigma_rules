@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)shutdown|reboot|halt|poweroff` |~ `(?i)init|telinit` |= 0 |= 6 | logfmt | type=~`(?i)^EXECVE$` and (())

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ParentImage=~`(?i).*\\sigverif\.exe$` and Image!~`(?i)^C:\\Windows\\System32\\WerFault\.exe$` and Image!~`(?i)^C:\\Windows\\SysWOW64\\WerFault\.exe$`

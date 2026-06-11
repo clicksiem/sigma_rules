@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | ParentImage=~`(?i).*/TeamViewer_Service$` and Image=~`(?i).*/TeamViewer_Desktop$` and CommandLine=~`(?i).*/TeamViewer_Desktop\ \-\-IPCport\ 5939\ \-\-Module\ 1$`

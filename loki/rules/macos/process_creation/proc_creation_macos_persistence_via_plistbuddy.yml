@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | Image=~`(?i).*/PlistBuddy$` and CommandLine=~`(?i).*RunAtLoad.*` and CommandLine=~`(?i).*true.*` and (CommandLine=~`(?i).*LaunchAgents.*` or CommandLine=~`(?i).*LaunchDaemons.*`)

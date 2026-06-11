@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*powershell.*` and ScriptBlockText=~`(?i).*WindowStyle.*` and ScriptBlockText=~`(?i).*Hidden.*` and (ScriptBlockText!~`(?i).*:\\Program\ Files\\Amazon\\WorkSpacesConfig\\Scripts\\.*` or ScriptBlockText!~`(?i).*\$PSScriptRoot\\Module\\WorkspaceScriptModule\\WorkspaceScriptModule.*`)

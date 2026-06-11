@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*FromBase64String.*` and ScriptBlockText=~`(?i).*MemoryStream.*` and ScriptBlockText=~`(?i).*H4sI.*`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^NirCmd\.exe$` and Image!~`(?i).*\\nircmd\.exe$` and Image!~`(?i).*\\nircmdc\.exe$`

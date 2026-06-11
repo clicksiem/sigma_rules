@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^BOINC\.exe$` and Image!~`(?i).*\\BOINC\.exe$`

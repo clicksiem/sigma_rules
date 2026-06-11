@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*Invoke\-WMIMethod\ win32_process\ \-name\ create\ \-argumentlist.*` and CommandLine=~`(?i).*rundll32\ c:\\windows.*` or CommandLine=~`(?i).*wmic\ /node:.*` and CommandLine=~`(?i).*process\ call\ create\ "rundll32\ c:\\windows.*`

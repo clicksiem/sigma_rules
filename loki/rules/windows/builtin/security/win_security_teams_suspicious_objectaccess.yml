@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4663 and (ObjectName=~`(?i).*\\Microsoft\\Teams\\Cookies.*` or ObjectName=~`(?i).*\\Microsoft\\Teams\\Local\ Storage\\leveldb.*`) and ProcessName!~`(?i).*\\Microsoft\\Teams\\current\\Teams\.exe.*`

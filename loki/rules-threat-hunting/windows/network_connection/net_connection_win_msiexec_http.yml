@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Initiated=~`(?i)^true$` and Image=~`(?i).*\\msiexec\.exe$` and (DestinationPort=80 or DestinationPort=443)

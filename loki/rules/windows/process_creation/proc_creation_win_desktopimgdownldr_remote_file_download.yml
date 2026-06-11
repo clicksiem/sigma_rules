@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | Image=~`(?i).*\\desktopimgdownldr\.exe$` and ParentImage=~`(?i).*\\desktopimgdownldr\.exe$` and CommandLine=~`(?i).*/lockscreenurl:http.*`

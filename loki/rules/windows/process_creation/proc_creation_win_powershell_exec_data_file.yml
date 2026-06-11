@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*iex\ .*` or CommandLine=~`(?i).*Invoke\-Expression\ .*` or CommandLine=~`(?i).*Invoke\-Command\ .*` or CommandLine=~`(?i).*icm\ .*`) and (CommandLine=~`(?i).*cat\ .*` or CommandLine=~`(?i).*get\-content\ .*` or CommandLine=~`(?i).*type\ .*`) and CommandLine=~`(?i).*\ \-raw.*`

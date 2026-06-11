@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4656 and ProcessName=~`(?i).*\\lsass\.exe$` and AccessMask=~`(?i)^0x705$` and ObjectType=~`(?i)^SAM_DOMAIN$`

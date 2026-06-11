@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} |~ `(?i)Remove\-MailboxExportRequest` |~ `(?i)\ \-Identity\ ` |~ `(?i)\ \-Confirm\ "False"`

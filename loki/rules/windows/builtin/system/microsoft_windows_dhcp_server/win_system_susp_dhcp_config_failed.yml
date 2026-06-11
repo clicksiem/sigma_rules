@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=1031 or EventID=1032 or EventID=1034) and Provider_Name=~`(?i)^Microsoft\-Windows\-DHCP\-Server$`

@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | ScriptBlockText=~`(?i).*\.CreationTime\ =.*` or ScriptBlockText=~`(?i).*\.LastWriteTime\ =.*` or ScriptBlockText=~`(?i).*\.LastAccessTime\ =.*` or ScriptBlockText=~`(?i).*\[IO\.File\]::SetCreationTime.*` or ScriptBlockText=~`(?i).*\[IO\.File\]::SetLastAccessTime.*` or ScriptBlockText=~`(?i).*\[IO\.File\]::SetLastWriteTime.*`

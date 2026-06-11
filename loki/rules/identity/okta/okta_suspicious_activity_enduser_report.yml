@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventType=~`(?i)^user\.account\.report_suspicious_activity_by_enduser$`

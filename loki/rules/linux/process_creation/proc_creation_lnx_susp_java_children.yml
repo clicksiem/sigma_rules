@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | ParentImage=~`(?i).*/java$` and (CommandLine=~`(?i).*/bin/sh.*` or CommandLine=~`(?i).*bash.*` or CommandLine=~`(?i).*dash.*` or CommandLine=~`(?i).*ksh.*` or CommandLine=~`(?i).*zsh.*` or CommandLine=~`(?i).*csh.*` or CommandLine=~`(?i).*fish.*` or CommandLine=~`(?i).*curl.*` or CommandLine=~`(?i).*wget.*` or CommandLine=~`(?i).*python.*`)

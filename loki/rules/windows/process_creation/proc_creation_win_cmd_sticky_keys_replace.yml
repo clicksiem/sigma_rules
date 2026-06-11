@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*copy\ .*` and CommandLine=~`(?i).*/y\ .*` and CommandLine=~`(?i).*C:\\windows\\system32\\cmd\.exe\ C:\\windows\\system32\\sethc\.exe.*`

@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | User=~`(?i)^root$` and LogonId=0 and CurrentDirectory=~`(?i)^/var/opt/microsoft/scx/tmp$` and CommandLine=~`(?i).*/bin/sh.*`

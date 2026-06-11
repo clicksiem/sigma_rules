@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | OriginalFileName=~`(?i)^ftp\.exe$` and Image!~`(?i).*\\ftp\.exe$`

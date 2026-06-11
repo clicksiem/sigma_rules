@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*Microsoft\\Windows\ NT\\CurrentVersion\\SilentProcessExit\\lsass\.exe.*`

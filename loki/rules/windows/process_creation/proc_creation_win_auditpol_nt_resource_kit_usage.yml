@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*/logon:none.*` or CommandLine=~`(?i).*/system:none.*` or CommandLine=~`(?i).*/sam:none.*` or CommandLine=~`(?i).*/privilege:none.*` or CommandLine=~`(?i).*/object:none.*` or CommandLine=~`(?i).*/process:none.*` or CommandLine=~`(?i).*/policy:none.*`

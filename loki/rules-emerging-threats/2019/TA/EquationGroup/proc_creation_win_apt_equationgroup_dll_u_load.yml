@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*\-export\ dll_u.*` or CommandLine=~`(?i).*,dll_u$` or CommandLine=~`(?i).*\ dll_u$`

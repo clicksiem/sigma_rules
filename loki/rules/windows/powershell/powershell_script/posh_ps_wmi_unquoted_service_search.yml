@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (ScriptBlockText=~`(?i).*Get\-WmiObject\ .*` or ScriptBlockText=~`(?i).*gwmi\ .*`) and ScriptBlockText=~`(?i).*\ Win32_Service\ .*` and ScriptBlockText=~`(?i).*Name.*` and ScriptBlockText=~`(?i).*DisplayName.*` and ScriptBlockText=~`(?i).*PathName.*` and ScriptBlockText=~`(?i).*StartMode.*`

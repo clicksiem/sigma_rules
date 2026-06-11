@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=5145 and ShareName=~`(?i)^\\\\\\.*\\IPC\$$` and (RelativeTargetName=~`(?i).*RemCom_stdin.*` or RelativeTargetName=~`(?i).*RemCom_stdout.*` or RelativeTargetName=~`(?i).*RemCom_stderr.*`)

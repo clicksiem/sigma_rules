@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\SOFTWARE\\Microsoft\\Windows\ NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\.*` and TargetObject=~`(?i).*Index.*` and Details=~`(?i)^DWORD\ \(0x00000000\)$`

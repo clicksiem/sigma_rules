@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/rm$` or Image=~`(?i).*/unlink$` or Image=~`(?i).*/shred$`) and (CommandLine=~`(?i).*/var/log.*` or CommandLine=~`(?i).*/Users/.*` and CommandLine=~`(?i).*/Library/Logs/.*`)

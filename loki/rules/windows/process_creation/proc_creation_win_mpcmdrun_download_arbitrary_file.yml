@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (OriginalFileName=~`(?i)^MpCmdRun\.exe$` or Image=~`(?i).*\\MpCmdRun\.exe$` or CommandLine=~`(?i).*MpCmdRun\.exe.*` or Description=~`(?i)^Microsoft\ Malware\ Protection\ Command\ Line\ Utility$`) and CommandLine=~`(?i).*DownloadFile.*` and CommandLine=~`(?i).*url.*`

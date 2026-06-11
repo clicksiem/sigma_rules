@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetObject=~`(?i).*\\Microsoft\\Windows\ Defender\\Features\\TamperProtection.*` and Details=~`(?i)^DWORD\ \(0x00000000\)$` and (Image!~`(?i)^C:\\ProgramData\\Microsoft\\Windows\ Defender\\Platform\\.*` or Image!~`(?i).*\\MsMpEng\.exe$`) and Image!~`(?i)^C:\\Program\ Files\\Windows\ Defender\\MsMpEng\.exe$`

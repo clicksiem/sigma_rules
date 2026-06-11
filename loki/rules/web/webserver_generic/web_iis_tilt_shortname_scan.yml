@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | cs_uri_query=~`(?i).*\~1.*` and cs_uri_query=~`(?i).*a\.aspx$` and (cs_method=~`(?i)^GET$` or cs_method=~`(?i)^OPTIONS$`) and (sc_status=200 or sc_status=301)

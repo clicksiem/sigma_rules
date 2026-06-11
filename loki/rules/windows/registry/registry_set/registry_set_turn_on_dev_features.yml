@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (TargetObject=~`(?i).*\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock.*` or TargetObject=~`(?i).*\\Policies\\Microsoft\\Windows\\Appx\\.*`) and (TargetObject=~`(?i).*\\AllowAllTrustedApps$` or TargetObject=~`(?i).*\\AllowDevelopmentWithoutDevLicense$`) and Details=~`(?i)^DWORD\ \(0x00000001\)$`

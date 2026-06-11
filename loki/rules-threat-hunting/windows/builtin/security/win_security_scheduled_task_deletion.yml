@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=4699 and TaskName!~`(?i)^\\Microsoft\\Windows\\RemovalTools\\MRT_ERROR_HB$` and TaskName!~`(?i).*\\Mozilla\\Firefox\ Default\ Browser\ Agent\ .*`

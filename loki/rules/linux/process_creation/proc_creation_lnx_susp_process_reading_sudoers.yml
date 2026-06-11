@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | (Image=~`(?i).*/cat$` or Image=~`(?i).*/ed$` or Image=~`(?i).*/egrep$` or Image=~`(?i).*/emacs$` or Image=~`(?i).*/fgrep$` or Image=~`(?i).*/grep$` or Image=~`(?i).*/head$` or Image=~`(?i).*/less$` or Image=~`(?i).*/more$` or Image=~`(?i).*/nano$` or Image=~`(?i).*/tail$`) and CommandLine=~`(?i).*\ /etc/sudoers.*`

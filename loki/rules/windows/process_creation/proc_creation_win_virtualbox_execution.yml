@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*VBoxRT\.dll,RTR3Init.*` or CommandLine=~`(?i).*VBoxC\.dll.*` or CommandLine=~`(?i).*VBoxDrv\.sys.*` or CommandLine=~`(?i).*startvm.*` or CommandLine=~`(?i).*controlvm.*`

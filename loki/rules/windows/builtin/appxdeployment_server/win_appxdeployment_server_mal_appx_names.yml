@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (EventID=400 or EventID=401) and PackageFullName=~`(?i).*3669e262\-ec02\-4e9d\-bcb4\-3d008b4afac9.*`

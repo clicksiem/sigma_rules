@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | TargetFilename=~`(?i).*\.scr$` and Image!~`(?i).*\\Kindle\.exe$` and Image!~`(?i).*\\Bin\\ccSvcHst\.exe$` and (Image!~`(?i).*\\TiWorker\.exe$` or TargetFilename!~`(?i).*\\uwfservicingscr\.scr$`)

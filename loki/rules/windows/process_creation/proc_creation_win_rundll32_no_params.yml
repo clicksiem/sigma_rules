@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | (CommandLine=~`(?i).*\\rundll32\.exe$` or CommandLine=~`(?i).*\\rundll32\.exe"$` or CommandLine=~`(?i).*\\rundll32$`) and ParentImage!~`(?i).*\\AppData\\Local\\.*` and ParentImage!~`(?i).*\\Microsoft\\Edge\\.*`

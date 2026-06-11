@@ -1,0 +1,1 @@
+{job=~".+"} |~ `(?i)ln\ \-s\ \-f\ /etc/passwd|ln\ \-s\ /etc/passwd`

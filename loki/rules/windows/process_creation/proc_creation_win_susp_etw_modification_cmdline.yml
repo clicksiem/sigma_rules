@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | CommandLine=~`(?i).*COMPlus_ETWEnabled.*` or CommandLine=~`(?i).*COMPlus_ETWFlags.*`

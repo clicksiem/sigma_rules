@@ -1,0 +1,1 @@
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | EventID=31017 and UserName=~`(?i)^$` and ServerName=~`(?i)^\\1.*`

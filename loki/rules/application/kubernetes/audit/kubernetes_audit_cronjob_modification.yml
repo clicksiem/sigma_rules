@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | objectRef_apiGroup=~`(?i)^batch$` and (objectRef_resource=~`(?i)^cronjobs$` or objectRef_resource=~`(?i)^jobs$`) and (verb=~`(?i)^create$` or verb=~`(?i)^delete$` or verb=~`(?i)^patch$` or verb=~`(?i)^replace$` or verb=~`(?i)^update$`)

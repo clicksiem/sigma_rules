@@ -1,0 +1,1 @@
+{job=~".+"} | logfmt | eventSource=~`(?i)^SecurityComplianceCenter$` and eventName=~`(?i)^Impossible\ travel\ activity$` and status=~`(?i)^success$`
