@@ -1,5 +1,8 @@
+from typing import TypedDict
 from sigma.backends.clickhouse.clickhouse import ClickhouseBackend
+from sigma.backends.loki.loki import LogQLBackend
 from sigma.collection import SigmaCollection
+from sigma.conversion.base import TextQueryBackend
 from sigma.exceptions import SigmaError
 from pathlib import Path
 import os
@@ -35,13 +38,31 @@ def list_files_recursively(
     return files
 
 
-backend = ClickhouseBackend()
+class BackendFormat(TypedDict):
+    backend: TextQueryBackend
+    output_format: str
 
+backend_format: dict[str, BackendFormat] = {
+    "clickhouse": {
+        "backend": ClickhouseBackend(),
+        "output_format": "clickdetect",
+    },
+    "loki": {"backend": LogQLBackend(), "output_format": "default"},
+}
 
-def load_and_save(path: Path, where="clickhouse"):
+def load_and_save(path: Path, _backend="clickhouse"):
     collection: SigmaCollection = SigmaCollection.from_yaml(path.read_text())
-    path = Path(where, *path.parts[1:])  # replace "sigma/"
-    rule_data = backend.convert(collection, output_format="clickdetect")[0]
+
+    
+    format = backend_format.get(_backend, {})
+    backend = format.get('backend', None)
+    output = format.get('output_format', None)
+
+    if not format or not backend or not output:
+        raise Exception('backend not found')
+
+    path = Path(f"{_backend}", *path.parts[1:])  # replace "sigma/"
+    rule_data = backend.convert(collection, output_format=output)[0]
     # logger.debug(f'RULE DATA: {rule_data}')
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(rule_data)
@@ -50,10 +71,10 @@ def load_and_save(path: Path, where="clickhouse"):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-w",
-        "--where",
-        help="directory of where the rules will be written (default: ./clickhouse/)",
-        default="./clickhouse/",
+        "-b",
+        "--backend",
+        help="sigma backend (default: clickhouse)",
+        default="clickhouse",
         type=str,
     )
     parser.add_argument(
@@ -69,7 +90,7 @@ def main():
     files = list_files_recursively(Path(args.dir))
     for file in files:
         try:
-            load_and_save(file, args.where)
+            load_and_save(file, args.backend)
         except Exception as err:
             logger.error(f"Failed to load {file}\n{str(err)}")
 
