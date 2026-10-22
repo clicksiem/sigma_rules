@@ -1,1 +1,1 @@
-{job=~"eventlog|winlog|windows|fluentbit.*"} | json | label_format match_1=`{{ if eq .Image .TargetFilename }}true{{ else }}false{{ end }}` | match_1=`true`
+{job=~"eventlog|winlog|windows|fluentbit.*"} | json | label_format match_0=`{{ if eq .Image .TargetFilename }}true{{ else }}false{{ end }}` | match_0=`true`
